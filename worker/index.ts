@@ -648,7 +648,177 @@ Localized B2B market consultation and high-intent commercial positioning for Sou
       }
     }
 
-    // 11. x402 Payment Protocol Middleware (https://x402.org)
+    // 12. MCP Server Card for Agent Discovery (SEP-1649)
+    if (
+      url.pathname === "/.well-known/mcp/server-card.json" ||
+      url.pathname === "/.well-known/mcp.json"
+    ) {
+      const serverCard = {
+        $schema:
+          "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+        version: "1.0",
+        protocolVersion: "2025-11-25",
+        serverInfo: {
+          name: "realresult-mcp-server",
+          title: "Real Result MCP Server",
+          version: "1.0.0",
+        },
+        description:
+          "Model Context Protocol (MCP) server for Real Result Marketing & Technology Solutions (https://realresult.in). Provides automated agent tools, prompts, and resources for Generative Engine Optimization (GEO), technical SEO, and custom enterprise software development.",
+        documentationUrl: "https://realresult.in/api/docs",
+        endpoint: "/mcp",
+        transport: {
+          type: "streamable-http",
+          endpoint: "/mcp",
+        },
+        capabilities: {
+          tools: {
+            listChanged: true,
+          },
+          resources: {
+            listChanged: true,
+          },
+          prompts: {
+            listChanged: true,
+          },
+        },
+        tools: [
+          {
+            name: "get_geo_audit",
+            description:
+              "Perform a Generative Engine Optimization (GEO) audit to analyze entity brand presence and citation frequency across LLMs.",
+            inputSchema: {
+              type: "object",
+              properties: {
+                brandName: {
+                  type: "string",
+                  description: "Brand or entity name to audit",
+                },
+                industry: {
+                  type: "string",
+                  description: "Target industry domain",
+                },
+              },
+              required: ["brandName"],
+            },
+          },
+          {
+            name: "get_local_seo_credentials",
+            description:
+              "Fetch verified Google Place IDs, GPS coordinates, and schema structures for Real Result Tamil Nadu locations (Namakkal, Erode, Coimbatore).",
+            inputSchema: {
+              type: "object",
+              properties: {
+                location: {
+                  type: "string",
+                  description:
+                    "District or city name (e.g. 'namakkal', 'erode')",
+                },
+              },
+              required: ["location"],
+            },
+          },
+          {
+            name: "inquire_custom_software",
+            description:
+              "Retrieve technical specifications and architectures for poultry farm ERPs, transport fleet LR portals, and React enterprise applications.",
+            inputSchema: {
+              type: "object",
+              properties: {
+                softwareType: {
+                  type: "string",
+                  description:
+                    "Type of software ('poultry-erp', 'logistics-lr', 'custom-web')",
+                },
+              },
+              required: ["softwareType"],
+            },
+          },
+        ],
+        resources: [
+          {
+            uri: "realresult://locations/namakkal",
+            name: "Namakkal Regional Business Credentials",
+            description:
+              "Verified Google Place ID, GPS coordinates, and industry specializations for Namakkal District.",
+            mimeType: "application/json",
+          },
+          {
+            uri: "realresult://api/catalog",
+            name: "RFC 9727 API Catalog",
+            description:
+              "Complete programmatic API catalog and OpenAPI 3.1 endpoints.",
+            mimeType: "application/linkset+json",
+          },
+        ],
+        prompts: [
+          {
+            name: "geo_content_synthesis",
+            description:
+              "Format content into DirectAnswerBox and entity-rich markdown for high citation frequency in AI overviews.",
+            arguments: [
+              {
+                name: "topic",
+                description: "The target subject or service",
+                required: true,
+              },
+            ],
+          },
+        ],
+      };
+
+      return new Response(JSON.stringify(serverCard, null, 2), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+        },
+      });
+    }
+
+    // 13. MCP Endpoint (/mcp) for Streamable HTTP
+    if (url.pathname === "/mcp") {
+      if (request.method === "OPTIONS") {
+        return new Response(null, {
+          status: 204,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+            "Access-Control-Allow-Headers":
+              "Content-Type, Authorization, Accept",
+          },
+        });
+      }
+
+      return new Response(
+        JSON.stringify({
+          jsonrpc: "2.0",
+          result: {
+            serverInfo: {
+              name: "realresult-mcp-server",
+              version: "1.0.0",
+            },
+            protocolVersion: "2025-11-25",
+            capabilities: {
+              tools: {},
+              resources: {},
+              prompts: {},
+            },
+            message: "Real Result MCP Server is operational.",
+          },
+        }),
+        {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
+    }
+
+    // 14. x402 Payment Protocol Middleware (https://x402.org)
     // Enables agent-native HTTP micropayments with HTTP 402 responses
     const isX402Route =
       url.pathname === "/api" ||

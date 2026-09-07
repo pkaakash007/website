@@ -1,0 +1,28 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "version": "1.0",
+  "protocolVersion": "2025-11-25",
+  "serverInfo": {
+    "name": "realresult-mcp-server",
+    "title": "Real Result MCP Server",
+    "version": "1.0.0"
+  },
+  "description": "Model Context Protocol (MCP) server for Real Result Marketing & Technology Solutions (https://realresult.in). Provides automated agent tools, prompts, and resources for Generative Engine Optimization (GEO), technical SEO, and custom enterprise software development.",
+  "documentationUrl": "https://realresult.in/api/docs",
+  "endpoint": "/mcp",
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "/mcp"
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": true
+    },
+    "resources": {
+      "listChanged": true
+    },
+    "prompts": {
+      "listChanged": true
+    }
+  }
+}

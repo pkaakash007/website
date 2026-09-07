@@ -1,0 +1,109 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "version": "1.0",
+  "protocolVersion": "2025-11-25",
+  "serverInfo": {
+    "name": "realresult-mcp-server",
+    "title": "Real Result MCP Server",
+    "version": "1.0.0"
+  },
+  "description": "Model Context Protocol (MCP) server for Real Result Marketing & Technology Solutions (https://realresult.in). Provides automated agent tools, prompts, and resources for Generative Engine Optimization (GEO), technical SEO, and custom enterprise software development.",
+  "documentationUrl": "https://realresult.in/api/docs",
+  "endpoint": "/mcp",
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "/mcp"
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": true
+    },
+    "resources": {
+      "listChanged": true
+    },
+    "prompts": {
+      "listChanged": true
+    }
+  },
+  "tools": [
+    {
+      "name": "get_geo_audit",
+      "description": "Perform a Generative Engine Optimization (GEO) audit to analyze entity brand presence and citation frequency across LLMs.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "brandName": {
+            "type": "string",
+            "description": "Brand or entity name to audit"
+          },
+          "industry": {
+            "type": "string",
+            "description": "Target industry domain"
+          }
+        },
+        "required": [
+          "brandName"
+        ]
+      }
+    },
+    {
+      "name": "get_local_seo_credentials",
+      "description": "Fetch verified Google Place IDs, GPS coordinates, and schema structures for Real Result Tamil Nadu locations (Namakkal, Erode, Coimbatore).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "District or city name (e.g. 'namakkal', 'erode')"
+          }
+        },
+        "required": [
+          "location"
+        ]
+      }
+    },
+    {
+      "name": "inquire_custom_software",
+      "description": "Retrieve technical specifications and architectures for poultry farm ERPs, transport fleet LR portals, and React enterprise applications.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "softwareType": {
+            "type": "string",
+            "description": "Type of software ('poultry-erp', 'logistics-lr', 'custom-web')"
+          }
+        },
+        "required": [
+          "softwareType"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "realresult://locations/namakkal",
+      "name": "Namakkal Regional Business Credentials",
+      "description": "Verified Google Place ID, GPS coordinates, and industry specializations for Namakkal District.",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "realresult://api/catalog",
+      "name": "RFC 9727 API Catalog",
+      "description": "Complete programmatic API catalog and OpenAPI 3.1 endpoints.",
+      "mimeType": "application/linkset+json"
+    }
+  ],
+  "prompts": [
+    {
+      "name": "geo_content_synthesis",
+      "description": "Format content into DirectAnswerBox and entity-rich markdown for high citation frequency in AI overviews.",
+      "arguments": [
+        {
+          "name": "topic",
+          "description": "The target subject or service",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
