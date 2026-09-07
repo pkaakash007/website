@@ -1,0 +1,34 @@
+{
+  "protocol": {
+    "name": "acp",
+    "version": "2026-01-16",
+    "supported_versions": [
+      "2026-01-16",
+      "2025-09-01",
+      "1.0.0"
+    ],
+    "documentation_url": "https://realresult.in/api/docs"
+  },
+  "api_base_url": "https://realresult.in/api/acp",
+  "transports": [
+    "rest",
+    "mcp"
+  ],
+  "capabilities": {
+    "services": [
+      "checkout",
+      "carts",
+      "orders",
+      "delegate_payment"
+    ],
+    "supported_currencies": [
+      "inr",
+      "usd",
+      "usdc"
+    ]
+  },
+  "merchant": {
+    "name": "Real Result Marketing & Technology Solutions",
+    "url": "https://realresult.in"
+  }
+}

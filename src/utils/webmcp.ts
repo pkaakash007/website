@@ -258,6 +258,12 @@ export const REALRESULT_WEBMCP_TOOLS: WebMcpTool[] = [
             role: "merchant",
             required: true,
           },
+          acp: {
+            url: "https://realresult.in/.well-known/acp.json",
+            standard: "Agentic Commerce Protocol (ACP)",
+            transports: ["rest", "mcp"],
+            services: ["checkout", "carts", "orders", "delegate_payment"],
+          },
           llmsTxt: {
             url: "https://realresult.in/llms.txt",
             mimeType: "text/plain",

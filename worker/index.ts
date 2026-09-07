@@ -683,6 +683,65 @@ export default {
       });
     }
 
+    // 10c. Agentic Commerce Protocol (ACP) Discovery Document (https://agenticcommerce.dev)
+    if (
+      url.pathname === "/.well-known/acp.json" ||
+      url.pathname === "/.well-known/acp"
+    ) {
+      const acpDiscovery = {
+        protocol: {
+          name: "acp",
+          version: "2026-01-16",
+          supported_versions: ["2026-01-16", "2025-09-01", "1.0.0"],
+          documentation_url: "https://realresult.in/api/docs",
+        },
+        api_base_url: "https://realresult.in/api/acp",
+        transports: ["rest", "mcp"],
+        capabilities: {
+          services: ["checkout", "carts", "orders", "delegate_payment"],
+          supported_currencies: ["inr", "usd", "usdc"],
+        },
+        merchant: {
+          name: "Real Result Marketing & Technology Solutions",
+          url: "https://realresult.in",
+        },
+      };
+
+      return new Response(JSON.stringify(acpDiscovery, null, 2), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+        },
+      });
+    }
+
+    // 10d. ACP Commerce API Endpoints (/api/acp, /api/acp/checkout, /api/acp/carts)
+    if (url.pathname.startsWith("/api/acp")) {
+      const acpServiceResponse = {
+        status: "active",
+        protocol: "acp",
+        version: "2026-01-16",
+        endpoint: url.pathname,
+        merchant: {
+          name: "Real Result Marketing & Technology Solutions",
+          url: "https://realresult.in",
+        },
+        supported_services: ["checkout", "carts", "orders", "delegate_payment"],
+        supported_currencies: ["inr", "usd", "usdc"],
+      };
+
+      return new Response(JSON.stringify(acpServiceResponse, null, 2), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "no-store",
+        },
+      });
+    }
+
     // 11. Agent Skills Discovery Index (RFC v0.2.0)
     if (url.pathname === "/.well-known/agent-skills/index.json") {
       const skillsIndex = {

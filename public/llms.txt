@@ -36,4 +36,5 @@
 - Auth.md (RFC 9728 & RFC 8414): https://realresult.in/auth.md
 - x402 Micropayments: https://realresult.in/api
 - Agent Payments Protocol (AP2): https://github.com/google-agentic-commerce/AP2/tree/v0.1.0 (Merchant checkout & signed mandates: https://realresult.in/api/ap2)
+- Agentic Commerce Protocol (ACP): https://realresult.in/.well-known/acp.json (API base URL: https://realresult.in/api/acp)
 
