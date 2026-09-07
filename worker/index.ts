@@ -158,19 +158,23 @@ export default {
       });
     }
 
-    // 5. OpenAPI 3.1 Specification
-    if (url.pathname === "/api/openapi.json") {
+    // 5. OpenAPI 3.1 Specification with MPP (Machine Payment Protocol) Discovery
+    if (url.pathname === "/openapi.json" || url.pathname === "/api/openapi.json") {
       const openapi = {
         openapi: "3.1.0",
         info: {
           title: "Real Result Marketing & Technology Solutions API",
           version: "1.0.0",
           description:
-            "Programmatic API for Real Result Marketing (https://realresult.in). Supports health monitoring, AI agent discoverability, and regional corporate inquiries.",
+            "Programmatic and Agent-Native Commercial API for Real Result Marketing & Technology Solutions (https://realresult.in). Supports health monitoring, AI agent discoverability, Machine Payment Protocol (MPP), x402 micropayments, AP2 mandates, and ACP commerce flows.",
           contact: {
             name: "Real Result Engineering Desk",
             url: "https://realresult.in/contact",
             email: "hello@realresult.in",
+          },
+          license: {
+            name: "Proprietary",
+            url: "https://realresult.in/legal",
           },
         },
         servers: [
@@ -179,6 +183,21 @@ export default {
             description: "Production Cloudflare Edge Server",
           },
         ],
+        "x-payment-protocols": ["mpp", "x402", "ap2", "acp"],
+        "x-service-info": {
+          categories: [
+            "marketing",
+            "seo",
+            "software-development",
+            "developer-tools",
+            "b2b",
+          ],
+          docs: {
+            homepage: "https://realresult.in/",
+            llms: "https://realresult.in/llms.txt",
+            apiReference: "https://realresult.in/openapi.json",
+          },
+        },
         paths: {
           "/api/health": {
             get: {
@@ -210,7 +229,16 @@ export default {
             get: {
               summary: "Commercial Agent API Gateway",
               description:
-                "Agent-native programmatic API with x402 payment protocol support.",
+                "Agent-native programmatic API with x402 micropayments and MPP machine payment discovery.",
+              operationId: "agentApiGateway",
+              "x-payment-info": {
+                intent: "charge",
+                method: "tempo",
+                amount: "1000",
+                currency: "usd",
+                description:
+                  "Commercial Agent API Gateway query micropayment via Machine Payment Protocol (MPP) and x402",
+              },
               responses: {
                 "402": {
                   description:
@@ -248,7 +276,16 @@ export default {
             get: {
               summary: "Commercial Agent API Gateway v1",
               description:
-                "Agent-native programmatic API v1 with x402 payment protocol support.",
+                "Agent-native programmatic API v1 with session-based payment discovery.",
+              operationId: "agentApiGatewayV1",
+              "x-payment-info": {
+                intent: "session",
+                method: "stripe",
+                amount: "5000",
+                currency: "usd",
+                description:
+                  "Agent session settlement via Machine Payment Protocol (MPP) / Stripe",
+              },
               responses: {
                 "402": {
                   description: "Payment Required via x402 protocol",
@@ -265,13 +302,133 @@ export default {
               },
             },
           },
+          "/api/mpp/charge": {
+            post: {
+              summary: "MPP Autonomous Payment Settlement",
+              description:
+                "Process autonomous machine payments and settled charges via Machine Payment Protocol (MPP).",
+              operationId: "mppCharge",
+              "x-payment-info": {
+                intent: "charge",
+                method: "tempo",
+                amount: "2500",
+                currency: "usd",
+                description:
+                  "Machine Payment Protocol (MPP) charge for AI SEO and GEO authority audit report",
+              },
+              responses: {
+                "200": {
+                  description: "Payment completed and report generated",
+                },
+                "402": {
+                  description: "Payment required",
+                },
+              },
+            },
+          },
+          "/api/agent/consultation": {
+            post: {
+              summary: "Book Enterprise AI & SEO Consultation",
+              description:
+                "Book a strategic consultation session for enterprise digital growth.",
+              operationId: "bookConsultation",
+              "x-payment-info": {
+                intent: "session",
+                method: "card",
+                amount: "10000",
+                currency: "usd",
+                description:
+                  "Enterprise B2B Tamil Nadu Industrial & Software Consultation Session",
+              },
+              responses: {
+                "200": {
+                  description: "Consultation session booked",
+                },
+                "402": {
+                  description: "Payment required",
+                },
+              },
+            },
+          },
+          "/api/agent/micropayment": {
+            post: {
+              summary: "Lightning Network Micropayment",
+              description:
+                "Instant Satoshi settlement for autonomous agent queries.",
+              operationId: "lightningPayment",
+              "x-payment-info": {
+                intent: "charge",
+                method: "lightning",
+                amount: "500",
+                currency: "sat",
+                description:
+                  "Real-time AI query settlement via Lightning Network",
+              },
+              responses: {
+                "200": {
+                  description: "Payment received",
+                },
+                "402": {
+                  description: "Payment required",
+                },
+              },
+            },
+          },
+          "/api/ap2": {
+            get: {
+              summary: "Agent Payments Protocol (AP2) Descriptor",
+              description:
+                "Returns AP2 merchant capabilities, supported mandate types, and accepted settlement methods.",
+              responses: {
+                "200": {
+                  description: "AP2 Merchant Descriptor",
+                  content: {
+                    "application/json": {
+                      schema: {
+                        type: "object",
+                        properties: {
+                          protocol: { type: "string", example: "AP2" },
+                          version: { type: "string", example: "0.1.0" },
+                          role: { type: "string", example: "merchant" },
+                          mandatesSupported: { type: "array" },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+          "/api/acp": {
+            get: {
+              summary: "Agentic Commerce Protocol (ACP) API Base",
+              description:
+                "Returns ACP service capabilities and supported commerce operations.",
+              responses: {
+                "200": {
+                  description: "ACP Service Status",
+                  content: {
+                    "application/json": {
+                      schema: {
+                        type: "object",
+                        properties: {
+                          protocol: { type: "string", example: "acp" },
+                          version: { type: "string", example: "2026-01-16" },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
         },
       };
 
       return new Response(JSON.stringify(openapi, null, 2), {
         status: 200,
         headers: {
-          "Content-Type": "application/vnd.oai.openapi+json; charset=utf-8",
+          "Content-Type": "application/json; charset=utf-8",
           "Access-Control-Allow-Origin": "*",
           "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
         },

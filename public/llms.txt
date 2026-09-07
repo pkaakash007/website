@@ -27,7 +27,8 @@
 
 ## Machine-Readable AI Agent Discovery & Endpoints
 - RFC 9727 API Catalog: https://realresult.in/.well-known/api-catalog
-- OpenAPI 3.1 Specification: https://realresult.in/api/openapi.json
+- OpenAPI 3.1 Specification: https://realresult.in/openapi.json
+- Machine Payment Protocol (MPP): https://realresult.in/openapi.json (x-payment-info on payable operations: tempo, stripe, lightning, card)
 - A2A Agent Card: https://realresult.in/.well-known/agent-card.json
 - Agent Skills Discovery Index: https://realresult.in/.well-known/agent-skills/index.json
 - MCP Server Card: https://realresult.in/.well-known/mcp/server-card.json

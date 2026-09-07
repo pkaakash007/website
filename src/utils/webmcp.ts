@@ -264,6 +264,12 @@ export const REALRESULT_WEBMCP_TOOLS: WebMcpTool[] = [
             transports: ["rest", "mcp"],
             services: ["checkout", "carts", "orders", "delegate_payment"],
           },
+          mpp: {
+            url: "https://realresult.in/openapi.json",
+            standard: "Machine Payment Protocol (MPP)",
+            methods: ["tempo", "stripe", "lightning", "card"],
+            intents: ["charge", "session"],
+          },
           llmsTxt: {
             url: "https://realresult.in/llms.txt",
             mimeType: "text/plain",
