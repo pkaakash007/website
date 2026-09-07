@@ -41,11 +41,13 @@ import SalemPage from "@/pages/locations/SalemPage";
 import MaduraiPage from "@/pages/locations/MaduraiPage";
 import TrichyPage from "@/pages/locations/TrichyPage";
 import TirunelveliPage from "@/pages/locations/TirunelveliPage";
+import NamakkalPage from "@/pages/locations/NamakkalPage";
 
 // Authority & Resource Pages
 import CaseStudiesHubPage from "@/pages/case-studies/CaseStudiesHubPage";
 import ResourcesHubPage from "@/pages/resources/ResourcesHubPage";
 import FAQHubPage from "@/pages/faq/FAQHubPage";
+import ReviewPage from "@/pages/ReviewPage";
 
 export const router = createBrowserRouter([
   {
@@ -209,6 +211,18 @@ export const router = createBrowserRouter([
       {
         path: "locations/tirunelveli",
         element: <TirunelveliPage />,
+      },
+      {
+        path: "locations/namakkal",
+        element: <NamakkalPage />,
+      },
+      {
+        path: "review",
+        element: <ReviewPage />,
+      },
+      {
+        path: "reviews",
+        element: <ReviewPage />,
       },
 
       // 404 Catch-all

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Result API Documentation</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: #0f0f10;
+        color: #e5e5e5;
+        margin: 0;
+        padding: 40px 20px;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #18181b;
+        padding: 32px;
+        border-radius: 16px;
+        border: 1px solid #27272a;
+      }
+      h1 { color: #f4c430; margin-top: 0; }
+      h2 { color: #fff; border-bottom: 1px solid #27272a; padding-bottom: 8px; margin-top: 28px; }
+      a { color: #f4c430; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      code { background: #27272a; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 0.9em; }
+      pre { background: #27272a; padding: 16px; border-radius: 8px; overflow-x: auto; }
+      .badge { display: inline-block; padding: 3px 8px; border-radius: 999px; background: rgba(244, 196, 48, 0.15); color: #f4c430; font-size: 0.75rem; font-weight: bold; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <span class="badge">RFC 9727 COMPLIANT</span>
+      <h1>Real Result Marketing API Documentation</h1>
+      <p>Official developer and automated AI agent API documentation for <a href="https://realresult.in">Real Result</a>.</p>
+
+      <h2>API Catalog & Specifications</h2>
+      <ul>
+        <li><strong>API Catalog (RFC 9727)</strong>: <code><a href="/.well-known/api-catalog">/.well-known/api-catalog</a></code> (application/linkset+json)</li>
+        <li><strong>OpenAPI 3.1 Spec</strong>: <code><a href="/api/openapi.json">/api/openapi.json</a></code> (application/vnd.oai.openapi+json)</li>
+        <li><strong>Operational Health Check</strong>: <code><a href="/api/health">/api/health</a></code> (application/json)</li>
+      </ul>
+
+      <h2>Health Check Endpoint</h2>
+      <pre><code>GET /api/health HTTP/1.1
+Host: realresult.in
+Accept: application/json</code></pre>
+      <p>Returns system operational status, deployment environment, and serving Cloudflare edge data center.</p>
+
+      <h2>Support</h2>
+      <p>For inquiries, visit our <a href="/contact">contact page</a> or email <a href="mailto:hello@realresult.in">hello@realresult.in</a>.</p>
+    </div>
+  </body>
+</html>

@@ -45,7 +45,7 @@ const solutions = [
   },
   {
     title: "Tamil Nadu Hub Network",
-    description: "Erode Headquarters, Coimbatore, Chennai, Tiruppur, Salem, Madurai, Trichy, Tirunelveli",
+    description: "Erode Headquarters, Coimbatore, Chennai, Tiruppur, Salem, Namakkal, Madurai, Trichy, Tirunelveli",
     href: "/locations/tamil-nadu",
     icon: MapPin,
     badge: "Regional Footprint",

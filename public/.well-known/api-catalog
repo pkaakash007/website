@@ -1,0 +1,25 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://realresult.in/api",
+      "service-desc": [
+        {
+          "href": "https://realresult.in/api/openapi.json",
+          "type": "application/vnd.oai.openapi+json"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://realresult.in/api/health",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://realresult.in/api/docs",
+          "type": "text/html"
+        }
+      ]
+    }
+  ]
+}

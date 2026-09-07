@@ -47,6 +47,7 @@ const locationSilo = [
   { label: "Madurai Southern Commercial Hub", href: "/locations/madurai" },
   { label: "Trichy Engineering Hub", href: "/locations/trichy" },
   { label: "Tirunelveli Regional Hub", href: "/locations/tirunelveli" },
+  { label: "Namakkal Poultry & Logistics Hub", href: "/locations/namakkal" },
 ];
 
 export const Footer: React.FC = () => {
@@ -198,6 +199,10 @@ export const Footer: React.FC = () => {
             </Link>
             <Link to="/contact" className="hover:text-gold transition-colors font-medium">
               Contact Erode HQ
+            </Link>
+            <Link to="/review" className="hover:text-gold transition-colors font-semibold text-gold-400 inline-flex items-center gap-1">
+              <span>★★★★★</span>
+              <span>Review on Google</span>
             </Link>
           </div>
 

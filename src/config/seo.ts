@@ -63,6 +63,7 @@ export const SEO_CONFIG: SEOConfig = {
     "Madurai",
     "Tiruchirappalli",
     "Tirunelveli",
+    "Namakkal",
     "India",
   ],
   businessHours: "Mo-Sa 09:00-18:30",
@@ -81,6 +82,8 @@ export interface LocationMeta {
     latitude: number;
     longitude: number;
   };
+  mapUrl?: string;
+  address?: string;
 }
 
 export const TAMIL_NADU_LOCATIONS: Record<string, LocationMeta> = {
@@ -187,5 +190,26 @@ export const TAMIL_NADU_LOCATIONS: Record<string, LocationMeta> = {
       "Bringing enterprise-grade search strategy, regional language marketing, and mobile application engineering to businesses expanding across the southern districts.",
     postalCode: "627001",
     geo: { latitude: 8.7139, longitude: 77.7567 },
+  },
+  namakkal: {
+    slug: "namakkal",
+    city: "Namakkal",
+    region: "Central Kongu Region, Tamil Nadu",
+    title: "Digital Marketing Agency & Software Company in Namakkal | Real Result",
+    description:
+      "Results-driven digital marketing agency, local SEO, Google Ads, and custom business software engineering in Namakkal and Paramathi Velur for poultry, transport, agro, and manufacturing sectors.",
+    industries: [
+      "Poultry & Egg Production Logistics",
+      "Commercial Truck Body Building & Fleet Logistics",
+      "Agro-Processing & Farming Technology",
+      "Industrial Fabrication & Machinery",
+      "Educational Institutions & Healthcare",
+    ],
+    localContext:
+      "Namakkal is India's egg capital and commercial transport powerhouse. We deliver high-intent B2B SEO, Google Maps 3-pack dominance, and automated fleet/hatchery ERP software for businesses across Namakkal, Paramathi Velur, Tiruchengode, and Rasipuram.",
+    postalCode: "638182",
+    geo: { latitude: 11.1112509, longitude: 78.0057796 },
+    mapUrl: "https://maps.app.goo.gl/Be2565mN74uVgZ7p9",
+    address: "Paramathi Velur, Namakkal District, Tamil Nadu 638182, India",
   },
 };

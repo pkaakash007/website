@@ -51,6 +51,7 @@ if (fs.existsSync(sitemapPath)) {
   assert(sitemapContent.includes('<loc>https://realresult.in/locations/erode</loc>'), 'sitemap includes Erode HQ location');
   assert(sitemapContent.includes('<loc>https://realresult.in/locations/coimbatore</loc>'), 'sitemap includes Coimbatore location');
   assert(sitemapContent.includes('<loc>https://realresult.in/locations/chennai</loc>'), 'sitemap includes Chennai location');
+  assert(sitemapContent.includes('<loc>https://realresult.in/locations/namakkal</loc>'), 'sitemap includes Namakkal location');
   assert(sitemapContent.includes('<loc>https://realresult.in/case-studies</loc>'), 'sitemap includes case studies');
   assert(sitemapContent.includes('<loc>https://realresult.in/faq</loc>'), 'sitemap includes FAQ hub');
 }
@@ -104,6 +105,7 @@ const pagesToVerify = [
   'src/pages/locations/MaduraiPage.tsx',
   'src/pages/locations/TrichyPage.tsx',
   'src/pages/locations/TirunelveliPage.tsx',
+  'src/pages/locations/NamakkalPage.tsx',
   'src/pages/case-studies/CaseStudiesHubPage.tsx',
   'src/pages/resources/ResourcesHubPage.tsx',
   'src/pages/faq/FAQHubPage.tsx',

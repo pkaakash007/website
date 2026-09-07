@@ -1,0 +1,46 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Real Result Marketing & Technology Solutions API",
+    "version": "1.0.0",
+    "description": "Programmatic API for Real Result Marketing (https://realresult.in). Supports health monitoring, AI agent discoverability, and regional corporate inquiries.",
+    "contact": {
+      "name": "Real Result Engineering Desk",
+      "url": "https://realresult.in/contact",
+      "email": "hello@realresult.in"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://realresult.in",
+      "description": "Production Cloudflare Edge Server"
+    }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Health and Connectivity Verification",
+        "description": "Returns operational health, deployment timestamp, and serving Cloudflare edge data center.",
+        "responses": {
+          "200": {
+            "description": "System is operational",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string", "example": "healthy" },
+                    "domain": { "type": "string", "example": "realresult.in" },
+                    "environment": { "type": "string", "example": "production" },
+                    "timestamp": { "type": "string", "format": "date-time" },
+                    "colo": { "type": "string", "example": "MAA" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

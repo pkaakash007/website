@@ -84,7 +84,7 @@ export const REAL_RESULT_CONFIG = {
       name: "Tamil Nadu Hubs",
       eyebrow: "REGIONAL DOMINANCE",
       headline: "Serving enterprise corridors across Tamil Nadu.",
-      description: "Dedicated client advisory and engineering deployment across Erode (HQ), Coimbatore, Chennai, Tiruppur, Salem, Madurai, Trichy, and Tirunelveli.",
+      description: "Dedicated client advisory and engineering deployment across Erode (HQ), Coimbatore, Chennai, Tiruppur, Salem, Namakkal, Madurai, Trichy, and Tirunelveli.",
       href: "/locations/tamil-nadu",
       badge: "Tamil Nadu Network",
       isPrimary: false,
