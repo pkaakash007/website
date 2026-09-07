@@ -13,6 +13,10 @@
 
 # production
 /build
+/dist
+
+# cloudflare
+.wrangler/
 
 # misc
 .DS_Store
