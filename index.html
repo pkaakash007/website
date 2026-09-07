@@ -27,6 +27,126 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "yen8thfpij");
     </script>
+
+    <!-- WebMCP (Web Model Context Protocol) AI Agent Tools (https://webmachinelearning.github.io/webmcp/) -->
+    <script>
+      (function() {
+        function initWebMcp() {
+          if (!("modelContext" in navigator) || !navigator.modelContext) return;
+          var mc = navigator.modelContext;
+          var controller = new AbortController();
+          var signal = controller.signal;
+          window.__webmcp_controller = controller;
+
+          var tools = [
+            {
+              name: "search_realresult",
+              title: "Search Real Result Services & Solutions",
+              description: "Full-text search across Real Result marketing, AI Generative Engine Optimization (GEO), technical SEO, custom enterprise software (poultry ERP, transport LR), and regional Tamil Nadu B2B solutions.",
+              inputSchema: {
+                type: "object",
+                properties: {
+                  query: { type: "string", description: "Search keyword or subject" },
+                  limit: { type: "integer", description: "Max results", default: 5 }
+                },
+                required: ["query"]
+              },
+              execute: async function(args) {
+                var q = (args.query || "").toLowerCase();
+                var catalog = [
+                  { title: "Generative Engine Optimization (GEO)", url: "https://realresult.in/digital-marketing", description: "Entity knowledge graph and citation authority across ChatGPT, Perplexity, and Claude." },
+                  { title: "Technical SEO & Schema Optimization", url: "https://realresult.in/digital-marketing", description: "LocalBusiness schema, core web vitals, RFC 8288 link headers, robots.txt AI rules." },
+                  { title: "Poultry Farm Management ERP", url: "https://realresult.in/software-development", description: "Commercial flock ERP with FCR calculation, mortality tracking, and egg sales dispatch." },
+                  { title: "Fleet Logistics & Lorry Receipt (LR) Portal", url: "https://realresult.in/software-development", description: "Digital LR dispatch portal, GST e-way bill linking, trip expense reconciliation." },
+                  { title: "Regional Tamil Nadu Hubs", url: "https://realresult.in/locations/namakkal", description: "Namakkal, Erode, Coimbatore, Chennai business credentials." }
+                ];
+                var results = catalog.filter(function(item) {
+                  return item.title.toLowerCase().indexOf(q) !== -1 || item.description.toLowerCase().indexOf(q) !== -1;
+                });
+                return { query: args.query, results: results.length ? results : catalog.slice(0, 3) };
+              },
+              annotations: { readOnlyHint: true }
+            },
+            {
+              name: "get_regional_office",
+              title: "Get Regional Office Information",
+              description: "Fetch corporate address, phone number, Google Place ID, and primary industries for Tamil Nadu branches (Namakkal, Erode, Coimbatore, Chennai).",
+              inputSchema: {
+                type: "object",
+                properties: {
+                  location: {
+                    type: "string",
+                    description: "Target location name",
+                    enum: ["namakkal", "erode", "coimbatore", "chennai"]
+                  }
+                },
+                required: ["location"]
+              },
+              execute: async function(args) {
+                var loc = (args.location || "").toLowerCase().trim();
+                var offices = {
+                  namakkal: { city: "Namakkal", phone: "+91 98420 12345", email: "namakkal@realresult.in", googlePlaceId: "ChIJCeVk0hrVqzsRp7foI1ppMUo", sectors: ["Poultry ERPs", "Fleet Logistics", "Agro Exports"] },
+                  erode: { city: "Erode (Corporate HQ)", phone: "+91 98420 12345", email: "hello@realresult.in", googlePlaceId: "ChIJCeVk0hrVqzsRp7foI1ppMUo", sectors: ["Textiles", "Turmeric B2B", "Enterprise Software"] },
+                  coimbatore: { city: "Coimbatore", phone: "+91 98420 12345", email: "coimbatore@realresult.in", sectors: ["Precision Motors", "Foundry SEO", "SaaS Automation"] },
+                  chennai: { city: "Chennai", phone: "+91 98420 12345", email: "chennai@realresult.in", sectors: ["B2B AI Operations", "Supply Chain Portals", "GEO"] }
+                };
+                return offices[loc] || { error: "Office not found", available: ["namakkal", "erode", "coimbatore", "chennai"] };
+              },
+              annotations: { readOnlyHint: true }
+            },
+            {
+              name: "get_agent_discovery_endpoints",
+              title: "Get AI Agent Discovery Endpoints",
+              description: "Retrieve all machine-readable discovery specifications, protocols, and endpoints published by Real Result for autonomous AI agents.",
+              inputSchema: {
+                type: "object",
+                properties: {}
+              },
+              execute: async function() {
+                return {
+                  organization: "Real Result Marketing & Technology Solutions",
+                  domain: "https://realresult.in",
+                  apiCatalog: "https://realresult.in/.well-known/api-catalog",
+                  openApi: "https://realresult.in/api/openapi.json",
+                  agentCard: "https://realresult.in/.well-known/agent-card.json",
+                  agentSkills: "https://realresult.in/.well-known/agent-skills/index.json",
+                  mcpServerCard: "https://realresult.in/.well-known/mcp/server-card.json",
+                  webBotAuth: "https://realresult.in/.well-known/http-message-signatures-directory",
+                  authMd: "https://realresult.in/auth.md",
+                  x402: "https://realresult.in/api",
+                  llmsTxt: "https://realresult.in/llms.txt"
+                };
+              },
+              annotations: { readOnlyHint: true }
+            }
+          ];
+
+          window.__registered_webmcp_tools = window.__registered_webmcp_tools || new Set();
+
+          tools.forEach(function(tool) {
+            if (window.__registered_webmcp_tools.has(tool.name)) return;
+            try {
+              if (typeof mc.registerTool === "function") {
+                mc.registerTool(tool, { signal: signal });
+                window.__registered_webmcp_tools.add(tool.name);
+              } else if (typeof mc.provideContext === "function") {
+                mc.provideContext({ tools: [tool] });
+                window.__registered_webmcp_tools.add(tool.name);
+              }
+            } catch (err) {
+              console.warn("[WebMCP] Tool registration failed:", err);
+            }
+          });
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", initWebMcp);
+        } else {
+          initWebMcp();
+        }
+        window.addEventListener("load", initWebMcp);
+      })();
+    </script>
   </head>
   <body class="bg-canvas text-primary font-sans antialiased overflow-x-hidden">
     <div id="root"></div>
