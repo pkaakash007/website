@@ -1,0 +1,39 @@
+# Robots.txt for Real Result Marketing (https://realresult.in)
+# Designed for Optimal Search Engine and AI Generative Crawler Indexation
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+
+# Explicitly Allow Leading Search Engine & AI Retrieval Agents
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Canonical XML Sitemap
+Sitemap: https://realresult.in/sitemap.xml

@@ -2,11 +2,26 @@ import React from "react";
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/common/Badge";
 import { ContactForm } from "@/components/common/ContactForm";
+import { SEOHead } from "@/components/seo/SEOHead";
 import { ShieldCheck, Target, Zap } from "lucide-react";
 
 export const AboutPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      <SEOHead
+        title="About Real Result Marketing | Erode HQ, Leadership & Vision"
+        description="Learn about Real Result Marketing & Technology Solutions. Headquartered in Erode, Tamil Nadu, providing unified digital marketing, SEO, and custom software engineering."
+        canonicalPath="/about"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          name: "About Real Result Marketing",
+          url: "https://realresult.in/about",
+          description:
+            "Corporate history, leadership, and operational framework of Real Result Marketing in Erode, Tamil Nadu, India.",
+        }}
+      />
+
       {/* Hero */}
       <section className="pt-16 pb-20 sm:pt-24 sm:pb-28 bg-white border-b border-border relative">
         <Container size="wide">

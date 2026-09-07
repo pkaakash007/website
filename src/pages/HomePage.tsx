@@ -1,4 +1,5 @@
 import React from "react";
+import { SEOHead } from "@/components/seo/SEOHead";
 import HeroMarketing from "@/features/home/components/HeroMarketing";
 import HorizontalMarquee from "@/features/home/components/HorizontalMarquee";
 import CreativeShowcase from "@/features/home/components/CreativeShowcase";
@@ -19,6 +20,23 @@ import FinalCampaignCTA from "@/features/home/components/FinalCampaignCTA";
 export const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      <SEOHead
+        title="Best Digital Marketing Agency & Software Company in Tamil Nadu | Real Result"
+        description="Real Result Marketing is Tamil Nadu's leading digital marketing agency and custom software development company. Headquartered in Erode, delivering top-tier SEO, GEO, Google Ads, and web apps across Coimbatore, Chennai, and statewide."
+        canonicalPath="/"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Real Result Marketing",
+          url: "https://realresult.in",
+          potentialAction: {
+            "@type": "SearchAction",
+            target: "https://realresult.in/resources?q={search_term_string}",
+            "query-input": "required name=search_term_string",
+          },
+        }}
+      />
+
       {/* 1. Hero: One Dominant Art-Directed Advertising Image */}
       <HeroMarketing />
 
