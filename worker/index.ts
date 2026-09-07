@@ -12,6 +12,7 @@
  */
 
 import { getMarkdownForRoute } from "./markdown";
+import { handleDirectoryRequest, signBotRequest } from "./webBotAuth";
 
 export interface Env {
   ASSETS: Fetcher;
@@ -59,7 +60,67 @@ export default {
       );
     }
 
-    // 4. RFC 9727 API Catalog for Automated Discovery
+    // 4. Web Bot Auth (IETF WebBotAuth WG & Cloudflare Bot Verification)
+    // Serves the JWKS with cryptographic RFC 9421 HTTP Message Signatures
+    if (
+      url.pathname === "/.well-known/http-message-signatures-directory" ||
+      url.pathname === "/.well-known/http-message-signatures-directory/" ||
+      url.pathname === "/.well-known/http-message-signatures-directory.json"
+    ) {
+      return handleDirectoryRequest(request);
+    }
+
+    // 5. Outbound Bot Request Signing API Endpoint
+    if (url.pathname === "/api/bot/sign") {
+      if (request.method === "OPTIONS") {
+        return new Response(null, {
+          status: 204,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type, Authorization, Accept",
+          },
+        });
+      }
+
+      let targetUrl = url.searchParams.get("target") || "https://example.com";
+      if (request.method === "POST") {
+        try {
+          const body: any = await request.json();
+          if (body?.targetUrl) targetUrl = body.targetUrl;
+        } catch {
+          // fallback to target query parameter
+        }
+      }
+
+      const signedHeaders = await signBotRequest(targetUrl);
+      return new Response(
+        JSON.stringify(
+          {
+            status: "success",
+            targetUrl,
+            signedHeaders: {
+              "Signature-Agent": signedHeaders.get("Signature-Agent"),
+              "Signature-Input": signedHeaders.get("Signature-Input"),
+              "Signature": signedHeaders.get("Signature"),
+            },
+            verificationDirectory:
+              "https://realresult.in/.well-known/http-message-signatures-directory",
+          },
+          null,
+          2
+        ),
+        {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
+    }
+
+    // 6. RFC 9727 API Catalog for Automated Discovery
     if (url.pathname === "/.well-known/api-catalog") {
       const catalog = {
         linkset: [
