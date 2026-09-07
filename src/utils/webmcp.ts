@@ -270,6 +270,12 @@ export const REALRESULT_WEBMCP_TOOLS: WebMcpTool[] = [
             methods: ["tempo", "stripe", "lightning", "card"],
             intents: ["charge", "session"],
           },
+          ucp: {
+            url: "https://realresult.in/.well-known/ucp",
+            standard: "Universal Commerce Protocol (UCP)",
+            protocol_version: "1.0",
+            services: ["digital_marketing_audit", "enterprise_software_consultation", "catalog_search"],
+          },
           llmsTxt: {
             url: "https://realresult.in/llms.txt",
             mimeType: "text/plain",

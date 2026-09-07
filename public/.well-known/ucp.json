@@ -1,0 +1,107 @@
+{
+  "protocol_version": "1.0",
+  "specification": "https://ucp.dev/specification/overview/",
+  "merchant": {
+    "name": "Real Result Marketing & Technology Solutions",
+    "legal_name": "Real Result Marketing & Technology Solutions",
+    "url": "https://realresult.in",
+    "country": "IN",
+    "contact": "mailto:hello@realresult.in"
+  },
+  "services": [
+    {
+      "name": "digital_marketing_audit",
+      "description": "Comprehensive Generative Engine Optimization (GEO) & Technical SEO Audit.",
+      "endpoint": "https://realresult.in/api/ucp/checkout",
+      "spec": "https://ucp.dev/specification/overview/",
+      "schema": "https://realresult.in/openapi.json"
+    },
+    {
+      "name": "enterprise_software_consultation",
+      "description": "B2B enterprise consultation for custom poultry ERP, transport logistics, and digital marketing retainers.",
+      "endpoint": "https://realresult.in/api/ucp/checkout",
+      "spec": "https://ucp.dev/specification/overview/",
+      "schema": "https://realresult.in/openapi.json"
+    },
+    {
+      "name": "catalog_search",
+      "description": "Search service offerings, local business clusters, and technical solutions.",
+      "endpoint": "https://realresult.in/api/ucp/catalog",
+      "spec": "https://ucp.dev/specification/overview/",
+      "schema": "https://realresult.in/openapi.json"
+    }
+  ],
+  "capabilities": {
+    "catalog": {
+      "status": "available",
+      "endpoint": "https://realresult.in/api/ucp/catalog",
+      "documentation": "https://realresult.in/api/docs",
+      "schema": "https://realresult.in/openapi.json"
+    },
+    "checkout": {
+      "status": "available",
+      "endpoint": "https://realresult.in/api/ucp/checkout",
+      "payment_methods": [
+        "card",
+        "upi",
+        "bank_transfer",
+        "x402",
+        "tempo"
+      ],
+      "documentation": "https://ucp.dev/specification/overview/",
+      "schema": "https://realresult.in/openapi.json"
+    }
+  },
+  "endpoints": {
+    "api": "https://realresult.in/api/ucp",
+    "catalog": "https://realresult.in/api/ucp/catalog",
+    "checkout": "https://realresult.in/api/ucp/checkout",
+    "documentation": "https://realresult.in/api/docs",
+    "openapi": "https://realresult.in/openapi.json"
+  },
+  "ucp": {
+    "version": "1.0",
+    "protocol_version": "1.0",
+    "spec": "https://ucp.dev/specification/overview/",
+    "merchant": {
+      "name": "Real Result Marketing & Technology Solutions",
+      "url": "https://realresult.in",
+      "country": "IN",
+      "contact": "mailto:hello@realresult.in"
+    },
+    "services": {
+      "dev.ucp.shopping": [
+        {
+          "version": "1.0",
+          "spec": "https://ucp.dev/specification/overview/",
+          "transport": "rest",
+          "endpoint": "https://realresult.in/api/ucp",
+          "schema": "https://realresult.in/openapi.json"
+        },
+        {
+          "version": "1.0",
+          "spec": "https://ucp.dev/specification/overview/",
+          "transport": "a2a",
+          "endpoint": "https://realresult.in/.well-known/agent-card.json"
+        }
+      ]
+    },
+    "capabilities": {
+      "dev.ucp.shopping.checkout": {
+        "status": "available",
+        "spec": "https://ucp.dev/specification/overview/",
+        "schema": "https://realresult.in/openapi.json"
+      },
+      "dev.ucp.shopping.catalog": {
+        "status": "available",
+        "spec": "https://ucp.dev/specification/overview/",
+        "schema": "https://realresult.in/openapi.json"
+      }
+    },
+    "endpoints": {
+      "api": "https://realresult.in/api/ucp",
+      "catalog": "https://realresult.in/api/ucp/catalog",
+      "checkout": "https://realresult.in/api/ucp/checkout"
+    }
+  }
+}
