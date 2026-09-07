@@ -1,0 +1,101 @@
+{
+  "name": "Real Result AI Agent",
+  "version": "1.0.0",
+  "description": "Autonomous discovery and service agent for Real Result Marketing & Technology Solutions (https://realresult.in). Provides Generative Engine Optimization (GEO), technical SEO, enterprise custom software engineering (poultry ERP, transport logistics LR portals), and regional Tamil Nadu B2B industrial consultations.",
+  "provider": {
+    "organization": "Real Result Marketing & Technology Solutions",
+    "url": "https://realresult.in"
+  },
+  "documentationUrl": "https://realresult.in/api/docs",
+  "iconUrl": "https://realresult.in/brand/realresult-logo.jpeg",
+  "supportedInterfaces": [
+    {
+      "url": "https://realresult.in/api",
+      "protocolBinding": "HTTP+JSON",
+      "protocolVersion": "1.0.0"
+    },
+    {
+      "url": "https://realresult.in/api/v1",
+      "protocolBinding": "JSONRPC",
+      "protocolVersion": "2.0"
+    }
+  ],
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "extendedAgentCard": false
+  },
+  "defaultInputModes": [
+    "text/plain",
+    "application/json",
+    "text/markdown"
+  ],
+  "defaultOutputModes": [
+    "text/plain",
+    "application/json",
+    "text/markdown"
+  ],
+  "skills": [
+    {
+      "id": "geo-optimization",
+      "name": "Generative Engine Optimization (GEO)",
+      "description": "Analyze and optimize digital brand authority, entity knowledge graph positioning, and citation frequency across autonomous AI engines (ChatGPT Search, Perplexity AI, Google Gemini, and Claude).",
+      "tags": [
+        "geo",
+        "seo",
+        "ai-visibility",
+        "llm-search"
+      ],
+      "examples": [
+        "Audit website entity authority for ChatGPT Search",
+        "Structure DirectAnswerBox content for Google AI Overviews"
+      ]
+    },
+    {
+      "id": "technical-seo",
+      "name": "Technical SEO & Schema Optimization",
+      "description": "Evaluate and deploy programmatic schema markup (LocalBusiness, Organization, Service), core web vitals speed, and robots.txt AI rules.",
+      "tags": [
+        "seo",
+        "schema",
+        "robots-txt",
+        "sitemap"
+      ],
+      "examples": [
+        "Generate JSON-LD LocalBusiness schema for Tamil Nadu branches",
+        "Validate RFC 8288 link headers and API catalogs"
+      ]
+    },
+    {
+      "id": "custom-software-inquiry",
+      "name": "Custom Enterprise Software & ERP Solutions",
+      "description": "Inquire about custom cloud portals, logistics LR systems, poultry farm ERPs, and high-performance React/TypeScript business applications.",
+      "tags": [
+        "erp",
+        "logistics",
+        "poultry-erp",
+        "software-engineering"
+      ],
+      "examples": [
+        "Inquire about fleet logistics LR software development",
+        "Get pricing and scope for poultry farm management ERP"
+      ]
+    },
+    {
+      "id": "regional-consultation",
+      "name": "Tamil Nadu B2B Industrial Consultation",
+      "description": "Access localized business market intelligence and consultation scheduling for Namakkal, Erode, Coimbatore, and Chennai business clusters.",
+      "tags": [
+        "tamil-nadu",
+        "namakkal",
+        "erode",
+        "coimbatore",
+        "b2b"
+      ],
+      "examples": [
+        "Schedule B2B consultation for poultry fleet operations in Namakkal",
+        "Connect with Erode corporate headquarters"
+      ]
+    }
+  ]
+}
