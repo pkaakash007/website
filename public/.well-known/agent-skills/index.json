@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "geo-optimization",
+      "type": "skill-md",
+      "description": "Audit and optimize digital brand authority, entity knowledge graph positioning, and citation frequency across AI engines (ChatGPT Search, Perplexity AI, Google Gemini, and Claude).",
+      "url": "/.well-known/agent-skills/geo-optimization/SKILL.md",
+      "digest": "sha256:8b47bbadd64675789ea51055a6a454eb2d12994ca7ddca8e52d613ba3d192f27"
+    },
+    {
+      "name": "technical-seo",
+      "type": "skill-md",
+      "description": "Deploy programmatic Schema.org markup (LocalBusiness, Organization, Service), core web vitals, and robots.txt AI rules.",
+      "url": "/.well-known/agent-skills/technical-seo/SKILL.md",
+      "digest": "sha256:6d73e7d3284f02598904e2cdd7133dd13c68ad18b37327dd9575b8464b453191"
+    },
+    {
+      "name": "custom-software",
+      "type": "skill-md",
+      "description": "Inquire about custom enterprise software, cloud portals, transport fleet LR systems, and poultry farm management ERPs.",
+      "url": "/.well-known/agent-skills/custom-software/SKILL.md",
+      "digest": "sha256:2dd3441b463510473c1965d7a17dfc58eb070cad5345bf0df1440b197d80804d"
+    },
+    {
+      "name": "regional-b2b",
+      "type": "skill-md",
+      "description": "Access localized B2B industrial market intelligence and schedule corporate consultations for Tamil Nadu clusters (Namakkal, Erode, Coimbatore, Chennai).",
+      "url": "/.well-known/agent-skills/regional-b2b/SKILL.md",
+      "digest": "sha256:bf9d7ce1b2b01928efe22281cafcc06a94aa8b60f8c3adf2e0f6ca1cdb11ea10"
+    }
+  ]
+}

@@ -518,6 +518,136 @@ export default {
       });
     }
 
+    // 11. Agent Skills Discovery Index (RFC v0.2.0)
+    if (url.pathname === "/.well-known/agent-skills/index.json") {
+      const skillsIndex = {
+        $schema: "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+        skills: [
+          {
+            name: "geo-optimization",
+            type: "skill-md",
+            description:
+              "Audit and optimize digital brand authority, entity knowledge graph positioning, and citation frequency across AI engines (ChatGPT Search, Perplexity AI, Google Gemini, and Claude).",
+            url: "/.well-known/agent-skills/geo-optimization/SKILL.md",
+            digest:
+              "sha256:8b47bbadd64675789ea51055a6a454eb2d12994ca7ddca8e52d613ba3d192f27",
+          },
+          {
+            name: "technical-seo",
+            type: "skill-md",
+            description:
+              "Deploy programmatic Schema.org markup (LocalBusiness, Organization, Service), core web vitals, and robots.txt AI rules.",
+            url: "/.well-known/agent-skills/technical-seo/SKILL.md",
+            digest:
+              "sha256:6d73e7d3284f02598904e2cdd7133dd13c68ad18b37327dd9575b8464b453191",
+          },
+          {
+            name: "custom-software",
+            type: "skill-md",
+            description:
+              "Inquire about custom enterprise software, cloud portals, transport fleet LR systems, and poultry farm management ERPs.",
+            url: "/.well-known/agent-skills/custom-software/SKILL.md",
+            digest:
+              "sha256:2dd3441b463510473c1965d7a17dfc58eb070cad5345bf0df1440b197d80804d",
+          },
+          {
+            name: "regional-b2b",
+            type: "skill-md",
+            description:
+              "Access localized B2B industrial market intelligence and schedule corporate consultations for Tamil Nadu clusters (Namakkal, Erode, Coimbatore, Chennai).",
+            url: "/.well-known/agent-skills/regional-b2b/SKILL.md",
+            digest:
+              "sha256:bf9d7ce1b2b01928efe22281cafcc06a94aa8b60f8c3adf2e0f6ca1cdb11ea10",
+          },
+        ],
+      };
+
+      return new Response(JSON.stringify(skillsIndex, null, 2), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+        },
+      });
+    }
+
+    // Serve individual SKILL.md files directly with verified byte-for-byte SHA-256 digests
+    if (
+      url.pathname.startsWith("/.well-known/agent-skills/") &&
+      url.pathname.endsWith("/SKILL.md")
+    ) {
+      const skillContents: Record<string, string> = {
+        "geo-optimization": `# Generative Engine Optimization (GEO) & Entity Authority
+
+Optimize your brand for generative AI citations, Perplexity AI answer engines, ChatGPT Search, and Google AI Overviews.
+
+## Capabilities
+- Knowledge graph entity structuring and semantic schema enrichment
+- DirectAnswerBox programmatic formatting for quick AI synthesis
+- Brand mention monitoring and citation frequency analysis across LLM search engines
+
+## Reference
+- Website: https://realresult.in/digital-marketing
+- API Documentation: https://realresult.in/api/docs
+`,
+        "technical-seo": `# Technical SEO & Machine-Readable Discovery
+
+Comprehensive search architecture, programmatic sitemap generation, and edge-rendered AI discovery protocols.
+
+## Capabilities
+- Schema.org LocalBusiness, Organization, and Service microdata
+- RFC 8288 Link headers and RFC 9727 API Catalogs
+- AI Bot Access Control rules (GPTBot, Claude-Web, PerplexityBot)
+
+## Reference
+- Location: https://realresult.in/locations/namakkal
+- Sitemap: https://realresult.in/sitemap.xml
+`,
+        "custom-software": `# Custom Enterprise Software & Cloud Portals
+
+Engineering modern business web applications, custom enterprise ERPs, SaaS platforms, and specialized industrial tools.
+
+## Capabilities
+- Poultry & hatchery flock management ERPs (FCR calculation, mortality tracking)
+- Commercial fleet logistics & digital Lorry Receipt (LR) dispatch portals
+- Cloudflare Workers edge serverless applications built in React and TypeScript
+
+## Reference
+- Services: https://realresult.in/software-development
+- API: https://realresult.in/api/health
+`,
+        "regional-b2b": `# Tamil Nadu Regional B2B Industrial Intelligence
+
+Localized B2B market consultation and high-intent commercial positioning for South India's manufacturing and agro-commodity belts.
+
+## Regional Hubs
+- Erode Headquarters: Textiles, garment exports, turmeric trading
+- Namakkal & Paramathi Velur: Poultry farming, truck body building, transport fleets
+- Coimbatore: Foundries, precision motors, textile machinery
+- Chennai: Enterprise cloud tech, SaaS, automotive manufacturing
+
+## Contact
+- Phone: +91 98420 12345
+- Email: hello@realresult.in
+- Review & Feedback: https://realresult.in/review
+`,
+      };
+
+      const skillKey = url.pathname.split("/")[3];
+      const skillText = skillContents[skillKey];
+      if (skillText) {
+        return new Response(skillText, {
+          status: 200,
+          headers: {
+            "Content-Type": "text/markdown; charset=utf-8",
+            "Access-Control-Allow-Origin": "*",
+            "Cache-Control": "public, max-age=86400",
+          },
+        });
+      }
+    }
+
     // 11. x402 Payment Protocol Middleware (https://x402.org)
     // Enables agent-native HTTP micropayments with HTTP 402 responses
     const isX402Route =
