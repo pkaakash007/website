@@ -2,9 +2,8 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -71,12 +70,12 @@ const config: Config = {
         "5xl": "2.5rem",
       },
       boxShadow: {
-        "subtle": "0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02)",
-        "card": "0 4px 20px -2px rgba(15,15,14,0.05), 0 2px 6px -1px rgba(15,15,14,0.02)",
+        subtle: "0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02)",
+        card: "0 4px 20px -2px rgba(15,15,14,0.05), 0 2px 6px -1px rgba(15,15,14,0.02)",
         "card-hover": "0 14px 36px -4px rgba(15,15,14,0.09), 0 6px 16px -2px rgba(15,15,14,0.04)",
         "gold-subtle": "0 4px 20px -2px rgba(197, 160, 89, 0.18)",
         "gold-glow": "0 0 35px -5px rgba(197, 160, 89, 0.35)",
-        "floating": "0 24px 50px -12px rgba(0,0,0,0.18), 0 10px 20px -6px rgba(0,0,0,0.06)",
+        floating: "0 24px 50px -12px rgba(0,0,0,0.18), 0 10px 20px -6px rgba(0,0,0,0.06)",
       },
       keyframes: {
         ticker: {
