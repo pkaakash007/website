@@ -158,7 +158,199 @@ export default {
       });
     }
 
-    // 4. Content Negotiation for AI Agents (Accept: text/markdown)
+    // 6. OAuth Protected Resource Metadata (RFC 9728)
+    if (url.pathname === "/.well-known/oauth-protected-resource") {
+      const prm = {
+        resource: "https://realresult.in",
+        resource_name: "Real Result Marketing & Technology Solutions",
+        authorization_servers: ["https://realresult.in"],
+        scopes_supported: [
+          "read:services",
+          "read:locations",
+          "read:reviews",
+          "read:contact",
+        ],
+        bearer_methods_supported: ["header"],
+        resource_documentation: "https://realresult.in/auth.md",
+        resource_policy_uri: "https://realresult.in/privacy",
+        resource_tos_uri: "https://realresult.in/terms",
+        agent_auth: {
+          skill: "https://realresult.in/auth.md",
+          documentation_uri: "https://realresult.in/auth.md",
+          register_uri: "https://realresult.in/agent/auth/register",
+          claim_uri: "https://realresult.in/agent/auth/claim",
+          revocation_uri: "https://realresult.in/agent/auth/revoke",
+          contact: "hello@realresult.in",
+          events_supported: [
+            "https://schemas.ietf.org/oauth/token-revocation",
+            "revocation",
+          ],
+          identity_types_supported: ["anonymous", "identity_assertion"],
+          anonymous: {
+            credential_types_supported: ["api_key", "bearer_token"],
+            claim_uri: "https://realresult.in/agent/auth/claim",
+          },
+          identity_assertion: {
+            assertion_types_supported: [
+              "urn:ietf:params:oauth:token-type:id-jag",
+              "verified_email",
+            ],
+            credential_types_supported: ["api_key", "bearer_token"],
+            claim_uri: "https://realresult.in/agent/auth/claim",
+          },
+          credentials_note:
+            "Credentials attribute correspondence and extend rate limits. All public marketing & agency information is open access.",
+        },
+      };
+
+      return new Response(JSON.stringify(prm, null, 2), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+        },
+      });
+    }
+
+    // 7. OAuth Authorization Server Metadata (RFC 8414)
+    if (url.pathname === "/.well-known/oauth-authorization-server") {
+      const as = {
+        issuer: "https://realresult.in",
+        authorization_endpoint: "https://realresult.in/oauth/authorize",
+        token_endpoint: "https://realresult.in/oauth/token",
+        revocation_endpoint: "https://realresult.in/agent/auth/revoke",
+        service_documentation: "https://realresult.in/auth.md",
+        ui_locales_supported: ["en"],
+        scopes_supported: [
+          "read:services",
+          "read:locations",
+          "read:reviews",
+          "read:contact",
+        ],
+        response_types_supported: ["code"],
+        grant_types_supported: [
+          "authorization_code",
+          "client_credentials",
+          "refresh_token",
+        ],
+        token_endpoint_auth_methods_supported: [
+          "client_secret_basic",
+          "none",
+        ],
+        code_challenge_methods_supported: ["S256"],
+        protected_resources: ["https://realresult.in"],
+        events_supported: [
+          "https://schemas.ietf.org/oauth/token-revocation",
+          "revocation",
+        ],
+        agent_auth: {
+          skill: "https://realresult.in/auth.md",
+          documentation_uri: "https://realresult.in/auth.md",
+          register_uri: "https://realresult.in/agent/auth/register",
+          claim_uri: "https://realresult.in/agent/auth/claim",
+          revocation_uri: "https://realresult.in/agent/auth/revoke",
+          contact: "hello@realresult.in",
+          events_supported: [
+            "https://schemas.ietf.org/oauth/token-revocation",
+            "revocation",
+          ],
+          identity_types_supported: ["anonymous", "identity_assertion"],
+          anonymous: {
+            credential_types_supported: ["api_key", "bearer_token"],
+            claim_uri: "https://realresult.in/agent/auth/claim",
+          },
+          identity_assertion: {
+            assertion_types_supported: [
+              "urn:ietf:params:oauth:token-type:id-jag",
+              "verified_email",
+            ],
+            credential_types_supported: ["api_key", "bearer_token"],
+            claim_uri: "https://realresult.in/agent/auth/claim",
+          },
+          credentials_note:
+            "Credentials attribute correspondence and extend rate limits. All public marketing & agency information is open access.",
+        },
+      };
+
+      return new Response(JSON.stringify(as, null, 2), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+        },
+      });
+    }
+
+    // 8. OpenID Configuration
+    if (url.pathname === "/.well-known/openid-configuration") {
+      const oidc = {
+        issuer: "https://realresult.in",
+        authorization_endpoint: "https://realresult.in/oauth/authorize",
+        token_endpoint: "https://realresult.in/oauth/token",
+        jwks_uri: "https://realresult.in/.well-known/jwks.json",
+        service_documentation: "https://realresult.in/auth.md",
+        scopes_supported: [
+          "openid",
+          "profile",
+          "email",
+          "read:services",
+          "read:locations",
+        ],
+        response_types_supported: ["code"],
+        grant_types_supported: ["authorization_code", "client_credentials"],
+        subject_types_supported: ["public"],
+        id_token_signing_alg_values_supported: ["RS256"],
+      };
+
+      return new Response(JSON.stringify(oidc, null, 2), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+        },
+      });
+    }
+
+    // 9. Dedicated /auth.md Route
+    if (url.pathname === "/auth.md" || url.pathname === "/auth") {
+      const authMdContent = getMarkdownForRoute("/auth.md");
+      return new Response(authMdContent, {
+        status: 200,
+        headers: {
+          "Content-Type": "text/markdown; charset=utf-8",
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+          "X-Content-Type-Options": "nosniff",
+        },
+      });
+    }
+
+    // 10. Agent Auth Endpoints (register, claim, revoke)
+    if (url.pathname.startsWith("/agent/auth/")) {
+      const endpoint = url.pathname.replace("/agent/auth/", "");
+      return new Response(
+        JSON.stringify({
+          status: "success",
+          action: endpoint,
+          message:
+            "Real Result Agent Auth endpoint. All public resources are openly readable without credentials.",
+          service_documentation: "https://realresult.in/auth.md",
+          contact: "hello@realresult.in",
+        }),
+        {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
+    }
+
+    // 11. Content Negotiation for AI Agents (Accept: text/markdown)
     const acceptHeader = (request.headers.get("Accept") || "").toLowerCase();
     const isMarkdownRequested =
       acceptHeader.includes("text/markdown") ||
