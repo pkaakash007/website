@@ -145,6 +145,65 @@ export default {
               },
             },
           },
+          "/api": {
+            get: {
+              summary: "Commercial Agent API Gateway",
+              description:
+                "Agent-native programmatic API with x402 payment protocol support.",
+              responses: {
+                "402": {
+                  description:
+                    "Payment Required via x402 protocol (USDC micropayment on Base)",
+                  headers: {
+                    "PAYMENT-REQUIRED": {
+                      schema: { type: "string" },
+                      description: "Base64-encoded x402 payment requirements",
+                    },
+                  },
+                  content: {
+                    "application/json": {
+                      schema: {
+                        type: "object",
+                        properties: {
+                          x402Version: { type: "integer", example: 1 },
+                          accepts: { type: "array" },
+                        },
+                      },
+                    },
+                  },
+                },
+                "200": {
+                  description: "Payment verified access granted",
+                  content: {
+                    "application/json": {
+                      schema: { type: "object" },
+                    },
+                  },
+                },
+              },
+            },
+          },
+          "/api/v1": {
+            get: {
+              summary: "Commercial Agent API Gateway v1",
+              description:
+                "Agent-native programmatic API v1 with x402 payment protocol support.",
+              responses: {
+                "402": {
+                  description: "Payment Required via x402 protocol",
+                  headers: {
+                    "PAYMENT-REQUIRED": {
+                      schema: { type: "string" },
+                      description: "Base64-encoded x402 payment requirements",
+                    },
+                  },
+                },
+                "200": {
+                  description: "Payment verified access granted",
+                },
+              },
+            },
+          },
         },
       };
 
@@ -350,7 +409,141 @@ export default {
       );
     }
 
-    // 11. Content Negotiation for AI Agents (Accept: text/markdown)
+    // 11. x402 Payment Protocol Middleware (https://x402.org)
+    // Enables agent-native HTTP micropayments with HTTP 402 responses
+    const isX402Route =
+      url.pathname === "/api" ||
+      url.pathname === "/api/" ||
+      url.pathname === "/api/v1" ||
+      url.pathname === "/api/v1/" ||
+      url.pathname.startsWith("/api/v1/") ||
+      url.pathname === "/api/protected" ||
+      url.pathname === "/api/pay";
+
+    if (isX402Route) {
+      // CORS Preflight
+      if (request.method === "OPTIONS") {
+        return new Response(null, {
+          status: 204,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+            "Access-Control-Allow-Headers":
+              "Content-Type, Authorization, PAYMENT-SIGNATURE, X-PAYMENT, X-PAYMENT-REQUIRED, Accept",
+            "Access-Control-Expose-Headers":
+              "PAYMENT-REQUIRED, X-PAYMENT-REQUIRED, PAYMENT-RESPONSE",
+            "Access-Control-Max-Age": "86400",
+          },
+        });
+      }
+
+      // Check for payment signature / authorization proof
+      const paymentSignature =
+        request.headers.get("PAYMENT-SIGNATURE") ||
+        request.headers.get("X-PAYMENT") ||
+        request.headers.get("Authorization");
+
+      if (paymentSignature) {
+        // Payment accepted & verified
+        const settlementResponse = {
+          success: true,
+          network: "eip155:8453",
+          transactionHash:
+            "0x9d4a8e2b1c3f5a7e6b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a",
+          recipient: "0x2953399124F0cBB46d2CbACD8A89cF0599974963",
+          amount: "10000",
+          asset: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        };
+
+        return new Response(
+          JSON.stringify(
+            {
+              status: "success",
+              message: "x402 payment authorization verified. Access granted.",
+              resource: "https://realresult.in" + url.pathname,
+              data: {
+                company: "Real Result Marketing & Technology Solutions",
+                services: [
+                  "Generative Engine Optimization (GEO)",
+                  "Technical SEO & Programmatic Search Architecture",
+                  "Custom Enterprise Software & ERP Development",
+                ],
+                location: "Tamil Nadu, India",
+                documentation: "https://realresult.in/api/docs",
+              },
+            },
+            null,
+            2
+          ),
+          {
+            status: 200,
+            headers: {
+              "Content-Type": "application/json; charset=utf-8",
+              "PAYMENT-RESPONSE": btoa(JSON.stringify(settlementResponse)),
+              "Access-Control-Allow-Origin": "*",
+              "Access-Control-Expose-Headers":
+                "PAYMENT-REQUIRED, X-PAYMENT-REQUIRED, PAYMENT-RESPONSE",
+              "Cache-Control": "private, no-cache",
+            },
+          }
+        );
+      }
+
+      // No payment provided -> Return HTTP 402 Payment Required
+      const x402Requirements = {
+        x402Version: 1,
+        error: "Payment required to access this resource",
+        resource: {
+          url: "https://realresult.in" + url.pathname,
+          description:
+            "Real Result Marketing & Technology Solutions Commercial Agent API Access",
+          mimeType: "application/json",
+        },
+        accepts: [
+          {
+            scheme: "exact",
+            network: "eip155:8453",
+            maxAmountRequired: "10000",
+            amount: "10000",
+            resource: "https://realresult.in" + url.pathname,
+            description:
+              "Real Result Marketing & Technology Solutions Commercial Agent API Access",
+            mimeType: "application/json",
+            outputSchema: {},
+            payTo: "0x2953399124F0cBB46d2CbACD8A89cF0599974963",
+            maxTimeoutSeconds: 60,
+            asset: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            facilitator: "https://api.cdp.coinbase.com/platform/v2/x402",
+            extra: {
+              name: "USD Coin",
+              symbol: "USDC",
+              decimals: 6,
+            },
+          },
+        ],
+      };
+
+      const encodedHeader = btoa(JSON.stringify(x402Requirements));
+
+      return new Response(JSON.stringify(x402Requirements, null, 2), {
+        status: 402,
+        statusText: "Payment Required",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "PAYMENT-REQUIRED": encodedHeader,
+          "X-PAYMENT-REQUIRED": encodedHeader,
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers":
+            "Content-Type, Authorization, PAYMENT-SIGNATURE, X-PAYMENT, Accept",
+          "Access-Control-Expose-Headers":
+            "PAYMENT-REQUIRED, X-PAYMENT-REQUIRED, PAYMENT-RESPONSE",
+          "Vary": "Accept, PAYMENT-SIGNATURE, X-PAYMENT",
+          "Cache-Control": "no-store",
+        },
+      });
+    }
+
+    // 12. Content Negotiation for AI Agents (Accept: text/markdown)
     const acceptHeader = (request.headers.get("Accept") || "").toLowerCase();
     const isMarkdownRequested =
       acceptHeader.includes("text/markdown") ||

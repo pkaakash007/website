@@ -41,6 +41,62 @@
           }
         }
       }
+    },
+    "/api": {
+      "get": {
+        "summary": "Commercial Agent API Gateway",
+        "description": "Agent-native programmatic API with x402 payment protocol support.",
+        "responses": {
+          "402": {
+            "description": "Payment Required via x402 protocol (USDC micropayment on Base)",
+            "headers": {
+              "PAYMENT-REQUIRED": {
+                "schema": { "type": "string" },
+                "description": "Base64-encoded x402 payment requirements"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "x402Version": { "type": "integer", "example": 1 },
+                    "accepts": { "type": "array" }
+                  }
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Payment verified access granted",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1": {
+      "get": {
+        "summary": "Commercial Agent API Gateway v1",
+        "description": "Agent-native programmatic API v1 with x402 payment protocol support.",
+        "responses": {
+          "402": {
+            "description": "Payment Required via x402 protocol",
+            "headers": {
+              "PAYMENT-REQUIRED": {
+                "schema": { "type": "string" },
+                "description": "Base64-encoded x402 payment requirements"
+              }
+            }
+          },
+          "200": {
+            "description": "Payment verified access granted"
+          }
+        }
+      }
     }
   }
 }
