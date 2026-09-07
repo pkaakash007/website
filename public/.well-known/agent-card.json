@@ -18,13 +18,102 @@
       "url": "https://realresult.in/api/v1",
       "protocolBinding": "JSONRPC",
       "protocolVersion": "2.0"
+    },
+    {
+      "url": "https://realresult.in/api/ap2",
+      "protocolBinding": "HTTP+JSON",
+      "protocolVersion": "1.0.0"
     }
   ],
   "capabilities": {
     "streaming": false,
     "pushNotifications": false,
-    "extendedAgentCard": false
+    "extendedAgentCard": false,
+    "extensions": [
+      {
+        "uri": "https://github.com/google-agentic-commerce/AP2/tree/v0.1.0",
+        "description": "Agent Payments Protocol (AP2) extension for merchant agent transaction completion using cryptographically-signed mandates.",
+        "required": true,
+        "params": {
+          "roles": [
+            "merchant"
+          ]
+        }
+      },
+      {
+        "uri": "https://github.com/google-agentic-commerce/ap2/tree/v0.1",
+        "description": "Agent Payments Protocol (AP2) v0.1 extension for merchant agent transaction completion.",
+        "required": true,
+        "params": {
+          "roles": [
+            "merchant"
+          ]
+        }
+      },
+      {
+        "uri": "https://github.com/google-agentic-commerce/ap2/tree/v0.1.0",
+        "description": "Agent Payments Protocol (AP2) extension for merchant agent transaction completion.",
+        "required": true,
+        "params": {
+          "roles": [
+            "merchant"
+          ]
+        }
+      },
+      {
+        "uri": "https://github.com/google-agentic-commerce/AP2/tree/v0.1",
+        "description": "Agent Payments Protocol (AP2) extension for merchant agent transaction completion.",
+        "required": true,
+        "params": {
+          "roles": [
+            "merchant"
+          ]
+        }
+      }
+    ]
   },
+  "extensions": [
+    {
+      "uri": "https://github.com/google-agentic-commerce/AP2/tree/v0.1.0",
+      "description": "Agent Payments Protocol (AP2) extension for merchant agent transaction completion using cryptographically-signed mandates.",
+      "required": true,
+      "params": {
+        "roles": [
+          "merchant"
+        ]
+      }
+    },
+    {
+      "uri": "https://github.com/google-agentic-commerce/ap2/tree/v0.1",
+      "description": "Agent Payments Protocol (AP2) v0.1 extension for merchant agent transaction completion.",
+      "required": true,
+      "params": {
+        "roles": [
+          "merchant"
+        ]
+      }
+    },
+    {
+      "uri": "https://github.com/google-agentic-commerce/ap2/tree/v0.1.0",
+      "description": "Agent Payments Protocol (AP2) extension for merchant agent transaction completion.",
+      "required": true,
+      "params": {
+        "roles": [
+          "merchant"
+        ]
+      }
+    },
+    {
+      "uri": "https://github.com/google-agentic-commerce/AP2/tree/v0.1",
+      "description": "Agent Payments Protocol (AP2) extension for merchant agent transaction completion.",
+      "required": true,
+      "params": {
+        "roles": [
+          "merchant"
+        ]
+      }
+    }
+  ],
   "defaultInputModes": [
     "text/plain",
     "application/json",
@@ -95,6 +184,23 @@
       "examples": [
         "Schedule B2B consultation for poultry fleet operations in Namakkal",
         "Connect with Erode corporate headquarters"
+      ]
+    },
+    {
+      "id": "ap2-agent-payments",
+      "name": "Agent Payments Protocol (AP2) Merchant Checkout",
+      "description": "Process merchant orders and accept cryptographically-signed payment mandates from shopping agents for digital marketing audits, GEO consulting, and enterprise custom software retainers.",
+      "tags": [
+        "ap2",
+        "payments",
+        "commerce",
+        "agent-payments",
+        "mandates",
+        "merchant"
+      ],
+      "examples": [
+        "Process AP2 cryptographically-signed mandate for SEO audit",
+        "Execute agentic purchase mandate for enterprise consulting retainer"
       ]
     }
   ]

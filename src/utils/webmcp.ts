@@ -252,6 +252,12 @@ export const REALRESULT_WEBMCP_TOOLS: WebMcpTool[] = [
             standard: "x402 HTTP Micropayment Protocol (Coinbase / Base)",
             currency: "USDC",
           },
+          ap2: {
+            standard: "Agent Payments Protocol (AP2) v0.1.0",
+            uri: "https://github.com/google-agentic-commerce/AP2/tree/v0.1.0",
+            role: "merchant",
+            required: true,
+          },
           llmsTxt: {
             url: "https://realresult.in/llms.txt",
             mimeType: "text/plain",

@@ -97,6 +97,30 @@
           }
         }
       }
+    },
+    "/api/ap2": {
+      "get": {
+        "summary": "Agent Payments Protocol (AP2) Descriptor",
+        "description": "Returns AP2 merchant capabilities, supported mandate types, and accepted settlement methods.",
+        "responses": {
+          "200": {
+            "description": "AP2 Merchant Descriptor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "protocol": { "type": "string", "example": "AP2" },
+                    "version": { "type": "string", "example": "0.1.0" },
+                    "role": { "type": "string", "example": "merchant" },
+                    "mandatesSupported": { "type": "array" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

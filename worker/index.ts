@@ -472,6 +472,45 @@ export default {
 
     // 10. A2A Agent Card for Agent-to-Agent Discovery (https://a2a-protocol.org)
     if (url.pathname === "/.well-known/agent-card.json") {
+      const ap2Extensions = [
+        {
+          uri: "https://github.com/google-agentic-commerce/AP2/tree/v0.1.0",
+          description:
+            "Agent Payments Protocol (AP2) extension for merchant agent transaction completion using cryptographically-signed mandates.",
+          required: true,
+          params: {
+            roles: ["merchant"],
+          },
+        },
+        {
+          uri: "https://github.com/google-agentic-commerce/ap2/tree/v0.1",
+          description:
+            "Agent Payments Protocol (AP2) v0.1 extension for merchant agent transaction completion.",
+          required: true,
+          params: {
+            roles: ["merchant"],
+          },
+        },
+        {
+          uri: "https://github.com/google-agentic-commerce/ap2/tree/v0.1.0",
+          description:
+            "Agent Payments Protocol (AP2) extension for merchant agent transaction completion.",
+          required: true,
+          params: {
+            roles: ["merchant"],
+          },
+        },
+        {
+          uri: "https://github.com/google-agentic-commerce/AP2/tree/v0.1",
+          description:
+            "Agent Payments Protocol (AP2) extension for merchant agent transaction completion.",
+          required: true,
+          params: {
+            roles: ["merchant"],
+          },
+        },
+      ];
+
       const agentCard = {
         name: "Real Result AI Agent",
         version: "1.0.0",
@@ -494,12 +533,19 @@ export default {
             protocolBinding: "JSONRPC",
             protocolVersion: "2.0",
           },
+          {
+            url: "https://realresult.in/api/ap2",
+            protocolBinding: "HTTP+JSON",
+            protocolVersion: "1.0.0",
+          },
         ],
         capabilities: {
           streaming: false,
           pushNotifications: false,
           extendedAgentCard: false,
+          extensions: ap2Extensions,
         },
+        extensions: ap2Extensions,
         defaultInputModes: [
           "text/plain",
           "application/json",
@@ -566,6 +612,24 @@ export default {
               "Connect with Erode corporate headquarters",
             ],
           },
+          {
+            id: "ap2-agent-payments",
+            name: "Agent Payments Protocol (AP2) Merchant Checkout",
+            description:
+              "Process merchant orders and accept cryptographically-signed payment mandates from shopping agents for digital marketing audits, GEO consulting, and enterprise custom software retainers.",
+            tags: [
+              "ap2",
+              "payments",
+              "commerce",
+              "agent-payments",
+              "mandates",
+              "merchant",
+            ],
+            examples: [
+              "Process AP2 cryptographically-signed mandate for SEO audit",
+              "Execute agentic purchase mandate for enterprise consulting retainer",
+            ],
+          },
         ],
       };
 
@@ -575,6 +639,46 @@ export default {
           "Content-Type": "application/json; charset=utf-8",
           "Access-Control-Allow-Origin": "*",
           "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+        },
+      });
+    }
+
+    // 10b. AP2 (Agent Payments Protocol) Merchant Checkout & Mandates API
+    if (
+      url.pathname === "/api/ap2" ||
+      url.pathname === "/api/ap2/checkout" ||
+      url.pathname === "/.well-known/ap2.json"
+    ) {
+      const ap2Descriptor = {
+        protocol: "AP2",
+        version: "0.1.0",
+        uri: "https://github.com/google-agentic-commerce/AP2/tree/v0.1.0",
+        role: "merchant",
+        mandatesSupported: [
+          "intent-mandate",
+          "payment-mandate",
+          "cart-mandate",
+        ],
+        acceptedCurrencies: ["INR", "USD", "USDC"],
+        acceptedPaymentMethods: [
+          "card",
+          "bank_transfer",
+          "upi",
+          "x402-exact",
+        ],
+        merchant: {
+          name: "Real Result Marketing & Technology Solutions",
+          url: "https://realresult.in",
+          merchantId: "realresult-in-merchant-01",
+        },
+      };
+
+      return new Response(JSON.stringify(ap2Descriptor, null, 2), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "public, max-age=3600",
         },
       });
     }
