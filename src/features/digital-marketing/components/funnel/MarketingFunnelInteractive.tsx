@@ -92,11 +92,11 @@ export const MarketingFunnelInteractive: React.FC = () => {
   const StepIcon = currentStep.icon;
 
   return (
-    <section className="py-20 lg:py-28 bg-white border-b border-border">
+    <section className="py-20 bg-white border-b border-border">
       <Container size="wide">
-        <div className="max-w-3xl mb-14 space-y-4">
-          <Badge variant="outline">SYSTEM ARCHITECTURE</Badge>
-          <h2 className="text-3xl sm:text-5xl font-bold text-primary tracking-tight">
+        <div className="max-w-3xl mb-12 space-y-3">
+          <Badge variant="outline">System Architecture</Badge>
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
             The Synchronized Revenue Funnel
           </h2>
           <p className="text-base text-secondary leading-relaxed">
@@ -114,25 +114,25 @@ export const MarketingFunnelInteractive: React.FC = () => {
                 key={step.id}
                 type="button"
                 onClick={() => setActiveTab(step.id)}
-                className={`p-4 rounded-2xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
+                className={`p-4 rounded-xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
                   isSelected
-                    ? "bg-primary text-white border-primary shadow-card"
-                    : "bg-canvas hover:bg-surface border-border text-secondary hover:text-primary"
+                    ? "bg-primary text-white border-primary shadow-sm"
+                    : "bg-surface hover:bg-white border-border text-secondary hover:text-primary"
                 }`}
               >
                 <div className="flex items-center justify-between mb-3">
                   <span
-                    className={`text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full ${
+                    className={`text-xs font-semibold px-2 py-0.5 rounded ${
                       isSelected
-                        ? "bg-gold text-black font-bold"
-                        : "bg-surface text-muted"
+                        ? "bg-white/20 text-white"
+                        : "bg-white text-gray-700 border border-border"
                     }`}
                   >
-                    0{idx + 1}
+                    Step 0{idx + 1}
                   </span>
                   <Icon
                     className={`w-4 h-4 ${
-                      isSelected ? "text-gold" : "text-muted"
+                      isSelected ? "text-gold-300" : "text-muted"
                     }`}
                   />
                 </div>
@@ -158,21 +158,19 @@ export const MarketingFunnelInteractive: React.FC = () => {
         </div>
 
         {/* Selected Stage Detail Panel */}
-        <div className="p-8 lg:p-12 rounded-3xl bg-canvas border border-border shadow-card relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
-
+        <div className="p-8 lg:p-10 rounded-2xl bg-surface border border-border">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7 space-y-5">
+            <div className="lg:col-span-7 space-y-4">
               <div className="flex items-center gap-2">
-                <span className="w-8 h-8 rounded-xl bg-gold/20 text-gold-800 flex items-center justify-center font-bold">
+                <span className="w-8 h-8 rounded-lg bg-[#FBF7EE] border border-[#E8D298] text-[#8E6D2E] flex items-center justify-center font-bold">
                   <StepIcon className="w-4 h-4" />
                 </span>
-                <span className="text-xs font-mono uppercase font-bold text-gold-800 tracking-wider">
+                <span className="text-xs font-semibold text-[#8E6D2E]">
                   {currentStep.stage}
                 </span>
               </div>
 
-              <h3 className="text-2xl sm:text-4xl font-bold text-primary tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-bold text-primary tracking-tight">
                 {currentStep.title}
               </h3>
 
@@ -182,14 +180,14 @@ export const MarketingFunnelInteractive: React.FC = () => {
 
               {/* Channels */}
               <div className="pt-2">
-                <span className="text-xs font-mono uppercase text-muted block mb-2 font-semibold">
+                <span className="text-xs text-muted block mb-2 font-semibold">
                   Core Channels Deployed:
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {currentStep.channels.map((channel, i) => (
                     <span
                       key={i}
-                      className="text-xs px-3 py-1 rounded-full bg-white border border-border text-primary font-medium"
+                      className="text-xs px-3 py-1 rounded-md bg-white border border-border text-primary font-medium"
                     >
                       {channel}
                     </span>
@@ -198,9 +196,9 @@ export const MarketingFunnelInteractive: React.FC = () => {
               </div>
 
               {/* Key Deliverables */}
-              <div className="pt-4 border-t border-border/80 space-y-2.5">
-                <span className="text-xs font-mono uppercase text-muted block font-semibold">
-                  What We Deliver:
+              <div className="pt-4 border-t border-border space-y-2">
+                <span className="text-xs text-muted block font-semibold">
+                  Key Deliverables:
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-secondary">
                   {currentStep.deliverables.map((item, i) => (
@@ -215,19 +213,19 @@ export const MarketingFunnelInteractive: React.FC = () => {
 
             {/* Target Output Metric Card */}
             <div className="lg:col-span-5">
-              <div className="p-8 rounded-3xl bg-white border border-border shadow-floating space-y-4 text-center">
-                <span className="text-xs font-mono uppercase text-gold-700 tracking-widest font-bold">
-                  Phase Impact Metric
+              <div className="p-8 rounded-2xl bg-white border border-border shadow-sm space-y-3 text-center">
+                <span className="text-xs font-semibold text-[#8E6D2E]">
+                  Phase Impact Benchmark
                 </span>
-                <div className="text-3xl sm:text-4xl font-bold font-mono text-primary">
+                <div className="text-3xl sm:text-4xl font-bold text-primary">
                   {currentStep.metricTarget}
                 </div>
                 <p className="text-xs text-secondary leading-relaxed">
-                  Real-time reporting integrated with Google Search Console, Looker Studio, and direct telephone call tracking.
+                  Real-time reporting integrated with Google Search Console, Looker Studio, and verified call tracking.
                 </p>
                 <div className="pt-2">
-                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-gold-800">
-                    SLA Guaranteed Monitoring
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+                    SLA-Guaranteed Telemetry
                     <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </div>

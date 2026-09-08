@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/common/Badge";
+import LeaderBioCard from "./LeaderBioCard";
 import { Code2, TrendingUp, Cpu, Sparkles } from "lucide-react";
 
 export const AboutLeadershipTeam: React.FC = () => {
@@ -32,11 +33,11 @@ export const AboutLeadershipTeam: React.FC = () => {
   ];
 
   return (
-    <section id="leadership" className="py-20 lg:py-28 bg-white border-b border-border scroll-mt-20">
+    <section id="leadership" className="py-20 bg-white border-b border-border scroll-mt-20">
       <Container size="wide">
-        <div className="max-w-3xl mb-16 space-y-4">
-          <Badge variant="gold">MULTIDISCIPLINARY DIRECTORS</Badge>
-          <h2 className="text-3xl sm:text-5xl font-bold text-primary tracking-tight">
+        <div className="max-w-3xl mb-14 space-y-3">
+          <Badge variant="gold">Leadership Team</Badge>
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
             Practitioners at the Helm
           </h2>
           <p className="text-base text-secondary leading-relaxed">
@@ -45,32 +46,9 @@ export const AboutLeadershipTeam: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {leaders.map((leader, idx) => {
-            const Icon = leader.icon;
-            return (
-              <div
-                key={idx}
-                className="p-8 rounded-3xl bg-canvas border border-border hover:border-gold/50 transition-colors flex flex-col justify-between"
-              >
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-2xl bg-white border border-border flex items-center justify-center text-gold-700 shadow-subtle">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-primary">
-                      {leader.role}
-                    </h3>
-                    <span className="text-xs font-mono text-gold-700 font-semibold block mt-0.5">
-                      {leader.discipline}
-                    </span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-secondary leading-relaxed">
-                    {leader.bio}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+          {leaders.map((leader, idx) => (
+            <LeaderBioCard key={idx} {...leader} />
+          ))}
         </div>
       </Container>
     </section>

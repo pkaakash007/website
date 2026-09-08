@@ -44,12 +44,12 @@ export const MarketingFAQAccordion: React.FC = () => {
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-white border-b border-border">
+    <section id="faq" className="py-20 bg-white border-b border-border scroll-mt-20">
       <Container size="wide">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center space-y-4 mb-14">
-            <Badge variant="gold">FREQUENTLY ASKED QUESTIONS</Badge>
-            <h2 className="text-3xl sm:text-5xl font-bold text-primary tracking-tight">
+          <div className="text-center space-y-3 mb-12">
+            <Badge variant="gold">Frequently Asked Questions</Badge>
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
               Direct Answers to Key Questions
             </h2>
             <p className="text-base text-secondary">
@@ -63,26 +63,26 @@ export const MarketingFAQAccordion: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="rounded-2xl border border-border bg-canvas overflow-hidden transition-colors"
+                  className="rounded-xl border border-border bg-surface overflow-hidden"
                 >
                   <button
                     type="button"
                     onClick={() => toggle(idx)}
-                    className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
+                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
                     aria-expanded={isOpen}
                   >
-                    <span className="text-base sm:text-lg font-bold text-primary">
+                    <span className="text-base font-semibold text-primary">
                       {faq.question}
                     </span>
                     <ChevronDown
-                      className={`w-5 h-5 text-gold-700 shrink-0 transition-transform duration-200 ${
-                        isOpen ? "rotate-180" : ""
+                      className={`w-5 h-5 text-gray-600 shrink-0 transition-transform duration-200 ${
+                        isOpen ? "rotate-180 text-primary" : ""
                       }`}
                     />
                   </button>
 
                   {isOpen && (
-                    <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-secondary leading-relaxed border-t border-border/60">
+                    <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-1 text-sm sm:text-base text-secondary leading-relaxed border-t border-border">
                       {faq.answer}
                     </div>
                   )}

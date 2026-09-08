@@ -19,7 +19,7 @@ export const AppDevLifecycleTimeline: React.FC = () => {
       duration: "Week 1 - 2",
       description:
         "Requirements mapping, database schema design, third-party API audit, system architecture blueprint, and milestone roadmap alignment.",
-      outcomes: ["Software Architecture Document (SAD)", "Database ER Diagrams", "Fixed Milestone SLA"],
+      outcomes: ["Software Architecture Document", "Database ER Diagrams", "Milestone Delivery SLA"],
     },
     {
       step: "02",
@@ -60,11 +60,11 @@ export const AppDevLifecycleTimeline: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-canvas border-b border-border">
+    <section className="py-20 bg-canvas border-b border-border">
       <Container size="wide">
-        <div className="max-w-3xl mb-16 space-y-4">
-          <Badge variant="gold">DEVELOPMENT ROADMAP</Badge>
-          <h2 className="text-3xl sm:text-5xl font-bold text-primary tracking-tight">
+        <div className="max-w-3xl mb-14 space-y-3">
+          <Badge variant="gold">Development Roadmap</Badge>
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
             How We Build & Ship Software
           </h2>
           <p className="text-base text-secondary leading-relaxed">
@@ -78,14 +78,14 @@ export const AppDevLifecycleTimeline: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="p-7 rounded-3xl bg-white border border-border hover:border-gold/60 shadow-card hover:shadow-card-hover transition-all flex flex-col justify-between"
+                className="p-7 rounded-2xl bg-white border border-border hover:border-gold/60 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-xl font-bold font-mono text-gold-700">
+                    <span className="text-xl font-bold text-gold-700">
                       {item.step}
                     </span>
-                    <span className="text-[10px] font-mono text-muted bg-surface px-2.5 py-0.5 rounded-full border border-border">
+                    <span className="text-xs text-muted bg-surface px-2 py-0.5 rounded border border-border">
                       {item.duration}
                     </span>
                   </div>
@@ -103,13 +103,13 @@ export const AppDevLifecycleTimeline: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="pt-5 mt-4 border-t border-border/70 space-y-1.5">
-                  <span className="text-[10px] font-mono uppercase text-muted font-bold block">
+                <div className="pt-4 mt-4 border-t border-border space-y-1.5">
+                  <span className="text-xs text-muted font-semibold block">
                     Deliverables:
                   </span>
                   {item.outcomes.map((out, i) => (
-                    <div key={i} className="flex items-start gap-1.5 text-[11px] text-secondary">
-                      <CheckCircle className="w-3 h-3 text-emerald-600 shrink-0 mt-0.5" />
+                    <div key={i} className="flex items-start gap-1.5 text-xs text-secondary">
+                      <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                       <span className="line-clamp-1">{out}</span>
                     </div>
                   ))}

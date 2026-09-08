@@ -3,10 +3,10 @@ import { Container } from "@/components/layout/Container";
 import { SEOHead } from "@/components/seo/SEOHead";
 import { SEO_CONFIG } from "@/config/seo";
 import { ContactForm } from "@/components/common/ContactForm";
-import ContactHero from "@/features/contact/components/ContactHero";
-import ContactDirectChannels from "@/features/contact/components/ContactDirectChannels";
-import ContactHQLocationCard from "@/features/contact/components/ContactHQLocationCard";
-import ContactFAQ from "@/features/contact/components/ContactFAQ";
+import ContactHero from "@/features/contact/components/hero/ContactHero";
+import ContactDirectChannels from "@/features/contact/components/channels/ContactDirectChannels";
+import ContactHQLocationCard from "@/features/contact/components/locations/ContactHQLocationCard";
+import ContactFAQ from "@/features/contact/components/faq/ContactFAQ";
 
 export const ContactPage: React.FC = () => {
   return (

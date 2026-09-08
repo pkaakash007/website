@@ -8,7 +8,6 @@ import {
   Layers,
   Zap,
   Globe2,
-  CheckCircle2,
 } from "lucide-react";
 
 export const AppDevArchitectureHighlights: React.FC = () => {
@@ -35,7 +34,7 @@ export const AppDevArchitectureHighlights: React.FC = () => {
     },
     {
       icon: Globe2,
-      title: "Regional & Bilingual Capabilities",
+      title: "Regional & Billing Capabilities",
       desc: "Seamless support for Indian GST billing standards, Tamil Nadu localized tax compliance, multi-currency conversion, and English-Tamil bilingual interfaces.",
     },
     {
@@ -46,11 +45,11 @@ export const AppDevArchitectureHighlights: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-white border-b border-border">
+    <section className="py-20 bg-white border-b border-border">
       <Container size="wide">
-        <div className="max-w-3xl mb-16 space-y-4">
-          <Badge variant="outline">ENTERPRISE STANDARDS</Badge>
-          <h2 className="text-3xl sm:text-5xl font-bold text-primary tracking-tight">
+        <div className="max-w-3xl mb-14 space-y-3">
+          <Badge variant="outline">Enterprise Standards</Badge>
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
             Engineered for Stability, Security & Speed
           </h2>
           <p className="text-base text-secondary leading-relaxed">
@@ -64,15 +63,15 @@ export const AppDevArchitectureHighlights: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="p-8 rounded-3xl bg-canvas border border-border shadow-subtle hover:border-gold/50 transition-colors space-y-4"
+                className="p-8 rounded-2xl bg-canvas border border-border hover:border-gold/50 transition-colors space-y-3"
               >
-                <div className="w-12 h-12 rounded-2xl bg-white border border-border flex items-center justify-center text-primary shadow-subtle">
-                  <Icon className="w-6 h-6 text-gold-700" />
+                <div className="w-11 h-11 rounded-xl bg-white border border-border flex items-center justify-center text-primary shadow-sm">
+                  <Icon className="w-5 h-5 text-gold-700" />
                 </div>
                 <h3 className="text-lg font-bold text-primary">
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-secondary leading-relaxed">
+                <p className="text-sm text-secondary leading-relaxed">
                   {item.desc}
                 </p>
               </div>

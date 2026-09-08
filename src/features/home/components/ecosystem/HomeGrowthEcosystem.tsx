@@ -12,7 +12,7 @@ export const HomeGrowthEcosystem: React.FC = () => {
       subtitle: "SEO & Generative Engine Optimization",
       desc: "We construct factual entity graphs and high-authority backlink networks so search engines and AI assistants recommend your business first.",
       icon: Search,
-      link: "/digital-marketing/seo",
+      link: "/digital-marketing",
     },
     {
       num: "02",
@@ -28,24 +28,24 @@ export const HomeGrowthEcosystem: React.FC = () => {
       subtitle: "Google Ads & Social Paid Acquisition",
       desc: "Zero wasted ad spend through negative keyword gating, hyper-targeted commercial intent queries, and optimized landing pages.",
       icon: Target,
-      link: "/digital-marketing/google-ads",
+      link: "/digital-marketing",
     },
     {
       num: "04",
       title: "Intelligent Automation",
-      subtitle: "Custom ERP & AI WhatsApp Desks",
-      desc: "Automated lead distribution, conversational WhatsApp bots, and custom operational ERPs that lower operational overhead.",
+      subtitle: "Custom ERP & Process Workflows",
+      desc: "Automated lead distribution, conversational WhatsApp desks, and custom operational ERPs that lower operational overhead.",
       icon: Cpu,
       link: "/application-development",
     },
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-white border-b border-border">
+    <section className="py-20 bg-white border-b border-border">
       <Container size="wide">
-        <div className="max-w-3xl mb-16 space-y-4">
-          <Badge variant="outline">THE REAL RESULT ADVANTAGE</Badge>
-          <h2 className="text-3xl sm:text-5xl font-bold text-primary tracking-tight">
+        <div className="max-w-3xl mb-14 space-y-3">
+          <Badge variant="outline">Integrated Infrastructure</Badge>
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
             The Synchronized Growth Machine
           </h2>
           <p className="text-base text-secondary leading-relaxed">

@@ -1,12 +1,12 @@
 import React from "react";
 import { SEOHead } from "@/components/seo/SEOHead";
-import AppDevHero from "@/features/application-development/components/AppDevHero";
-import AppDevServicesGrid from "@/features/application-development/components/AppDevServicesGrid";
-import AppDevTechStackInteractive from "@/features/application-development/components/AppDevTechStackInteractive";
-import AppDevLifecycleTimeline from "@/features/application-development/components/AppDevLifecycleTimeline";
-import AppDevArchitectureHighlights from "@/features/application-development/components/AppDevArchitectureHighlights";
-import AppDevPortfolioShowcase from "@/features/application-development/components/AppDevPortfolioShowcase";
-import AppDevQuotationCTA from "@/features/application-development/components/AppDevQuotationCTA";
+import AppDevHero from "@/features/application-development/components/hero/AppDevHero";
+import AppDevServicesGrid from "@/features/application-development/components/services/AppDevServicesGrid";
+import AppDevTechStackInteractive from "@/features/application-development/components/tech-stack/AppDevTechStackInteractive";
+import AppDevLifecycleTimeline from "@/features/application-development/components/roadmap/AppDevLifecycleTimeline";
+import AppDevArchitectureHighlights from "@/features/application-development/components/architecture/AppDevArchitectureHighlights";
+import AppDevPortfolioShowcase from "@/features/application-development/components/portfolio/AppDevPortfolioShowcase";
+import AppDevQuotationCTA from "@/features/application-development/components/cta/AppDevQuotationCTA";
 
 export const ApplicationDevelopmentPage: React.FC = () => {
   return (

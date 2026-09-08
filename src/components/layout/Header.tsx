@@ -191,8 +191,8 @@ export const Header: React.FC = () => {
               {/* Mega Dropdown */}
               {solutionsOpen && (
                 <div className="absolute top-full right-0 pt-2 w-[340px] animate-in fade-in slide-in-from-top-2 duration-200">
-                  <div className="bg-white rounded-3xl border border-border p-4 shadow-floating">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-muted px-2 pb-2 border-b border-border/80 flex items-center justify-between">
+                  <div className="bg-white rounded-2xl border border-border p-4 shadow-xl">
+                    <div className="text-xs font-semibold text-secondary px-2 pb-2 border-b border-border/80 flex items-center justify-between">
                       <span>Explore Real Result</span>
                     </div>
 
@@ -221,7 +221,7 @@ export const Header: React.FC = () => {
               size="sm"
               withArrow
               onClick={() => openLeadModal("header-cta")}
-              className="font-bold tracking-tight text-xs uppercase px-5 py-2.5 shadow-gold-subtle cursor-pointer"
+              className="font-semibold text-xs px-5 py-2.5 shadow-sm cursor-pointer"
             >
               Request Consultation
             </Button>
@@ -233,7 +233,7 @@ export const Header: React.FC = () => {
               variant="gold"
               size="sm"
               onClick={() => openLeadModal("mobile-header-cta")}
-              className="text-xs px-3 py-1.5 font-bold uppercase tracking-wider cursor-pointer"
+              className="text-xs px-3.5 py-1.5 font-semibold cursor-pointer"
             >
               Consultation
             </Button>
@@ -255,7 +255,7 @@ export const Header: React.FC = () => {
           <div className="space-y-6 max-w-lg mx-auto">
             {/* Top 5 Major Pages */}
             <div className="space-y-2">
-              <div className="text-[11px] font-mono uppercase tracking-widest text-gold-700 font-bold mb-2 px-2">
+              <div className="text-xs font-semibold text-gold-800 mb-2 px-2">
                 Major Pages
               </div>
               <Link
@@ -308,7 +308,7 @@ export const Header: React.FC = () => {
 
             {/* Secondary Hubs */}
             <div className="pt-2 border-t border-border">
-              <div className="text-[11px] font-mono uppercase tracking-widest text-muted font-bold mb-2 px-2">
+              <div className="text-xs font-semibold text-muted mb-2 px-2">
                 Additional Hubs
               </div>
               <div className="grid grid-cols-2 gap-2">

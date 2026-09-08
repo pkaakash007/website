@@ -4,15 +4,15 @@ import { Code2, ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const AppDevPillarCard: React.FC = () => {
   return (
-    <div className="p-8 sm:p-10 rounded-4xl bg-white border border-border hover:border-blue-300 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between group">
+    <div className="p-8 sm:p-10 rounded-2xl bg-white border border-border hover:border-blue-300 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group">
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 text-blue-700 flex items-center justify-center font-bold">
-              <Code2 className="w-6 h-6" />
+            <div className="w-11 h-11 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 flex items-center justify-center font-bold">
+              <Code2 className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-[10px] font-mono uppercase text-blue-700 font-bold tracking-wider">
+              <span className="text-xs font-semibold text-blue-700">
                 Division 02
               </span>
               <h3 className="text-2xl font-bold text-primary group-hover:text-blue-700 transition-colors">
@@ -20,26 +20,20 @@ export const AppDevPillarCard: React.FC = () => {
               </h3>
             </div>
           </div>
-          <span className="text-xs font-mono uppercase px-3 py-1 rounded-full bg-blue-50 text-blue-900 border border-blue-200 font-bold">
+          <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-blue-50 text-blue-900 border border-blue-200">
             Web & Mobile
           </span>
         </div>
 
-        <div className="relative rounded-2xl overflow-hidden border border-border shadow-subtle group/img">
+        <div className="rounded-xl overflow-hidden border border-border">
           <img
             src="/images/application-development-hero.jpg"
             alt="Application Development and Mobile Engineering"
-            className="w-full h-64 sm:h-72 object-cover transition-transform duration-700 group-hover/img:scale-105"
+            className="w-full h-64 sm:h-72 object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-5">
-            <div className="text-white">
-              <span className="text-xs font-mono uppercase text-blue-300 font-bold">
-                Cross-Platform & Cloud
-              </span>
-              <p className="text-sm font-semibold text-white/90">
-                iOS & Android Apps · React Portals · SaaS Systems
-              </p>
-            </div>
+          <div className="p-3 bg-surface border-t border-border text-xs text-secondary flex items-center justify-between">
+            <span className="font-semibold text-primary">Cross-Platform & Cloud</span>
+            <span>iOS · Android · Web Apps</span>
           </div>
         </div>
 
@@ -47,7 +41,7 @@ export const AppDevPillarCard: React.FC = () => {
           Engineered for enterprise scale and zero downtime. We build cross-platform mobile apps, bespoke business management ERPs, multi-tenant cloud SaaS, and AI-powered operational tools.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 border-t border-border/80">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 border-t border-border">
           <div className="flex items-center gap-2 text-xs font-medium text-primary">
             <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
             <span>iOS & Android Apps (React Native / Flutter)</span>
@@ -67,15 +61,15 @@ export const AppDevPillarCard: React.FC = () => {
         </div>
       </div>
 
-      <div className="pt-8 mt-6 border-t border-border flex items-center justify-between">
+      <div className="pt-6 mt-6 border-t border-border flex items-center justify-between">
         <Link
           to="/application-development"
-          className="inline-flex items-center gap-2 text-sm font-bold text-primary group-hover:text-blue-700 transition-colors"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-blue-700 transition-colors"
         >
           <span>Explore Application Suite</span>
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
         </Link>
-        <span className="text-xs font-mono text-blue-800 font-bold bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200">
+        <span className="text-xs font-semibold text-blue-800 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200">
           99.98% SLA
         </span>
       </div>

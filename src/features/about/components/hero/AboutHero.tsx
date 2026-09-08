@@ -4,32 +4,25 @@ import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { ShieldCheck, Award, ArrowRight, Sparkles } from "lucide-react";
+import { Award } from "lucide-react";
 
 export const AboutHero: React.FC = () => {
   return (
-    <section className="relative pt-12 pb-20 sm:pt-20 sm:pb-28 bg-gradient-to-b from-canvas via-white to-canvas border-b border-border overflow-hidden">
-      {/* Subtle background glow */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gold/10 rounded-full blur-[140px] pointer-events-none -z-10" />
-
+    <section className="relative pt-12 pb-16 lg:pt-20 lg:pb-24 bg-white border-b border-border">
       <Container size="wide">
         <Breadcrumbs items={[{ label: "About Us" }]} />
 
         <div className="max-w-4xl space-y-6 mt-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold">
-            <Award className="w-3.5 h-3.5 text-gold-600" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#FBF7EE] border border-[#E8D298] text-[#8E6D2E] text-xs font-semibold">
+            <Award className="w-3.5 h-3.5 text-gold-600 shrink-0" />
             <span>Corporate Philosophy · Erode Headquarters, Tamil Nadu</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-primary leading-[1.08]">
-            Engineered to Replace{" "}
-            <span className="font-serif italic font-normal text-gold-700">
-              Vendor Fragmentation
-            </span>
-            .
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-primary leading-tight">
+            Engineered to Replace Vendor Fragmentation.
           </h1>
 
-          <p className="text-base sm:text-xl text-secondary leading-relaxed font-normal max-w-3xl">
+          <p className="text-base sm:text-lg text-secondary leading-relaxed font-normal max-w-3xl">
             Growing enterprises waste momentum coordinating disconnected agencies for web development, SEO, media buying, and software operations. Real Result unifies engineering rigor and high-velocity digital marketing into one synchronized execution partner.
           </p>
 
@@ -39,7 +32,7 @@ export const AboutHero: React.FC = () => {
               size="lg"
               withArrow
               onClick={() => openLeadModal("about-hero")}
-              className="cursor-pointer shadow-gold-subtle font-bold"
+              className="cursor-pointer font-bold"
             >
               Schedule Executive Briefing
             </Button>

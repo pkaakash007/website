@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/common/Badge";
+import ValueItemCard from "./ValueItemCard";
 import { Target, Zap, ShieldCheck, HeartHandshake } from "lucide-react";
 
 export const AboutCoreValues: React.FC = () => {
@@ -28,11 +29,11 @@ export const AboutCoreValues: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-canvas border-b border-border">
+    <section className="py-20 bg-canvas border-b border-border">
       <Container size="wide">
-        <div className="max-w-3xl mb-16 space-y-4">
-          <Badge variant="gold">OPERATIONAL ETHOS</Badge>
-          <h2 className="text-3xl sm:text-5xl font-bold text-primary tracking-tight">
+        <div className="max-w-3xl mb-14 space-y-3">
+          <Badge variant="gold">Operational Ethos</Badge>
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
             Our Core Operating Principles
           </h2>
           <p className="text-base text-secondary leading-relaxed">
@@ -41,27 +42,9 @@ export const AboutCoreValues: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {values.map((val, idx) => {
-            const Icon = val.icon;
-            return (
-              <div
-                key={idx}
-                className="p-8 rounded-3xl bg-white border border-border hover:border-gold/60 shadow-card hover:shadow-card-hover transition-all flex flex-col justify-between"
-              >
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-2xl bg-surface border border-border flex items-center justify-center text-gold-700">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold text-primary">
-                    {val.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-secondary leading-relaxed">
-                    {val.desc}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+          {values.map((val, idx) => (
+            <ValueItemCard key={idx} {...val} />
+          ))}
         </div>
       </Container>
     </section>

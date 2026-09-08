@@ -5,19 +5,19 @@ import { CheckCircle2, Building, Target, Compass } from "lucide-react";
 
 export const AboutStory: React.FC = () => {
   return (
-    <section className="py-20 lg:py-28 bg-white border-b border-border">
+    <section className="py-20 bg-white border-b border-border">
       <Container size="wide">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 space-y-6">
-            <Badge variant="gold">ORIGIN & PURPOSE</Badge>
-            <h2 className="text-3xl sm:text-5xl font-bold text-primary tracking-tight">
+            <Badge variant="gold">Origin & Purpose</Badge>
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
               Where Engineering Rigor Meets Digital Performance
             </h2>
             <p className="text-base text-secondary leading-relaxed">
               Founded in Erode, at the geographic and manufacturing heart of Tamil Nadu, Real Result was built on a simple premise: commercial growth in the digital era is an engineering discipline, not a guesswork exercise.
             </p>
             <p className="text-base text-secondary leading-relaxed">
-              While traditional marketing agencies rely on vanity metrics and offshore dev shops produce software disconnected from business pipelines, we engineered an integrated model. Every application we code is built for high search conversion, and every search campaign we run is supported by modern data architecture.
+              While traditional marketing agencies rely on vanity impressions and offshore dev shops produce software disconnected from business pipelines, we engineered an integrated model. Every application we code is built for high search conversion, and every search campaign we run is supported by modern data architecture.
             </p>
 
             <div className="pt-2 space-y-3">
@@ -40,7 +40,7 @@ export const AboutStory: React.FC = () => {
 
           <div className="lg:col-span-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-7 rounded-3xl bg-canvas border border-border space-y-3">
+              <div className="p-7 rounded-2xl bg-surface border border-border space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-white border border-border flex items-center justify-center text-gold-700">
                   <Building className="w-5 h-5" />
                 </div>
@@ -50,7 +50,7 @@ export const AboutStory: React.FC = () => {
                 </p>
               </div>
 
-              <div className="p-7 rounded-3xl bg-canvas border border-border space-y-3">
+              <div className="p-7 rounded-2xl bg-surface border border-border space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-white border border-border flex items-center justify-center text-gold-700">
                   <Target className="w-5 h-5" />
                 </div>
@@ -60,7 +60,7 @@ export const AboutStory: React.FC = () => {
                 </p>
               </div>
 
-              <div className="p-7 rounded-3xl bg-canvas border border-border space-y-3 sm:col-span-2">
+              <div className="p-7 rounded-2xl bg-surface border border-border space-y-3 sm:col-span-2">
                 <div className="w-10 h-10 rounded-xl bg-white border border-border flex items-center justify-center text-gold-700">
                   <Compass className="w-5 h-5" />
                 </div>

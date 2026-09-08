@@ -1,11 +1,11 @@
 import React from "react";
 import { SEOHead } from "@/components/seo/SEOHead";
-import AboutHero from "@/features/about/components/AboutHero";
-import AboutStory from "@/features/about/components/AboutStory";
-import AboutCoreValues from "@/features/about/components/AboutCoreValues";
-import AboutMilestonesStats from "@/features/about/components/AboutMilestonesStats";
-import AboutLeadershipTeam from "@/features/about/components/AboutLeadershipTeam";
-import AboutBriefingCTA from "@/features/about/components/AboutBriefingCTA";
+import AboutHero from "@/features/about/components/hero/AboutHero";
+import AboutStory from "@/features/about/components/story/AboutStory";
+import AboutCoreValues from "@/features/about/components/values/AboutCoreValues";
+import AboutMilestonesStats from "@/features/about/components/stats/AboutMilestonesStats";
+import AboutLeadershipTeam from "@/features/about/components/leadership/AboutLeadershipTeam";
+import AboutBriefingCTA from "@/features/about/components/cta/AboutBriefingCTA";
 
 export const AboutPage: React.FC = () => {
   return (

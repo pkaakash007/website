@@ -6,11 +6,11 @@ import AppDevPillarCard from "./AppDevPillarCard";
 
 export const HomePillarsDualShowcase: React.FC = () => {
   return (
-    <section id="pillars" className="py-20 lg:py-28 bg-canvas border-b border-border scroll-mt-20">
+    <section id="pillars" className="py-20 bg-canvas border-b border-border scroll-mt-20">
       <Container size="wide">
-        <div className="max-w-3xl mb-16 space-y-4">
-          <Badge variant="gold">TWO CORE POWERHOUSES</Badge>
-          <h2 className="text-3xl sm:text-5xl font-bold text-primary tracking-tight">
+        <div className="max-w-3xl mb-14 space-y-3">
+          <Badge variant="gold">Two Core Divisions</Badge>
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
             Our Two Flagship Divisions
           </h2>
           <p className="text-base text-secondary leading-relaxed">
@@ -18,7 +18,7 @@ export const HomePillarsDualShowcase: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <MarketingPillarCard />
           <AppDevPillarCard />
         </div>

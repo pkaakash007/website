@@ -14,20 +14,20 @@ export const LeaderBioCard: React.FC<LeaderProps> = ({
   bio,
 }) => {
   return (
-    <div className="p-8 rounded-3xl bg-canvas border border-border hover:border-gold/50 transition-colors flex flex-col justify-between">
+    <div className="p-7 rounded-2xl bg-canvas border border-border hover:border-gold/50 transition-colors flex flex-col justify-between">
       <div className="space-y-4">
-        <div className="w-12 h-12 rounded-2xl bg-white border border-border flex items-center justify-center text-gold-700 shadow-subtle">
-          <Icon className="w-6 h-6" />
+        <div className="w-11 h-11 rounded-xl bg-white border border-border flex items-center justify-center text-gold-700 shadow-sm">
+          <Icon className="w-5 h-5" />
         </div>
         <div>
           <h3 className="text-lg font-bold text-primary">
             {role}
           </h3>
-          <span className="text-xs font-mono text-gold-700 font-semibold block mt-0.5">
+          <span className="text-xs font-semibold text-[#8E6D2E] block mt-0.5">
             {discipline}
           </span>
         </div>
-        <p className="text-xs sm:text-sm text-secondary leading-relaxed">
+        <p className="text-sm text-secondary leading-relaxed">
           {bio}
         </p>
       </div>

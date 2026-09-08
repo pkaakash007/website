@@ -52,15 +52,13 @@ const locationSilo = [
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-charcoal text-white pt-20 pb-12 border-t border-charcoal-border relative overflow-hidden">
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
-
+    <footer className="bg-charcoal text-white pt-20 pb-12 border-t border-charcoal-border relative">
       <Container size="wide">
         {/* Top Banner */}
         <div className="pb-16 mb-16 border-b border-charcoal-border flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/30 text-gold-300 text-xs font-mono uppercase tracking-widest mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-gold/10 border border-gold/30 text-gold-300 text-xs font-semibold mb-4">
+              <span className="w-2 h-2 rounded-full bg-gold" />
               Tamil Nadu Search + AI Platform
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white">
@@ -120,7 +118,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: Digital Marketing & SEO */}
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-gold mb-4 font-bold">
+            <div className="flex items-center gap-2 text-xs font-semibold text-gold mb-4">
               <TrendingUp className="w-3.5 h-3.5" />
               <span>Digital Marketing & SEO</span>
             </div>
@@ -140,7 +138,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: Software & Web Development */}
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-gold mb-4 font-bold">
+            <div className="flex items-center gap-2 text-xs font-semibold text-gold mb-4">
               <Code2 className="w-3.5 h-3.5" />
               <span>Software & Technology</span>
             </div>
@@ -160,7 +158,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 4: Tamil Nadu Locations */}
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-gold mb-4 font-bold">
+            <div className="flex items-center gap-2 text-xs font-semibold text-gold mb-4">
               <MapPin className="w-3.5 h-3.5" />
               <span>Tamil Nadu Locations</span>
             </div>
@@ -206,7 +204,7 @@ export const Footer: React.FC = () => {
             </Link>
           </div>
 
-          <div className="text-gold/80 font-mono text-[11px]">
+          <div className="text-gold/80 text-xs font-medium">
             Entity: Real Result Marketing (Erode, Tamil Nadu)
           </div>
         </div>

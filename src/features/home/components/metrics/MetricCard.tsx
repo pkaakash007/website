@@ -8,12 +8,12 @@ interface MetricCardProps {
 
 export const MetricCard: React.FC<MetricCardProps> = ({ value, label, note }) => {
   return (
-    <div className="p-8 rounded-3xl bg-charcoal-surface border border-charcoal-border hover:border-gold/40 transition-colors flex flex-col justify-between">
+    <div className="p-8 rounded-2xl bg-charcoal-surface border border-charcoal-border flex flex-col justify-between">
       <div>
-        <div className="text-4xl sm:text-5xl font-black font-mono text-gold mb-2">
+        <div className="text-4xl font-bold text-gold mb-2">
           {value}
         </div>
-        <h3 className="text-base font-bold text-white mb-2">
+        <h3 className="text-base font-semibold text-white mb-2">
           {label}
         </h3>
       </div>

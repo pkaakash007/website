@@ -54,7 +54,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
         {showTagline && (
           <span
             className={`font-semibold tracking-[0.18em] uppercase leading-none -mt-0.5 ${
-              theme === "dark" ? "text-gold-300/80" : "text-secondary font-mono"
+              theme === "dark" ? "text-gold-300/80" : "text-secondary font-sans font-medium"
             } ${dimensions.sub}`}
           >
             MARKETING • MEDIA • GROWTH

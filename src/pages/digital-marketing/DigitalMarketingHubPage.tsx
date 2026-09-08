@@ -1,12 +1,12 @@
 import React from "react";
 import { SEOHead } from "@/components/seo/SEOHead";
-import MarketingHero from "@/features/digital-marketing/components/MarketingHero";
-import MarketingPillarsGrid from "@/features/digital-marketing/components/MarketingPillarsGrid";
-import MarketingFunnelInteractive from "@/features/digital-marketing/components/MarketingFunnelInteractive";
-import MarketingGrowthMetrics from "@/features/digital-marketing/components/MarketingGrowthMetrics";
-import MarketingRegionalGlobalReach from "@/features/digital-marketing/components/MarketingRegionalGlobalReach";
-import MarketingFAQAccordion from "@/features/digital-marketing/components/MarketingFAQAccordion";
-import MarketingConsultationCTA from "@/features/digital-marketing/components/MarketingConsultationCTA";
+import MarketingHero from "@/features/digital-marketing/components/hero/MarketingHero";
+import MarketingPillarsGrid from "@/features/digital-marketing/components/pillars/MarketingPillarsGrid";
+import MarketingFunnelInteractive from "@/features/digital-marketing/components/funnel/MarketingFunnelInteractive";
+import MarketingGrowthMetrics from "@/features/digital-marketing/components/metrics/MarketingGrowthMetrics";
+import MarketingRegionalGlobalReach from "@/features/digital-marketing/components/reach/MarketingRegionalGlobalReach";
+import MarketingFAQAccordion from "@/features/digital-marketing/components/faq/MarketingFAQAccordion";
+import MarketingConsultationCTA from "@/features/digital-marketing/components/cta/MarketingConsultationCTA";
 
 export const DigitalMarketingHubPage: React.FC = () => {
   return (

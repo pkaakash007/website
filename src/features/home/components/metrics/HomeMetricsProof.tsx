@@ -18,23 +18,21 @@ export const HomeMetricsProof: React.FC = () => {
     {
       value: "10M+",
       label: "Search & App Engagements",
-      note: "Processed across our client portals, APIs, and eCommerce systems.",
+      note: "Processed across our client portals, APIs, and commercial systems.",
     },
     {
       value: "150+",
-      label: "Deployments in Tamil Nadu & Global",
+      label: "Deployments Across Tamil Nadu & Global",
       note: "Across manufacturing, textile exports, healthcare, and SaaS sectors.",
     },
   ];
 
   return (
-    <section className="py-20 bg-charcoal text-white relative overflow-hidden">
-      <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
-
+    <section className="py-20 bg-charcoal text-white relative">
       <Container size="wide">
-        <div className="max-w-3xl mb-14 space-y-4">
-          <Badge variant="gold">MEASURED PERFORMANCE TELEMETRY</Badge>
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
+        <div className="max-w-3xl mb-12 space-y-3">
+          <Badge variant="gold">Measured Performance</Badge>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
             Proof in Hard Numbers
           </h2>
           <p className="text-charcoal-muted text-base leading-relaxed">

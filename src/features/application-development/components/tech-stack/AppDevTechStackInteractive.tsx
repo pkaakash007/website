@@ -7,8 +7,6 @@ import {
   Server,
   Database,
   Cloud,
-  Layers,
-  Cpu,
   CheckCircle2,
 } from "lucide-react";
 
@@ -31,7 +29,7 @@ const techCategories: TechCategory[] = [
     icon: Code,
     description: "Modern, performant client-side architectures delivering sub-second page loads and fluid 60fps animations.",
     technologies: [
-      { name: "React 18 & TypeScript", description: "Strictly typed component systems with clean state management", badge: "Core Stack" },
+      { name: "React & TypeScript", description: "Strictly typed component systems with clean state management", badge: "Core Stack" },
       { name: "Next.js / Vite", description: "High-speed bundlers and hybrid SSR/SSG for SEO and performance", badge: "Framework" },
       { name: "Tailwind CSS", description: "Utility-first responsive design tokens and custom dark/light modes", badge: "Styling" },
       { name: "Framer Motion", description: "Smooth micro-interactions and scroll-driven page physics", badge: "Animations" },
@@ -93,11 +91,11 @@ export const AppDevTechStackInteractive: React.FC = () => {
   const ActiveIcon = activeCategory.icon;
 
   return (
-    <section className="py-20 lg:py-28 bg-white border-b border-border">
+    <section className="py-20 bg-white border-b border-border">
       <Container size="wide">
-        <div className="max-w-3xl mb-14 space-y-4">
-          <Badge variant="outline">MODERN TECH STACK</Badge>
-          <h2 className="text-3xl sm:text-5xl font-bold text-primary tracking-tight">
+        <div className="max-w-3xl mb-12 space-y-3">
+          <Badge variant="outline">Technology Foundation</Badge>
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
             Battle-Tested Technology Stack
           </h2>
           <p className="text-base text-secondary leading-relaxed">
@@ -106,7 +104,7 @@ export const AppDevTechStackInteractive: React.FC = () => {
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex flex-wrap gap-2.5 mb-10 pb-2 border-b border-border">
+        <div className="flex flex-wrap gap-2 mb-8 pb-2 border-b border-border">
           {techCategories.map((cat) => {
             const Icon = cat.icon;
             const isSelected = activeTab === cat.id;
@@ -115,13 +113,13 @@ export const AppDevTechStackInteractive: React.FC = () => {
                 key={cat.id}
                 type="button"
                 onClick={() => setActiveTab(cat.id)}
-                className={`flex items-center gap-2 px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all cursor-pointer ${
                   isSelected
-                    ? "bg-primary text-white shadow-card"
-                    : "bg-canvas text-secondary hover:text-primary hover:bg-surface border border-border/70"
+                    ? "bg-primary text-white shadow-sm"
+                    : "bg-surface text-secondary hover:text-primary hover:bg-gray-200/70 border border-border"
                 }`}
               >
-                <Icon className={`w-4 h-4 ${isSelected ? "text-gold" : "text-muted"}`} />
+                <Icon className={`w-4 h-4 ${isSelected ? "text-gold-300" : "text-muted"}`} />
                 <span>{cat.name}</span>
               </button>
             );
@@ -129,29 +127,29 @@ export const AppDevTechStackInteractive: React.FC = () => {
         </div>
 
         {/* Active Tab Panel */}
-        <div className="p-8 lg:p-12 rounded-3xl bg-canvas border border-border shadow-card space-y-8">
+        <div className="p-8 rounded-2xl bg-surface border border-border space-y-6">
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-gold/20 text-gold-800 flex items-center justify-center shrink-0">
-              <ActiveIcon className="w-6 h-6" />
+            <div className="w-10 h-10 rounded-xl bg-white border border-border text-primary flex items-center justify-center shrink-0">
+              <ActiveIcon className="w-5 h-5 text-gold-700" />
             </div>
             <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-primary">
+              <h3 className="text-xl font-bold text-primary">
                 {activeCategory.name} Engineering Standards
               </h3>
-              <p className="text-sm text-secondary mt-1 max-w-2xl leading-relaxed">
+              <p className="text-sm text-secondary mt-0.5 max-w-2xl leading-relaxed">
                 {activeCategory.description}
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {activeCategory.technologies.map((tech, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-white border border-border/90 shadow-subtle flex flex-col justify-between"
+                className="p-5 rounded-xl bg-white border border-border shadow-sm flex flex-col justify-between"
               >
-                <div className="space-y-2.5">
-                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-gold-50 text-gold-900 border border-gold-200 font-bold inline-block">
+                <div className="space-y-2">
+                  <span className="text-xs font-medium px-2 py-0.5 rounded bg-[#FBF7EE] text-[#8E6D2E] border border-[#E8D298] inline-block">
                     {tech.badge}
                   </span>
                   <h4 className="text-base font-bold text-primary">
@@ -161,7 +159,7 @@ export const AppDevTechStackInteractive: React.FC = () => {
                     {tech.description}
                   </p>
                 </div>
-                <div className="pt-4 mt-2 border-t border-border flex items-center gap-1.5 text-[11px] text-emerald-700 font-semibold">
+                <div className="pt-3 mt-2 border-t border-border flex items-center gap-1.5 text-xs text-emerald-700 font-medium">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   <span>Enterprise Grade</span>
                 </div>

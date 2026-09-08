@@ -12,27 +12,23 @@ export const Badge: React.FC<BadgeProps> = ({
   children,
   variant = "default",
   className,
-  icon = true,
 }) => {
   const variantStyles = {
-    default: "bg-surface border-border text-secondary",
-    gold: "bg-gold-50 border-gold/40 text-gold-800 font-semibold shadow-gold-subtle",
-    teal: "bg-gold-50 border-gold/40 text-gold-800 font-semibold shadow-gold-subtle",
-    dark: "bg-charcoal border-charcoal-border text-white",
-    outline: "bg-white/90 backdrop-blur-sm border-border text-secondary",
+    default: "bg-gray-100 text-gray-800 border-gray-200",
+    gold: "bg-[#FBF7EE] text-[#8E6D2E] border-[#E8D298]",
+    teal: "bg-[#FBF7EE] text-[#8E6D2E] border-[#E8D298]",
+    dark: "bg-gray-900 text-white border-gray-800",
+    outline: "bg-white text-gray-700 border-gray-300",
   };
 
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium uppercase tracking-wider border shadow-2xs transition-all duration-200",
+        "inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold tracking-wide border transition-colors",
         variantStyles[variant],
         className
       )}
     >
-      {icon && (
-        <span className="text-[9px] text-gold-600 select-none">✦</span>
-      )}
       {children}
     </span>
   );

@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/common/Badge";
-import { TrendingUp, Award, BarChart2, ShieldCheck } from "lucide-react";
 
 export const MarketingGrowthMetrics: React.FC = () => {
   const metrics = [
@@ -28,14 +27,11 @@ export const MarketingGrowthMetrics: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-charcoal text-white relative overflow-hidden">
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-20 right-10 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
-
+    <section className="py-20 bg-charcoal text-white relative">
       <Container size="wide">
-        <div className="max-w-3xl mb-14 space-y-4">
-          <Badge variant="gold">PROVEN PERFORMANCE TELEMETRY</Badge>
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
+        <div className="max-w-3xl mb-12 space-y-3">
+          <Badge variant="gold">Proven Performance</Badge>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
             Performance Quantified, Not Promised.
           </h2>
           <p className="text-charcoal-muted text-base leading-relaxed">
@@ -47,13 +43,13 @@ export const MarketingGrowthMetrics: React.FC = () => {
           {metrics.map((item, idx) => (
             <div
               key={idx}
-              className="p-8 rounded-3xl bg-charcoal-surface border border-charcoal-border hover:border-gold/40 transition-colors flex flex-col justify-between"
+              className="p-8 rounded-2xl bg-charcoal-surface border border-charcoal-border flex flex-col justify-between"
             >
               <div>
-                <div className="text-4xl sm:text-5xl font-black font-mono text-gold mb-3">
+                <div className="text-4xl font-bold text-gold mb-2">
                   {item.value}
                 </div>
-                <h3 className="text-base font-bold text-white mb-2">
+                <h3 className="text-base font-semibold text-white mb-2">
                   {item.label}
                 </h3>
               </div>

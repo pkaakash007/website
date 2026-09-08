@@ -20,19 +20,19 @@ export const LocationDeskCard: React.FC<DeskProps> = ({
 }) => {
   return (
     <div
-      className={`p-7 rounded-3xl border transition-all flex flex-col justify-between ${
+      className={`p-7 rounded-2xl border transition-all flex flex-col justify-between ${
         isHQ
-          ? "bg-canvas border-gold/70 shadow-card"
-          : "bg-white border-border shadow-subtle hover:shadow-card"
+          ? "bg-canvas border-gold/70 shadow-sm"
+          : "bg-white border-border shadow-sm hover:shadow-md"
       }`}
     >
-      <div className="space-y-3.5">
+      <div className="space-y-3">
         <div className="flex items-center justify-between">
           <div className="w-10 h-10 rounded-xl bg-surface flex items-center justify-center text-gold-700">
             <Building2 className="w-5 h-5" />
           </div>
           {isHQ && (
-            <span className="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full bg-gold text-black font-bold">
+            <span className="text-xs font-semibold px-2 py-0.5 rounded bg-gold text-black">
               Corporate HQ
             </span>
           )}
@@ -42,7 +42,7 @@ export const LocationDeskCard: React.FC<DeskProps> = ({
           {city}
         </h3>
 
-        <span className="text-[11px] font-mono text-gold-800 font-semibold block">
+        <span className="text-xs font-semibold text-[#8E6D2E] block">
           {status}
         </span>
 
@@ -55,7 +55,7 @@ export const LocationDeskCard: React.FC<DeskProps> = ({
         </p>
       </div>
 
-      <div className="pt-5 mt-4 border-t border-border">
+      <div className="pt-4 mt-4 border-t border-border">
         <a
           href={mapLink}
           target="_blank"

@@ -1,5 +1,5 @@
 import React from "react";
-import { Sparkles, CheckCircle2 } from "lucide-react";
+import { FileText, CheckCircle2 } from "lucide-react";
 
 export interface DirectAnswerBoxProps {
   question: string;
@@ -19,14 +19,14 @@ export const DirectAnswerBox: React.FC<DirectAnswerBoxProps> = ({
   return (
     <section
       aria-label="Direct Answer Summary"
-      className={`my-8 p-6 sm:p-8 rounded-3xl bg-gold-50/80 border border-gold-200/90 shadow-subtle ${className}`}
+      className={`my-8 p-6 sm:p-8 rounded-2xl bg-surface border border-border ${className}`}
     >
       <div className="flex items-center gap-2 mb-3">
-        <div className="w-6 h-6 rounded-lg bg-gold text-black flex items-center justify-center font-bold">
-          <Sparkles className="w-3.5 h-3.5" />
+        <div className="w-6 h-6 rounded-md bg-gold text-black flex items-center justify-center font-bold">
+          <FileText className="w-3.5 h-3.5" />
         </div>
-        <span className="text-[11px] font-mono uppercase font-bold tracking-wider text-gold-900">
-          Executive Summary & AI Direct Answer
+        <span className="text-xs font-semibold text-primary">
+          Executive Summary
         </span>
       </div>
 
@@ -49,8 +49,8 @@ export const DirectAnswerBox: React.FC<DirectAnswerBoxProps> = ({
         </div>
       )}
 
-      <div className="mt-4 pt-3 border-t border-gold-200/40 flex items-center justify-between text-[11px] font-mono text-muted">
-        <span>Verified Entity: Real Result Marketing</span>
+      <div className="mt-4 pt-3 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-muted">
+        <span>Entity: Real Result Marketing</span>
         <span>{entityAttribution}</span>
       </div>
     </section>
