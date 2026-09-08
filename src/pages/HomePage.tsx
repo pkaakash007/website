@@ -1,89 +1,56 @@
 import React from "react";
 import { SEOHead } from "@/components/seo/SEOHead";
-import HeroMarketing from "@/features/home/components/HeroMarketing";
+import HomeHero from "@/features/home/components/hero/HomeHero";
 import HorizontalMarquee from "@/features/home/components/HorizontalMarquee";
+import HomePillarsDualShowcase from "@/features/home/components/pillars/HomePillarsDualShowcase";
+import HomeGrowthEcosystem from "@/features/home/components/ecosystem/HomeGrowthEcosystem";
 import CreativeShowcase from "@/features/home/components/CreativeShowcase";
 import MediaVisualStrip from "@/features/home/components/MediaVisualStrip";
-import DigitalEditorialSection from "@/features/home/components/DigitalEditorialSection";
-import FullWidthMediaMoodboard from "@/features/home/components/FullWidthMediaMoodboard";
-import PerformanceMarketing from "@/features/home/components/PerformanceMarketing";
-import AgencyScrollJourney from "@/features/home/components/AgencyScrollJourney";
-import AICommunicationBridge from "@/features/home/components/AICommunicationBridge";
+import HomeMetricsProof from "@/features/home/components/metrics/HomeMetricsProof";
 import WhatsAppSection from "@/features/home/components/WhatsAppSection";
-import TechnologySupporting from "@/features/home/components/TechnologySupporting";
-import HRSupporting from "@/features/home/components/HRSupporting";
-import IndustriesGrid from "@/features/home/components/IndustriesGrid";
-import CaseStudiesSection from "@/features/home/components/CaseStudiesSection";
-import InsightsEditorial from "@/features/home/components/InsightsEditorial";
-import FinalCampaignCTA from "@/features/home/components/FinalCampaignCTA";
+import HomeLeadBanner from "@/features/home/components/cta/HomeLeadBanner";
 
 export const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <SEOHead
-        title="Best Digital Marketing Agency & Software Company in Tamil Nadu | Real Result"
-        description="Real Result Marketing is Tamil Nadu's leading digital marketing agency and custom software development company. Headquartered in Erode, delivering top-tier SEO, GEO, Google Ads, and web apps across Coimbatore, Chennai, and statewide."
+        title="Real Result | Digital Marketing & Application Development Company"
+        description="Tamil Nadu's premier digital marketing agency and custom application development company. Headquartered in Erode, delivering top-tier SEO, GEO, Google Ads, mobile apps, and enterprise web applications."
         canonicalPath="/"
         schema={{
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "Real Result Marketing",
+          name: "Real Result Marketing & Technology",
           url: "https://realresult.in",
-          potentialAction: {
-            "@type": "SearchAction",
-            target: "https://realresult.in/resources?q={search_term_string}",
-            "query-input": "required name=search_term_string",
-          },
         }}
       />
 
-      {/* 1. Hero: One Dominant Art-Directed Advertising Image */}
-      <HeroMarketing />
+      {/* 1. Hero: Core Agency Positioning & Live Stats */}
+      <HomeHero />
 
       {/* 2. Infinite Horizontal Text Marquee */}
       <HorizontalMarquee />
 
-      {/* 3. Creative: Large Viewport Image with Hover Reveal */}
+      {/* 3. Flagship Dual Showcase: Digital Marketing & Application Development */}
+      <HomePillarsDualShowcase />
+
+      {/* 4. The Synchronized Growth Machine */}
+      <HomeGrowthEcosystem />
+
+      {/* 5. Creative Showcase with Dynamic Visual Hover */}
       <CreativeShowcase />
 
-      {/* 4. Media: Horizontal Visual Strip */}
+      {/* 6. Media Visual Strip */}
       <MediaVisualStrip />
 
-      {/* 5. Digital: 4 Large Editorial Visual Blocks */}
-      <DigitalEditorialSection />
+      {/* 7. Hard Numbers Telemetry */}
+      <HomeMetricsProof />
 
-      {/* 6. Full-Width Dramatic Moodboard */}
-      <FullWidthMediaMoodboard />
-
-      {/* 7. Performance: Single Large Visual Funnel */}
-      <PerformanceMarketing />
-
-      {/* 8. Agency Scroll Journey (Creative → Media → Digital → Performance) */}
-      <AgencyScrollJourney />
-
-      {/* 9. AI Communication: Large Visual & Flow */}
-      <AICommunicationBridge />
-
-      {/* 10. WhatsApp: Conversational Interface */}
+      {/* 8. WhatsApp Conversational Interface */}
       <WhatsAppSection />
 
-      {/* 11. Technology: Single Visual & 8 Clean Pills */}
-      <TechnologySupporting />
-
-      {/* 12. Human Resources: Workplace Photography & 4 Clean Pills */}
-      <HRSupporting />
-
-      {/* 13. Industries: Horizontal Visual Selector */}
-      <IndustriesGrid />
-
-      {/* 14. Case Studies: Large Visual Placeholders */}
-      <CaseStudiesSection />
-
-      {/* 15. Insights: Magazine-Style Editorial List */}
-      <InsightsEditorial />
-
-      {/* 16. Final CTA: Dramatic Charcoal & Gold Directional Graphic */}
-      <FinalCampaignCTA />
+      {/* 9. Final High-Impact Consultation Banner */}
+      <HomeLeadBanner />
     </div>
   );
 };

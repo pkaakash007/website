@@ -24,15 +24,15 @@ const solutions = [
     description: "Technical SEO, Local Maps 3-Pack, Google Ads PPC & Full-Funnel Performance",
     href: "/digital-marketing",
     icon: TrendingUp,
-    badge: "Primary Growth",
+    badge: "Major Page",
     isPrimary: true,
   },
   {
-    title: "Software & Web Development",
+    title: "Application Development",
     description: "Custom web applications, React/TypeScript platforms, mobile apps & enterprise ERP",
-    href: "/software-development",
+    href: "/application-development",
     icon: Code2,
-    badge: "Engineering",
+    badge: "Major Page",
     isPrimary: true,
   },
   {
@@ -53,13 +53,19 @@ const solutions = [
   },
 ];
 
-const navLinks = [
+const majorNavLinks = [
+  { label: "Home", href: "/" },
+  { label: "Digital Marketing", href: "/digital-marketing" },
+  { label: "Application Development", href: "/application-development" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
+
+const secondaryLinks = [
   { label: "Case Studies", href: "/case-studies" },
   { label: "Tamil Nadu", href: "/locations/tamil-nadu" },
   { label: "Resources", href: "/resources" },
   { label: "FAQ", href: "/faq" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export const Header: React.FC = () => {
@@ -96,13 +102,26 @@ export const Header: React.FC = () => {
           <BrandLogo size="md" />
 
           {/* Desktop Navigation */}
+          {/* Desktop Navigation: 5 Major Pages First-Class */}
           <nav className="hidden lg:flex items-center gap-1">
-            {/* Digital Marketing Link */}
+            {/* 1. Home */}
+            <Link
+              to="/"
+              className={`px-3.5 py-2 text-sm font-semibold rounded-full transition-all ${
+                pathname === "/"
+                  ? "bg-gold-50 text-gold-900 border border-gold-300"
+                  : "text-primary hover:text-gold-700 hover:bg-gold-50/60"
+              }`}
+            >
+              Home
+            </Link>
+
+            {/* 2. Digital Marketing */}
             <Link
               to="/digital-marketing"
               className={`flex items-center gap-1.5 px-3.5 py-2 text-sm font-semibold rounded-full transition-all ${
                 pathname.startsWith("/digital-marketing")
-                  ? "bg-gold-50 text-gold-800 border border-gold-300"
+                  ? "bg-gold-50 text-gold-900 border border-gold-300"
                   : "text-primary hover:text-gold-700 hover:bg-gold-50/60"
               }`}
             >
@@ -110,34 +129,58 @@ export const Header: React.FC = () => {
               <span>Digital Marketing</span>
             </Link>
 
-            {/* Software Development Link */}
+            {/* 3. Application Development */}
             <Link
-              to="/software-development"
+              to="/application-development"
               className={`flex items-center gap-1.5 px-3.5 py-2 text-sm font-semibold rounded-full transition-all ${
-                pathname.startsWith("/software-development")
-                  ? "bg-gold-50 text-gold-800 border border-gold-300"
+                pathname.startsWith("/application-development") || pathname.startsWith("/software-development")
+                  ? "bg-gold-50 text-gold-900 border border-gold-300"
                   : "text-primary hover:text-gold-700 hover:bg-gold-50/60"
               }`}
             >
               <Code2 className="w-4 h-4 text-gold-600" />
-              <span>Software & Apps</span>
+              <span>Application Development</span>
             </Link>
 
-            {/* Solutions Dropdown */}
+            {/* 4. About */}
+            <Link
+              to="/about"
+              className={`px-3.5 py-2 text-sm font-semibold rounded-full transition-all ${
+                pathname === "/about"
+                  ? "bg-gold-50 text-gold-900 border border-gold-300"
+                  : "text-primary hover:text-gold-700 hover:bg-gold-50/60"
+              }`}
+            >
+              About
+            </Link>
+
+            {/* 5. Contact */}
+            <Link
+              to="/contact"
+              className={`px-3.5 py-2 text-sm font-semibold rounded-full transition-all ${
+                pathname === "/contact"
+                  ? "bg-gold-50 text-gold-900 border border-gold-300"
+                  : "text-primary hover:text-gold-700 hover:bg-gold-50/60"
+              }`}
+            >
+              Contact
+            </Link>
+
+            {/* More / Capabilities Dropdown */}
             <div
-              className="relative"
+              className="relative ml-1"
               onMouseEnter={() => setSolutionsOpen(true)}
               onMouseLeave={() => setSolutionsOpen(false)}
             >
               <button
                 type="button"
-                className={`flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium rounded-full transition-colors cursor-pointer ${
-                  solutionsOpen ? "text-primary bg-surface font-semibold" : "text-secondary hover:text-primary hover:bg-surface"
+                className={`flex items-center gap-1 px-3 py-2 text-xs font-medium rounded-full transition-colors cursor-pointer ${
+                  solutionsOpen ? "text-primary bg-surface font-semibold" : "text-muted hover:text-primary hover:bg-surface"
                 }`}
                 onClick={() => setSolutionsOpen(!solutionsOpen)}
                 aria-expanded={solutionsOpen}
               >
-                <span>Capabilities</span>
+                <span>More</span>
                 <ChevronDown
                   className={`w-3.5 h-3.5 transition-transform duration-200 ${
                     solutionsOpen ? "rotate-180 text-gold" : ""
@@ -145,97 +188,30 @@ export const Header: React.FC = () => {
                 />
               </button>
 
-              {/* Solutions Mega Menu */}
+              {/* Mega Dropdown */}
               {solutionsOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[540px] animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="absolute top-full right-0 pt-2 w-[340px] animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="bg-white rounded-3xl border border-border p-4 shadow-floating">
-                    <div className="text-[11px] font-mono uppercase tracking-widest text-muted px-3 pb-2 border-b border-border/80 flex items-center justify-between">
-                      <span>Enterprise Capabilities</span>
-                      <span className="text-gold-600 font-semibold">Real Result Marketing</span>
+                    <div className="text-[10px] font-mono uppercase tracking-widest text-muted px-2 pb-2 border-b border-border/80 flex items-center justify-between">
+                      <span>Explore Real Result</span>
                     </div>
 
-                    <div className="mt-2 space-y-1.5">
-                      {solutions.map((item) => {
-                        const Icon = item.icon;
-                        const isMkt = item.isPrimary;
-                        return (
-                          <Link
-                            key={item.href}
-                            to={item.href}
-                            className={`flex items-start gap-3.5 p-3 rounded-2xl transition-all duration-200 group ${
-                              isMkt
-                                ? "bg-gold-50/70 border border-gold-200/80 hover:bg-gold-100/70 hover:border-gold-300"
-                                : "hover:bg-surface border border-transparent"
-                            }`}
-                          >
-                            <div
-                              className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
-                                isMkt
-                                  ? "bg-gold text-black shadow-gold-subtle"
-                                  : "bg-surface text-secondary group-hover:text-primary group-hover:bg-white"
-                              }`}
-                            >
-                              <Icon className="w-4 h-4" />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <div className="flex items-center gap-2">
-                                <span className="text-sm font-semibold text-primary">
-                                  {item.title}
-                                </span>
-                                <span
-                                  className={`text-[9px] font-mono tracking-wider uppercase px-2 py-0.5 rounded-full ${
-                                    isMkt
-                                      ? "bg-gold text-black font-bold"
-                                      : "bg-surface border border-border text-muted"
-                                  }`}
-                                >
-                                  {item.badge}
-                                </span>
-                              </div>
-                              <p className="text-xs text-secondary mt-0.5 leading-relaxed line-clamp-1">
-                                {item.description}
-                              </p>
-                            </div>
-                            <ArrowRight
-                              className={`w-4 h-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1 ${
-                                isMkt ? "text-gold-700" : "text-muted group-hover:text-primary"
-                              }`}
-                            />
-                          </Link>
-                        );
-                      })}
-                    </div>
-
-                    <div className="mt-3 pt-3 border-t border-border flex items-center justify-between px-3 text-xs">
-                      <span className="text-muted">Explore our Tamil Nadu city footprint</span>
-                      <Link
-                        to="/locations/tamil-nadu"
-                        onClick={() => setSolutionsOpen(false)}
-                        className="text-gold-700 hover:text-gold-800 font-semibold flex items-center gap-1"
-                      >
-                        All Regional Hubs
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
+                    <div className="mt-2 space-y-1">
+                      {secondaryLinks.map((item) => (
+                        <Link
+                          key={item.href}
+                          to={item.href}
+                          className="flex items-center justify-between p-2.5 rounded-xl text-xs font-medium text-primary hover:bg-surface hover:text-gold-700 transition-colors"
+                        >
+                          <span>{item.label}</span>
+                          <ArrowRight className="w-3.5 h-3.5 text-muted" />
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </div>
               )}
             </div>
-
-            {/* Other Nav Links */}
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`px-3 py-2 text-sm font-medium rounded-full transition-colors ${
-                  pathname === link.href
-                    ? "text-primary bg-surface font-semibold"
-                    : "text-secondary hover:text-primary hover:bg-surface"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
           </nav>
 
           {/* Desktop Right CTA */}
@@ -277,54 +253,70 @@ export const Header: React.FC = () => {
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-x-0 top-[65px] bottom-0 bg-canvas/98 backdrop-blur-xl border-t border-border z-50 overflow-y-auto px-4 py-6">
           <div className="space-y-6 max-w-lg mx-auto">
-            {/* Primary Divisions */}
+            {/* Top 5 Major Pages */}
             <div className="space-y-2">
               <div className="text-[11px] font-mono uppercase tracking-widest text-gold-700 font-bold mb-2 px-2">
-                Core Divisions
+                Major Pages
               </div>
               <Link
-                to="/digital-marketing"
-                className="flex items-center justify-between p-4 rounded-2xl bg-gold-50 border border-gold-200"
+                to="/"
+                className="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-border"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-gold text-black flex items-center justify-center font-bold">
-                    <TrendingUp className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-primary text-base">Digital Marketing & SEO</div>
-                    <div className="text-xs text-secondary">Search, Google Ads, Local SEO, GEO</div>
-                  </div>
-                </div>
-                <ArrowRight className="w-5 h-5 text-gold-700" />
+                <div className="font-bold text-primary text-sm">1. Home Page</div>
+                <ArrowRight className="w-4 h-4 text-gold-700" />
               </Link>
-
               <Link
-                to="/software-development"
-                className="flex items-center justify-between p-4 rounded-2xl bg-white border border-border"
+                to="/digital-marketing"
+                className="flex items-center justify-between p-3.5 rounded-2xl bg-gold-50 border border-gold-200"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-surface text-primary flex items-center justify-center font-bold">
-                    <Code2 className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-primary text-base">Software & Apps</div>
-                    <div className="text-xs text-secondary">Web, Mobile, SaaS & Enterprise AI</div>
-                  </div>
+                <div className="flex items-center gap-2.5">
+                  <TrendingUp className="w-4 h-4 text-gold-700" />
+                  <div className="font-bold text-primary text-sm">2. Digital Marketing</div>
                 </div>
-                <ArrowRight className="w-5 h-5 text-muted" />
+                <ArrowRight className="w-4 h-4 text-gold-700" />
+              </Link>
+              <Link
+                to="/application-development"
+                className="flex items-center justify-between p-3.5 rounded-2xl bg-blue-50/70 border border-blue-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <div className="flex items-center gap-2.5">
+                  <Code2 className="w-4 h-4 text-blue-700" />
+                  <div className="font-bold text-primary text-sm">3. Application Development</div>
+                </div>
+                <ArrowRight className="w-4 h-4 text-blue-700" />
+              </Link>
+              <Link
+                to="/about"
+                className="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-border"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <div className="font-bold text-primary text-sm">4. About</div>
+                <ArrowRight className="w-4 h-4 text-gold-700" />
+              </Link>
+              <Link
+                to="/contact"
+                className="flex items-center justify-between p-3.5 rounded-2xl bg-white border border-border"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <div className="font-bold text-primary text-sm">5. Contact</div>
+                <ArrowRight className="w-4 h-4 text-gold-700" />
               </Link>
             </div>
 
-            {/* General Navigation */}
+            {/* Secondary Hubs */}
             <div className="pt-2 border-t border-border">
+              <div className="text-[11px] font-mono uppercase tracking-widest text-muted font-bold mb-2 px-2">
+                Additional Hubs
+              </div>
               <div className="grid grid-cols-2 gap-2">
-                {navLinks.map((link) => (
+                {secondaryLinks.map((link) => (
                   <Link
                     key={link.href}
                     to={link.href}
-                    className="p-3 text-center rounded-xl bg-white border border-border text-sm font-medium text-primary hover:bg-surface"
+                    className="p-3 text-center rounded-xl bg-white border border-border text-xs font-medium text-primary hover:bg-surface"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.label}

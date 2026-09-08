@@ -29,12 +29,12 @@ const marketingSilo = [
 ];
 
 const softwareSilo = [
-  { label: "Software Development Overview", href: "/software-development" },
-  { label: "Custom Web Application Development", href: "/software-development/web-development" },
-  { label: "Mobile App Development (iOS/Android)", href: "/software-development/mobile-app-development" },
-  { label: "Custom Business ERP Software", href: "/software-development/custom-software-development" },
-  { label: "Multi-Tenant SaaS Engineering", href: "/software-development/saas-development" },
-  { label: "Enterprise AI & LLM Applications", href: "/software-development/ai-development" },
+  { label: "Application Development Overview", href: "/application-development" },
+  { label: "Custom Web Application Development", href: "/application-development/web-development" },
+  { label: "Mobile App Development (iOS/Android)", href: "/application-development/mobile-app-development" },
+  { label: "Custom Business ERP Software", href: "/application-development/custom-software-development" },
+  { label: "Multi-Tenant SaaS Engineering", href: "/application-development/saas-development" },
+  { label: "Enterprise AI & LLM Applications", href: "/application-development/ai-development" },
 ];
 
 const locationSilo = [
