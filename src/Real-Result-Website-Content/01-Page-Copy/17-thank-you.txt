@@ -1,0 +1,24 @@
+PAGE: Enquiry Confirmation
+URL: /thank-you/
+STATUS: Draft copy
+SEO TITLE: Enquiry Received | Real Result
+META DESCRIPTION: Your enquiry has been received by Real Result.
+PRIMARY TOPIC: none — confirmation page
+SEARCH INTENT: Utility page — no search acquisition target
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/thank-you/
+ROBOTS: noindex, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+H1: Your next step is underway.
+
+BODY
+Thanks for telling us about your business. We’ve received your enquiry and will contact you using the details you shared.
+
+BUTTONS
+Explore Our Services
+Back to Home
+
+EXTRA DETAIL
+Need to add something? Email [Business Email].

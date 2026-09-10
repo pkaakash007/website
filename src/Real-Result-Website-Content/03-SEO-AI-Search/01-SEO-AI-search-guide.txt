@@ -1,0 +1,37 @@
+SEO, AI SEARCH & LLM READABILITY — IMPLEMENTATION HANDOFF
+Prepared: 10 September 2026
+
+WHAT THIS PACK PROVIDES
+Distinct page intent, descriptive titles and meta descriptions, one primary heading per page, clear service explanations, short answers, named internal links, consistent Real Result identity, and structured-data templates. These are content and implementation inputs. No live domain, crawl, performance audit, or ranking validation was possible because no website URL was supplied.
+
+SEARCH FOUNDATIONS
+Use accessible HTML for the page copy and ordinary crawlable links. Allow intended public pages to be crawled and indexed, keep important text available outside images, and make structured data match the visible page. Eligibility does not guarantee inclusion in search or AI answers. Google states that its AI features use the same SEO foundations and need no special AI markup. Source: https://developers.google.com/search/docs/appearance/ai-features
+
+AI SEARCH & LLM READABILITY
+Keep the exact business name “Real Result” consistent across the site and real business profiles. Each service opening names the provider, service, and purpose so it makes sense when read on its own. Use definitions, relevant comparisons, and genuine customer questions because they help readers understand the offer. Do not add invented sources or hidden AI instructions. This pack does not treat short sections as a special AI ranking signal. Google does not require llms.txt or special AI files. Source: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
+
+STRUCTURED DATA
+The templates use Organization, WebSite, WebPage, BreadcrumbList, and Service where relevant. Markup describes the visible provider and service; it is not a new ranking promise. No invented ratings, reviews, addresses, prices, awards, partners, or credentials are included. Check the final markup after it is placed on the actual page. Source: https://developers.google.com/search/docs/appearance/structured-data/sd-policies
+The Organization node helps describe the actual business. Add logo, contact, address, or sameAs only after those facts and URLs are confirmed. Source: https://developers.google.com/search/docs/appearance/structured-data/organization
+Service is a Schema.org type for describing a provided service; this is not a claim of a dedicated Google Service rich result. Source: https://schema.org/Service
+
+FAQ CONTENT
+Keep useful FAQs visible for readers. This pack does not rely on FAQ rich-result eligibility. Google’s documentation update log records removal of the FAQ rich-result documentation because the feature is no longer shown. Source: https://developers.google.com/search/updates
+
+TECHNICAL SETUP ON THE REAL DOMAIN
+1. Replace the placeholder origin in canonical tags, schema templates, and the sitemap with the confirmed HTTPS domain. No Real Result domain has been guessed.
+2. Use one canonical URL for each intended indexable page; align internal links, canonicals, and sitemap URLs. Choose trailing-slash behaviour consistently.
+3. Public indexable pages should return the correct content with a successful status. Serve the 404 design with HTTP 404. Keep confirmation and unfinished template pages out of the sitemap and noindex them if accessible.
+4. Keep private staging behind authentication or proper noindex handling. Do not publish placeholder proof or business-policy pages.
+5. Ensure hosting/CDN rules permit the intended search crawlers. Review crawler identities and current provider documentation before setting AI search or training controls; a training crawler and a search crawler may have different purposes.
+6. Use descriptive link text and image alt text based on actual imagery. Verify mobile readability, form behaviour, HTTPS, page performance, and keyboard use on the finished site.
+7. Validate structured data and inspect the rendered pages using the search engine tools for the actual site. Templates alone do not complete this step.
+
+EDITING RULES
+Do not add repetitive city pages without a real service-area strategy and useful local information. Do not publish a second page targeting the same service under a different name merely to repeat keywords. The intent map is an editorial proposal, not keyword-volume research. Confirm regional language and demand when the market is known.
+
+MEASUREMENT PLAN
+Track enquiry submissions, qualified enquiries, completed sales conversations, and meaningful campaign outcomes. Use website analytics and search performance reports available for the property; examine identifiable AI referral traffic where available. Keep reported visibility separate from business outcomes. Do not claim every impression or visit can be attributed precisely.
+
+WHAT STILL NEEDS BUSINESS INPUT
+Actual domain, service area, business contact information, approved team details, case studies, supported calling/messaging features, prices, and policy facts. None has been invented.

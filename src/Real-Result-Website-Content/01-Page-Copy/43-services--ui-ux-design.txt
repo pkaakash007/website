@@ -1,0 +1,59 @@
+PAGE: UI/UX & Product Design
+URL: /services/ui-ux-design/
+STATUS: Draft copy
+SEO TITLE: UI/UX & Product Design | Real Result
+META DESCRIPTION: Turn confusing journeys into clearer experiences. Explore UI/UX & Product Design with Real Result.
+PRIMARY TOPIC: ui/ux & product design
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/ui-ux-design/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=ui-ux-design
+
+Breadcrumbs: Home > Websites, Apps & Software > UI/UX & Product Design
+
+HERO
+Eyebrow: Real Result · Websites, Apps & Software
+H1: UI/UX & Product Design
+Display hook: If users have to guess, there’s work to do.
+Body: Real Result’s user interface and user experience (UI/UX) design service maps customer tasks and creates wireframes, prototypes, and interface designs for websites and digital products.
+Primary button: Discuss My Project
+Secondary link: What We Can Help With
+
+H2: Confusion becomes support work.
+Body: When people struggle to find, understand, or complete an action, your team often ends up filling the gap.
+
+H2: What can this help your business do?
+• Make important journeys easier to follow.
+• Explore ideas before committing to development.
+• Give teams a consistent design foundation.
+
+H2: What can the service include?
+Section anchor: scope
+• User research
+• Journey mapping
+• Information architecture
+• Wireframes
+• Interactive prototypes
+• Design systems
+
+H2: How does Real Result approach the work?
+Understand user tasks. Explore the journey. Review prototypes and prepare designs for development.
+
+H2: Questions before you start
+H3: Can you improve an existing product?
+Answer: Yes. We can focus on a particular journey or review the wider experience.
+
+H3: Does design include development?
+Answer: Design and implementation are listed separately in the proposal, with combined delivery available.
+
+H2: Related services
+Website Design & Development -> /services/website-development/
+Mobile App Development -> /services/mobile-app-development/
+Conversion Rate Optimization -> /services/conversion-optimization/
+
+FINAL CONTACT
+H2: Which task should feel effortless to your users? Let’s map it.
+Button: Discuss My Project

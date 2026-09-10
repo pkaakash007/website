@@ -1,0 +1,132 @@
+REFERENCE REVIEW & ORIGINAL COPY APPROACH
+
+Source: the user-supplied Script.zip, containing 37 files.
+Review method: inventory of all files; text extraction of the text-based documents; targeted reading of relevant passages; selected OCR pages from two image-heavy PDFs. This was not an exhaustive cover-to-cover review. Page numbers below refer to the PDF page sequence, not necessarily the printed page number.
+
+MAIN APPLICATIONS
+1. Customer first: The Complete Hooks Playbook, The Little Black Book of Copywriting Secrets, and Brand Storytelling led the opening toward the visitor’s recognizable problems and desired change.
+2. A clear umbrella message: the supplied Building a StoryBrand file, especially pp. 129–138, discusses clear website offers, multiple service divisions, short text, and repeated direct actions. Marketing and development share a message, then separate into useful service paths.
+3. Curiosity with a useful answer: Triggers, Hook Point, the Content Marketing Playbook, and hook guides informed specific questions about missed enquiries and repeat work. The body copy pays off the question; it does not withhold basic information to force contact.
+4. Benefits and mechanism: The 16-Word Sales Letter and the copywriting technique collections informed the connection between the desired outcome and the work involved.
+5. Confidence to enquire: objections about scope, cost, timing, ownership, and existing systems are answered briefly. The contact form asks for a problem, not a fully prepared technical brief.
+
+BOUNDARIES
+All site copy is original. Reference examples, financial claims, invented scarcity, unsupported psychological statistics, and promises of guaranteed growth were not carried into the copy. Historical social platform advice was not treated as current platform guidance. No real client proof, agency history, award, location, or certification was supplied.
+
+FILE REVIEW LEDGER
+
+1041667063-The-Complete-Hooks-Playbook-Double-Your-Marketing-in-Under-5-Seconds.docx
+DOCX: introduction and hook, call-out, value, and testing sections
+
+228965003-The-Little-Black-Book-of-Copywriting-Secrets.pdf
+PDF pp. 10, 23
+
+27_Viral_Hook_Templates.pdf
+PDF p. 3
+
+371410181-Content-Marketing-Playbook-Sujan-Patel.pdf
+PDF p. 74
+
+392403856-Viral-Writing-Book.pdf
+PDF p. 117
+
+447219912-Triggers-30-Sales-Tools-You-Ca-Joseph-Sugarman-pdf.pdf
+PDF pp. 25, 109
+
+456749565-500-social-media-marketing-tips-essential-advice-hints-and-strategy-for-business.pdf
+PDF p. 18
+
+466085249-MDA-BONUS-Resource-Sheet-copy-pdf.pdf
+PDF p. 7
+
+471754127-The-16-Word-Sales-Letter-Ebook-pdf.pdf
+PDF pp. 24, 26
+
+491640153-Consumer-Behaviour-Applications-in-Marketing-3rd-Edition.pdf
+PDF pp. 88, 401, 595
+
+514124330-Hook-Point-How-to-stand-out-in-a-3-second-World-Ebook.pdf
+PDF pp. 130, 190
+
+522248807-JohnForde.pdf
+OCR sample: PDF pp. 1, 8, 20, 40, 60, 80; some example text poorly legible
+
+522978799-Copy-Bible.pdf
+PDF p. 21
+
+568147258-714-Ways-Pro-Copywriters-Boost-Response-and-Make-Millions-of-Dollars.pdf
+PDF p. 29
+
+615750260-76-Hooks-Ctas-6-Figure-Marketer.pdf
+PDF p. 8
+
+644345313-The-6-Figure-Video-Script-pdf.pdf
+PDF p. 8
+
+692263592-Brand-Storytelling-Miri-Rodriguez.pdf
+PDF pp. 118, 225
+
+699619273-100-Viral-Hooks-Ultimate-Swipe-File.pdf
+OCR sample: PDF pp. 1, 2, 10, 30, 60, 90; page 10 did not yield readable text
+
+707311492-Content-Machine.pdf
+PDF p. 107
+
+711943321-Hooks-from-Top-30-Creators.pdf
+PDF p. 19
+
+71911502-Million-Dollar-Ads-Course-372-Pages.pdf
+PDF p. 339
+
+737020958-The-20-Word-Manifestation-Script-What-It-Is-Method-Aglow-Lifestyle.pdf
+PDF p. 1; off-topic manifestation material, not used as a basis
+
+750084911-Copy-Posse-Free-Guide-99-Hot-Hooks.pdf
+PDF pp. 2, 5
+
+784433189-100-Viral-hooks-PRASHI-JAIN.pdf
+PDF p. 1
+
+804669316-Viral-Video-Framework-and-Formats-Final-1.pdf
+PDF p. 6
+
+813999046-Psychology-of-Viral-Trends.pdf
+PDF p. 4
+
+820948503-BlackHatCopyBETA.pdf
+PDF p. 25; not used for performance or behavioural claims
+
+869121090-600-Copy-Techniques-Short-Book.pdf
+PDF p. 67
+
+884784003-Write-Scripts-in-Seconds.pdf
+PDF p. 2
+
+938902708-100-Days-Reel-Challenge.pdf
+PDF p. 28
+
+972925590-Building-StoryBrand-Donald-Miller-English.pdf
+PDF pp. 129–138; supplied file contains machine-translated text
+
+976490896-How-to-Write-a-Good-Advertisement-PDF.pdf
+PDF pp. 8, 11; supplied file includes summary material
+
+Discover How to Go Viral on Instagram in 2024 - Secret & Pro Tips_.pdf
+PDF p. 28
+
+hook-frameworks-guide (1).pdf
+PDF p. 3
+
+How to Write Storytelling Content.pdf
+PDF p. 2
+
+MC Content & Editing Changes.pdf
+PDF p. 1
+
+The Psychology of Viral Instagram Posts.pdf
+PDF p. 10
+
+REAL RESULT REVISION — REVISITED BEFORE WRITING
+The following were read again for this revision: Complete Hooks Playbook opening sections; Little Black Book pp. 10 and 23; Building a StoryBrand pp. 132, 133, 136 and 137; Triggers pp. 25 and 109; Content Marketing Playbook p. 74; The 6-Figure Video Script p. 8. The revised headline names a customer need, the homepage keeps the offer short, and individual pages give each service a distinct problem and contact invitation.
+
+Positioning was changed from a balanced marketing/development agency to Real Result as a marketing company. Five dedicated calling/messaging service pages were added; email remains separate. An AI-search service page and implementation guide clarify the SEO work without guaranteeing search or model selection.

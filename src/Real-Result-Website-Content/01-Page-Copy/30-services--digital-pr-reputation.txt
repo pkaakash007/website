@@ -1,0 +1,59 @@
+PAGE: Digital PR & Reputation Management
+URL: /services/digital-pr-reputation/
+STATUS: Draft copy
+SEO TITLE: Digital PR & Reputation Management | Real Result
+META DESCRIPTION: Support a clearer, more credible public presence. Explore Digital PR & Reputation Management with Real Result.
+PRIMARY TOPIC: digital pr & reputation management
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/digital-pr-reputation/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=digital-pr-reputation
+
+Breadcrumbs: Home > Digital Marketing > Digital PR & Reputation Management
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: Digital PR & Reputation Management
+Display hook: What do people find when they check you out?
+Body: Real Result’s digital PR and reputation service supports your public business story through media outreach, clear information, and thoughtful responses to customer feedback.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: Your reputation reaches the conversation first.
+Body: Outdated information, unanswered reviews, and an unclear story can leave potential customers with questions.
+
+H2: What can this help your business do?
+• Make your business story easier to understand.
+• Respond to customer feedback with care.
+• Pursue relevant opportunities for credible visibility.
+
+H2: What can the service include?
+Section anchor: scope
+• Brand mention review
+• Media story development
+• Press materials
+• Media outreach
+• Review response guidance
+• Issue communication support
+
+H2: How does Real Result approach the work?
+Review what is already visible. Identify the gaps. Prepare the story, outreach, and response approach.
+
+H2: Questions before you start
+H3: Can you guarantee media coverage?
+Answer: No. Editorial decisions belong to the publisher.
+
+H3: Can you remove negative reviews?
+Answer: Removal cannot be promised. We can assess platform reporting options and help with constructive responses.
+
+H2: Related services
+Brand Strategy & Design -> /services/branding/
+Local SEO -> /services/local-seo/
+Content Marketing & Copywriting -> /services/content-marketing/
+
+FINAL CONTACT
+H2: Let’s look at the story people see before they contact you.
+Button: Let’s Talk Growth

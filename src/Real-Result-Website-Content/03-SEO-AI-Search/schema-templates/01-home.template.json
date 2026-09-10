@@ -1,0 +1,37 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://replace-with-your-domain.invalid/#organization",
+      "name": "Real Result",
+      "url": "https://replace-with-your-domain.invalid/",
+      "description": "Real Result is a marketing company offering digital marketing, calling and messaging campaigns, and supporting website, app, and software development services."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://replace-with-your-domain.invalid/#website",
+      "name": "Real Result",
+      "url": "https://replace-with-your-domain.invalid/",
+      "publisher": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://replace-with-your-domain.invalid/#webpage",
+      "url": "https://replace-with-your-domain.invalid/",
+      "name": "Real Result | Digital Marketing & Growth Company",
+      "description": "Grow your business with Real Result. Explore SEO, paid ads, social media, AI calling, SMS, RCS and WhatsApp marketing. Tell us your growth goal.",
+      "isPartOf": {
+        "@id": "https://replace-with-your-domain.invalid/#website"
+      },
+      "publisher": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      },
+      "about": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      }
+    }
+  ]
+}

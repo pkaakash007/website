@@ -1,0 +1,59 @@
+PAGE: Social Media Management
+URL: /services/social-media/
+STATUS: Draft copy
+SEO TITLE: Social Media Management | Real Result
+META DESCRIPTION: Show up with a consistent voice and a clear purpose. Explore Social Media Management with Real Result.
+PRIMARY TOPIC: social media management
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/social-media/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=social-media
+
+Breadcrumbs: Home > Digital Marketing > Social Media Management
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: Social Media Management
+Display hook: Give people a reason to remember you.
+Body: Real Result’s social media management service covers content planning, creation, publishing, and community activity to build a consistent, useful brand presence.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: Another week. Another scramble for content.
+Body: Posting without direction takes time and makes it hard to build a recognizable brand.
+
+H2: What can this help your business do?
+• Keep your brand active and consistent.
+• Answer the questions your audience is asking.
+• Create a clear route from content to contact.
+
+H2: What can the service include?
+Section anchor: scope
+• Channel strategy
+• Content calendars
+• Post copy and design
+• Publishing
+• Community management
+• Performance reporting
+
+H2: How does Real Result approach the work?
+Learn what your audience cares about. Build content themes. Publish, listen, and refine.
+
+H2: Questions before you start
+H3: Can you manage multiple platforms?
+Answer: Yes. We adapt content to the platforms you choose and the audience on each.
+
+H3: Are paid ads included?
+Answer: Organic management and paid campaigns are scoped separately so responsibilities and costs stay clear.
+
+H2: Related services
+Content Marketing & Copywriting -> /services/content-marketing/
+Video Production & Creative -> /services/video-creative/
+Brand Strategy & Design -> /services/branding/
+
+FINAL CONTACT
+H2: If someone found your page today, what would they remember? Let’s shape that.
+Button: Let’s Talk Growth

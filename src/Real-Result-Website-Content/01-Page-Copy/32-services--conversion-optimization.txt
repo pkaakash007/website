@@ -1,0 +1,59 @@
+PAGE: Conversion Rate Optimization
+URL: /services/conversion-optimization/
+STATUS: Draft copy
+SEO TITLE: Conversion Rate Optimization | Real Result
+META DESCRIPTION: Make the next step easier for interested visitors. Explore Conversion Rate Optimization with Real Result.
+PRIMARY TOPIC: conversion rate optimization
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/conversion-optimization/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=conversion-optimization
+
+Breadcrumbs: Home > Digital Marketing > Conversion Rate Optimization
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: Conversion Rate Optimization
+Display hook: They arrived. What stopped them?
+Body: Real Result’s conversion rate optimization (CRO) service examines website journeys, messaging, forms, and checkout friction to make customer actions easier to complete.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: More traffic cannot explain every missed enquiry.
+Body: An unclear offer, a difficult form, or a confusing checkout can interrupt an otherwise promising visit.
+
+H2: What can this help your business do?
+• Understand where visitors encounter friction.
+• Make important actions easier to complete.
+• Prioritize changes using evidence.
+
+H2: What can the service include?
+Section anchor: scope
+• Journey reviews
+• Analytics analysis
+• Form and checkout reviews
+• Message testing
+• Experiment planning
+• Landing page improvements
+
+H2: How does Real Result approach the work?
+Inspect the journey. Form a clear hypothesis. Test where feasible and evaluate the result.
+
+H2: Questions before you start
+H3: Do we need high traffic?
+Answer: Low-traffic sites can still benefit from usability and clarity reviews. Reliable split tests need sufficient data.
+
+H3: Will every test improve performance?
+Answer: No. Tests help identify what to adopt, change, or leave behind.
+
+H2: Related services
+Website Design & Development -> /services/website-development/
+Paid Search & PPC -> /services/paid-search/
+Analytics & Marketing Reporting -> /services/analytics/
+
+FINAL CONTACT
+H2: Where are interested visitors hesitating? Let’s look closer.
+Button: Let’s Talk Growth

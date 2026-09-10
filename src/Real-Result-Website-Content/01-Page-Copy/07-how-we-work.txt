@@ -1,0 +1,47 @@
+PAGE: How We Work
+URL: /how-we-work/
+STATUS: Draft copy
+SEO TITLE: Our Marketing & Growth Process | Real Result
+META DESCRIPTION: See how Real Result turns business goals into a clear scope, connected marketing work, launch plans, and useful performance reviews.
+PRIMARY TOPIC: Real Result marketing process
+SEARCH INTENT: Navigation, explanation, or decision support
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/how-we-work/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+Breadcrumbs: Home > How We Work
+
+HERO
+Eyebrow: How we work
+H1: Know the next step before you take it.
+Body: Real Result starts with your customer journey, then defines the campaigns, communication, and supporting work needed to move it forward.
+Button: Let’s Talk Growth
+
+1. UNDERSTAND
+H2: What needs to change?
+Body: We discuss your customers, goals, current tools, and the obstacle you want to solve.
+
+2. DEFINE
+H2: What is worth doing first?
+Body: We agree on deliverables, responsibilities, milestones, costs, and the measures that will help us review the work.
+
+3. CREATE
+H2: Make the plan something you can review.
+Body: We develop the agreed campaigns, designs, or software and bring you in at the planned feedback points.
+
+4. LAUNCH
+H2: Get the important details ready.
+Body: We check the agreed assets and user journeys, confirm approvals, and prepare the launch or handover.
+
+5. REVIEW
+H2: Learn what deserves attention next.
+Body: We review the work against its goals. Ongoing improvements and support follow the scope you choose.
+
+WHAT WE NEED FROM YOU
+Business context. Relevant access. One clear feedback owner. Timely approvals.
+
+FINAL CONTACT
+H2: You bring the challenge. We’ll work through the next step.
+Button: Let’s Talk Growth

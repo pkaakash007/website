@@ -1,0 +1,59 @@
+PAGE: Content Marketing & Copywriting
+URL: /services/content-marketing/
+STATUS: Draft copy
+SEO TITLE: Content Marketing & Copywriting | Real Result
+META DESCRIPTION: Turn customer questions into useful reasons to choose you. Explore Content Marketing & Copywriting with Real Result.
+PRIMARY TOPIC: content marketing & copywriting
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/content-marketing/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=content-marketing
+
+Breadcrumbs: Home > Digital Marketing > Content Marketing & Copywriting
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: Content Marketing & Copywriting
+Display hook: Answer the question before they ask a competitor.
+Body: Real Result’s content marketing and copywriting service creates website copy, articles, landing pages, and sales content that answer customer questions and explain your value.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: Plenty to say. Nothing clear to the buyer.
+Body: When content talks mainly about the business, customers have to work out the value for themselves.
+
+H2: What can this help your business do?
+• Make complex offers easier to understand.
+• Support search, sales, and customer education.
+• Give interested readers a relevant next step.
+
+H2: What can the service include?
+Section anchor: scope
+• Content strategy
+• Website copy
+• Articles and guides
+• Landing pages
+• Sales materials
+• Content repurposing
+
+H2: How does Real Result approach the work?
+Gather customer questions. Shape clear messages. Create content for the decision your reader needs to make.
+
+H2: Questions before you start
+H3: Can you write for a technical business?
+Answer: Yes. We work from your subject expertise and source materials, with factual review built into approvals.
+
+H3: Can you improve existing content?
+Answer: Yes. We can review, rewrite, and reorganize useful material you already have.
+
+H2: Related services
+Search Engine Optimization -> /services/seo/
+AI Search Optimization (AEO & GEO) -> /services/ai-search-optimization/
+Brand Strategy & Design -> /services/branding/
+
+FINAL CONTACT
+H2: What do customers need to understand before they choose you? Let’s make it clear.
+Button: Let’s Talk Growth

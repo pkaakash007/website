@@ -1,0 +1,42 @@
+PAGE: Our Work
+URL: /work/
+STATUS: Hold until real proof is added
+SEO TITLE: Selected Marketing & Development Work | Real Result
+META DESCRIPTION: Explore selected marketing and development projects, including the business challenge, work delivered, and outcomes supported by evidence.
+PRIMARY TOPIC: Real Result client work
+SEARCH INTENT: Navigation, explanation, or decision support
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/work/
+ROBOTS: noindex, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+Breadcrumbs: Home > Our Work
+
+HERO
+Eyebrow: Selected work
+H1: See what changed. Understand why.
+Body: Explore the problem behind each project, the decisions that shaped the work, and the outcome.
+Button: Talk About Your Project
+
+FILTER LABELS
+All Work | Marketing | Websites & Ecommerce | Apps & Software
+
+PROJECT CARD — REPEAT FOR REAL PROJECTS
+Title: [Client or approved project name]
+H2: [Specific improvement or problem solved]
+Body: [One sentence explaining the challenge and the work delivered.]
+Services: [Actual services delivered]
+Outcome: [Verified result, timeframe, and relevant context]
+Link: See the Project
+
+ALTERNATIVE CARD — FOR CLEARLY LABELLED CONCEPT WORK
+Label: Concept project
+Title: [Concept name]
+Body: [The user problem explored and the experience designed.]
+Link: Explore the Concept
+
+FINAL CONTACT
+H2: Have a challenge we should look at?
+Body: Tell us what needs to work better in your business.
+Button: Let’s Talk Growth

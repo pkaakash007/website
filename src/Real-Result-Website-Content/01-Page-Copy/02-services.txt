@@ -1,0 +1,43 @@
+PAGE: All Services
+URL: /services/
+STATUS: Draft copy
+SEO TITLE: Digital Marketing & Business Growth Services | Real Result
+META DESCRIPTION: Explore Real Result’s digital marketing, calling and messaging, websites, apps, and software services. Choose the support for your next growth goal.
+PRIMARY TOPIC: digital marketing services
+SEARCH INTENT: Navigation, explanation, or decision support
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+Breadcrumbs: Home > All Services
+
+HERO
+Eyebrow: Real Result services
+H1: Build your next move around the customer.
+Body: Real Result connects marketing, customer communication, and supporting technology to help businesses get discovered, generate enquiries, and improve follow-up.
+Button: Let’s Talk Growth
+
+H2: Digital marketing
+Body: Give the right people a reason to find, remember, and choose you.
+Services: Strategy · SEO · AI Search · Paid Ads · Social Media · Content · Branding · Lead Generation · Email · Conversion · Analytics
+Link: Explore Digital Marketing -> /services/digital-marketing/
+
+H2: Calling and messaging
+Body: Turn a campaign into a useful conversation and a clearer next step.
+Services: Bulk Voice Calls · Real-Time AI Calling · Bulk SMS · RCS · WhatsApp
+Link: Explore Calling & Messaging -> /services/calling-messaging/
+
+H2: Websites, apps, and software
+Body: Support the customer journey with useful digital experiences and connected business tools.
+Services: Websites · Ecommerce · Mobile Apps · Web Apps · Custom Software · CRM · Integrations · Automation
+Link: Explore Development -> /services/development/
+
+H2: Not sure where to start?
+Body: Tell us where customers lose interest or where your team gets stuck. We’ll discuss which service fits the problem.
+Link: Find My Starting Point -> /solutions/
+
+FINAL CONTACT
+H2: One clear priority can give the work direction.
+Button: Let’s Talk Growth

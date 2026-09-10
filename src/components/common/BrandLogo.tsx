@@ -54,7 +54,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
               theme === "dark" ? "text-white/80" : "text-secondary"
             } ${dimensions.sub}`}
           >
-            Marketing & Development
+            Digital marketing & growth
           </span>
         )}
       </div>

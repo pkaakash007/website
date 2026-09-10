@@ -1,0 +1,46 @@
+PAGE: Industries & Business Types
+URL: /industries/
+STATUS: Draft copy
+SEO TITLE: Marketing for Different Business Types | Real Result
+META DESCRIPTION: Explore marketing and customer communication around how your customers buy, from local services and ecommerce to B2B and new digital products.
+PRIMARY TOPIC: marketing services by business type
+SEARCH INTENT: Navigation, explanation, or decision support
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/industries/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+Breadcrumbs: Home > Industries & Business Types
+
+HERO
+Eyebrow: Marketing around your customers
+H1: Different industries. The same need to be chosen.
+Body: Real Result shapes marketing around who buys, what they need to know, and how they take the next step.
+Button: Let’s Talk Growth
+
+H2: Local services and appointment businesses
+Body: Help nearby customers find you, enquire, book, and remember the next appointment.
+
+H2: Retail and ecommerce
+Body: Connect product discovery, buying decisions, customer updates, and repeat purchases.
+
+H2: B2B and professional services
+Body: Explain complex offers and support more relevant sales conversations.
+
+H2: Education and hospitality
+Body: Connect enquiries, useful information, booking, and follow-up.
+
+H2: Manufacturing and operational businesses
+Body: Make capabilities easier to understand and connect enquiries with the right team.
+
+H2: Startups and digital products
+Body: Clarify the offer, launch a useful experience, and reach suitable early users.
+
+OUR STARTING POINT
+H2: Your buying journey sets the plan.
+Body: Audience needs, market conditions, and specialist requirements shape the channels and scope. Tell us the context that matters to your business.
+
+FINAL CONTACT
+H2: How do your best customers find and choose you?
+Button: Let’s Talk Growth

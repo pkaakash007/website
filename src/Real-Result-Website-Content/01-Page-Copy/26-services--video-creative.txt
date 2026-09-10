@@ -1,0 +1,59 @@
+PAGE: Video Production & Creative
+URL: /services/video-creative/
+STATUS: Draft copy
+SEO TITLE: Video Production & Creative | Real Result
+META DESCRIPTION: Make your offer easier to see, understand, and remember. Explore Video Production & Creative with Real Result.
+PRIMARY TOPIC: video production & creative
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/video-creative/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=video-creative
+
+Breadcrumbs: Home > Digital Marketing > Video Production & Creative
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: Video Production & Creative
+Display hook: Show the value. Make it stick.
+Body: Real Result’s video and creative service turns marketing messages into scripts, edited videos, motion graphics, and campaign assets that help customers understand your offer.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: Your offer deserves a clearer picture.
+Body: A strong product or service can be difficult to sell when people cannot quickly see what it does for them.
+
+H2: What can this help your business do?
+• Explain your offer in a human way.
+• Create assets for campaigns and product launches.
+• Keep your visual story consistent across channels.
+
+H2: What can the service include?
+Section anchor: scope
+• Creative concepts
+• Scripts and storyboards
+• Video editing
+• Motion graphics
+• Product explainers
+• Campaign design
+
+H2: How does Real Result approach the work?
+Agree on the message and format. Plan the assets. Produce, review, and prepare the final versions.
+
+H2: Questions before you start
+H3: Can you work with our existing footage?
+Answer: Yes. We can assess it and build an editing plan around the usable material.
+
+H3: Can you arrange filming?
+Answer: Filming, locations, talent, and production logistics can be scoped around the project.
+
+H2: Related services
+Paid Social, Display & Video Ads -> /services/paid-social/
+Social Media Management -> /services/social-media/
+Brand Strategy & Design -> /services/branding/
+
+FINAL CONTACT
+H2: What should someone understand in the opening moments? Let’s start there.
+Button: Let’s Talk Growth

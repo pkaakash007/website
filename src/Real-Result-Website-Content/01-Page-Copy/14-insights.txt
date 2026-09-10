@@ -1,0 +1,38 @@
+PAGE: Insights
+URL: /insights/
+STATUS: Draft copy
+SEO TITLE: Marketing & Business Growth Insights | Real Result
+META DESCRIPTION: Explore practical ideas for improving customer journeys, marketing decisions, and business workflows from Real Result.
+PRIMARY TOPIC: marketing and business growth insights
+SEARCH INTENT: Navigation, explanation, or decision support
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/insights/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+Breadcrumbs: Home > Insights
+
+HERO
+Eyebrow: Practical ideas
+H1: Better questions. Clearer next moves.
+Body: Practical reads from Real Result about getting found, getting chosen, and keeping customer conversations moving.
+
+CATEGORY LABELS
+All Insights | Getting Found | Getting Chosen | Keeping Customers | Calling & Messaging | Growth Systems
+
+FEATURED ARTICLE
+H2: Your next enquiry is only the beginning.
+Body: Five questions to ask about what happens between first interest and a useful sales conversation.
+Link: Read the Article
+
+FUTURE ARTICLE CARD — REPEAT ONLY WHEN CONTENT EXISTS
+Category: [Relevant category]
+H2: [Specific question or practical benefit]
+Summary: [One short sentence explaining what the reader will learn.]
+Link: Read the Article
+
+FINAL CONTACT
+H2: Which part of this sounds like your business?
+Body: Bring us the question you want to work through.
+Button: Let’s Talk Growth

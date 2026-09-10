@@ -1,0 +1,59 @@
+PAGE: WhatsApp Marketing & Messaging Services
+URL: /services/whatsapp-marketing/
+STATUS: Draft copy
+SEO TITLE: WhatsApp Marketing & Messaging Services | Real Result
+META DESCRIPTION: Connect relevant campaigns with useful customer conversations. Explore WhatsApp Marketing & Messaging Services with Real Result.
+PRIMARY TOPIC: whatsapp marketing & messaging services
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/whatsapp-marketing/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=whatsapp-marketing
+
+Breadcrumbs: Home > Calling & Messaging > WhatsApp Marketing & Messaging Services
+
+HERO
+Eyebrow: Real Result · Calling & Messaging
+H1: WhatsApp Marketing & Messaging Services
+Display hook: Make the next message a reason to reply.
+Body: Real Result’s WhatsApp marketing and messaging service helps businesses plan permission-based campaigns and customer conversations. We connect useful messages, response flows, and follow-up around a clear customer need.
+Primary button: Plan My Campaign
+Secondary link: What We Can Help With
+
+H2: A broadcast is only the beginning.
+Body: When someone replies, the conversation needs somewhere useful to go. Plan the offer, the answer, and the next step together.
+
+H2: What can this help your business do?
+• Share relevant offers and customer updates.
+• Make responses easier to route and manage.
+• Keep useful conversations moving after first contact.
+
+H2: What can the service include?
+Section anchor: scope
+• Campaign strategy
+• Template copy
+• Audience segmentation
+• Conversation flows
+• Business setup coordination
+• CRM handoff scoping
+
+H2: How does Real Result approach the work?
+Define the audience and purpose. Prepare messages and any required templates. Test the response flow before sending.
+
+H2: Questions before you start
+H3: Do recipients need to opt in?
+Answer: Yes. WhatsApp requires permission to contact recipients, and requests to stop must be respected.
+
+H3: Do campaign messages need approval?
+Answer: Business-initiated messages through the WhatsApp Business Platform use approved templates. Account readiness, template approval, and applicable charges are confirmed for your setup.
+
+H2: Related services
+Bulk SMS Services -> /services/bulk-sms/
+Real-Time AI Calling Services -> /services/real-time-ai-calling/
+Email Marketing & Automation -> /services/email-marketing/
+
+FINAL CONTACT
+H2: What happens after your customer replies? Let’s build the next step.
+Button: Plan My Campaign

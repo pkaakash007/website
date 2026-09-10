@@ -1,0 +1,44 @@
+PAGE: Case Study Template
+URL: /work/project-name/
+STATUS: Hold until real proof is added
+SEO TITLE: [Project Name] Case Study | Real Result
+META DESCRIPTION: [Describe the real project challenge, services delivered, and supported outcome in one concise sentence.]
+PRIMARY TOPIC: [Verified project topic]
+SEARCH INTENT: Navigation, explanation, or decision support
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/work/project-name/
+ROBOTS: noindex, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+Breadcrumbs: Home > Case Study Template
+
+HERO
+Eyebrow: [Client name] · [Industry] · [Service]
+H1: [Concrete change achieved for the client]
+Body: [One sentence connecting the starting problem with the work delivered.]
+Button: Talk About a Similar Project
+
+THE STARTING POINT
+H2: [The obstacle in the client’s own language]
+Body: [Two short sentences describing the real situation and why it mattered.]
+
+THE WORK
+H2: [The decision that shaped the solution]
+• [Specific action and its purpose]
+• [Specific action and its purpose]
+• [Specific action and its purpose]
+
+THE OUTCOME
+H2: [Verified result or delivered capability]
+Body: [State the baseline, final measure, timeframe, and attribution limits where relevant. For delivery-only projects, describe the actual working capability.]
+Visual caption: [What the screenshot demonstrates]
+
+CLIENT PERSPECTIVE — OPTIONAL
+Quote: [Exact approved testimonial]
+Attribution: [Name, role, company]
+
+FINAL CONTACT
+H2: What would a useful change look like for you?
+Body: Tell us the problem you want to solve.
+Button: Let’s Talk Growth

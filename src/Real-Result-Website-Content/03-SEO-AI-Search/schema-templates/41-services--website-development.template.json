@@ -1,0 +1,75 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://replace-with-your-domain.invalid/#organization",
+      "name": "Real Result",
+      "url": "https://replace-with-your-domain.invalid/",
+      "description": "Real Result is a marketing company offering digital marketing, calling and messaging campaigns, and supporting website, app, and software development services."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://replace-with-your-domain.invalid/#website",
+      "name": "Real Result",
+      "url": "https://replace-with-your-domain.invalid/",
+      "publisher": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://replace-with-your-domain.invalid/services/website-development/#webpage",
+      "url": "https://replace-with-your-domain.invalid/services/website-development/",
+      "name": "Website Design & Development | Real Result",
+      "description": "Make your offer clear and your next step easy. Explore Website Design & Development with Real Result.",
+      "isPartOf": {
+        "@id": "https://replace-with-your-domain.invalid/#website"
+      },
+      "publisher": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://replace-with-your-domain.invalid/services/website-development/#breadcrumbs"
+      },
+      "mainEntity": {
+        "@id": "https://replace-with-your-domain.invalid/services/website-development/#service"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://replace-with-your-domain.invalid/services/website-development/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://replace-with-your-domain.invalid/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Websites, Apps & Software",
+          "item": "https://replace-with-your-domain.invalid/services/development/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Website Design & Development",
+          "item": "https://replace-with-your-domain.invalid/services/website-development/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://replace-with-your-domain.invalid/services/website-development/#service",
+      "name": "Website Design & Development",
+      "serviceType": "Website Design & Development",
+      "url": "https://replace-with-your-domain.invalid/services/website-development/",
+      "description": "Real Result designs and develops business websites that explain your offer and support enquiries or purchases, with content structure, responsive design, and launch preparation.",
+      "provider": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      }
+    }
+  ]
+}

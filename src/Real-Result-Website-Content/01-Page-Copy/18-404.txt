@@ -1,0 +1,22 @@
+PAGE: Page Not Found
+URL: /404/
+STATUS: Draft copy
+SEO TITLE: Page Not Found | Real Result
+META DESCRIPTION: Find your way to services, contact details, or the homepage of Real Result.
+PRIMARY TOPIC: none — error page
+SEARCH INTENT: Utility page — no search acquisition target
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/404/
+ROBOTS: noindex, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+H1: This page took a wrong turn.
+
+BODY
+Let’s get you back to something useful.
+
+BUTTONS
+Back to Home
+Explore Our Services
+Contact Us

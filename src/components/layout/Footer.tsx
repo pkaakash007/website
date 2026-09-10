@@ -2,181 +2,263 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {
   TrendingUp,
+  MessageSquare,
   Code2,
-  MapPin,
+  Building2,
   Mail,
   Phone,
+  MapPin,
+  ArrowRight,
+  ShieldCheck,
 } from "lucide-react";
 import { Container } from "./Container";
 import { BrandLogo } from "@/components/common/BrandLogo";
-import { SEO_CONFIG } from "@/config/seo";
-
-const marketingSilo = [
-  { label: "All 12 Core Services", href: "/services" },
-  { label: "Digital Marketing Overview", href: "/digital-marketing" },
-  { label: "Search Engine Optimization (SEO)", href: "/digital-marketing/seo" },
-  { label: "Local SEO & Google Maps 3-Pack", href: "/digital-marketing/local-seo" },
-  { label: "Generative Engine Optimization (GEO)", href: "/digital-marketing/geo" },
-  { label: "AI Search Optimization (AIO)", href: "/digital-marketing/aio" },
-  { label: "Google Ads & PPC Management", href: "/digital-marketing/google-ads" },
-  { label: "Performance Social Media Marketing", href: "/digital-marketing/social-media-marketing" },
-  { label: "Content Marketing & Digital PR", href: "/digital-marketing/content-marketing" },
-  { label: "Conversion Rate Optimization (CRO)", href: "/digital-marketing/conversion-rate-optimization" },
-];
-
-const softwareSilo = [
-  { label: "Application Development Overview", href: "/application-development" },
-  { label: "Custom Web Application Development", href: "/application-development/web-development" },
-  { label: "Mobile App Development (iOS/Android)", href: "/application-development/mobile-app-development" },
-  { label: "Custom Business ERP Software", href: "/application-development/custom-software-development" },
-  { label: "Multi-Tenant SaaS Engineering", href: "/application-development/saas-development" },
-  { label: "Enterprise AI & LLM Applications", href: "/application-development/ai-development" },
-];
-
-const locationSilo = [
-  { label: "Tamil Nadu Network Hub", href: "/locations/tamil-nadu" },
-  { label: "Erode Headquarters (HQ)", href: "/locations/erode" },
-  { label: "Coimbatore Industrial Hub", href: "/locations/coimbatore" },
-  { label: "Chennai Metropolitan Metro", href: "/locations/chennai" },
-  { label: "Tiruppur Knitwear & Export Hub", href: "/locations/tiruppur" },
-  { label: "Salem Steel & Commercial Hub", href: "/locations/salem" },
-  { label: "Madurai Southern Commercial Hub", href: "/locations/madurai" },
-  { label: "Trichy Engineering Hub", href: "/locations/trichy" },
-  { label: "Tirunelveli Regional Hub", href: "/locations/tirunelveli" },
-  { label: "Namakkal Poultry & Logistics Hub", href: "/locations/namakkal" },
-];
+import { Button } from "@/components/common/Button";
+import { REAL_RESULT_CONFIG } from "@/config";
 
 export const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-white text-neutral-900 pt-16 pb-12 border-t border-black/[0.08] relative">
+    <footer className="bg-white text-neutral-900 border-t border-black/[0.08] relative">
+      {/* Top Pre-Footer Callout */}
+      <div className="bg-[#0D0D11] text-white py-16 px-4">
+        <Container size="wide">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="max-w-2xl text-center md:text-left">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#0071E3] bg-[#0071E3]/10 px-3 py-1 rounded-full border border-[#0071E3]/20 inline-block mb-3">
+                {REAL_RESULT_CONFIG.tagline}
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white mb-2">
+                Ready to give your next customer a reason to choose you?
+              </h2>
+              <p className="text-sm text-neutral-400">
+                Digital marketing, customer communication, and supporting technology for your next business goal.
+              </p>
+            </div>
+            <div className="shrink-0">
+              <Button
+                variant="primary"
+                size="lg"
+                href="/contact/"
+                className="bg-[#0071E3] hover:bg-[#0077ED] text-white shadow-lg shadow-[#0071E3]/25 px-8 py-3.5 text-base font-semibold rounded-full"
+              >
+                Let’s Talk Growth <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </div>
+
+      {/* 4-Column Directory Matrix */}
       <Container size="wide">
-        {/* 4-Column Internal Linking Matrix */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-16 border-b border-black/[0.08]">
-          {/* Column 1: Entity & Contact */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-16 border-b border-black/[0.08]">
+          {/* Column 1: Brand & Positioning */}
           <div className="space-y-6">
             <BrandLogo size="lg" theme="light" />
-            <p className="text-[12.5px] text-neutral-500 leading-relaxed">
-              Delivering full-funnel search engine optimization, Generative Engine Optimization (GEO), Google Ads, and enterprise software engineering for Tamil Nadu businesses.
+            <p className="text-sm text-neutral-600 leading-relaxed font-normal">
+              Real Result helps businesses attract the right audience, turn interest into enquiries, and keep customers connected through digital marketing and targeted communication.
             </p>
 
             <div className="space-y-3 pt-2 text-xs text-neutral-600">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#0071E3] shrink-0 mt-0.5" />
-                <span>{SEO_CONFIG.headquarters.streetAddress}, {SEO_CONFIG.headquarters.addressLocality}, {SEO_CONFIG.headquarters.addressRegion} {SEO_CONFIG.headquarters.postalCode}</span>
+                <span>{REAL_RESULT_CONFIG.location.address}</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#0071E3] shrink-0" />
-                <a href={`tel:${SEO_CONFIG.telephone}`} className="hover:text-black transition-colors">{SEO_CONFIG.displayPhone}</a>
+                <a href={`tel:${REAL_RESULT_CONFIG.contact.phone}`} className="hover:text-black transition-colors font-medium">
+                  {REAL_RESULT_CONFIG.contact.phone}
+                </a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#0071E3] shrink-0" />
-                <a href={`mailto:${SEO_CONFIG.email}`} className="hover:text-black transition-colors">{SEO_CONFIG.email}</a>
+                <a href={`mailto:${REAL_RESULT_CONFIG.contact.email}`} className="hover:text-black transition-colors font-medium">
+                  {REAL_RESULT_CONFIG.contact.email}
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Column 2: Digital Marketing & SEO */}
+          {/* Column 2: Services Hubs & Highlights */}
           <div>
-            <div className="flex items-center gap-2 text-[11.5px] font-bold text-neutral-900 mb-4 uppercase tracking-wider">
-              <TrendingUp className="w-3.5 h-3.5 text-[#007AFF]" />
-              <span>Digital Marketing &amp; SEO</span>
+            <div className="flex items-center gap-2 text-xs font-bold text-neutral-900 mb-4 uppercase tracking-wider">
+              <TrendingUp className="w-4 h-4 text-[#0071E3]" />
+              <span>Core Services</span>
             </div>
             <ul className="space-y-2.5">
-              {marketingSilo.map((link, idx) => (
-                <li key={idx}>
-                  <Link
-                    to={link.href}
-                    className="text-[12.5px] text-neutral-500 hover:text-black hover:translate-x-0.5 inline-block transition-all"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link to="/services/" className="text-sm font-semibold text-neutral-900 hover:text-[#0071E3] transition-colors">
+                  All Services Overview
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/digital-marketing/" className="text-sm font-semibold text-neutral-900 hover:text-[#0071E3] transition-colors">
+                  Digital Marketing Hub (17 Services)
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/calling-messaging/" className="text-sm font-semibold text-neutral-900 hover:text-[#0071E3] transition-colors">
+                  Calling &amp; Messaging Hub
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/development/" className="text-sm font-semibold text-neutral-900 hover:text-[#0071E3] transition-colors">
+                  Websites, Apps &amp; Software Hub
+                </Link>
+              </li>
+              <li className="pt-2 border-t border-neutral-100">
+                <Link to="/services/seo/" className="text-xs text-neutral-600 hover:text-black transition-colors">
+                  Search Engine Optimization (SEO)
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/ai-search-optimization/" className="text-xs text-neutral-600 hover:text-black transition-colors">
+                  AI Search Optimization (AEO &amp; GEO)
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/paid-search/" className="text-xs text-neutral-600 hover:text-black transition-colors">
+                  Paid Search &amp; PPC
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/real-time-ai-calling/" className="text-xs text-neutral-600 hover:text-black transition-colors">
+                  Real-Time AI Calling Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/whatsapp-marketing/" className="text-xs text-neutral-600 hover:text-black transition-colors">
+                  WhatsApp Marketing &amp; Messaging
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/website-development/" className="text-xs text-neutral-600 hover:text-black transition-colors">
+                  Website Design &amp; Development
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Column 3: Software & Web Development */}
+          {/* Column 3: Company & Growth Solutions */}
           <div>
-            <div className="flex items-center gap-2 text-[11.5px] font-bold text-neutral-900 mb-4 uppercase tracking-wider">
-              <Code2 className="w-3.5 h-3.5 text-[#5856D6]" />
-              <span>Software &amp; Technology</span>
+            <div className="flex items-center gap-2 text-xs font-bold text-neutral-900 mb-4 uppercase tracking-wider">
+              <Building2 className="w-4 h-4 text-[#0071E3]" />
+              <span>Company &amp; Strategy</span>
             </div>
             <ul className="space-y-2.5">
-              {softwareSilo.map((link, idx) => (
-                <li key={idx}>
-                  <Link
-                    to={link.href}
-                    className="text-[12.5px] text-neutral-500 hover:text-black hover:translate-x-0.5 inline-block transition-all"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link to="/solutions/" className="text-sm font-semibold text-neutral-900 hover:text-[#0071E3] transition-colors">
+                  Growth Solutions
+                </Link>
+              </li>
+              <li>
+                <Link to="/about/" className="text-sm text-neutral-600 hover:text-black transition-colors">
+                  About Real Result
+                </Link>
+              </li>
+              <li>
+                <Link to="/how-we-work/" className="text-sm text-neutral-600 hover:text-black transition-colors">
+                  How We Work (5-Step Process)
+                </Link>
+              </li>
+              <li>
+                <Link to="/industries/" className="text-sm text-neutral-600 hover:text-black transition-colors">
+                  Industries &amp; Business Types
+                </Link>
+              </li>
+              <li>
+                <Link to="/work/" className="text-sm text-neutral-600 hover:text-black transition-colors">
+                  Our Work &amp; Case Studies
+                </Link>
+              </li>
+              <li>
+                <Link to="/engagement/" className="text-sm text-neutral-600 hover:text-black transition-colors">
+                  Ways to Work Together
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact/?goal=acquisition" className="text-xs text-neutral-500 hover:text-black transition-colors">
+                  Customer Acquisition Path
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact/?goal=conversion" className="text-xs text-neutral-500 hover:text-black transition-colors">
+                  Conversion Journey Focus
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact/?goal=follow-up" className="text-xs text-neutral-500 hover:text-black transition-colors">
+                  Enquiry Follow-Up Strategy
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Column 4: Tamil Nadu Locations */}
+          {/* Column 4: Resources & Compliance */}
           <div>
-            <div className="flex items-center gap-2 text-[11.5px] font-bold text-neutral-900 mb-4 uppercase tracking-wider">
-              <MapPin className="w-3.5 h-3.5 text-[#FF2D55]" />
-              <span>Tamil Nadu Locations</span>
+            <div className="flex items-center gap-2 text-xs font-bold text-neutral-900 mb-4 uppercase tracking-wider">
+              <MessageSquare className="w-4 h-4 text-[#0071E3]" />
+              <span>Resources &amp; Support</span>
             </div>
             <ul className="space-y-2.5">
-              {locationSilo.map((link, idx) => (
-                <li key={idx}>
-                  <Link
-                    to={link.href}
-                    className="text-[12.5px] text-neutral-500 hover:text-black hover:translate-x-0.5 inline-block transition-all"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link to="/insights/" className="text-sm font-semibold text-neutral-900 hover:text-[#0071E3] transition-colors">
+                  Insights &amp; Practical Reads
+                </Link>
+              </li>
+              <li>
+                <Link to="/insights/after-the-enquiry/" className="text-xs text-neutral-600 hover:text-black transition-colors">
+                  Article: What Happens After an Enquiry?
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq/" className="text-sm text-neutral-600 hover:text-black transition-colors">
+                  Real Result FAQs
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact/" className="text-sm text-neutral-600 hover:text-black transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+              <li className="pt-3 border-t border-neutral-100">
+                <div className="flex items-center gap-2 text-xs font-semibold text-neutral-800 uppercase tracking-wider mb-2">
+                  <ShieldCheck className="w-3.5 h-3.5 text-green-600" />
+                  <span>Policies</span>
+                </div>
+                <div className="space-y-1.5">
+                  <div>
+                    <Link to="/privacy-policy/" className="text-xs text-neutral-500 hover:text-black transition-colors">
+                      Privacy Policy
+                    </Link>
+                  </div>
+                  <div>
+                    <Link to="/terms/" className="text-xs text-neutral-500 hover:text-black transition-colors">
+                      Website Terms
+                    </Link>
+                  </div>
+                  <div>
+                    <Link to="/cookie-policy/" className="text-xs text-neutral-500 hover:text-black transition-colors">
+                      Cookie Policy
+                    </Link>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
 
-        {/* Resources & Hub Links */}
-        <div className="py-8 border-b border-black/[0.08] flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[12.5px] text-neutral-500">
-          <div className="flex flex-wrap items-center gap-6">
-            {[
-              ["Client Case Studies", "/case-studies"],
-              ["Resources & Guides", "/resources"],
-              ["FAQ", "/faq"],
-              ["Industries", "/industries"],
-              ["About", "/about"],
-              ["Contact Erode HQ", "/contact"],
-            ].map(([label, href]) => (
-              <Link key={href} to={href} className="hover:text-black transition-colors font-medium">
-                {label}
-              </Link>
-            ))}
-            <Link to="/review" className="hover:text-black transition-colors font-semibold inline-flex items-center gap-1.5 text-neutral-700">
-              <span className="text-[#FBBC04]">★★★★★</span>
-              <span>Google Review</span>
-            </Link>
-          </div>
-
-          <div className="text-neutral-400 text-[11px] font-medium">
-            Entity: Real Result Marketing (Erode, Tamil Nadu)
-          </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
-          <p className="text-[12px] text-neutral-400">
-            © {new Date().getFullYear()} {SEO_CONFIG.legalName}. All rights reserved.
+        {/* Bottom Legal Copyright Bar */}
+        <div className="py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
+          <p>
+            &copy; {currentYear} Real Result. All rights reserved. Main line: <span className="text-neutral-700 font-medium">Get noticed. Get chosen. Keep growing.</span>
           </p>
           <div className="flex items-center gap-6">
-            <Link to="/about" className="hover:text-black transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="/about" className="hover:text-black transition-colors">
-              Terms of Service
-            </Link>
-            <Link to="/contact" className="hover:text-black transition-colors">
-              Security &amp; NDAs
-            </Link>
+            <Link to="/privacy-policy/" className="hover:text-black transition-colors">Privacy</Link>
+            <Link to="/terms/" className="hover:text-black transition-colors">Terms</Link>
+            <Link to="/cookie-policy/" className="hover:text-black transition-colors">Cookies</Link>
+            <Link to="/faq/" className="hover:text-black transition-colors">Help</Link>
           </div>
         </div>
       </Container>

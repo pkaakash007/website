@@ -1,0 +1,59 @@
+PAGE: Ecommerce Development
+URL: /services/ecommerce-development/
+STATUS: Draft copy
+SEO TITLE: Ecommerce Development | Real Result
+META DESCRIPTION: Make browsing, buying, and managing orders simpler. Explore Ecommerce Development with Real Result.
+PRIMARY TOPIC: ecommerce development
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/ecommerce-development/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=ecommerce-development
+
+Breadcrumbs: Home > Websites, Apps & Software > Ecommerce Development
+
+HERO
+Eyebrow: Real Result · Websites, Apps & Software
+H1: Ecommerce Development
+Display hook: Make buying the easy part.
+Body: Real Result’s ecommerce development service builds or improves online stores, connecting product discovery, checkout, payments, and agreed operational integrations.
+Primary button: Discuss My Project
+Secondary link: What We Can Help With
+
+H2: A good product can still have a difficult checkout.
+Body: Unclear product details, awkward navigation, and disconnected order tools create unnecessary work for shoppers and your team.
+
+H2: What can this help your business do?
+• Make products easier to browse and compare.
+• Create a clearer path to purchase.
+• Connect store activity with daily operations.
+
+H2: What can the service include?
+Section anchor: scope
+• Store planning
+• Product and collection pages
+• Checkout configuration
+• Payment integrations
+• Inventory connections
+• Store migration
+
+H2: How does Real Result approach the work?
+Map the buying and fulfilment journey. Build the store. Test ordering, payments, and key operational flows.
+
+H2: Questions before you start
+H3: Can you move our existing store?
+Answer: Yes. Migration can include agreed products, customers, content, and redirects, subject to platform capabilities.
+
+H3: Can the store connect to our other tools?
+Answer: We assess available integrations and scope any custom connections needed.
+
+H2: Related services
+Paid Search & PPC -> /services/paid-search/
+Email Marketing & Automation -> /services/email-marketing/
+Conversion Rate Optimization -> /services/conversion-optimization/
+
+FINAL CONTACT
+H2: Where does shopping become hard work? Let’s simplify that part.
+Button: Discuss My Project

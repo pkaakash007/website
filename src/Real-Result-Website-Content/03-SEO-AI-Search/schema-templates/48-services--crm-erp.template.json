@@ -1,0 +1,75 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://replace-with-your-domain.invalid/#organization",
+      "name": "Real Result",
+      "url": "https://replace-with-your-domain.invalid/",
+      "description": "Real Result is a marketing company offering digital marketing, calling and messaging campaigns, and supporting website, app, and software development services."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://replace-with-your-domain.invalid/#website",
+      "name": "Real Result",
+      "url": "https://replace-with-your-domain.invalid/",
+      "publisher": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://replace-with-your-domain.invalid/services/crm-erp/#webpage",
+      "url": "https://replace-with-your-domain.invalid/services/crm-erp/",
+      "name": "CRM, ERP & Business Systems | Real Result",
+      "description": "Give teams a clearer view of customers and operations. Explore CRM, ERP & Business Systems with Real Result.",
+      "isPartOf": {
+        "@id": "https://replace-with-your-domain.invalid/#website"
+      },
+      "publisher": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://replace-with-your-domain.invalid/services/crm-erp/#breadcrumbs"
+      },
+      "mainEntity": {
+        "@id": "https://replace-with-your-domain.invalid/services/crm-erp/#service"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://replace-with-your-domain.invalid/services/crm-erp/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://replace-with-your-domain.invalid/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Websites, Apps & Software",
+          "item": "https://replace-with-your-domain.invalid/services/development/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "CRM, ERP & Business Systems",
+          "item": "https://replace-with-your-domain.invalid/services/crm-erp/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://replace-with-your-domain.invalid/services/crm-erp/#service",
+      "name": "CRM, ERP & Business Systems",
+      "serviceType": "CRM, ERP & Business Systems",
+      "url": "https://replace-with-your-domain.invalid/services/crm-erp/",
+      "description": "Real Result’s customer relationship management (CRM) and enterprise resource planning (ERP) service connects customer information, team workflows, and operational reporting through suitable business systems.",
+      "provider": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      }
+    }
+  ]
+}

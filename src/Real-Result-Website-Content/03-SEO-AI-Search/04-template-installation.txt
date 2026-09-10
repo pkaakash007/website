@@ -1,0 +1,20 @@
+TEMPLATE INSTALLATION
+
+The .invalid domain is intentional. Replace https://replace-with-your-domain.invalid everywhere with the confirmed origin before implementation. It is not a proposed Real Result domain.
+
+For each public page:
+• Set the title and meta description from page-seo-metadata.json.
+• Add a self-referencing canonical for the final page URL.
+• Insert the matching JSON-LD object in an application/ld+json script element.
+• Keep the markup aligned with the actual visible copy and breadcrumbs.
+• Use the same Organization @id across the site.
+
+Each per-page JSON file is a standalone template and includes shared Organization and WebSite nodes. If the CMS already emits these nodes, merge them rather than inserting competing duplicates. The homepage and about copy state the business identity used in the Organization description.
+
+Service markup is included only on individual service pages. No FAQPage markup, fake review markup, Offer pricing, LocalBusiness address, or unverified sameAs profiles is supplied. Complete real logo and contact fields only when verified.
+
+The article uses a WebPage template. If author and publication details become available, add appropriate Article markup that matches the published byline and dates. Do not invent expertise, publication dates, or review dates.
+
+Publish only completed pages. Exclude unfinished work, case-study, and policy templates. The sitemap is a planning template until the domain and actual launch list are confirmed. No lastmod dates are invented.
+
+An .invalid domain remaining in live HTML, canonical tags, structured data, robots.txt, or sitemap.xml is a launch-blocking error. Validate the live implementation before requesting indexing.

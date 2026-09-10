@@ -1,8 +1,6 @@
 import React from "react";
 import { openLeadModal } from "@/components/common/LeadModal";
-import {
-  ArrowRight,
-} from "lucide-react";
+import { Button } from "@/components/common/Button";
 
 export const HomeHero: React.FC = () => {
   return (
@@ -82,19 +80,24 @@ export const HomeHero: React.FC = () => {
 
               {/* Pill CTA Buttons with #C5A059 Brand Gold */}
               <div className="flex flex-wrap items-center gap-3.5">
-                <button
+                <Button
+                  variant="primary"
+                  size="lg"
                   onClick={() => openLeadModal("home-hero-white-gold")}
-                  className="cursor-pointer transition-all duration-200 hover:scale-105 active:scale-95 px-8 py-4 rounded-full text-sm sm:text-base font-extrabold bg-[#C5A059] hover:bg-[#B38F46] text-white shadow-[0_10px_35px_rgba(197,160,89,0.38)] flex items-center gap-2.5"
+                  className="!px-8 !py-4 font-extrabold shadow-[0_10px_35px_rgba(197,160,89,0.38)]"
                 >
-                  <span>Start Your Project</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
-                </button>
-                <a
+                  Start Your Project
+                </Button>
+                <Button
+                  variant="secondary"
+                  size="lg"
                   href="#pillars"
-                  className="cursor-pointer transition-all duration-200 hover:bg-neutral-100 px-7 py-4 rounded-full text-sm sm:text-base font-bold text-neutral-800 border border-neutral-300 hover:border-neutral-400 flex items-center gap-2"
+                  className="!px-7 !py-4 font-bold border-neutral-300"
+                  withArrow={false}
+                  withWatermark={false}
                 >
-                  <span>Explore Services</span>
-                </a>
+                  Explore Services
+                </Button>
               </div>
 
             </div>

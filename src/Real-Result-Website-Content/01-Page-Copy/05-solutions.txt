@@ -1,0 +1,50 @@
+PAGE: Growth Solutions
+URL: /solutions/
+STATUS: Draft copy
+SEO TITLE: Business Growth & Marketing Solutions | Real Result
+META DESCRIPTION: Find a starting point for more relevant enquiries, stronger conversion journeys, customer retention, and better marketing follow-up with Real Result.
+PRIMARY TOPIC: business growth marketing solutions
+SEARCH INTENT: Navigation, explanation, or decision support
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/solutions/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+Breadcrumbs: Home > Growth Solutions
+
+HERO
+Eyebrow: Start with your growth goal
+H1: What needs to happen for your business to grow?
+Body: Real Result connects marketing services to the customer journey you want to improve. Start with your obstacle; we’ll help identify the right work.
+Button: Let’s Talk Growth
+
+H2: “We need the right people to find us.”
+Body: Improve discovery through search, relevant campaigns, and content that explains your offer.
+Services: SEO · AI Search Optimization · Paid Search · Social Media
+Button: Talk About Customer Acquisition
+
+H2: “We get attention, but not enough enquiries.”
+Body: Give visitors a clearer reason to act with sharper messaging, useful pages, and an easier next step.
+Services: Paid Ads · Lead Generation · Website Design · Conversion Optimization
+Button: Talk About Conversion
+
+H2: “Our follow-up is not keeping up.”
+Body: Connect customer communication with the next action your team needs to take.
+Services: Real-Time AI Calling · WhatsApp · Bulk SMS · CRM · Automation
+Button: Talk About Follow-Up
+
+H2: “We want customers to come back.”
+Body: Create relevant reminders, updates, and conversations that keep your business in the picture.
+Services: Email · RCS · WhatsApp · Bulk Voice Calls · Lifecycle Campaigns
+Button: Talk About Customer Retention
+
+H2: “We’re launching something new.”
+Body: Define the offer, shape its digital experience, and plan how people will discover it.
+Services: Strategy · Branding · Websites & Apps · Launch Marketing
+Button: Talk About a Launch
+
+FINAL CONTACT
+H2: Which obstacle should we work on first?
+Body: Share the change that would make the biggest difference right now.
+Button: Let’s Talk Growth

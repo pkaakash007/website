@@ -1,0 +1,79 @@
+PAGE: Websites, Apps & Software
+URL: /services/development/
+STATUS: Draft copy
+SEO TITLE: Websites, Apps & Software Development | Real Result
+META DESCRIPTION: Support your customer journey with Real Result’s website, app, software, CRM, integration, and automation services. Discuss your project.
+PRIMARY TOPIC: website app and software development
+SEARCH INTENT: Navigation, explanation, or decision support
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/development/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+Breadcrumbs: Home > Websites, Apps & Software
+
+HERO
+Eyebrow: Supporting your marketing and business operations
+H1: Give your marketing somewhere useful to lead.
+Body: Real Result designs websites, apps, and software that support customer journeys and the work behind them. Choose a focused project or connect development with your wider marketing plan.
+Button: Discuss My Project
+
+H2: What should the experience make easier?
+Body: Finding an answer. Sending an enquiry. Booking a service. Completing an order. We start with the task, then plan the technology around it.
+
+H2: Explore development services
+H3: Website Design & Development
+Make your offer clear and your next step easy.
+Link: Website Design & Development -> /services/website-development/
+
+H3: Ecommerce Development
+Make browsing, buying, and managing orders simpler.
+Link: Ecommerce Development -> /services/ecommerce-development/
+
+H3: UI/UX & Product Design
+Turn confusing journeys into clearer experiences.
+Link: UI/UX & Product Design -> /services/ui-ux-design/
+
+H3: Mobile App Development
+Give customers a useful reason to return.
+Link: Mobile App Development -> /services/mobile-app-development/
+
+H3: Web Application Development
+Bring tasks, information, and users into one workspace.
+Link: Web Application Development -> /services/web-app-development/
+
+H3: Custom Software Development
+Build around your workflow and reduce repeated effort.
+Link: Custom Software Development -> /services/custom-software/
+
+H3: SaaS & MVP Development
+Turn the core idea into a focused first release.
+Link: SaaS & MVP Development -> /services/saas-mvp/
+
+H3: CRM, ERP & Business Systems
+Give teams a clearer view of customers and operations.
+Link: CRM, ERP & Business Systems -> /services/crm-erp/
+
+H3: API Development & Integrations
+Move information between tools with less manual effort.
+Link: API Development & Integrations -> /services/api-integrations/
+
+H3: Workflow & Business Automation
+Keep routine work moving with fewer manual handoffs.
+Link: Workflow & Business Automation -> /services/workflow-automation/
+
+H3: AI Solutions & Assistants
+Apply AI to a specific task with a way to check its work.
+Link: AI Solutions & Assistants -> /services/ai-solutions/
+
+H3: Website, App & Software Support
+Keep essential systems maintained and improvements planned.
+Link: Website, App & Software Support -> /services/maintenance-support/
+
+H2: Can development be a standalone project?
+Body: Yes. We can scope a website, app, integration, or software project on its own, with deliverables, milestones, and handover agreed before work begins.
+
+FINAL CONTACT
+H2: Which task needs a better way through it?
+Button: Discuss My Project

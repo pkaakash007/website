@@ -1,0 +1,59 @@
+PAGE: CRM, ERP & Business Systems
+URL: /services/crm-erp/
+STATUS: Draft copy
+SEO TITLE: CRM, ERP & Business Systems | Real Result
+META DESCRIPTION: Give teams a clearer view of customers and operations. Explore CRM, ERP & Business Systems with Real Result.
+PRIMARY TOPIC: crm, erp & business systems
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/crm-erp/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=crm-erp
+
+Breadcrumbs: Home > Websites, Apps & Software > CRM, ERP & Business Systems
+
+HERO
+Eyebrow: Real Result · Websites, Apps & Software
+H1: CRM, ERP & Business Systems
+Display hook: Know what’s happening without chasing everyone.
+Body: Real Result’s customer relationship management (CRM) and enterprise resource planning (ERP) service connects customer information, team workflows, and operational reporting through suitable business systems.
+Primary button: Discuss My Project
+Secondary link: What We Can Help With
+
+H2: One business. Several versions of the truth.
+Body: When customer and operational details live in separate tools, updates become harder to trust and easier to miss.
+
+H2: What can this help your business do?
+• Give teams access to consistent information.
+• Make ownership and next actions clearer.
+• Improve visibility across important workflows.
+
+H2: What can the service include?
+Section anchor: scope
+• Requirements mapping
+• Platform selection
+• CRM and ERP configuration
+• Custom modules
+• Data migration
+• User onboarding
+
+H2: How does Real Result approach the work?
+Map how work moves between teams. Choose the system approach. Configure, migrate, test, and support adoption.
+
+H2: Questions before you start
+H3: Do we need a custom system?
+Answer: Not always. Configuration or integration of an existing platform may be the better fit.
+
+H3: Can you move our current data?
+Answer: Migration scope depends on data quality, source access, and the destination system.
+
+H2: Related services
+B2B Lead Generation & Sales Funnels -> /services/lead-generation/
+Real-Time AI Calling Services -> /services/real-time-ai-calling/
+Workflow & Business Automation -> /services/workflow-automation/
+
+FINAL CONTACT
+H2: Which update takes too many people to find? Let’s connect the picture.
+Button: Discuss My Project

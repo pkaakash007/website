@@ -1,0 +1,53 @@
+PAGE: Real Result FAQs
+URL: /faq/
+STATUS: Draft copy
+SEO TITLE: Marketing, Calling & Messaging FAQs | Real Result
+META DESCRIPTION: Get answers about Real Result’s marketing, AI calling, bulk voice, SMS, RCS, WhatsApp, development, pricing, and project scope.
+PRIMARY TOPIC: Real Result services FAQ
+SEARCH INTENT: Navigation, explanation, or decision support
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/faq/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+Breadcrumbs: Home > Real Result FAQs
+
+HERO
+H1: Clear answers before the first conversation.
+Body: Find practical answers about working with Real Result.
+Button: Ask Your Question
+
+H2: Is Real Result a marketing company or a software company?
+Answer: Real Result is a marketing company. Website, app, and software development are supporting services for customer experiences, campaigns, and business operations.
+
+H2: What marketing services does Real Result offer?
+Answer: Services include strategy, SEO, AI search optimization, paid advertising, social media, content, branding, lead generation, conversion optimization, email, and customer communication.
+
+H2: Which calling and messaging services are available?
+Answer: Bulk voice calls, real-time AI calling, bulk SMS, RCS business messaging, and WhatsApp marketing and messaging.
+
+H2: How do bulk voice calls differ from AI calling?
+Answer: Bulk voice campaigns play a recorded message. Real-time AI calling listens and responds during a two-way conversation.
+
+H2: Can I use one service?
+Answer: Yes. We can discuss a focused campaign, an individual project, or connected services around one goal.
+
+H2: What affects pricing?
+Answer: Scope, complexity, campaign volume, destination, tools, and support affect the quote. Agency fees and third-party charges are identified in the proposal.
+
+H2: Can you work with our existing tools?
+Answer: Yes. We assess current websites, campaigns, accounts, and systems before defining what to keep, connect, or change.
+
+H2: How quickly can work start?
+Answer: Timing depends on the agreed scope, access, assets, account readiness, and any provider approvals. We discuss milestones before work begins.
+
+H2: Can you guarantee sales or AI-search recommendations?
+Answer: No. We agree on goals and measures, but customer decisions and search-system selections are outside our control.
+
+H2: Who owns the accounts, code, and creative?
+Answer: Ownership, licences, access, and handover are specified in the agreement.
+
+FINAL CONTACT
+H2: Have a question about your business?
+Button: Let’s Talk Growth

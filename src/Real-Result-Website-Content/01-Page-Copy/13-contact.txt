@@ -1,0 +1,50 @@
+PAGE: Contact Real Result
+URL: /contact/
+STATUS: Draft copy
+SEO TITLE: Contact Real Result | Discuss Your Marketing Goals
+META DESCRIPTION: Talk to Real Result about digital marketing, AI calling, bulk voice calls, SMS, RCS, WhatsApp, or development. Share your next business goal.
+PRIMARY TOPIC: contact Real Result
+SEARCH INTENT: Navigation, explanation, or decision support
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/contact/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+Breadcrumbs: Home > Contact Real Result
+
+HERO
+Eyebrow: Contact Real Result
+H1: Let’s talk about your next customer.
+Body: Tell us what you want to grow, who you want to reach, and what is getting in the way.
+
+FORM
+Name* — Your name
+Email* — Where we can reach you
+Business name — Your business
+Website — If you have one
+What do you need help with? — Choose a goal or service
+Options: Marketing & Growth | SEO & AI Search | Paid Ads & Lead Generation | Social Media & Content | Bulk Voice Calls | Real-Time AI Calling | Bulk SMS | RCS Messaging | WhatsApp Messaging | Email Marketing | Websites, Apps & Software | Not Sure Yet
+Tell us about your goal* — What is happening now, and what would you like to improve?
+Approximate budget — Optional
+Preferred timeframe — Optional
+Button: Send My Enquiry
+Privacy line: Real Result will use these details to respond to your enquiry. Read our Privacy Policy.
+
+NEXT STEPS
+H2: A clear challenge is enough to start.
+Body: We review your message and contact you to discuss fit, scope, and a practical next step.
+
+CONTACT DETAILS
+Email: [Business Email]
+Phone: [Business Phone]
+Service area: [Confirmed Service Area]
+Optional button: Chat on WhatsApp
+
+FORM MESSAGES
+Sending: Sending your enquiry…
+Success: Thanks. Real Result has received your enquiry.
+Name error: Please enter your name.
+Email error: Please enter a valid email address.
+Message error: Please tell us what you would like to improve.
+Send error: Your enquiry could not be sent. Please try again or email [Business Email].

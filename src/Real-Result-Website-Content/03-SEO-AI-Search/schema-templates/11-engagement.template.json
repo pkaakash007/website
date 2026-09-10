@@ -1,0 +1,55 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://replace-with-your-domain.invalid/#organization",
+      "name": "Real Result",
+      "url": "https://replace-with-your-domain.invalid/",
+      "description": "Real Result is a marketing company offering digital marketing, calling and messaging campaigns, and supporting website, app, and software development services."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://replace-with-your-domain.invalid/#website",
+      "name": "Real Result",
+      "url": "https://replace-with-your-domain.invalid/",
+      "publisher": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://replace-with-your-domain.invalid/engagement/#webpage",
+      "url": "https://replace-with-your-domain.invalid/engagement/",
+      "name": "Marketing Projects & Ongoing Support | Real Result",
+      "description": "Choose a focused project, ongoing marketing or technical support, or extra capacity for your team. Discuss scope and pricing with Real Result.",
+      "isPartOf": {
+        "@id": "https://replace-with-your-domain.invalid/#website"
+      },
+      "publisher": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://replace-with-your-domain.invalid/engagement/#breadcrumbs"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://replace-with-your-domain.invalid/engagement/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://replace-with-your-domain.invalid/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ways to Work Together",
+          "item": "https://replace-with-your-domain.invalid/engagement/"
+        }
+      ]
+    }
+  ]
+}

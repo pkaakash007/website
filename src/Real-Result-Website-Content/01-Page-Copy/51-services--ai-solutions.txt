@@ -1,0 +1,59 @@
+PAGE: AI Solutions & Assistants
+URL: /services/ai-solutions/
+STATUS: Draft copy
+SEO TITLE: AI Solutions & Assistants | Real Result
+META DESCRIPTION: Apply AI to a specific task with a way to check its work. Explore AI Solutions & Assistants with Real Result.
+PRIMARY TOPIC: ai solutions & assistants
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/ai-solutions/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=ai-solutions
+
+Breadcrumbs: Home > Websites, Apps & Software > AI Solutions & Assistants
+
+HERO
+Eyebrow: Real Result · Websites, Apps & Software
+H1: AI Solutions & Assistants
+Display hook: Give AI a useful job in your business.
+Body: Real Result’s AI solutions service develops focused assistants for tasks such as finding information, drafting responses, and processing documents, with evaluation and appropriate human review.
+Primary button: Discuss My Project
+Secondary link: What We Can Help With
+
+H2: Interesting technology. Unclear use case.
+Body: The useful starting point is a real task, a clear source of information, and a way to check the result.
+
+H2: What can this help your business do?
+• Make internal information easier to access.
+• Assist teams with repetitive content and document tasks.
+• Test usefulness before expanding the rollout.
+
+H2: What can the service include?
+Section anchor: scope
+• Use-case discovery
+• Knowledge assistants
+• Document processing
+• Customer support assistants
+• System integration
+• Evaluation workflows
+
+H2: How does Real Result approach the work?
+Select a bounded use case. Assess data and risks. Pilot the assistant and evaluate it against real tasks.
+
+H2: Questions before you start
+H3: Will AI always give the right answer?
+Answer: No. We plan evaluation, access controls, review, and escalation around the use case.
+
+H3: Can it work with our business information?
+Answer: We assess data permissions, sensitivity, hosting requirements, and integration options first.
+
+H2: Related services
+Real-Time AI Calling Services -> /services/real-time-ai-calling/
+Workflow & Business Automation -> /services/workflow-automation/
+Custom Software Development -> /services/custom-software/
+
+FINAL CONTACT
+H2: Which task would benefit from an assistant? Let’s test the idea on something real.
+Button: Discuss My Project

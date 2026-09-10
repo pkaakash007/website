@@ -1,0 +1,59 @@
+PAGE: Web Application Development
+URL: /services/web-app-development/
+STATUS: Draft copy
+SEO TITLE: Web Application Development | Real Result
+META DESCRIPTION: Bring tasks, information, and users into one workspace. Explore Web Application Development with Real Result.
+PRIMARY TOPIC: web application development
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/web-app-development/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=web-app-development
+
+Breadcrumbs: Home > Websites, Apps & Software > Web Application Development
+
+HERO
+Eyebrow: Real Result · Websites, Apps & Software
+H1: Web Application Development
+Display hook: Move the work out of the inbox.
+Body: Real Result’s web application development service creates browser-based tools such as customer portals, booking platforms, and dashboards for completing tasks and managing information.
+Primary button: Discuss My Project
+Secondary link: What We Can Help With
+
+H2: Another email asking for the same update?
+Body: Scattered forms, attachments, and approvals can turn a simple process into a long exchange.
+
+H2: What can this help your business do?
+• Bring important tasks into one place.
+• Give users clearer access to their information.
+• Reduce avoidable back-and-forth.
+
+H2: What can the service include?
+Section anchor: scope
+• Customer portals
+• Booking platforms
+• Partner dashboards
+• Internal workspaces
+• Role-based access
+• Business system connections
+
+H2: How does Real Result approach the work?
+Map users and tasks. Design the workflows. Build and test the journeys that matter most.
+
+H2: Questions before you start
+H3: How is this different from a website?
+Answer: A web application lets people perform tasks and manage information through an interactive browser experience.
+
+H3: Can different users see different information?
+Answer: Yes. Roles and access rules can be designed around the agreed workflow.
+
+H2: Related services
+UI/UX & Product Design -> /services/ui-ux-design/
+API Development & Integrations -> /services/api-integrations/
+CRM, ERP & Business Systems -> /services/crm-erp/
+
+FINAL CONTACT
+H2: Which conversation could become a simple self-service action? Let’s explore it.
+Button: Discuss My Project

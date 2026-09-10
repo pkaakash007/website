@@ -1,0 +1,59 @@
+PAGE: Analytics & Marketing Reporting
+URL: /services/analytics/
+STATUS: Draft copy
+SEO TITLE: Analytics & Marketing Reporting | Real Result
+META DESCRIPTION: Connect reporting with decisions you need to make. Explore Analytics & Marketing Reporting with Real Result.
+PRIMARY TOPIC: analytics & marketing reporting
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/analytics/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=analytics
+
+Breadcrumbs: Home > Digital Marketing > Analytics & Marketing Reporting
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: Analytics & Marketing Reporting
+Display hook: Know what happened after the click.
+Body: Real Result’s marketing analytics service connects measurement planning, event tracking, dashboards, and reporting to the business questions behind your campaigns.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: Plenty of numbers. Still guessing.
+Body: Separate dashboards and missing tracking can make it difficult to understand which activity supports your goals.
+
+H2: What can this help your business do?
+• Define the actions that matter.
+• Bring useful measures into one view.
+• Turn reporting into practical next steps.
+
+H2: What can the service include?
+Section anchor: scope
+• Measurement strategy
+• Tracking audits
+• Event configuration
+• Campaign tagging
+• Dashboard setup
+• Reporting interpretation
+
+H2: How does Real Result approach the work?
+Agree on business questions. Check data collection. Build a useful view and explain its limits.
+
+H2: Questions before you start
+H3: Can you track every customer perfectly?
+Answer: No. Consent choices, platforms, devices, and offline activity can leave gaps.
+
+H3: Can you use our existing tools?
+Answer: Yes. We first review what is available and what needs to connect.
+
+H2: Related services
+Marketing Strategy -> /services/marketing-strategy/
+Conversion Rate Optimization -> /services/conversion-optimization/
+API Development & Integrations -> /services/api-integrations/
+
+FINAL CONTACT
+H2: Which marketing question can your reports not answer? Let’s start there.
+Button: Let’s Talk Growth

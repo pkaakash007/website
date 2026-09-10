@@ -1,0 +1,59 @@
+PAGE: B2B Lead Generation & Sales Funnels
+URL: /services/lead-generation/
+STATUS: Draft copy
+SEO TITLE: B2B Lead Generation & Sales Funnels | Real Result
+META DESCRIPTION: Bring more clarity to the path from interest to sales. Explore B2B Lead Generation & Sales Funnels with Real Result.
+PRIMARY TOPIC: b2b lead generation & sales funnels
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/lead-generation/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=lead-generation
+
+Breadcrumbs: Home > Digital Marketing > B2B Lead Generation & Sales Funnels
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: B2B Lead Generation & Sales Funnels
+Display hook: Make the next sales conversation more relevant.
+Body: Real Result’s B2B lead generation service connects a focused offer, relevant campaigns, lead capture, qualification, and sales handoff to support useful customer conversations.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: A full inbox can still be the wrong pipeline.
+Body: When the offer, targeting, and qualification do not match, sales teams spend time on conversations that go nowhere.
+
+H2: What can this help your business do?
+• Clarify who the offer is for.
+• Capture the information sales teams need.
+• Give interested leads a consistent next step.
+
+H2: What can the service include?
+Section anchor: scope
+• Ideal customer definition
+• Offer development
+• Lead capture pages
+• Campaign planning
+• Qualification flows
+• CRM handoff
+
+H2: How does Real Result approach the work?
+Agree on lead quality. Build the offer and journey. Review enquiries with your sales team.
+
+H2: Questions before you start
+H3: How do you define a qualified lead?
+Answer: We agree on practical criteria such as business fit, needs, decision role, and readiness.
+
+H3: Can you guarantee closed sales?
+Answer: No. We can support the journey, but buying decisions and sales outcomes depend on several factors.
+
+H2: Related services
+Real-Time AI Calling Services -> /services/real-time-ai-calling/
+CRM, ERP & Business Systems -> /services/crm-erp/
+Conversion Rate Optimization -> /services/conversion-optimization/
+
+FINAL CONTACT
+H2: What makes a lead worth your team’s time? Let’s build around that.
+Button: Let’s Talk Growth

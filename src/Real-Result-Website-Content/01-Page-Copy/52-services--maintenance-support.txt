@@ -1,0 +1,59 @@
+PAGE: Website, App & Software Support
+URL: /services/maintenance-support/
+STATUS: Draft copy
+SEO TITLE: Website, App & Software Support | Real Result
+META DESCRIPTION: Keep essential systems maintained and improvements planned. Explore Website, App & Software Support with Real Result.
+PRIMARY TOPIC: website, app & software support
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/maintenance-support/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=maintenance-support
+
+Breadcrumbs: Home > Websites, Apps & Software > Website, App & Software Support
+
+HERO
+Eyebrow: Real Result · Websites, Apps & Software
+H1: Website, App & Software Support
+Display hook: Keep the tools you rely on moving.
+Body: Real Result’s website, app, and software support service covers agreed maintenance, fixes, updates, and improvements for the digital tools your business relies on.
+Primary button: Discuss My Project
+Secondary link: What We Can Help With
+
+H2: Launch day is only one day.
+Body: As tools, devices, and business needs change, the systems you depend on need attention too.
+
+H2: What can this help your business do?
+• Keep maintenance work visible and organized.
+• Address issues through an agreed support process.
+• Plan improvements around changing business needs.
+
+H2: What can the service include?
+Section anchor: scope
+• Technical assessments
+• Bug fixes
+• Dependency updates
+• Performance reviews
+• Backup arrangements
+• Improvement planning
+
+H2: How does Real Result approach the work?
+Review the system and access. Agree on coverage and priorities. Maintain a clear support and improvement queue.
+
+H2: Questions before you start
+H3: Can you support something another team built?
+Answer: We assess the code, documentation, access, and technical condition before agreeing on coverage.
+
+H3: Is support available around the clock?
+Answer: Support hours, response targets, and escalation arrangements are defined in the agreement.
+
+H2: Related services
+Website Design & Development -> /services/website-development/
+Custom Software Development -> /services/custom-software/
+Mobile App Development -> /services/mobile-app-development/
+
+FINAL CONTACT
+H2: What needs attention in the tools you depend on? Let’s review it.
+Button: Discuss My Project

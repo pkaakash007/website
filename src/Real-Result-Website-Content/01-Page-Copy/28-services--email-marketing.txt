@@ -1,0 +1,59 @@
+PAGE: Email Marketing & Automation
+URL: /services/email-marketing/
+STATUS: Draft copy
+SEO TITLE: Email Marketing & Automation | Real Result
+META DESCRIPTION: Turn first interest into an ongoing conversation. Explore Email Marketing & Automation with Real Result.
+PRIMARY TOPIC: email marketing & automation
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/email-marketing/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=email-marketing
+
+Breadcrumbs: Home > Digital Marketing > Email Marketing & Automation
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: Email Marketing & Automation
+Display hook: Keep the conversation going after the first visit.
+Body: Real Result’s email marketing and automation service creates campaigns and follow-up sequences for welcoming leads, supporting buying decisions, and keeping customers connected.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: Interest fades when follow-up disappears.
+Body: A visitor may need answers, reassurance, or a reminder before they act. Make the next message relevant to where they are.
+
+H2: What can this help your business do?
+• Welcome interested people with useful information.
+• Make follow-up more consistent.
+• Support repeat purchases and ongoing relationships.
+
+H2: What can the service include?
+Section anchor: scope
+• Email strategy
+• Campaign copy and design
+• Audience segmentation
+• Welcome sequences
+• Lifecycle automation
+• Performance review
+
+H2: How does Real Result approach the work?
+Map the customer journey. Write relevant emails. Configure timing, audience permissions, and unsubscribe handling.
+
+H2: Questions before you start
+H3: Do we need an existing list?
+Answer: We can work with a permission-based audience or plan appropriate ways to invite sign-ups.
+
+H3: Are platform and messaging charges included?
+Answer: The proposal identifies tools, message fees, and delivery work separately.
+
+H2: Related services
+WhatsApp Marketing & Messaging Services -> /services/whatsapp-marketing/
+Workflow & Business Automation -> /services/workflow-automation/
+CRM, ERP & Business Systems -> /services/crm-erp/
+
+FINAL CONTACT
+H2: What happens after someone shows interest? Let’s give them a reason to return.
+Button: Let’s Talk Growth

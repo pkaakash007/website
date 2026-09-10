@@ -1,0 +1,45 @@
+PAGE: Insight Article
+URL: /insights/after-the-enquiry/
+STATUS: Draft copy
+SEO TITLE: What Happens After an Enquiry? | Real Result
+META DESCRIPTION: Review the journey from a new enquiry to a useful sales conversation with five practical questions about response, information, and follow-up.
+PRIMARY TOPIC: enquiry follow-up process
+SEARCH INTENT: Navigation, explanation, or decision support
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/insights/after-the-enquiry/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+Breadcrumbs: Home > Insight Article
+
+ARTICLE
+Category: Getting Chosen
+H1: Your next enquiry is only the beginning.
+Introduction: Someone has found you and filled in the form. What happens next deserves as much attention as the campaign that brought them there.
+
+1. WHERE DOES THE ENQUIRY GO?
+Does it reach the right person, or wait in a shared inbox? Give each enquiry a clear owner and make its status visible.
+
+2. WHAT DOES THE CUSTOMER SEE?
+After submitting the form, does the visitor know it worked? Confirm receipt and explain the next step in plain language.
+
+3. WHAT DOES YOUR TEAM KNOW?
+Can they see what the person asked about and where the enquiry came from? Useful context makes the first conversation easier to prepare for.
+
+4. WHAT HAPPENS IF THEY ARE NOT READY?
+Some people need more information or more time. Decide what helpful follow-up looks like and respect their communication preferences.
+
+5. WHAT CAN YOU LEARN FROM THE OUTCOME?
+Connect the enquiry with its eventual status. Was it suitable? Did a conversation happen? What question or obstacle kept coming up?
+
+YOUR NEXT STEP
+Choose one recent enquiry and follow its journey from the form to the outcome. Note where a person had to chase, guess, or repeat information. That is a useful place to investigate.
+
+RELATED SERVICES
+Lead Generation | CRM & Business Systems | Workflow Automation
+
+CONTACT
+H2: Where does the follow-up slow down?
+Body: We can help you connect marketing, enquiry capture, and the workflow that comes next.
+Button: Let’s Talk Growth

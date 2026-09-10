@@ -1,0 +1,59 @@
+PAGE: Brand Strategy & Design
+URL: /services/branding/
+STATUS: Draft copy
+SEO TITLE: Brand Strategy & Design | Real Result
+META DESCRIPTION: Give customers a clear reason to remember your business. Explore Brand Strategy & Design with Real Result.
+PRIMARY TOPIC: brand strategy & design
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/branding/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=branding
+
+Breadcrumbs: Home > Digital Marketing > Brand Strategy & Design
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: Brand Strategy & Design
+Display hook: Make your value hard to confuse.
+Body: Real Result’s brand strategy and design service shapes positioning, messaging, visual identity, and brand guidelines so your business communicates consistently.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: Looking like everyone else gets expensive.
+Body: If your message and visuals feel interchangeable, customers have fewer reasons to remember you.
+
+H2: What can this help your business do?
+• Explain what makes your offer relevant.
+• Create a recognizable visual identity.
+• Keep teams and channels speaking consistently.
+
+H2: What can the service include?
+Section anchor: scope
+• Brand positioning
+• Messaging
+• Naming exploration
+• Logo and visual identity
+• Brand guidelines
+• Launch assets
+
+H2: How does Real Result approach the work?
+Explore your audience and offer. Define the position. Build the identity and show how to use it.
+
+H2: Questions before you start
+H3: Do we need a completely new brand?
+Answer: Not necessarily. We can refine what already works and address the parts creating confusion.
+
+H3: Will we receive editable files?
+Answer: The proposal specifies deliverable formats, usage rights, and handover materials.
+
+H2: Related services
+Content Marketing & Copywriting -> /services/content-marketing/
+Website Design & Development -> /services/website-development/
+Marketing Strategy -> /services/marketing-strategy/
+
+FINAL CONTACT
+H2: What should customers think of when they hear your name? Let’s define it.
+Button: Let’s Talk Growth

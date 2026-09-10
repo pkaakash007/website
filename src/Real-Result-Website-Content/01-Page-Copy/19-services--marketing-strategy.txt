@@ -1,0 +1,59 @@
+PAGE: Marketing Strategy
+URL: /services/marketing-strategy/
+STATUS: Draft copy
+SEO TITLE: Marketing Strategy | Real Result
+META DESCRIPTION: Know where to focus your next move. Explore Marketing Strategy with Real Result.
+PRIMARY TOPIC: marketing strategy
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/marketing-strategy/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=marketing-strategy
+
+Breadcrumbs: Home > Digital Marketing > Marketing Strategy
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: Marketing Strategy
+Display hook: What should you fix first?
+Body: Real Result’s marketing strategy service connects audience research, positioning, channel priorities, and measurement in a practical plan for your next business goal.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: Busy marketing. Unclear direction.
+Body: A calendar full of activity can still leave you wondering where the next customer will come from.
+
+H2: What can this help your business do?
+• Choose channels with a clear purpose.
+• Give your message a consistent direction.
+• Know what to measure before you invest.
+
+H2: What can the service include?
+Section anchor: scope
+• Audience and competitor research
+• Positioning and offer review
+• Channel planning
+• Campaign priorities
+• Budget scenarios
+• Measurement plan
+
+H2: How does Real Result approach the work?
+Understand the business. Identify the main obstacle. Agree on priorities and a practical roadmap.
+
+H2: Questions before you start
+H3: Do I need every marketing channel?
+Answer: No. We help select channels around your audience, resources, and goals.
+
+H3: Can you work with our existing team?
+Answer: Yes. The plan can guide your team, our delivery, or a shared approach.
+
+H2: Related services
+Analytics & Marketing Reporting -> /services/analytics/
+B2B Lead Generation & Sales Funnels -> /services/lead-generation/
+Brand Strategy & Design -> /services/branding/
+
+FINAL CONTACT
+H2: Bring your biggest marketing question. Let’s decide where to start.
+Button: Let’s Talk Growth

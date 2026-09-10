@@ -1,0 +1,75 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://replace-with-your-domain.invalid/#organization",
+      "name": "Real Result",
+      "url": "https://replace-with-your-domain.invalid/",
+      "description": "Real Result is a marketing company offering digital marketing, calling and messaging campaigns, and supporting website, app, and software development services."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://replace-with-your-domain.invalid/#website",
+      "name": "Real Result",
+      "url": "https://replace-with-your-domain.invalid/",
+      "publisher": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://replace-with-your-domain.invalid/services/ai-search-optimization/#webpage",
+      "url": "https://replace-with-your-domain.invalid/services/ai-search-optimization/",
+      "name": "AI Search Optimization (AEO & GEO) | Real Result",
+      "description": "Make your expertise clearer for search and AI-assisted discovery. Explore AI Search Optimization (AEO & GEO) with Real Result.",
+      "isPartOf": {
+        "@id": "https://replace-with-your-domain.invalid/#website"
+      },
+      "publisher": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://replace-with-your-domain.invalid/services/ai-search-optimization/#breadcrumbs"
+      },
+      "mainEntity": {
+        "@id": "https://replace-with-your-domain.invalid/services/ai-search-optimization/#service"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://replace-with-your-domain.invalid/services/ai-search-optimization/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://replace-with-your-domain.invalid/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Digital Marketing",
+          "item": "https://replace-with-your-domain.invalid/services/digital-marketing/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI Search Optimization (AEO & GEO)",
+          "item": "https://replace-with-your-domain.invalid/services/ai-search-optimization/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://replace-with-your-domain.invalid/services/ai-search-optimization/#service",
+      "name": "AI Search Optimization (AEO & GEO)",
+      "serviceType": "AI Search Optimization (AEO & GEO)",
+      "url": "https://replace-with-your-domain.invalid/services/ai-search-optimization/",
+      "description": "Real Result’s AI search optimization service improves the clarity, accessibility, and evidence behind your website content for search and AI-assisted discovery. It builds on SEO, useful answers, and consistent business information.",
+      "provider": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      }
+    }
+  ]
+}

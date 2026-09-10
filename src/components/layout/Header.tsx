@@ -34,185 +34,87 @@ export interface NavDropdownData {
   col2: {
     title: string;
     items: DropdownColItem[];
+    footerLink?: { label: string; href: string };
   };
   col3: {
     title: string;
     items: DropdownColItem[];
+    footerLink?: { label: string; href: string };
   };
 }
 
 export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
   services: {
     col1: {
-      title: "Explore Services",
+      title: "Digital Marketing (17 Services)",
       items: [
-        { label: "Website Design", href: "/application-development" },
-        { label: "Ecommerce Website", href: "/application-development" },
-        { label: "Mobile App Development", href: "/application-development" },
-        { label: "UI/UX Designing", href: "/application-development" },
-        { label: "Digital Marketing", href: "/digital-marketing" },
-        { label: "Search Engine Optimization", href: "/digital-marketing/seo" },
-        { label: "Social Media Marketing", href: "/digital-marketing/social-media-marketing" },
-        { label: "Video Editing & Production", href: "/services#video-editing" },
+        { label: "Marketing Strategy", href: "/services/marketing-strategy" },
+        { label: "Search Engine Optimization (SEO)", href: "/services/seo" },
+        { label: "AI Search Optimization (AEO & GEO)", href: "/services/ai-search-optimization" },
+        { label: "Local SEO", href: "/services/local-seo" },
+        { label: "Paid Search & PPC", href: "/services/paid-search" },
+        { label: "Paid Social & Video Ads", href: "/services/paid-social" },
+        { label: "Social Media Management", href: "/services/social-media" },
+        { label: "Content Marketing & Copywriting", href: "/services/content-marketing" },
       ],
-      footerLink: { label: "Explore All 12 Services", href: "/services" },
+      footerLink: { label: "Explore All 17 Digital Marketing Services", href: "/services/digital-marketing" },
     },
     col2: {
-      title: "Creative & Branding",
+      title: "Calling & Messaging (5 Channels)",
       items: [
-        { label: "Logo Design & Branding", href: "/services#logo-design" },
-        { label: "Graphic Design", href: "/services#graphic-design" },
-        { label: "Ecommerce Photography", href: "/services#ecommerce-photography" },
-        { label: "Cyber Security Audits", href: "/application-development" },
-        { label: "Content Marketing & PR", href: "/digital-marketing/content-marketing" },
-        { label: "Cloud & Backend Architecture", href: "/application-development" },
+        { label: "Bulk Voice Call Services", href: "/services/bulk-voice-calls" },
+        { label: "Real-Time AI Calling Services", href: "/services/real-time-ai-calling" },
+        { label: "Bulk SMS Services", href: "/services/bulk-sms" },
+        { label: "RCS Business Messaging", href: "/services/rcs-messaging" },
+        { label: "WhatsApp Marketing & Messaging", href: "/services/whatsapp-marketing" },
+        { label: "B2B Lead Generation & Funnels", href: "/services/lead-generation" },
+        { label: "Conversion Rate Optimization (CRO)", href: "/services/conversion-optimization" },
       ],
+      footerLink: { label: "Explore Calling & Messaging Hub", href: "/services/calling-messaging" },
     },
     col3: {
-      title: "Service Delivery",
+      title: "Websites, Apps & Software (12 Systems)",
       items: [
-        { label: "Free Architecture Consultation", isModal: true },
-        { label: "Sub-Second Speed SLA Guarantees", href: "/application-development" },
-        { label: "Direct WhatsApp Engineering Desk", isWhatsApp: true },
-        { label: "Verified Portfolio & Case Studies", href: "/services" },
+        { label: "Website Design & Development", href: "/services/website-development" },
+        { label: "Ecommerce Development", href: "/services/ecommerce-development" },
+        { label: "UI/UX & Product Design", href: "/services/ui-ux-design" },
+        { label: "Mobile App Development", href: "/services/mobile-app-development" },
+        { label: "Custom Software Development", href: "/services/custom-software" },
+        { label: "CRM, ERP & Business Systems", href: "/services/crm-erp" },
+        { label: "Workflow & Business Automation", href: "/services/workflow-automation" },
       ],
-    },
-  },
-
-  marketing: {
-    col1: {
-      title: "Explore Marketing",
-      items: [
-        { label: "Google Ads & PPC", href: "/digital-marketing" },
-        { label: "Search Engine Optimization", href: "/digital-marketing/seo" },
-        { label: "Social Media Marketing", href: "/digital-marketing/social-media-marketing" },
-        { label: "Instagram & Meta Ads", href: "/digital-marketing" },
-        { label: "Google Maps & Local SEO", href: "/digital-marketing/seo" },
-        { label: "Content Marketing & PR", href: "/digital-marketing/content-marketing" },
-        { label: "Conversion Optimization", href: "/digital-marketing" },
-      ],
-      footerLink: { label: "Explore Marketing Hub", href: "/digital-marketing" },
-    },
-    col2: {
-      title: "Growth Channels",
-      items: [
-        { label: "Direct Phone Call Leads", href: "/digital-marketing" },
-        { label: "WhatsApp Lead Generation", href: "/digital-marketing" },
-        { label: "Tamil Nadu Geo-Targeting", href: "/digital-marketing#reach" },
-        { label: "Ecommerce Ad Scaling", href: "/digital-marketing" },
-        { label: "Short-Form Video & Reels Ads", href: "/services#video-editing" },
-        { label: "Local Google 3-Pack Ranking", href: "/digital-marketing/seo" },
-      ],
-    },
-    col3: {
-      title: "Helpful Topics",
-      items: [
-        { label: "Free Website & SEO Audit", isModal: true },
-        { label: "Transparent Weekly Ad Reporting", href: "/digital-marketing#faq" },
-        { label: "Marketing FAQs & Timelines", href: "/digital-marketing#faq" },
-        { label: "Chat with Marketing Strategist", isWhatsApp: true },
-      ],
-    },
-  },
-
-  "app-dev": {
-    col1: {
-      title: "Explore Engineering",
-      items: [
-        { label: "iOS Mobile Applications", href: "/application-development" },
-        { label: "Android Mobile Applications", href: "/application-development" },
-        { label: "Custom Web Applications", href: "/application-development" },
-        { label: "Ecommerce Platforms", href: "/application-development" },
-        { label: "UI/UX & Figma Prototypes", href: "/application-development" },
-        { label: "Cloud APIs & Microservices", href: "/application-development" },
-        { label: "Enterprise SaaS Platforms", href: "/application-development" },
-      ],
-      footerLink: { label: "Explore Application Engineering", href: "/application-development" },
-    },
-    col2: {
-      title: "Platforms & Frameworks",
-      items: [
-        { label: "Apple iOS Ecosystem (Swift / SwiftUI)", href: "/application-development" },
-        { label: "Android Ecosystem (Kotlin / Jetpack)", href: "/application-development" },
-        { label: "React, Next.js & TypeScript Architecture", href: "/application-development" },
-        { label: "UPI & Razorpay Payment Integrations", href: "/application-development" },
-        { label: "App Store & Play Store Submissions", href: "/application-development" },
-        { label: "Biometric Auth & Push Notifications", href: "/application-development" },
-      ],
-    },
-    col3: {
-      title: "Engineering Standards",
-      items: [
-        { label: "100% Client Source Code IP Ownership", href: "/about" },
-        { label: "60fps Native UI & High Performance", href: "/application-development" },
-        { label: "Interactive Modern Tech Stack", href: "/application-development" },
-        { label: "Request Technical Quotation", isModal: true },
-      ],
+      footerLink: { label: "Explore All 34 Services", href: "/services" },
     },
   },
 
   about: {
     col1: {
-      title: "Explore Real Result",
+      title: "Company",
       items: [
-        { label: "Company Story & Origins", href: "/about#story" },
-        { label: "Executive Leadership Team", href: "/about#leadership" },
-        { label: "Core Operating Values", href: "/about#values" },
-        { label: "Scale & Verified Milestones", href: "/about#stats" },
-        { label: "Global & Regional Presence", href: "/contact" },
+        { label: "About Real Result", href: "/about" },
+        { label: "How We Work (5-Step Process)", href: "/how-we-work" },
+        { label: "Industries & Business Types", href: "/industries" },
+        { label: "Ways to Work Together", href: "/engagement" },
       ],
       footerLink: { label: "Explore Company Profile", href: "/about" },
     },
     col2: {
-      title: "Operating Principles",
+      title: "Work & Proof",
       items: [
-        { label: "Zero-Bullshit Transparent Metrics", href: "/about#values" },
-        { label: "Engineering-First Quality Standards", href: "/about#values" },
-        { label: "No Code Lock-In Policy", href: "/about#values" },
-        { label: "Client Privacy & Security Protocols", href: "/about" },
-        { label: "Careers & Engineering Culture", href: "/about" },
+        { label: "Our Work & Case Studies", href: "/work" },
+        { label: "Real Result FAQs", href: "/faq" },
+        { label: "Insights & Articles", href: "/insights" },
+        { label: "Follow-Up After Enquiry", href: "/insights/after-the-enquiry" },
       ],
+      footerLink: { label: "View Our Work", href: "/work" },
     },
     col3: {
-      title: "Corporate Information",
+      title: "Direct Action",
       items: [
-        { label: "Erode Global HQ & Regional Desks", href: "/contact" },
-        { label: "Corporate GST & Registration", href: "/contact" },
-        { label: "Schedule Strategic Partnership Briefing", isModal: true },
-        { label: "Direct Founder Discussion Desk", isWhatsApp: true },
-      ],
-    },
-  },
-
-  contact: {
-    col1: {
-      title: "Get in Touch",
-      items: [
-        { label: "Direct WhatsApp Support", isWhatsApp: true },
-        { label: "Phone Consultation Call", isPhone: true },
-        { label: "Initiate Project Scoping", href: "/contact" },
-        { label: "Erode Global Headquarters", href: "/contact" },
-        { label: "Coimbatore Technology Desk", href: "/contact" },
-        { label: "Chennai Regional Office", href: "/contact" },
-      ],
-      footerLink: { label: "Explore All Contact Channels", href: "/contact" },
-    },
-    col2: {
-      title: "Direct Assistance",
-      items: [
-        { label: "Request a 15-Min Callback", isModal: true },
-        { label: "Technical Support Desk", href: "/contact" },
-        { label: "Billing & Accounts Inquiries", href: "/contact" },
-        { label: "Career & Internship Inquiries", href: "/contact" },
-      ],
-    },
-    col3: {
-      title: "Office Hubs",
-      items: [
-        { label: "Perundurai Road, Erode (HQ)", href: "/contact" },
-        { label: "Avinashi Road, Coimbatore", href: "/contact" },
-        { label: "OMR IT Corridor, Chennai", href: "/contact" },
-        { label: "Hours: Mon - Sat (9:00 AM - 7:00 PM)", href: "/contact" },
+        { label: "Let’s Talk Growth", href: "/contact" },
+        { label: "Plan My Campaign", href: "/contact/?interest=calling-messaging" },
+        { label: "Discuss My Project", href: "/contact/?interest=development" },
+        { label: "Direct WhatsApp Line", isWhatsApp: true },
       ],
     },
   },
@@ -226,12 +128,11 @@ interface NavLinkConfig {
 }
 
 const NAV_LINKS: NavLinkConfig[] = [
-  { label: "Home", href: "/", hasDropdown: false },
   { label: "Services", href: "/services", hasDropdown: true, dropdownKey: "services" },
-  { label: "Digital Marketing", href: "/digital-marketing", hasDropdown: true, dropdownKey: "marketing" },
-  { label: "App Development", href: "/application-development", hasDropdown: true, dropdownKey: "app-dev" },
+  { label: "Growth Solutions", href: "/solutions", hasDropdown: false },
+  { label: "Our Work", href: "/work", hasDropdown: false },
   { label: "About", href: "/about", hasDropdown: true, dropdownKey: "about" },
-  { label: "Contact", href: "/contact", hasDropdown: true, dropdownKey: "contact" },
+  { label: "Insights", href: "/insights", hasDropdown: false },
 ];
 
 export const Header: React.FC = () => {
@@ -470,15 +371,13 @@ export const Header: React.FC = () => {
           </button>
 
           {/* CTA Button */}
-          <Button
-            variant="primary"
-            size="sm"
-            onClick={() => openLeadModal("header-cta")}
+          <Link
+            to="/contact/"
             onMouseEnter={() => handleNavMouseEnter(undefined)}
-            className="ml-2"
+            className="ml-2 inline-flex items-center justify-center px-4 py-1.5 text-xs font-semibold text-white bg-[#0071E3] hover:bg-[#0077ED] transition-colors rounded-full shadow-sm"
           >
-            Free Consultation
-          </Button>
+            Let’s Talk Growth
+          </Link>
         </div>
       </div>
 
@@ -545,6 +444,18 @@ export const Header: React.FC = () => {
                       )
                     )}
                   </div>
+                  {currentData.col2.footerLink && (
+                    <div className="mt-5 pt-3.5 border-t border-neutral-100">
+                      <Link
+                        to={currentData.col2.footerLink.href}
+                        onClick={closeDropdown}
+                        className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-neutral-500 hover:text-[#0071e3] transition-colors"
+                      >
+                        <span>{currentData.col2.footerLink.label}</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  )}
                 </div>
 
                 {/* ── Column 3: Helpful Topics / Resources ── */}
@@ -561,6 +472,18 @@ export const Header: React.FC = () => {
                       )
                     )}
                   </div>
+                  {currentData.col3.footerLink && (
+                    <div className="mt-5 pt-3.5 border-t border-neutral-100">
+                      <Link
+                        to={currentData.col3.footerLink.href}
+                        onClick={closeDropdown}
+                        className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-neutral-500 hover:text-[#0071e3] transition-colors"
+                      >
+                        <span>{currentData.col3.footerLink.label}</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -725,17 +648,13 @@ export const Header: React.FC = () => {
 
             {/* Mobile Consultation CTA */}
             <div className="pt-3 pb-1">
-              <Button
-                variant="primary"
-                size="md"
-                onClick={() => {
-                  setMobileOpen(false);
-                  openLeadModal("mobile-header-cta");
-                }}
-                className="w-full"
+              <Link
+                to="/contact/"
+                onClick={() => setMobileOpen(false)}
+                className="w-full inline-flex items-center justify-center px-5 py-3 text-sm font-semibold text-white bg-[#0071E3] hover:bg-[#0077ED] transition-colors rounded-xl shadow-sm"
               >
-                Get Free Consultation
-              </Button>
+                Let’s Talk Growth
+              </Link>
             </div>
           </div>
         </div>

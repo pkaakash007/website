@@ -1,0 +1,59 @@
+PAGE: Custom Software Development
+URL: /services/custom-software/
+STATUS: Draft copy
+SEO TITLE: Custom Software Development | Real Result
+META DESCRIPTION: Build around your workflow and reduce repeated effort. Explore Custom Software Development with Real Result.
+PRIMARY TOPIC: custom software development
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/custom-software/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=custom-software
+
+Breadcrumbs: Home > Websites, Apps & Software > Custom Software Development
+
+HERO
+Eyebrow: Real Result · Websites, Apps & Software
+H1: Custom Software Development
+Display hook: Your team has better things to do twice.
+Body: Real Result’s custom software development service builds applications around business workflows, helping teams connect information, manage tasks, and reduce repeated manual effort.
+Primary button: Discuss My Project
+Secondary link: What We Can Help With
+
+H2: The workaround became the workflow.
+Body: Copying data, chasing approvals, and maintaining disconnected spreadsheets can keep skilled people busy with avoidable admin.
+
+H2: What can this help your business do?
+• Bring key workflows into a useful system.
+• Reduce repeated entry and manual handoffs.
+• Give teams better visibility into progress.
+
+H2: What can the service include?
+Section anchor: scope
+• Workflow discovery
+• Software architecture
+• Custom development
+• Business rules
+• Data migration
+• Testing and handover
+
+H2: How does Real Result approach the work?
+Understand the real workflow. Define a focused first release. Build, review, and introduce it to users.
+
+H2: Questions before you start
+H3: Should we buy software or build it?
+Answer: We assess existing options first and identify where custom development would add practical value.
+
+H3: Who owns the code?
+Answer: Ownership, licensing, source access, and handover are specified in the written agreement.
+
+H2: Related services
+Workflow & Business Automation -> /services/workflow-automation/
+API Development & Integrations -> /services/api-integrations/
+CRM, ERP & Business Systems -> /services/crm-erp/
+
+FINAL CONTACT
+H2: Show us the task your team keeps repeating. Let’s find a better way through it.
+Button: Discuss My Project

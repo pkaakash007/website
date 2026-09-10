@@ -1,0 +1,59 @@
+PAGE: Calling & Messaging
+URL: /services/calling-messaging/
+STATUS: Draft copy
+SEO TITLE: Voice, AI Calling, SMS, RCS & WhatsApp | Real Result
+META DESCRIPTION: Plan bulk voice calls, real-time AI calling, bulk SMS, RCS, and WhatsApp campaigns with Real Result. Connect your message to a useful next step.
+PRIMARY TOPIC: business calling and messaging services
+SEARCH INTENT: Navigation, explanation, or decision support
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/calling-messaging/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+Breadcrumbs: Home > Calling & Messaging
+
+HERO
+Eyebrow: Calling & messaging by Real Result
+H1: Reach the customer. Give the conversation a next step.
+Body: Real Result provides bulk voice calls, real-time AI calling, bulk SMS, RCS business messaging, and WhatsApp campaigns for targeted customer communication.
+Button: Plan My Campaign
+
+H2: Which channel fits the job?
+H3: Bulk Voice Call Services
+Share recorded announcements and reminders with a selected audience.
+Link: Bulk Voice Call Services -> /services/bulk-voice-calls/
+
+H3: Real-Time AI Calling Services
+Support useful two-way calls and clearer follow-up.
+Link: Real-Time AI Calling Services -> /services/real-time-ai-calling/
+
+H3: Bulk SMS Services
+Send concise offers, reminders, and updates to selected contacts.
+Link: Bulk SMS Services -> /services/bulk-sms/
+
+H3: RCS Business Messaging Services
+Create rich messages with media and useful actions on supported devices.
+Link: RCS Business Messaging Services -> /services/rcs-messaging/
+
+H3: WhatsApp Marketing & Messaging Services
+Connect relevant campaigns with useful customer conversations.
+Link: WhatsApp Marketing & Messaging Services -> /services/whatsapp-marketing/
+
+H2: Broadcasting or conversation?
+Bulk Voice: A recorded message for announcements and reminders.
+AI Calling: A two-way voice conversation for agreed questions and follow-up.
+SMS: Concise text for a focused message and action.
+RCS: Rich media and action options on supported devices and networks.
+WhatsApp: Permission-based messages and customer conversations.
+
+H2: What does a campaign include?
+Body: We define the audience, message, timing, response journey, and available reporting. Account setup, integrations, coverage, and costs are confirmed for the chosen channel.
+
+H2: Can these channels connect with my marketing?
+Body: Yes. We can plan calling and messaging around a campaign, enquiry, reminder, or customer relationship, with the follow-up responsibilities agreed in advance.
+
+FINAL CONTACT
+H2: What do you want the customer to do next?
+Body: Tell us the audience and purpose. We’ll discuss the channel and campaign scope.
+Button: Plan My Campaign

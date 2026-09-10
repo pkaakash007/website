@@ -1,0 +1,90 @@
+SHARED WEBSITE COPY & LINK DESTINATIONS
+
+HEADER
+Logo: Real Result
+Descriptor: Digital marketing & growth
+Navigation: Services | Growth Solutions | Our Work | About | Insights
+Main CTA: Let’s Talk Growth -> /contact/
+
+SERVICES MENU
+Digital Marketing -> /services/digital-marketing/
+Calling & Messaging -> /services/calling-messaging/
+Websites, Apps & Software -> /services/development/
+All Services -> /services/
+Use the named individual service links within each group, from the page map.
+
+COMPANY LINKS
+Growth Solutions -> /solutions/
+About -> /about/
+Our Work -> /work/ (only after approved work is available)
+How We Work -> /how-we-work/
+Industries -> /industries/
+Ways to Work Together -> /engagement/
+FAQs -> /faq/
+Insights -> /insights/
+
+FOOTER
+Real Result
+Get noticed. Get chosen. Keep growing.
+Digital marketing, customer communication, and supporting technology for your next business goal.
+Headline: Ready to give your next customer a reason to choose you?
+Button: Let’s Talk Growth
+Services: Digital Marketing | Calling & Messaging | Websites, Apps & Software
+Company: About | Our Work | How We Work | Growth Solutions | Industries
+Resources: Insights | FAQs | Ways to Work Together | Contact
+Contact: [Business Email] | [Business Phone] | [Confirmed Service Area]
+Social profiles: [Actual Real Result profiles only]
+Policies: Privacy Policy | Website Terms | Cookie Policy | Cookie Settings
+Copyright: © [Current Year] [Legal Entity Name]. All rights reserved.
+
+HOMEPAGE LINKS
+Explore Our Services / View All Services -> /services/
+Explore Digital Marketing -> /services/digital-marketing/
+Explore Calling & Messaging -> /services/calling-messaging/
+Find My Starting Point -> /solutions/
+How Real Result Works -> /how-we-work/
+View Our Work -> /work/
+SEO & AI Search card -> /services/seo/ (include a secondary inline link to /services/ai-search-optimization/)
+Paid Ads & Lead Generation card -> /services/paid-search/ (secondary link /services/lead-generation/)
+Social Media, Content & Branding card -> /services/social-media/
+Voice, AI Calling & Messaging card -> /services/calling-messaging/
+Conversion & Customer Retention card -> /services/conversion-optimization/ (secondary link /services/email-marketing/)
+Websites, Apps & Software card -> /services/development/
+
+CTA ROUTES
+Let’s Talk Growth -> /contact/
+Plan My Campaign -> /contact/?interest=calling-messaging
+Discuss My Project -> /contact/?interest=development
+On individual service pages, append ?service=SERVICE-SLUG to /contact/ and preselect that service.
+What We Can Help With -> #scope on the current page.
+Talk About Customer Acquisition -> /contact/?goal=acquisition
+Talk About Conversion -> /contact/?goal=conversion
+Talk About Follow-Up -> /contact/?goal=follow-up
+Talk About Customer Retention -> /contact/?goal=retention
+Talk About a Launch -> /contact/?goal=launch
+Ask Your Question -> /contact/?interest=question
+Talk About Your Project / Talk About a Project -> /contact/?interest=project
+Talk About Ongoing Support -> /contact/?interest=ongoing-support
+Talk About Team Support -> /contact/?interest=team-support
+Talk About a Similar Project -> /contact/?interest=similar-project
+Back to Home -> /
+Explore Our Services -> /services/
+Contact Us -> /contact/
+Read the Article -> /insights/after-the-enquiry/
+See the Project / Explore the Concept -> the real project detail URL when available.
+
+FORM IMPLEMENTATION
+Keep the requested service visible and editable if it was preselected. Required fields are name, email, and goal/message. Budget and timeframe remain optional. A contact enquiry is not a newsletter subscription.
+Show the success state or /thank-you/ only after a successful submission. Preserve typed values if an error occurs. Add WhatsApp only after confirming the Real Result number.
+
+SLIDER AND ACCESSIBILITY COPY
+Previous slide | Next slide | Pause slideshow | Play slideshow
+Slide labels: Marketing & Growth | From Click to Enquiry | Calling & Messaging
+Other controls: Open menu | Close menu | Skip to content | Try Again
+Keep slide 1 visible and readable without interaction. Use one H1 on each page, logical H2/H3 sections, keyboard controls, and a reduced-motion option. Headline/body labels in the files are placement notes, not visible site words.
+
+OPTIONAL COOKIE INTERFACE
+Headline: Your cookie choices
+Body: Essential cookies support the site. Choose whether to allow the optional tools described in our Cookie Policy.
+Buttons: Accept Optional Cookies | Reject Optional Cookies | Choose Settings | Save My Choices
+Only show categories actually used and connect choices to working behaviour.

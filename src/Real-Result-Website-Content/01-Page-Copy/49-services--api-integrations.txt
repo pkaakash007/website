@@ -1,0 +1,59 @@
+PAGE: API Development & Integrations
+URL: /services/api-integrations/
+STATUS: Draft copy
+SEO TITLE: API Development & Integrations | Real Result
+META DESCRIPTION: Move information between tools with less manual effort. Explore API Development & Integrations with Real Result.
+PRIMARY TOPIC: api development & integrations
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/api-integrations/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=api-integrations
+
+Breadcrumbs: Home > Websites, Apps & Software > API Development & Integrations
+
+HERO
+Eyebrow: Real Result · Websites, Apps & Software
+H1: API Development & Integrations
+Display hook: Make your tools talk to each other.
+Body: Real Result’s application programming interface (API) development and integration service connects business tools so agreed data can move between systems with defined rules and error handling.
+Primary button: Discuss My Project
+Secondary link: What We Can Help With
+
+H2: Copy. Paste. Check. Repeat.
+Body: Disconnected tools can turn simple updates into duplicated effort and missed changes.
+
+H2: What can this help your business do?
+• Reduce repeated data entry.
+• Keep connected workflows better aligned.
+• Make failures easier to detect and resolve.
+
+H2: What can the service include?
+Section anchor: scope
+• Integration discovery
+• API development
+• Third-party connections
+• Data mapping
+• Sync and error handling
+• Integration documentation
+
+H2: How does Real Result approach the work?
+Identify the source of truth. Define the data flow. Build and test the connection, including failure scenarios.
+
+H2: Questions before you start
+H3: Can any two systems connect?
+Answer: Feasibility depends on their APIs, permissions, data formats, and platform restrictions.
+
+H3: Can you fix an unreliable integration?
+Answer: Yes. We can review the existing flow and scope repairs or a replacement.
+
+H2: Related services
+CRM, ERP & Business Systems -> /services/crm-erp/
+Workflow & Business Automation -> /services/workflow-automation/
+Web Application Development -> /services/web-app-development/
+
+FINAL CONTACT
+H2: Which two tools make your team do the same job twice? Let’s connect them.
+Button: Discuss My Project

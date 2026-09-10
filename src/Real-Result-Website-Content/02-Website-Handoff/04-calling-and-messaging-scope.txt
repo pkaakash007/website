@@ -1,0 +1,20 @@
+CALLING & MESSAGING — PRODUCT SCOPE NOTES
+
+Purpose: keep the new service pages accurate without turning the homepage into a technical brochure. The user confirmed the services, but did not supply a vendor, feature matrix, coverage, pricing, languages, or throughput.
+
+BULK VOICE
+Describe recorded-message campaigns. Do not label this two-way conversational AI. Confirm recording production, call scheduling, delivery reports, interactive options, destinations, and provider charges before promising a package.
+
+REAL-TIME AI CALLING
+Describe live conversational voice assistance for agreed tasks. Confirm inbound/outbound capability, supported languages, latency expectations, operating hours, knowledge sources, escalation, recording, and integrations. Do not imply zero errors, a human identity, unlimited capacity, or guaranteed bookings. Human escalation and identity disclosure are part of the proposed conversation design. Technical background reviewed: https://www.twilio.com/docs/voice/conversationrelay
+
+BULK SMS
+Confirm destinations, sender setup, message categories, permissions, encoding, volumes, and provider costs. Do not invent a delivery rate, open rate, price, or minimum order.
+
+RCS
+RCS can include rich media and suggested actions; availability varies with device, network, and sender support. Fallback needs to exist in the chosen infrastructure. Do not imply universal rich-message support or automatic fallback on every setup. Source: https://developers.google.com/business-communications/rcs-business-messaging/guides/build/messages/send
+
+WHATSAPP
+The supplied copy mentions opt-in permission and approved templates for business-initiated messages through the Business Platform. Confirm the actual account, setup, template readiness, and response handling. Do not promise approval, official-partner status, unlimited sending, or guaranteed delivery. Source: https://whatsappbusiness.com/policy/
+
+These sources explain technical or platform behaviour. They are not evidence that Real Result uses a named provider or holds any partnership. Local calling and messaging rules depend on the campaign destination; the copy does not make a jurisdiction-specific legal compliance claim.

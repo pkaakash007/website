@@ -1,0 +1,59 @@
+PAGE: Mobile App Development
+URL: /services/mobile-app-development/
+STATUS: Draft copy
+SEO TITLE: Mobile App Development | Real Result
+META DESCRIPTION: Give customers a useful reason to return. Explore Mobile App Development with Real Result.
+PRIMARY TOPIC: mobile app development
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/mobile-app-development/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=mobile-app-development
+
+Breadcrumbs: Home > Websites, Apps & Software > Mobile App Development
+
+HERO
+Eyebrow: Real Result · Websites, Apps & Software
+H1: Mobile App Development
+Display hook: Put a better customer experience in their pocket.
+Body: Real Result’s mobile app development service plans, designs, and builds mobile experiences around useful customer tasks, such as booking, buying, and account management.
+Primary button: Discuss My Project
+Secondary link: What We Can Help With
+
+H2: Give the app a job worth coming back for.
+Body: A feature list is only the starting point. We help define the user need that makes your app useful.
+
+H2: What can this help your business do?
+• Focus the first release on meaningful tasks.
+• Create a coherent mobile experience.
+• Connect the app with the systems behind it.
+
+H2: What can the service include?
+Section anchor: scope
+• Product discovery
+• iOS and Android planning
+• App design
+• Development
+• Backend integrations
+• Release preparation
+
+H2: How does Real Result approach the work?
+Define the core use case. Prototype the journey. Build, test, and prepare the agreed release.
+
+H2: Questions before you start
+H3: Do we need separate iOS and Android builds?
+Answer: We assess native and cross-platform options around features, performance needs, and budget.
+
+H3: Can you support launch and updates?
+Answer: Store submission support and ongoing maintenance can be included in scope; store approval is decided by the platform.
+
+H2: Related services
+App Marketing & Store Optimization -> /services/app-marketing/
+UI/UX & Product Design -> /services/ui-ux-design/
+API Development & Integrations -> /services/api-integrations/
+
+FINAL CONTACT
+H2: What would make customers open your app again? Let’s build that first.
+Button: Discuss My Project

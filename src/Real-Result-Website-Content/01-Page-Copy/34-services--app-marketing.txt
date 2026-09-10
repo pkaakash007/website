@@ -1,0 +1,59 @@
+PAGE: App Marketing & Store Optimization
+URL: /services/app-marketing/
+STATUS: Draft copy
+SEO TITLE: App Marketing & Store Optimization | Real Result
+META DESCRIPTION: Connect app discovery with meaningful use. Explore App Marketing & Store Optimization with Real Result.
+PRIMARY TOPIC: app marketing & store optimization
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/app-marketing/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=app-marketing
+
+Breadcrumbs: Home > Digital Marketing > App Marketing & Store Optimization
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: App Marketing & Store Optimization
+Display hook: Built the app? Now give people a reason to use it.
+Body: Real Result’s app marketing service covers launch messaging, app store optimization (ASO), acquisition campaigns, and lifecycle communication to support discovery and meaningful use.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: A download is the beginning of the journey.
+Body: People need to understand the app, find it, try it, and discover a reason to come back.
+
+H2: What can this help your business do?
+• Explain the app’s value clearly.
+• Plan the path from discovery to first use.
+• Support continued engagement after installation.
+
+H2: What can the service include?
+Section anchor: scope
+• Launch strategy
+• App store copy
+• Store creative briefs
+• Acquisition campaigns
+• Onboarding messaging
+• Lifecycle campaigns
+
+H2: How does Real Result approach the work?
+Define the core user benefit. Align discovery and onboarding. Review acquisition and meaningful usage together.
+
+H2: Questions before you start
+H3: Can you market an existing app?
+Answer: Yes. We can review its positioning, listing, campaigns, and user journey.
+
+H3: Can you guarantee store rankings?
+Answer: No. Store discovery and rankings depend on factors beyond our control.
+
+H2: Related services
+Mobile App Development -> /services/mobile-app-development/
+Paid Social, Display & Video Ads -> /services/paid-social/
+Email Marketing & Automation -> /services/email-marketing/
+
+FINAL CONTACT
+H2: What makes your app worth returning to? Let’s make that the message.
+Button: Let’s Talk Growth

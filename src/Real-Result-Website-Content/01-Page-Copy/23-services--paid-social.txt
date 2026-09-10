@@ -1,0 +1,59 @@
+PAGE: Paid Social, Display & Video Ads
+URL: /services/paid-social/
+STATUS: Draft copy
+SEO TITLE: Paid Social, Display & Video Ads | Real Result
+META DESCRIPTION: Turn your offer into attention with a purpose. Explore Paid Social, Display & Video Ads with Real Result.
+PRIMARY TOPIC: paid social, display & video ads
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/paid-social/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=paid-social
+
+Breadcrumbs: Home > Digital Marketing > Paid Social, Display & Video Ads
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: Paid Social, Display & Video Ads
+Display hook: Give the right people a reason to stop.
+Body: Real Result’s paid social, display, and video advertising service connects audience targeting, campaign creative, and landing-page journeys around your marketing goals.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: Seen often. Chosen rarely.
+Body: An ad can attract attention and still leave people unsure why they should care. The audience, offer, and creative need to work together.
+
+H2: What can this help your business do?
+• Introduce your offer to relevant audiences.
+• Test the messages people respond to.
+• Reconnect with interested visitors where appropriate.
+
+H2: What can the service include?
+Section anchor: scope
+• Audience planning
+• Creative concepts
+• Ad copy and assets
+• Campaign setup
+• Retargeting journeys
+• Performance review
+
+H2: How does Real Result approach the work?
+Define the audience and offer. Test focused creative ideas. Use results to guide the next changes.
+
+H2: Questions before you start
+H3: Which platforms should we use?
+Answer: We choose around your audience, offer, budget, and available creative.
+
+H3: Do you create the ads?
+Answer: Copy and creative production can be included in the agreed campaign scope.
+
+H2: Related services
+Video Production & Creative -> /services/video-creative/
+Conversion Rate Optimization -> /services/conversion-optimization/
+B2B Lead Generation & Sales Funnels -> /services/lead-generation/
+
+FINAL CONTACT
+H2: What would make your next customer stop and care? Let’s build around that.
+Button: Let’s Talk Growth

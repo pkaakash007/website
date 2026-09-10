@@ -1,0 +1,59 @@
+PAGE: Influencer & Affiliate Marketing
+URL: /services/influencer-affiliate/
+STATUS: Draft copy
+SEO TITLE: Influencer & Affiliate Marketing | Real Result
+META DESCRIPTION: Build partnerships around audience fit and a relevant offer. Explore Influencer & Affiliate Marketing with Real Result.
+PRIMARY TOPIC: influencer & affiliate marketing
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/influencer-affiliate/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=influencer-affiliate
+
+Breadcrumbs: Home > Digital Marketing > Influencer & Affiliate Marketing
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: Influencer & Affiliate Marketing
+Display hook: Reach people through voices they already follow.
+Body: Real Result’s influencer and affiliate marketing service plans partnerships around audience fit, useful creative, agreed deliverables, and campaign measurement.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: A large following is only the starting point.
+Body: The useful question is whether that audience has a reason to care about what you sell.
+
+H2: What can this help your business do?
+• Find partners relevant to your audience.
+• Keep the message clear without losing the creator’s voice.
+• Understand the activity and outcomes of each partnership.
+
+H2: What can the service include?
+Section anchor: scope
+• Partner research
+• Campaign briefs
+• Outreach coordination
+• Content approvals
+• Affiliate setup
+• Tracking and reporting
+
+H2: How does Real Result approach the work?
+Define the audience and offer. Shortlist suitable partners. Agree on deliverables, disclosures, rights, and measurement.
+
+H2: Questions before you start
+H3: Are creator fees included?
+Answer: Creator payments, commissions, usage rights, and management fees are specified in the proposal.
+
+H3: Can partnerships guarantee sales?
+Answer: No. Results depend on the audience, offer, creative, timing, and buying journey.
+
+H2: Related services
+Social Media Management -> /services/social-media/
+Video Production & Creative -> /services/video-creative/
+Analytics & Marketing Reporting -> /services/analytics/
+
+FINAL CONTACT
+H2: Whose audience could become yours? Let’s explore the fit.
+Button: Let’s Talk Growth

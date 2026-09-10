@@ -1,0 +1,42 @@
+BUSINESS POLICY PAGE COMPLETION BRIEF
+
+These pages depend on facts not present in the brief. The headings below are a completion structure, not finished legal terms. Supply the actual information and arrange appropriate review before publishing. No jurisdiction or compliance status has been assumed.
+
+PRIVACY POLICY
+Route: /privacy-policy/
+Page title: Privacy Policy
+Intro line: How [Legal Entity Name] handles personal information through this website and related enquiries.
+Fill sections covering:
+• Entity and contact: [Actual legal entity, address where applicable, privacy contact]
+• Information collected: [Actual form fields, logs, analytics, communication records]
+• Sources and purposes: [Where the data comes from and how it is used]
+• Providers and recipients: [Actual hosting, CRM, email, analytics, and advertising providers]
+• Retention: [Actual retention periods or decision criteria]
+• Transfers and access: [Actual storage/access arrangements and applicable details]
+• Choices and requests: [Accurate rights and request process for applicable jurisdictions]
+• Contact and effective date: [Real contact and publication date]
+
+WEBSITE TERMS
+Route: /terms/
+Page title: Website Terms
+Intro line: Terms for using the Real Result website.
+Fill sections covering:
+• Site operator and contact: [Legal entity and contact]
+• Use of site content: [Actual permitted uses and ownership/licensing details]
+• Enquiries and proposals: [How an enquiry differs from an accepted service agreement]
+• Third-party links and materials: [Accurate terms for the site]
+• Limitations and applicable terms: [Reviewed wording appropriate to the entity and jurisdiction]
+• Updates, effective date, and questions: [Actual process and contact]
+Do not substitute this brief for the separate service agreement, statement of work, IP terms, payment terms, or support terms used with clients.
+
+COOKIE POLICY
+Route: /cookie-policy/
+Page title: Cookie Policy
+Intro line: The cookies and similar tools used on this website, and the choices available to you.
+Fill sections covering:
+• Tools actually in use: [Inventory from the finished site]
+• Purposes and categories: [Actual purpose of each tool]
+• Providers and duration: [Provider, name, duration, and relevant details]
+• Choices: [What the working controls allow visitors to accept, reject, or change]
+• Contact and effective date: [Actual details]
+The banner and settings copy in the interface file must match the actual behaviour and categories.

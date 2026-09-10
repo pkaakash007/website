@@ -1,0 +1,29 @@
+FACTS TO COMPLETE BEFORE PUBLISHING
+
+CONFIRMED AND USED
+Company/brand name: Real Result.
+Identity: marketing company, with growth-focused messaging.
+Services added explicitly: bulk voice calls, real-time AI calling, bulk SMS, RCS, WhatsApp messaging.
+Development services remain available on supporting service pages.
+
+STILL NEEDED
+Confirmed website domain, business email/phone, service area, legal entity name, team facts, and approved proof.
+Replace [Business Email], [Business Phone], [Confirmed Service Area], [Legal Entity Name], [Current Year], and factual project/team placeholders.
+
+PROOF
+Use real project facts and screenshots. The work index and case study remain templates. Hide the homepage proof block and work links until real content exists. If showing a concept, label it as a concept and describe the design rather than inventing results.
+
+SUPPORT AND COMMERCIAL TERMS
+Confirm the actual scope, reporting rhythm, account ownership, licensing, handover, response hours, and service fees. Do not add “free audit,” “24/7,” “instant,” performance numbers, or partner badges without support.
+
+CALLING AND MESSAGING
+Confirm features against the actual delivery setup. The new pages describe service categories and scoped use cases; they do not assert a particular provider, capacity, or country coverage.
+
+POLICIES
+Complete the Privacy Policy, Website Terms, and any applicable Cookie Policy using the accompanying brief and actual practices. Extend the privacy review to calling and messaging only where those workflows actually collect or use information. No legal jurisdiction has been assumed.
+
+IF THE PREVIOUS CONTENT WAS ALREADY PUBLISHED
+The old /services/email-messaging/ page is now /services/email-marketing/. Review traffic and links; if it was live, redirect the old URL to the replacement and update internal links. If it was never published, create only the new route. Other existing drafted service URLs are retained.
+
+CONTENT PACK STATUS
+This is a complete rewritten content and SEO handoff pack. It is not a deployed website. Actual indexing, accessibility, performance, form delivery, and search visibility must be checked on the final site.

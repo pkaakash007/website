@@ -1,0 +1,6 @@
+# TEMPLATE — replace the domain and review crawler policy for the finished site.
+# This template concerns intended public pages; it is not a staging-site safeguard.
+User-agent: *
+Allow: /
+
+Sitemap: https://replace-with-your-domain.invalid/sitemap.xml

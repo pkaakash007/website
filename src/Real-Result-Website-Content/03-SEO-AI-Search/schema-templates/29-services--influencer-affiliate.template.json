@@ -1,0 +1,75 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://replace-with-your-domain.invalid/#organization",
+      "name": "Real Result",
+      "url": "https://replace-with-your-domain.invalid/",
+      "description": "Real Result is a marketing company offering digital marketing, calling and messaging campaigns, and supporting website, app, and software development services."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://replace-with-your-domain.invalid/#website",
+      "name": "Real Result",
+      "url": "https://replace-with-your-domain.invalid/",
+      "publisher": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://replace-with-your-domain.invalid/services/influencer-affiliate/#webpage",
+      "url": "https://replace-with-your-domain.invalid/services/influencer-affiliate/",
+      "name": "Influencer & Affiliate Marketing | Real Result",
+      "description": "Build partnerships around audience fit and a relevant offer. Explore Influencer & Affiliate Marketing with Real Result.",
+      "isPartOf": {
+        "@id": "https://replace-with-your-domain.invalid/#website"
+      },
+      "publisher": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://replace-with-your-domain.invalid/services/influencer-affiliate/#breadcrumbs"
+      },
+      "mainEntity": {
+        "@id": "https://replace-with-your-domain.invalid/services/influencer-affiliate/#service"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://replace-with-your-domain.invalid/services/influencer-affiliate/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://replace-with-your-domain.invalid/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Digital Marketing",
+          "item": "https://replace-with-your-domain.invalid/services/digital-marketing/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Influencer & Affiliate Marketing",
+          "item": "https://replace-with-your-domain.invalid/services/influencer-affiliate/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://replace-with-your-domain.invalid/services/influencer-affiliate/#service",
+      "name": "Influencer & Affiliate Marketing",
+      "serviceType": "Influencer & Affiliate Marketing",
+      "url": "https://replace-with-your-domain.invalid/services/influencer-affiliate/",
+      "description": "Real Result’s influencer and affiliate marketing service plans partnerships around audience fit, useful creative, agreed deliverables, and campaign measurement.",
+      "provider": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      }
+    }
+  ]
+}

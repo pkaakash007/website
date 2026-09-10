@@ -1,0 +1,77 @@
+PAGE: Home
+URL: /
+STATUS: Draft copy
+SEO TITLE: Real Result | Digital Marketing & Growth Company
+META DESCRIPTION: Grow your business with Real Result. Explore SEO, paid ads, social media, AI calling, SMS, RCS and WhatsApp marketing. Tell us your growth goal.
+PRIMARY TOPIC: digital marketing company
+SEARCH INTENT: Brand discovery and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+HERO SLIDER — SLIDE 1
+Eyebrow: Real Result · Digital marketing & growth
+H1: Your next customer needs a reason to choose you.
+Body: Real Result helps businesses attract the right audience, turn interest into enquiries, and keep customers connected through digital marketing and targeted communication.
+Primary button: Let’s Talk Growth
+Secondary link: Explore Our Services
+
+HERO SLIDER — SLIDE 2
+Eyebrow: SEO · Paid ads · Social media
+H2: Your ads got the click. What happened next?
+Body: Connect the message, landing page, and follow-up so interested people have a clear next step.
+Primary button: Let’s Talk Growth
+Secondary link: Explore Digital Marketing
+
+HERO SLIDER — SLIDE 3
+Eyebrow: Voice · AI calling · SMS · RCS · WhatsApp
+H2: Keep the conversation going. Keep the opportunity open.
+Body: Reach selected audiences with useful messages and calling journeys that support enquiry follow-up and repeat business.
+Primary button: Plan My Campaign
+Secondary link: Explore Calling & Messaging
+
+CUSTOMER PROBLEM
+H2: Busy marketing. Where’s the business?
+Body: You’re posting, spending, and following up. But the next customer still feels uncertain. Let’s find where the journey needs attention.
+• The right people are not finding you.
+• Visitors leave with unanswered questions.
+• Enquiries stall before a useful conversation.
+• Customers buy once and lose touch.
+Link: Find My Starting Point
+
+COMPACT SERVICES
+H2: The right services for your next stage.
+SEO & AI Search — Help the right people discover and understand your offer.
+Paid Ads & Lead Generation — Connect relevant audiences with a clear reason to enquire.
+Social Media, Content & Branding — Build recognition, trust, and a message people remember.
+Voice, AI Calling & Messaging — Follow up through bulk voice, AI calls, SMS, RCS, and WhatsApp.
+Conversion & Customer Retention — Improve buying journeys and give customers reasons to return.
+Websites, Apps & Software — Support the customer experience and the work behind your marketing.
+Link: View All Services
+
+APPROACH
+H2: Get noticed. Get chosen. Keep growing.
+Get noticed. Reach people with a relevant message.
+Get chosen. Make your value and next step clear.
+Keep growing. Connect follow-up, repeat business, and useful measurement.
+Body: Start with the obstacle that matters most. Build the plan around it.
+Link: How Real Result Works
+
+PROOF — USE ONLY WITH REAL PROJECTS
+H2: See the work behind the result.
+Body: Explore the challenge, the campaign or experience, and the outcome.
+Link: View Our Work
+
+QUICK ANSWERS
+H2: What does Real Result do?
+Answer: Real Result is a marketing company offering digital marketing, calling and messaging campaigns, and supporting website, app, and software development services.
+H3: Can I start with one service?
+Answer: Yes. Choose a focused campaign or project, or connect several services around one growth goal.
+
+FINAL CONTACT
+H2: What’s standing between you and your next customer?
+Body: Tell us what you sell, who you want to reach, and where you need progress.
+Button: Let’s Talk Growth
+Microcopy: Start with the challenge. We’ll work through the next step together.

@@ -1,0 +1,59 @@
+PAGE: Bulk Voice Call Services
+URL: /services/bulk-voice-calls/
+STATUS: Draft copy
+SEO TITLE: Bulk Voice Call Services | Real Result
+META DESCRIPTION: Share recorded announcements and reminders with a selected audience. Explore Bulk Voice Call Services with Real Result.
+PRIMARY TOPIC: bulk voice call services
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/bulk-voice-calls/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=bulk-voice-calls
+
+Breadcrumbs: Home > Calling & Messaging > Bulk Voice Call Services
+
+HERO
+Eyebrow: Real Result · Calling & Messaging
+H1: Bulk Voice Call Services
+Display hook: Say it once. Let the campaign carry it.
+Body: Real Result’s bulk voice call service delivers recorded voice messages to selected contact lists. Use planned campaigns for announcements, reminders, and updates, with a clear next action for the listener.
+Primary button: Plan My Campaign
+Secondary link: What We Can Help With
+
+H2: Repeating the same update takes time.
+Body: Give customers a consistent message without asking your team to read the same script on every call.
+
+H2: What can this help your business do?
+• Share time-sensitive information by voice.
+• Keep the message consistent across a campaign.
+• Guide listeners toward a relevant next step.
+
+H2: What can the service include?
+Section anchor: scope
+• Campaign planning
+• Voice script writing
+• Recording coordination
+• Audience preparation
+• Call scheduling
+• Available delivery reporting
+
+H2: How does Real Result approach the work?
+Agree on the audience and message. Prepare the recording. Confirm the calling setup and review campaign delivery.
+
+H2: Questions before you start
+H3: Is a bulk voice call the same as an AI call?
+Answer: No. Bulk voice campaigns play a recorded message. Real-time AI calling supports a two-way conversation.
+
+H3: What determines campaign cost?
+Answer: Destination, volume, call duration, setup, and provider charges shape the quote. Available response options are confirmed during scoping.
+
+H2: Related services
+Real-Time AI Calling Services -> /services/real-time-ai-calling/
+Bulk SMS Services -> /services/bulk-sms/
+WhatsApp Marketing & Messaging Services -> /services/whatsapp-marketing/
+
+FINAL CONTACT
+H2: What do your customers need to hear next? Let’s plan the message.
+Button: Plan My Campaign

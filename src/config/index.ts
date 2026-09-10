@@ -22,11 +22,16 @@ export interface DivisionConfig {
 }
 
 export const REAL_RESULT_CONFIG = {
-  brandName: "Real Result Marketing",
+  brandName: "Real Result",
   shortName: "Real Result",
-  tagline: "Marketing That Moves — Powered by Engineering",
-  subheadline: "Strategic SEO, GEO, performance media, and custom enterprise software development built to move Tamil Nadu businesses forward.",
-  positioning: "A premier digital marketing, search authority, and custom software development company headquartered in Erode, Tamil Nadu, serving Coimbatore, Chennai, and statewide enterprises.",
+  tagline: "Get noticed. Get chosen. Keep growing.",
+  descriptor: "Digital marketing & growth",
+  heroHook: "Your next customer needs a reason to choose you.",
+  primaryCta: "Let’s Talk Growth",
+  callingMessagingCta: "Plan My Campaign",
+  developmentCta: "Discuss My Project",
+  subheadline: "Real Result helps businesses attract the right audience, turn interest into enquiries, and keep customers connected through digital marketing and targeted communication.",
+  positioning: "Digital marketing, customer communication, and supporting technology for your next business goal.",
   
   // Real Business Coordinates in Erode, Tamil Nadu, India
   location: {

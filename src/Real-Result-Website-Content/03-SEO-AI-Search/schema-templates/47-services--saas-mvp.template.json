@@ -1,0 +1,75 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://replace-with-your-domain.invalid/#organization",
+      "name": "Real Result",
+      "url": "https://replace-with-your-domain.invalid/",
+      "description": "Real Result is a marketing company offering digital marketing, calling and messaging campaigns, and supporting website, app, and software development services."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://replace-with-your-domain.invalid/#website",
+      "name": "Real Result",
+      "url": "https://replace-with-your-domain.invalid/",
+      "publisher": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://replace-with-your-domain.invalid/services/saas-mvp/#webpage",
+      "url": "https://replace-with-your-domain.invalid/services/saas-mvp/",
+      "name": "SaaS & MVP Development | Real Result",
+      "description": "Turn the core idea into a focused first release. Explore SaaS & MVP Development with Real Result.",
+      "isPartOf": {
+        "@id": "https://replace-with-your-domain.invalid/#website"
+      },
+      "publisher": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://replace-with-your-domain.invalid/services/saas-mvp/#breadcrumbs"
+      },
+      "mainEntity": {
+        "@id": "https://replace-with-your-domain.invalid/services/saas-mvp/#service"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://replace-with-your-domain.invalid/services/saas-mvp/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://replace-with-your-domain.invalid/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Websites, Apps & Software",
+          "item": "https://replace-with-your-domain.invalid/services/development/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SaaS & MVP Development",
+          "item": "https://replace-with-your-domain.invalid/services/saas-mvp/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://replace-with-your-domain.invalid/services/saas-mvp/#service",
+      "name": "SaaS & MVP Development",
+      "serviceType": "SaaS & MVP Development",
+      "url": "https://replace-with-your-domain.invalid/services/saas-mvp/",
+      "description": "Real Result’s software-as-a-service (SaaS) and minimum viable product (MVP) development service turns a product idea into a focused first release for real users.",
+      "provider": {
+        "@id": "https://replace-with-your-domain.invalid/#organization"
+      }
+    }
+  ]
+}

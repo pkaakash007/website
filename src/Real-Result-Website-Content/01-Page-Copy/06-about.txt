@@ -1,0 +1,42 @@
+PAGE: About Real Result
+URL: /about/
+STATUS: Draft copy
+SEO TITLE: About Real Result | Digital Marketing & Growth
+META DESCRIPTION: Real Result is a marketing company connecting digital campaigns, customer communication, and development around business growth goals.
+PRIMARY TOPIC: about Real Result
+SEARCH INTENT: Navigation, explanation, or decision support
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/about/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+Breadcrumbs: Home > About Real Result
+
+HERO
+Eyebrow: About Real Result
+H1: Your growth is the reason for the work.
+Body: Real Result is a marketing company helping businesses attract customers, improve conversion journeys, and build stronger customer relationships.
+Button: Let’s Talk Growth
+
+OUR FOCUS
+H2: Get noticed. Get chosen. Keep growing.
+Body: We connect strategy, search, paid advertising, content, and customer communication around a clear business goal. Websites, apps, and software support the experience and the systems behind it.
+
+OUR POINT OF VIEW
+H2: The campaign should connect with what happens next.
+Body: An ad leads to a page. A page leads to an enquiry. An enquiry needs a useful conversation. We look at how those steps work together.
+
+HOW WE WORK
+Start with your customer. Understand what they need to believe or do next.
+Choose a clear priority. Focus the scope on the obstacle worth solving.
+Make progress understandable. Agree on deliverables, feedback, and useful measures.
+
+OPTIONAL TEAM BLOCK
+H2: Meet the people behind your next move.
+[Name] · [Role] · [One verified sentence about relevant expertise]
+
+FINAL CONTACT
+H2: Tell us where you want your business to go.
+Body: We’ll discuss the marketing and support your next step needs.
+Button: Let’s Talk Growth

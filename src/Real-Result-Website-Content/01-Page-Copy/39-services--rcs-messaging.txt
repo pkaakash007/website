@@ -1,0 +1,59 @@
+PAGE: RCS Business Messaging Services
+URL: /services/rcs-messaging/
+STATUS: Draft copy
+SEO TITLE: RCS Business Messaging Services | Real Result
+META DESCRIPTION: Create rich messages with media and useful actions on supported devices. Explore RCS Business Messaging Services with Real Result.
+PRIMARY TOPIC: rcs business messaging services
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/rcs-messaging/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=rcs-messaging
+
+Breadcrumbs: Home > Calling & Messaging > RCS Business Messaging Services
+
+HERO
+Eyebrow: Real Result · Calling & Messaging
+H1: RCS Business Messaging Services
+Display hook: Give your message something people can act on.
+Body: Real Result’s RCS business messaging service creates rich mobile campaigns using supported images, cards, suggested replies, and action buttons. RCS stands for Rich Communication Services and depends on recipient and network support.
+Primary button: Plan My Campaign
+Secondary link: What We Can Help With
+
+H2: Some offers need more than a line of text.
+Body: Show the product, explain the benefit, and make the next action easier to find within a supported messaging experience.
+
+H2: What can this help your business do?
+• Present an offer with useful visual context.
+• Give recipients clear response and action options.
+• Connect rich messages with the customer journey.
+
+H2: What can the service include?
+Section anchor: scope
+• Campaign concepts
+• Sender onboarding coordination
+• Rich message copy
+• Card and media planning
+• Reply and action flows
+• Fallback planning
+
+H2: How does Real Result approach the work?
+Check audience support and sender requirements. Build the message journey. Test supported delivery paths and any agreed fallback.
+
+H2: Questions before you start
+H3: Will every phone receive the rich version?
+Answer: No. RCS availability depends on the device, network, settings, and sender coverage.
+
+H3: What happens if RCS is unavailable?
+Answer: An SMS or other fallback can be scoped if the chosen setup supports it. Fallback is configured and tested, not assumed.
+
+H2: Related services
+Bulk SMS Services -> /services/bulk-sms/
+WhatsApp Marketing & Messaging Services -> /services/whatsapp-marketing/
+Conversion Rate Optimization -> /services/conversion-optimization/
+
+FINAL CONTACT
+H2: What could your next message help someone see or do? Let’s design it.
+Button: Plan My Campaign

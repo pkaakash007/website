@@ -1,0 +1,59 @@
+PAGE: Website Design & Development
+URL: /services/website-development/
+STATUS: Draft copy
+SEO TITLE: Website Design & Development | Real Result
+META DESCRIPTION: Make your offer clear and your next step easy. Explore Website Design & Development with Real Result.
+PRIMARY TOPIC: website design & development
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/website-development/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=website-development
+
+Breadcrumbs: Home > Websites, Apps & Software > Website Design & Development
+
+HERO
+Eyebrow: Real Result · Websites, Apps & Software
+H1: Website Design & Development
+Display hook: Make choosing you the easy next step.
+Body: Real Result designs and develops business websites that explain your offer and support enquiries or purchases, with content structure, responsive design, and launch preparation.
+Primary button: Discuss My Project
+Secondary link: What We Can Help With
+
+H2: Visitors should not have to piece it together.
+Body: If people cannot quickly understand your offer or find the next step, a good first impression can fade.
+
+H2: What can this help your business do?
+• Explain your value clearly.
+• Make mobile browsing and key actions easier.
+• Give your team a practical way to manage content.
+
+H2: What can the service include?
+Section anchor: scope
+• Website planning
+• Copy and content structure
+• Responsive design
+• Development
+• CMS setup
+• Launch preparation
+
+H2: How does Real Result approach the work?
+Plan the pages and actions. Design and build the experience. Test key journeys and prepare the handover.
+
+H2: Questions before you start
+H3: Can you redesign our existing website?
+Answer: Yes. We can assess what to retain, improve, or replace.
+
+H3: Can we update the site ourselves?
+Answer: An editable CMS and handover guidance can be included in the agreed scope.
+
+H2: Related services
+Conversion Rate Optimization -> /services/conversion-optimization/
+Search Engine Optimization -> /services/seo/
+Content Marketing & Copywriting -> /services/content-marketing/
+
+FINAL CONTACT
+H2: What should your website help people do next? Let’s build around it.
+Button: Discuss My Project

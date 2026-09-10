@@ -1,0 +1,59 @@
+PAGE: Bulk SMS Services
+URL: /services/bulk-sms/
+STATUS: Draft copy
+SEO TITLE: Bulk SMS Services | Real Result
+META DESCRIPTION: Send concise offers, reminders, and updates to selected contacts. Explore Bulk SMS Services with Real Result.
+PRIMARY TOPIC: bulk sms services
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/bulk-sms/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=bulk-sms
+
+Breadcrumbs: Home > Calling & Messaging > Bulk SMS Services
+
+HERO
+Eyebrow: Real Result · Calling & Messaging
+H1: Bulk SMS Services
+Display hook: A short message. A clear reason to act.
+Body: Real Result’s bulk SMS service helps businesses send concise text campaigns to selected contact lists. We plan the audience, message, timing, and next step for relevant offers, reminders, and updates.
+Primary button: Plan My Campaign
+Secondary link: What We Can Help With
+
+H2: Being brief should not mean being forgettable.
+Body: A useful SMS tells the recipient why the message matters and what they can do next.
+
+H2: What can this help your business do?
+• Share relevant updates in a concise format.
+• Keep campaign wording focused on one action.
+• Connect text campaigns with your wider follow-up plan.
+
+H2: What can the service include?
+Section anchor: scope
+• Audience segmentation
+• SMS copywriting
+• Campaign scheduling
+• Sender setup coordination
+• Link and response planning
+• Available delivery reporting
+
+H2: How does Real Result approach the work?
+Define the message and audience. Check sender and campaign requirements. Launch and review the available delivery and response data.
+
+H2: Questions before you start
+H3: Can SMS be used for offers and reminders?
+Answer: Yes, where the audience permissions, message category, provider, and destination requirements support the use case.
+
+H3: How is pricing calculated?
+Answer: Destination, volume, message length and encoding, sender setup, and provider fees affect pricing. We quote against your campaign requirements.
+
+H2: Related services
+RCS Business Messaging Services -> /services/rcs-messaging/
+WhatsApp Marketing & Messaging Services -> /services/whatsapp-marketing/
+Bulk Voice Call Services -> /services/bulk-voice-calls/
+
+FINAL CONTACT
+H2: What would make your next text worth reading? Let’s write it.
+Button: Plan My Campaign

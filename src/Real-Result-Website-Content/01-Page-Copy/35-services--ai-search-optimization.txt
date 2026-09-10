@@ -1,0 +1,59 @@
+PAGE: AI Search Optimization (AEO & GEO)
+URL: /services/ai-search-optimization/
+STATUS: Draft copy
+SEO TITLE: AI Search Optimization (AEO & GEO) | Real Result
+META DESCRIPTION: Make your expertise clearer for search and AI-assisted discovery. Explore AI Search Optimization (AEO & GEO) with Real Result.
+PRIMARY TOPIC: ai search optimization (aeo & geo)
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/ai-search-optimization/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=ai-search-optimization
+
+Breadcrumbs: Home > Digital Marketing > AI Search Optimization (AEO & GEO)
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: AI Search Optimization (AEO & GEO)
+Display hook: Make your expertise easier to find and understand.
+Body: Real Result’s AI search optimization service improves the clarity, accessibility, and evidence behind your website content for search and AI-assisted discovery. It builds on SEO, useful answers, and consistent business information.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: Your business needs a clear answer.
+Body: When your pages leave basic questions unanswered, people and search systems have less useful information to work with.
+
+H2: What can this help your business do?
+• Explain your services and expertise clearly.
+• Answer the questions buyers actually ask.
+• Connect important claims with real evidence.
+
+H2: What can the service include?
+Section anchor: scope
+• Content and crawlability review
+• Business entity consistency
+• Buyer-question mapping
+• Service-page improvements
+• Structured data review
+• Search and referral monitoring
+
+H2: How does Real Result approach the work?
+Review discovery barriers. Improve the answers and evidence. Track available search visibility and enquiries.
+
+H2: Questions before you start
+H3: What do AEO and GEO mean?
+Answer: Answer engine optimization and generative engine optimization describe work aimed at discovery in answer-based and generative search experiences.
+
+H3: Can you guarantee an AI recommendation?
+Answer: No. Search engines and AI systems choose their own sources; clear content and technical access do not guarantee inclusion.
+
+H2: Related services
+Search Engine Optimization -> /services/seo/
+Content Marketing & Copywriting -> /services/content-marketing/
+Digital PR & Reputation Management -> /services/digital-pr-reputation/
+
+FINAL CONTACT
+H2: What should someone learn about your business before they choose? Let’s make the answer clear.
+Button: Let’s Talk Growth

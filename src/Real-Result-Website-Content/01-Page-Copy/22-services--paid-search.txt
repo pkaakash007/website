@@ -1,0 +1,59 @@
+PAGE: Paid Search & PPC
+URL: /services/paid-search/
+STATUS: Draft copy
+SEO TITLE: Paid Search & PPC | Real Result
+META DESCRIPTION: Connect relevant searches with a clear next step. Explore Paid Search & PPC with Real Result.
+PRIMARY TOPIC: paid search & ppc
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/paid-search/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=paid-search
+
+Breadcrumbs: Home > Digital Marketing > Paid Search & PPC
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: Paid Search & PPC
+Display hook: Make the click worth paying for.
+Body: Real Result’s paid search and pay-per-click (PPC) service plans and manages search advertising around relevant queries, clear offers, landing pages, and conversion tracking.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: Paying for traffic that goes nowhere?
+Body: Clicks need a relevant offer and a clear next step. We examine the journey around the ad as well as the ad itself.
+
+H2: What can this help your business do?
+• Focus spending on relevant searches.
+• Match the message to customer intent.
+• See how campaigns contribute to enquiries.
+
+H2: What can the service include?
+Section anchor: scope
+• Account audits
+• Keyword and exclusion planning
+• Search and shopping campaigns
+• Ad copy
+• Landing page alignment
+• Conversion tracking
+
+H2: How does Real Result approach the work?
+Review demand and the offer. Build focused campaigns. Refine using search terms and conversion evidence.
+
+H2: Questions before you start
+H3: Is ad spend included?
+Answer: The proposal separates agency fees, media spend, and any additional costs.
+
+H3: Can you improve existing campaigns?
+Answer: Yes. We can start by reviewing your current account, tracking, and landing pages.
+
+H2: Related services
+Conversion Rate Optimization -> /services/conversion-optimization/
+B2B Lead Generation & Sales Funnels -> /services/lead-generation/
+Analytics & Marketing Reporting -> /services/analytics/
+
+FINAL CONTACT
+H2: Where does the journey break after the click? Let’s take a look.
+Button: Let’s Talk Growth

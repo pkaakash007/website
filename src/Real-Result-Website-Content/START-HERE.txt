@@ -1,0 +1,35 @@
+REAL RESULT — COMPLETE WEBSITE CONTENT & SEO HANDOFF
+
+Real Result is positioned as a marketing and growth company.
+Main line: Get noticed. Get chosen. Keep growing.
+Hero: Your next customer needs a reason to choose you.
+
+INCLUDED
+• 52 page-copy files, including 34 dedicated service pages.
+• Marketing-led homepage with three hero slides and six compact service cards.
+• Separate pages for bulk voice calls, real-time AI calling, bulk SMS, RCS, and WhatsApp.
+• Existing marketing, website, app, and software coverage, now branded Real Result.
+• An AI Search Optimization (AEO & GEO) service page.
+• Unique titles, meta descriptions, H1 headings, editorial search-intent targets, and internal links.
+• Organization, WebSite, WebPage, BreadcrumbList, and Service JSON-LD templates where appropriate.
+• Sitemap and robots templates plus current official-source guidance.
+• Shared navigation, footer, forms, source-review notes, and policy completion brief.
+
+START HERE
+1. Read MASTER-COPY.md or the individual .txt files in 01-Page-Copy.
+2. Use 02-Website-Handoff for the brand direction, navigation, and business facts to fill.
+3. Give 03-SEO-AI-Search to the person implementing the website.
+
+THE HOMEPAGE IS PURPOSEFULLY SHORT
+It sells the marketing and growth relationship. It lists services in six small cards. Full scope, answers, and related links sit on individual pages. Development stays available without becoming the main company message.
+
+ABOUT SEO AND AI SEARCH
+The pack makes the offer clear to people and machine readers and provides implementation templates. It does not claim guaranteed rankings, AI mentions, or model-training inclusion. No live website has been built or audited in this task.
+
+COMPLETE BEFORE LAUNCH
+Real Result’s domain, contact details, service area, legal entity, team facts, and client evidence were not supplied. Fill the marked facts and complete actual policies. Replace the intentional .invalid domain in every technical template before use. Confirm calling and messaging capabilities against your delivery setup.
+
+REFERENCE REVIEW
+The relevant copywriting passages in Script.zip were revisited before this rewrite. The ledger records what was read; the source books are not redistributed. Original hooks and copy were written around customer needs and a direct contact invitation.
+
+This archive replaces the earlier generic agency pack. It contains the content and handoff files, not a coded or deployed website.

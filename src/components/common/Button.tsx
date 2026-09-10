@@ -67,9 +67,9 @@ export const Button: React.FC<ButtonProps> = ({
     lg: "text-sm sm:text-[15px] px-7 sm:px-8 py-3 sm:py-3.5 gap-2.5 tracking-tight",
   };
 
-  /* ── 1. Flagship Dual-Tone Brand Button (Deep Brand Navy + Metallic Gold) ── */
+  /* ── 1. Flagship Real Result Brand Gold Button (Don't change color: Rich #C5A059 Brand Gold + White Text) ── */
   const brandPrimaryStyle =
-    "text-white bg-gradient-to-b from-[#152B46] via-[#0E2036] to-[#071322] border border-[#C5A059]/50 shadow-[0_4px_16px_-2px_rgba(7,19,34,0.4),0_0_0_1px_rgba(197,160,89,0.3),inset_0_1px_0.5px_rgba(255,255,255,0.22)] hover:from-[#1C385C] hover:via-[#132B47] hover:to-[#0A1A2E] hover:border-[#E5B456] hover:shadow-[0_8px_26px_-2px_rgba(7,19,34,0.5),0_0_24px_rgba(229,180,86,0.35)] hover:-translate-y-0.5";
+    "text-white bg-[#C5A059] hover:bg-[#B38F46] border border-white/25 shadow-[0_10px_35px_rgba(197,160,89,0.38),inset_0_1px_1px_rgba(255,255,255,0.35)] hover:shadow-[0_14px_40px_rgba(197,160,89,0.5)] hover:-translate-y-0.5";
 
   /* ── 2. Crisp Luxury Apple White Button (Brand Navy Text + Gold Border Accent) ── */
   const brandSecondaryStyle =
@@ -77,7 +77,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   /* ── 3. Pure Metallic Gold Luxury Button ── */
   const brandGoldStyle =
-    "text-[#0A1628] bg-gradient-to-b from-[#F7DB91] via-[#DDBE6C] to-[#B08A42] border border-white/60 shadow-[0_4px_16px_rgba(197,160,89,0.35),inset_0_1px_1.5px_rgba(255,255,255,0.7),inset_0_-1px_2px_rgba(0,0,0,0.2)] hover:from-[#FAE3A4] hover:via-[#E5C778] hover:to-[#BD954C] hover:shadow-[0_8px_26px_rgba(197,160,89,0.5)] hover:-translate-y-0.5";
+    "text-white bg-[#C5A059] hover:bg-[#B38F46] border border-white/25 shadow-[0_10px_35px_rgba(197,160,89,0.38),inset_0_1px_1px_rgba(255,255,255,0.35)] hover:shadow-[0_14px_40px_rgba(197,160,89,0.5)] hover:-translate-y-0.5";
 
   /* ── 4. White on Dark Button (For Dark Themes/Footers) ── */
   const brandWhiteStyle =
@@ -94,13 +94,13 @@ export const Button: React.FC<ButtonProps> = ({
   const variants = {
     primary: brandPrimaryStyle,
     brand: brandPrimaryStyle,
+    gold: brandPrimaryStyle,
+    "brand-gold": brandPrimaryStyle,
+    teal: brandPrimaryStyle,
     secondary: brandSecondaryStyle,
     "brand-white": brandWhiteStyle,
     "brand-dark": brandDarkStyle,
     dark: brandDarkStyle,
-    gold: brandGoldStyle,
-    "brand-gold": brandGoldStyle,
-    teal: brandGoldStyle,
     "brand-glass": brandGlassStyle,
     outline:
       "bg-transparent text-[#0E2036] border border-[#C5A059]/40 hover:border-[#E5B456] hover:bg-[#0E2036]/[0.05] hover:-translate-y-0.5",
@@ -108,10 +108,10 @@ export const Button: React.FC<ButtonProps> = ({
       "bg-transparent text-neutral-600 hover:text-[#0E2036] hover:bg-black/[0.05]",
   };
 
-  const isPrimary = variant === "primary" || variant === "brand";
-  const isDark = variant === "brand-dark" || variant === "dark" || isPrimary;
+  const isPrimary = variant === "primary" || variant === "brand" || variant === "gold" || variant === "brand-gold" || variant === "teal";
+  const isDark = variant === "brand-dark" || variant === "dark";
   const isSecondary = variant === "secondary";
-  const isGold = variant === "gold" || variant === "brand-gold" || variant === "teal";
+  const isGold = isPrimary;
   const isWhite = variant === "brand-white";
 
   /* Front logo emblem is removed as requested */
@@ -150,9 +150,11 @@ export const Button: React.FC<ButtonProps> = ({
               : size === "lg"
                 ? "w-9 h-9 sm:w-11 sm:h-11 right-2.5 sm:right-3.5"
                 : "w-7 h-7 sm:w-9 sm:h-9 right-2 sm:right-3",
-            isDark
-              ? "opacity-85 group-hover:opacity-100"
-              : "opacity-45 group-hover:opacity-75"
+            isPrimary || isGold
+              ? "opacity-80 group-hover:opacity-100"
+              : isDark
+                ? "opacity-85 group-hover:opacity-100"
+                : "opacity-45 group-hover:opacity-75"
           )}
           aria-hidden="true"
         >
@@ -161,9 +163,11 @@ export const Button: React.FC<ButtonProps> = ({
             alt="Real Result"
             className={cn(
               "w-full h-full object-contain transition-all duration-300",
-              isDark
-                ? "filter drop-shadow-[0_0_6px_rgba(255,255,255,0.35)] drop-shadow-[0_0_2px_rgba(229,180,86,0.45)]"
-                : "filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.1)]"
+              isPrimary || isGold
+                ? "filter drop-shadow-[0_0_1.5px_rgba(255,255,255,0.95)] drop-shadow-[0_2px_4px_rgba(0,0,0,0.22)]"
+                : isDark
+                  ? "filter drop-shadow-[0_0_6px_rgba(255,255,255,0.35)] drop-shadow-[0_0_2px_rgba(229,180,86,0.45)]"
+                  : "filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.1)]"
             )}
             loading="lazy"
           />
@@ -178,15 +182,15 @@ export const Button: React.FC<ButtonProps> = ({
         {children}
       </span>
 
-      {/* ── 5. Interactive Disclosure Arrow (Brand Gold Accent) ── */}
+      {/* ── 5. Interactive Disclosure Arrow (White for Brand Gold Button) ── */}
       {withDiagonalArrow && (
         <ArrowUpRight
           className={cn(
             "relative z-10 w-4 h-4 shrink-0 transition-all duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5",
-            isPrimary || isDark
-              ? "text-[#E5B456] group-hover:text-[#F7DB91]"
-              : isGold
-                ? "text-[#0A1628]"
+            isPrimary || isGold
+              ? "text-white group-hover:text-white"
+              : isDark
+                ? "text-[#E5B456] group-hover:text-[#F7DB91]"
                 : "text-[#0E2036]/70 group-hover:text-[#C5A059]"
           )}
         />
@@ -195,10 +199,10 @@ export const Button: React.FC<ButtonProps> = ({
         <ArrowRight
           className={cn(
             "relative z-10 w-4 h-4 shrink-0 transition-all duration-200 ease-out group-hover:translate-x-1",
-            isPrimary || isDark
-              ? "text-[#E5B456] group-hover:text-[#F7DB91]"
-              : isGold
-                ? "text-[#0A1628]"
+            isPrimary || isGold
+              ? "text-white group-hover:text-white"
+              : isDark
+                ? "text-[#E5B456] group-hover:text-[#F7DB91]"
                 : "text-[#0E2036]/70 group-hover:text-[#C5A059]"
           )}
         />

@@ -1,0 +1,100 @@
+PAGE: Digital Marketing
+URL: /services/digital-marketing/
+STATUS: Draft copy
+SEO TITLE: Digital Marketing Agency Services | Real Result
+META DESCRIPTION: Real Result connects SEO, AI search, paid ads, social media, content, and conversion work around your marketing goals. Discuss your next campaign.
+PRIMARY TOPIC: digital marketing agency services
+SEARCH INTENT: Navigation, explanation, or decision support
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/digital-marketing/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+Breadcrumbs: Home > Digital Marketing
+
+HERO
+Eyebrow: Digital marketing by Real Result
+H1: Make your marketing mean something to the buyer.
+Body: Real Result’s digital marketing services connect your offer with relevant audiences and a clear next step, from first discovery to enquiry and repeat business.
+Button: Let’s Talk Growth
+
+H2: What needs to work better?
+Body: We start with the audience, the message, and the customer action you want to support. Then we choose the services and measures that fit.
+
+H2: Explore our digital marketing services
+H3: Marketing Strategy
+Know where to focus your next move.
+Link: Marketing Strategy -> /services/marketing-strategy/
+
+H3: Search Engine Optimization
+Get discovered by people looking for your offer.
+Link: Search Engine Optimization -> /services/seo/
+
+H3: Local SEO
+Connect with customers in the places you serve.
+Link: Local SEO -> /services/local-seo/
+
+H3: Paid Search & PPC
+Connect relevant searches with a clear next step.
+Link: Paid Search & PPC -> /services/paid-search/
+
+H3: Paid Social, Display & Video Ads
+Turn your offer into attention with a purpose.
+Link: Paid Social, Display & Video Ads -> /services/paid-social/
+
+H3: Social Media Management
+Show up with a consistent voice and a clear purpose.
+Link: Social Media Management -> /services/social-media/
+
+H3: Content Marketing & Copywriting
+Turn customer questions into useful reasons to choose you.
+Link: Content Marketing & Copywriting -> /services/content-marketing/
+
+H3: Video Production & Creative
+Make your offer easier to see, understand, and remember.
+Link: Video Production & Creative -> /services/video-creative/
+
+H3: Brand Strategy & Design
+Give customers a clear reason to remember your business.
+Link: Brand Strategy & Design -> /services/branding/
+
+H3: Email Marketing & Automation
+Turn first interest into an ongoing conversation.
+Link: Email Marketing & Automation -> /services/email-marketing/
+
+H3: Influencer & Affiliate Marketing
+Build partnerships around audience fit and a relevant offer.
+Link: Influencer & Affiliate Marketing -> /services/influencer-affiliate/
+
+H3: Digital PR & Reputation Management
+Support a clearer, more credible public presence.
+Link: Digital PR & Reputation Management -> /services/digital-pr-reputation/
+
+H3: B2B Lead Generation & Sales Funnels
+Bring more clarity to the path from interest to sales.
+Link: B2B Lead Generation & Sales Funnels -> /services/lead-generation/
+
+H3: Conversion Rate Optimization
+Make the next step easier for interested visitors.
+Link: Conversion Rate Optimization -> /services/conversion-optimization/
+
+H3: Analytics & Marketing Reporting
+Connect reporting with decisions you need to make.
+Link: Analytics & Marketing Reporting -> /services/analytics/
+
+H3: App Marketing & Store Optimization
+Connect app discovery with meaningful use.
+Link: App Marketing & Store Optimization -> /services/app-marketing/
+
+H3: AI Search Optimization (AEO & GEO)
+Make your expertise clearer for search and AI-assisted discovery.
+Link: AI Search Optimization (AEO & GEO) -> /services/ai-search-optimization/
+
+H2: How do the services work together?
+Body: Search and campaigns support discovery. Content and landing pages support decisions. Follow-up helps continue the conversation. Your scope connects the parts that need attention.
+Link: Calling & Messaging -> /services/calling-messaging/
+
+FINAL CONTACT
+H2: Where is your marketing losing the customer?
+Button: Let’s Talk Growth

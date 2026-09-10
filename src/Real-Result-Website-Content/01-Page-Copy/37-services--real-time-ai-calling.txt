@@ -1,0 +1,59 @@
+PAGE: Real-Time AI Calling Services
+URL: /services/real-time-ai-calling/
+STATUS: Draft copy
+SEO TITLE: Real-Time AI Calling Services | Real Result
+META DESCRIPTION: Support useful two-way calls and clearer follow-up. Explore Real-Time AI Calling Services with Real Result.
+PRIMARY TOPIC: real-time ai calling services
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/real-time-ai-calling/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=real-time-ai-calling
+
+Breadcrumbs: Home > Calling & Messaging > Real-Time AI Calling Services
+
+HERO
+Eyebrow: Real Result · Calling & Messaging
+H1: Real-Time AI Calling Services
+Display hook: Turn the first call into a useful next step.
+Body: Real Result’s real-time AI calling service uses conversational voice agents to listen and respond during calls. Agreed use cases can include enquiry qualification, appointment coordination, common questions, and follow-up.
+Primary button: Plan My Campaign
+Secondary link: What We Can Help With
+
+H2: The first conversation should move things forward.
+Body: Give callers useful answers and collect the context your team needs before the next conversation.
+
+H2: What can this help your business do?
+• Handle agreed routine questions consistently.
+• Capture useful details from interested callers.
+• Create a clear route to the right person.
+
+H2: What can the service include?
+Section anchor: scope
+• Use-case planning
+• Conversation design
+• Business knowledge setup
+• Voice configuration
+• Handoff and integration scoping
+• Pilot evaluation
+
+H2: How does Real Result approach the work?
+Choose a focused call journey. Define answers and escalation. Pilot real conversations before expanding use.
+
+H2: Questions before you start
+H3: Can it make and receive calls?
+Answer: Inbound and outbound workflows can be scoped around your provider, audience permissions, and business needs.
+
+H3: What happens when AI cannot help?
+Answer: We plan a human handoff or another contact route, along with clear identification of the AI assistant. Languages, hours, and integrations are confirmed before launch.
+
+H2: Related services
+Bulk Voice Call Services -> /services/bulk-voice-calls/
+B2B Lead Generation & Sales Funnels -> /services/lead-generation/
+CRM, ERP & Business Systems -> /services/crm-erp/
+
+FINAL CONTACT
+H2: Which first conversation would you like to handle better? Let’s map it.
+Button: Plan My Campaign

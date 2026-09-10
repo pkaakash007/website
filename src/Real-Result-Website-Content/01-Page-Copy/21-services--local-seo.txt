@@ -1,0 +1,59 @@
+PAGE: Local SEO
+URL: /services/local-seo/
+STATUS: Draft copy
+SEO TITLE: Local SEO | Real Result
+META DESCRIPTION: Connect with customers in the places you serve. Explore Local SEO with Real Result.
+PRIMARY TOPIC: local seo
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/local-seo/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=local-seo
+
+Breadcrumbs: Home > Digital Marketing > Local SEO
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: Local SEO
+Display hook: Be easier to find. Closer to home.
+Body: Real Result’s local SEO service improves business profiles, location pages, and local information to help customers discover businesses in the areas they serve.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: People nearby need what you do.
+Body: Incomplete listings, unclear service areas, and weak location pages can make choosing your business harder than it needs to be.
+
+H2: What can this help your business do?
+• Make your location and services clear.
+• Give people useful reasons to contact you.
+• Keep important business details consistent.
+
+H2: What can the service include?
+Section anchor: scope
+• Business profile improvements
+• Local keyword research
+• Location pages
+• Listing consistency
+• Review request journeys
+• Local performance reporting
+
+H2: How does Real Result approach the work?
+Check your local presence. Improve your profiles and pages. Review the enquiries your visibility supports.
+
+H2: Questions before you start
+H3: Can you support several locations?
+Answer: Yes. We can plan distinct pages and profiles around eligible business locations.
+
+H3: Can you get us reviews?
+Answer: We can help invite honest feedback from real customers. Reviews cannot be promised or manufactured.
+
+H2: Related services
+Search Engine Optimization -> /services/seo/
+Paid Search & PPC -> /services/paid-search/
+Digital PR & Reputation Management -> /services/digital-pr-reputation/
+
+FINAL CONTACT
+H2: Let’s look at what a nearby customer sees when they search for you.
+Button: Let’s Talk Growth

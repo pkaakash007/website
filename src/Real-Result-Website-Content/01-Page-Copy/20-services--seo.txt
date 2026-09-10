@@ -1,0 +1,59 @@
+PAGE: Search Engine Optimization
+URL: /services/seo/
+STATUS: Draft copy
+SEO TITLE: Search Engine Optimization | Real Result
+META DESCRIPTION: Get discovered by people looking for your offer. Explore Search Engine Optimization with Real Result.
+PRIMARY TOPIC: search engine optimization
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/seo/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=seo
+
+Breadcrumbs: Home > Digital Marketing > Search Engine Optimization
+
+HERO
+Eyebrow: Real Result · Digital Marketing
+H1: Search Engine Optimization
+Display hook: Your next customer is searching. Can they find you?
+Body: Real Result’s search engine optimization (SEO) service improves website structure, relevant content, and search visibility so potential customers can discover and understand your offer.
+Primary button: Let’s Talk Growth
+Secondary link: What We Can Help With
+
+H2: A great offer can still go unseen.
+Body: When the right pages are hard to find, potential customers may never discover what makes you worth choosing.
+
+H2: What can this help your business do?
+• Reach people researching what you offer.
+• Answer questions before the first conversation.
+• Build a clearer path from search to enquiry.
+
+H2: What can the service include?
+Section anchor: scope
+• SEO audit
+• Search intent research
+• Technical SEO
+• On-page improvements
+• Content planning
+• Relevant link acquisition
+
+H2: How does Real Result approach the work?
+Review your search visibility. Prioritize useful changes. Track relevant traffic and enquiries alongside rankings.
+
+H2: Questions before you start
+H3: Can you guarantee the top position?
+Answer: No. Search positions depend on factors outside any agency’s control.
+
+H3: Do we need a new website?
+Answer: Not always. We first assess whether your existing site can support the improvements.
+
+H2: Related services
+AI Search Optimization (AEO & GEO) -> /services/ai-search-optimization/
+Local SEO -> /services/local-seo/
+Content Marketing & Copywriting -> /services/content-marketing/
+
+FINAL CONTACT
+H2: Which searches should be bringing customers to you? Let’s find out.
+Button: Let’s Talk Growth

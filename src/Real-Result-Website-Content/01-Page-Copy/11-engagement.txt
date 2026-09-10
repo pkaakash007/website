@@ -1,0 +1,48 @@
+PAGE: Ways to Work Together
+URL: /engagement/
+STATUS: Draft copy
+SEO TITLE: Marketing Projects & Ongoing Support | Real Result
+META DESCRIPTION: Choose a focused project, ongoing marketing or technical support, or extra capacity for your team. Discuss scope and pricing with Real Result.
+PRIMARY TOPIC: marketing projects and ongoing support
+SEARCH INTENT: Navigation, explanation, or decision support
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/engagement/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+
+Breadcrumbs: Home > Ways to Work Together
+
+HERO
+Eyebrow: Ways to work together
+H1: Start where the need is.
+Body: Choose a focused project, ongoing support, or specialist help for your team. We shape the scope around the work you need.
+Button: Discuss My Project
+
+FOCUSED PROJECT
+H2: Get a defined piece of work done.
+Body: A marketing campaign, messaging programme, website, or agreed growth project with clear deliverables and milestones.
+Button: Talk About a Project
+
+ONGOING SUPPORT
+H2: Keep useful work moving.
+Body: Ongoing marketing, maintenance, or improvements with an agreed scope, review rhythm, and priorities.
+Button: Talk About Ongoing Support
+
+TEAM SUPPORT
+H2: Add the skills your next step needs.
+Body: Work with our team alongside your existing people, partners, and tools.
+Button: Talk About Team Support
+
+PRICING
+H2: First, define the work. Then, price it clearly.
+Body: Your proposal sets out deliverables, agency fees, third-party costs, payment milestones, and any ongoing charges. Scope changes are discussed before additional work begins.
+
+QUESTION
+Can we start small?
+Yes. A focused first phase can help address one priority before you decide what comes next.
+
+FINAL CONTACT
+H2: What do you need help moving forward?
+Body: Share your goal and an approximate budget if you have one.
+Button: Let’s Talk Growth

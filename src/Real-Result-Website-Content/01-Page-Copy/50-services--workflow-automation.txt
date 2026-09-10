@@ -1,0 +1,59 @@
+PAGE: Workflow & Business Automation
+URL: /services/workflow-automation/
+STATUS: Draft copy
+SEO TITLE: Workflow & Business Automation | Real Result
+META DESCRIPTION: Keep routine work moving with fewer manual handoffs. Explore Workflow & Business Automation with Real Result.
+PRIMARY TOPIC: workflow & business automation
+SEARCH INTENT: Service evaluation and enquiry
+CANONICAL TEMPLATE: https://replace-with-your-domain.invalid/services/workflow-automation/
+ROBOTS: index, follow
+
+PAGE COPY — top to bottom
+Use the shared Real Result header and footer. Placement labels are not public copy.
+PRIMARY CTA DESTINATION: /contact/?service=workflow-automation
+
+Breadcrumbs: Home > Websites, Apps & Software > Workflow & Business Automation
+
+HERO
+Eyebrow: Real Result · Websites, Apps & Software
+H1: Workflow & Business Automation
+Display hook: Take the repeat out of repeat work.
+Body: Real Result’s workflow automation service configures repeatable tasks, approvals, notifications, and handoffs so routine processes move with less manual coordination.
+Primary button: Discuss My Project
+Secondary link: What We Can Help With
+
+H2: Someone has to remember. Every time.
+Body: Manual reminders and repeated handoffs become harder to manage as the workload grows.
+
+H2: What can this help your business do?
+• Keep routine steps moving consistently.
+• Make responsibilities and exceptions visible.
+• Reduce time spent on avoidable follow-up.
+
+H2: What can the service include?
+Section anchor: scope
+• Process mapping
+• Lead routing
+• Approval workflows
+• Notifications
+• Document workflows
+• Automation monitoring
+
+H2: How does Real Result approach the work?
+Choose a repeatable task. Define rules and exceptions. Build, test, and monitor the workflow.
+
+H2: Questions before you start
+H3: Should we automate every process?
+Answer: No. We focus on stable, repeatable work and keep human decisions where judgment is needed.
+
+H3: Can you use our existing tools?
+Answer: Yes. We assess available automation features and integrations before proposing custom work.
+
+H2: Related services
+CRM, ERP & Business Systems -> /services/crm-erp/
+Email Marketing & Automation -> /services/email-marketing/
+Real-Time AI Calling Services -> /services/real-time-ai-calling/
+
+FINAL CONTACT
+H2: What keeps landing on someone’s to-do list? Let’s see what can run more smoothly.
+Button: Discuss My Project
