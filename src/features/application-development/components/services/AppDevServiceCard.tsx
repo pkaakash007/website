@@ -24,7 +24,8 @@ export const AppDevServiceCard: React.FC<ServiceProps> = ({
   return (
     <Link
       to={href}
-      className="group p-6 sm:p-7 rounded-[24px] bg-[#F8F8FA] hover:bg-white border border-black/[0.06] hover:border-[#007AFF]/30 shadow-2xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full select-none"
+      style={{ fontFamily: "var(--font-karla), 'Karla', sans-serif" }}
+      className="group p-6 sm:p-7 rounded-[24px] bg-[#F8F8FA] hover:bg-white border border-black/[0.06] hover:border-[#007AFF]/30 shadow-2xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full select-none card-karla font-karla"
     >
       <div className="space-y-4">
         {/* Top: Icon + Badge */}

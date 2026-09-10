@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CheckCircle2, Send, Loader2, User, Building2, Mail, Phone } from "lucide-react";
 import { MacOSInput, MacOSTextarea } from "./MacOSInput";
+import { Button } from "./Button";
 
 export interface ContactFormProps {
   defaultDivision?: string;
@@ -156,23 +157,17 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
         {/* macOS Action Button */}
         <div className="pt-2">
-          <button
+          <Button
             type="submit"
+            variant="primary"
+            size="lg"
             disabled={status === "submitting"}
-            className="w-full py-3 px-6 rounded-[10px] bg-[#0071E3] hover:bg-[#0077ED] active:scale-[0.98] text-white font-semibold text-sm shadow-[0_1px_2px_rgba(0,0,0,0.12),0_0_0_1px_rgba(0,113,227,0.4)] flex items-center justify-center gap-2 cursor-pointer transition-all duration-150 disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-full"
+            icon={status === "submitting" ? <Loader2 className="w-4 h-4 animate-spin text-[#E5B456]" /> : <Send className="w-4 h-4 text-[#E5B456]" />}
+            withArrow={false}
           >
-            {status === "submitting" ? (
-              <>
-                <Loader2 className="w-4 h-4 animate-spin" />
-                <span>Submitting Request...</span>
-              </>
-            ) : (
-              <>
-                <Send className="w-4 h-4" />
-                <span>Schedule Consultation</span>
-              </>
-            )}
-          </button>
+            {status === "submitting" ? "Submitting Request..." : "Schedule Consultation"}
+          </Button>
           <p className="text-[11px] text-neutral-400 text-center mt-2.5 tracking-tight">
             Encrypted submission. Protected under standard non-disclosure agreement (NDA).
           </p>

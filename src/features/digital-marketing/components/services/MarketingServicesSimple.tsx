@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
 import { openLeadModal } from "@/components/common/LeadModal";
+import { Button } from "@/components/common/Button";
 import {
   ArrowRight,
   Sparkles,
@@ -17,16 +18,23 @@ import {
 // --- Custom Platform & Service SVGs ---
 
 export const GoogleAdsIcon: React.FC<{ className?: string }> = ({ className = "w-8 h-8" }) => (
-  <svg className={className} viewBox="0 0 48 48" fill="none">
+  <svg
+    className={className}
+    viewBox="0 0 256 256"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="xMidYMid meet"
+    aria-label="Google Ads"
+  >
     <path
-      d="M8.2 29.8L20.6 8.3C21.8 6.2 24.5 5.5 26.6 6.7C28.7 7.9 29.4 10.6 28.2 12.7L15.8 34.2C14.6 36.3 11.9 37 9.8 35.8C7.7 34.6 7 31.9 8.2 29.8Z"
+      d="M5.888 166.405L90.88 20.9C101.676 27.256 156.116 57.384 164.908 63.114L79.916 208.627C70.621 220.907 -5.888 185.04 5.888 166.396V166.405Z"
       fill="#FBBC04"
     />
     <path
-      d="M38.2 35.8C35.9 37.1 33 36.3 31.7 34L25.5 23.3L32 12C34.3 12 40.5 22.8 40.5 22.8C41.7 24.9 41 27.6 38.9 28.8L38.2 35.8Z"
+      d="M250.084 166.402L165.092 20.906C153.21 1.132 127.619 -6.054 106.601 5.625C85.582 17.304 79.182 42.462 91.064 63.119L176.056 208.633C187.938 228.398 213.529 235.584 234.548 223.905C254.648 212.226 261.966 186.176 250.084 166.419V166.402Z"
       fill="#4285F4"
     />
-    <circle cx="12" cy="34" r="5" fill="#34A853" />
+    <ellipse cx="42.664" cy="187.924" rx="42.664" ry="41.604" fill="#34A853" />
   </svg>
 );
 
@@ -435,19 +443,20 @@ export const MarketingServicesSimple: React.FC = () => {
 
               {/* Action Buttons */}
               <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
-                <button
+                <Button
+                  variant="primary"
+                  size="md"
                   onClick={() => openLeadModal(`US Service: ${currentService.name}`)}
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-neutral-900 hover:bg-black text-white font-bold text-sm transition-all shadow-sm hover:shadow-md cursor-pointer text-center"
                 >
                   Book Strategy Call for {currentService.name}
-                </button>
-                <Link
-                  to={currentService.link}
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white hover:bg-neutral-50 text-neutral-800 border border-neutral-200 text-sm font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer"
+                </Button>
+                <Button
+                  variant="secondary"
+                  size="md"
+                  href={currentService.link}
                 >
-                  <span>Explore Technical Breakdown</span>
-                  <ArrowRight className="w-4 h-4 text-neutral-400" />
-                </Link>
+                  Explore Technical Breakdown
+                </Button>
               </div>
             </div>
 
@@ -484,13 +493,14 @@ export const MarketingServicesSimple: React.FC = () => {
                   </div>
                 </div>
 
-                <button
+                <Button
+                  variant="primary"
+                  size="sm"
                   onClick={() => openLeadModal("us-performance-index")}
-                  className="w-full py-3 rounded-xl bg-[#007AFF] hover:bg-[#0071E3] text-white text-xs font-bold transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
+                  className="w-full"
                 >
-                  <span>Request Custom Growth Scope</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                  Request Custom Growth Scope
+                </Button>
               </div>
             </div>
           </div>

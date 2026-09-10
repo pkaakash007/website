@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
 import ContactFAQItem from "./ContactFAQItem";
 
 interface FAQItem {
@@ -43,7 +42,6 @@ export const ContactFAQ: React.FC = () => {
       <Container size="wide">
         <div className="max-w-3xl mx-auto space-y-10">
           <div className="text-center space-y-3">
-            <Badge variant="gold">Common Inquiries</Badge>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary">
               Frequently Asked Questions
             </h2>

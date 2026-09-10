@@ -1,13 +1,12 @@
 import React, { useState, useRef } from "react";
 import { openLeadModal } from "@/components/common/LeadModal";
+import { Button } from "@/components/common/Button";
 import {
   Play,
   Pause,
   Volume2,
   VolumeX,
-  TrendingUp,
   ArrowRight,
-  Eye,
 } from "lucide-react";
 import {
   GoogleAdsIcon,
@@ -122,19 +121,22 @@ export const MarketingHero: React.FC = () => {
 
         {/* Action CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-6">
-          <button
+          <Button
+            variant="primary"
+            size="lg"
             onClick={() => openLeadModal("us-marketing-hero")}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full text-sm font-bold text-neutral-950 bg-white hover:bg-neutral-100 transition-all duration-200 shadow-xl hover:shadow-2xl flex items-center justify-center gap-2 cursor-pointer hover:-translate-y-0.5 active:translate-y-0"
           >
-            <span>Book Growth Strategy Briefing</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
-          <button
+            Book Growth Strategy Briefing
+          </Button>
+          <Button
+            variant="outline"
+            size="lg"
             onClick={() => openLeadModal("us-audit-request")}
-            className="w-full sm:w-auto px-7 py-3.5 rounded-full text-sm font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-xl transition-all duration-200 shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+            className="!text-white !border-white/25 hover:!bg-white/10"
+            withArrow={false}
           >
-            <span>Request Creative &amp; Pipeline Audit</span>
-          </button>
+            Request Creative &amp; Pipeline Audit
+          </Button>
         </div>
 
 
@@ -164,10 +166,6 @@ export const MarketingHero: React.FC = () => {
 
               {/* Bottom Metrics Overlay */}
               <div className="absolute bottom-3 inset-x-3 text-white">
-                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-emerald-500 text-[10.5px] font-bold text-white mb-1.5 shadow-md">
-                  <TrendingUp className="w-3 h-3" />
-                  +420% Pipeline · 5.2x ROAS
-                </span>
                 <p className="text-[13px] font-bold leading-tight text-white">
                   B2B SaaS Cloud Infrastructure
                 </p>
@@ -237,12 +235,6 @@ export const MarketingHero: React.FC = () => {
                     Live Commercial Ad Reel
                   </span>
                 </div>
-
-                {/* Right: Live Impact Counter */}
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-[11px] font-bold text-white">
-                  <Eye className="w-3.5 h-3.5 text-[#38BDF8]" />
-                  <span>3.8M+ Global Reach</span>
-                </div>
               </div>
 
             </div>
@@ -267,10 +259,6 @@ export const MarketingHero: React.FC = () => {
 
               {/* Bottom Metrics Overlay */}
               <div className="absolute bottom-3 inset-x-3 text-white">
-                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-[#007AFF] text-[10.5px] font-bold text-white mb-1.5 shadow-md">
-                  <TrendingUp className="w-3 h-3" />
-                  Scaled to $680K MRR · 4.6x ROAS
-                </span>
                 <p className="text-[13px] font-bold leading-tight text-white">
                   Global Consumer Hardware &amp; DTC
                 </p>
@@ -296,14 +284,14 @@ export const MarketingHero: React.FC = () => {
           {/* Official Channel Grid with 8 Channels including ChatGPT & Claude */}
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5 sm:gap-3">
             {[
-              { name: "Google Ads", tag: "Search & Shopping", icon: <GoogleAdsIcon className="w-7 h-7 shrink-0" /> },
-              { name: "LinkedIn Ads", tag: "B2B ABM Pipeline", icon: <LinkedInIcon className="w-7 h-7 shrink-0" /> },
-              { name: "Meta Ads", tag: "Performance Max", icon: <InstagramIcon className="w-7 h-7 shrink-0" /> },
-              { name: "YouTube Ads", tag: "Direct Response", icon: <YouTubeIcon className="w-7 h-7 shrink-0" /> },
-              { name: "ChatGPT Search", tag: "OpenAI Citations", icon: <ChatGptIcon className="w-7 h-7 shrink-0" /> },
-              { name: "Claude AI", tag: "Anthropic Answers", icon: <ClaudeIcon className="w-7 h-7 shrink-0" /> },
-              { name: "Perplexity AI", tag: "AI Answer Engine", icon: <PerplexityIcon className="w-7 h-7 shrink-0" /> },
-              { name: "Enterprise SEO", tag: "Organic Traffic", icon: <SeoIcon className="w-7 h-7 shrink-0" /> },
+              { name: "Google Ads", icon: <GoogleAdsIcon className="w-7 h-7 shrink-0" /> },
+              { name: "LinkedIn Ads", icon: <LinkedInIcon className="w-7 h-7 shrink-0" /> },
+              { name: "Meta Ads", icon: <InstagramIcon className="w-7 h-7 shrink-0" /> },
+              { name: "YouTube Ads", icon: <YouTubeIcon className="w-7 h-7 shrink-0" /> },
+              { name: "ChatGPT Search", icon: <ChatGptIcon className="w-7 h-7 shrink-0" /> },
+              { name: "Claude AI", icon: <ClaudeIcon className="w-7 h-7 shrink-0" /> },
+              { name: "Perplexity AI", icon: <PerplexityIcon className="w-7 h-7 shrink-0" /> },
+              { name: "Enterprise SEO", icon: <SeoIcon className="w-7 h-7 shrink-0" /> },
             ].map((chan, idx) => (
               <div
                 key={idx}
@@ -311,7 +299,6 @@ export const MarketingHero: React.FC = () => {
               >
                 <div className="mb-2 transition-transform group-hover:scale-105">{chan.icon}</div>
                 <span className="text-[12px] font-bold text-white leading-tight">{chan.name}</span>
-                <span className="text-[10.5px] text-white/60 font-medium mt-0.5 leading-tight">{chan.tag}</span>
               </div>
             ))}
           </div>

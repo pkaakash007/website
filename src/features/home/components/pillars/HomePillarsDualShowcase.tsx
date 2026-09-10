@@ -1,12 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  ArrowRight,
-  MessageCircle,
-  TrendingUp,
-  CheckCircle2,
-} from "lucide-react";
-import { AppleLogo } from "@/components/common/PlatformLogos";
+import { Button } from "@/components/common/Button";
+import { ArrowRight, Smartphone } from "lucide-react";
 
 export const HomePillarsDualShowcase: React.FC = () => {
   return (
@@ -19,11 +14,11 @@ export const HomePillarsDualShowcase: React.FC = () => {
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1D1D1F] leading-[1.15] mb-4"
             style={{ letterSpacing: "-0.03em" }}
           >
-            Our Two Flagship Divisions
+            Our Two Main Services
           </h2>
           
           <p className="text-base sm:text-lg text-[#6E6E73] leading-relaxed max-w-2xl mx-auto font-normal">
-            Instead of hiring separate agencies for advertising and software engineering, Real Result unifies performance marketing with enterprise web &amp; mobile development.
+            Instead of hiring separate agencies, we do both: online marketing to bring you new customers, and custom website &amp; mobile app development.
           </p>
         </div>
 
@@ -36,60 +31,26 @@ export const HomePillarsDualShowcase: React.FC = () => {
               className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1D1D1F] tracking-tight leading-[1.18] mb-3"
               style={{ letterSpacing: "-0.03em" }}
             >
-              Drive Customer Phone Calls &amp; Direct WhatsApp Leads
+              Get More Phone Calls &amp; WhatsApp Messages From Customers
             </h3>
 
             <p className="text-sm sm:text-base font-semibold text-[#1D1D1F] mb-2">
-              High-converting regional marketing campaigns across Tamil Nadu.
+              Online advertising that brings real buyers to your business.
             </p>
 
             <p className="text-sm sm:text-[15px] text-[#6E6E73] leading-relaxed mb-6">
-              We manage end-to-end advertising across Google Search, Shopping, YouTube, Instagram, and Facebook. Every rupee spent is tracked directly to real customer phone calls, WhatsApp messages, and showroom footfalls.
+              We run and manage your ads on Google, YouTube, Instagram, and Facebook. Every rupee you spend is tracked to real phone calls, WhatsApp inquiries, and customer visits.
             </p>
-
-            {/* Clean Feature Grid */}
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3 mb-7">
-              {[
-                {
-                  title: "Google Search & PPC",
-                  desc: "High-intent buyer searches in your district",
-                },
-                {
-                  title: "Google Maps 3-Pack",
-                  desc: "Top local rank for clinic & factory searches",
-                },
-                {
-                  title: "Meta & Instagram Ads",
-                  desc: "Regional Tamil & English targeted campaigns",
-                },
-                {
-                  title: "Call & WhatsApp Tracking",
-                  desc: "Real-time inquiry recording and verification",
-                },
-              ].map((f, i) => (
-                <div
-                  key={i}
-                  className="p-3.5 sm:p-4 rounded-2xl bg-white border border-black/[0.06] shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow"
-                >
-                  <p className="text-[13px] font-semibold text-[#1D1D1F] leading-tight">
-                    {f.title}
-                  </p>
-                  <p className="text-[11.5px] text-[#6E6E73] mt-1 leading-snug">
-                    {f.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
 
             {/* iOS Style CTAs */}
             <div className="flex flex-wrap items-center gap-4">
-              <Link
-                to="/digital-marketing"
-                className="px-6 py-3 rounded-full text-sm font-semibold bg-[#1D1D1F] text-white hover:bg-black transition-all duration-200 shadow-sm hover:shadow-md flex items-center gap-2 group cursor-pointer"
+              <Button
+                variant="primary"
+                size="md"
+                href="/digital-marketing"
               >
-                <span>Explore Marketing Services</span>
-                <ArrowRight className="w-4 h-4 opacity-80 group-hover:translate-x-0.5 transition-transform" />
-              </Link>
+                Explore Marketing Services
+              </Button>
               <Link
                 to="/services"
                 className="text-sm font-semibold text-[#0071E3] hover:text-[#0051A8] flex items-center gap-1 group transition-colors"
@@ -100,86 +61,38 @@ export const HomePillarsDualShowcase: React.FC = () => {
             </div>
           </div>
 
-          {/* Right: iOS Theme Live Campaign Performance Card */}
-          <div className="lg:col-span-6">
-            <div className="rounded-[28px] bg-white border border-black/[0.08] shadow-[0_16px_48px_rgba(0,0,0,0.06)] p-6 sm:p-7 space-y-4">
-              
-              {/* iOS Card Header (Without Active Now pill) */}
-              <div className="flex items-center justify-between pb-3 border-b border-black/[0.05]">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-[14px] bg-gradient-to-br from-[#0071E3] to-[#5856D6] flex items-center justify-center text-white shadow-xs">
-                    <TrendingUp className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-[15px] font-bold text-[#1D1D1F] leading-tight">
-                      Campaign &amp; Lead Engine
-                    </h4>
-                    <p className="text-[11.5px] text-[#86868B] mt-0.5">
-                      Tamil Nadu Regional Live Inbound
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* iOS Live Notification Card (Simulated Incoming Lead) */}
-              <div className="p-4 rounded-2xl bg-[#F5F5F7] border border-black/[0.04] space-y-2">
-                <div className="flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded-lg bg-[#25D366] flex items-center justify-center text-white shrink-0 shadow-xs">
-                      <MessageCircle className="w-3.5 h-3.5" />
-                    </div>
-                    <span className="font-semibold text-[#1D1D1F]">WhatsApp Business</span>
-                  </div>
-                  <span className="text-[11px] text-[#86868B]">Just now</span>
-                </div>
-                <p className="text-[13px] text-[#1D1D1F] leading-relaxed">
-                  &ldquo;Hello, I saw your Google Search ad for industrial machinery in Erode. Can you share the model catalog &amp; pricing?&rdquo;
+          {/* Right: Deliverables Grid */}
+          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+            {[
+              {
+                title: "Google Search Ads",
+                desc: "Appear at the top when customers search for your products or services on Google.",
+              },
+              {
+                title: "Google Maps Ranking",
+                desc: "Help local customers easily find your shop, showroom, office, or clinic on Google Maps.",
+              },
+              {
+                title: "Instagram & Facebook Ads",
+                desc: "Eye-catching photo and video ads targeted to buyers in your city and state.",
+              },
+              {
+                title: "Call & WhatsApp Tracking",
+                desc: "See exactly how many phone calls and WhatsApp messages come from your ads.",
+              },
+            ].map((f, i) => (
+              <div
+                key={i}
+                className="p-5 sm:p-6 rounded-2xl bg-white border border-black/[0.06] shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow"
+              >
+                <p className="text-[14px] font-semibold text-[#1D1D1F] leading-tight">
+                  {f.title}
                 </p>
-                <div className="flex items-center gap-1.5 pt-1 text-[11px] font-medium text-emerald-700">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Verified Direct Buyer Inquiry · Immediate Notification</span>
-                </div>
+                <p className="text-[12px] text-[#6E6E73] mt-2 leading-relaxed">
+                  {f.desc}
+                </p>
               </div>
-
-              {/* iOS Stats Grid (3 Clean Pods) */}
-              <div className="grid grid-cols-3 gap-2.5 pt-1">
-                <div className="p-3.5 rounded-2xl bg-[#F5F5F7] border border-black/[0.04] text-center">
-                  <p className="text-lg sm:text-xl font-extrabold text-[#1D1D1F] tracking-tight">
-                    +340%
-                  </p>
-                  <p className="text-[11px] text-[#86868B] font-medium mt-0.5">
-                    Lead Growth
-                  </p>
-                </div>
-                <div className="p-3.5 rounded-2xl bg-[#F5F5F7] border border-black/[0.04] text-center">
-                  <p className="text-lg sm:text-xl font-extrabold text-[#1D1D1F] tracking-tight">
-                    Top 3
-                  </p>
-                  <p className="text-[11px] text-[#86868B] font-medium mt-0.5">
-                    Google Maps
-                  </p>
-                </div>
-                <div className="p-3.5 rounded-2xl bg-[#F5F5F7] border border-black/[0.04] text-center">
-                  <p className="text-lg sm:text-xl font-extrabold text-[#1D1D1F] tracking-tight">
-                    &lt; 5 min
-                  </p>
-                  <p className="text-[11px] text-[#86868B] font-medium mt-0.5">
-                    Reply SLA
-                  </p>
-                </div>
-              </div>
-
-              {/* Clean Bottom Accreditation Pill */}
-              <div className="p-3 rounded-2xl bg-[#F5F5F7] border border-black/[0.04] flex items-center justify-between text-xs">
-                <span className="font-semibold text-[#1D1D1F]">
-                  Official Partnerships:
-                </span>
-                <span className="text-[#6E6E73] font-medium">
-                  Google Premier Partner · Meta Business Partner
-                </span>
-              </div>
-
-            </div>
+            ))}
           </div>
 
         </div>
@@ -261,8 +174,8 @@ export const HomePillarsDualShowcase: React.FC = () => {
                 <div className="rounded-2xl bg-white border border-black/[0.04] shadow-2xs divide-y divide-black/[0.04] overflow-hidden text-[12px]">
                   <div className="px-3.5 py-2.5 flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <AppleLogo className="w-3.5 h-3.5 fill-current text-black shrink-0" />
-                      <span className="font-semibold text-[#1D1D1F]">App Store &amp; Play Store</span>
+                      <Smartphone className="w-3.5 h-3.5 text-[#1D1D1F] shrink-0" />
+                      <span className="font-semibold text-[#1D1D1F]">Mobile Apps</span>
                     </div>
                     <span className="text-[#86868B] text-[11px] font-medium">Published</span>
                   </div>
@@ -293,8 +206,8 @@ export const HomePillarsDualShowcase: React.FC = () => {
 
             {/* Bottom Caption Pill */}
             <div className="mt-4 p-3 rounded-2xl bg-white border border-black/[0.06] shadow-xs flex items-center justify-between text-xs text-neutral-700 w-full max-w-[340px]">
-              <span className="font-semibold text-neutral-900">Code Handover:</span>
-              <span className="text-neutral-600 font-medium">100% Full Source Code &amp; IP Ownership</span>
+              <span className="font-semibold text-neutral-900">Code Ownership:</span>
+              <span className="text-neutral-600 font-medium">You own 100% of the code &amp; design</span>
             </div>
 
           </div>
@@ -305,36 +218,36 @@ export const HomePillarsDualShowcase: React.FC = () => {
               className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1D1D1F] tracking-tight leading-[1.18] mb-3"
               style={{ letterSpacing: "-0.03em" }}
             >
-              Custom Web, Mobile &amp; Enterprise Software
+              Custom Websites &amp; Mobile Applications
             </h3>
 
             <p className="text-sm sm:text-base font-semibold text-[#1D1D1F] mb-2">
-              Reliable digital platforms built to run your daily operations.
+              Easy-to-use software built specifically for your business.
             </p>
 
             <p className="text-sm sm:text-[15px] text-[#6E6E73] leading-relaxed mb-6">
-              We build custom websites, business ERP systems, student admission portals, and mobile apps. Every application is built with modern tech stacks and delivered with complete source code ownership.
+              We build modern websites, business billing software, booking portals, and mobile apps for Android and iPhone. When we finish, you own 100% of the code.
             </p>
 
             {/* Clean Feature Grid */}
             <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-3 mb-7">
               {[
                 {
-                  title: "iOS & Android Apps",
-                  desc: "Native performance published on stores",
-                  icon: <AppleLogo className="w-3.5 h-3.5 fill-current text-black shrink-0" />,
+                  title: "Android & iPhone Apps",
+                  desc: "Fast mobile apps published on the Google Play Store and Apple App Store.",
+                  icon: <Smartphone className="w-3.5 h-3.5 text-[#1D1D1F] shrink-0" />,
                 },
                 {
-                  title: "React Web Applications",
-                  desc: "Fast, modern, SEO-friendly web frontends",
+                  title: "Modern Fast Websites",
+                  desc: "Clean, mobile-friendly websites that load fast and look great on any device.",
                 },
                 {
-                  title: "Custom ERP & Portals",
-                  desc: "Tailored to your specific factory/clinic flow",
+                  title: "Business Portals & Software",
+                  desc: "Custom systems for managing your billing, orders, staff, or customer bookings.",
                 },
                 {
-                  title: "Complete IP Handover",
-                  desc: "You own all code, designs, and data",
+                  title: "100% Code Ownership",
+                  desc: "You own all code, files, and designs completely with zero restrictions.",
                 },
               ].map((f, i) => (
                 <div
@@ -356,20 +269,13 @@ export const HomePillarsDualShowcase: React.FC = () => {
 
             {/* iOS Style CTAs */}
             <div className="flex flex-wrap items-center gap-4">
-              <Link
-                to="/application-development"
-                className="px-6 py-3 rounded-full text-sm font-semibold bg-[#1D1D1F] text-white hover:bg-black transition-all duration-200 shadow-sm hover:shadow-md flex items-center gap-2 group cursor-pointer"
+              <Button
+                variant="primary"
+                size="md"
+                href="/application-development"
               >
-                <span>Explore Application Services</span>
-                <ArrowRight className="w-4 h-4 opacity-80 group-hover:translate-x-0.5 transition-transform" />
-              </Link>
-              <Link
-                to="/services"
-                className="text-sm font-semibold text-[#0071E3] hover:text-[#0051A8] flex items-center gap-1 group transition-colors"
-              >
-                <span>View Tech Stacks</span>
-                <span className="font-bold group-hover:translate-x-0.5 transition-transform">→</span>
-              </Link>
+                Explore Application Services
+              </Button>
             </div>
           </div>
 

@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
 import ValueItemCard from "./ValueItemCard";
 import { Target, Zap, ShieldCheck, HeartHandshake } from "lucide-react";
 
@@ -32,7 +31,6 @@ export const AboutCoreValues: React.FC = () => {
     <section className="py-20 bg-canvas border-b border-border">
       <Container size="wide">
         <div className="max-w-3xl mb-14 space-y-3">
-          <Badge variant="gold">Operational Ethos</Badge>
           <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
             Our Core Operating Principles
           </h2>

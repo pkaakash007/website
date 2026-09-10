@@ -6,7 +6,6 @@ import HorizontalMarquee from "@/features/home/components/HorizontalMarquee";
 import HomePillarsDualShowcase from "@/features/home/components/pillars/HomePillarsDualShowcase";
 import CreativeShowcase from "@/features/home/components/CreativeShowcase";
 import MediaVisualStrip from "@/features/home/components/MediaVisualStrip";
-import WhatsAppSection from "@/features/home/components/WhatsAppSection";
 import HomeLeadBanner from "@/features/home/components/cta/HomeLeadBanner";
 
 export const HomePage: React.FC = () => {
@@ -44,10 +43,7 @@ export const HomePage: React.FC = () => {
       {/* 6. Media Visual Strip */}
       <MediaVisualStrip />
 
-      {/* 7. WhatsApp Conversational Interface */}
-      <WhatsAppSection />
-
-      {/* 8. Final High-Impact Consultation Banner */}
+      {/* 7. Final High-Impact Consultation Banner */}
       <HomeLeadBanner />
     </div>
   );

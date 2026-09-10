@@ -587,16 +587,15 @@ export const AppDevTechStackInteractive: React.FC = () => {
 
         {/* Section Header */}
         <div className="text-center mb-10">
-
           <h2 style={{
-            fontSize: "clamp(1.8rem,4vw,2.8rem)", fontWeight: 800,
-            letterSpacing: "-0.03em", color: "#000000", lineHeight: 1.1,
-            marginBottom: "12px",
+            fontSize: "clamp(1.8rem,4vw,2.6rem)", fontWeight: 700,
+            letterSpacing: "-0.025em", color: "#1d1d1f", lineHeight: 1.15,
+            marginBottom: "10px",
           }}>
-            Battle-Tested Technology Stack
+            Technologies We Use
           </h2>
-          <p style={{ fontSize: "15px", color: "rgba(60,60,67,0.70)", maxWidth: "580px", margin: "0 auto", lineHeight: 1.6 }}>
-            We select modern, open, and scalable technologies with official enterprise support to protect your software against obsolescence.
+          <p style={{ fontSize: "15px", color: "#86868b", maxWidth: "560px", margin: "0 auto", lineHeight: 1.55, fontWeight: 400 }}>
+            We build your apps and websites using the world's most trusted, secure, and modern technologies—so your business runs fast, smooth, and reliably.
           </p>
         </div>
 
@@ -645,13 +644,6 @@ export const AppDevTechStackInteractive: React.FC = () => {
                 </p>
               </div>
             </div>
-
-            <div className="shrink-0">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-100">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Enterprise Grade</span>
-              </span>
-            </div>
           </div>
 
           {/* ── Technologies Grid (Featuring Official Logos & Details) ── */}
@@ -659,7 +651,8 @@ export const AppDevTechStackInteractive: React.FC = () => {
             {activeCategory.technologies.map((tech) => (
               <div
                 key={tech.id}
-                className="group flex flex-col justify-between p-6 rounded-[22px] bg-[#F8F8FA] hover:bg-white border border-black/[0.05] hover:border-black/[0.12] shadow-[0_1px_3px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300"
+                style={{ fontFamily: "var(--font-karla), 'Karla', sans-serif" }}
+                className="group flex flex-col justify-between p-6 rounded-[22px] bg-[#F8F8FA] hover:bg-white border border-black/[0.05] hover:border-black/[0.12] shadow-[0_1px_3px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 card-karla font-karla"
               >
                 <div>
                   {/* Top Row: Official Logo Squircle + Badge */}

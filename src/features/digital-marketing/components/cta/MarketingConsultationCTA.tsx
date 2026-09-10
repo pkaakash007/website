@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/common/Button";
 
 export const MarketingConsultationCTA: React.FC = () => {
   return (
@@ -25,19 +25,22 @@ export const MarketingConsultationCTA: React.FC = () => {
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
-            <button
+            <Button
+              variant="primary"
+              size="lg"
               onClick={() => openLeadModal("us-growth-cta-primary")}
-              className="w-full sm:w-auto px-8 py-4 rounded-full text-sm font-bold bg-[#007AFF] hover:bg-[#0071E3] text-white transition-all shadow-lg hover:shadow-xl cursor-pointer flex items-center justify-center gap-2"
             >
-              <span>Book Executive Growth Briefing</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-            <button
+              Book Executive Growth Briefing
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
               onClick={() => openLeadModal("us-growth-cta-audit")}
-              className="w-full sm:w-auto px-7 py-4 rounded-full text-sm font-semibold bg-white/10 hover:bg-white/15 text-white border border-white/20 transition-all cursor-pointer flex items-center justify-center gap-2"
+              className="!text-white !border-white/20 hover:!bg-white/10"
+              withArrow={false}
             >
-              <span>Request 48-Hour Pipeline Audit</span>
-            </button>
+              Request 48-Hour Pipeline Audit
+            </Button>
           </div>
         </div>
       </Container>

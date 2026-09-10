@@ -13,24 +13,16 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import { AppleLogo, AndroidLogo } from "@/components/common/PlatformLogos";
-
-const DualMobileLogo: React.FC<{ className?: string }> = () => (
-  <div className="flex items-center gap-1">
-    <AppleLogo className="w-3.5 h-3.5 fill-current" />
-    <AndroidLogo className="w-3.5 h-3.5 fill-current text-[#3DDC84]" />
-  </div>
-);
 
 export const appDevDisciplines = [
   {
     title: "Mobile App Development",
     href: "/application-development",
-    icon: DualMobileLogo,
+    icon: Smartphone,
     color: "#007AFF",
-    desc: "Cross-platform iOS and Android applications built using React Native and Flutter. Features offline-first database sync, real-time push notifications, and native hardware performance.",
-    badge: "iOS & Android",
-    tags: ["React Native", "Flutter", "Swift", "Kotlin"],
+    desc: "Cross-platform mobile applications built using modern frameworks. Features offline-first database sync, real-time push notifications, and native hardware performance.",
+    badge: "Mobile Apps",
+    tags: ["React Native", "Flutter", "Offline Sync", "Push Alerts"],
   },
   {
     title: "Custom Web Applications",

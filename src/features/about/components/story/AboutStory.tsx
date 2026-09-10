@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
-import { CheckCircle2, Building, Target, Compass } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 export const AboutStory: React.FC = () => {
   return (
@@ -9,7 +8,6 @@ export const AboutStory: React.FC = () => {
       <Container size="wide">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 space-y-6">
-            <Badge variant="gold">Origin & Purpose</Badge>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
               Where Engineering Rigor Meets Digital Performance
             </h2>
@@ -41,9 +39,6 @@ export const AboutStory: React.FC = () => {
           <div className="lg:col-span-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-7 rounded-2xl bg-surface border border-border space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-white border border-border flex items-center justify-center text-gold-700">
-                  <Building className="w-5 h-5" />
-                </div>
                 <h3 className="text-lg font-bold text-primary">Erode Central Lab</h3>
                 <p className="text-xs text-secondary leading-relaxed">
                   Our central headquarters in Erode serves as our primary engineering hub and client briefing center for Tamil Nadu enterprises.
@@ -51,9 +46,6 @@ export const AboutStory: React.FC = () => {
               </div>
 
               <div className="p-7 rounded-2xl bg-surface border border-border space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-white border border-border flex items-center justify-center text-gold-700">
-                  <Target className="w-5 h-5" />
-                </div>
                 <h3 className="text-lg font-bold text-primary">Statewide Reach</h3>
                 <p className="text-xs text-secondary leading-relaxed">
                   Active client partnerships across Coimbatore, Chennai, Tiruppur, Salem, Madurai, Trichy, and national commercial corridors.
@@ -61,9 +53,6 @@ export const AboutStory: React.FC = () => {
               </div>
 
               <div className="p-7 rounded-2xl bg-surface border border-border space-y-3 sm:col-span-2">
-                <div className="w-10 h-10 rounded-xl bg-white border border-border flex items-center justify-center text-gold-700">
-                  <Compass className="w-5 h-5" />
-                </div>
                 <h3 className="text-lg font-bold text-primary">Global Standards</h3>
                 <p className="text-xs text-secondary leading-relaxed">
                   Engineering adhering strictly to international OWASP security protocols, WCAG accessibility benchmarks, and Google Search quality rater guidelines.

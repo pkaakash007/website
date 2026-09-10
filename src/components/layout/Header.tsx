@@ -10,6 +10,7 @@ import {
   Search,
 } from "lucide-react";
 import { BrandLogo } from "@/components/common/BrandLogo";
+import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
 import { openSpotlightSearch } from "@/components/common/MacOSSpotlightSearch";
 import { getWhatsAppUrl, REAL_RESULT_CONFIG } from "@/config";
@@ -469,23 +470,15 @@ export const Header: React.FC = () => {
           </button>
 
           {/* CTA Button */}
-          <button
+          <Button
+            variant="primary"
+            size="sm"
             onClick={() => openLeadModal("header-cta")}
             onMouseEnter={() => handleNavMouseEnter(undefined)}
-            className="ml-2 cursor-pointer transition-all duration-150 active:scale-[0.97] shadow-sm hover:shadow-md hover:bg-[#B38F46]"
-            style={{
-              padding: "8px 20px",
-              borderRadius: "9999px",
-              fontSize: "13.5px",
-              fontWeight: 700,
-              background: "#C5A059",
-              color: "#FFFFFF",
-              border: "none",
-              letterSpacing: "-0.01em",
-            }}
+            className="ml-2"
           >
             Free Consultation
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -732,24 +725,17 @@ export const Header: React.FC = () => {
 
             {/* Mobile Consultation CTA */}
             <div className="pt-3 pb-1">
-              <button
+              <Button
+                variant="primary"
+                size="md"
                 onClick={() => {
                   setMobileOpen(false);
                   openLeadModal("mobile-header-cta");
                 }}
-                className="w-full cursor-pointer transition-all duration-150 shadow-sm"
-                style={{
-                  padding: "13px",
-                  borderRadius: "14px",
-                  fontSize: "15px",
-                  fontWeight: 600,
-                  background: "#000000",
-                  color: "#FFFFFF",
-                  border: "none",
-                }}
+                className="w-full"
               >
                 Get Free Consultation
-              </button>
+              </Button>
             </div>
           </div>
         </div>

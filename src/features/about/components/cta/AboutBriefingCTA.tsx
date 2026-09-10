@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
 import { PhoneCall, Building2 } from "lucide-react";
@@ -13,7 +12,6 @@ export const AboutBriefingCTA: React.FC = () => {
         <div className="p-8 lg:p-12 rounded-2xl bg-white border border-border shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-8 space-y-4">
-              <Badge variant="gold">Explore a Strategic Partnership</Badge>
               <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
                 Ready to Experience Unified Execution?
               </h2>

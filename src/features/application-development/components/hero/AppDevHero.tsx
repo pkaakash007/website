@@ -16,13 +16,21 @@ import {
   RotateCw,
   Search,
   SlidersHorizontal,
+  Sparkles,
+  Star,
+  Home,
+  Layers,
+  Phone,
+  Monitor,
 } from "lucide-react";
 import {
   AppleLogo,
-  AndroidLogo,
+  AppStoreLogo,
+  GooglePlayLogo,
   InstagramLogo,
   YouTubeLogo,
 } from "@/components/common/PlatformLogos";
+import { Button } from "@/components/common/Button";
 
 export interface AppDevHeroProps {
   activeTab?: "web" | "mobile";
@@ -45,7 +53,7 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
 
   return (
     <section
-      className="relative overflow-hidden pt-20 pb-12 sm:pt-24 sm:pb-16 lg:pt-24 lg:pb-16 border-b border-black/[0.06]"
+      className="relative overflow-hidden pt-8 pb-12 sm:pt-10 sm:pb-16 lg:pt-10 lg:pb-16 border-b border-black/[0.06]"
       style={{
         background: "linear-gradient(180deg, #FFFFFF 0%, #F5F5F7 60%, #EFEFF4 100%)",
         fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif",
@@ -64,54 +72,53 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
       />
 
       <Container size="wide" className="relative z-10">
-        {/* ── Breadcrumbs (Clean spacing below fixed navbar) ── */}
+        {/* ── Breadcrumbs ── */}
         <div className="mb-4 sm:mb-5">
           <Breadcrumbs items={[{ label: "Application Development" }]} />
         </div>
 
-        {/* ── Top Pill Switcher ── */}
-        <div className="mb-6 sm:mb-8 flex items-center justify-start">
-          <div
-            className="inline-flex p-1 sm:p-1.5 rounded-full items-center bg-black/[0.05] border border-black/[0.08] backdrop-blur-md shadow-inner"
-          >
-            <button
-              onClick={() => handleTabChange("mobile")}
-              className="flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer"
-              style={{
-                background: activeTab === "mobile" ? "#FFFFFF" : "transparent",
-                color: activeTab === "mobile" ? "#000000" : "rgba(60,60,67,0.7)",
-                boxShadow:
-                  activeTab === "mobile" ? "0 2px 8px rgba(0,0,0,0.12)" : "none",
-              }}
-            >
-              <Smartphone
-                className="w-3.5 h-3.5 sm:w-4 sm:h-4"
-                style={{ color: activeTab === "mobile" ? "#007AFF" : "inherit" }}
-              />
-              Mobile App Development
-            </button>
-            <button
-              onClick={() => handleTabChange("web")}
-              className="flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer"
-              style={{
-                background: activeTab === "web" ? "#FFFFFF" : "transparent",
-                color: activeTab === "web" ? "#000000" : "rgba(60,60,67,0.7)",
-                boxShadow:
-                  activeTab === "web" ? "0 2px 8px rgba(0,0,0,0.12)" : "none",
-              }}
-            >
-              <Globe
-                className="w-3.5 h-3.5 sm:w-4 sm:h-4"
-                style={{ color: activeTab === "web" ? "#007AFF" : "inherit" }}
-              />
-              Web Development
-            </button>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center">
           {/* ── Left Column: iOS Typography & Messaging ── */}
-          <div className="lg:col-span-7 space-y-3.5 sm:space-y-4 lg:space-y-4.5">
+          <div className="lg:col-span-7 space-y-4 sm:space-y-5 flex flex-col justify-center">
+
+            {/* ── Top Pill Switcher ── */}
+            <div className="flex items-center justify-start">
+              <div
+                className="inline-flex p-1 sm:p-1.5 rounded-full items-center bg-black/[0.05] border border-black/[0.08] backdrop-blur-md shadow-2xs"
+              >
+                <button
+                  onClick={() => handleTabChange("mobile")}
+                  className="flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer"
+                  style={{
+                    background: activeTab === "mobile" ? "#FFFFFF" : "transparent",
+                    color: activeTab === "mobile" ? "#000000" : "rgba(60,60,67,0.7)",
+                    boxShadow:
+                      activeTab === "mobile" ? "0 2px 8px rgba(0,0,0,0.12)" : "none",
+                  }}
+                >
+                  <div className="flex items-center gap-1 shrink-0">
+                    <AppStoreLogo className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-xs shadow-2xs" />
+                    <GooglePlayLogo className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                  </div>
+                  Mobile App Development
+                </button>
+                <button
+                  onClick={() => handleTabChange("web")}
+                  className="flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer"
+                  style={{
+                    background: activeTab === "web" ? "#FFFFFF" : "transparent",
+                    color: activeTab === "web" ? "#000000" : "rgba(60,60,67,0.7)",
+                    boxShadow:
+                      activeTab === "web" ? "0 2px 8px rgba(0,0,0,0.12)" : "none",
+                  }}
+                >
+                  <Globe
+                    className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#007AFF]"
+                  />
+                  Web Development
+                </button>
+              </div>
+            </div>
 
             {/* Apple Big Headline */}
             <h1
@@ -155,11 +162,25 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
                 : "Deliver instant-loading web platforms, SaaS applications, custom business ERPs, and high-volume e-commerce stores with sub-second page speeds, bank-grade authentication, and high-availability cloud architecture."}
             </p>
 
-
+            {/* App Store & Google Play Store Official Badges */}
+            {activeTab === "mobile" && (
+              <div className="flex flex-wrap items-center gap-2 pt-0.5">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/[0.04] border border-black/[0.08] text-xs font-semibold text-neutral-800 shadow-2xs">
+                  <AppStoreLogo className="w-4 h-4 rounded-xs shadow-2xs" />
+                  <span>Apple App Store</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/[0.04] border border-black/[0.08] text-xs font-semibold text-neutral-800 shadow-2xs">
+                  <GooglePlayLogo className="w-3.5 h-3.5" />
+                  <span>Google Play Store</span>
+                </div>
+              </div>
+            )}
 
             {/* Apple CTAs */}
             <div className="pt-2 flex flex-wrap items-center gap-3">
-              <button
+              <Button
+                variant="primary"
+                size="md"
                 onClick={() =>
                   openLeadModal(
                     activeTab === "mobile"
@@ -167,34 +188,64 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
                       : "Hero Web Development Requirement"
                   )
                 }
-                className="flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold text-white cursor-pointer transition-all duration-200 active:scale-[0.98]"
-                style={{
-                  background: "#007AFF",
-                  boxShadow: "0 4px 14px rgba(0, 122, 255, 0.35)",
-                }}
               >
-                <span>Discuss Your {activeTab === "mobile" ? "App" : "Web"} Project</span>
-                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              </button>
-              <a
+                Discuss Your {activeTab === "mobile" ? "App" : "Web"} Project
+              </Button>
+              <Button
+                variant="secondary"
+                size="md"
                 href="#app-dev-switcher"
-                className="flex items-center gap-2 px-5 py-3 rounded-full text-xs sm:text-sm font-semibold cursor-pointer transition-all duration-200 hover:bg-black/[0.07]"
-                style={{
-                  background: "rgba(0, 0, 0, 0.05)",
-                  color: "#000000",
-                  border: "1px solid rgba(0, 0, 0, 0.08)",
-                }}
               >
-                <span>Explore Capabilities</span>
-                <ChevronRight className="w-3.5 h-3.5 text-black/40" />
-              </a>
+                Explore Services
+              </Button>
+            </div>
+
+            {/* Apple Key Highlights Strip */}
+            <div className="pt-3 border-t border-black/[0.07] grid grid-cols-3 gap-3">
+              {activeTab === "mobile" ? (
+                <>
+                  <div>
+                    <div className="text-xs sm:text-sm font-semibold text-black tracking-tight">60 FPS Fluid</div>
+                    <div className="text-[11px] sm:text-xs text-black/50">Swift &amp; Kotlin</div>
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-1 text-xs sm:text-sm font-semibold text-black tracking-tight">
+                      <div className="flex items-center gap-0.5 shrink-0">
+                        <AppStoreLogo className="w-3.5 h-3.5 rounded-xs" />
+                        <GooglePlayLogo className="w-3 h-3" />
+                      </div>
+                      <span>App &amp; Play Store</span>
+                    </div>
+                    <div className="text-[11px] sm:text-xs text-black/50">100% Guaranteed</div>
+                  </div>
+                  <div>
+                    <div className="text-xs sm:text-sm font-semibold text-black tracking-tight">Enterprise Sec</div>
+                    <div className="text-[11px] sm:text-xs text-black/50">Biometric &amp; Offline</div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div>
+                    <div className="text-xs sm:text-sm font-semibold text-black tracking-tight">&lt; 1.0s Speed</div>
+                    <div className="text-[11px] sm:text-xs text-black/50">Core Web Vitals</div>
+                  </div>
+                  <div>
+                    <div className="text-xs sm:text-sm font-semibold text-black tracking-tight">99.99% SLA</div>
+                    <div className="text-[11px] sm:text-xs text-black/50">Cloud Scalability</div>
+                  </div>
+                  <div>
+                    <div className="text-xs sm:text-sm font-semibold text-black tracking-tight">SOC 2 Ready</div>
+                    <div className="text-[11px] sm:text-xs text-black/50">Bank-Grade Auth</div>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
           {/* ── Right Column: 3D Device Visualization ── */}
-          <div className="lg:col-span-5 flex justify-center items-center py-2 lg:py-0">
+          <div className="lg:col-span-5 flex justify-center items-center py-6 sm:py-8 lg:py-4">
             <div
-              className="relative w-full max-w-[360px] sm:max-w-[390px] lg:max-w-[395px] xl:max-w-[420px] flex justify-center"
+              className="relative w-full max-w-[360px] sm:max-w-[390px] lg:max-w-[395px] xl:max-w-[420px] flex justify-center px-3 sm:px-5 py-3"
               style={{
                 perspective: "1200px",
               }}
@@ -210,16 +261,16 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
                 >
                   {/* Floating iOS Apple Store Badge (Top Left) */}
                   <div
-                    className="absolute -top-3 -left-3 sm:-left-6 z-30 flex items-center gap-2 px-3 py-2 rounded-xl sm:rounded-2xl border backdrop-blur-xl shadow-xl transition-all"
+                    className="absolute -top-1 -left-2 sm:-left-5 z-30 flex items-center gap-2 px-3 py-2 rounded-xl sm:rounded-2xl border backdrop-blur-xl shadow-xl transition-all select-none"
                     style={{
-                      background: "rgba(255, 255, 255, 0.88)",
+                      background: "rgba(255, 255, 255, 0.92)",
                       borderColor: "rgba(0, 0, 0, 0.08)",
                       boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
                     }}
                   >
-                    {/* Official Apple Logo */}
-                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-xl bg-black text-white flex items-center justify-center shrink-0 shadow-sm">
-                      <AppleLogo className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" />
+                    {/* Official Apple App Store Logo */}
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-xl flex items-center justify-center shrink-0 shadow-sm overflow-hidden">
+                      <AppStoreLogo className="w-full h-full" />
                     </div>
                     <div>
                       <div className="text-[10.5px] sm:text-[11px] font-bold text-black leading-tight">
@@ -231,18 +282,18 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
                     </div>
                   </div>
 
-                  {/* Floating Android Badge (Bottom Right) */}
+                  {/* Floating Android Play Store Badge (Bottom Right) */}
                   <div
-                    className="absolute -bottom-1 -right-2 sm:-right-4 z-30 flex items-center gap-2 px-3 py-2 rounded-xl sm:rounded-2xl border backdrop-blur-xl shadow-xl transition-all"
+                    className="absolute -bottom-1 -right-2 sm:-right-4 z-30 flex items-center gap-2 px-3 py-2 rounded-xl sm:rounded-2xl border backdrop-blur-xl shadow-xl transition-all select-none"
                     style={{
-                      background: "rgba(255, 255, 255, 0.90)",
+                      background: "rgba(255, 255, 255, 0.92)",
                       borderColor: "rgba(0, 0, 0, 0.08)",
                       boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
                     }}
                   >
-                    {/* Official Android 3D Logo */}
-                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-xl bg-neutral-100 flex items-center justify-center shrink-0 shadow-sm p-0.5 border border-neutral-200">
-                      <AndroidLogo className="w-full h-full" />
+                    {/* Official Google Play Store Logo */}
+                    <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-sm border border-black/[0.08] p-1">
+                      <GooglePlayLogo className="w-full h-full" />
                     </div>
                     <div>
                       <div className="text-[10.5px] sm:text-[11px] font-bold text-black leading-tight">
@@ -256,7 +307,7 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
 
                   {/* 3D iPhone 16 Pro Titanium Chassis */}
                   <div
-                    className="relative w-[250px] sm:w-[270px] lg:w-[275px] xl:w-[290px] h-[500px] sm:h-[525px] lg:h-[530px] xl:h-[550px] rounded-[44px] sm:rounded-[48px] p-2.5 sm:p-3 mx-auto"
+                    className="relative w-[252px] sm:w-[272px] lg:w-[278px] xl:w-[292px] h-[510px] sm:h-[530px] lg:h-[535px] xl:h-[555px] rounded-[44px] sm:rounded-[48px] p-2.5 sm:p-3 mx-auto"
                     style={{
                       background: "linear-gradient(135deg, #2C2C2E 0%, #1C1C1E 100%)",
                       boxShadow:
@@ -266,19 +317,14 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
                     {/* Titanium Edge Glare */}
                     <div className="absolute inset-0 rounded-[44px] sm:rounded-[48px] pointer-events-none border border-white/20 opacity-60" />
 
-                    {/* Left Hardware Buttons */}
-                    <div className="absolute -left-[3px] top-20 w-[3px] h-6 bg-[#48484A] rounded-l-sm" />
-                    <div className="absolute -left-[3px] top-30 w-[3px] h-10 bg-[#48484A] rounded-l-sm" />
-                    <div className="absolute -left-[3px] top-44 w-[3px] h-10 bg-[#48484A] rounded-l-sm" />
-
-                    {/* Right Power Button */}
-                    <div className="absolute -right-[3px] top-30 w-[3px] h-14 bg-[#48484A] rounded-r-sm" />
-
                     {/* Inner OLED Screen Container */}
-                    <div className="w-full h-full rounded-[38px] sm:rounded-[40px] overflow-hidden bg-[#0A0A0C] text-white flex flex-col relative border border-black/40">
+                    <div
+                      className="w-full h-full rounded-[38px] sm:rounded-[40px] overflow-hidden bg-[#FAF9F5] text-neutral-900 flex flex-col relative border border-black/40 shadow-inner card-karla font-karla"
+                      style={{ fontFamily: "var(--font-karla), 'Karla', sans-serif" }}
+                    >
                       {/* Dynamic Island */}
-                      <div className="pt-1.5 pb-0.5 px-4 flex justify-center z-20">
-                        <div className="w-20 sm:w-22 h-5 sm:h-5.5 rounded-full bg-black flex items-center justify-between px-2.5 shadow-md border border-white/10">
+                      <div className="pt-2 pb-0.5 px-4 flex justify-center z-30 bg-[#FAF9F5] shrink-0">
+                        <div className="w-20 sm:w-22 h-5 rounded-full bg-black flex items-center justify-between px-2.5 shadow-md border border-white/10">
                           <div className="w-1.5 h-1.5 rounded-full bg-[#34C759] animate-pulse" />
                           <div className="w-1.5 h-1.5 rounded-full bg-[#111] border border-white/20" />
                           <div className="w-1 h-1 rounded-full bg-blue-500/60" />
@@ -286,132 +332,144 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
                       </div>
 
                       {/* iOS Status Bar */}
-                      <div className="px-5 py-0.5 flex items-center justify-between text-[10px] sm:text-[11px] font-semibold text-white/80 z-10">
+                      <div className="px-5 py-0.5 flex items-center justify-between text-[10px] sm:text-[11px] font-semibold text-neutral-800 z-30 bg-[#FAF9F5] shrink-0">
                         <span>9:41</span>
-                        <div className="flex items-center gap-1.5">
+                        <div className="flex items-center gap-1.5 text-neutral-700">
                           <Wifi className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                           <span className="text-[9px] font-bold">5G</span>
                           <Battery className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                         </div>
                       </div>
 
-                      {/* App Inside Screen UI */}
-                      <div className="flex-1 px-3.5 py-1.5 space-y-2 overflow-hidden flex flex-col justify-between">
-                        {/* App Header */}
-                        <div className="flex items-center justify-between pt-0.5">
-                          <div className="flex items-center gap-2">
-                            <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center text-[10px] font-bold text-white shadow-sm">
-                              RR
-                            </div>
-                            <div>
-                              <div className="text-[9px] text-white/60 leading-none">Enterprise App</div>
-                              <div className="text-[11px] font-bold text-white leading-tight mt-0.5">Dashboard Live</div>
-                            </div>
+                      {/* Real Result Application Mobile Header */}
+                      <div className="px-3 py-2 bg-white border-b border-neutral-200/80 flex items-center justify-between z-20 shrink-0 shadow-2xs">
+                        <div className="flex items-center gap-1.5">
+                          <div className="w-6 h-6 rounded-full bg-white border border-[#132C4B]/15 p-0.5 flex items-center justify-center shadow-xs shrink-0">
+                            <img
+                              src="/brand/realresult-mark-transparent.png"
+                              alt="Real Result"
+                              className="w-full h-full object-contain"
+                            />
                           </div>
-                          <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center relative">
-                            <Bell className="w-3 h-3 text-white/80" />
-                            <span className="absolute top-0.5 right-0.5 w-1.5 h-1.5 rounded-full bg-red-500" />
+                          <div>
+                            <div className="text-[10.5px] font-bold tracking-tight text-[#132C4B] uppercase leading-none">
+                              REAL RESULT
+                            </div>
+                            <div className="text-[7.5px] font-bold tracking-wider text-[#C5A059] uppercase leading-none mt-0.5">
+                              Marketing &amp; Tech
+                            </div>
                           </div>
                         </div>
 
-                        {/* Revenue / Metric Card */}
-                        <div
-                          className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl relative overflow-hidden"
-                          style={{
-                            background: "linear-gradient(135deg, #007AFF 0%, #5856D6 100%)",
-                            boxShadow: "0 6px 16px -4px rgba(0,122,255,0.4)",
-                          }}
+                        <button
+                          onClick={() => openLeadModal("phone-home-preview")}
+                          className="px-2.5 py-1 rounded-full bg-[#132C4B] hover:bg-[#0E1B2E] text-white text-[8.5px] font-bold shadow-2xs transition-all cursor-pointer"
                         >
-                          <div className="flex items-center justify-between text-[9px] text-white/80 font-medium">
-                            <span>Today's Total Volume</span>
-                            <span className="flex items-center gap-0.5 text-emerald-200 font-bold text-[9.5px]">
-                              <TrendingUp className="w-2.5 h-2.5" /> +28.4%
-                            </span>
-                          </div>
-                          <div className="text-lg sm:text-xl font-extrabold text-white mt-0.5 tracking-tight">
-                            ₹4,82,900
-                          </div>
-                          <div className="mt-1.5 flex items-center justify-between text-[8px] sm:text-[9px] text-white/70 pt-1.5 border-t border-white/20">
-                            <span>Active Orders: 142</span>
-                            <span>Sync: 0.2s ago</span>
-                          </div>
+                          Contact
+                        </button>
+                      </div>
+
+                      {/* ── Real Result Clean & Simple Home Page Canvas ── */}
+                      <div className="flex-1 overflow-y-auto overflow-x-hidden no-scrollbar px-3.5 py-3 space-y-3 text-left">
+                        {/* Brand Tag Pill */}
+                        <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#132C4B]/[0.06] border border-[#132C4B]/15 text-[#132C4B] text-[8px] font-bold">
+                          <Sparkles className="w-2 h-2 text-[#C5A059]" />
+                          <span>Premier Digital Agency</span>
                         </div>
 
-                        {/* Quick 4 App Action Grid */}
-                        <div className="grid grid-cols-4 gap-1 text-center">
-                          {[
-                            {
-                              label: "iOS",
-                              icon: <AppleLogo className="w-3 h-3 fill-white" />,
-                              badgeBg: "bg-white/10 text-white",
-                              boxBorder: "border-white/10",
-                            },
-                            {
-                              label: "Android",
-                              icon: <AndroidLogo className="w-3 h-3 fill-[#3DDC84]" />,
-                              badgeBg: "bg-[#3DDC84]/15 text-[#3DDC84]",
-                              boxBorder: "border-[#3DDC84]/20",
-                            },
-                            {
-                              label: "Instagram",
-                              icon: <InstagramLogo className="w-3.5 h-3.5" />,
-                              badgeBg: "bg-pink-500/15 text-white",
-                              boxBorder: "border-pink-500/20",
-                            },
-                            {
-                              label: "YouTube",
-                              icon: <YouTubeLogo className="w-3.5 h-3.5" />,
-                              badgeBg: "bg-red-500/15 text-white",
-                              boxBorder: "border-red-500/20",
-                            },
-                          ].map((item, idx) => (
-                            <div
-                              key={idx}
-                              className={`p-1.5 rounded-lg sm:rounded-xl bg-white/[0.05] border ${item.boxBorder} flex flex-col items-center gap-0.5 transition-all hover:bg-white/[0.09]`}
-                            >
-                              <div className={`w-6 h-6 rounded-md sm:rounded-lg ${item.badgeBg} flex items-center justify-center`}>
-                                {item.icon}
-                              </div>
-                              <span className="text-[8.5px] text-white/80 font-medium truncate w-full text-center">
-                                {item.label}
+                        {/* Clear Hero Headline */}
+                        <div>
+                          <h2 className="text-[15px] sm:text-[16px] font-extrabold text-[#132C4B] leading-[1.2] tracking-tight">
+                            Smart Apps.<br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C5A059] to-[#8E6D2E]">
+                              Real Results.
+                            </span>
+                          </h2>
+                          <p className="text-[9px] text-neutral-500 leading-relaxed mt-1 font-normal">
+                            High-converting mobile apps and digital marketing built for growth.
+                          </p>
+                        </div>
+
+                        {/* Clean Primary Brand CTA Button */}
+                        <div className="pt-0.5">
+                          <Button
+                            variant="primary"
+                            size="sm"
+                            className="w-full !py-2 !px-3.5 !text-[10.5px] shadow-xs cursor-pointer"
+                            onClick={() => openLeadModal("phone-home-cta")}
+                          >
+                            Start Your Project
+                          </Button>
+                        </div>
+
+                        {/* Core Capabilities - Just 2 Clean, Uncluttered Cards */}
+                        <div className="space-y-2 pt-0.5">
+                          {/* Card 1: Mobile & Web Apps */}
+                          <div className="p-2.5 rounded-xl bg-white border border-black/[0.08] shadow-2xs space-y-1 hover:border-[#132C4B]/30 transition-all">
+                            <div className="flex items-center justify-between">
+                              <span className="text-[10px] font-bold text-[#132C4B] flex items-center gap-1.5">
+                                <span className="w-5 h-5 rounded-lg bg-[#132C4B]/10 text-[#132C4B] flex items-center justify-center shrink-0">
+                                  <Smartphone className="w-3 h-3" />
+                                </span>
+                                App Development
+                              </span>
+                              <span className="text-[7.5px] font-bold text-[#132C4B] bg-[#132C4B]/[0.06] px-1.5 py-0.5 rounded-md">
+                                iOS &amp; Android
                               </span>
                             </div>
-                          ))}
-                        </div>
-
-                        {/* Live Feed List */}
-                        <div className="space-y-1">
-                          <div className="text-[9px] font-bold text-white/60 px-1">Live Mobile Events</div>
-                          <div className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-white/[0.05] border border-white/[0.06] flex items-center justify-between text-[9px]">
-                            <div className="flex items-center gap-1.5">
-                              <div className="w-4 h-4 rounded-md bg-white/10 flex items-center justify-center shrink-0 border border-white/10">
-                                <AppleLogo className="w-2.5 h-2.5 fill-white" />
-                              </div>
-                              <div>
-                                <span className="font-semibold text-white/90 block leading-tight text-[9px]">iOS Build Verified</span>
-                                <span className="text-[7.5px] text-emerald-400 font-medium">Apple App Store Ready</span>
-                              </div>
-                            </div>
-                            <span className="text-white/40 text-[8px]">Just now</span>
+                            <p className="text-[8px] text-neutral-500 leading-normal pl-6.5">
+                              Fast, native mobile apps and modern web platforms built for speed.
+                            </p>
                           </div>
-                          <div className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-white/[0.05] border border-white/[0.06] flex items-center justify-between text-[9px]">
-                            <div className="flex items-center gap-1.5">
-                              <div className="w-4 h-4 rounded-md bg-[#3DDC84]/20 flex items-center justify-center shrink-0 border border-[#3DDC84]/30">
-                                <AndroidLogo className="w-2.5 h-2.5 fill-[#3DDC84]" />
-                              </div>
-                              <div>
-                                <span className="font-semibold text-white/90 block leading-tight text-[9px]">Play Store APK Signed</span>
-                                <span className="text-[7.5px] text-blue-400 font-medium">Android v2.4 Live</span>
-                              </div>
+
+                          {/* Card 2: Growth Marketing */}
+                          <div className="p-2.5 rounded-xl bg-white border border-black/[0.08] shadow-2xs space-y-1 hover:border-[#C5A059]/40 transition-all">
+                            <div className="flex items-center justify-between">
+                              <span className="text-[10px] font-bold text-[#132C4B] flex items-center gap-1.5">
+                                <span className="w-5 h-5 rounded-lg bg-[#C5A059]/15 text-[#8E6D2E] flex items-center justify-center shrink-0">
+                                  <TrendingUp className="w-3 h-3" />
+                                </span>
+                                Digital Marketing
+                              </span>
+                              <span className="text-[7.5px] font-bold text-[#8E6D2E] bg-[#C5A059]/15 px-1.5 py-0.5 rounded-md">
+                                4.2x ROAS
+                              </span>
                             </div>
-                            <span className="text-white/40 text-[8px]">1m ago</span>
+                            <p className="text-[8px] text-neutral-500 leading-normal pl-6.5">
+                              Search dominance, precision Google Ads and multi-channel scale.
+                            </p>
                           </div>
                         </div>
 
-                        {/* iOS Home Indicator Bar */}
-                        <div className="pb-0.5 pt-0.5 flex justify-center">
-                          <div className="w-24 h-0.5 rounded-full bg-white/40" />
+                        {/* Minimal Trust Indicator */}
+                        <div className="flex items-center justify-center gap-2 py-1 text-[8.5px] text-neutral-500">
+                          <span className="flex items-center gap-1 font-bold text-neutral-800">
+                            <Star className="w-2.5 h-2.5 fill-[#C5A059] text-[#C5A059]" /> 4.9/5 Rating
+                          </span>
+                          <span>•</span>
+                          <span className="font-semibold text-neutral-700">120+ Brands Scaled</span>
                         </div>
+                      </div>
+
+                      {/* ── Fixed Mobile Bottom Navigation ── */}
+                      <div className="px-5 py-1.5 bg-white border-t border-neutral-200/80 flex items-center justify-around z-20 shrink-0">
+                        <div className="flex flex-col items-center gap-0.5 text-[#132C4B] font-bold text-[7.5px]">
+                          <Home className="w-3.5 h-3.5 text-[#C5A059]" />
+                          <span>Home</span>
+                        </div>
+                        <div className="flex flex-col items-center gap-0.5 text-neutral-400 font-medium text-[7.5px] hover:text-neutral-700">
+                          <Layers className="w-3.5 h-3.5" />
+                          <span>Services</span>
+                        </div>
+                        <div className="flex flex-col items-center gap-0.5 text-neutral-400 font-medium text-[7.5px] hover:text-neutral-700">
+                          <Phone className="w-3.5 h-3.5" />
+                          <span>Contact</span>
+                        </div>
+                      </div>
+
+                      {/* iOS Home Indicator Bar */}
+                      <div className="pb-1 pt-0.5 bg-white flex justify-center z-20 shrink-0">
+                        <div className="w-24 h-1 rounded-full bg-neutral-900/30" />
                       </div>
                     </div>
                   </div>
@@ -435,10 +493,10 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
                     }}
                   >
                     <div className="w-6 h-6 rounded-lg bg-black text-white flex items-center justify-center shrink-0 shadow-sm">
-                      <AppleLogo className="w-3.5 h-3.5 fill-current" />
+                      <Monitor className="w-3.5 h-3.5 text-white" />
                     </div>
                     <div>
-                      <div className="text-[11px] font-bold text-black leading-tight">iMac 24-inch</div>
+                      <div className="text-[11px] font-bold text-black leading-tight">Desktop Web</div>
                       <div className="text-[9px] text-gray-500 font-medium">4.5K Retina Display</div>
                     </div>
                   </div>
@@ -725,8 +783,14 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
                       <div
                         className="w-full h-7 sm:h-8 bg-gradient-to-r from-[#D7DEE6] via-[#EFF3F7] to-[#D5DCE4] border-t border-black/10 flex items-center justify-center relative shadow-inner"
                       >
-                        {/* Centered Apple Logo on iMac Chin */}
-                        <AppleLogo className="w-3.5 h-3.5 fill-black/25 text-black/25" />
+                        {/* Centered Brand Logo Mark on Display Chin */}
+                        <div className="w-4 h-4 opacity-35 flex items-center justify-center">
+                          <img
+                            src="/brand/realresult-mark-transparent.png"
+                            alt="Real Result"
+                            className="w-full h-full object-contain filter grayscale"
+                          />
+                        </div>
                       </div>
                     </div>
 

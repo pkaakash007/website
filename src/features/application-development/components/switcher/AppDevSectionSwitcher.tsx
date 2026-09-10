@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Container } from "@/components/layout/Container";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { Globe, Smartphone, ArrowRight, Monitor, Code2, ShoppingCart, Database, Layout, Cpu, Zap, Bell, Shield, ExternalLink } from "lucide-react";
-import { AppleLogo, AndroidLogo } from "@/components/common/PlatformLogos";
+import { Button } from "@/components/common/Button";
+import { Globe, Smartphone, ArrowRight, ChevronRight, Monitor, Code2, ShoppingCart, Database, Layout, Cpu, Zap, Bell, Shield, ExternalLink } from "lucide-react";
 
 // ─── Web Portfolio Data ──────────────────────────────────────────────────────
 const webPortfolio: Record<string, { name: string; industry: string; image: string }[]> = {
@@ -111,14 +111,14 @@ const webServices = [
 // ─── Mobile App Development Data ────────────────────────────────────────────
 const mobileServices = [
   {
-    icon: <AppleLogo className="w-6 h-6 fill-current" />,
+    icon: <Smartphone className="w-6 h-6" />,
     title: "iOS App (iPhone & iPad)",
     desc: "Native iPhone and iPad apps published on the Apple App Store. Fast, smooth and perfectly designed for Apple users.",
     points: ["App Store publish included", "Face ID & Touch ID login", "Push notifications & alerts"],
     color: "#000000",
   },
   {
-    icon: <AndroidLogo className="w-6 h-6 fill-current" />,
+    icon: <Smartphone className="w-6 h-6" />,
     title: "Android App",
     desc: "Custom Android apps for your business, published on Google Play Store. Works on all Samsung, Redmi, OnePlus and other phones.",
     points: ["Google Play Store publish", "Works on all Android phones", "Offline mode available"],
@@ -156,7 +156,7 @@ const mobileServices = [
 
 const TABS = [
   { id: "web",    label: "Web Development",        icon: <Globe className="w-4 h-4" /> },
-  { id: "mobile", label: "Mobile App Development", icon: <AppleLogo className="w-4 h-4 fill-current" /> },
+  { id: "mobile", label: "Mobile App Development", icon: <Smartphone className="w-4 h-4" /> },
 ];
 
 export interface AppDevSectionSwitcherProps {
@@ -190,12 +190,15 @@ export const AppDevSectionSwitcher: React.FC<AppDevSectionSwitcherProps> = ({
         {/* Section title */}
         <div className="mb-10">
           <h2 style={{
-            fontSize: "clamp(1.6rem,3.5vw,2.4rem)", fontWeight: 800,
-            letterSpacing: "-0.03em", color: "#000000", marginBottom: "8px",
+            fontSize: "clamp(1.6rem,3.5vw,2.3rem)",
+            fontWeight: 700,
+            letterSpacing: "-0.025em",
+            color: "#1d1d1f",
+            marginBottom: "8px",
           }}>
             {activeTab === "web" ? "Web Development Services" : "Mobile App Development Services"}
           </h2>
-          <p style={{ fontSize: "15px", color: "rgba(60,60,67,0.60)", maxWidth: "560px", lineHeight: 1.6 }}>
+          <p style={{ fontSize: "15px", color: "#86868b", maxWidth: "560px", lineHeight: 1.55, fontWeight: 400 }}>
             {activeTab === "web"
               ? "From simple business websites to complex cloud software — we build everything your business needs to be online."
               : "iPhone apps, Android apps or both together — we build, test and publish your app on the store."}
@@ -207,9 +210,10 @@ export const AppDevSectionSwitcher: React.FC<AppDevSectionSwitcherProps> = ({
           {services.map((svc, idx) => (
             <div
               key={idx}
-              className="group cursor-pointer transition-all duration-200"
+              className="group cursor-pointer transition-all duration-200 card-karla font-karla"
               onClick={() => openLeadModal(svc.title)}
               style={{
+                fontFamily: "var(--font-karla), 'Karla', sans-serif",
                 background: "#FFFFFF",
                 borderRadius: "20px",
                 padding: "24px",
@@ -231,38 +235,73 @@ export const AppDevSectionSwitcher: React.FC<AppDevSectionSwitcherProps> = ({
 
               {/* Title */}
               <h3 style={{
-                fontSize: "17px", fontWeight: 700,
-                color: "#000000", letterSpacing: "-0.02em",
-                lineHeight: 1.2, marginBottom: "10px",
+                fontFamily: "var(--font-karla), 'Karla', sans-serif",
+                fontSize: "17px",
+                fontWeight: 700,
+                color: "#1d1d1f",
+                letterSpacing: "-0.015em",
+                lineHeight: 1.25,
+                marginBottom: "8px",
               }}>
                 {svc.title}
               </h3>
 
               {/* Description */}
               <p style={{
-                fontSize: "13.5px", color: "rgba(60,60,67,0.65)",
-                lineHeight: 1.65, marginBottom: "16px", fontWeight: 400,
+                fontFamily: "var(--font-karla), 'Karla', sans-serif",
+                fontSize: "13.5px",
+                color: "#86868b",
+                lineHeight: 1.55,
+                marginBottom: "18px",
+                fontWeight: 400,
+                letterSpacing: "-0.01em",
               }}>
                 {svc.desc}
               </p>
 
-              {/* Feature points */}
-              <div style={{ marginBottom: "20px", paddingBottom: "16px", borderBottom: "0.5px solid rgba(60,60,67,0.10)" }}>
+              {/* Feature points (Normal bullet points) */}
+              <ul style={{
+                fontFamily: "var(--font-karla), 'Karla', sans-serif",
+                margin: "0 0 20px 0",
+                padding: "0 0 16px 0",
+                borderBottom: "0.5px solid rgba(60,60,67,0.10)",
+                listStyle: "none",
+              }}>
                 {svc.points.map((pt, pIdx) => (
-                  <div key={pIdx} style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: pIdx < svc.points.length - 1 ? "7px" : 0 }}>
-                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" style={{ flexShrink: 0 }}>
-                      <circle cx="7.5" cy="7.5" r="7.5" fill={svc.color} fillOpacity="0.15" />
-                      <polyline points="4,7.5 6,9.5 11,5" stroke={svc.color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <span style={{ fontSize: "12.5px", color: "rgba(60,60,67,0.70)", fontWeight: 400 }}>{pt}</span>
-                  </div>
+                  <li
+                    key={pIdx}
+                    style={{
+                      fontFamily: "var(--font-karla), 'Karla', sans-serif",
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: "8px",
+                      marginBottom: pIdx < svc.points.length - 1 ? "8px" : 0,
+                      fontSize: "13px",
+                      color: "#424245",
+                      fontWeight: 400,
+                      lineHeight: "1.4",
+                      letterSpacing: "-0.01em",
+                    }}
+                  >
+                    <span
+                      style={{
+                        width: "5px",
+                        height: "5px",
+                        borderRadius: "50%",
+                        backgroundColor: "#86868b",
+                        flexShrink: 0,
+                        marginTop: "6px",
+                      }}
+                    />
+                    <span style={{ fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>{pt}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
 
               {/* CTA row */}
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                <span style={{ fontSize: "13px", fontWeight: 600, color: "#007AFF" }}>Get a Quote</span>
-                <ArrowRight className="w-3.5 h-3.5" style={{ color: "#007AFF", opacity: 0.7 }} />
+              <div style={{ display: "flex", alignItems: "center", gap: "5px", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>
+                <span style={{ fontSize: "13px", fontWeight: 600, color: "#0071e3", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>Get a Quote</span>
+                <ChevronRight className="w-3.5 h-3.5" style={{ color: "#0071e3", opacity: 0.8 }} />
               </div>
             </div>
           ))}
@@ -307,9 +346,10 @@ export const AppDevSectionSwitcher: React.FC<AppDevSectionSwitcherProps> = ({
               {(webPortfolio[webPortfolioTab] || []).map((site, idx) => (
                 <div
                   key={idx}
-                  className="group cursor-pointer"
+                  className="group cursor-pointer card-karla font-karla"
                   onClick={() => openLeadModal(`${webPortfolioTab} - ${site.name}`)}
                   style={{
+                    fontFamily: "var(--font-karla), 'Karla', sans-serif",
                     background: "#FFFFFF",
                     borderRadius: "16px",
                     overflow: "hidden",
@@ -319,11 +359,11 @@ export const AppDevSectionSwitcher: React.FC<AppDevSectionSwitcherProps> = ({
                   }}
                 >
                   {/* Browser chrome bar */}
-                  <div style={{ background: "#F2F2F7", padding: "8px 12px", display: "flex", alignItems: "center", gap: "6px" }}>
+                  <div style={{ background: "#F2F2F7", padding: "8px 12px", display: "flex", alignItems: "center", gap: "6px", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>
                     <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#FF5F57", display: "inline-block" }} />
                     <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#FFBD2E", display: "inline-block" }} />
                     <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#28C840", display: "inline-block" }} />
-                    <div style={{ flex: 1, background: "#FFFFFF", borderRadius: "6px", padding: "3px 10px", fontSize: "10px", color: "#8E8E93", marginLeft: "6px" }}>
+                    <div style={{ flex: 1, background: "#FFFFFF", borderRadius: "6px", padding: "3px 10px", fontSize: "10px", color: "#8E8E93", marginLeft: "6px", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>
                       www.realresult.in/{site.name.toLowerCase().replace(/\s+/g, "-")}
                     </div>
                   </div>
@@ -339,12 +379,12 @@ export const AppDevSectionSwitcher: React.FC<AppDevSectionSwitcherProps> = ({
                   </div>
 
                   {/* Card footer */}
-                  <div style={{ padding: "14px 16px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <div style={{ padding: "14px 16px", display: "flex", alignItems: "center", justifyContent: "space-between", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>
                     <div>
-                      <p style={{ fontSize: "14px", fontWeight: 700, color: "#000000", letterSpacing: "-0.01em", marginBottom: "2px" }}>
+                      <p style={{ fontSize: "14px", fontWeight: 700, color: "#000000", letterSpacing: "-0.01em", marginBottom: "2px", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>
                         {site.name}
                       </p>
-                      <p style={{ fontSize: "11px", color: "#8E8E93" }}>{site.industry}</p>
+                      <p style={{ fontSize: "11px", color: "#8E8E93", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>{site.industry}</p>
                     </div>
                     <div style={{
                       width: "30px", height: "30px", borderRadius: "9px",
@@ -387,8 +427,8 @@ export const AppDevSectionSwitcher: React.FC<AppDevSectionSwitcherProps> = ({
                         boxShadow: isActive ? "0 2px 8px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)" : "none",
                       }}
                     >
-                      {tab === "iOS App" && <AppleLogo className="w-3.5 h-3.5 fill-current" />}
-                      {tab === "Android App" && <AndroidLogo className="w-3.5 h-3.5 fill-current text-[#3DDC84]" />}
+                      {tab === "iOS App" && <Smartphone className="w-3.5 h-3.5" />}
+                      {tab === "Android App" && <Smartphone className="w-3.5 h-3.5 text-emerald-500" />}
                       {tab === "Cross-Platform" && <Zap className="w-3.5 h-3.5" />}
                       <span>{tab}</span>
                     </button>
@@ -402,9 +442,10 @@ export const AppDevSectionSwitcher: React.FC<AppDevSectionSwitcherProps> = ({
               {(mobilePortfolio[mobilePortfolioTab] || []).map((app, idx) => (
                 <div
                   key={idx}
-                  className="group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)]"
+                  className="group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)] card-karla font-karla"
                   onClick={() => openLeadModal(`Build an app like ${app.name}`)}
                   style={{
+                    fontFamily: "var(--font-karla), 'Karla', sans-serif",
                     background: "#FFFFFF",
                     borderRadius: "22px",
                     padding: "20px 14px 18px",
@@ -442,10 +483,10 @@ export const AppDevSectionSwitcher: React.FC<AppDevSectionSwitcherProps> = ({
 
                   {/* App name & category */}
                   <div className="w-full">
-                    <p style={{ fontSize: "14px", fontWeight: 700, color: "#000000", letterSpacing: "-0.015em", lineHeight: 1.25 }}>
+                    <p style={{ fontSize: "14px", fontWeight: 700, color: "#000000", letterSpacing: "-0.015em", lineHeight: 1.25, fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>
                       {app.name}
                     </p>
-                    <p style={{ fontSize: "11px", color: "#8E8E93", marginTop: "3px", fontWeight: 500 }}>
+                    <p style={{ fontSize: "11px", color: "#8E8E93", marginTop: "3px", fontWeight: 500, fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>
                       {app.category}
                     </p>
                   </div>
@@ -453,10 +494,10 @@ export const AppDevSectionSwitcher: React.FC<AppDevSectionSwitcherProps> = ({
                   {/* Star rating pill */}
                   <div
                     className="flex items-center gap-1 px-2.5 py-0.5 rounded-full"
-                    style={{ background: "rgba(0,0,0,0.04)" }}
+                    style={{ background: "rgba(0,0,0,0.04)", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}
                   >
                     <span style={{ fontSize: "11px", color: "#FF9500" }}>★</span>
-                    <span style={{ fontSize: "11.5px", fontWeight: 600, color: "#3C3C43" }}>{app.rating}</span>
+                    <span style={{ fontSize: "11.5px", fontWeight: 600, color: "#3C3C43", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>{app.rating}</span>
                   </div>
 
                   {/* Build similar CTA (App Store GET button style) */}
@@ -468,6 +509,7 @@ export const AppDevSectionSwitcher: React.FC<AppDevSectionSwitcherProps> = ({
                       fontWeight: 700,
                       color: "#007AFF",
                       letterSpacing: "-0.01em",
+                      fontFamily: "var(--font-karla), 'Karla', sans-serif",
                     }}
                   >
                     Build Similar
@@ -485,26 +527,15 @@ export const AppDevSectionSwitcher: React.FC<AppDevSectionSwitcherProps> = ({
 
         {/* Bottom CTA */}
         <div className="mt-12 text-center">
-          <button
+          <Button
+            variant="primary"
+            size="lg"
             onClick={() => openLeadModal(activeTab === "web" ? "web-development" : "mobile-app-development")}
-            className="inline-flex items-center gap-2.5 cursor-pointer transition-all duration-150 active:scale-[0.97] group"
-            style={{
-              padding: "14px 36px",
-              borderRadius: "9999px",
-              background: "#000000",
-              color: "#FFFFFF",
-              fontSize: "15px",
-              fontWeight: 700,
-              border: "none",
-              letterSpacing: "-0.01em",
-              boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
-            }}
           >
-            <span>{activeTab === "web" ? "Start Web Project" : "Start App Project"}</span>
-            <ArrowRight className="w-4 h-4 opacity-60 group-hover:translate-x-0.5 transition-transform" />
-          </button>
-          <p style={{ fontSize: "12px", color: "#8E8E93", marginTop: "10px" }}>
-            Free consultation · No upfront payment · Tamil & English support
+            {activeTab === "web" ? "Start Web Project" : "Start App Project"}
+          </Button>
+          <p style={{ fontSize: "12px", color: "#8E8E93", marginTop: "12px" }}>
+            Free consultation · No upfront payment · Tamil &amp; English support
           </p>
         </div>
 

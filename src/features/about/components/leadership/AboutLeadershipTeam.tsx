@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
 import LeaderBioCard from "./LeaderBioCard";
 import { Code2, TrendingUp, Cpu, Palette } from "lucide-react";
 
@@ -36,7 +35,6 @@ export const AboutLeadershipTeam: React.FC = () => {
     <section id="leadership" className="py-20 bg-white border-b border-border scroll-mt-20">
       <Container size="wide">
         <div className="max-w-3xl mb-14 space-y-3">
-          <Badge variant="gold">Leadership Team</Badge>
           <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
             Practitioners at the Helm
           </h2>

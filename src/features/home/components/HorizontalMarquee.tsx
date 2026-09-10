@@ -28,10 +28,10 @@ const SERVICES: ServiceMarqueeItem[] = [
     name: "Google Ads",
     icon: (
       <div className="w-6 h-6 rounded-[7px] bg-white border border-black/[0.08] flex items-center justify-center shrink-0 shadow-sm p-0.5">
-        <svg className="w-full h-full" viewBox="0 0 48 48">
-          <path fill="#4285F4" d="M12.78 4.4a8.4 8.4 0 0 1 11.48 3.1l11.75 20.35a8.4 8.4 0 0 1-14.56 8.4L9.7 15.9a8.4 8.4 0 0 1 3.08-11.5z"/>
-          <path fill="#FBBC05" d="M35.22 43.6a8.4 8.4 0 0 1-11.48-3.1L12 20.15a8.4 8.4 0 0 1 14.56-8.4l11.74 20.35a8.4 8.4 0 0 1-3.08 11.5z"/>
-          <circle fill="#34A853" cx="12" cy="36" r="8"/>
+        <svg className="w-full h-full" viewBox="0 0 256 256" preserveAspectRatio="xMidYMid meet">
+          <path d="M5.888 166.405L90.88 20.9C101.676 27.256 156.116 57.384 164.908 63.114L79.916 208.627C70.621 220.907 -5.888 185.04 5.888 166.396V166.405Z" fill="#FBBC04" />
+          <path d="M250.084 166.402L165.092 20.906C153.21 1.132 127.619 -6.054 106.601 5.625C85.582 17.304 79.182 42.462 91.064 63.119L176.056 208.633C187.938 228.398 213.529 235.584 234.548 223.905C254.648 212.226 261.966 186.176 250.084 166.419V166.402Z" fill="#4285F4" />
+          <ellipse cx="42.664" cy="187.924" rx="42.664" ry="41.604" fill="#34A853" />
         </svg>
       </div>
     ),

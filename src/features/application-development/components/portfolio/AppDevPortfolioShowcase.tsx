@@ -3,8 +3,7 @@ import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
 import PortfolioCaseCard from "./PortfolioCaseCard";
-import { Layers, Globe } from "lucide-react";
-import { AppleLogo } from "@/components/common/PlatformLogos";
+import { Layers, Globe, Smartphone } from "lucide-react";
 
 export const AppDevPortfolioShowcase: React.FC = () => {
   const projects = [
@@ -19,8 +18,8 @@ export const AppDevPortfolioShowcase: React.FC = () => {
     },
     {
       title: "Cross-Platform Telehealth Mobile App",
-      category: "iOS & Android Mobile Application",
-      icon: AppleLogo,
+      category: "Mobile Application Engineering",
+      icon: Smartphone,
       description:
         "Built a HIPAA-ready patient consultation app with encrypted WebRTC video calling, bilingual Tamil-English doctor appointment scheduling, and automated prescription delivery integration.",
       metrics: ["50K+ Monthly Active Users", "4.8 App Store Rating", "<1s Video Connect Time"],

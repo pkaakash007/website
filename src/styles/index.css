@@ -1,5 +1,6 @@
 @import './fonts.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -68,6 +69,7 @@
   --font-sf:         'SF Pro', 'SF Pro Display', 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-system:     'SF Pro Display', 'SF Pro Text', 'SF Pro', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
   --font-inter:      'SF Pro Text', 'SF Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-karla:      'Karla', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
   --font-mono:       'SF Mono', 'JetBrains Mono', ui-monospace, monospace;
 
   /* ── Easing ─────────────────────────────────────────────────── */
@@ -225,16 +227,32 @@ textarea:not([class*="custom-"]) {
 }
 
 /* ── Aeren CARD — plain white, subtle border ─────────────────── */
-.ae-card {
+.ae-card,
+.card-karla {
+  font-family: var(--font-karla), 'Karla', sans-serif;
   background: var(--ae-white);
   border: 1px solid var(--ae-border);
   border-radius: 20px;
   transition: border-color 0.2s var(--ease-ae), box-shadow 0.2s var(--ease-ae), transform 0.15s var(--ease-ae);
 }
-.ae-card:hover {
+.ae-card:hover,
+.card-karla:hover {
   border-color: var(--ae-border-strong);
   box-shadow: 0 4px 24px rgba(0,0,0,0.07);
   transform: translateY(-2px);
+}
+
+/* Ensure all text inside cards uses Karla font */
+.card-karla,
+.card-karla h1, .card-karla h2, .card-karla h3, .card-karla h4, .card-karla h5, .card-karla h6,
+.card-karla p, .card-karla span, .card-karla li, .card-karla a, .card-karla div,
+.ae-card h1, .ae-card h2, .ae-card h3, .ae-card h4, .ae-card h5, .ae-card h6,
+.ae-card p, .ae-card span, .ae-card li, .ae-card a,
+.ios-card h1, .ios-card h2, .ios-card h3, .ios-card h4, .ios-card h5, .ios-card h6,
+.ios-card p, .ios-card span, .ios-card li, .ios-card a,
+.ios-inset-card h1, .ios-inset-card h2, .ios-inset-card h3, .ios-inset-card h4,
+.ios-inset-card p, .ios-inset-card span, .ios-inset-card li, .ios-inset-card a {
+  font-family: var(--font-karla), 'Karla', sans-serif;
 }
 
 /* ── Aeren PILL (muted ghost chip) ──────────────────────────── */

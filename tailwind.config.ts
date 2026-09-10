@@ -103,6 +103,18 @@ const config: Config = {
           "ui-monospace",
           "monospace",
         ],
+        karla: [
+          "'Karla'",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "sans-serif",
+        ],
+        card: [
+          "'Karla'",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "sans-serif",
+        ],
       },
       borderRadius: {
         "4xl": "2rem",

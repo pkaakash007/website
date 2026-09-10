@@ -1,7 +1,8 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { ShieldCheck, PhoneCall, ArrowRight } from "lucide-react";
+import { Button } from "@/components/common/Button";
+import { ShieldCheck, PhoneCall } from "lucide-react";
 import { SEO_CONFIG } from "@/config/seo";
 
 export const HomeLeadBanner: React.FC = () => {
@@ -39,20 +40,23 @@ export const HomeLeadBanner: React.FC = () => {
               Talk to our team in Erode. Whether you need Google Ads, SEO, or a custom app — we'll create a clear plan that works for your business and budget.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
-              <button
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-4">
+              <Button
+                variant="primary"
+                size="lg"
                 onClick={() => openLeadModal("home-lead-banner")}
-                className="flex items-center gap-2.5 px-10 py-4 rounded-full bg-white text-[#0F0F0E] text-[15px] font-bold cursor-pointer transition-opacity hover:opacity-90 group"
               >
-                <span>Request Free Consultation</span>
-                <ArrowRight className="w-4 h-4 opacity-60 group-hover:translate-x-0.5 transition-transform" />
-              </button>
-              <a
+                Request Free Consultation
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
                 href="/contact"
-                className="flex items-center gap-2 px-8 py-4 rounded-full border border-[rgba(255,255,255,0.15)] text-[rgba(255,255,255,0.70)] text-[14px] font-semibold hover:border-[rgba(255,255,255,0.30)] hover:text-white transition-all"
+                className="!text-white !border-white/20 hover:!bg-white/10"
+                withArrow={false}
               >
                 Contact Erode HQ
-              </a>
+              </Button>
             </div>
 
             {/* Trust signals */}
