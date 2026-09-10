@@ -13,10 +13,9 @@ export const AboutHero: React.FC = () => {
         <Breadcrumbs items={[{ label: "About Us" }]} />
 
         <div className="max-w-4xl space-y-6 mt-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#FBF7EE] border border-[#E8D298] text-[#8E6D2E] text-xs font-semibold">
-            <Award className="w-3.5 h-3.5 text-gold-600 shrink-0" />
-            <span>Corporate Philosophy · Erode Headquarters, Tamil Nadu</span>
-          </div>
+          <p className="text-xs font-bold uppercase tracking-wider text-gold-700">
+            Corporate Philosophy · Erode Headquarters, Tamil Nadu
+          </p>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-primary leading-tight">
             Engineered to Replace Vendor Fragmentation.
@@ -30,7 +29,6 @@ export const AboutHero: React.FC = () => {
             <Button
               variant="gold"
               size="lg"
-              withArrow
               onClick={() => openLeadModal("about-hero")}
               className="cursor-pointer font-bold"
             >

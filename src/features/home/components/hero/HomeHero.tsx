@@ -1,63 +1,127 @@
 import React from "react";
-import { Container } from "@/components/layout/Container";
-import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { TrendingUp, Code2, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+} from "lucide-react";
 
 export const HomeHero: React.FC = () => {
   return (
-    <section className="relative pt-16 pb-20 lg:pt-24 lg:pb-28 bg-white border-b border-border">
-      <Container size="wide">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#FBF7EE] border border-[#E8D298] text-[#8E6D2E] text-xs font-semibold">
-            <span>Digital Marketing & Application Development Company</span>
-          </div>
+    <section className="relative overflow-hidden bg-white">
+      {/* ── UPPER HERO: Crisp White Canvas with Elegant #C5A059 Gold Ambient Touches ── */}
+      <div className="relative bg-gradient-to-b from-[#FAF8F5] via-white to-white text-neutral-900 pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-16 overflow-hidden">
+        
+        {/* ── Sweeping Fluid Ribbon Curves & Star Sparkles ── */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
+          {/* Ambient Warm Gold Radial Glows */}
+          <div
+            className="absolute -top-10 right-1/4 w-[650px] h-[650px] rounded-full opacity-60"
+            style={{
+              background: "radial-gradient(circle, rgba(197,160,89,0.15) 0%, rgba(197,160,89,0.04) 50%, transparent 75%)",
+              filter: "blur(60px)",
+            }}
+          />
+          <div
+            className="absolute top-1/3 left-[-6%] w-[520px] h-[520px] rounded-full opacity-40"
+            style={{
+              background: "radial-gradient(circle, rgba(197,160,89,0.12) 0%, transparent 70%)",
+              filter: "blur(50px)",
+            }}
+          />
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-primary leading-tight">
-            We Build Applications That Scale & Marketing That Delivers Real Revenue.
-          </h1>
+          {/* Sweeping Luminous Fluid Ribbon in Brand Gold */}
+          <svg
+            viewBox="0 0 1440 650"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute inset-0 w-full h-full object-cover opacity-35 preserve-3d"
+          >
+            <path
+              d="M-80 420C220 560 520 180 920 360C1220 500 1420 260 1560 300V700H-80V420Z"
+              fill="url(#goldFluidGrad)"
+            />
+            <defs>
+              <linearGradient id="goldFluidGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#C5A059" stopOpacity="0.22" />
+                <stop offset="60%" stopColor="#DFC58E" stopOpacity="0.10" />
+                <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.02" />
+              </linearGradient>
+            </defs>
+          </svg>
 
-          <p className="text-base sm:text-lg text-secondary leading-relaxed max-w-2xl mx-auto font-normal">
-            Real Result unifies technical software engineering with high-velocity search and media performance. Headquartered in Erode, delivering statewide market dominance across Tamil Nadu and international export growth.
-          </p>
+          {/* Golden Star Sparkles (#C5A059) */}
+          <span className="absolute top-20 left-[18%] text-[#C5A059] text-xl animate-pulse select-none">✦</span>
+          <span className="absolute top-36 left-[38%] text-[#C5A059]/70 text-sm animate-ping select-none">★</span>
+          <span className="absolute top-24 right-[46%] text-[#C5A059] text-lg animate-pulse select-none">✦</span>
+          <span className="absolute top-48 right-[12%] text-[#C5A059]/80 text-sm animate-ping select-none">★</span>
+          <span className="absolute bottom-40 left-[8%] text-[#C5A059]/60 text-lg select-none">✦</span>
+          <span className="absolute bottom-32 right-[42%] text-[#C5A059]/80 text-sm animate-pulse select-none">✦</span>
+        </div>
 
-          <div className="pt-2 flex flex-wrap justify-center items-center gap-4">
-            <Button
-              variant="gold"
-              size="lg"
-              withArrow
-              onClick={() => openLeadModal("home-hero-primary")}
-              className="cursor-pointer font-bold"
-            >
-              Request Strategic Consultation
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              href="#pillars"
-              className="border-border text-primary hover:bg-surface"
-            >
-              Explore 2 Core Divisions
-            </Button>
-          </div>
+        {/* ── Hero Main Content Grid ── */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 items-center">
+            
+            {/* ── LEFT COLUMN: High-Contrast Typography & Pill CTA ── */}
+            <div className="lg:col-span-5 xl:col-span-5 flex flex-col items-start text-left z-20">
 
-          {/* Key Trust Signals */}
-          <div className="pt-8 flex flex-wrap justify-center items-center gap-8 text-xs text-secondary border-t border-border">
-            <div className="flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-gold-600" />
-              <span>4.8x Average Client ROAS</span>
+              {/* Main Headline */}
+              <h1
+                className="text-4xl sm:text-5xl lg:text-[52px] xl:text-[58px] font-black tracking-tight text-neutral-950 leading-[1.08] mb-4"
+                style={{ letterSpacing: "-0.035em" }}
+              >
+                Grow Your Business.<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#A67C1E]">
+                  Get Real Results.
+                </span>
+              </h1>
+
+              {/* Subtitle Description */}
+              <p className="text-sm sm:text-base text-neutral-600 leading-relaxed max-w-xl mb-8 font-normal">
+                Tamil Nadu&apos;s premier agency unifying high-converting digital marketing campaigns with scalable custom web &amp; mobile application engineering.
+              </p>
+
+              {/* Pill CTA Buttons with #C5A059 Brand Gold */}
+              <div className="flex flex-wrap items-center gap-3.5">
+                <button
+                  onClick={() => openLeadModal("home-hero-white-gold")}
+                  className="cursor-pointer transition-all duration-200 hover:scale-105 active:scale-95 px-8 py-4 rounded-full text-sm sm:text-base font-extrabold bg-[#C5A059] hover:bg-[#B38F46] text-white shadow-[0_10px_35px_rgba(197,160,89,0.38)] flex items-center gap-2.5"
+                >
+                  <span>Start Your Project</span>
+                  <ArrowRight className="w-4 h-4 text-white" />
+                </button>
+                <a
+                  href="#pillars"
+                  className="cursor-pointer transition-all duration-200 hover:bg-neutral-100 px-7 py-4 rounded-full text-sm sm:text-base font-bold text-neutral-800 border border-neutral-300 hover:border-neutral-400 flex items-center gap-2"
+                >
+                  <span>Explore Services</span>
+                </a>
+              </div>
+
             </div>
-            <div className="flex items-center gap-2">
-              <Code2 className="w-4 h-4 text-blue-600" />
-              <span>99.98% Cloud Availability SLA</span>
+
+            {/* ── RIGHT COLUMN: The 3D Isometric Centerpiece (Seamless on White Canvas) ── */}
+            <div className="lg:col-span-7 xl:col-span-7 relative flex items-center justify-center">
+              {/* Subtle Warm Gold Radial Base Glow */}
+              <div
+                className="absolute -bottom-6 inset-x-8 h-[220px] rounded-full pointer-events-none opacity-60"
+                style={{
+                  background: "radial-gradient(ellipse at center, rgba(197,160,89,0.22) 0%, transparent 70%)",
+                  filter: "blur(30px)",
+                }}
+              />
+              <div className="relative z-10 w-full max-w-[640px] transition-transform duration-500 hover:scale-102">
+                <img
+                  src="/images/hero-3d-rocket-transparent.png?v=pure3d"
+                  alt="3D Space Rocket Launching from Laptop with Gold Coins and Analytics Charts"
+                  className="w-full h-auto object-contain pointer-events-none filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.06)]"
+                />
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>Strict Mutual NDA Safeguard</span>
-            </div>
+
           </div>
         </div>
-      </Container>
+
+      </div>
     </section>
   );
 };

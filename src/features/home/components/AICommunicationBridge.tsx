@@ -3,7 +3,7 @@ import React from "react";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { Bot, ArrowRight, MessageSquare, PhoneCall, Radio, Sparkles } from "lucide-react";
+import { Bot, ArrowRight, MessageSquare, PhoneCall, Radio } from "lucide-react";
 
 const FLOW_STEPS = [
   "CAMPAIGN",
@@ -30,17 +30,13 @@ export default function AICommunicationBridge() {
       <Container size="wide">
         {/* Transition Header (15% Weight Supporting Extension) */}
         <div className="max-w-4xl mb-14 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold shadow-subtle mb-4">
-            <Bot className="w-3.5 h-3.5 text-gold-600" />
-            <span>CONVERSATIONAL CONTINUITY · 15% CAPABILITY</span>
-          </div>
+          <p className="text-xs font-mono uppercase tracking-widest font-bold text-primary mb-4">
+            CONVERSATIONAL CONTINUITY · 15% CAPABILITY
+          </p>
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-primary tracking-tight uppercase leading-[1.08]">
             MARKETING CREATES THE OPPORTUNITY. <br />
-            <span className="font-serif italic text-gold-700 font-normal lowercase">
-              ai communication
-            </span>{" "}
-            CONTINUES THE CONVERSATION.
+            <span className="text-gold-700">AI COMMUNICATION</span> CONTINUES THE CONVERSATION.
           </h2>
 
           <p className="text-base sm:text-lg text-secondary mt-4 max-w-2xl font-normal leading-relaxed">

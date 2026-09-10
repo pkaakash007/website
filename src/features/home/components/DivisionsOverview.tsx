@@ -104,11 +104,7 @@ export default function DivisionsOverview() {
       <Container size="wide">
         <SectionHeader
           badge="OUR DIVISIONS"
-          title={
-            <>
-              Four pillars. <span className="font-serif italic font-normal text-primary">One integrated</span> execution engine.
-            </>
-          }
+          title="Four pillars. One integrated execution engine."
           subtitle="Eliminate vendor fragmentation. We connect technology, growth, communication, and talent into a seamless operational advantage."
         />
 

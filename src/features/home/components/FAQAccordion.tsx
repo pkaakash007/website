@@ -43,12 +43,7 @@ export default function FAQAccordion() {
       <Container size="wide">
         <SectionHeader
           badge="FREQUENTLY ASKED QUESTIONS"
-          title={
-            <>
-              Everything you need to know about our{" "}
-              <span className="font-serif italic font-normal text-primary">campaign model</span>.
-            </>
-          }
+          title="Everything you need to know about our campaign model."
           subtitle="Clear answers on media planning, attribution, regional communication, and campaign timelines."
         />
 

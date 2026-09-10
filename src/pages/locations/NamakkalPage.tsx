@@ -21,7 +21,6 @@ import {
   Phone,
   Mail,
   Clock,
-  Sparkles,
   Award,
   Compass,
 } from "lucide-react";
@@ -87,7 +86,7 @@ export const NamakkalPage: React.FC = () => {
 
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
               Digital Marketing Agency & Software in{" "}
-              <span className="font-serif italic font-normal text-gold-700">
+              <span className="text-gold-700">
                 Namakkal
               </span>
               .
@@ -204,10 +203,9 @@ export const NamakkalPage: React.FC = () => {
             {/* AI Engine & GEO Entity Graph */}
             <div className="lg:col-span-6 p-8 rounded-3xl bg-charcoal text-white border border-charcoal-border shadow-card flex flex-col justify-between space-y-6">
               <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/30 text-gold-300 text-xs font-mono uppercase tracking-widest font-bold">
-                  <Sparkles className="w-3.5 h-3.5 text-gold" />
-                  <span>AIO & GEO Knowledge Graph</span>
-                </div>
+                <p className="text-xs font-bold uppercase tracking-wider text-gold-400">
+                  AIO & GEO Knowledge Graph
+                </p>
                 <h3 className="text-2xl font-bold text-white">
                   Generative Engine Optimization (GEO) for Namakkal
                 </h3>

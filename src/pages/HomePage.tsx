@@ -1,12 +1,11 @@
 import React from "react";
 import { SEOHead } from "@/components/seo/SEOHead";
 import HomeHero from "@/features/home/components/hero/HomeHero";
+import PortfolioShowcase from "@/features/home/components/PortfolioShowcase";
 import HorizontalMarquee from "@/features/home/components/HorizontalMarquee";
 import HomePillarsDualShowcase from "@/features/home/components/pillars/HomePillarsDualShowcase";
-import HomeGrowthEcosystem from "@/features/home/components/ecosystem/HomeGrowthEcosystem";
 import CreativeShowcase from "@/features/home/components/CreativeShowcase";
 import MediaVisualStrip from "@/features/home/components/MediaVisualStrip";
-import HomeMetricsProof from "@/features/home/components/metrics/HomeMetricsProof";
 import WhatsAppSection from "@/features/home/components/WhatsAppSection";
 import HomeLeadBanner from "@/features/home/components/cta/HomeLeadBanner";
 
@@ -25,17 +24,19 @@ export const HomePage: React.FC = () => {
         }}
       />
 
-      {/* 1. Hero: Core Agency Positioning & Live Stats */}
+      {/* 1. Hero: Core Agency Positioning & 3D Centerpiece */}
       <HomeHero />
 
-      {/* 2. Infinite Horizontal Text Marquee */}
-      <HorizontalMarquee />
+      {/* 2. Portfolio Showcase: Our Live Work Portfolio (Next to Hero) */}
+      <PortfolioShowcase />
 
-      {/* 3. Flagship Dual Showcase: Digital Marketing & Application Development */}
+      {/* 3. Continuous Horizontal Scroll Animation Strip */}
+      <div className="w-full shrink-0 py-6 bg-white border-y border-neutral-100 overflow-hidden">
+        <HorizontalMarquee />
+      </div>
+
+      {/* 4. Flagship Dual Showcase: Digital Marketing & Application Development */}
       <HomePillarsDualShowcase />
-
-      {/* 4. The Synchronized Growth Machine */}
-      <HomeGrowthEcosystem />
 
       {/* 5. Creative Showcase with Dynamic Visual Hover */}
       <CreativeShowcase />
@@ -43,13 +44,10 @@ export const HomePage: React.FC = () => {
       {/* 6. Media Visual Strip */}
       <MediaVisualStrip />
 
-      {/* 7. Hard Numbers Telemetry */}
-      <HomeMetricsProof />
-
-      {/* 8. WhatsApp Conversational Interface */}
+      {/* 7. WhatsApp Conversational Interface */}
       <WhatsAppSection />
 
-      {/* 9. Final High-Impact Consultation Banner */}
+      {/* 8. Final High-Impact Consultation Banner */}
       <HomeLeadBanner />
     </div>
   );

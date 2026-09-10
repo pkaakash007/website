@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/common/Badge";
-import { Button } from "@/components/common/Button";
-import { ArrowRight, BookOpen, FileText, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, FileText } from "lucide-react";
 
 
 const insights = [
@@ -45,8 +44,7 @@ export default function InsightsPage() {
           <div className="max-w-3xl space-y-4">
             <Badge variant="teal">RESEARCH & KNOWLEDGE</Badge>
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
-              Enterprise Insights &{" "}
-              <span className="font-serif italic font-normal text-primary">Technical Playbooks</span>.
+              Enterprise Insights & Technical Playbooks.
             </h1>
             <p className="text-base sm:text-lg text-secondary">
               In-depth research on conversational AI voice models, cloud architecture, performance attribution, and organizational design.

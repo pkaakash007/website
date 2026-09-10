@@ -304,7 +304,7 @@ export default function Hero3DCanvas() {
         <div className="relative w-64 h-64 flex flex-col items-center justify-center rounded-full bg-gradient-to-b from-gold-100/40 via-white to-gold-50/20 border border-gold-300/60 shadow-gold-subtle">
           <div className="w-44 h-44 rounded-full border border-gold/40 border-dashed animate-spin duration-[30s]" />
           <div className="absolute text-center space-y-1">
-            <span className="text-4xl font-serif text-gold-700">▲</span>
+            <span className="text-4xl font-sans text-gold-700">▲</span>
             <div className="text-xs font-mono uppercase tracking-widest text-primary font-bold">
               Real Result
             </div>

@@ -54,17 +54,13 @@ export default function PerformanceMarketing() {
       <Container size="wide">
         {/* Header */}
         <div className="max-w-4xl mb-14 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-gold-400 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold shadow-subtle mb-4">
-            <TrendingUp className="w-3.5 h-3.5 text-gold-600" />
-            <span>PERFORMANCE ARCHITECTURE</span>
-          </div>
+          <p className="text-xs font-mono uppercase tracking-widest font-bold text-primary mb-4">
+            PERFORMANCE ARCHITECTURE
+          </p>
 
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-primary tracking-tight uppercase leading-[1.03]">
             CREATIVITY GETS ATTENTION. <br />
-            <span className="font-serif italic text-gold-700 font-normal lowercase">
-              performance
-            </span>{" "}
-            MOVES IT.
+            <span className="text-gold-700">PERFORMANCE</span> MOVES IT.
           </h2>
           <p className="text-base sm:text-lg text-secondary font-normal max-w-xl mt-3 leading-relaxed">
             A single unified conversion funnel designed to translate bold advertising ideas into verified revenue.

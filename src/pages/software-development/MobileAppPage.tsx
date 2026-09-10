@@ -7,7 +7,8 @@ import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { DirectAnswerBox } from "@/components/seo/DirectAnswerBox";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { Smartphone, Apple, Play, Cpu, ShieldCheck } from "lucide-react";
+import { Smartphone, Cpu, ShieldCheck } from "lucide-react";
+import { AppleLogo, AndroidLogo } from "@/components/common/PlatformLogos";
 
 export const MobileAppPage: React.FC = () => {
   return (
@@ -40,14 +41,17 @@ export const MobileAppPage: React.FC = () => {
           />
 
           <div className="max-w-4xl space-y-6 mt-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold">
-              <Smartphone className="w-3.5 h-3.5 text-gold-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-900 text-xs font-semibold tracking-wide shadow-2xs">
+              <AppleLogo className="w-3.5 h-3.5 fill-current" />
+              <span className="w-1 h-1 rounded-full bg-neutral-400" />
+              <AndroidLogo className="w-3.5 h-3.5 fill-current text-[#3DDC84]" />
+              <span className="w-1 h-1 rounded-full bg-neutral-400" />
               <span>Cross-Platform iOS & Android Engineering</span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
               Mobile App Development in{" "}
-              <span className="font-serif italic font-normal text-gold-700">
+              <span className="text-gold-700">
                 Tamil Nadu
               </span>
               .

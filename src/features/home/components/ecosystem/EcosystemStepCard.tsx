@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 
 interface StepProps {
   num: string;
@@ -46,11 +45,6 @@ export const EcosystemStepCard: React.FC<StepProps> = ({
         <p className="text-sm text-secondary leading-relaxed">
           {desc}
         </p>
-      </div>
-
-      <div className="pt-4 mt-4 border-t border-border flex items-center gap-1.5 text-xs font-semibold text-primary group-hover:text-gold-700">
-        <span>Explore Stage</span>
-        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
       </div>
     </Link>
   );

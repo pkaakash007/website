@@ -7,7 +7,7 @@ import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { DirectAnswerBox } from "@/components/seo/DirectAnswerBox";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { HelpCircle, Sparkles, CheckCircle2 } from "lucide-react";
+import { HelpCircle, CheckCircle2 } from "lucide-react";
 
 const allFaqs = [
   {
@@ -107,7 +107,7 @@ export const FAQHubPage: React.FC = () => {
 
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
               Frequently Asked{" "}
-              <span className="font-serif italic font-normal text-gold-700">
+              <span className="text-gold-700">
                 Questions
               </span>
               .

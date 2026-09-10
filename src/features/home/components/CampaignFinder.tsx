@@ -5,7 +5,6 @@ import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
 import { REAL_RESULT_CONFIG, getWhatsAppUrl } from "@/config";
 import {
-  Sparkles,
   ArrowRight,
   ArrowLeft,
   Check,
@@ -103,16 +102,12 @@ export default function CampaignFinder() {
       <Container size="wide">
         {/* Header */}
         <div className="max-w-4xl mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold shadow-subtle mb-4">
-            <Layers className="w-3.5 h-3.5 text-gold-600" />
-            <span>INTERACTIVE STRATEGY ENGINE</span>
-          </div>
+          <p className="text-xs font-mono uppercase tracking-widest font-bold text-primary mb-4">
+            INTERACTIVE STRATEGY ENGINE
+          </p>
 
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-primary tracking-tight uppercase leading-[1.03]">
-            BUILD YOUR{" "}
-            <span className="font-serif italic text-gold-700 font-normal lowercase">
-              campaign.
-            </span>
+            BUILD YOUR <span className="text-gold-700">CAMPAIGN</span>.
           </h2>
           <p className="text-base sm:text-lg text-secondary mt-4 max-w-2xl font-normal leading-relaxed">
             Select your commercial objective and channel preferences to receive an immediate, algorithmic campaign mix recommendation.

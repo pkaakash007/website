@@ -9,7 +9,6 @@ import {
   Code2,
   TrendingUp,
   Users,
-  Sparkles,
   PhoneCall,
   Activity,
   CheckCircle2,
@@ -39,11 +38,7 @@ export default function Hero() {
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-primary leading-[1.08] animate-in fade-in slide-in-from-bottom-4 duration-600">
-            One Partner for{" "}
-            <span className="font-serif italic font-normal text-primary">Technology</span>,{" "}
-            <span className="font-serif italic font-normal text-primary">Marketing</span>,{" "}
-            <span className="font-serif italic font-normal text-primary">AI Communication</span> &{" "}
-            <span className="font-serif italic font-normal text-primary">HR</span>.
+            One Partner for Technology, Marketing, AI Communication & HR.
           </h1>
 
           {/* Subtitle */}
@@ -165,7 +160,7 @@ export default function Hero() {
                       <div className="text-xs text-muted font-medium">Languages Supported</div>
                       <div className="text-xl font-bold text-primary mt-0.5">12+ Regional</div>
                       <div className="text-[11px] text-brand-teal-dark flex items-center gap-1 mt-1">
-                        <Sparkles className="w-3 h-3" /> Emotion & accent aware
+                        <CheckCircle2 className="w-3 h-3" /> Emotion & accent aware
                       </div>
                     </div>
                   </div>

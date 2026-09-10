@@ -103,8 +103,10 @@ export const REAL_RESULT_CONFIG = {
 };
 
 export function getWhatsAppUrl(
-  context: "marketing" | "aiCommunication" | "technology" | "humanResources" | "general" = "general"
+  contextOrMessage: "marketing" | "aiCommunication" | "technology" | "humanResources" | "general" | string = "general"
 ): string {
-  const message = REAL_RESULT_CONFIG.whatsapp.contextMessages[context] || REAL_RESULT_CONFIG.whatsapp.defaultMessage;
+  const contextMsg =
+    REAL_RESULT_CONFIG.whatsapp.contextMessages[contextOrMessage as keyof typeof REAL_RESULT_CONFIG.whatsapp.contextMessages];
+  const message = contextMsg || (contextOrMessage && contextOrMessage !== "general" ? contextOrMessage : REAL_RESULT_CONFIG.whatsapp.defaultMessage);
   return `https://wa.me/${REAL_RESULT_CONFIG.whatsapp.number}?text=${encodeURIComponent(message)}`;
 }

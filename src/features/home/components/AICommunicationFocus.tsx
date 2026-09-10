@@ -19,7 +19,6 @@ import {
   Activity,
   PhoneOutgoing,
   Lock,
-  Sparkles,
   Server,
   ArrowRight,
   CheckCircle2,
@@ -117,12 +116,11 @@ export default function AICommunicationFocus() {
       <Container size="wide">
         <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-teal-light text-brand-teal-dark border border-brand-teal-border mb-3.5">
-              <Sparkles className="w-3.5 h-3.5" />
+            <p className="text-xs font-bold uppercase tracking-wider text-gold-700 mb-3.5">
               Strategic Business Core
-            </div>
+            </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-primary leading-[1.15]">
-              AI Telecalling & <span className="font-serif italic font-normal text-primary">Regional Voice</span> Infrastructure.
+              AI Telecalling & Regional Voice Infrastructure.
             </h2>
             <p className="text-base sm:text-lg text-secondary leading-relaxed mt-3">
               Power millions of conversational touchpoints with low-latency regional AI voice bots, automated dialers, WhatsApp API, and carrier-grade cloud telephony.

@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
 import LocationDeskCard from "./LocationDeskCard";
 import { SEO_CONFIG } from "@/config/seo";
 
@@ -44,7 +43,6 @@ export const ContactHQLocationCard: React.FC = () => {
     <section className="py-20 bg-white border-b border-border">
       <Container size="wide">
         <div className="max-w-3xl mb-14 space-y-3">
-          <Badge variant="gold">Regional Desks</Badge>
           <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
             Our Regional Meeting & Operations Desks
           </h2>

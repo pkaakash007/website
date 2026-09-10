@@ -6,7 +6,6 @@ import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
 import {
-  Sparkles,
   ArrowRight,
   ArrowUpRight,
   Tv,
@@ -193,16 +192,12 @@ export default function MarketingServicesExperience() {
       <Container size="wide">
         {/* Header */}
         <div className="max-w-4xl mb-14 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-gold-400 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold shadow-subtle mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-            <span>INTEGRATED SERVICE EXPLORER</span>
-          </div>
+          <p className="text-xs font-mono uppercase tracking-widest font-bold text-primary mb-4">
+            INTEGRATED SERVICE EXPLORER
+          </p>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-primary tracking-tight uppercase leading-[1.05]">
             Full-Funnel Capabilities. <br />
-            <span className="font-serif italic text-gold-700 font-normal lowercase">
-              grouped into
-            </span>{" "}
-            EIGHT DISCIPLINES.
+            <span className="text-gold-700">GROUPED INTO</span> EIGHT DISCIPLINES.
           </h2>
           <p className="text-base sm:text-lg text-secondary mt-4 max-w-2xl font-normal leading-relaxed">
             We reject disconnected point solutions. Select any discipline to explore how we assemble strategy, media, and conversion into one unified growth engine.

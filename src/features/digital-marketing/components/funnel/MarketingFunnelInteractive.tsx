@@ -7,8 +7,7 @@ import {
   Target,
   BarChart3,
   CheckCircle,
-  ArrowRight,
-  Sparkles,
+  Network,
   Zap,
 } from "lucide-react";
 
@@ -37,7 +36,7 @@ const funnelSteps: FunnelStep[] = [
       "Zero-click search feature snippet capture",
     ],
     metricTarget: "300%+ Search Impression Growth",
-    icon: Sparkles,
+    icon: Network,
   },
   {
     id: "capture",
@@ -183,13 +182,10 @@ export const MarketingFunnelInteractive: React.FC = () => {
                 <span className="text-xs text-muted block mb-2 font-semibold">
                   Core Channels Deployed:
                 </span>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs text-primary font-medium">
                   {currentStep.channels.map((channel, i) => (
-                    <span
-                      key={i}
-                      className="text-xs px-3 py-1 rounded-md bg-white border border-border text-primary font-medium"
-                    >
-                      {channel}
+                    <span key={i}>
+                      {channel}{i < currentStep.channels.length - 1 ? " ·" : ""}
                     </span>
                   ))}
                 </div>
@@ -224,9 +220,8 @@ export const MarketingFunnelInteractive: React.FC = () => {
                   Real-time reporting integrated with Google Search Console, Looker Studio, and verified call tracking.
                 </p>
                 <div className="pt-2">
-                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+                  <span className="text-xs font-semibold text-primary block">
                     SLA-Guaranteed Telemetry
-                    <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
               </div>

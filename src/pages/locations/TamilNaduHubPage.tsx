@@ -52,7 +52,7 @@ export const TamilNaduHubPage: React.FC = () => {
 
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
               Digital Marketing & Software Company in{" "}
-              <span className="font-serif italic font-normal text-gold-700">
+              <span className="text-gold-700">
                 Tamil Nadu
               </span>
               .

@@ -1,53 +1,41 @@
 import React from "react";
 import { SEOHead } from "@/components/seo/SEOHead";
 import MarketingHero from "@/features/digital-marketing/components/hero/MarketingHero";
-import MarketingPillarsGrid from "@/features/digital-marketing/components/pillars/MarketingPillarsGrid";
-import MarketingFunnelInteractive from "@/features/digital-marketing/components/funnel/MarketingFunnelInteractive";
-import MarketingGrowthMetrics from "@/features/digital-marketing/components/metrics/MarketingGrowthMetrics";
-import MarketingRegionalGlobalReach from "@/features/digital-marketing/components/reach/MarketingRegionalGlobalReach";
-import MarketingFAQAccordion from "@/features/digital-marketing/components/faq/MarketingFAQAccordion";
+import MarketingServicesSimple from "@/features/digital-marketing/components/services/MarketingServicesSimple";
 import MarketingConsultationCTA from "@/features/digital-marketing/components/cta/MarketingConsultationCTA";
 
 export const DigitalMarketingHubPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <SEOHead
-        title="Best Digital Marketing Agency in Tamil Nadu | SEO & Growth | Real Result"
-        description="Real Result Marketing is the leading digital marketing agency in Tamil Nadu. Headquartered in Erode, delivering data-backed SEO, GEO, Local SEO, Google Ads, and full-funnel revenue growth across Coimbatore, Chennai, and global markets."
+        title="Performance Marketing & Growth Agency | US, Global & B2B SaaS | Real Result"
+        description="Real Result is a data-driven performance marketing and growth engineering firm. Scaling qualified pipeline, lowering CAC, and driving ROAS across Google Ads, LinkedIn ABM, Meta Performance, and Generative AI Search (GEO)."
         canonicalPath="/digital-marketing"
         schema={{
           "@context": "https://schema.org",
           "@type": "Service",
-          name: "Digital Marketing & SEO Services Tamil Nadu",
+          name: "Global Performance Marketing & Growth Engineering",
           provider: {
             "@type": "Organization",
-            name: "Real Result Marketing",
+            name: "Real Result Growth & Marketing",
             url: "https://realresult.in",
           },
-          serviceType: "Digital Marketing, SEO & Generative Engine Optimization",
-          areaServed: "Tamil Nadu, India & International",
+          serviceType: "Performance Marketing, Google Ads, LinkedIn ABM, Generative Engine Optimization, Full-Funnel CRO",
+          areaServed: "United States, Global & India",
         }}
       />
 
-      {/* 1. Hero with Uploaded Artwork & Key Value Propositions */}
+      {/* 1. Hero with Real-Time Growth Performance Cockpit & Enterprise Platform Accreditations */}
       <MarketingHero />
 
-      {/* 2. Eight Core Service Disciplines Grid */}
-      <MarketingPillarsGrid />
+      {/* 2. Full-Funnel Growth Disciplines & Official Cloud Partner Ecosystem */}
+      <MarketingServicesSimple />
 
-      {/* 3. Interactive 4-Stage Full-Funnel Visualizer */}
-      <MarketingFunnelInteractive />
 
-      {/* 4. Verified Impact Metrics & Performance Proof */}
-      <MarketingGrowthMetrics />
 
-      {/* 5. Regional Tamil Nadu Footprint to Global Export Scaling */}
-      <MarketingRegionalGlobalReach />
 
-      {/* 6. Comprehensive FAQ Accordion */}
-      <MarketingFAQAccordion />
 
-      {/* 7. High-Intent Consultation CTA */}
+      {/* 6. Executive Consultation & 48-Hour Growth Diagnostic CTA */}
       <MarketingConsultationCTA />
     </div>
   );

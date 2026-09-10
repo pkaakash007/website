@@ -11,13 +11,12 @@ import {
   Database,
   ShieldCheck,
   Server,
-  Smartphone,
   Workflow,
   CheckCircle2,
   Terminal,
   Zap,
 } from "lucide-react";
-
+import { AppleLogo } from "@/components/common/PlatformLogos";
 
 const techCapabilities = [
   {
@@ -32,7 +31,7 @@ const techCapabilities = [
   },
   {
     title: "Mobile Applications (iOS & Android)",
-    icon: Smartphone,
+    icon: AppleLogo,
     desc: "Native and cross-platform mobile apps built with React Native and Flutter with offline capabilities and push notification engines.",
   },
   {
@@ -92,7 +91,7 @@ export default function TechnologyPage() {
           <div className="max-w-3xl space-y-6">
             <Badge variant="default">Technology & Software Engineering</Badge>
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
-              Architecting <span className="font-serif italic font-normal text-primary">Enterprise Software</span> & Cloud Systems.
+              Architecting Enterprise Software & Cloud Systems.
             </h1>
             <p className="text-base sm:text-xl text-secondary leading-relaxed font-normal">
               We engineer custom web apps, scalable SaaS platforms, mission-critical API integrations, and machine learning pipelines designed for high concurrency and resilience.

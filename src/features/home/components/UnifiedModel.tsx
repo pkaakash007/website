@@ -45,12 +45,7 @@ export default function UnifiedModel() {
       <Container size="wide">
         <SectionHeader
           badge="THE UNIFIED ADVANTAGE"
-          title={
-            <>
-              Why fragmented agencies fail — and{" "}
-              <span className="font-serif italic font-normal text-primary">unified execution</span> wins.
-            </>
-          }
+          title="Why fragmented agencies fail — and unified execution wins."
           subtitle="Modern enterprises lose momentum coordinating separate software shops, marketing agencies, telephony vendors, and recruiters. We fix this."
         />
 

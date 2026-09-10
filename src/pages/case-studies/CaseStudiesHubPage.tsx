@@ -67,7 +67,7 @@ export const CaseStudiesHubPage: React.FC = () => {
 
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
               Quantified Case Studies &{" "}
-              <span className="font-serif italic font-normal text-gold-700">
+              <span className="text-gold-700">
                 Outcomes
               </span>
               .

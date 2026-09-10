@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/common/Badge";
 import LeaderBioCard from "./LeaderBioCard";
-import { Code2, TrendingUp, Cpu, Sparkles } from "lucide-react";
+import { Code2, TrendingUp, Cpu, Palette } from "lucide-react";
 
 export const AboutLeadershipTeam: React.FC = () => {
   const leaders = [
@@ -27,7 +27,7 @@ export const AboutLeadershipTeam: React.FC = () => {
     {
       role: "Creative Director & UX Architect",
       discipline: "Brand Design, Conversion UX & Product Systems",
-      icon: Sparkles,
+      icon: Palette,
       bio: "Combines Swiss editorial typography, human behavioral psychology, and interactive digital experiences that turn visitors into long-term clients.",
     },
   ];

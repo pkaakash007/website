@@ -1,0 +1,195 @@
+/* ============================================================
+   OFFICIAL APPLE SAN FRANCISCO (SF) TYPOGRAPHY SYSTEM
+   Downloaded from Apple Developer Design Resources
+   Includes SF Pro Display, SF Pro Text, SF Compact & SF Mono
+   ============================================================ */
+
+/* ── SF Pro Display (Large Titles, Section Headers, Navigation) ── */
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('SF Pro Display Regular'),
+       local('SF Pro Display'),
+       local('SF Pro'),
+       local('-apple-system'),
+       url('/fonts/SF-Pro-Display-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('SF Pro Display Medium'),
+       local('SF Pro Medium'),
+       url('/fonts/SF-Pro-Display-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('SF Pro Display Semibold'),
+       local('SF Pro Semibold'),
+       url('/fonts/SF-Pro-Display-Semibold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('SF Pro Display Bold'),
+       local('SF Pro Bold'),
+       url('/fonts/SF-Pro-Display-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local('SF Pro Display Heavy'),
+       local('SF Pro Heavy'),
+       url('/fonts/SF-Pro-Display-Heavy.otf') format('opentype');
+}
+
+/* ── SF Pro Text (Body Copy, Metadata, Badges, Tooltips) ── */
+@font-face {
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('SF Pro Text Regular'),
+       local('SF Pro Text'),
+       local('SF Pro'),
+       local('-apple-system'),
+       url('/fonts/SF-Pro-Text-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('SF Pro Text Medium'),
+       url('/fonts/SF-Pro-Text-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('SF Pro Text Semibold'),
+       url('/fonts/SF-Pro-Text-Semibold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('SF Pro Text Bold'),
+       url('/fonts/SF-Pro-Text-Bold.otf') format('opentype');
+}
+
+/* ── Unified SF Pro Family (Smart Alias for Universal Usage) ── */
+@font-face {
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('SF Pro Regular'),
+       local('SF Pro Text Regular'),
+       local('SF Pro Display Regular'),
+       local('SF Pro'),
+       local('-apple-system'),
+       url('/fonts/SF-Pro-Display-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('SF Pro Medium'),
+       local('SF Pro Text Medium'),
+       local('SF Pro Display Medium'),
+       url('/fonts/SF-Pro-Display-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('SF Pro Semibold'),
+       local('SF Pro Text Semibold'),
+       local('SF Pro Display Semibold'),
+       url('/fonts/SF-Pro-Display-Semibold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('SF Pro Bold'),
+       local('SF Pro Text Bold'),
+       local('SF Pro Display Bold'),
+       url('/fonts/SF-Pro-Display-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local('SF Pro Heavy'),
+       local('SF Pro Display Heavy'),
+       url('/fonts/SF-Pro-Display-Heavy.otf') format('opentype');
+}
+
+/* ── SF Compact (Apple WatchOS & Compact Controls) ── */
+@font-face {
+  font-family: 'SF Compact';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: local('SF Compact'),
+       url('/fonts/SF-Compact.ttf') format('truetype');
+}
+
+/* ── SF Mono (Xcode & Code Blocks) ── */
+@font-face {
+  font-family: 'SF Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('SF Mono Regular'),
+       local('SF Mono'),
+       local('SFNSMono'),
+       url('/fonts/SFMono-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('SF Mono Medium'),
+       url('/fonts/SFMono-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('SF Mono Bold'),
+       url('/fonts/SFMono-Bold.otf') format('opentype');
+}

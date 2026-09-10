@@ -1,7 +1,5 @@
-
 import React from "react";
 import { Container } from "@/components/layout/Container";
-import { Sparkles } from "lucide-react";
 
 const MOODBOARD_PLACES = [
   { name: "BILLBOARD", image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" },
@@ -35,17 +33,13 @@ export default function FullWidthMediaMoodboard() {
 
       <Container size="wide">
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-gold/40 text-gold-300 text-xs font-mono uppercase tracking-widest font-bold backdrop-blur-md">
-            <Sparkles className="w-3.5 h-3.5 text-gold" />
-            <span>THE ADVERTISING MOODBOARD</span>
-          </div>
+          <p className="text-xs font-bold uppercase tracking-wider text-gold-300">
+            THE ADVERTISING MOODBOARD
+          </p>
 
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white uppercase leading-[1.03]">
             ONE CAMPAIGN. <br />
-            <span className="font-serif italic text-gold-300 font-normal lowercase">
-              many places
-            </span>{" "}
-            TO BE SEEN.
+            <span className="text-gold-300">MANY PLACES</span> TO BE SEEN.
           </h2>
 
           {/* Clean 7 Places Label Bar */}

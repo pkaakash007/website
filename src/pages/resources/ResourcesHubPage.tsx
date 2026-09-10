@@ -7,7 +7,7 @@ import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { DirectAnswerBox } from "@/components/seo/DirectAnswerBox";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { BookOpen, Sparkles, Search, Code2, ArrowRight } from "lucide-react";
+import { BookOpen, Search, Code2, ArrowRight } from "lucide-react";
 
 const articles = [
   {
@@ -76,7 +76,7 @@ export const ResourcesHubPage: React.FC = () => {
 
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
               Search, AI & Software{" "}
-              <span className="font-serif italic font-normal text-gold-700">
+              <span className="text-gold-700">
                 Knowledge Base
               </span>
               .

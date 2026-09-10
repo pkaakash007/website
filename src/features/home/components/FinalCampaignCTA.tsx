@@ -4,7 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
 import { getWhatsAppUrl, REAL_RESULT_CONFIG } from "@/config";
-import { ArrowRight, MessageSquare, PhoneCall, Sparkles } from "lucide-react";
+import { ArrowRight, MessageSquare, PhoneCall } from "lucide-react";
 
 export default function FinalCampaignCTA() {
   const whatsappUrl = getWhatsAppUrl("general");
@@ -42,17 +42,13 @@ export default function FinalCampaignCTA() {
       <Container size="wide">
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-gold/40 text-gold-300 text-xs font-mono uppercase tracking-widest font-bold backdrop-blur-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-            <span>THE NEXT EVOLUTION</span>
-          </div>
+          <p className="text-xs font-mono uppercase tracking-widest font-bold text-gold-300">
+            THE NEXT EVOLUTION
+          </p>
 
           {/* Headline: READY TO MOVE YOUR BRAND FORWARD? */}
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight uppercase leading-[1.03]">
-            READY TO MOVE YOUR BRAND{" "}
-            <span className="font-serif italic text-gold-300 font-normal lowercase">
-              forward?
-            </span>
+            READY TO MOVE YOUR BRAND <span className="text-gold-300">FORWARD</span>?
           </h2>
 
           <p className="text-base sm:text-xl text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed">

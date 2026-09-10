@@ -10,7 +10,6 @@ import {
   Layers,
   HeartHandshake,
   Compass,
-  Sparkles,
 } from "lucide-react";
 
 
@@ -57,8 +56,7 @@ export default function HumanResourcesPage() {
           <div className="max-w-3xl space-y-6">
             <Badge variant="default">Human Resources & Talent Capital</Badge>
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
-              Empowering High-Performance{" "}
-              <span className="font-serif italic font-normal text-primary">People & Teams</span>.
+              Empowering High-Performance People & Teams.
             </h1>
             <p className="text-base sm:text-xl text-secondary leading-relaxed font-normal">
               From executive recruitment and specialized engineering talent to workforce strategy and employee experience design — building the teams that move companies forward.

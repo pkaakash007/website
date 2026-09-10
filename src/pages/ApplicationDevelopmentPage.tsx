@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { SEOHead } from "@/components/seo/SEOHead";
 import AppDevHero from "@/features/application-development/components/hero/AppDevHero";
 import AppDevServicesGrid from "@/features/application-development/components/services/AppDevServicesGrid";
+import AppDevSectionSwitcher from "@/features/application-development/components/switcher/AppDevSectionSwitcher";
 import AppDevTechStackInteractive from "@/features/application-development/components/tech-stack/AppDevTechStackInteractive";
-import AppDevLifecycleTimeline from "@/features/application-development/components/roadmap/AppDevLifecycleTimeline";
-import AppDevArchitectureHighlights from "@/features/application-development/components/architecture/AppDevArchitectureHighlights";
-import AppDevPortfolioShowcase from "@/features/application-development/components/portfolio/AppDevPortfolioShowcase";
 import AppDevQuotationCTA from "@/features/application-development/components/cta/AppDevQuotationCTA";
 
 export const ApplicationDevelopmentPage: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<"web" | "mobile">("mobile");
+
   return (
     <div className="flex flex-col min-h-screen">
       <SEOHead
@@ -29,25 +29,19 @@ export const ApplicationDevelopmentPage: React.FC = () => {
         }}
       />
 
-      {/* 1. Hero with Uploaded Artwork & Value Highlights */}
-      <AppDevHero />
+      {/* 1. Hero with Interactive 3D Device Visualization & Mode Switcher */}
+      <AppDevHero activeTab={activeTab} onTabChange={setActiveTab} />
 
-      {/* 2. End-to-End Capabilities Grid (Mobile, Web, SaaS, ERP, AI, DevOps) */}
+      {/* 2. Content Section tailored to selection */}
+      <AppDevSectionSwitcher activeTab={activeTab} onTabChange={setActiveTab} />
+
+      {/* 3. End-to-End Capabilities Grid */}
       <AppDevServicesGrid />
 
       {/* 3. Interactive Modern Tech Stack Explorer */}
       <AppDevTechStackInteractive />
 
-      {/* 4. 5-Phase Development Roadmap & Timeline */}
-      <AppDevLifecycleTimeline />
-
-      {/* 5. Enterprise Architecture, Security & Performance Standards */}
-      <AppDevArchitectureHighlights />
-
-      {/* 6. Real Production Case Studies & Featured Implementations */}
-      <AppDevPortfolioShowcase />
-
-      {/* 7. Actionable Quotation & Architecture Scope CTA */}
+      {/* 4. Actionable Quotation & Architecture Scope CTA */}
       <AppDevQuotationCTA />
     </div>
   );

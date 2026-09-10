@@ -13,17 +13,13 @@ export default function HRSupporting() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Column: Headline & Minimal 5% Weight Supporting Text */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-border text-xs font-mono uppercase tracking-widest text-secondary font-bold">
-              <Users className="w-3.5 h-3.5 text-gold-600" />
-              <span>HUMAN RESOURCES · 5% CAPABILITY</span>
-            </div>
+            <p className="text-xs font-mono uppercase tracking-widest text-secondary font-bold">
+              HUMAN RESOURCES · 5% CAPABILITY
+            </p>
 
             <h2 className="text-3xl sm:text-5xl font-black text-primary tracking-tight uppercase leading-[1.08]">
               BRANDS GROW <br />
-              <span className="font-serif italic text-gold-700 font-normal lowercase">
-                through
-              </span>{" "}
-              PEOPLE.
+              <span className="text-gold-700">THROUGH</span> PEOPLE.
             </h2>
 
             <p className="text-base text-secondary leading-relaxed font-normal">

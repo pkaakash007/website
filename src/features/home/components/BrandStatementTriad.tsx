@@ -43,17 +43,13 @@ export default function BrandStatementTriad() {
       <Container size="wide">
         {/* Minimal text, Monumental Typography */}
         <div className="max-w-4xl mb-16 sm:mb-24">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest mb-6 font-bold">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-            <span>BRAND PRINCIPLE</span>
-          </div>
+          <p className="text-xs font-mono uppercase tracking-widest text-primary mb-6 font-bold">
+            BRAND PRINCIPLE
+          </p>
 
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-primary tracking-tight leading-[1.05] uppercase">
             ATTENTION IS EARNED. <br />
-            <span className="font-serif italic text-gold-700 font-normal lowercase">
-              growth is
-            </span>{" "}
-            ENGINEERED.
+            <span className="text-gold-700">GROWTH IS</span> ENGINEERED.
           </h2>
         </div>
 

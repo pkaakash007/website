@@ -2,8 +2,9 @@ import React from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { RootLayout } from "@/layouts/RootLayout";
 
-// The 5 Major Core Pages
+// The Core Pages
 import HomePage from "@/pages/HomePage";
+import ServicesPage from "@/pages/ServicesPage";
 import DigitalMarketingHubPage from "@/pages/digital-marketing/DigitalMarketingHubPage";
 import ApplicationDevelopmentPage from "@/pages/ApplicationDevelopmentPage";
 import AboutPage from "@/pages/AboutPage";
@@ -21,7 +22,17 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
 
-      // 2. Digital Marketing Page & Aliases
+      // 2. All Services Page (12 Core Offerings)
+      {
+        path: "services",
+        element: <ServicesPage />,
+      },
+      {
+        path: "services/*",
+        element: <ServicesPage />,
+      },
+
+      // 3. Digital Marketing Page & Aliases
       {
         path: "digital-marketing",
         element: <DigitalMarketingHubPage />,

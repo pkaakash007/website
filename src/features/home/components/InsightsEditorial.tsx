@@ -34,16 +34,12 @@ export default function InsightsEditorial() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold">
-              <BookOpen className="w-3.5 h-3.5 text-gold-600" />
-              <span>PERSPECTIVES</span>
-            </div>
+            <p className="text-xs font-mono uppercase tracking-widest font-bold text-primary">
+              PERSPECTIVES
+            </p>
 
             <h2 className="text-4xl sm:text-6xl font-black text-primary tracking-tight uppercase leading-[1.03]">
-              EDITORIAL{" "}
-              <span className="font-serif italic text-gold-700 font-normal lowercase">
-                dispatches.
-              </span>
+              EDITORIAL <span className="text-gold-700">DISPATCHES</span>.
             </h2>
           </div>
 

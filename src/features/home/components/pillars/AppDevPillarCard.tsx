@@ -1,77 +1,77 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Code2, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Code2, CheckCircle2, ArrowRight } from "lucide-react";
+import { AppleLogo } from "@/components/common/PlatformLogos";
 
 export const AppDevPillarCard: React.FC = () => {
   return (
-    <div className="p-8 sm:p-10 rounded-2xl bg-white border border-border hover:border-blue-300 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between group">
-      <div className="space-y-6">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 flex items-center justify-center font-bold">
-              <Code2 className="w-5 h-5" />
-            </div>
-            <div>
-              <span className="text-xs font-semibold text-blue-700">
-                Division 02
-              </span>
-              <h3 className="text-2xl font-bold text-primary group-hover:text-blue-700 transition-colors">
-                Application Development
-              </h3>
-            </div>
+    <div
+      className="flex flex-col group transition-all duration-200"
+      style={{
+        background: "#FFFFFF",
+        borderRadius: "20px",
+        padding: "32px",
+        border: "1px solid rgba(0,0,0,0.08)",
+        boxShadow: "0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.05)",
+      }}
+    >
+      <div className="space-y-6 flex-1">
+        {/* Card header */}
+        <div className="flex items-start justify-between">
+          <div>
+            <p className="ae-eyebrow mb-1">Division 02</p>
+            <h3 className="text-[22px] font-bold text-[#0F0F0E] tracking-[-0.025em] leading-tight group-hover:text-[rgba(15,15,14,0.70)] transition-colors">
+              Application Development
+            </h3>
           </div>
-          <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-blue-50 text-blue-900 border border-blue-200">
-            Web & Mobile
-          </span>
+          <div className="w-10 h-10 rounded-xl bg-[rgba(0,0,0,0.05)] flex items-center justify-center shrink-0">
+            <Code2 className="w-4 h-4 text-[rgba(15,15,14,0.60)]" />
+          </div>
         </div>
 
-        <div className="rounded-xl overflow-hidden border border-border">
+        {/* Image */}
+        <div className="overflow-hidden rounded-xl">
           <img
-            src="/images/application-development-hero.jpg"
-            alt="Application Development and Mobile Engineering"
-            className="w-full h-64 sm:h-72 object-cover"
+            src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=800&q=80"
+            alt="Application Development"
+            className="w-full h-56 sm:h-64 object-cover image-warm-filter transition-transform duration-500 group-hover:scale-[1.02]"
           />
-          <div className="p-3 bg-surface border-t border-border text-xs text-secondary flex items-center justify-between">
-            <span className="font-semibold text-primary">Cross-Platform & Cloud</span>
-            <span>iOS · Android · Web Apps</span>
-          </div>
         </div>
 
-        <p className="text-sm text-secondary leading-relaxed">
-          Engineered for enterprise scale and zero downtime. We build cross-platform mobile apps, bespoke business management ERPs, multi-tenant cloud SaaS, and AI-powered operational tools.
+        <p className="text-[15px] text-[rgba(15,15,14,0.55)] leading-[1.65]">
+          We build custom mobile apps, websites, business ERP systems and SaaS platforms for companies that need reliable, scalable digital tools to run their operations.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 border-t border-border">
-          <div className="flex items-center gap-2 text-xs font-medium text-primary">
-            <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-            <span>iOS & Android Apps (React Native / Flutter)</span>
-          </div>
-          <div className="flex items-center gap-2 text-xs font-medium text-primary">
-            <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-            <span>High-Performance React & TypeScript Web Apps</span>
-          </div>
-          <div className="flex items-center gap-2 text-xs font-medium text-primary">
-            <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-            <span>Custom ERP & Manufacturing Inventory</span>
-          </div>
-          <div className="flex items-center gap-2 text-xs font-medium text-primary">
-            <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-            <span>100% Source Code & IP Handover</span>
-          </div>
+        {/* Feature list */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+          {[
+            "iOS & Android Apps",
+            "React Web Applications",
+            "Custom ERP & Inventory",
+            "100% Source Code Handover",
+          ].map((f) => (
+            <div key={f} className="flex items-center gap-2 text-[13px] font-medium text-[rgba(15,15,14,0.65)]">
+              {f === "iOS & Android Apps" ? (
+                <AppleLogo className="w-3.5 h-3.5 fill-current text-black shrink-0" />
+              ) : (
+                <CheckCircle2 className="w-3.5 h-3.5 text-[rgba(15,15,14,0.30)] shrink-0" />
+              )}
+              <span>{f}</span>
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className="pt-6 mt-6 border-t border-border flex items-center justify-between">
+      {/* Footer */}
+      <div className="pt-6 mt-6 ae-divider flex items-center justify-between">
         <Link
           to="/application-development"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:text-blue-700 transition-colors"
+          className="ae-btn ae-btn-primary text-[13px] px-5 py-2.5 flex items-center gap-1.5 group/btn"
         >
-          <span>Explore Application Suite</span>
-          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          <span>Explore App Dev</span>
+          <ArrowRight className="w-3.5 h-3.5 opacity-60 group-hover/btn:translate-x-0.5 transition-transform" />
         </Link>
-        <span className="text-xs font-semibold text-blue-800 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200">
-          99.98% SLA
-        </span>
+        <span className="text-[12px] font-medium text-[rgba(15,15,14,0.40)]">99.98% SLA</span>
       </div>
     </div>
   );

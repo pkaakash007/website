@@ -9,7 +9,6 @@ import { DirectAnswerBox } from "@/components/seo/DirectAnswerBox";
 import { openLeadModal } from "@/components/common/LeadModal";
 import {
   Bot,
-  Sparkles,
   Search,
   CheckCircle2,
   Table,
@@ -49,14 +48,13 @@ export const AIOPage: React.FC = () => {
           />
 
           <div className="max-w-4xl space-y-6 mt-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold">
-              <Bot className="w-3.5 h-3.5 text-gold-600" />
-              <span>Google AI Overviews & Algorithmic Synthesis</span>
-            </div>
+            <p className="text-xs font-bold uppercase tracking-wider text-gold-700">
+              Google AI Overviews & Algorithmic Synthesis
+            </p>
 
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
               AI Search Optimization{" "}
-              <span className="font-serif italic font-normal text-gold-700">
+              <span className="text-gold-700">
                 (AIO)
               </span>
               .

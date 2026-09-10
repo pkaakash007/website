@@ -40,12 +40,7 @@ export default function Testimonials() {
       <Container size="wide">
         <SectionHeader
           badge="CLIENT SUCCESS"
-          title={
-            <>
-              Trusted by leaders who value{" "}
-              <span className="font-serif italic font-normal text-primary">execution speed</span>.
-            </>
-          }
+          title="Trusted by leaders who value execution speed."
           subtitle="Real testimonials and verified operational gains from enterprise leaders using our integrated solutions."
         />
 

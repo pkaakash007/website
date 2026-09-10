@@ -22,17 +22,13 @@ export default function TechnologySupporting() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Column: Headline & Minimal Supporting Text (10% weight) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas border border-border text-xs font-mono uppercase tracking-widest text-secondary font-bold">
-              <Code2 className="w-3.5 h-3.5 text-gold-600" />
-              <span>TECHNOLOGY & SOFTWARE · 10% CAPABILITY</span>
-            </div>
+            <p className="text-xs font-mono uppercase tracking-widest text-secondary font-bold">
+              TECHNOLOGY & SOFTWARE · 10% CAPABILITY
+            </p>
 
             <h2 className="text-3xl sm:text-5xl font-black text-primary tracking-tight uppercase leading-[1.08]">
               WHEN MARKETING NEEDS TECHNOLOGY, <br />
-              <span className="font-serif italic text-gold-700 font-normal lowercase">
-                we build
-              </span>{" "}
-              IT.
+              <span className="text-gold-700">WE BUILD</span> IT.
             </h2>
 
             <p className="text-base text-secondary leading-relaxed font-normal">

@@ -74,17 +74,13 @@ export default function IndustriesGrid() {
       <Container size="wide">
         {/* Header */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold mb-4">
-            <Compass className="w-3.5 h-3.5 text-gold-600" />
-            <span>SECTOR PLAYBOOKS</span>
-          </div>
+          <p className="text-xs font-mono uppercase tracking-widest font-bold text-primary mb-4">
+            SECTOR PLAYBOOKS
+          </p>
 
           <h2 className="text-4xl sm:text-6xl font-black text-primary tracking-tight uppercase leading-[1.03]">
             TAILORED STRATEGY FOR <br />
-            <span className="font-serif italic text-gold-700 font-normal lowercase">
-              leading
-            </span>{" "}
-            INDUSTRIES.
+            <span className="text-gold-700">LEADING</span> INDUSTRIES.
           </h2>
         </div>
 

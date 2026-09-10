@@ -1,58 +1,43 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
-import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { ShieldCheck, PhoneCall } from "lucide-react";
-import { SEO_CONFIG } from "@/config/seo";
+import { ArrowRight } from "lucide-react";
 
 export const MarketingConsultationCTA: React.FC = () => {
   return (
-    <section className="py-20 bg-charcoal text-white relative">
-      <Container size="wide">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <Badge variant="gold">Accelerate Commercial Growth</Badge>
+    <section className="py-20 sm:py-24 bg-neutral-950 text-white relative overflow-hidden">
+      {/* Subtle Ambient Radial Glow */}
+      <div
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full blur-[140px] opacity-25"
+        style={{
+          background: "radial-gradient(circle, rgba(0,122,255,0.4) 0%, rgba(88,86,214,0.3) 50%, transparent 70%)",
+        }}
+      />
 
-          <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
-            Outrank Your Competition. Capture Every Qualified Lead.
+      <Container size="wide" className="relative z-10">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Ready to Build Your Predictable Revenue Engine?
           </h2>
 
-          <p className="text-charcoal-muted text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-            Book a confidential growth audit with our senior directors in Erode. We will analyze your competitors’ keyword positioning, AI engine citations, and paid media gaps.
+          <p className="text-neutral-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-normal">
+            Schedule a confidential 30-minute growth briefing with our senior performance engineers. We'll audit your current ad spend, competitor keyword reach, and attribution tracking with zero obligation.
           </p>
 
-          <div className="pt-4 flex flex-wrap justify-center items-center gap-4">
-            <Button
-              variant="gold"
-              size="lg"
-              withArrow
-              onClick={() => openLeadModal("digital-marketing-cta")}
-              className="cursor-pointer font-bold"
+          <div className="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+            <button
+              onClick={() => openLeadModal("us-growth-cta-primary")}
+              className="w-full sm:w-auto px-8 py-4 rounded-full text-sm font-bold bg-[#007AFF] hover:bg-[#0071E3] text-white transition-all shadow-lg hover:shadow-xl cursor-pointer flex items-center justify-center gap-2"
             >
-              Request Strategic Growth Audit
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              href="/contact"
-              className="border-white/20 text-white hover:bg-white/10"
+              <span>Book Executive Growth Briefing</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => openLeadModal("us-growth-cta-audit")}
+              className="w-full sm:w-auto px-7 py-4 rounded-full text-sm font-semibold bg-white/10 hover:bg-white/15 text-white border border-white/20 transition-all cursor-pointer flex items-center justify-center gap-2"
             >
-              Contact Erode Headquarters
-            </Button>
-          </div>
-
-          <div className="pt-8 flex flex-wrap justify-center items-center gap-8 text-xs text-charcoal-muted border-t border-charcoal-border">
-            <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-gold" />
-              <span>Strict Mutual NDA Protected</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <PhoneCall className="w-4 h-4 text-gold" />
-              <span>Direct Phone: {SEO_CONFIG.displayPhone}</span>
-            </div>
-            <div>
-              <span>Response SLA: Under 24 Business Hours</span>
-            </div>
+              <span>Request 48-Hour Pipeline Audit</span>
+            </button>
           </div>
         </div>
       </Container>

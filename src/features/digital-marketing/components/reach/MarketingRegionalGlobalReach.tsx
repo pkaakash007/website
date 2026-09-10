@@ -50,24 +50,26 @@ export const MarketingRegionalGlobalReach: React.FC = () => {
       <Container size="wide">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 space-y-5">
-            <Badge variant="outline">Regional to Global</Badge>
+            <p className="text-xs font-mono uppercase tracking-widest font-bold text-gold-800">
+              TAMIL NADU COVERAGE
+            </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
-              Rooted in Tamil Nadu. Scaling Globally.
+              Rooted in Tamil Nadu. Helping You Get Customers Everywhere.
             </h2>
             <p className="text-base text-secondary leading-relaxed">
-              We understand the specialized commercial DNA of Tamil Nadu’s manufacturing and export belts. We craft campaigns that capture regional buyer intent in Tamil Nadu while simultaneously securing high-ticket international export leads in the US, Europe, and Middle East.
+              We are located right here in Tamil Nadu. Whether you want customers from your own city (Erode, Coimbatore, Tiruppur, Salem, Chennai, Madurai) or you want buyers from all over India and abroad, our local team handles everything for you.
             </p>
             <div className="p-4 rounded-xl bg-white border border-border space-y-1.5">
               <span className="text-xs font-semibold text-[#8E6D2E]">
-                Bilingual & Regional Intent Targeting
+                Tamil & English Campaign Support
               </span>
               <p className="text-xs text-secondary leading-relaxed">
-                Our search architectures capture high-volume conversational regional queries alongside strict technical B2B industry taxonomy.
+                We design ad posters and write messages in both Tamil and English so local customers feel comfortable calling and asking for quotes.
               </p>
             </div>
             <div>
-              <Button variant="outline" size="md" href="/contact" withArrow>
-                Connect With Regional Desks
+              <Button variant="outline" size="md" href="/contact">
+                Contact Our Nearest Desk
               </Button>
             </div>
           </div>

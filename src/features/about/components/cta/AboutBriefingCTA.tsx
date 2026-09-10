@@ -24,7 +24,6 @@ export const AboutBriefingCTA: React.FC = () => {
                 <Button
                   variant="gold"
                   size="lg"
-                  withArrow
                   onClick={() => openLeadModal("about-briefing-cta")}
                   className="cursor-pointer font-bold"
                 >

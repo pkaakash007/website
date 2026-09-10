@@ -26,40 +26,48 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   ...props
 }) => {
-  const baseStyles =
-    "inline-flex items-center justify-center font-medium rounded-full transition-all duration-200 select-none active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none";
+  /* Aeren editorial: all buttons are pill-shaped, minimal */
+  const base =
+    "inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 select-none active:scale-[0.97] disabled:opacity-40 disabled:pointer-events-none cursor-pointer letter-spacing-tight";
 
-  const variantStyles = {
+  const variants = {
+    /* Dark oval pill — Aeren primary */
     primary:
-      "bg-primary text-white hover:bg-primary-hover shadow-sm hover:shadow-card-hover border border-transparent",
+      "bg-[#0F0F0E] text-white hover:bg-[#1C1C1A] shadow-sm",
+    /* Subtle border ghost */
     secondary:
-      "bg-white text-primary border border-border hover:border-gold/40 hover:bg-surface shadow-subtle",
+      "bg-transparent text-[#0F0F0E] border border-[rgba(0,0,0,0.14)] hover:bg-[rgba(0,0,0,0.04)]",
+    /* Gold accent (minimal, not gradient-heavy) */
     gold:
-      "bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-black font-semibold hover:brightness-105 shadow-gold-subtle hover:shadow-gold-glow border border-gold-300/40",
+      "bg-[#c5a059] text-[#0F0F0E] font-bold hover:brightness-105 shadow-sm",
     teal:
-      "bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-black font-semibold hover:brightness-105 shadow-gold-subtle hover:shadow-gold-glow border border-gold-300/40",
+      "bg-[#c5a059] text-[#0F0F0E] font-bold hover:brightness-105 shadow-sm",
+    /* Charcoal filled */
     dark:
-      "bg-charcoal text-white hover:bg-black border border-charcoal-border shadow-card",
-    ghost: "bg-transparent text-secondary hover:text-primary hover:bg-surface",
+      "bg-[#111110] text-white hover:bg-black",
+    /* Text ghost */
+    ghost:
+      "bg-transparent text-[rgba(15,15,14,0.60)] hover:text-[#0F0F0E]",
+    /* Border outline */
     outline:
-      "bg-transparent text-primary border border-border hover:border-gold hover:text-gold-700 hover:bg-white",
+      "bg-transparent text-[#0F0F0E] border border-[rgba(0,0,0,0.14)] hover:border-[rgba(0,0,0,0.30)] hover:bg-[rgba(0,0,0,0.03)]",
   };
 
-  const sizeStyles = {
-    sm: "text-xs px-3.5 py-1.5 gap-1.5",
-    md: "text-sm px-5 py-2.5 gap-2",
-    lg: "text-base px-7 py-3.5 gap-2.5",
+  const sizes = {
+    sm: "text-xs px-4 py-2 gap-1.5",
+    md: "text-sm px-6 py-2.5 gap-2",
+    lg: "text-[15px] px-8 py-3.5 gap-2.5",
   };
 
   const content = (
     <>
       {icon && <span className="shrink-0">{icon}</span>}
       <span>{children}</span>
-      {withArrow && (
-        <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 text-current" />
-      )}
       {withDiagonalArrow && (
-        <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-current" />
+        <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+      )}
+      {withArrow && (
+        <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
       )}
     </>
   );
@@ -71,7 +79,7 @@ export const Button: React.FC<ButtonProps> = ({
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className={cn("group", baseStyles, variantStyles[variant], sizeStyles[size], className)}
+          className={cn("group", base, variants[variant], sizes[size], className)}
         >
           {content}
         </a>
@@ -80,7 +88,7 @@ export const Button: React.FC<ButtonProps> = ({
     return (
       <Link
         to={href}
-        className={cn("group", baseStyles, variantStyles[variant], sizeStyles[size], className)}
+        className={cn("group", base, variants[variant], sizes[size], className)}
       >
         {content}
       </Link>
@@ -89,7 +97,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
-      className={cn("group", baseStyles, variantStyles[variant], sizeStyles[size], className)}
+      className={cn("group", base, variants[variant], sizes[size], className)}
       {...props}
     >
       {content}

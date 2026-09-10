@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { ArrowRight, Sparkles, TrendingUp, Compass, Target } from "lucide-react";
+import { ArrowRight, TrendingUp, Compass, Target } from "lucide-react";
 
 export default function MarketingStatement() {
   return (

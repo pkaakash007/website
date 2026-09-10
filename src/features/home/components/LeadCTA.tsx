@@ -2,7 +2,7 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
 import { ContactForm } from "@/components/common/ContactForm";
-import { Sparkles, ShieldCheck, Clock, Headphones } from "lucide-react";
+import { ShieldCheck, Clock, Headphones } from "lucide-react";
 
 export default function LeadCTA() {
   return (
@@ -14,14 +14,12 @@ export default function LeadCTA() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Heading & Value props */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-teal-light text-brand-teal-dark border border-brand-teal-border">
-              <Sparkles className="w-3.5 h-3.5" />
+            <p className="text-xs font-bold uppercase tracking-wider text-gold-700">
               Direct Consultation
-            </div>
+            </p>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-primary leading-[1.15]">
-              Ready to accelerate your{" "}
-              <span className="font-serif italic font-normal text-primary">business growth</span>?
+              Ready to accelerate your business growth?
             </h2>
 
             <p className="text-base text-secondary leading-relaxed">

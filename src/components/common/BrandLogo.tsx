@@ -24,40 +24,37 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   }[size];
 
   const content = (
-    <div className={`flex items-center gap-2.5 sm:gap-3 group select-none ${className}`}>
-      {/* Official Supplied Logo Mark */}
-      <div className="relative flex items-center justify-center p-0.5 rounded-lg bg-white shadow-2xs border border-border/80 group-hover:border-gold/40 transition-colors shrink-0 overflow-hidden">
+    <div className={`flex items-center gap-3 group select-none ${className}`}>
+      {/* Official Supplied Logo Mark - Unboxed Human Design */}
+      <div className="shrink-0 flex items-center">
         <Image
           src="/brand/realresult-logo.jpeg"
           alt="Real Result Logo"
           width={dimensions.width}
           height={dimensions.height}
           priority
-          className="object-contain transition-transform duration-300 group-hover:scale-105"
+          className={`object-contain ${theme === "light" ? "mix-blend-multiply" : "rounded-md bg-white p-0.5 shadow-sm"}`}
         />
       </div>
 
       {/* Brand Typography */}
       <div className="flex flex-col justify-center">
-        <div className="flex items-center gap-1.5">
-          <span
-            className={`font-black tracking-tight uppercase leading-tight transition-colors ${
-              theme === "dark"
-                ? "text-white group-hover:text-gold"
-                : "text-primary group-hover:text-gold-600"
-            } ${dimensions.text}`}
-          >
-            REAL RESULT
-          </span>
-          <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
-        </div>
+        <span
+          className={`font-black tracking-tight uppercase leading-none transition-colors ${
+            theme === "dark"
+              ? "text-white"
+              : "text-primary group-hover:text-gold-700"
+          } ${dimensions.text}`}
+        >
+          REAL RESULT
+        </span>
         {showTagline && (
           <span
-            className={`font-semibold tracking-[0.18em] uppercase leading-none -mt-0.5 ${
-              theme === "dark" ? "text-gold-300/80" : "text-secondary font-sans font-medium"
+            className={`font-semibold tracking-[0.14em] uppercase leading-none mt-1 transition-colors ${
+              theme === "dark" ? "text-white/80" : "text-secondary"
             } ${dimensions.sub}`}
           >
-            MARKETING • MEDIA • GROWTH
+            Marketing & Development
           </span>
         )}
       </div>

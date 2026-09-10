@@ -3,7 +3,7 @@ import React from "react";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { Sparkles, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 interface CaseStudyPlaceholder {
   id: string;
@@ -40,17 +40,12 @@ export default function CaseStudiesSection() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gold-400 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold shadow-subtle">
-              <Sparkles className="w-3.5 h-3.5 text-gold-600" />
-              <span>PROOF & EXECUTION</span>
-            </div>
+            <p className="text-xs font-bold uppercase tracking-wider text-gold-700">
+              PROOF & EXECUTION
+            </p>
 
             <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-primary tracking-tight uppercase leading-[1.03]">
-              WORK THAT{" "}
-              <span className="font-serif italic text-gold-700 font-normal lowercase">
-                moves
-              </span>{" "}
-              PEOPLE.
+              WORK THAT <span className="text-gold-700">MOVES</span> PEOPLE.
             </h2>
           </div>
 

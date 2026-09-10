@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, PhoneCall, MapPin, Clock, MessageCircle, ShieldCheck } from "lucide-react";
+import { Mail, PhoneCall, MapPin, Clock, MessageCircle } from "lucide-react";
 import { SEO_CONFIG } from "@/config/seo";
 
 export const ContactDirectChannels: React.FC = () => {
@@ -90,16 +90,6 @@ export const ContactDirectChannels: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="p-6 rounded-2xl bg-surface border border-border space-y-2 text-xs text-secondary">
-        <div className="flex items-center gap-2 font-semibold text-primary">
-          <ShieldCheck className="w-4 h-4 text-gold-700" />
-          <span>Mutual Non-Disclosure Protection</span>
-        </div>
-        <p className="leading-relaxed">
-          We treat every technical specification, product roadmap, and commercial figure under binding non-disclosure terms. Your intellectual property is safe.
-        </p>
       </div>
     </div>
   );

@@ -8,23 +8,24 @@ export interface BadgeProps {
   icon?: boolean;
 }
 
+/** Aeren editorial badge — minimal pill chip, no heavy color */
 export const Badge: React.FC<BadgeProps> = ({
   children,
   variant = "default",
   className,
 }) => {
-  const variantStyles = {
-    default: "bg-gray-100 text-gray-800 border-gray-200",
-    gold: "bg-[#FBF7EE] text-[#8E6D2E] border-[#E8D298]",
-    teal: "bg-[#FBF7EE] text-[#8E6D2E] border-[#E8D298]",
-    dark: "bg-gray-900 text-white border-gray-800",
-    outline: "bg-white text-gray-700 border-gray-300",
+  const variantStyles: Record<string, string> = {
+    default: "bg-[rgba(0,0,0,0.055)] text-[rgba(15,15,14,0.60)] border-transparent",
+    gold:    "bg-[rgba(197,160,89,0.12)] text-[#8e6d2e] border-[rgba(197,160,89,0.20)]",
+    teal:    "bg-[rgba(197,160,89,0.12)] text-[#8e6d2e] border-[rgba(197,160,89,0.20)]",
+    dark:    "bg-[#0F0F0E] text-white border-transparent",
+    outline: "bg-transparent text-[rgba(15,15,14,0.55)] border-[rgba(0,0,0,0.12)]",
   };
 
   return (
     <span
       className={cn(
-        "inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold tracking-wide border transition-colors",
+        "inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-[0.10em] border",
         variantStyles[variant],
         className
       )}

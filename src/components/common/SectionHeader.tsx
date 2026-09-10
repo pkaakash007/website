@@ -11,6 +11,7 @@ export interface SectionHeaderProps {
   className?: string;
 }
 
+/** Aeren editorial section header — large tight title, muted subtitle */
 export const SectionHeader: React.FC<SectionHeaderProps> = ({
   badge,
   badgeVariant = "default",
@@ -22,17 +23,27 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   return (
     <div
       className={cn(
-        "flex flex-col gap-3.5 mb-12 sm:mb-16",
-        align === "center" ? "items-center text-center mx-auto max-w-3xl" : "items-start text-left max-w-3xl",
+        "flex flex-col gap-4 mb-14 sm:mb-20",
+        align === "center"
+          ? "items-center text-center mx-auto max-w-3xl"
+          : "items-start text-left max-w-3xl",
         className
       )}
     >
       {badge && <Badge variant={badgeVariant}>{badge}</Badge>}
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-primary leading-[1.15]">
+
+      {/* Aeren-style heading: heavy weight, very tight tracking */}
+      <h2
+        className={cn(
+          "font-bold text-[#0F0F0E] leading-[1.07]",
+          "text-[clamp(2rem,4vw,3rem)] tracking-[-0.035em]"
+        )}
+      >
         {title}
       </h2>
+
       {subtitle && (
-        <p className="text-base sm:text-lg text-secondary leading-relaxed max-w-2xl">
+        <p className="text-[16px] text-[rgba(15,15,14,0.55)] leading-[1.65] max-w-2xl font-normal">
           {subtitle}
         </p>
       )}

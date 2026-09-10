@@ -15,8 +15,7 @@ export default function SolutionsPage() {
           <div className="max-w-3xl space-y-4">
             <Badge variant="teal">SOLUTIONS PORTFOLIO</Badge>
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
-              Four High-Performance{" "}
-              <span className="font-serif italic font-normal text-primary">Business Divisions</span>.
+              Four High-Performance Business Divisions.
             </h1>
             <p className="text-base sm:text-lg text-secondary">
               Explore our comprehensive capabilities across software engineering, customer acquisition, regional AI voice telephony, and workforce strategy.

@@ -19,7 +19,6 @@ import {
   Mail,
   Zap,
   CheckCircle2,
-  Sparkles,
   MapPin,
   Film,
   Globe,

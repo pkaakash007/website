@@ -39,16 +39,12 @@ export default function DigitalEditorialSection() {
         {/* Editorial Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div className="max-w-3xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold">
-              <TrendingUp className="w-3.5 h-3.5 text-gold-600" />
-              <span>DIGITAL STRATEGY</span>
-            </div>
+            <p className="text-xs font-mono uppercase tracking-widest font-bold text-primary">
+              DIGITAL STRATEGY
+            </p>
             <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-primary uppercase leading-[1.03]">
               TURN ATTENTION <br />
-              <span className="font-serif italic text-gold-700 font-normal lowercase">
-                into
-              </span>{" "}
-              ACTION.
+              <span className="text-gold-700">INTO</span> ACTION.
             </h2>
             <p className="text-base sm:text-lg text-secondary font-normal max-w-xl">
               Digital strategy built around discovery, engagement and growth.

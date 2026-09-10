@@ -9,13 +9,12 @@ export const NotFoundPage: React.FC = () => {
     <div className="flex flex-col items-center justify-center min-h-[70vh] py-20 bg-canvas text-center">
       <Container size="sm">
         <div className="space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold">
-            <Compass className="w-3.5 h-3.5 text-gold-600 animate-spin" />
-            <span>404 · Page Not Found</span>
-          </div>
+          <p className="text-xs font-mono uppercase tracking-widest font-bold text-primary">
+            404 · Page Not Found
+          </p>
 
           <h1 className="text-5xl sm:text-7xl font-black text-primary tracking-tight uppercase">
-            LOST IN <span className="text-gold font-serif italic font-normal lowercase">the</span> STREAM.
+            LOST IN <span className="text-gold-700">THE</span> STREAM.
           </h1>
 
           <p className="text-base sm:text-lg text-secondary max-w-md mx-auto leading-relaxed">

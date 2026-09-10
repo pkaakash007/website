@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { Sparkles, ArrowRight, Layers, Compass } from "lucide-react";
+import { ArrowRight, Layers, Compass } from "lucide-react";
 
 // Lazy-load the custom 3D abstract media installation
 const MediaUniverse3DCanvas = lazy(() => import("./MediaUniverse3DCanvas"));
@@ -30,16 +30,12 @@ export default function MediaEcosystem() {
         {/* Title & Eyebrow */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16 sm:mb-20">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold shadow-subtle">
-              <Compass className="w-3.5 h-3.5 text-gold-600" />
-              <span>THE MEDIA UNIVERSE</span>
-            </div>
+            <p className="text-xs font-mono uppercase tracking-widest font-bold text-primary">
+              THE MEDIA UNIVERSE
+            </p>
             <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-primary tracking-tight uppercase leading-[1.03]">
               ONE CAMPAIGN. <br />
-              <span className="font-serif italic text-gold-700 font-normal lowercase">
-                every meaningful
-              </span>{" "}
-              CHANNEL.
+              <span className="text-gold-700">EVERY MEANINGFUL</span> CHANNEL.
             </h2>
             <p className="text-base sm:text-lg text-secondary max-w-2xl font-normal leading-relaxed">
               We eliminate fragmented agency silos. Your campaign deploys across broadcast, physical screens, and digital auctions through a single unified buying and measurement architecture.

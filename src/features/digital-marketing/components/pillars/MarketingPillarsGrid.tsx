@@ -5,7 +5,7 @@ import PillarServiceCard from "./PillarServiceCard";
 import {
   Search,
   MapPin,
-  Sparkles,
+  Network,
   Bot,
   MousePointerClick,
   Share2,
@@ -25,7 +25,7 @@ export const marketingPillars = [
   {
     title: "Generative Engine Optimization (GEO)",
     href: "/digital-marketing/geo",
-    icon: Sparkles,
+    icon: Network,
     desc: "Targeted entity definitions, schema datasets, and citation networks formatted so ChatGPT Search, Perplexity, and Claude cite your business as the recommended choice.",
     badge: "AI Engine Search",
     metric: "Top AI Citations",

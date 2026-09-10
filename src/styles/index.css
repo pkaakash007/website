@@ -1,121 +1,533 @@
+@import './fonts.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   AEREN & APPLE DESIGN SYSTEM
+   Featuring Official Apple San Francisco (SF Pro, SF Compact, SF Mono)
+   Applied across the full Real Result application
+   ============================================================ */
+
 :root {
-  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-playfair: 'Playfair Display', Georgia, serif;
-  --font-jetbrains: 'JetBrains Mono', monospace;
-  
-  /* Centralized Brand Color Tokens from Official Logo */
-  --brand-gold: #c5a059;
+  /* ── Aeren Canvas Palette ─────────────────────────────────── */
+  --ae-canvas:        #FFFFFF;   /* Page background — pure white, Apple style */
+  --ae-canvas-alt:    #F5F5F5;   /* Light gray for alternate sections */
+  --ae-white:         #FFFFFF;   /* Card surfaces */
+  --ae-ink:           #0F0F0E;   /* Primary text — near black */
+  --ae-ink-60:        rgba(15,15,14,0.60);  /* Secondary text */
+  --ae-ink-40:        rgba(15,15,14,0.40);  /* Muted / captions */
+  --ae-ink-20:        rgba(15,15,14,0.20);  /* Placeholder / disabled */
+  --ae-ink-07:        rgba(15,15,14,0.07);  /* Subtle borders */
+  --ae-ink-04:        rgba(15,15,14,0.04);  /* Watermark text */
+  --ae-border:        rgba(0,0,0,0.08);     /* Default card border */
+  --ae-border-strong: rgba(0,0,0,0.14);
+
+  /* ── Dark CTA ──────────────────────────────────────────────── */
+  --ae-cta-bg:        #0F0F0E;
+  --ae-cta-hover:     #1C1C1A;
+  --ae-cta-text:      #FFFFFF;
+
+  /* ── Aeren Pill (ghost/muted) ──────────────────────────────── */
+  --ae-pill-bg:       rgba(0,0,0,0.055);
+  --ae-pill-border:   rgba(0,0,0,0.09);
+
+  /* ── Dark footer ───────────────────────────────────────────── */
+  --ae-dark:          #111110;
+  --ae-dark-surface:  #1A1A18;
+  --ae-dark-border:   rgba(255,255,255,0.08);
+  --ae-dark-muted:    rgba(255,255,255,0.40);
+
+  /* ── Brand Gold (kept for accents only) ────────────────────── */
+  --brand-gold:       #c5a059;
   --brand-gold-light: #f9f4e7;
-  --brand-gold-dark: #8e6d2e;
-  --brand-black: #0f0f0e;
-  --brand-charcoal: #141414;
-  --brand-white: #ffffff;
-  --brand-warm-white: #faf9f5;
+  --brand-gold-dark:  #8e6d2e;
+  --gold-gradient:    linear-gradient(135deg, #f2e4c4 0%, #c5a059 45%, #9e7b36 100%);
+  --gold-metallic:    linear-gradient(110deg, #dfbe73 0%, #f6e6be 25%, #c5a059 50%, #9e7832 75%, #d9b669 100%);
 
-  --token-white: #ffffff;
-  --token-canvas: #faf9f5;
-  --token-surface: #f4f2ec;
-  --token-border: #e8e6de;
-  --token-border-strong: #ddd9ce;
-  --token-dark: #0f0f0e;
-  --token-charcoal: #141414;
-  --token-graphite: #454541;
-  --token-muted: #82827d;
-  --token-subtle: #b0b0aa;
-  --token-gold: #c5a059;
+  /* ── Legacy token aliases (backward compat) ─────────────────── */
+  --token-white:      #ffffff;
+  --token-canvas:     #FFFFFF;
+  --token-surface:    #ffffff;
+  --token-border:     rgba(0,0,0,0.08);
+  --token-border-strong: rgba(0,0,0,0.14);
+  --token-dark:       #0F0F0E;
+  --token-charcoal:   #111110;
+  --token-graphite:   #2b2b28;
+  --token-muted:      rgba(15,15,14,0.55);
+  --token-subtle:     rgba(15,15,14,0.36);
+  --token-gold:       #c5a059;
   --token-gold-light: #f9f4e7;
-  --token-gold-dark: #8e6d2e;
-  --gold-gradient: linear-gradient(135deg, #f2e4c4 0%, #c5a059 45%, #9e7b36 100%);
-  --gold-metallic: linear-gradient(110deg, #dfbe73 0%, #f6e6be 25%, #c5a059 50%, #9e7832 75%, #d9b669 100%);
+  --token-gold-dark:  #8e6d2e;
+
+  /* ── Typography (Apple San Francisco System) ────────────────── */
+  --font-sf-display: 'SF Pro Display', 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sf-text:    'SF Pro Text', 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sf:         'SF Pro', 'SF Pro Display', 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-system:     'SF Pro Display', 'SF Pro Text', 'SF Pro', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  --font-inter:      'SF Pro Text', 'SF Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:       'SF Mono', 'JetBrains Mono', ui-monospace, monospace;
+
+  /* ── Easing ─────────────────────────────────────────────────── */
+  --ease-ae:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --spring:     cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-* {
-  box-sizing: border-box;
-}
+/* ============================================================
+   BASE RESET
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background-color: var(--token-canvas);
-  color: var(--token-dark);
-  font-family: var(--font-inter);
+  background-color: var(--ae-canvas);
+  color: var(--ae-ink);
+  font-family: var(--font-system);
   overflow-x: hidden;
+  letter-spacing: -0.01em;
+  cursor: default;
+}
+
+/* ============================================================
+   NATIVE macOS CURSOR SYSTEM
+   Uses native hardware-accelerated macOS system cursors for Mac devices
+   ============================================================ */
+html {
+  cursor: default;
+}
+
+/* Interactive elements use the native macOS Hand Pointer cursor */
+a,
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+select,
+summary,
+.cursor-pointer,
+[onclick] {
+  cursor: pointer;
+}
+
+/* Text editing elements use the native macOS I-Beam cursor */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+textarea,
+[contenteditable="true"] {
+  cursor: text;
+}
+
+/* Draggable & Disabled states */
+.cursor-grab {
+  cursor: grab;
+}
+.cursor-grabbing {
+  cursor: grabbing;
+}
+.cursor-not-allowed,
+button:disabled,
+input:disabled {
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   OFFICIAL macOS 27 INPUT SYSTEM
+   Reference: macOS 27 Design System / Apple Human Interface Guidelines
+   ============================================================ */
+.macos-input,
+input[type="text"]:not([class*="custom-"]),
+input[type="email"]:not([class*="custom-"]),
+input[type="tel"]:not([class*="custom-"]),
+input[type="password"]:not([class*="custom-"]),
+input[type="search"]:not([class*="custom-"]) {
+  font-family: var(--font-system);
+  font-size: 13.5px;
+  line-height: 1.4;
+  border-radius: 9px;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  color: #1D1D1F;
+  transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.macos-input:hover,
+input[type="text"]:not([class*="custom-"]):hover,
+input[type="email"]:not([class*="custom-"]):hover,
+input[type="tel"]:not([class*="custom-"]):hover {
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.macos-input:focus,
+input[type="text"]:not([class*="custom-"]):focus,
+input[type="email"]:not([class*="custom-"]):focus,
+input[type="tel"]:not([class*="custom-"]):focus,
+textarea:focus {
+  outline: none;
+  border-color: #0071E3 !important;
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.25), inset 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+}
+
+.macos-textarea,
+textarea:not([class*="custom-"]) {
+  font-family: var(--font-system);
+  font-size: 13.5px;
+  line-height: 1.4;
+  border-radius: 9px;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  color: #1D1D1F;
+  transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 ::selection {
-  background-color: #0f0f0e;
-  color: #c5a059;
+  background-color: #B4D7FF;
+  color: #000000;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+/* Thin scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.18); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.30); }
+
+/* ============================================================
+   AEREN CORE UTILITY CLASSES
+   ============================================================ */
+
+/* ── Page canvas ─────────────────────────────────────────────── */
+.ae-canvas  { background-color: var(--ae-canvas); }
+.ae-white   { background-color: var(--ae-white); }
+.ae-dark    { background-color: var(--ae-dark); }
+
+/* ── Aeren section spacing ───────────────────────────────────── */
+.ae-section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+@media (min-width: 1024px) {
+  .ae-section { padding-top: 8rem; padding-bottom: 8rem; }
 }
 
-::-webkit-scrollbar-track {
-  background: #f4f2ec;
+/* ── Aeren CARD — plain white, subtle border ─────────────────── */
+.ae-card {
+  background: var(--ae-white);
+  border: 1px solid var(--ae-border);
+  border-radius: 20px;
+  transition: border-color 0.2s var(--ease-ae), box-shadow 0.2s var(--ease-ae), transform 0.15s var(--ease-ae);
+}
+.ae-card:hover {
+  border-color: var(--ae-border-strong);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  transform: translateY(-2px);
 }
 
-::-webkit-scrollbar-thumb {
-  background: #ddd9ce;
-  border-radius: 4px;
+/* ── Aeren PILL (muted ghost chip) ──────────────────────────── */
+.ae-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  background: var(--ae-pill-bg);
+  border: 1px solid var(--ae-pill-border);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ae-ink-60);
+  letter-spacing: 0.005em;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #c5a059;
+/* ── Aeren floating stat pill (overlay on image) ─────────────── */
+.ae-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.90);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.95);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.10), 0 1px 3px rgba(0,0,0,0.06);
+  font-size: 13px;
+  font-weight: 600;
+  color: #0F0F0E;
+  white-space: nowrap;
 }
 
-/* Glassmorphism utilities */
+/* ── Aeren BUTTON — dark filled pill ────────────────────────── */
+.ae-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-family: var(--font-system);
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.15s var(--ease-ae), transform 0.15s var(--ease-ae), background 0.2s var(--ease-ae);
+  letter-spacing: -0.01em;
+}
+.ae-btn:active { transform: scale(0.97); opacity: 0.88; }
+
+/* Primary — Aeren dark oval pill */
+.ae-btn-primary {
+  background: var(--ae-cta-bg);
+  color: var(--ae-cta-text);
+  border-radius: 9999px;
+  padding: 14px 32px;
+  font-size: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.ae-btn-primary:hover { background: var(--ae-cta-hover); box-shadow: 0 4px 16px rgba(0,0,0,0.24); }
+
+/* Ghost — minimal border oval */
+.ae-btn-ghost {
+  background: transparent;
+  color: var(--ae-ink);
+  border: 1px solid var(--ae-border-strong);
+  border-radius: 9999px;
+  padding: 13px 28px;
+  font-size: 14px;
+}
+.ae-btn-ghost:hover { background: rgba(0,0,0,0.04); }
+
+/* WhatsApp pill */
+.ae-btn-wa {
+  background: rgba(37,211,102,0.10);
+  color: #16a34a;
+  border: 1px solid rgba(37,211,102,0.25);
+  border-radius: 9999px;
+  padding: 13px 24px;
+  font-size: 14px;
+}
+
+/* ── Aeren NAV ───────────────────────────────────────────────── */
+.ae-nav {
+  background: rgba(245,245,243,0.82);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(0,0,0,0.055);
+}
+.ae-nav-transparent {
+  background: transparent;
+  border-bottom: none;
+}
+.ae-nav-link {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ae-ink-60);
+  transition: color 0.15s;
+  letter-spacing: -0.005em;
+}
+.ae-nav-link:hover, .ae-nav-link.active { color: var(--ae-ink); }
+
+/* ── Aeren WATERMARK text (huge behind image) ────────────────── */
+.ae-watermark {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: clamp(5rem, 16vw, 14rem);
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  color: rgba(0,0,0,0.038);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ── Section headers — Aeren editorial style ─────────────────── */
+.ae-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ae-ink-40);
+}
+.ae-h1 {
+  font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.04;
+  color: var(--ae-ink);
+}
+.ae-h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  color: var(--ae-ink);
+}
+.ae-h3 {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--ae-ink);
+}
+.ae-body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ae-ink-60);
+}
+.ae-caption {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ae-ink-40);
+  letter-spacing: 0.01em;
+}
+
+/* ── Divider ─────────────────────────────────────────────────── */
+.ae-divider {
+  border-top: 1px solid rgba(0,0,0,0.07);
+}
+
+/* ── Full bleed image ────────────────────────────────────────── */
+.ae-full-bleed {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+/* ── Glass frosted material (for header) ─────────────────────── */
+.ae-glass {
+  background: rgba(245,245,243,0.85);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+}
+
+/* ── LEGACY: keep old classes working ───────────────────────── */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(232, 230, 222, 0.8);
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0,0,0,0.07);
 }
-
 .glass-panel-dark {
-  background: rgba(20, 20, 20, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(17,17,16,0.88);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.08);
 }
-
 .text-gold-gradient {
   background: var(--gold-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 .text-gold-metallic {
   background: var(--gold-metallic);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-.bg-gold-metallic {
-  background: var(--gold-metallic);
-}
-
-/* Subtle image overlay gradients */
+.bg-gold-metallic { background: var(--gold-metallic); }
 .image-editorial-scrim {
-  background: linear-gradient(
-    to top,
-    rgba(15, 15, 14, 0.88) 0%,
-    rgba(15, 15, 14, 0.4) 45%,
-    rgba(15, 15, 14, 0.05) 100%
-  );
+  background: linear-gradient(to top, rgba(15,15,14,0.88) 0%, rgba(15,15,14,0.4) 45%, rgba(15,15,14,0.05) 100%);
+}
+.image-warm-filter { filter: contrast(103%) brightness(99%) saturate(95%); }
+
+/* ── iOS classes (legacy hero) ───────────────────────────────── */
+.ios-material {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+}
+.ios-hero-frosted-sheet {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border-top: 0.5px solid rgba(255,255,255,0.95);
+  border-radius: 28px 28px 0 0;
+}
+.ios-btn-primary {
+  background: #1C1C1E;
+  color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.20);
+  padding: 16px 28px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.ios-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.07);
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+.ios-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 16px 48px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+.ios-inset-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.09);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+.ios-ambient-bg {
+  background: #FFFFFF;
+}
+.ios-ambient-cool { background: #F5F5F5; }
+.ios-material-dark {
+  background: rgba(17,17,16,0.80);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid rgba(255,255,255,0.10);
 }
 
-.image-warm-filter {
-  filter: contrast(104%) brightness(98%) saturate(96%);
+/* ── Animations ──────────────────────────────────────────────── */
+@keyframes ae-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
+@keyframes ae-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes ticker {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes pulseGold {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%       { opacity: 0.85; transform: scale(1.04); }
+}
+@keyframes arrowFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-4px); }
+}
+@keyframes ios-fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes ios-scale-in {
+  from { opacity: 0; transform: scale(0.93); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-ae-fade-up   { animation: ae-fade-up 0.55s cubic-bezier(0.32,0.72,0,1) both; }
+.animate-ae-fade-in   { animation: ae-fade-in 0.45s ease both; }
+.animate-ticker       { animation: ticker 38s linear infinite; }
+.animate-pulse-gold   { animation: pulseGold 3.5s ease-in-out infinite; }
+.animate-arrow-float  { animation: arrowFloat 2s ease-in-out infinite; }
+.animate-ios-fade-up  { animation: ios-fade-up 0.5s cubic-bezier(0.32,0.72,0,1) both; }
+.animate-ios-scale-in { animation: ios-scale-in 0.45s cubic-bezier(0.32,0.72,0,1) both; }

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { ArrowRight, ArrowUpRight, Eye, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Eye } from "lucide-react";
 
 const MARKETING_WORLDS = [
   {
@@ -73,16 +73,12 @@ export default function VisualMarketingStory() {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16 sm:mb-20">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-gold-400 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold shadow-subtle">
-              <Sparkles className="w-3.5 h-3.5 text-gold-600" />
-              <span>THE VISUAL MARKETING STORY</span>
-            </div>
+            <p className="text-xs font-bold uppercase tracking-wider text-gold-700">
+              THE VISUAL MARKETING STORY
+            </p>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-primary uppercase leading-[1.05]">
               Every Canvas. <br />
-              <span className="font-serif italic text-gold-700 font-normal lowercase">
-                one cohesive
-              </span>{" "}
-              UNIVERSE.
+              <span className="text-gold-700">ONE COHESIVE</span> UNIVERSE.
             </h2>
           </div>
 

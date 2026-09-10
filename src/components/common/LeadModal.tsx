@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { X, Sparkles } from "lucide-react";
+import { MacOSModal } from "./MacOSModal";
 import { ContactForm } from "./ContactForm";
 
 export const LeadModal: React.FC = () => {
@@ -20,48 +20,28 @@ export const LeadModal: React.FC = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-  }, [isOpen]);
-
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-primary/60 backdrop-blur-sm animate-in fade-in duration-200">
-      <div
-        className="fixed inset-0"
-        onClick={() => setIsOpen(false)}
-        aria-label="Close modal background"
-      />
-      <div className="relative w-full max-w-xl bg-white rounded-3xl border border-border shadow-floating z-10 max-h-[90vh] overflow-y-auto p-6 sm:p-8">
-        <button
-          onClick={() => setIsOpen(false)}
-          className="absolute top-5 right-5 p-2 rounded-full text-secondary hover:text-primary hover:bg-surface transition-colors cursor-pointer"
-          aria-label="Close modal"
-        >
-          <X className="w-5 h-5" />
-        </button>
-
-        <div className="mb-6 pr-8">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium uppercase tracking-wider bg-gold-100 text-gold-800 border border-gold/30 mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-gold-600" />
-            Direct Consultation
-          </div>
-          <h2 className="text-2xl font-bold text-primary tracking-tight">
-            Talk to a Solutions Expert
-          </h2>
-          <p className="text-secondary text-sm mt-1">
-            Connect directly with an engineering, marketing, AI telecalling, or HR director.
-          </p>
-        </div>
-
-        <ContactForm defaultDivision={division} compact />
+    <MacOSModal
+      isOpen={isOpen}
+      onClose={() => setIsOpen(false)}
+      title="Direct Consultation — Solutions Briefing"
+      badge="macOS 27 • Active SLA"
+      maxWidth="max-w-xl"
+    >
+      <div className="mb-6">
+        <p className="text-[11px] font-bold uppercase tracking-wider text-[#0071E3] mb-1.5">
+          Executive Partnership Desk
+        </p>
+        <h2 className="text-2xl font-bold text-neutral-900 tracking-tight">
+          Talk to a Solutions Expert
+        </h2>
+        <p className="text-neutral-500 text-sm mt-1">
+          Connect directly with an engineering, performance marketing, or AI technical director.
+        </p>
       </div>
-    </div>
+
+      <ContactForm defaultDivision={division} compact className="!p-0 !border-0 !shadow-none !bg-transparent" />
+    </MacOSModal>
   );
 };
 
@@ -76,3 +56,4 @@ export function openLeadModal(division?: string) {
 }
 
 export default LeadModal;
+

@@ -15,7 +15,6 @@ import {
   Activity,
   PhoneOutgoing,
   Lock,
-  Sparkles,
   Server,
   ArrowRight,
   CheckCircle2,
@@ -136,7 +135,7 @@ export default function AICommunicationPage() {
           <div className="max-w-3xl space-y-6">
             <Badge variant="teal">AI Communication & Cloud Telephony</Badge>
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
-              Conversational <span className="font-serif italic font-normal text-primary">AI Voice</span>, Regional Telecalling & CPaaS.
+              Conversational AI Voice, Regional Telecalling & CPaaS.
             </h1>
             <p className="text-base sm:text-xl text-secondary leading-relaxed font-normal">
               Empower your business with natural multilingual AI telecalling agents, carrier-grade cloud dialers, WhatsApp Business API, and automated voice workflows engineered for massive concurrency.

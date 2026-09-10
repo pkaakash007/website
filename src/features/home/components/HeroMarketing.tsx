@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { ArrowRight, Sparkles, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export default function HeroMarketing() {
   const [isHovered, setIsHovered] = useState(false);
@@ -19,30 +19,14 @@ export default function HeroMarketing() {
           {/* Left Column: Bold Editorial Typography & Clear CTAs */}
           <div className="lg:col-span-6 space-y-6 sm:space-y-8 z-10">
             {/* Small Eyebrow: MARKETING · MEDIA · PERFORMANCE */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-gold-400/80 shadow-gold-subtle text-xs font-mono font-bold tracking-widest text-primary uppercase">
-              <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-              <span>MARKETING · MEDIA · PERFORMANCE</span>
-            </div>
+            <p className="text-xs font-mono font-bold tracking-widest text-primary uppercase">
+              MARKETING · MEDIA · PERFORMANCE
+            </p>
 
             {/* Headline: MAKE YOUR BRAND IMPOSSIBLE TO IGNORE. */}
             <h1 className="text-4xl sm:text-6xl xl:text-7xl font-black tracking-tight text-primary leading-[1.03] uppercase">
               MAKE YOUR BRAND <br />
-              <span className="relative inline-block font-serif lowercase italic text-gold-700 font-semibold pr-1">
-                impossible
-                <svg
-                  className="absolute left-0 -bottom-1 w-full h-3 text-gold/50 -z-10"
-                  viewBox="0 0 100 12"
-                  preserveAspectRatio="none"
-                >
-                  <path
-                    d="M0,9 Q50,1 100,9"
-                    stroke="currentColor"
-                    strokeWidth="3.5"
-                    fill="none"
-                  />
-                </svg>
-              </span>{" "}
-              TO IGNORE.
+              <span className="text-gold-700">IMPOSSIBLE</span> TO IGNORE.
             </h1>
 
             {/* Supporting line */}

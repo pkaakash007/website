@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface StoryStep {
   id: string;
@@ -53,17 +53,13 @@ export default function AgencyScrollJourney() {
       <Container size="wide">
         {/* Section Header */}
         <div className="max-w-3xl mb-14 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-gold-600" />
-            <span>AGENCY PORTFOLIO JOURNEY</span>
-          </div>
+          <p className="text-xs font-bold uppercase tracking-wider text-gold-700 mb-4">
+            AGENCY PORTFOLIO JOURNEY
+          </p>
 
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-primary tracking-tight uppercase leading-[1.03]">
             FOUR DISCIPLINES. <br />
-            <span className="font-serif italic text-gold-700 font-normal lowercase">
-              one unified
-            </span>{" "}
-            DIRECTION.
+            <span className="text-gold-700">ONE UNIFIED</span> DIRECTION.
           </h2>
         </div>
 

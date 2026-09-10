@@ -37,14 +37,7 @@ export default function MetricsImpact() {
       <Container size="wide">
         <SectionHeader
           badge="MEASURABLE IMPACT"
-          title={
-            <>
-              Proven outcomes across{" "}
-              <span className="font-serif italic font-normal text-primary">scale</span>,{" "}
-              <span className="font-serif italic font-normal text-primary">speed</span> and{" "}
-              <span className="font-serif italic font-normal text-primary">reliability</span>.
-            </>
-          }
+          title="Proven outcomes across scale, speed and reliability."
           subtitle="We measure success not by vanity metrics, but by reliable systems, customer interactions delivered, and bottom-line expansion."
         />
 
