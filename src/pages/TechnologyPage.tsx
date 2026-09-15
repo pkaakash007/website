@@ -113,19 +113,19 @@ export default function TechnologyPage() {
         <Container size="wide">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             <div className="p-4 rounded-2xl bg-white border border-border">
-              <div className="text-xs font-mono text-muted uppercase">Frameworks</div>
+              <div className="text-xs font-semibold text-muted uppercase tracking-wider">Frameworks</div>
               <div className="text-base font-bold text-primary mt-1">Next.js • React • Node.js</div>
             </div>
             <div className="p-4 rounded-2xl bg-white border border-border">
-              <div className="text-xs font-mono text-muted uppercase">Cloud & Infra</div>
+              <div className="text-xs font-semibold text-muted uppercase tracking-wider">Cloud & Infra</div>
               <div className="text-base font-bold text-primary mt-1">AWS • GCP • Kubernetes</div>
             </div>
             <div className="p-4 rounded-2xl bg-white border border-border">
-              <div className="text-xs font-mono text-muted uppercase">Data & AI</div>
+              <div className="text-xs font-semibold text-muted uppercase tracking-wider">Data & AI</div>
               <div className="text-base font-bold text-primary mt-1">Python • PyTorch • Postgres</div>
             </div>
             <div className="p-4 rounded-2xl bg-white border border-border">
-              <div className="text-xs font-mono text-muted uppercase">Compliance</div>
+              <div className="text-xs font-semibold text-muted uppercase tracking-wider">Compliance</div>
               <div className="text-base font-bold text-primary mt-1">SOC2 • ISO 27001 • HIPAA</div>
             </div>
           </div>

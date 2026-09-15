@@ -14,30 +14,23 @@ export const LocationDeskCard: React.FC<DeskProps> = ({
   status,
   address,
   notes,
-  isHQ,
 }) => {
   return (
-    <div
-      className={`p-7 rounded-2xl border transition-all flex flex-col justify-between ${
-        isHQ
-          ? "bg-canvas border-gold/70 shadow-sm"
-          : "bg-white border-border shadow-sm hover:shadow-md"
-      }`}
-    >
-      <div className="space-y-3">
-        <h3 className="text-lg font-bold text-primary">
+    <div className="py-2 flex flex-col justify-between font-sans">
+      <div className="space-y-2">
+        <h3 className="text-lg font-bold text-black tracking-tight">
           {city}
         </h3>
 
-        <span className="text-xs font-semibold text-[#8E6D2E] block">
+        <span className="text-xs font-semibold text-neutral-500 block">
           {status}
         </span>
 
-        <p className="text-xs text-secondary leading-relaxed">
+        <p className="text-xs text-neutral-800 leading-relaxed">
           {address}
         </p>
 
-        <p className="text-xs text-muted border-t border-border pt-3 leading-relaxed">
+        <p className="text-xs text-neutral-600 border-t border-neutral-200 pt-2.5 leading-relaxed">
           {notes}
         </p>
       </div>

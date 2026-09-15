@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { Button } from "@/components/common/Button";
-import { Globe, Smartphone, ArrowRight, ChevronRight, Monitor, Code2, ShoppingCart, Database, Layout, Cpu, Zap, Bell, Shield, ExternalLink } from "lucide-react";
+import { Globe, Smartphone, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 
 // ─── Web Portfolio Data ──────────────────────────────────────────────────────
 const webPortfolio: Record<string, { name: string; industry: string; image: string }[]> = {
@@ -34,123 +34,111 @@ const webPortfolio: Record<string, { name: string; industry: string; image: stri
 const WEB_PORTFOLIO_TABS = ["Static Website", "Dynamic Website", "E-commerce Website"];
 
 // ─── Mobile App Portfolio Data ─────────────────────────────────────────────────
-const mobilePortfolio: Record<string, { name: string; category: string; icon: string; desc: string; rating: string; color: string }[]> = {
+const mobilePortfolio: Record<string, { name: string; category: string; icon: string; desc: string; rating: string }[]> = {
   "iOS App": [
-    { name: "Swiggy",      category: "Food Delivery",   icon: "/logos/swiggy.png",     desc: "Order food, track delivery live on map",   rating: "4.4", color: "#FC8019" },
-    { name: "Meesho",      category: "Social Commerce", icon: "/logos/meesho.png",     desc: "Sell products, earn from home",            rating: "4.3", color: "#9B2335" },
-    { name: "Practo",      category: "Healthcare",      icon: "/logos/practo.png",     desc: "Book doctors, get medicines, lab tests",   rating: "4.2", color: "#13BEBB" },
-    { name: "CRED",        category: "Fintech",         icon: "/logos/cred.png",       desc: "Pay credit cards, earn rewards",           rating: "4.5", color: "#1A1A2E" },
-    { name: "Nykaa",       category: "Beauty & Fashion",icon: "/logos/nykaa.png",      desc: "Shop beauty, fashion & wellness",         rating: "4.3", color: "#FC2779" },
-    { name: "MakeMyTrip",  category: "Travel & Hotels", icon: "/logos/makemytrip.png", desc: "Book flights, hotels and holiday packages",rating: "4.2", color: "#E8432C" },
+    { name: "Swiggy",      category: "Food Delivery",   icon: "/logos/swiggy.png",     desc: "Order food, track delivery live on map",   rating: "4.4" },
+    { name: "Meesho",      category: "Social Commerce", icon: "/logos/meesho.png",     desc: "Sell products, earn from home",            rating: "4.3" },
+    { name: "Practo",      category: "Healthcare",      icon: "/logos/practo.png",     desc: "Book doctors, get medicines, lab tests",   rating: "4.2" },
+    { name: "CRED",        category: "Fintech",         icon: "/logos/cred.png",       desc: "Pay credit cards, earn rewards",           rating: "4.5" },
+    { name: "Nykaa",       category: "Beauty & Fashion",icon: "/logos/nykaa.png",      desc: "Shop beauty, fashion & wellness",         rating: "4.3" },
+    { name: "MakeMyTrip",  category: "Travel & Hotels", icon: "/logos/makemytrip.png", desc: "Book flights, hotels and holiday packages",rating: "4.2" },
   ],
   "Android App": [
-    { name: "PhonePe",       category: "UPI Payments",  icon: "/logos/phonepe.png",      desc: "Send money, pay bills, UPI payments",     rating: "4.4", color: "#5F259F" },
-    { name: "Zomato",        category: "Food Delivery", icon: "/logos/zomato.png",       desc: "Order food from nearby restaurants",      rating: "4.3", color: "#E23744" },
-    { name: "Ola",           category: "Cab Booking",   icon: "/logos/ola.png",          desc: "Book autos, cabs and bikes instantly",    rating: "4.1", color: "#00A850" },
-    { name: "Urban Company", category: "Home Services", icon: "/logos/urbancompany.png", desc: "Book plumbers, electricians at home",   rating: "4.5", color: "#1C2D5A" },
-    { name: "Dunzo",         category: "Quick Delivery",icon: "/logos/dunzo.svg",        desc: "10 min grocery & essentials delivery",   rating: "4.0", color: "#00D290" },
-    { name: "Byju's",        category: "EdTech",        icon: "/logos/byjus.svg",        desc: "Learn subjects with video lessons & tests",rating: "4.1", color: "#813588" },
+    { name: "PhonePe",       category: "UPI Payments",  icon: "/logos/phonepe.png",      desc: "Send money, pay bills, UPI payments",     rating: "4.4" },
+    { name: "Zomato",        category: "Food Delivery", icon: "/logos/zomato.png",       desc: "Order food from nearby restaurants",      rating: "4.3" },
+    { name: "Ola",           category: "Cab Booking",   icon: "/logos/ola.png",          desc: "Book autos, cabs and bikes instantly",    rating: "4.1" },
+    { name: "Urban Company", category: "Home Services", icon: "/logos/urbancompany.png", desc: "Book plumbers, electricians at home",   rating: "4.5" },
+    { name: "Dunzo",         category: "Quick Delivery",icon: "/logos/dunzo.svg",        desc: "10 min grocery & essentials delivery",   rating: "4.0" },
+    { name: "Byju's",        category: "EdTech",        icon: "/logos/byjus.svg",        desc: "Learn subjects with video lessons & tests",rating: "4.1" },
   ],
   "Cross-Platform": [
-    { name: "Amazon",      category: "E-Commerce",    icon: "/logos/amazon.png",    desc: "Shop millions of products with fast delivery",rating: "4.5", color: "#FF9900" },
-    { name: "Flipkart",    category: "E-Commerce",    icon: "/logos/flipkart.png",  desc: "Buy electronics, fashion, groceries",    rating: "4.3", color: "#2874F0" },
-    { name: "Paytm",       category: "Super App",     icon: "/logos/paytm.png",     desc: "Pay, invest, shop and recharge in one app",rating: "3.9", color: "#00BAF2" },
-    { name: "Google Pay",  category: "UPI Payments",  icon: "/logos/googlepay.png", desc: "Send money & pay bills via UPI",         rating: "4.2", color: "#4285F4" },
-    { name: "BigBasket",   category: "Grocery",       icon: "/logos/bigbasket.png", desc: "Fresh groceries delivered at doorstep",  rating: "4.3", color: "#84C225" },
-    { name: "Rapido",      category: "Bike Taxi",     icon: "/logos/rapido.png",    desc: "Fastest & cheapest bike taxi in India",  rating: "4.1", color: "#FFC700" },
+    { name: "Amazon",      category: "E-Commerce",    icon: "/logos/amazon.png",    desc: "Shop millions of products with fast delivery",rating: "4.5" },
+    { name: "Flipkart",    category: "E-Commerce",    icon: "/logos/flipkart.png",  desc: "Buy electronics, fashion, groceries",    rating: "4.3" },
+    { name: "Paytm",       category: "Super App",     icon: "/logos/paytm.png",     desc: "Pay, invest, shop and recharge in one app",rating: "3.9" },
+    { name: "Google Pay",  category: "UPI Payments",  icon: "/logos/googlepay.png", desc: "Send money & pay bills via UPI",         rating: "4.2" },
+    { name: "BigBasket",   category: "Grocery",       icon: "/logos/bigbasket.png", desc: "Fresh groceries delivered at doorstep",  rating: "4.3" },
+    { name: "Rapido",      category: "Bike Taxi",     icon: "/logos/rapido.png",    desc: "Fastest & cheapest bike taxi in India",  rating: "4.1" },
   ],
 };
 const MOBILE_PORTFOLIO_TABS = ["iOS App", "Android App", "Cross-Platform"];
 
-// ─── Web Development Data ───────────────────────────────────────────────────
+// ─── Web Development Services Data ──────────────────────────────────────────
 const webServices = [
   {
-    icon: <Monitor className="w-5 h-5" />,
+    number: "01",
     title: "Static Business Website",
-    desc: "Fast, clean, mobile-friendly websites for shops, clinics, and businesses. Loads in under 2 seconds. Looks great on every phone and computer.",
-    points: ["100% Mobile & WhatsApp ready", "Google Maps & contact form", "Easy to share on Instagram & Facebook"],
-    color: "#007AFF",
+    desc: "Fast, clean, mobile-friendly websites for shops, clinics, and local businesses. Loads in under 1 second on all smartphones.",
+    points: ["100% Mobile & WhatsApp ready", "Google Maps & contact form", "Easy to share on social media"],
   },
   {
-    icon: <Layout className="w-5 h-5" />,
+    number: "02",
     title: "Dynamic Website",
-    desc: "Websites where you can add/edit your own content, news, products and enquiries without needing a developer every time.",
-    points: ["Admin login to update content", "Enquiry forms go to your WhatsApp", "Multi-page with blog & gallery"],
-    color: "#5856D6",
+    desc: "Websites where you can add and edit your own content, news, products, and customer inquiries without needing a developer.",
+    points: ["Admin login to update content", "Enquiries sent directly to your WhatsApp", "Multi-page structure with blog & gallery"],
   },
   {
-    icon: <ShoppingCart className="w-5 h-5" />,
+    number: "03",
     title: "E-Commerce Website",
-    desc: "Your own online shop with UPI, Google Pay, credit card, and COD. Customers browse, order and pay directly on your website.",
-    points: ["UPI & Razorpay payment gateway", "Auto WhatsApp order alerts", "Product catalog & inventory"],
-    color: "#34C759",
+    desc: "Your own online shop with UPI, Google Pay, credit card, and COD. Customers browse, order, and pay directly on your website.",
+    points: ["Direct UPI & card payment checkout", "Automatic WhatsApp order alerts", "Product catalog & inventory management"],
   },
   {
-    icon: <Database className="w-5 h-5" />,
+    number: "04",
     title: "ERP & Business Software",
-    desc: "Custom software to manage your stock, billing, staff attendance, purchase orders — all in one system built for your business.",
-    points: ["GST billing & invoicing", "Stock & supplier management", "Staff attendance & payroll"],
-    color: "#FF9500",
+    desc: "Custom software to manage your inventory, billing, staff attendance, and purchase orders in one system.",
+    points: ["GST billing & invoice generation", "Stock & supplier tracking", "Staff attendance & payroll management"],
   },
   {
-    icon: <Code2 className="w-5 h-5" />,
+    number: "05",
     title: "SaaS Web Application",
-    desc: "Cloud-based software platforms that many users can access and subscribe to. Built for startups and growing businesses.",
-    points: ["Multi-user login & roles", "Subscription billing system", "Scalable cloud hosting"],
-    color: "#FF3B30",
+    desc: "Cloud-based software platforms that multiple users can access and subscribe to. Built for startups and expanding businesses.",
+    points: ["Multi-user login & permission roles", "Subscription billing system", "Scalable cloud deployment"],
   },
   {
-    icon: <Cpu className="w-5 h-5" />,
+    number: "06",
     title: "API & Backend Systems",
-    desc: "The engine behind your app. We build secure, fast APIs that power your mobile apps, dashboards and third-party integrations.",
-    points: ["REST & GraphQL APIs", "Third-party integrations", "99.9% uptime guarantee"],
-    color: "#8E8E93",
+    desc: "The core engine behind your app. We build secure, fast backend services that power mobile apps, dashboards, and integrations.",
+    points: ["REST & GraphQL API endpoints", "Third-party system integrations", "High availability and data safety"],
   },
 ];
 
-// ─── Mobile App Development Data ────────────────────────────────────────────
+// ─── Mobile App Development Services Data ───────────────────────────────────
 const mobileServices = [
   {
-    icon: <Smartphone className="w-6 h-6" />,
+    number: "01",
     title: "iOS App (iPhone & iPad)",
-    desc: "Native iPhone and iPad apps published on the Apple App Store. Fast, smooth and perfectly designed for Apple users.",
-    points: ["App Store publish included", "Face ID & Touch ID login", "Push notifications & alerts"],
-    color: "#000000",
+    desc: "Native iPhone and iPad apps published on the Apple App Store. Fast, smooth, and designed for iOS users.",
+    points: ["App Store publishing included", "Face ID & Touch ID secure login", "Push notifications & updates"],
   },
   {
-    icon: <Smartphone className="w-6 h-6" />,
+    number: "02",
     title: "Android App",
-    desc: "Custom Android apps for your business, published on Google Play Store. Works on all Samsung, Redmi, OnePlus and other phones.",
-    points: ["Google Play Store publish", "Works on all Android phones", "Offline mode available"],
-    color: "#3DDC84",
+    desc: "Custom Android apps for your business, published on the Google Play Store. Tested on all Android phone models.",
+    points: ["Google Play Store publishing included", "Works across all Android smartphones", "Offline mode data caching"],
   },
   {
-    icon: <Zap className="w-5 h-5" />,
+    number: "03",
     title: "Cross-Platform App (iOS + Android)",
-    desc: "One app built for both iPhone and Android at the same time. Saves cost and time. Same features on both platforms.",
-    points: ["One codebase, two platforms", "Faster delivery & lower cost", "React Native / Flutter"],
-    color: "#007AFF",
+    desc: "One codebase built for both iPhone and Android at the same time. Reduces development timeline and total cost.",
+    points: ["Single codebase for iOS & Android", "Faster launch & lower investment", "Built with React Native / Flutter"],
   },
   {
-    icon: <ShoppingCart className="w-5 h-5" />,
+    number: "04",
     title: "E-Commerce Mobile App",
-    desc: "Your own shopping app on customers' phones. They browse products, add to cart, pay via UPI and track orders — just like Amazon or Flipkart.",
-    points: ["UPI & card payments", "Order tracking & history", "Push offer notifications"],
-    color: "#FF9500",
+    desc: "Your own shopping app on your customers' phones. Customers browse products, add to cart, and pay via UPI.",
+    points: ["UPI & debit/credit card checkout", "Order tracking & purchase history", "Push notifications for special offers"],
   },
   {
-    icon: <Bell className="w-5 h-5" />,
+    number: "05",
     title: "Delivery & Service App",
-    desc: "Apps for food delivery, courier, home services and more. With customer app, delivery partner app and admin panel.",
-    points: ["Live GPS tracking", "3 apps: customer + rider + admin", "Auto order assignment"],
-    color: "#FF3B30",
+    desc: "Applications for food delivery, courier services, and home services, with customer app, rider app, and admin dashboard.",
+    points: ["Live GPS tracking on map", "Complete system: customer, driver & admin", "Automated order assignment"],
   },
   {
-    icon: <Shield className="w-5 h-5" />,
+    number: "06",
     title: "Enterprise Mobile App",
-    desc: "Secure internal business apps for your staff — attendance, reports, field visits, approvals and CRM from their phone.",
-    points: ["Biometric & secure login", "Offline data sync", "Role-based access control"],
-    color: "#5856D6",
+    desc: "Internal business apps for staff to manage attendance, daily reports, field visits, approvals, and CRM from their phone.",
+    points: ["Biometric & OTP secure login", "Offline data synchronization", "Role-based staff permissions"],
   },
 ];
 
@@ -179,160 +167,207 @@ export const AppDevSectionSwitcher: React.FC<AppDevSectionSwitcherProps> = ({
 
   const [webPortfolioTab, setWebPortfolioTab] = useState("Static Website");
   const [mobilePortfolioTab, setMobilePortfolioTab] = useState("iOS App");
+  const webScrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollWeb = (direction: "left" | "right") => {
+    if (webScrollRef.current) {
+      const scrollAmount = webScrollRef.current.clientWidth * 0.85;
+      webScrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
 
   const services = activeTab === "web" ? webServices : mobileServices;
-  const currentTab = TABS.find((t) => t.id === activeTab)!;
 
   return (
-    <section id="app-dev-switcher" className="py-16 lg:py-24" style={{ background: "#F2F2F7" }}>
+    <section id="app-dev-switcher" className="py-16 lg:py-24 bg-white border-t border-neutral-200">
       <Container size="wide">
 
         {/* Section title */}
-        <div className="mb-10">
-          <h2 style={{
-            fontSize: "clamp(1.6rem,3.5vw,2.3rem)",
-            fontWeight: 700,
-            letterSpacing: "-0.025em",
-            color: "#1d1d1f",
-            marginBottom: "8px",
-          }}>
+        <div className="mb-12 max-w-3xl">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#DCC195] mb-3">
             {activeTab === "web" ? "Web Development Services" : "Mobile App Development Services"}
           </h2>
-          <p style={{ fontSize: "15px", color: "#86868b", maxWidth: "560px", lineHeight: 1.55, fontWeight: 400 }}>
+          <p className="text-base text-neutral-600 leading-relaxed">
             {activeTab === "web"
-              ? "From simple business websites to complex cloud software — we build everything your business needs to be online."
-              : "iPhone apps, Android apps or both together — we build, test and publish your app on the store."}
+              ? "From clean business websites to custom software — we build everything your business needs online."
+              : "iPhone apps and Android apps engineered cleanly, tested thoroughly, and published live on app stores."}
           </p>
         </div>
 
-        {/* ── Service Cards Grid ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* ── Service Cards Grid (Human Handcrafted Layout) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
           {services.map((svc, idx) => (
             <div
               key={idx}
-              className="group cursor-pointer transition-all duration-200 card-karla font-karla"
-              onClick={() => openLeadModal(svc.title)}
-              style={{
-                fontFamily: "var(--font-karla), 'Karla', sans-serif",
-                background: "#FFFFFF",
-                borderRadius: "20px",
-                padding: "24px",
-                border: "1px solid rgba(0,0,0,0.08)",
-                boxShadow: "0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.04)",
-              }}
+              className="flex flex-col justify-between pt-2 pb-6 border-b border-neutral-200"
             >
-              {/* Icon squircle */}
-              <div style={{
-                width: "46px", height: "46px",
-                borderRadius: "12px",
-                background: `${svc.color}15`,
-                display: "flex", alignItems: "center", justifyContent: "center",
-                color: svc.color,
-                marginBottom: "16px",
-              }}>
-                {svc.icon}
+              <div>
+                {/* Index Number */}
+                <div className="text-xs font-semibold text-neutral-400 mb-3 tracking-wide">
+                  {svc.number}
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-bold text-neutral-900 mb-2 leading-snug">
+                  {svc.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-sm text-neutral-600 leading-relaxed mb-4">
+                  {svc.desc}
+                </p>
+
+                {/* Feature points */}
+                <ul className="space-y-2 mb-6">
+                  {svc.points.map((pt, pIdx) => (
+                    <li
+                      key={pIdx}
+                      className="flex items-start gap-2 text-xs sm:text-sm text-neutral-700 leading-snug"
+                    >
+                      <span className="text-neutral-400 select-none">•</span>
+                      <span>{pt}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              {/* Title */}
-              <h3 style={{
-                fontFamily: "var(--font-karla), 'Karla', sans-serif",
-                fontSize: "17px",
-                fontWeight: 700,
-                color: "#1d1d1f",
-                letterSpacing: "-0.015em",
-                lineHeight: 1.25,
-                marginBottom: "8px",
-              }}>
-                {svc.title}
-              </h3>
-
-              {/* Description */}
-              <p style={{
-                fontFamily: "var(--font-karla), 'Karla', sans-serif",
-                fontSize: "13.5px",
-                color: "#86868b",
-                lineHeight: 1.55,
-                marginBottom: "18px",
-                fontWeight: 400,
-                letterSpacing: "-0.01em",
-              }}>
-                {svc.desc}
-              </p>
-
-              {/* Feature points (Normal bullet points) */}
-              <ul style={{
-                fontFamily: "var(--font-karla), 'Karla', sans-serif",
-                margin: "0 0 20px 0",
-                padding: "0 0 16px 0",
-                borderBottom: "0.5px solid rgba(60,60,67,0.10)",
-                listStyle: "none",
-              }}>
-                {svc.points.map((pt, pIdx) => (
-                  <li
-                    key={pIdx}
-                    style={{
-                      fontFamily: "var(--font-karla), 'Karla', sans-serif",
-                      display: "flex",
-                      alignItems: "flex-start",
-                      gap: "8px",
-                      marginBottom: pIdx < svc.points.length - 1 ? "8px" : 0,
-                      fontSize: "13px",
-                      color: "#424245",
-                      fontWeight: 400,
-                      lineHeight: "1.4",
-                      letterSpacing: "-0.01em",
-                    }}
-                  >
-                    <span
-                      style={{
-                        width: "5px",
-                        height: "5px",
-                        borderRadius: "50%",
-                        backgroundColor: "#86868b",
-                        flexShrink: 0,
-                        marginTop: "6px",
-                      }}
-                    />
-                    <span style={{ fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>{pt}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA row */}
-              <div style={{ display: "flex", alignItems: "center", gap: "5px", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>
-                <span style={{ fontSize: "13px", fontWeight: 600, color: "#0071e3", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>Get a Quote</span>
-                <ChevronRight className="w-3.5 h-3.5" style={{ color: "#0071e3", opacity: 0.8 }} />
+              {/* Action Link */}
+              <div className="pt-3 flex items-center justify-between border-t border-neutral-100">
+                <Link
+                  to="/contact"
+                  className="text-xs sm:text-sm font-semibold text-white bg-neutral-900 hover:bg-neutral-800 px-4 py-2 rounded transition-colors"
+                >
+                  Get Quote
+                </Link>
               </div>
             </div>
           ))}
         </div>
 
-        {/* ── Web Portfolio Section (Web tab only) ── */}
+        {/* ── Web Portfolio Section ── */}
         {activeTab === "web" && (
-          <div className="mt-20">
+          <div className="mt-20 pt-16 border-t border-neutral-200">
             {/* Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
               <div>
-                <h2 style={{ fontSize: "clamp(1.4rem,3vw,2rem)", fontWeight: 800, letterSpacing: "-0.03em", color: "#000000", marginBottom: "4px" }}>
-                  Websites Portfolio
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0E2036] mb-1">
+                  Recent Web Projects
                 </h2>
-                <p style={{ fontSize: "13.5px", color: "#8E8E93" }}>Real websites we built for our clients</p>
+                <p className="text-sm text-neutral-500">Real websites built for business clients</p>
               </div>
 
-              {/* Apple segmented filter control */}
-              <div className="inline-flex p-1 rounded-full bg-black/[0.05] border border-black/[0.06] shrink-0 self-start sm:self-auto">
-                {WEB_PORTFOLIO_TABS.map((tab) => {
-                  const isActive = webPortfolioTab === tab;
+              {/* Category Filter Links & Side Scroll Controls */}
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+                <div className="flex items-center gap-4 sm:gap-6">
+                  {WEB_PORTFOLIO_TABS.map((tab) => {
+                    const isActive = webPortfolioTab === tab;
+                    return (
+                      <button
+                        key={tab}
+                        onClick={() => {
+                          setWebPortfolioTab(tab);
+                          if (webScrollRef.current) {
+                            webScrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+                          }
+                        }}
+                        className={`text-sm font-medium transition-colors cursor-pointer select-none ${
+                          isActive
+                            ? "text-neutral-900 font-semibold border-b-2 border-neutral-900 pb-1"
+                            : "text-neutral-500 hover:text-neutral-900"
+                        }`}
+                      >
+                        {tab}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Side Scroll Arrows */}
+                <div className="flex items-center gap-1.5 pl-2 border-l border-neutral-200">
+                  <button
+                    onClick={() => scrollWeb("left")}
+                    aria-label="Scroll projects left"
+                    className="w-8 h-8 rounded-full border border-neutral-200 hover:border-neutral-900 hover:bg-neutral-900 hover:text-white flex items-center justify-center transition-colors text-neutral-700 cursor-pointer select-none"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={() => scrollWeb("right")}
+                    aria-label="Scroll projects right"
+                    className="w-8 h-8 rounded-full border border-neutral-200 hover:border-neutral-900 hover:bg-neutral-900 hover:text-white flex items-center justify-center transition-colors text-neutral-700 cursor-pointer select-none"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Side Scrolling 3-Column Container */}
+            <div
+              ref={webScrollRef}
+              className="flex gap-6 sm:gap-8 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            >
+              {(webPortfolio[webPortfolioTab] || []).map((site, idx) => (
+                <div
+                  key={idx}
+                  className="shrink-0 w-[85vw] sm:w-[calc(50%-16px)] lg:w-[calc((100%-64px)/3)] snap-start group cursor-pointer pb-4 border-b border-neutral-200"
+                  onClick={() => openLeadModal(`${webPortfolioTab} - ${site.name}`)}
+                >
+                  {/* Screenshot Container */}
+                  <div className="aspect-[16/10] overflow-hidden rounded bg-neutral-100 mb-3 border border-neutral-200">
+                    <img
+                      src={site.image}
+                      alt={site.name}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  {/* Card Footer */}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-base font-bold text-neutral-900 leading-snug">
+                        {site.name}
+                      </p>
+                      <p className="text-xs text-neutral-500 mt-0.5">{site.industry}</p>
+                    </div>
+                    <div className="text-neutral-400 group-hover:text-neutral-900 transition-colors">
+                      <ExternalLink className="w-4 h-4" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* ── Mobile App Portfolio Section ── */}
+        {activeTab === "mobile" && (
+          <div className="mt-20 pt-16 border-t border-neutral-200">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0E2036] mb-1">
+                  Mobile App Concepts We Build
+                </h2>
+                <p className="text-sm text-neutral-500">Popular app architectures tailored for your custom business requirements</p>
+              </div>
+
+              {/* Filter Links */}
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+                {MOBILE_PORTFOLIO_TABS.map((tab) => {
+                  const isActive = mobilePortfolioTab === tab;
                   return (
                     <button
                       key={tab}
-                      onClick={() => setWebPortfolioTab(tab)}
-                      className="px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-all duration-200 cursor-pointer select-none"
-                      style={{
-                        background: isActive ? "#FFFFFF" : "transparent",
-                        color: isActive ? "#000000" : "rgba(60,60,67,0.70)",
-                        boxShadow: isActive ? "0 2px 8px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)" : "none",
-                      }}
+                      onClick={() => setMobilePortfolioTab(tab)}
+                      className={`text-sm font-medium transition-colors cursor-pointer select-none ${
+                        isActive
+                          ? "text-neutral-900 font-semibold border-b-2 border-neutral-900 pb-1"
+                          : "text-neutral-500 hover:text-neutral-900"
+                      }`}
                     >
                       {tab}
                     </button>
@@ -341,177 +376,50 @@ export const AppDevSectionSwitcher: React.FC<AppDevSectionSwitcherProps> = ({
               </div>
             </div>
 
-            {/* Screenshot grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {(webPortfolio[webPortfolioTab] || []).map((site, idx) => (
-                <div
-                  key={idx}
-                  className="group cursor-pointer card-karla font-karla"
-                  onClick={() => openLeadModal(`${webPortfolioTab} - ${site.name}`)}
-                  style={{
-                    fontFamily: "var(--font-karla), 'Karla', sans-serif",
-                    background: "#FFFFFF",
-                    borderRadius: "16px",
-                    overflow: "hidden",
-                    border: "1px solid rgba(0,0,0,0.08)",
-                    boxShadow: "0 1px 3px rgba(0,0,0,0.04), 0 4px 14px rgba(0,0,0,0.05)",
-                    transition: "box-shadow 0.2s, transform 0.2s",
-                  }}
-                >
-                  {/* Browser chrome bar */}
-                  <div style={{ background: "#F2F2F7", padding: "8px 12px", display: "flex", alignItems: "center", gap: "6px", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>
-                    <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#FF5F57", display: "inline-block" }} />
-                    <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#FFBD2E", display: "inline-block" }} />
-                    <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#28C840", display: "inline-block" }} />
-                    <div style={{ flex: 1, background: "#FFFFFF", borderRadius: "6px", padding: "3px 10px", fontSize: "10px", color: "#8E8E93", marginLeft: "6px", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>
-                      www.realresult.in/{site.name.toLowerCase().replace(/\s+/g, "-")}
-                    </div>
-                  </div>
-
-                  {/* Screenshot */}
-                  <div style={{ aspectRatio: "16/10", overflow: "hidden", background: "#E5E5EA" }}>
-                    <img
-                      src={site.image}
-                      alt={site.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                      loading="lazy"
-                    />
-                  </div>
-
-                  {/* Card footer */}
-                  <div style={{ padding: "14px 16px", display: "flex", alignItems: "center", justifyContent: "space-between", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>
-                    <div>
-                      <p style={{ fontSize: "14px", fontWeight: 700, color: "#000000", letterSpacing: "-0.01em", marginBottom: "2px", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>
-                        {site.name}
-                      </p>
-                      <p style={{ fontSize: "11px", color: "#8E8E93", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>{site.industry}</p>
-                    </div>
-                    <div style={{
-                      width: "30px", height: "30px", borderRadius: "9px",
-                      background: "rgba(0,122,255,0.10)",
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      color: "#007AFF",
-                    }}>
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* ── Mobile App Portfolio Section (Mobile tab only) ── */}
-        {activeTab === "mobile" && (
-          <div className="mt-20">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-              <div>
-                <h2 style={{ fontSize: "clamp(1.4rem,3vw,2rem)", fontWeight: 800, letterSpacing: "-0.03em", color: "#000000", marginBottom: "4px" }}>
-                  Apps Like These We Can Build
-                </h2>
-                <p style={{ fontSize: "13.5px", color: "#8E8E93" }}>See popular apps as examples — we build similar ones for your business</p>
-              </div>
-
-              {/* Apple segmented filter control */}
-              <div className="inline-flex p-1 rounded-full bg-black/[0.05] border border-black/[0.06] shrink-0 self-start sm:self-auto">
-                {MOBILE_PORTFOLIO_TABS.map((tab) => {
-                  const isActive = mobilePortfolioTab === tab;
-                  return (
-                    <button
-                      key={tab}
-                      onClick={() => setMobilePortfolioTab(tab)}
-                      className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-all duration-200 cursor-pointer select-none"
-                      style={{
-                        background: isActive ? "#FFFFFF" : "transparent",
-                        color: isActive ? "#000000" : "rgba(60,60,67,0.70)",
-                        boxShadow: isActive ? "0 2px 8px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)" : "none",
-                      }}
-                    >
-                      {tab === "iOS App" && <Smartphone className="w-3.5 h-3.5" />}
-                      {tab === "Android App" && <Smartphone className="w-3.5 h-3.5 text-emerald-500" />}
-                      {tab === "Cross-Platform" && <Zap className="w-3.5 h-3.5" />}
-                      <span>{tab}</span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* App cards grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {/* App Cards Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
               {(mobilePortfolio[mobilePortfolioTab] || []).map((app, idx) => (
                 <div
                   key={idx}
-                  className="group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)] card-karla font-karla"
+                  className="group cursor-pointer text-center flex flex-col items-center gap-2.5 py-4 border-b border-neutral-200"
                   onClick={() => openLeadModal(`Build an app like ${app.name}`)}
-                  style={{
-                    fontFamily: "var(--font-karla), 'Karla', sans-serif",
-                    background: "#FFFFFF",
-                    borderRadius: "22px",
-                    padding: "20px 14px 18px",
-                    border: "1px solid rgba(0,0,0,0.07)",
-                    boxShadow: "0 2px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02)",
-                    textAlign: "center",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: "12px",
-                  }}
                 >
-                  {/* Official App icon squircle with Apple continuous corner */}
+                  {/* App Icon */}
                   <div
-                    className="relative flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-105"
+                    className="relative flex items-center justify-center overflow-hidden transition-transform duration-200 group-hover:scale-105"
                     style={{
-                      width: "62px",
-                      height: "62px",
-                      borderRadius: "15px",
-                      background: "#FFFFFF",
-                      boxShadow: "0 4px 14px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04)",
-                      border: "1px solid rgba(0,0,0,0.08)",
-                      padding: "2px",
-                      flexShrink: 0,
+                      width: "60px",
+                      height: "60px",
+                      borderRadius: "14px",
                     }}
                   >
                     <img
                       src={app.icon}
                       alt={app.name}
                       className="w-full h-full object-cover"
-                      style={{ borderRadius: "13px" }}
+                      style={{ borderRadius: "14px" }}
                       loading="lazy"
                     />
                   </div>
 
-                  {/* App name & category */}
+                  {/* App Name & Category */}
                   <div className="w-full">
-                    <p style={{ fontSize: "14px", fontWeight: 700, color: "#000000", letterSpacing: "-0.015em", lineHeight: 1.25, fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>
+                    <p className="text-sm font-bold text-neutral-900 leading-snug">
                       {app.name}
                     </p>
-                    <p style={{ fontSize: "11px", color: "#8E8E93", marginTop: "3px", fontWeight: 500, fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>
+                    <p className="text-xs text-neutral-500 mt-0.5">
                       {app.category}
                     </p>
                   </div>
 
-                  {/* Star rating pill */}
-                  <div
-                    className="flex items-center gap-1 px-2.5 py-0.5 rounded-full"
-                    style={{ background: "rgba(0,0,0,0.04)", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}
-                  >
-                    <span style={{ fontSize: "11px", color: "#FF9500" }}>★</span>
-                    <span style={{ fontSize: "11.5px", fontWeight: 600, color: "#3C3C43", fontFamily: "var(--font-karla), 'Karla', sans-serif" }}>{app.rating}</span>
+                  {/* Star rating (Clean text without pill box) */}
+                  <div className="flex items-center gap-1 text-xs text-neutral-600 font-medium">
+                    <span className="text-[#FF9500]">★</span>
+                    <span>{app.rating}</span>
                   </div>
 
-                  {/* Build similar CTA (App Store GET button style) */}
-                  <div
-                    className="w-full py-1.5 px-3 rounded-full text-center transition-all duration-200 group-hover:bg-[#007AFF] group-hover:text-white"
-                    style={{
-                      background: "rgba(0,122,255,0.08)",
-                      fontSize: "11px",
-                      fontWeight: 700,
-                      color: "#007AFF",
-                      letterSpacing: "-0.01em",
-                      fontFamily: "var(--font-karla), 'Karla', sans-serif",
-                    }}
-                  >
+                  {/* Build similar CTA link */}
+                  <div className="text-xs font-semibold text-[#007AFF] hover:underline pt-0.5">
                     Build Similar
                   </div>
                 </div>
@@ -519,7 +427,7 @@ export const AppDevSectionSwitcher: React.FC<AppDevSectionSwitcherProps> = ({
             </div>
 
             {/* Disclaimer */}
-            <p style={{ fontSize: "11.5px", color: "#8E8E93", textAlign: "center", marginTop: "16px", lineHeight: 1.5 }}>
+            <p style={{ fontSize: "11.5px", color: "#8E8E93", textAlign: "center", marginTop: "24px", lineHeight: 1.5 }}>
               * These are popular apps shown as reference examples only. We build similar apps for your business — not copies of these brands.
             </p>
           </div>
@@ -527,14 +435,13 @@ export const AppDevSectionSwitcher: React.FC<AppDevSectionSwitcherProps> = ({
 
         {/* Bottom CTA */}
         <div className="mt-12 text-center">
-          <Button
-            variant="primary"
-            size="lg"
-            onClick={() => openLeadModal(activeTab === "web" ? "web-development" : "mobile-app-development")}
+          <Link
+            to="/contact"
+            className="inline-block px-6 py-3 text-sm font-semibold text-white bg-neutral-900 hover:bg-neutral-800 rounded transition-colors"
           >
             {activeTab === "web" ? "Start Web Project" : "Start App Project"}
-          </Button>
-          <p style={{ fontSize: "12px", color: "#8E8E93", marginTop: "12px" }}>
+          </Link>
+          <p className="text-xs text-neutral-500 mt-3">
             Free consultation · No upfront payment · Tamil &amp; English support
           </p>
         </div>

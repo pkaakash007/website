@@ -105,7 +105,7 @@ export const GooglePlayLogo: React.FC<LogoProps> = ({ className = "w-5 h-5" }) =
 );
 
 /**
- * Official Instagram vector logo with rich gradient
+ * Official Instagram vector logo with authentic gradient and camera silhouette
  */
 export const InstagramLogo: React.FC<LogoProps> = ({ className = "w-5 h-5" }) => (
   <svg
@@ -116,7 +116,7 @@ export const InstagramLogo: React.FC<LogoProps> = ({ className = "w-5 h-5" }) =>
     aria-label="Instagram"
   >
     <defs>
-      <radialGradient id="platform-ig-grad" cx="20%" cy="105%" r="120%">
+      <radialGradient id="official-ig-grad" cx="20%" cy="105%" r="120%">
         <stop offset="0%" stopColor="#fdf497" />
         <stop offset="15%" stopColor="#fdf497" />
         <stop offset="35%" stopColor="#fd5949" />
@@ -124,10 +124,10 @@ export const InstagramLogo: React.FC<LogoProps> = ({ className = "w-5 h-5" }) =>
         <stop offset="85%" stopColor="#285AEB" />
       </radialGradient>
     </defs>
-    <rect width="24" height="24" rx="6" fill="url(#platform-ig-grad)" />
-    <rect x="5.5" y="5.5" width="13" height="13" rx="3.5" stroke="white" strokeWidth="1.5" fill="none" />
-    <circle cx="12" cy="12" r="3" stroke="white" strokeWidth="1.5" fill="none" />
-    <circle cx="15.8" cy="8.2" r="0.8" fill="white" />
+    <rect width="24" height="24" rx="6" fill="url(#official-ig-grad)" />
+    <rect x="5.5" y="5.5" width="13" height="13" rx="3.8" stroke="white" strokeWidth="1.6" fill="none" />
+    <circle cx="12" cy="12" r="3.2" stroke="white" strokeWidth="1.6" fill="none" />
+    <circle cx="15.8" cy="8.2" r="0.9" fill="white" />
   </svg>
 );
 
@@ -142,8 +142,37 @@ export const YouTubeLogo: React.FC<LogoProps> = ({ className = "w-5 h-5" }) => (
     xmlns="http://www.w3.org/2000/svg"
     aria-label="YouTube"
   >
-    <rect width="24" height="24" rx="6" fill="#FF0000" />
-    <path d="M16 12L10 8.5V15.5L16 12Z" fill="white" />
+    <rect width="24" height="24" rx="5.5" fill="#FF0000" />
+    <path d="M10 8.5L16 12L10 15.5V8.5Z" fill="#FFFFFF" />
+  </svg>
+);
+
+/**
+ * Official Google Multi-Color 'G' Logo
+ */
+export const GoogleLogo: React.FC<LogoProps> = ({ className = "w-5 h-5" }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-label="Google"
+  >
+    <path
+      d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+      fill="#4285F4"
+    />
+    <path
+      d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+      fill="#34A853"
+    />
+    <path
+      d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+      fill="#FBBC05"
+    />
+    <path
+      d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+      fill="#EA4335"
+    />
   </svg>
 );
 
@@ -153,21 +182,165 @@ export const YouTubeLogo: React.FC<LogoProps> = ({ className = "w-5 h-5" }) => (
 export const GoogleAdsLogo: React.FC<LogoProps> = ({ className = "w-5 h-5" }) => (
   <svg
     className={className}
-    viewBox="0 0 256 256"
+    viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    preserveAspectRatio="xMidYMid meet"
     aria-label="Google Ads"
   >
     <path
-      d="M5.888 166.405L90.88 20.9C101.676 27.256 156.116 57.384 164.908 63.114L79.916 208.627C70.621 220.907 -5.888 185.04 5.888 166.396V166.405Z"
+      d="M4.2 15.3L9.9 5.4c.8-1.4 2.6-1.9 4-1.1l.3.2c1.4.8 1.9 2.6 1.1 4L9.5 18.4c-.8 1.4-2.6 1.9-4 1.1l-.3-.2c-1.4-.8-1.9-2.6-1-4z"
       fill="#FBBC04"
     />
     <path
-      d="M250.084 166.402L165.092 20.906C153.21 1.132 127.619 -6.054 106.601 5.625C85.582 17.304 79.182 42.462 91.064 63.119L176.056 208.633C187.938 228.398 213.529 235.584 234.548 223.905C254.648 212.226 261.966 186.176 250.084 166.419V166.402Z"
+      d="M19.8 15.3L14.1 5.4c-.8-1.4-2.6-1.9-4-1.1l-.3.2c-1.4.8-1.9 2.6-1.1 4l5.7 9.9c.8 1.4 2.6 1.9 4 1.1l.3-.2c1.4-.8 1.9-2.6 1.1-4z"
       fill="#4285F4"
     />
-    <ellipse cx="42.664" cy="187.924" rx="42.664" ry="41.604" fill="#34A853" />
+    <circle cx="6.8" cy="17.2" r="2.8" fill="#34A853" />
   </svg>
 );
 
+/**
+ * Official Facebook vector logo
+ */
+export const FacebookLogo: React.FC<LogoProps> = ({ className = "w-5 h-5" }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-label="Facebook"
+  >
+    <circle cx="12" cy="12" r="12" fill="#1877F2" />
+    <path
+      d="M15.5 12h-2.5v8h-3.3v-8H7.5v-2.8h2.2V7.4c0-2.2 1.3-3.4 3.3-3.4 1 0 1.9.1 1.9.1v2.1h-1.1c-1.1 0-1.4.7-1.4 1.4v1.6h2.5l-.4 2.8z"
+      fill="#FFFFFF"
+    />
+  </svg>
+);
+
+/**
+ * Official WhatsApp vector logo
+ */
+export const WhatsAppLogo: React.FC<LogoProps> = ({ className = "w-5 h-5" }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-label="WhatsApp"
+  >
+    <circle cx="12" cy="12" r="12" fill="#25D366" />
+    <path
+      d="M17.5 14.7c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.2-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z"
+      fill="#FFFFFF"
+    />
+  </svg>
+);
+
+/**
+ * Official LinkedIn vector logo
+ */
+export const LinkedInLogo: React.FC<LogoProps> = ({ className = "w-5 h-5" }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-label="LinkedIn"
+  >
+    <rect width="24" height="24" rx="5" fill="#0A66C2" />
+    <path
+      d="M7.12 6.5C7.12 7.33 6.45 8 5.62 8C4.8 8 4.13 7.33 4.13 6.5C4.13 5.67 4.8 5 5.62 5C6.45 5 7.12 5.67 7.12 6.5ZM4.25 9.25H7V19H4.25V9.25ZM11.13 9.25H13.77V10.58H13.81C14.18 9.88 15.08 9.14 16.42 9.14C19.22 9.14 19.74 10.98 19.74 13.38V19H17V14.19C17 13.04 16.98 11.57 15.4 11.57C13.8 11.57 13.55 12.82 13.55 14.1V19H10.8V9.25H11.13Z"
+      fill="#FFFFFF"
+    />
+  </svg>
+);
+
+/**
+ * Official Prime Video / Amazon App Logo (Crisp Vector SVG)
+ */
+export const PrimeVideoLogo: React.FC<LogoProps> = ({ className = "w-5 h-5" }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-label="Prime Video"
+  >
+    <rect width="24" height="24" rx="5.5" fill="#0073D1" />
+    {/* "prime" */}
+    <path
+      d="M5.5 7.2h2c.8 0 1.4.2 1.8.6.4.4.6.9.6 1.5s-.2 1.1-.6 1.5c-.4.4-1 .6-1.8.6H6.7V13H5.5V7.2zm1.2 3.2h.7c.4 0 .7-.1.9-.3.2-.2.3-.5.3-.8s-.1-.6-.3-.8c-.2-.2-.5-.3-.9-.3h-.7v2.2zM10.8 9.2h1.1v.6c.2-.2.4-.4.7-.5.3-.1.6-.2.9-.2v1.2c-.3 0-.6.1-.8.2-.2.1-.4.3-.5.6v2h-1.4V9.2zM15 7.8c-.2 0-.4-.1-.5-.2-.1-.1-.2-.3-.2-.5s.1-.4.2-.5c.1-.1.3-.2.5-.2s.4.1.5.2c.1.1.2.3.2.5s-.1.4-.2.5c-.1.1-.3.2-.5.2zm-.6 1.4h1.2V13h-1.2V9.2z"
+      fill="#FFFFFF"
+    />
+    {/* "video" */}
+    <path
+      d="M5.8 14.8l1.1 3.2h1.2l1.1-3.2H8l-.6 2.1-.6-2.1H5.8zm3.9-.8c-.2 0-.3 0-.4-.1-.1-.1-.2-.2-.2-.4s.1-.3.2-.4c.1-.1.2-.1.4-.1s.3 0 .4.1c.1.1.2.2.2.4s-.1.3-.2.4c-.1.1-.2.1-.4.1zm-.6 1h1.1V18H9.1V15zm2.1 0h1.1v.5c.2-.2.4-.3.6-.4.2-.1.5-.2.8-.2.7 0 1.3.3 1.7.8.4.5.6 1.2.6 2s-.2 1.5-.6 2c-.4.5-1 .8-1.7.8-.3 0-.6-.1-.8-.2-.2-.1-.4-.3-.6-.5V20h-1.1V15zm2.2 4c.4 0 .7-.1.9-.4.2-.3.3-.8.3-1.4s-.1-1.1-.3-1.4c-.2-.3-.5-.4-.9-.4s-.7.1-.9.4c-.2.3-.3.8-.3 1.4s.1 1.1.3 1.4c.2.3.5.4.9.4z"
+      fill="#FFFFFF"
+    />
+    {/* Prime Smile curve */}
+    <path
+      d="M5.2 20.8c3.2 1.8 7.5 2 11.2.6.4-.1.7.3.5.7-.3.5-.7 1-1.2 1.3-.4.2-.8.3-1.1.2-3.4-1.2-7.2-1.1-10.4.3-.3.1-.7 0-.9-.3-.2-.4 0-.7.4-.9l1.5-.9z"
+      fill="#FF9900"
+    />
+  </svg>
+);
+
+export const AmazonLogo = PrimeVideoLogo;
+
+/**
+ * Official JioHotstar Logo (Exact 8-point silver star on gradient background)
+ */
+export const JioHotstarLogo: React.FC<LogoProps> = ({ className = "w-5 h-5" }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-label="JioHotstar"
+  >
+    <defs>
+      <linearGradient id="jiohotstar-bg-grad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#0084FF" />
+        <stop offset="45%" stopColor="#7028FF" />
+        <stop offset="100%" stopColor="#FF007A" />
+      </linearGradient>
+      <linearGradient id="jio-star-grad-1" x1="4" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#FFFFFF" />
+        <stop offset="50%" stopColor="#EDEDED" />
+        <stop offset="100%" stopColor="#D5D5D5" />
+      </linearGradient>
+    </defs>
+    <rect width="24" height="24" rx="6" fill="url(#jiohotstar-bg-grad)" />
+    {/* 8-Point Faceted JioHotstar Star */}
+    <path
+      d="M12.3 3.8l1.4 4.5 4.8-.8-3.4 3.5 3.9 3.2-4.9-.4-1.6 4.7-1.7-4.6-4.9.2 3.7-3.4-3.5-3.6 4.9.7 1.7-4z"
+      fill="url(#jio-star-grad-1)"
+      stroke="#FCE074"
+      strokeWidth="0.4"
+      strokeLinejoin="round"
+    />
+    <circle cx="12.2" cy="11.8" r="1.4" fill="#FFFFFF" opacity="0.9" />
+  </svg>
+);
+
+export const HotstarLogo = JioHotstarLogo;
+
+/**
+ * Official Spotify Logo (Vibrant Green circle with White waves)
+ */
+export const SpotifyLogo: React.FC<LogoProps> = ({ className = "w-5 h-5" }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-label="Spotify"
+  >
+    <circle cx="12" cy="12" r="12" fill="#1ED760" />
+    <path
+      d="M16.9 15.3c-.2 0-.37-.07-.52-.19-1.92-1.18-4.34-1.45-7.18-.8-.36.08-.72-.14-.81-.5-.08-.36.14-.72.5-.81 3.12-.71 5.81-.4 7.99.94.31.19.41.6.22.91-.12.28-.38.45-.66.45zm1.18-2.61c-.24 0-.47-.09-.65-.24-2.2-1.35-5.56-1.74-8.17-.95-.44.13-.91-.12-1.04-.56-.13-.44.12-.91.56-1.04 2.99-.91 6.72-.47 9.27 1.1.39.24.51.75.27 1.14-.15.34-.48.55-.84.55zm.13-2.73c-.28 0-.56-.11-.77-.29-2.6-1.55-6.9-1.69-9.39-.93-.53.16-1.09-.14-1.25-.66-.16-.53.14-1.09.66-1.25 2.94-.89 7.69-.72 10.7 1.07.47.28.62.89.34 1.36-.18.44-.58.7-.99.7z"
+      fill="#FFFFFF"
+    />
+  </svg>
+);

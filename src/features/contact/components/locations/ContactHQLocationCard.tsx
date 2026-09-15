@@ -40,10 +40,10 @@ export const ContactHQLocationCard: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-white border-b border-border">
+    <section className="py-20 bg-white border-b border-neutral-200/80">
       <Container size="wide">
         <div className="max-w-3xl mb-14 space-y-3">
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-bold text-black tracking-tight">
             Our Regional Meeting & Operations Desks
           </h2>
           <p className="text-base text-secondary leading-relaxed">
@@ -51,9 +51,11 @@ export const ContactHQLocationCard: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 lg:divide-x divide-neutral-200 border-y border-neutral-200 py-6">
           {hubs.map((hub, idx) => (
-            <LocationDeskCard key={idx} {...hub} />
+            <div key={idx} className="py-6 md:py-0 px-0 md:px-6 first:pl-0 last:pr-0">
+              <LocationDeskCard {...hub} />
+            </div>
           ))}
         </div>
       </Container>

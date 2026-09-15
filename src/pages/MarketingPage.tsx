@@ -6,6 +6,8 @@ import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
 import { ContactForm } from "@/components/common/ContactForm";
 import { getWhatsAppUrl } from "@/config";
+import MarketingGoalsSection from "@/features/digital-marketing/components/goals/MarketingGoalsSection";
+import MarketingWhySpecialSection from "@/features/digital-marketing/components/special/MarketingWhySpecialSection";
 import {
   TrendingUp,
   Search,
@@ -26,6 +28,8 @@ import {
   MessageCircle,
   ArrowRight,
 } from "lucide-react";
+
+
 
 
 const digitalAcquisition = [
@@ -169,8 +173,16 @@ export default function MarketingPage() {
         </Container>
       </section>
 
+      {/* How Online Marketing Can Help You Meet Your Goal */}
+      <MarketingGoalsSection />
+
+      {/* Why We Are Special From Other Digital Marketing & Branding Agencies */}
+      <MarketingWhySpecialSection />
+
       {/* Editorial Visual Hero Feature */}
       <section className="py-16 sm:py-20 bg-charcoal text-white border-b border-charcoal-border">
+
+
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-5 space-y-4">

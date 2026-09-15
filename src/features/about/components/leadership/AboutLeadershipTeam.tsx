@@ -1,51 +1,52 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
 import LeaderBioCard from "./LeaderBioCard";
-import { Code2, TrendingUp, Cpu, Palette } from "lucide-react";
 
 export const AboutLeadershipTeam: React.FC = () => {
   const leaders = [
     {
       role: "Lead Solutions Architect",
       discipline: "Software Engineering & Cloud Architecture",
-      icon: Code2,
-      bio: "12+ years designing distributed systems, high-concurrency microservices, multi-tenant databases, and enterprise mobile platforms.",
+      bio: "5+ years designing responsive web applications, high-performance databases, and custom mobile software platforms.",
     },
     {
       role: "Director of Performance Search",
-      discipline: "SEO, GEO & Algorithmic Growth",
-      icon: TrendingUp,
-      bio: "Pioneered early Generative Engine Optimization models and high-intent programmatic search systems for Tamil Nadu industrial exporters.",
+      discipline: "SEO & Search Engine Marketing",
+      bio: "Specializes in high-intent search campaigns, local Google Business SEO, and data-driven ad strategy across Tamil Nadu.",
     },
     {
-      role: "Head of Cloud Infrastructure & AI",
-      discipline: "DevOps, LLM Integration & SLA Operations",
-      icon: Cpu,
-      bio: "Specializes in carrier-grade uptime architectures, automated CI/CD pipelines, container orchestration, and bespoke RAG pipeline deployments.",
+      role: "Head of Cloud Infrastructure",
+      discipline: "DevOps & Cloud Systems",
+      bio: "Focuses on fast page loads, automated deployment pipelines, cloud uptime, and server security.",
     },
     {
       role: "Creative Director & UX Architect",
-      discipline: "Brand Design, Conversion UX & Product Systems",
-      icon: Palette,
-      bio: "Combines Swiss editorial typography, human behavioral psychology, and interactive digital experiences that turn visitors into long-term clients.",
+      discipline: "User Experience & Brand Systems",
+      bio: "Crafts clean, responsive website interfaces designed to give visitors a clear path to contact your business.",
     },
   ];
 
   return (
-    <section id="leadership" className="py-20 bg-white border-b border-border scroll-mt-20">
+    <section id="leadership" className="py-16 sm:py-20 bg-white border-b border-neutral-200 scroll-mt-20">
       <Container size="wide">
-        <div className="max-w-3xl mb-14 space-y-3">
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
-            Practitioners at the Helm
+        <div className="max-w-3xl mb-12 space-y-2">
+          <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 tracking-tight">
+            Our Leadership Team
           </h2>
-          <p className="text-base text-secondary leading-relaxed">
-            Every client account is personally spearheaded by senior directors who actively code, architect systems, and monitor search telemetry every day.
+          <p className="text-base text-neutral-600 leading-relaxed">
+            Directly managed by experienced engineering and digital marketing specialists who actively oversee every client project.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {leaders.map((leader, idx) => (
-            <LeaderBioCard key={idx} {...leader} />
+            <LeaderBioCard
+              key={idx}
+              role={leader.role}
+              discipline={leader.discipline}
+              bio={leader.bio}
+              number={String(idx + 1).padStart(2, "0")}
+            />
           ))}
         </div>
       </Container>
@@ -54,3 +55,4 @@ export const AboutLeadershipTeam: React.FC = () => {
 };
 
 export default AboutLeadershipTeam;
+

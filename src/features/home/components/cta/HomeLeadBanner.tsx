@@ -2,77 +2,42 @@ import React from "react";
 import { Container } from "@/components/layout/Container";
 import { openLeadModal } from "@/components/common/LeadModal";
 import { Button } from "@/components/common/Button";
-import { ShieldCheck, PhoneCall } from "lucide-react";
+import { Phone, Clock, ShieldCheck, ArrowRight } from "lucide-react";
 import { SEO_CONFIG } from "@/config/seo";
 
 export const HomeLeadBanner: React.FC = () => {
   return (
-    <section className="py-24 lg:py-32 bg-[#FFFFFF]">
+    <section className="py-20 sm:py-28 bg-white text-neutral-900 border-t border-neutral-200/80 relative overflow-hidden">
       <Container size="wide">
-        {/* Aeren CTA block — full-width, dark fill, minimal */}
-        <div
-          className="relative overflow-hidden rounded-3xl px-10 py-16 lg:px-20 lg:py-24 text-center"
-          style={{ background: "#0F0F0E" }}
-        >
-          {/* Large watermark behind content */}
-          <div
-            className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"
-            aria-hidden
-          >
-            <span
-              className="text-[clamp(6rem,20vw,18rem)] font-black tracking-[-0.06em] leading-none"
-              style={{ color: "rgba(255,255,255,0.025)" }}
+        <div className="relative z-10 max-w-3xl mx-auto space-y-6 text-center">
+          <span className="text-xs font-bold text-[#C5A059] uppercase tracking-wider block">
+            Let's Work Together
+          </span>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0E2036] tracking-tight leading-tight">
+            Ready to grow your business with real results?
+          </h2>
+
+          <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto font-normal">
+            Talk directly to our team in Erode. Whether you need Google Ads, local SEO, or a custom web &amp; mobile app — we'll create a clear plan tailored to your business.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
+            <button
+              type="button"
+              onClick={() => openLeadModal("home-lead-banner")}
+              className="text-sm sm:text-base font-extrabold text-[#0E2036] hover:text-[#C5A059] inline-flex items-center gap-2 cursor-pointer transition-colors"
             >
-              GROW
-            </span>
-          </div>
-
-          <div className="relative z-10 max-w-3xl mx-auto space-y-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[rgba(255,255,255,0.35)]">
-              Ready to Get Started?
-            </p>
-
-            <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-extrabold text-white tracking-[-0.04em] leading-[1.06]">
-              Ready to Outperform<br />Your Competition?
-            </h2>
-
-            <p className="text-[17px] text-[rgba(255,255,255,0.50)] leading-[1.60] max-w-lg mx-auto font-normal">
-              Talk to our team in Erode. Whether you need Google Ads, SEO, or a custom app — we'll create a clear plan that works for your business and budget.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-4">
-              <Button
-                variant="primary"
-                size="lg"
-                onClick={() => openLeadModal("home-lead-banner")}
-              >
-                Request Free Consultation
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                href="/contact"
-                className="!text-white !border-white/20 hover:!bg-white/10"
-                withArrow={false}
-              >
-                Contact Erode HQ
-              </Button>
-            </div>
-
-            {/* Trust signals */}
-            <div className="flex flex-wrap items-center justify-center gap-8 pt-8 border-t border-[rgba(255,255,255,0.08)]">
-              <div className="flex items-center gap-2 text-[12px] text-[rgba(255,255,255,0.38)]">
-                <ShieldCheck className="w-3.5 h-3.5" />
-                <span>Strict Mutual NDA</span>
-              </div>
-              <div className="flex items-center gap-2 text-[12px] text-[rgba(255,255,255,0.38)]">
-                <PhoneCall className="w-3.5 h-3.5" />
-                <span>{SEO_CONFIG.displayPhone}</span>
-              </div>
-              <div className="text-[12px] text-[rgba(255,255,255,0.38)]">
-                Reply within 24 hours
-              </div>
-            </div>
+              <span>Request Free Consultation</span>
+            </button>
+            
+            <a
+              href={`tel:${SEO_CONFIG.displayPhone.replace(/\s+/g, "")}`}
+              className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-neutral-700 hover:text-[#0E2036] transition-colors"
+            >
+              <Phone className="w-4 h-4 text-[#C5A059]" />
+              <span>Call {SEO_CONFIG.displayPhone}</span>
+            </a>
           </div>
         </div>
       </Container>

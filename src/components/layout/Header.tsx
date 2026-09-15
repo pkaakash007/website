@@ -7,13 +7,40 @@ import {
   ArrowRight,
   Phone,
   MessageCircle,
-  Search,
+  Layers,
 } from "lucide-react";
 import { BrandLogo } from "@/components/common/BrandLogo";
 import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { openSpotlightSearch } from "@/components/common/MacOSSpotlightSearch";
 import { getWhatsAppUrl, REAL_RESULT_CONFIG } from "@/config";
+
+const HeaderLinkedInIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true"
+  >
+    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.65 1.65 0 0 0-1.66 1.66 1.66 1.66 0 0 0 1.66 1.66 1.66 1.66 0 0 0 1.66-1.66 1.65 1.65 0 0 0-1.66-1.66Z" />
+  </svg>
+);
+
+const HeaderInstagramIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+);
 
 // ─── Dropdown Data Definitions (Apple.com Design System) ─────────────────────
 
@@ -23,6 +50,7 @@ export interface DropdownColItem {
   isModal?: boolean;
   isWhatsApp?: boolean;
   isPhone?: boolean;
+  badge?: string;
 }
 
 export interface NavDropdownData {
@@ -34,87 +62,220 @@ export interface NavDropdownData {
   col2: {
     title: string;
     items: DropdownColItem[];
-    footerLink?: { label: string; href: string };
   };
   col3: {
     title: string;
     items: DropdownColItem[];
-    footerLink?: { label: string; href: string };
   };
 }
 
 export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
   services: {
     col1: {
-      title: "Digital Marketing (17 Services)",
+      title: "Explore Services",
       items: [
-        { label: "Marketing Strategy", href: "/services/marketing-strategy" },
-        { label: "Search Engine Optimization (SEO)", href: "/services/seo" },
-        { label: "AI Search Optimization (AEO & GEO)", href: "/services/ai-search-optimization" },
-        { label: "Local SEO", href: "/services/local-seo" },
-        { label: "Paid Search & PPC", href: "/services/paid-search" },
-        { label: "Paid Social & Video Ads", href: "/services/paid-social" },
-        { label: "Social Media Management", href: "/services/social-media" },
-        { label: "Content Marketing & Copywriting", href: "/services/content-marketing" },
+        { label: "Website Design", href: "/application-development" },
+        { label: "Ecommerce Website", href: "/application-development" },
+        { label: "Mobile App Development", href: "/application-development" },
+        { label: "UI/UX Designing", href: "/application-development" },
+        { label: "Digital Marketing", href: "/digital-marketing" },
+        { label: "Search Engine Optimization", href: "/digital-marketing/seo" },
+        { label: "Social Media Marketing", href: "/digital-marketing/social-media-marketing" },
+        { label: "Video Editing & Production", href: "/services#video-editing" },
       ],
-      footerLink: { label: "Explore All 17 Digital Marketing Services", href: "/services/digital-marketing" },
+      footerLink: { label: "Explore All 12 Services", href: "/services" },
     },
     col2: {
-      title: "Calling & Messaging (5 Channels)",
+      title: "Creative & Branding",
       items: [
-        { label: "Bulk Voice Call Services", href: "/services/bulk-voice-calls" },
-        { label: "Real-Time AI Calling Services", href: "/services/real-time-ai-calling" },
-        { label: "Bulk SMS Services", href: "/services/bulk-sms" },
-        { label: "RCS Business Messaging", href: "/services/rcs-messaging" },
-        { label: "WhatsApp Marketing & Messaging", href: "/services/whatsapp-marketing" },
-        { label: "B2B Lead Generation & Funnels", href: "/services/lead-generation" },
-        { label: "Conversion Rate Optimization (CRO)", href: "/services/conversion-optimization" },
+        { label: "Logo Design & Branding", href: "/services#logo-design" },
+        { label: "Graphic Design", href: "/services#graphic-design" },
+        { label: "Ecommerce Photography", href: "/services#ecommerce-photography" },
+        { label: "Cyber Security Audits", href: "/application-development" },
+        { label: "Content Marketing & PR", href: "/digital-marketing/content-marketing" },
+        { label: "Cloud & Backend Architecture", href: "/application-development" },
       ],
-      footerLink: { label: "Explore Calling & Messaging Hub", href: "/services/calling-messaging" },
     },
     col3: {
-      title: "Websites, Apps & Software (12 Systems)",
+      title: "Service Delivery",
       items: [
-        { label: "Website Design & Development", href: "/services/website-development" },
-        { label: "Ecommerce Development", href: "/services/ecommerce-development" },
-        { label: "UI/UX & Product Design", href: "/services/ui-ux-design" },
-        { label: "Mobile App Development", href: "/services/mobile-app-development" },
-        { label: "Custom Software Development", href: "/services/custom-software" },
-        { label: "CRM, ERP & Business Systems", href: "/services/crm-erp" },
-        { label: "Workflow & Business Automation", href: "/services/workflow-automation" },
+        { label: "Free Architecture Consultation", isModal: true },
+        { label: "Sub-Second Speed SLA Guarantees", href: "/application-development" },
+        { label: "Direct WhatsApp Engineering Desk", isWhatsApp: true },
+        { label: "Verified Portfolio & Case Studies", href: "/services" },
       ],
-      footerLink: { label: "Explore All 34 Services", href: "/services" },
+    },
+  },
+
+  marketing: {
+    col1: {
+      title: "Explore Marketing",
+      items: [
+        { label: "Google Ads & PPC", href: "/digital-marketing" },
+        { label: "Search Engine Optimization", href: "/digital-marketing/seo" },
+        { label: "Social Media Marketing", href: "/digital-marketing/social-media-marketing" },
+        { label: "Instagram & Meta Ads", href: "/digital-marketing" },
+        { label: "Google Maps & Local SEO", href: "/digital-marketing/seo" },
+        { label: "Content Marketing & PR", href: "/digital-marketing/content-marketing" },
+        { label: "Conversion Optimization", href: "/digital-marketing" },
+      ],
+      footerLink: { label: "Explore Marketing Hub", href: "/digital-marketing" },
+    },
+    col2: {
+      title: "Growth Channels",
+      items: [
+        { label: "Direct Phone Call Leads", href: "/digital-marketing" },
+        { label: "WhatsApp Lead Generation", href: "/digital-marketing" },
+        { label: "Tamil Nadu Geo-Targeting", href: "/digital-marketing#reach" },
+        { label: "Ecommerce Ad Scaling", href: "/digital-marketing" },
+        { label: "Short-Form Video & Reels Ads", href: "/services#video-editing" },
+        { label: "Local Google 3-Pack Ranking", href: "/digital-marketing/seo" },
+      ],
+    },
+    col3: {
+      title: "Helpful Topics",
+      items: [
+        { label: "Free Website & SEO Audit", isModal: true },
+        { label: "Transparent Weekly Ad Reporting", href: "/digital-marketing#faq" },
+        { label: "Marketing FAQs & Timelines", href: "/digital-marketing#faq" },
+        { label: "Chat with Marketing Strategist", isWhatsApp: true },
+      ],
+    },
+  },
+
+  "app-dev": {
+    col1: {
+      title: "Explore Engineering",
+      items: [
+        { label: "iOS Mobile Applications", href: "/application-development" },
+        { label: "Android Mobile Applications", href: "/application-development" },
+        { label: "Custom Web Applications", href: "/application-development" },
+        { label: "Ecommerce Platforms", href: "/application-development" },
+        { label: "UI/UX & Figma Prototypes", href: "/application-development" },
+        { label: "Cloud APIs & Microservices", href: "/application-development" },
+        { label: "Enterprise SaaS Platforms", href: "/application-development" },
+      ],
+      footerLink: { label: "Explore Application Engineering", href: "/application-development" },
+    },
+    col2: {
+      title: "Platforms & Frameworks",
+      items: [
+        { label: "Apple iOS Ecosystem (Swift / SwiftUI)", href: "/application-development" },
+        { label: "Android Ecosystem (Kotlin / Jetpack)", href: "/application-development" },
+        { label: "React, Next.js & TypeScript Architecture", href: "/application-development" },
+        { label: "UPI & Razorpay Payment Integrations", href: "/application-development" },
+        { label: "App Store & Play Store Submissions", href: "/application-development" },
+        { label: "Biometric Auth & Push Notifications", href: "/application-development" },
+      ],
+    },
+    col3: {
+      title: "Engineering Standards",
+      items: [
+        { label: "100% Client Source Code IP Ownership", href: "/about" },
+        { label: "60fps Native UI & High Performance", href: "/application-development" },
+        { label: "Interactive Modern Tech Stack", href: "/application-development" },
+        { label: "Request Technical Quotation", isModal: true },
+      ],
     },
   },
 
   about: {
     col1: {
-      title: "Company",
+      title: "Explore Real Result",
       items: [
-        { label: "About Real Result", href: "/about" },
-        { label: "How We Work (5-Step Process)", href: "/how-we-work" },
-        { label: "Industries & Business Types", href: "/industries" },
-        { label: "Ways to Work Together", href: "/engagement" },
+        { label: "Company Story & Origins", href: "/about#story" },
+        { label: "Executive Leadership Team", href: "/about#leadership" },
+        { label: "Core Operating Values", href: "/about#values" },
+        { label: "Scale & Verified Milestones", href: "/about#stats" },
+        { label: "Global & Regional Presence", href: "/contact" },
       ],
       footerLink: { label: "Explore Company Profile", href: "/about" },
     },
     col2: {
-      title: "Work & Proof",
+      title: "Operating Principles",
       items: [
-        { label: "Our Work & Case Studies", href: "/work" },
-        { label: "Real Result FAQs", href: "/faq" },
-        { label: "Insights & Articles", href: "/insights" },
-        { label: "Follow-Up After Enquiry", href: "/insights/after-the-enquiry" },
+        { label: "Zero-Bullshit Transparent Metrics", href: "/about#values" },
+        { label: "Engineering-First Quality Standards", href: "/about#values" },
+        { label: "No Code Lock-In Policy", href: "/about#values" },
+        { label: "Client Privacy & Security Protocols", href: "/about" },
+        { label: "Careers & Engineering Culture", href: "/about" },
       ],
-      footerLink: { label: "View Our Work", href: "/work" },
     },
     col3: {
-      title: "Direct Action",
+      title: "Corporate Information",
       items: [
-        { label: "Let’s Talk Growth", href: "/contact" },
-        { label: "Plan My Campaign", href: "/contact/?interest=calling-messaging" },
-        { label: "Discuss My Project", href: "/contact/?interest=development" },
-        { label: "Direct WhatsApp Line", isWhatsApp: true },
+        { label: "Erode Global HQ & Regional Desks", href: "/contact" },
+        { label: "Corporate GST & Registration", href: "/contact" },
+        { label: "Schedule Strategic Partnership Briefing", isModal: true },
+        { label: "Direct Founder Discussion Desk", isWhatsApp: true },
+      ],
+    },
+  },
+
+  contact: {
+    col1: {
+      title: "Get in Touch",
+      items: [
+        { label: "Direct WhatsApp Support", isWhatsApp: true },
+        { label: "Phone Consultation Call", isPhone: true },
+        { label: "Initiate Project Scoping", href: "/contact" },
+        { label: "Erode Global Headquarters", href: "/contact" },
+        { label: "Coimbatore Technology Desk", href: "/contact" },
+        { label: "Chennai Regional Office", href: "/contact" },
+      ],
+      footerLink: { label: "Explore All Contact Channels", href: "/contact" },
+    },
+    col2: {
+      title: "Direct Assistance",
+      items: [
+        { label: "Request a 15-Min Callback", isModal: true },
+        { label: "Technical Support Desk", href: "/contact" },
+        { label: "Billing & Accounts Inquiries", href: "/contact" },
+        { label: "Career & Internship Inquiries", href: "/contact" },
+      ],
+    },
+    col3: {
+      title: "Office Hubs",
+      items: [
+        { label: "Perundurai Road, Erode (HQ)", href: "/contact" },
+        { label: "Avinashi Road, Coimbatore", href: "/contact" },
+        { label: "OMR IT Corridor, Chennai", href: "/contact" },
+        { label: "Hours: Mon - Sat (9:00 AM - 7:00 PM)", href: "/contact" },
+      ],
+    },
+  },
+
+  industries: {
+    col1: {
+      title: "Explore Industries",
+      items: [
+        { label: "Healthcare Digital Marketing", href: "/industries/healthcare" },
+        { label: "B2B Digital Marketing", href: "/industries/b2b" },
+        { label: "Ecommerce & D2C Brands", href: "/industries/ecommerce" },
+        { label: "Finance & BFSI Marketing", href: "/industries/finance" },
+        { label: "Real Estate Digital Marketing", href: "/industries/real-estate" },
+        { label: "Education Digital Marketing", href: "/industries/education" },
+      ],
+      footerLink: { label: "Explore All 12 Industry Playbooks", href: "/industries" },
+    },
+    col2: {
+      title: "Specialized Verticals",
+      items: [
+        { label: "Skincare & Beauty Marketing", href: "/industries/skincare-beauty" },
+        { label: "Electric Vehicles (EV)", href: "/industries/ev" },
+        { label: "Automotive & Dealerships", href: "/industries/automotive" },
+        { label: "FMCG Brand Marketing", href: "/industries/fmcg" },
+        { label: "Home Decor & Furnishings", href: "/industries/home-decor" },
+        { label: "Travel & Hospitality", href: "/industries/travel-tourism" },
+      ],
+    },
+    col3: {
+      title: "Vertical Practice",
+      items: [
+        { label: "Free Industry Strategy Consultation", isModal: true },
+        { label: "Healthcare Growth & Compliance Audit", href: "/industries/healthcare" },
+        { label: "Direct WhatsApp Specialist Desk", isWhatsApp: true },
+        { label: "Explore All 12 Playbooks", href: "/industries" },
       ],
     },
   },
@@ -128,11 +289,13 @@ interface NavLinkConfig {
 }
 
 const NAV_LINKS: NavLinkConfig[] = [
+  { label: "Home", href: "/", hasDropdown: false },
   { label: "Services", href: "/services", hasDropdown: true, dropdownKey: "services" },
-  { label: "Growth Solutions", href: "/solutions", hasDropdown: false },
-  { label: "Our Work", href: "/work", hasDropdown: false },
+  { label: "Digital Marketing", href: "/digital-marketing", hasDropdown: true, dropdownKey: "marketing" },
+  { label: "App Development", href: "/application-development", hasDropdown: true, dropdownKey: "app-dev" },
+  { label: "Industry", href: "/industries", hasDropdown: true, dropdownKey: "industries" },
   { label: "About", href: "/about", hasDropdown: true, dropdownKey: "about" },
-  { label: "Insights", href: "/insights", hasDropdown: false },
+  { label: "Contact", href: "/contact", hasDropdown: true, dropdownKey: "contact" },
 ];
 
 export const Header: React.FC = () => {
@@ -162,6 +325,12 @@ export const Header: React.FC = () => {
       hoverTimeoutRef.current = null;
     }
     setActiveDropdown(null);
+  };
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    closeDropdown();
+    setMobileOpen(false);
   };
 
   // Close dropdown on scroll or Escape key
@@ -296,8 +465,10 @@ export const Header: React.FC = () => {
         {/* LEFT: Logo */}
         <Link
           to="/"
-          className="shrink-0 flex items-center"
+          className="shrink-0 flex items-center cursor-pointer"
           onMouseEnter={() => handleNavMouseEnter(undefined)}
+          onClick={handleScrollToTop}
+          title="Go to Top / Home"
         >
           <BrandLogo size="md" theme="light" />
         </Link>
@@ -317,7 +488,7 @@ export const Header: React.FC = () => {
                 >
                   <Link
                     to={link.href}
-                    className="inline-flex items-center gap-1.5 transition-colors duration-150 px-3.5 py-2 rounded-lg cursor-pointer"
+                    className="inline-flex items-center gap-1.5 transition-colors duration-150 px-3 py-2 cursor-pointer"
                     style={{
                       fontSize: "13.5px",
                       fontWeight: isActive(link.href) || isCurrentActive ? 600 : 500,
@@ -325,10 +496,7 @@ export const Header: React.FC = () => {
                         isActive(link.href) || isCurrentActive
                           ? "#C5A059"
                           : "rgba(0,0,0,0.70)",
-                      background:
-                        isActive(link.href) || isCurrentActive
-                          ? "rgba(197,160,89,0.08)"
-                          : "transparent",
+                      background: "transparent",
                       letterSpacing: "-0.005em",
                     }}
                   >
@@ -344,12 +512,13 @@ export const Header: React.FC = () => {
                 key={link.href}
                 to={link.href}
                 onMouseEnter={() => handleNavMouseEnter(undefined)}
-                className="transition-colors duration-150 px-3.5 py-2 rounded-lg"
+                onClick={link.href === "/" ? handleScrollToTop : undefined}
+                className="transition-colors duration-150 px-3 py-2 cursor-pointer"
                 style={{
                   fontSize: "13.5px",
                   fontWeight: isActive(link.href) ? 600 : 500,
                   color: isActive(link.href) ? "#C5A059" : "rgba(0,0,0,0.70)",
-                  background: isActive(link.href) ? "rgba(197,160,89,0.08)" : "transparent",
+                  background: "transparent",
                   letterSpacing: "-0.005em",
                 }}
               >
@@ -358,26 +527,54 @@ export const Header: React.FC = () => {
             );
           })}
 
-          {/* Apple Spotlight Search Button */}
-          <button
-            type="button"
-            onClick={openSpotlightSearch}
-            onMouseEnter={() => handleNavMouseEnter(undefined)}
-            className="p-2 rounded-lg transition-colors cursor-pointer ml-1 text-neutral-600 hover:text-black hover:bg-black/[0.05]"
-            title="Spotlight Search"
-            aria-label="Open Spotlight Search"
-          >
-            <Search className="w-4 h-4" />
-          </button>
-
           {/* CTA Button */}
-          <Link
-            to="/contact/"
+          <Button
+            variant="primary"
+            size="sm"
+            onClick={() => openLeadModal("header-cta")}
             onMouseEnter={() => handleNavMouseEnter(undefined)}
-            className="ml-2 inline-flex items-center justify-center px-4 py-1.5 text-xs font-semibold text-white bg-[#0071E3] hover:bg-[#0077ED] transition-colors rounded-full shadow-sm"
+            className="ml-1.5"
           >
-            Let’s Talk Growth
-          </Link>
+            Free Consultation
+          </Button>
+
+          {/* Right Edge: Vertical Divider */}
+          <div className="h-5 w-px bg-neutral-200/90 mx-1 xl:mx-2 shrink-0" />
+
+          {/* Right Edge: Official Phone Number */}
+          <a
+            href={`tel:${REAL_RESULT_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
+            onMouseEnter={() => handleNavMouseEnter(undefined)}
+            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[12.5px] xl:text-[13px] font-semibold text-neutral-800 hover:text-[#0071e3] hover:bg-black/[0.04] transition-colors shrink-0 tracking-tight"
+            title={`Call Real Result: ${REAL_RESULT_CONFIG.contact.phone}`}
+          >
+            <Phone className="w-3.5 h-3.5 text-[#0071e3] shrink-0" />
+            <span className="whitespace-nowrap">{REAL_RESULT_CONFIG.contact.phone}</span>
+          </a>
+
+          {/* Right Edge: LinkedIn & Instagram Icons */}
+          <div className="flex items-center gap-0.5 shrink-0" onMouseEnter={() => handleNavMouseEnter(undefined)}>
+            <a
+              href="https://www.linkedin.com/company/realresultmarketing"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Real Result on LinkedIn"
+              title="LinkedIn"
+              className="p-1.5 rounded-lg text-neutral-700 hover:text-[#0A66C2] hover:bg-black/[0.04] transition-colors"
+            >
+              <HeaderLinkedInIcon className="w-4 h-4" />
+            </a>
+            <a
+              href="https://www.instagram.com/realresultmarketing"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Real Result on Instagram"
+              title="Instagram"
+              className="p-1.5 rounded-lg text-neutral-700 hover:text-[#E4405F] hover:bg-black/[0.04] transition-colors"
+            >
+              <HeaderInstagramIcon className="w-4 h-4" />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -444,18 +641,6 @@ export const Header: React.FC = () => {
                       )
                     )}
                   </div>
-                  {currentData.col2.footerLink && (
-                    <div className="mt-5 pt-3.5 border-t border-neutral-100">
-                      <Link
-                        to={currentData.col2.footerLink.href}
-                        onClick={closeDropdown}
-                        className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-neutral-500 hover:text-[#0071e3] transition-colors"
-                      >
-                        <span>{currentData.col2.footerLink.label}</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
-                    </div>
-                  )}
                 </div>
 
                 {/* ── Column 3: Helpful Topics / Resources ── */}
@@ -472,18 +657,6 @@ export const Header: React.FC = () => {
                       )
                     )}
                   </div>
-                  {currentData.col3.footerLink && (
-                    <div className="mt-5 pt-3.5 border-t border-neutral-100">
-                      <Link
-                        to={currentData.col3.footerLink.href}
-                        onClick={closeDropdown}
-                        className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-neutral-500 hover:text-[#0071e3] transition-colors"
-                      >
-                        <span>{currentData.col3.footerLink.label}</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
@@ -500,18 +673,18 @@ export const Header: React.FC = () => {
 
       {/* ── Mobile Navigation Bar ── */}
       <div className="lg:hidden flex items-center justify-between px-5 h-14">
-        <Link to="/" onClick={() => setMobileOpen(false)}>
+        <Link to="/" onClick={handleScrollToTop} className="cursor-pointer" title="Go to Top / Home">
           <BrandLogo size="sm" theme="light" />
         </Link>
         <div className="flex items-center gap-1">
-          <button
-            type="button"
-            onClick={openSpotlightSearch}
-            className="p-2 rounded-xl transition-colors cursor-pointer text-neutral-700 hover:text-black hover:bg-black/[0.06]"
-            aria-label="Open Search"
+          <a
+            href={`tel:${REAL_RESULT_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
+            className="p-2 rounded-xl transition-colors cursor-pointer text-neutral-700 hover:text-[#0071e3] hover:bg-black/[0.06]"
+            aria-label="Call Real Result"
+            title={`Call ${REAL_RESULT_CONFIG.contact.phone}`}
           >
-            <Search className="w-5 h-5" />
-          </button>
+            <Phone className="w-4 h-4 text-[#0071e3]" />
+          </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="p-2 rounded-xl cursor-pointer transition-colors"
@@ -630,8 +803,8 @@ export const Header: React.FC = () => {
                 <Link
                   key={link.href}
                   to={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="flex items-center px-4 py-3 rounded-2xl transition-colors"
+                  onClick={link.href === "/" ? handleScrollToTop : () => setMobileOpen(false)}
+                  className="flex items-center px-4 py-3 rounded-2xl transition-colors cursor-pointer"
                   style={{
                     fontSize: "15px",
                     fontWeight: isActive(link.href) ? 600 : 500,
@@ -648,13 +821,49 @@ export const Header: React.FC = () => {
 
             {/* Mobile Consultation CTA */}
             <div className="pt-3 pb-1">
-              <Link
-                to="/contact/"
-                onClick={() => setMobileOpen(false)}
-                className="w-full inline-flex items-center justify-center px-5 py-3 text-sm font-semibold text-white bg-[#0071E3] hover:bg-[#0077ED] transition-colors rounded-xl shadow-sm"
+              <Button
+                variant="primary"
+                size="md"
+                onClick={() => {
+                  setMobileOpen(false);
+                  openLeadModal("mobile-header-cta");
+                }}
+                className="w-full"
               >
-                Let’s Talk Growth
-              </Link>
+                Get Free Consultation
+              </Button>
+            </div>
+
+            {/* Mobile Phone & Social Channels Row */}
+            <div className="pt-3 pb-2 mt-2 border-t border-neutral-200/80 flex items-center justify-between px-1">
+              <a
+                href={`tel:${REAL_RESULT_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
+                className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-neutral-800 hover:text-[#0071e3]"
+              >
+                <Phone className="w-3.5 h-3.5 text-[#0071e3]" />
+                <span>{REAL_RESULT_CONFIG.contact.phone}</span>
+              </a>
+
+              <div className="flex items-center gap-1">
+                <a
+                  href="https://www.linkedin.com/company/realresultmarketing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Real Result on LinkedIn"
+                  className="p-2 rounded-lg text-neutral-700 hover:text-[#0A66C2] hover:bg-black/[0.05]"
+                >
+                  <HeaderLinkedInIcon className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://www.instagram.com/realresultmarketing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Real Result on Instagram"
+                  className="p-2 rounded-lg text-neutral-700 hover:text-[#E4405F] hover:bg-black/[0.05]"
+                >
+                  <HeaderInstagramIcon className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

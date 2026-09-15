@@ -15,25 +15,25 @@ export const ContactFAQItem: React.FC<FAQProps> = ({
   onToggle,
 }) => {
   return (
-    <div className="rounded-2xl border border-border bg-white overflow-hidden shadow-subtle">
+    <div className="border-b border-neutral-200/80 bg-white py-2 font-sans">
       <button
         type="button"
         onClick={onToggle}
-        className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
+        className="w-full py-3 text-left flex items-center justify-between gap-4 cursor-pointer select-none"
         aria-expanded={isOpen}
       >
-        <span className="text-base font-bold text-primary">
+        <span className="text-base font-bold text-[#0E2036]">
           {question}
         </span>
         <ChevronDown
-          className={`w-5 h-5 text-gold-700 shrink-0 transition-transform duration-200 ${
+          className={`w-5 h-5 text-[#C5A059] shrink-0 transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
         />
       </button>
 
       {isOpen && (
-        <div className="px-6 pb-6 pt-1 text-sm text-secondary leading-relaxed border-t border-border/70">
+        <div className="pb-4 pt-1 text-sm text-neutral-600 leading-relaxed font-normal">
           {answer}
         </div>
       )}

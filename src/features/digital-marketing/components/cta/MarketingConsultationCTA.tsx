@@ -16,31 +16,29 @@ export const MarketingConsultationCTA: React.FC = () => {
 
       <Container size="wide" className="relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            Ready to Build Your Predictable Revenue Engine?
+          <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-normal leading-snug">
+            Ready to Grow Your Business Online?
           </h2>
 
           <p className="text-neutral-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-normal">
-            Schedule a confidential 30-minute growth briefing with our senior performance engineers. We'll audit your current ad spend, competitor keyword reach, and attribution tracking with zero obligation.
+            Talk to our team about your digital marketing goals. We will review your current website, Google Ads, and social media presence for free.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Button
-              variant="primary"
-              size="lg"
+            <button
+              type="button"
               onClick={() => openLeadModal("us-growth-cta-primary")}
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white text-neutral-950 hover:bg-neutral-100 font-bold text-sm sm:text-base shadow-[0_8px_30px_rgba(255,255,255,0.2)] hover:shadow-[0_12px_35px_rgba(255,255,255,0.3)] transition-all duration-200 active:scale-95 cursor-pointer"
             >
-              Book Executive Growth Briefing
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
+              <span>Book a Free Call</span>
+            </button>
+            <button
+              type="button"
               onClick={() => openLeadModal("us-growth-cta-audit")}
-              className="!text-white !border-white/20 hover:!bg-white/10"
-              withArrow={false}
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-sm sm:text-base backdrop-blur-2xl border border-white/30 hover:border-white/50 shadow-[0_8px_30px_rgba(0,0,0,0.2)] transition-all duration-200 active:scale-95 cursor-pointer"
             >
-              Request 48-Hour Pipeline Audit
-            </Button>
+              <span>Get a Free Audit</span>
+            </button>
           </div>
         </div>
       </Container>

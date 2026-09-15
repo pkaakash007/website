@@ -55,7 +55,7 @@ export default function FinalCampaignCTA() {
             Strategy, creativity, media and intelligent communication built to make your brand impossible to ignore.
           </p>
 
-          {/* The 3 Action Buttons */}
+          {/* Action Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             {/* 1. START A CAMPAIGN */}
             <Button
@@ -77,17 +77,6 @@ export default function FinalCampaignCTA() {
             >
               TALK TO AN EXPERT
             </Button>
-
-            {/* 3. WHATSAPP */}
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-transparent hover:bg-white/5 text-gold hover:text-gold-200 border border-gold/50 text-xs sm:text-sm font-mono font-bold uppercase tracking-wider transition-all duration-200"
-            >
-              <MessageSquare className="w-4 h-4" />
-              <span>WHATSAPP</span>
-            </a>
           </div>
 
           {/* Sub-note */}

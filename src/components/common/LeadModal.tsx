@@ -24,19 +24,14 @@ export const LeadModal: React.FC = () => {
     <MacOSModal
       isOpen={isOpen}
       onClose={() => setIsOpen(false)}
-      title="Direct Consultation — Solutions Briefing"
-      badge="macOS 27 • Active SLA"
       maxWidth="max-w-xl"
     >
       <div className="mb-6">
-        <p className="text-[11px] font-bold uppercase tracking-wider text-[#0071E3] mb-1.5">
-          Executive Partnership Desk
-        </p>
         <h2 className="text-2xl font-bold text-neutral-900 tracking-tight">
-          Talk to a Solutions Expert
+          Talk with an Expert
         </h2>
-        <p className="text-neutral-500 text-sm mt-1">
-          Connect directly with an engineering, performance marketing, or AI technical director.
+        <p className="text-neutral-600 text-sm mt-1 leading-relaxed">
+          Tell us about your project or questions. Our team will review your details and get back to you promptly.
         </p>
       </div>
 

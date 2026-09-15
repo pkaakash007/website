@@ -1,94 +1,95 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface ServiceProps {
   title: string;
   href: string;
-  icon: React.ElementType;
   desc: string;
   badge?: string;
   tags: string[];
-  color?: string;
+  number?: string;
+  image?: string;
 }
 
 export const AppDevServiceCard: React.FC<ServiceProps> = ({
   title,
   href,
-  icon: Icon,
   desc,
   badge,
   tags,
-  color = "#007AFF",
+  number,
+  image,
 }) => {
   return (
     <Link
       to={href}
-      style={{ fontFamily: "var(--font-karla), 'Karla', sans-serif" }}
-      className="group p-6 sm:p-7 rounded-[24px] bg-[#F8F8FA] hover:bg-white border border-black/[0.06] hover:border-[#007AFF]/30 shadow-2xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full select-none card-karla font-karla"
+      className="group rounded-3xl bg-white border border-neutral-200/90 overflow-hidden shadow-xs hover:shadow-xl hover:border-neutral-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full select-none font-sans"
     >
-      <div className="space-y-4">
-        {/* Top: Icon + Badge */}
-        <div className="flex items-center justify-between">
-          <div
-            className="w-12 h-12 rounded-[16px] flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105"
-            style={{
-              background: `${color}14`,
-              color: color,
-            }}
-          >
-            <Icon className="w-6 h-6" />
+      <div>
+        {/* Top: Sector Photography Preview with Badges */}
+        {image && (
+          <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100">
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 pointer-events-none" />
+
+            {/* Top Left: Category Badge */}
+            {badge && (
+              <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/65 backdrop-blur-md text-[11px] font-semibold text-white tracking-wide uppercase">
+                {badge}
+              </span>
+            )}
+
+            {/* Top Right: Index Number */}
+            {number && (
+              <span className="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/90 backdrop-blur-md text-neutral-900 font-bold text-xs flex items-center justify-center font-mono shadow-xs">
+                {number}
+              </span>
+            )}
           </div>
+        )}
 
-          {badge && (
-            <span
-              className="text-[11px] font-bold px-2.5 py-1 rounded-full border"
-              style={{
-                background: `${color}0D`,
-                color: color,
-                borderColor: `${color}25`,
-              }}
-            >
-              {badge}
-            </span>
-          )}
-        </div>
-
-        {/* Content */}
-        <div>
-          <h3 className="text-[17px] font-bold text-neutral-900 group-hover:text-[#007AFF] transition-colors leading-snug">
+        {/* Content Body */}
+        <div className="p-6 sm:p-7 space-y-3">
+          <h3 className="text-lg sm:text-xl font-bold text-[#0E2036] group-hover:text-[#C5A059] transition-colors leading-snug">
             {title}
           </h3>
-          <p className="text-[13px] text-neutral-500 leading-relaxed mt-2 font-normal">
+          <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
             {desc}
           </p>
-        </div>
 
-        {/* Tech Stack Micro-Chips */}
-        <div className="pt-2">
-          <p className="text-[10.5px] font-bold text-neutral-400 uppercase tracking-wider mb-2">
-            Technologies &amp; Architecture
-          </p>
-          <div className="flex flex-wrap gap-1.5">
-            {tags.map((tag, tIdx) => (
-              <span
-                key={tIdx}
-                className="inline-flex items-center px-2.5 py-1 rounded-lg bg-white border border-black/[0.06] text-[11px] font-semibold text-neutral-700 shadow-3xs group-hover:border-black/[0.12] transition-colors"
-              >
-                {tag}
-              </span>
-            ))}
+          {/* Technology Pills */}
+          <div className="pt-3 border-t border-neutral-100">
+            <p className="text-[11px] font-semibold text-neutral-400 uppercase tracking-wider mb-2">
+              Technologies &amp; Tools
+            </p>
+            <div className="flex flex-wrap items-center gap-1.5 text-xs text-neutral-700">
+              {tags.map((tag, tIdx) => (
+                <span
+                  key={tIdx}
+                  className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-medium bg-neutral-100 text-neutral-800"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Footer subtle action */}
-      <div className="mt-5 pt-3.5 border-t border-black/[0.05] flex items-center justify-between text-xs font-semibold text-neutral-400 group-hover:text-[#007AFF] transition-colors">
-        <span>Learn More</span>
-        <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+      {/* Footer action link */}
+      <div className="px-6 sm:px-7 pb-6 pt-0 flex items-center justify-between text-xs sm:text-sm font-semibold text-[#0E2036] group-hover:text-[#C5A059] transition-colors">
+        <span>Learn Details</span>
+        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
       </div>
     </Link>
   );
 };
 
 export default AppDevServiceCard;
+

@@ -1,55 +1,46 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
-import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { PhoneCall, Building2 } from "lucide-react";
 import { SEO_CONFIG } from "@/config/seo";
 
 export const AboutBriefingCTA: React.FC = () => {
   return (
-    <section className="py-20 bg-canvas border-b border-border">
+    <section className="py-16 sm:py-20 bg-white border-b border-neutral-200">
       <Container size="wide">
-        <div className="p-8 lg:p-12 rounded-2xl bg-white border border-border shadow-sm">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-8 space-y-4">
-              <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
-                Ready to Experience Unified Execution?
-              </h2>
-              <p className="text-base text-secondary leading-relaxed max-w-2xl">
-                Schedule a confidential consultation with our executive leadership team at our Erode headquarters or via secure video conference.
-              </p>
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                <Button
-                  variant="gold"
-                  size="lg"
-                  onClick={() => openLeadModal("about-briefing-cta")}
-                  className="cursor-pointer font-bold"
-                >
-                  Book Executive Consultation
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  href="/contact"
-                  className="border-border text-primary hover:bg-surface"
-                >
-                  Contact Erode Headquarters
-                </Button>
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-8 space-y-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 tracking-tight">
+              Ready to Discuss Your Next Project?
+            </h2>
+            <p className="text-base text-neutral-600 leading-relaxed max-w-2xl font-normal">
+              Schedule a consultation with our team at our Erode office or connect with us directly to review your website, software, or digital marketing requirements.
+            </p>
+            <div className="pt-2 flex flex-wrap items-center gap-4">
+              <button
+                onClick={() => openLeadModal("about-briefing-cta")}
+                className="px-6 py-3 text-sm font-semibold text-white bg-neutral-900 hover:bg-neutral-800 rounded transition-colors cursor-pointer"
+              >
+                Get Started
+              </button>
+              <Link
+                to="/contact"
+                className="px-6 py-3 text-sm font-semibold text-neutral-700 border border-neutral-300 hover:bg-neutral-100 rounded transition-colors"
+              >
+                Contact Erode Office
+              </Link>
             </div>
+          </div>
 
-            <div className="lg:col-span-4 p-6 rounded-xl bg-canvas border border-border space-y-3 text-xs text-secondary">
-              <div className="flex items-center gap-2 font-bold text-primary text-sm">
-                <Building2 className="w-4 h-4 text-gold-700" />
-                <span>Central Operations</span>
-              </div>
-              <p className="leading-relaxed">
-                {SEO_CONFIG.headquarters.streetAddress}, {SEO_CONFIG.headquarters.addressLocality}, {SEO_CONFIG.headquarters.addressRegion} {SEO_CONFIG.headquarters.postalCode}, India
-              </p>
-              <div className="pt-2 border-t border-border flex items-center gap-2 text-primary font-semibold">
-                <PhoneCall className="w-4 h-4 text-gold-700" />
-                <span>{SEO_CONFIG.displayPhone}</span>
-              </div>
+          <div className="lg:col-span-4 space-y-3 text-xs text-neutral-600 border-t lg:border-t-0 lg:border-l border-neutral-200 pt-6 lg:pt-0 lg:pl-8">
+            <div className="font-bold text-neutral-900 text-sm">
+              Central Operations
+            </div>
+            <p className="leading-relaxed">
+              {SEO_CONFIG.headquarters.streetAddress}, {SEO_CONFIG.headquarters.addressLocality}, {SEO_CONFIG.headquarters.addressRegion} {SEO_CONFIG.headquarters.postalCode}, India
+            </p>
+            <div className="pt-2 border-t border-neutral-200 text-neutral-900 font-semibold text-sm">
+              Phone: {SEO_CONFIG.displayPhone}
             </div>
           </div>
         </div>
@@ -59,3 +50,4 @@ export const AboutBriefingCTA: React.FC = () => {
 };
 
 export default AboutBriefingCTA;
+

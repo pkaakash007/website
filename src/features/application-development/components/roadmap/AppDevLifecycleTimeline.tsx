@@ -1,122 +1,111 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
-import {
-  FileCode,
-  Layout,
-  GitBranch,
-  ShieldCheck,
-  Rocket,
-  CheckCircle,
-} from "lucide-react";
+
+interface Phase {
+  number: string;
+  title: string;
+  timing: string;
+  summary: string;
+  keyPoints: string[];
+}
+
+const PROCESS_PHASES: Phase[] = [
+  {
+    number: "01",
+    title: "Discovery & Planning",
+    timing: "Phase 1",
+    summary:
+      "We sit down with you to understand your exact business workflow, specify technical requirements, and define clear project milestones.",
+    keyPoints: ["System Architecture Blueprint", "Database Schema Design", "Milestone & Timeline Roadmap"],
+  },
+  {
+    number: "02",
+    title: "UI/UX & Interactive Design",
+    timing: "Phase 2",
+    summary:
+      "We design clickable, high-fidelity prototypes in Figma so you can test every screen, button, and user journey before we write code.",
+    keyPoints: ["Mobile & Web Wireframes", "Interactive Clickable Prototype", "Validated User Journeys"],
+  },
+  {
+    number: "03",
+    title: "Sprint Development & QA",
+    timing: "Phase 3",
+    summary:
+      "Our team builds your software in focused 2-week development sprints with regular staging demos, security reviews, and cross-device testing.",
+    keyPoints: ["Live Staging Demos", "Full-Stack API Integration", "Security & Speed Audits"],
+  },
+  {
+    number: "04",
+    title: "Launch & Source Code Transfer",
+    timing: "Phase 4",
+    summary:
+      "We handle cloud deployment, publish mobile apps to the App Store and Google Play, and hand over 100% of source code and credentials to your team.",
+    keyPoints: ["Production Cloud Setup", "App Store & Play Store Release", "100% IP & Code Ownership"],
+  },
+];
 
 export const AppDevLifecycleTimeline: React.FC = () => {
-  const steps = [
-    {
-      step: "01",
-      title: "Technical Discovery & Architecture",
-      icon: FileCode,
-      duration: "Week 1 - 2",
-      description:
-        "Requirements mapping, database schema design, third-party API audit, system architecture blueprint, and milestone roadmap alignment.",
-      outcomes: ["Software Architecture Document", "Database ER Diagrams", "Milestone Delivery SLA"],
-    },
-    {
-      step: "02",
-      title: "UI/UX & Interactive Prototype",
-      icon: Layout,
-      duration: "Week 2 - 3",
-      description:
-        "User flow validation, clickable mobile and desktop wireframes in Figma, responsive design token systems, and client stakeholder review.",
-      outcomes: ["Interactive Figma Prototypes", "Design System Tokens", "Validated User Journeys"],
-    },
-    {
-      step: "03",
-      title: "Agile Sprint Development",
-      icon: GitBranch,
-      duration: "Week 3 - 8",
-      description:
-        "Two-week agile sprints with continuous integration, automated test coverage, staging server previews, and transparent code reviews.",
-      outcomes: ["Bi-weekly Staging Demos", "Clean TypeScript / Node Code", "Automated CI/CD Pipelines"],
-    },
-    {
-      step: "04",
-      title: "Security, QA & Performance Tuning",
-      icon: ShieldCheck,
-      duration: "Week 8 - 10",
-      description:
-        "Automated end-to-end testing, cross-device mobile verification, load testing, SQL injection / XSS prevention, and OWASP compliance.",
-      outcomes: ["Security Vulnerability Audit", "Sub-100ms API Latency", "Zero Breaking Defects"],
-    },
-    {
-      step: "05",
-      title: "Cloud Launch & SLA Handover",
-      icon: Rocket,
-      duration: "Week 10+",
-      description:
-        "Zero-downtime production deployment, DNS cutover, App Store / Play Store submission, complete source code handover, and 24/7 SLA monitoring.",
-      outcomes: ["Full Source Code & IP Transfer", "App Store Approvals", "24/7 Production SLA"],
-    },
-  ];
-
   return (
-    <section className="py-20 bg-canvas border-b border-border">
+    <section className="py-20 sm:py-28 bg-[#FBFBFA] border-t border-b border-neutral-200 font-sans">
       <Container size="wide">
-        <div className="max-w-3xl mb-14 space-y-3">
-          <Badge variant="gold">Development Roadmap</Badge>
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
-            How We Build & Ship Software
+        {/* Section Header */}
+        <div className="max-w-3xl mb-12 sm:mb-16 space-y-3">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#C5A059] tracking-wider uppercase">
+            <span>Development Workflow</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0E2036] leading-tight">
+            How We Build &amp; Ship Projects
           </h2>
-          <p className="text-base text-secondary leading-relaxed">
-            Predictable delivery timelines with zero surprises. You retain 100% intellectual property and full source code ownership at every stage.
+          <p className="text-base sm:text-lg text-neutral-600 font-normal leading-relaxed">
+            A straightforward 4-phase process to turn your idea into reliable production software—delivered on time with 100% source code ownership.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {steps.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={idx}
-                className="p-7 rounded-2xl bg-white border border-border hover:border-gold/60 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xl font-bold text-gold-700">
-                      {item.step}
-                    </span>
-                    <span className="text-xs text-muted bg-surface px-2 py-0.5 rounded border border-border">
-                      {item.duration}
-                    </span>
-                  </div>
-
-                  <div className="w-10 h-10 rounded-xl bg-surface flex items-center justify-center text-primary">
-                    <Icon className="w-5 h-5" />
-                  </div>
-
-                  <h3 className="text-base font-bold text-primary">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-xs text-secondary leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-
-                <div className="pt-4 mt-4 border-t border-border space-y-1.5">
-                  <span className="text-xs text-muted font-semibold block">
-                    Deliverables:
+        {/* 4 Clean Editorial Process Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {PROCESS_PHASES.map((phase) => (
+            <div
+              key={phase.number}
+              className="bg-white rounded-2xl p-7 sm:p-8 border border-neutral-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex flex-col justify-between space-y-6 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-shadow duration-200"
+            >
+              <div className="space-y-4">
+                {/* Phase Badge & Number */}
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-[#C5A059] bg-[#C5A059]/10 px-2.5 py-1 rounded-md">
+                    {phase.timing}
                   </span>
-                  {item.outcomes.map((out, i) => (
-                    <div key={i} className="flex items-start gap-1.5 text-xs text-secondary">
-                      <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                      <span className="line-clamp-1">{out}</span>
-                    </div>
-                  ))}
+                  <span className="text-sm font-bold text-neutral-400">
+                    {phase.number}
+                  </span>
                 </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-bold text-[#0E2036] tracking-tight leading-snug">
+                  {phase.title}
+                </h3>
+
+                {/* Plain English Summary */}
+                <p className="text-sm text-neutral-600 leading-relaxed font-normal">
+                  {phase.summary}
+                </p>
               </div>
-            );
-          })}
+
+              {/* Deliverable Items */}
+              <div className="pt-4 border-t border-neutral-100 space-y-2">
+                <span className="text-xs font-semibold text-neutral-400 uppercase tracking-wider block">
+                  Key Deliverables
+                </span>
+                <ul className="space-y-1.5">
+                  {phase.keyPoints.map((point, pIdx) => (
+                    <li key={pIdx} className="text-xs text-neutral-700 flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 shrink-0 mt-1.5" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
       </Container>
     </section>
@@ -124,3 +113,5 @@ export const AppDevLifecycleTimeline: React.FC = () => {
 };
 
 export default AppDevLifecycleTimeline;
+
+

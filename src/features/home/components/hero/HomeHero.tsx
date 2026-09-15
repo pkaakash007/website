@@ -1,6 +1,55 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { Button } from "@/components/common/Button";
+import { ArrowRight } from "lucide-react";
+
+const TypewriterText: React.FC = () => {
+  const [displayText, setDisplayText] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const words = [
+    "Get Real Results.",
+    "Get More Customers.",
+    "Scale Your Revenue.",
+    "Build Custom Apps.",
+  ];
+
+  useEffect(() => {
+    const currentWord = words[wordIndex];
+    let timer: NodeJS.Timeout;
+
+    if (!isDeleting) {
+      if (displayText.length < currentWord.length) {
+        timer = setTimeout(() => {
+          setDisplayText(currentWord.slice(0, displayText.length + 1));
+        }, 90);
+      } else {
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, 2200);
+      }
+    } else {
+      if (displayText.length > 0) {
+        timer = setTimeout(() => {
+          setDisplayText(currentWord.slice(0, displayText.length - 1));
+        }, 45);
+      } else {
+        setIsDeleting(false);
+        setWordIndex((prev) => (prev + 1) % words.length);
+      }
+    }
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, wordIndex]);
+
+  return (
+    <span className="inline-flex items-center min-h-[1.15em]">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#A67C1E]">
+        {displayText}
+      </span>
+    </span>
+  );
+};
 
 export const HomeHero: React.FC = () => {
   return (
@@ -68,9 +117,7 @@ export const HomeHero: React.FC = () => {
                 style={{ letterSpacing: "-0.035em" }}
               >
                 Grow Your Business.<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#A67C1E]">
-                  Get Real Results.
-                </span>
+                <TypewriterText />
               </h1>
 
               {/* Subtitle Description */}
@@ -78,26 +125,21 @@ export const HomeHero: React.FC = () => {
                 Tamil Nadu&apos;s premier agency unifying high-converting digital marketing campaigns with scalable custom web &amp; mobile application engineering.
               </p>
 
-              {/* Pill CTA Buttons with #C5A059 Brand Gold */}
-              <div className="flex flex-wrap items-center gap-3.5">
-                <Button
-                  variant="primary"
-                  size="lg"
+              {/* Clean Inline CTAs */}
+              <div className="flex flex-wrap items-center gap-6">
+                <button
+                  type="button"
                   onClick={() => openLeadModal("home-hero-white-gold")}
-                  className="!px-8 !py-4 font-extrabold shadow-[0_10px_35px_rgba(197,160,89,0.38)]"
+                  className="cursor-pointer transition-colors text-sm sm:text-base font-extrabold text-[#0E2036] hover:text-[#C5A059] flex items-center gap-2"
                 >
-                  Start Your Project
-                </Button>
-                <Button
-                  variant="secondary"
-                  size="lg"
+                  <span>Start Your Project</span>
+                </button>
+                <a
                   href="#pillars"
-                  className="!px-7 !py-4 font-bold border-neutral-300"
-                  withArrow={false}
-                  withWatermark={false}
+                  className="cursor-pointer transition-colors text-sm sm:text-base font-bold text-neutral-700 hover:text-[#0E2036] flex items-center gap-1.5"
                 >
-                  Explore Services
-                </Button>
+                  <span>Explore Services</span>
+                </a>
               </div>
 
             </div>

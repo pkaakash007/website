@@ -1,8 +1,30 @@
 /* ============================================================
-   OFFICIAL APPLE SAN FRANCISCO (SF) TYPOGRAPHY SYSTEM
-   Downloaded from Apple Developer Design Resources
-   Includes SF Pro Display, SF Pro Text, SF Compact & SF Mono
+   GOOGLE SANS TYPOGRAPHY SYSTEM
+   Primary Font System for Real Result Application
    ============================================================ */
+
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: local('Google Sans'),
+       local('Google Sans Regular'),
+       local('Product Sans'),
+       local('Plus Jakarta Sans'),
+       url('https://fonts.gstatic.com/s/plusjakartasans/v8/L0xYDF4xlVxm6RBV5505-L1WT7vde49Im31g0EF8.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Google Sans Display';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: local('Google Sans Display'),
+       local('Google Sans'),
+       local('Plus Jakarta Sans'),
+       url('https://fonts.gstatic.com/s/plusjakartasans/v8/L0xYDF4xlVxm6RBV5505-L1WT7vde49Im31g0EF8.woff2') format('woff2');
+}
 
 /* ── SF Pro Display (Large Titles, Section Headers, Navigation) ── */
 @font-face {

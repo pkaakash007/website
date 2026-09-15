@@ -3,25 +3,26 @@ import { Outlet } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { LeadModal } from "@/components/common/LeadModal";
-import { MacOSSpotlightSearch } from "@/components/common/MacOSSpotlightSearch";
+import { ScrollToTopButton } from "@/components/common/ScrollToTopButton";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 export const RootLayout: React.FC = () => {
   useScrollToTop();
 
   return (
-    <div className="flex flex-col min-h-screen text-[#0F0F0E]" style={{ background: "#F2F2F7", fontFamily: "var(--font-system)" }}>
+    <div className="flex flex-col min-h-screen text-[#0F0F0E] bg-white font-sans">
       <Header />
       <main className="flex-grow">
         <Outlet />
       </main>
       <Footer />
 
-      {/* Global Interactive Overlays & Drawers */}
+      {/* Global Interactive Overlays & Floating Actions */}
       <LeadModal />
-      <MacOSSpotlightSearch />
+      <ScrollToTopButton />
     </div>
   );
 };
 
 export default RootLayout;
+

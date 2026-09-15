@@ -85,7 +85,6 @@ export const MarketingPillarsGrid: React.FC = () => {
     <section id="services" className="py-20 bg-canvas border-b border-border scroll-mt-20">
       <Container size="wide">
         <div className="max-w-3xl mb-14 space-y-3">
-          <Badge variant="gold">Specialized Capabilities</Badge>
           <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
             Eight Disciplines of Engineered Growth
           </h2>

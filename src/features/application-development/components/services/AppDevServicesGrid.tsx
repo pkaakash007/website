@@ -1,269 +1,224 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "@/components/layout/Container";
-import AppDevServiceCard from "./AppDevServiceCard";
+import { openLeadModal } from "@/components/common/LeadModal";
 import {
   Smartphone,
   Globe,
-  Cloud,
   Server,
-  Cpu,
-  Layers,
-  ShieldCheck,
-  Palette,
-  ChevronLeft,
-  ChevronRight,
+  Cloud,
+  MessageSquare,
+  Shield,
+  ArrowRight,
 } from "lucide-react";
 
 export const appDevDisciplines = [
   {
-    title: "Mobile App Development",
-    href: "/application-development",
+    id: "mobile",
+    title: "Mobile Apps",
+    badge: "iOS & Android",
     icon: Smartphone,
-    color: "#007AFF",
-    desc: "Cross-platform mobile applications built using modern frameworks. Features offline-first database sync, real-time push notifications, and native hardware performance.",
-    badge: "Mobile Apps",
-    tags: ["React Native", "Flutter", "Offline Sync", "Push Alerts"],
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&q=80",
+    headline: "Custom iPhone & Android apps built for your business",
+    description:
+      "We design and build easy-to-use mobile apps, test them on all devices, and handle publishing on Google Play Store and Apple App Store.",
+    points: [
+      "Publishing on Google Play Store & Apple App Store included",
+      "UPI, card payments & instant WhatsApp notifications",
+      "100% full source code ownership handed over to you",
+    ],
+    cta: "Build a Mobile App",
   },
   {
-    title: "Custom Web Applications",
-    href: "/application-development",
+    id: "web",
+    title: "Websites & Portals",
+    badge: "Fast & Responsive",
     icon: Globe,
-    color: "#30B0C7",
-    desc: "Single-page and server-rendered web applications built on React, TypeScript, Next.js, and Vite. Optimized for instant load speeds, responsive layouts, and rock-solid reliability.",
-    badge: "Full-Stack Web",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80",
+    headline: "Fast business websites and custom web portals",
+    description:
+      "We create clean, modern websites that load instantly on mobile phones and computers to help you get more customer inquiries.",
+    points: [
+      "Loads in under 1 second on mobile phones & 4G/5G",
+      "Direct WhatsApp chat and lead inquiry forms",
+      "Easy admin panel so your team can update content anytime",
+    ],
+    cta: "Build a Website",
   },
   {
-    title: "SaaS Platform Engineering",
-    href: "/application-development",
-    icon: Cloud,
-    color: "#5856D6",
-    desc: "Multi-tenant cloud Software-as-a-Service architecture, automated subscription billing, role-based access control (RBAC), multi-region database failover, and tenant isolation.",
-    badge: "Cloud SaaS",
-    tags: ["Multi-Tenant", "Stripe / UPI", "PostgreSQL", "Redis"],
-  },
-  {
-    title: "Enterprise ERP & Operational Software",
-    href: "/application-development",
+    id: "erp",
+    title: "Billing & ERP",
+    badge: "Factory & Operations",
     icon: Server,
-    color: "#34C759",
-    desc: "Automated inventory management, textile batch tracking, factory floor scheduling, automated billing, and supply chain management engineered for Tamil Nadu manufacturers.",
-    badge: "Enterprise Scale",
-    tags: ["Custom ERP", "Batch Tracking", "Supply Chain", "Automated Billing"],
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80",
+    headline: "Software for your factory, warehouse, and billing",
+    description:
+      "Replace confusing Excel sheets with a simple software system that tracks your stock, customer orders, worker shifts, and GST bills in one place.",
+    points: [
+      "Live warehouse stock tracking with low-inventory alerts",
+      "1-click GST invoices, purchase orders & ledger reports",
+      "Works smoothly on desktop, tablets, and mobile phones",
+    ],
+    cta: "Build Custom ERP",
   },
   {
-    title: "AI Agents & LLM Integration",
-    href: "/application-development",
-    icon: Cpu,
-    color: "#AF52DE",
-    desc: "Custom generative AI tools, Retrieval-Augmented Generation (RAG) knowledge bots, intelligent document scanning, and automated WhatsApp workflow assistants.",
-    badge: "AI Automation",
-    tags: ["OpenAI", "LangChain", "RAG Pipeline", "Vector DB"],
+    id: "saas",
+    title: "SaaS Software",
+    badge: "Subscription Product",
+    icon: Cloud,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80",
+    headline: "Turn your business idea into a software subscription",
+    description:
+      "We build complete online software where your customers can sign up, create accounts, and pay monthly or annual subscriptions automatically.",
+    points: [
+      "Automated monthly and yearly subscription billing",
+      "Separate secure accounts for every business customer",
+      "Admin dashboard to track active users and revenue",
+    ],
+    cta: "Launch a SaaS Product",
   },
   {
-    title: "Cloud Infrastructure & DevOps",
-    href: "/application-development",
-    icon: Layers,
-    color: "#007AFF",
-    desc: "Automated CI/CD pipelines, Docker containerization, Kubernetes orchestration, zero-downtime rolling deployments, and automated AWS/GCP cloud security audits.",
-    badge: "DevOps & Cloud",
-    tags: ["AWS / GCP", "Cloudflare", "Docker", "GitHub Actions"],
+    id: "ai",
+    title: "WhatsApp & AI",
+    badge: "24/7 Automation",
+    icon: MessageSquare,
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=80",
+    headline: "Automate customer replies 24/7 on WhatsApp",
+    description:
+      "Set up smart WhatsApp assistants that answer customer questions instantly, take orders, and send updates even when your office is closed.",
+    points: [
+      "Instant 24/7 automatic answers for common customer questions",
+      "Automatic bill & document scanning with zero manual typing",
+      "Smooth handoff to your staff whenever a customer asks",
+    ],
+    cta: "Automate on WhatsApp",
   },
   {
-    title: "API Architecture & Systems Integration",
-    href: "/application-development",
-    icon: ShieldCheck,
-    color: "#FF2D55",
-    desc: "RESTful & GraphQL microservice APIs connecting legacy databases, payment gateways, CRM suites, and third-party logistics tracking platforms.",
-    badge: "Microservices",
-    tags: ["Node.js", "FastAPI", "GraphQL", "Webhooks"],
-  },
-  {
-    title: "UI/UX Product Architecture",
-    href: "/application-development",
-    icon: Palette,
-    color: "#FF9500",
-    desc: "User journey mapping, high-fidelity Figma design systems, interactive mobile prototypes, and accessibility-compliant design built to maximize user retention.",
-    badge: "Product Design",
-    tags: ["Figma Systems", "Design Tokens", "Wireframing", "Usability"],
+    id: "cloud",
+    title: "Cloud & Security",
+    badge: "AWS & Daily Backups",
+    icon: Shield,
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80",
+    headline: "Secure cloud hosting with automatic daily backups",
+    description:
+      "We host your apps on secure Amazon AWS and Google Cloud servers so your software is always fast, protected from crashes, and never loses data.",
+    points: [
+      "99.9% uptime so your apps and website never go down",
+      "Automatic daily backups for complete safety of your data",
+      "Free SSL security certificate and DDoS hacker protection",
+    ],
+    cta: "Setup Cloud Hosting",
   },
 ];
 
 export const AppDevServicesGrid: React.FC = () => {
-  const scrollRef = React.useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = React.useState(false);
-  const [canScrollRight, setCanScrollRight] = React.useState(true);
-  const [activeIndex, setActiveIndex] = React.useState(0);
-
-  // Mouse drag-to-scroll support
-  const [isDragging, setIsDragging] = React.useState(false);
-  const isDraggingRef = React.useRef(false);
-  const startXRef = React.useRef(0);
-  const startScrollLeftRef = React.useRef(0);
-
-  const checkScroll = React.useCallback(() => {
-    if (!scrollRef.current) return;
-    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-    setCanScrollLeft(scrollLeft > 15);
-    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 15);
-
-    // Approximate active card
-    const cardWidth = 380;
-    const index = Math.round(scrollLeft / cardWidth);
-    setActiveIndex(Math.min(Math.max(index, 0), appDevDisciplines.length - 1));
-  }, []);
-
-  React.useEffect(() => {
-    checkScroll();
-    window.addEventListener("resize", checkScroll);
-    return () => window.removeEventListener("resize", checkScroll);
-  }, [checkScroll]);
-
-  const scroll = (direction: "left" | "right") => {
-    if (!scrollRef.current) return;
-    const scrollAmount = scrollRef.current.clientWidth * 0.75;
-    scrollRef.current.scrollBy({
-      left: direction === "left" ? -scrollAmount : scrollAmount,
-      behavior: "smooth",
-    });
-  };
-
-  const scrollToIndex = (index: number) => {
-    if (!scrollRef.current) return;
-    const cardElements = scrollRef.current.children;
-    if (cardElements[index]) {
-      (cardElements[index] as HTMLElement).scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-        inline: "start",
-      });
-    }
-  };
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (!scrollRef.current) return;
-    setIsDragging(true);
-    isDraggingRef.current = false;
-    startXRef.current = e.pageX - scrollRef.current.offsetLeft;
-    startScrollLeftRef.current = scrollRef.current.scrollLeft;
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !scrollRef.current) return;
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = x - startXRef.current;
-    if (Math.abs(walk) > 6) {
-      isDraggingRef.current = true;
-    }
-    scrollRef.current.scrollLeft = startScrollLeftRef.current - walk;
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
+  const [activeId, setActiveId] = useState<string>("mobile");
+  const activeItem =
+    appDevDisciplines.find((d) => d.id === activeId) || appDevDisciplines[0];
 
   return (
-    <section id="app-services" className="py-20 sm:py-28 bg-white border-b border-black/[0.08] scroll-mt-20 overflow-hidden">
+    <section
+      id="app-services"
+      className="py-16 sm:py-24 bg-transparent border-b border-neutral-200/60 font-sans"
+    >
       <Container size="wide">
-        {/* Header with Title & Navigation Controls */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-          <div className="max-w-3xl space-y-3">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 tracking-tight leading-tight">
-              End-to-End Application Capabilities
-            </h2>
-            <p className="text-[15px] sm:text-[16px] text-neutral-500 leading-relaxed font-normal">
-              We handle the complete development lifecycle—from initial architectural blueprint and UI/UX wireframes to sprint coding, security hardening, and ongoing cloud operations.
-            </p>
-          </div>
-
-          {/* Apple Carousel Controls (Prev/Next & Counter) */}
-          <div className="flex items-center gap-3 shrink-0 self-start md:self-end">
-            <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/[0.04] border border-black/[0.05] text-[12px] font-semibold text-neutral-600">
-              <span className="text-black font-bold">{String(activeIndex + 1).padStart(2, "0")}</span>
-              <span className="text-neutral-400">/</span>
-              <span>{String(appDevDisciplines.length).padStart(2, "0")}</span>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => scroll("left")}
-              disabled={!canScrollLeft}
-              aria-label="Scroll left"
-              className="w-11 h-11 rounded-full bg-neutral-100 hover:bg-neutral-200 active:scale-95 flex items-center justify-center transition-all duration-150 disabled:opacity-30 disabled:pointer-events-none cursor-pointer border border-black/[0.06]"
-            >
-              <ChevronLeft className="w-5 h-5 text-neutral-800" />
-            </button>
-
-            <button
-              type="button"
-              onClick={() => scroll("right")}
-              disabled={!canScrollRight}
-              aria-label="Scroll right"
-              className="w-11 h-11 rounded-full bg-neutral-100 hover:bg-neutral-200 active:scale-95 flex items-center justify-center transition-all duration-150 disabled:opacity-30 disabled:pointer-events-none cursor-pointer border border-black/[0.06]"
-            >
-              <ChevronRight className="w-5 h-5 text-neutral-800" />
-            </button>
-          </div>
-        </div>
-
-        {/* Single Row Carousel Slider Track */}
-        <div
-          ref={scrollRef}
-          onScroll={checkScroll}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-          className={`flex gap-5 sm:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6 pt-2 px-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
-            isDragging ? "cursor-grabbing select-none" : "cursor-grab"
-          }`}
-        >
-          {appDevDisciplines.map((item, idx) => (
-            <div
-              key={idx}
-              className="shrink-0 w-[310px] sm:w-[350px] lg:w-[380px] snap-start flex flex-col"
-              onClickCapture={(e) => {
-                if (isDraggingRef.current) {
-                  e.preventDefault();
-                  e.stopPropagation();
-                }
-              }}
-            >
-              <AppDevServiceCard {...item} />
-            </div>
-          ))}
-        </div>
-
-        {/* Apple Dot Navigation & Exploration Hint */}
-        <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-          {/* Progress Indicator Dots */}
-          <div className="flex items-center gap-1.5">
-            {appDevDisciplines.map((_, idx) => {
-              const isCurrent = activeIndex === idx;
-              return (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => scrollToIndex(idx)}
-                  aria-label={`Go to slide ${idx + 1}`}
-                  className={`transition-all duration-300 rounded-full cursor-pointer ${
-                    isCurrent
-                      ? "w-7 h-2 bg-[#007AFF]"
-                      : "w-2 h-2 bg-black/15 hover:bg-black/35"
-                  }`}
-                />
-              );
-            })}
-          </div>
-
-          {/* Swipe / Slide Guidance */}
-          <p className="text-[12px] text-neutral-400 font-medium tracking-tight">
-            Swipe or use arrows to explore all 8 engineering disciplines
+        {/* Section Header */}
+        <div className="max-w-2xl mb-8 sm:mb-10">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0E2036] tracking-tight leading-tight">
+            Software solutions tailored to your business
+          </h2>
+          <p className="text-sm sm:text-base text-neutral-600 font-normal mt-2 leading-relaxed">
+            Click on any service below to see how it works and what you get.
           </p>
         </div>
+
+        {/* Clean Floating Tab Switcher (Matching Reference Style) */}
+        <div className="flex items-center gap-2 sm:gap-4 overflow-x-auto pb-4 mb-8 sm:mb-12 scrollbar-none">
+          {appDevDisciplines.map((item) => {
+            const isSelected = item.id === activeId;
+            const IconComp = item.icon;
+
+            return (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => setActiveId(item.id)}
+                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap select-none ${
+                  isSelected
+                    ? "bg-white border border-neutral-200/90 shadow-[0_2px_10px_rgba(0,0,0,0.06)] text-[#0E2036]"
+                    : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100/70"
+                }`}
+              >
+                <IconComp
+                  className={`w-4 h-4 transition-colors ${
+                    isSelected ? "text-[#0E2036]" : "text-neutral-500"
+                  }`}
+                />
+                <span>{item.title}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* 100% Transparent Showcase (No Outer Box/Modal Background) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+          
+          {/* Image (Left) */}
+          <div className="lg:col-span-5">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] bg-neutral-100 border border-neutral-200/60 shadow-xs">
+              <img
+                src={activeItem.image}
+                alt={activeItem.title}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          {/* Content (Right) */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="space-y-2.5">
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#0E2036] tracking-tight leading-snug">
+                {activeItem.headline}
+              </h3>
+              <p className="text-sm sm:text-base text-neutral-600 leading-relaxed font-normal">
+                {activeItem.description}
+              </p>
+            </div>
+
+            {/* 3 Simple Bullet Points */}
+            <div className="space-y-3 pt-4 border-t border-neutral-200/60">
+              {activeItem.points.map((point, idx) => (
+                <div key={idx} className="flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0E2036] mt-2 shrink-0" />
+                  <span className="text-xs sm:text-sm text-neutral-700 font-medium leading-relaxed">
+                    {point}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Button */}
+            <div className="pt-2">
+              <button
+                type="button"
+                onClick={() => openLeadModal(`Application Development: ${activeItem.title}`)}
+                className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-[#0E2036] hover:bg-[#162e4c] text-white text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer shadow-xs hover:scale-[1.01] active:scale-[0.99] group"
+              >
+                <span>{activeItem.cta}</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-[#DCC195]" />
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
       </Container>
     </section>
   );
 };
 
 export default AppDevServicesGrid;
+
+
+

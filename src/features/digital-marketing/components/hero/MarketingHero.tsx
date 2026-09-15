@@ -13,8 +13,6 @@ import {
   InstagramIcon,
   LinkedInIcon,
   YouTubeIcon,
-  SeoIcon,
-  GeoIcon,
 } from "../services/MarketingServicesSimple";
 
 // --- Dedicated Official Vector Icons for AI Search Platforms ---
@@ -112,31 +110,21 @@ export const MarketingHero: React.FC = () => {
           className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.08] mb-6 drop-shadow-md"
           style={{ letterSpacing: "-0.035em" }}
         >
-          Performance Marketing &amp; Creative.{" "}
+          Digital Marketing &amp; Creative Ads.{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#60A5FA] via-[#C084FC] to-[#38BDF8]">
-            Built for Modern Scale.
+            Built to Grow Your Business.
           </span>
         </h1>
 
-
         {/* Action CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-6">
-          <Button
-            variant="primary"
-            size="lg"
+        <div className="flex items-center justify-center mb-6">
+          <button
+            type="button"
             onClick={() => openLeadModal("us-marketing-hero")}
+            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white text-neutral-950 hover:bg-neutral-100 font-bold text-sm sm:text-base shadow-[0_8px_30px_rgba(255,255,255,0.2)] hover:shadow-[0_12px_35px_rgba(255,255,255,0.3)] transition-all duration-200 active:scale-95 cursor-pointer"
           >
-            Book Growth Strategy Briefing
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            onClick={() => openLeadModal("us-audit-request")}
-            className="!text-white !border-white/25 hover:!bg-white/10"
-            withArrow={false}
-          >
-            Request Creative &amp; Pipeline Audit
-          </Button>
+            <span>Book a Free Call</span>
+          </button>
         </div>
 
 
@@ -148,35 +136,35 @@ export const MarketingHero: React.FC = () => {
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-8 pb-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
           
-          {/* Left Card: High-Converting B2B & Tech Photo Ad Creative */}
+          {/* Left Card: Instagram & Meta Reels Ads */}
           <div className="lg:col-span-3 flex flex-col rounded-[26px] bg-neutral-900/80 backdrop-blur-xl border border-white/15 shadow-[0_16px_40px_rgba(0,0,0,0.5)] overflow-hidden group hover:border-white/30 transition-all duration-300">
             <div className="relative aspect-[4/5] overflow-hidden bg-neutral-950">
               <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
-                alt="B2B SaaS & Performance Ad Creative"
+                src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80"
+                alt="Instagram & Meta Reels Ads Campaign"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
               
-              {/* Top Meta / LinkedIn Ad Badge */}
+              {/* Top Instagram & Meta Badge */}
               <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-[11px] text-white font-semibold border border-white/20">
-                <LinkedInIcon className="w-3.5 h-3.5" />
-                <span>LinkedIn &amp; Meta ABM</span>
+                <InstagramIcon className="w-3.5 h-3.5" />
+                <span>Instagram &amp; Meta Ads</span>
               </div>
 
-              {/* Bottom Metrics Overlay */}
+              {/* Bottom Details Overlay */}
               <div className="absolute bottom-3 inset-x-3 text-white">
                 <p className="text-[13px] font-bold leading-tight text-white">
-                  B2B SaaS Cloud Infrastructure
+                  Instagram &amp; Meta Reels Ads
                 </p>
-                <p className="text-[11px] text-white/75 mt-0.5">
-                  High-converting enterprise commercial shoot
+                <p className="text-[11px] text-white/80 mt-0.5 leading-snug">
+                  Fashion, retail, local brands &amp; WhatsApp orders
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Center Card: 4K iPhone Video Reel Player */}
+          {/* Center Card: Brand Commercials & Video Shoots */}
           <div className="lg:col-span-6 flex flex-col rounded-[28px] sm:rounded-[32px] p-2.5 sm:p-3 bg-gradient-to-b from-neutral-800/90 via-neutral-900/90 to-black/95 backdrop-blur-2xl border border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.6)] text-white relative">
             {/* Bezel Screen Container */}
             <div className="relative rounded-[22px] sm:rounded-[26px] overflow-hidden bg-black aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center group h-full">
@@ -190,7 +178,7 @@ export const MarketingHero: React.FC = () => {
                 playsInline
                 preload="metadata"
                 className="w-full h-full object-cover"
-                poster="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80"
+                poster="https://images.unsplash.com/photo-1579632652768-6cb9dcf85912?auto=format&fit=crop&w=1200&q=80"
               >
                 <source
                   src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4"
@@ -231,8 +219,8 @@ export const MarketingHero: React.FC = () => {
                     {isMuted ? <VolumeX className="w-3.5 h-3.5 text-neutral-300" /> : <Volume2 className="w-3.5 h-3.5 text-white" />}
                   </button>
 
-                  <span className="text-[11px] text-neutral-300 font-medium hidden sm:inline pl-1 border-l border-white/15">
-                    Live Commercial Ad Reel
+                  <span className="text-[11px] text-neutral-200 font-medium hidden sm:inline pl-1 border-l border-white/15">
+                    Brand Commercials &amp; Factory Ad Shoots
                   </span>
                 </div>
               </div>
@@ -241,29 +229,29 @@ export const MarketingHero: React.FC = () => {
 
           </div>
 
-          {/* Right Card: Global DTC & Consumer Brand Campaign */}
+          {/* Right Card: Google Search & Maps Ads */}
           <div className="lg:col-span-3 flex flex-col rounded-[26px] bg-neutral-900/80 backdrop-blur-xl border border-white/15 shadow-[0_16px_40px_rgba(0,0,0,0.5)] overflow-hidden group hover:border-white/30 transition-all duration-300">
             <div className="relative aspect-[4/5] overflow-hidden bg-neutral-950">
               <img
-                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80"
-                alt="Global DTC Brand Campaign"
+                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
+                alt="Google Search & Maps Ads Campaign"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
               
-              {/* Top YouTube & Meta Ad Badge */}
+              {/* Top Google Ads Badge */}
               <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-[11px] text-white font-semibold border border-white/20">
-                <YouTubeIcon className="w-3.5 h-3.5" />
-                <span>YouTube Direct Response</span>
+                <GoogleAdsIcon className="w-3.5 h-3.5" />
+                <span>Google Search &amp; Maps</span>
               </div>
 
-              {/* Bottom Metrics Overlay */}
+              {/* Bottom Details Overlay */}
               <div className="absolute bottom-3 inset-x-3 text-white">
                 <p className="text-[13px] font-bold leading-tight text-white">
-                  Global Consumer Hardware &amp; DTC
+                  Google Search &amp; Maps Ads
                 </p>
-                <p className="text-[11px] text-white/75 mt-0.5">
-                  Motion video ads &amp; high-CTR YouTube shorts
+                <p className="text-[11px] text-white/80 mt-0.5 leading-snug">
+                  Doctors, clinics, real estate &amp; local enquiries
                 </p>
               </div>
             </div>
@@ -274,15 +262,15 @@ export const MarketingHero: React.FC = () => {
 
       {/* ── Official Advertising & Search Channels Hub ── */}
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 pb-16 relative z-10">
-        <div className="p-6 sm:p-8 rounded-[24px] bg-white/10 backdrop-blur-2xl border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+        <div className="py-6">
           <div className="text-center max-w-xl mx-auto mb-6">
             <p className="text-[12px] font-bold text-white/70 uppercase tracking-wider">
               Official Media &amp; Search Channels
             </p>
           </div>
 
-          {/* Official Channel Grid with 8 Channels including ChatGPT & Claude */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5 sm:gap-3">
+          {/* Official Channel Grid - Open Borderless Layout */}
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
             {[
               { name: "Google Ads", icon: <GoogleAdsIcon className="w-7 h-7 shrink-0" /> },
               { name: "LinkedIn Ads", icon: <LinkedInIcon className="w-7 h-7 shrink-0" /> },
@@ -291,14 +279,13 @@ export const MarketingHero: React.FC = () => {
               { name: "ChatGPT Search", icon: <ChatGptIcon className="w-7 h-7 shrink-0" /> },
               { name: "Claude AI", icon: <ClaudeIcon className="w-7 h-7 shrink-0" /> },
               { name: "Perplexity AI", icon: <PerplexityIcon className="w-7 h-7 shrink-0" /> },
-              { name: "Enterprise SEO", icon: <SeoIcon className="w-7 h-7 shrink-0" /> },
             ].map((chan, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-center text-center p-3 sm:p-3.5 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-150 group"
+                className="flex flex-col items-center text-center py-2 transition-transform hover:scale-105 group"
               >
-                <div className="mb-2 transition-transform group-hover:scale-105">{chan.icon}</div>
-                <span className="text-[12px] font-bold text-white leading-tight">{chan.name}</span>
+                <div className="mb-2">{chan.icon}</div>
+                <span className="text-[12px] font-semibold text-white/90 leading-tight">{chan.name}</span>
               </div>
             ))}
           </div>

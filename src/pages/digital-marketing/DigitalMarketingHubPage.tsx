@@ -2,11 +2,16 @@ import React from "react";
 import { SEOHead } from "@/components/seo/SEOHead";
 import MarketingHero from "@/features/digital-marketing/components/hero/MarketingHero";
 import MarketingServicesSimple from "@/features/digital-marketing/components/services/MarketingServicesSimple";
+import MarketingGoalsSection from "@/features/digital-marketing/components/goals/MarketingGoalsSection";
+import MarketingWhySpecialSection from "@/features/digital-marketing/components/special/MarketingWhySpecialSection";
+import MarketingIndustriesSection from "@/features/digital-marketing/components/sections/MarketingIndustriesSection";
+import MarketingProcessSimple from "@/features/digital-marketing/components/process/MarketingProcessSimple";
+import MarketingFAQAccordion from "@/features/digital-marketing/components/faq/MarketingFAQAccordion";
 import MarketingConsultationCTA from "@/features/digital-marketing/components/cta/MarketingConsultationCTA";
 
 export const DigitalMarketingHubPage: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen font-sans">
       <SEOHead
         title="Performance Marketing & Growth Agency | US, Global & B2B SaaS | Real Result"
         description="Real Result is a data-driven performance marketing and growth engineering firm. Scaling qualified pipeline, lowering CAC, and driving ROAS across Google Ads, LinkedIn ABM, Meta Performance, and Generative AI Search (GEO)."
@@ -25,20 +30,33 @@ export const DigitalMarketingHubPage: React.FC = () => {
         }}
       />
 
-      {/* 1. Hero with Real-Time Growth Performance Cockpit & Enterprise Platform Accreditations */}
+      {/* 1. Hero */}
       <MarketingHero />
 
-      {/* 2. Full-Funnel Growth Disciplines & Official Cloud Partner Ecosystem */}
+      {/* 2. Digital Marketing Services & Interactive Tabs */}
       <MarketingServicesSimple />
 
+      {/* 3. How Online Marketing Can Help You Meet Your Goal */}
+      <MarketingGoalsSection />
 
+      {/* 4. Why We Are Special From Other Digital Marketing Agencies */}
+      <MarketingWhySpecialSection />
 
+      {/* 5. 12 Industry Verticals & Sector Playbooks */}
+      <MarketingIndustriesSection />
 
+      {/* 6. 4-Stage Growth Methodology & Target Client Profiles */}
+      <MarketingProcessSimple />
 
-      {/* 6. Executive Consultation & 48-Hour Growth Diagnostic CTA */}
+      {/* 6. Frequently Asked Questions */}
+      <MarketingFAQAccordion />
+
+      {/* 7. Executive Consultation CTA */}
       <MarketingConsultationCTA />
     </div>
   );
 };
 
 export default DigitalMarketingHubPage;
+
+

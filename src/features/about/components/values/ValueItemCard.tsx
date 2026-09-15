@@ -1,22 +1,24 @@
 import React from "react";
 
 interface ValueProps {
-  icon: React.ElementType;
   title: string;
   desc: string;
+  number?: string;
 }
 
-export const ValueItemCard: React.FC<ValueProps> = ({ icon: Icon, title, desc }) => {
+export const ValueItemCard: React.FC<ValueProps> = ({ title, desc, number }) => {
   return (
-    <div className="p-7 rounded-2xl bg-white border border-border hover:border-gold/60 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
-      <div className="space-y-4">
-        <div className="w-11 h-11 rounded-xl bg-surface border border-border flex items-center justify-center text-gold-700">
-          <Icon className="w-5 h-5" />
-        </div>
-        <h3 className="text-xl font-bold text-primary">
+    <div className="py-2 pb-6 border-b border-neutral-200 flex flex-col justify-between font-sans">
+      <div className="space-y-3">
+        {number && (
+          <div className="text-xs font-semibold text-neutral-400 tracking-wide">
+            {number}
+          </div>
+        )}
+        <h3 className="text-xl font-bold text-neutral-900 leading-snug">
           {title}
         </h3>
-        <p className="text-sm text-secondary leading-relaxed">
+        <p className="text-sm text-neutral-600 leading-relaxed">
           {desc}
         </p>
       </div>
@@ -25,3 +27,4 @@ export const ValueItemCard: React.FC<ValueProps> = ({ icon: Icon, title, desc })
 };
 
 export default ValueItemCard;
+

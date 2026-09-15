@@ -8,7 +8,7 @@ export const AppDevQuotationCTA: React.FC = () => {
     <section className="py-20 sm:py-28 bg-white text-neutral-900 border-t border-black/[0.08] relative">
       <Container size="wide">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h2 className="text-3xl sm:text-5xl font-black text-neutral-900 tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-bold text-[#DCC195] tracking-tight leading-tight">
             Have an Application in Mind? Let's Architect It.
           </h2>
 

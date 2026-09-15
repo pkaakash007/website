@@ -1,151 +1,242 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  ArrowRight,
-  MapPin,
-  ShoppingBag,
-  Building2,
-  GraduationCap,
-  Factory,
-  Sparkles,
-  Compass,
-} from "lucide-react";
+import { Container } from "@/components/layout/Container";
+import { Button } from "@/components/common/Button";
 import { SEOHead } from "@/components/seo/SEOHead";
-import { INDUSTRIES_CONTENT } from "@/data/websiteContent";
+import { openLeadModal } from "@/components/common/LeadModal";
+import { ArrowRight } from "lucide-react";
+import { INDUSTRIES_DATA } from "@/features/industries/data/industriesData";
 
-const sectorIcons = [MapPin, ShoppingBag, Building2, GraduationCap, Factory, Sparkles];
+// Verified high-resolution real photography mapping matching each industry slug
+const INDUSTRY_PHOTOS: Record<string, { image: string; alt: string }> = {
+  healthcare: {
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
+    alt: "Doctor with stethoscope consulting patient in modern healthcare clinic",
+  },
+  b2b: {
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80",
+    alt: "B2B enterprise technology strategy team analyzing corporate data",
+  },
+  "b2b-services": {
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80",
+    alt: "B2B enterprise technology strategy team analyzing corporate data",
+  },
+  finance: {
+    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
+    alt: "Digital banking analytics and mobile fintech payments",
+  },
+  "bfsi-fintech": {
+    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
+    alt: "Digital banking analytics and mobile fintech payments",
+  },
+  "real-estate": {
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    alt: "Luxury architectural modern residential villa property",
+  },
+  "real-estate-construction": {
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    alt: "Luxury architectural modern residential villa property",
+  },
+  education: {
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    alt: "Students learning together in modern university library campus",
+  },
+  "education-edtech": {
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    alt: "Students learning together in modern university library campus",
+  },
+  fmcg: {
+    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+    alt: "Artisan food product packaging and retail shelf",
+  },
+  "food-beverage-fmcg": {
+    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+    alt: "Artisan food product packaging and retail shelf",
+  },
+  ecommerce: {
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
+    alt: "Modern retail storefront and customer shopping",
+  },
+  "ecommerce-retail": {
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
+    alt: "Modern retail storefront and customer shopping",
+  },
+  "skincare-beauty": {
+    image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1600&q=80",
+    alt: "Aesthetic luxury skincare bottles, cosmetic jars, and clean beauty serums",
+  },
+  "home-decor": {
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80",
+    alt: "Aesthetic modern living room interior design with luxury furniture",
+  },
+  ev: {
+    image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=80",
+    alt: "Modern electric vehicle charging at power station",
+  },
+  "automotive-ev": {
+    image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=80",
+    alt: "Modern electric vehicle charging at power station",
+  },
+  automotive: {
+    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
+    alt: "Luxury sports vehicle in modern automotive showroom",
+  },
+  "travel-tourism": {
+    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80",
+    alt: "Luxury tropical resort swimming pool and hotel suite",
+  },
+  "hospitality-travel": {
+    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80",
+    alt: "Luxury tropical resort swimming pool and hotel suite",
+  },
+  "textile-manufacturing": {
+    image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1200&q=80",
+    alt: "Industrial textile rolls and garment manufacturing studio",
+  },
+  "logistics-supply-chain": {
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+    alt: "Modern automated logistics warehouse and freight distribution center",
+  },
+  "saas-software": {
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    alt: "Cloud SaaS web application analytics dashboard on laptop screen",
+  },
+};
 
-export const IndustriesPage: React.FC = () => {
-  const content = INDUSTRIES_CONTENT;
+export default function IndustriesPage() {
+  const industriesList = Object.values(INDUSTRIES_DATA);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#F5F5F7] text-[#1D1D1F]">
+    <div className="flex flex-col min-h-screen font-sans bg-white text-neutral-900">
       <SEOHead
-        title={content.seo.seo_title || "Marketing for Different Business Types | Real Result"}
-        description={content.seo.meta_description || "Explore marketing and customer communication around how your customers buy, from local services and ecommerce to B2B and new digital products."}
-        canonicalPath="/industries/"
+        title="Industries We Transform | Real Result Growth Agency"
+        description="Category-specific digital strategy and software engineering across 12 sectors: Healthcare, B2B, Ecommerce, Real Estate, Manufacturing, Financial Services, and EV."
+        canonicalPath="/industries"
       />
 
-      {/* Hero */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-b from-[#0D0D12] via-[#12121A] to-[#181824] text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(0,113,227,0.22),rgba(255,255,255,0))] pointer-events-none" />
-
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <nav className="flex items-center gap-2 text-xs text-neutral-400 mb-8">
-            <Link to="/" className="hover:text-white transition-colors">Home</Link>
-            <span>/</span>
-            <span className="text-white font-medium">Industries &amp; Business Types</span>
-          </nav>
-
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold tracking-wide text-blue-300 mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#0071E3]" />
-            {content.eyebrow}
+      {/* ── 1. Page Header (Open Editorial Layout) ── */}
+      <section className="pt-24 pb-14 sm:pt-32 sm:pb-16 bg-white border-b border-neutral-200">
+        <Container size="wide">
+          <div className="max-w-4xl space-y-3">
+            <h1 className="text-3xl sm:text-5xl font-normal text-[#DCC195] leading-tight">
+              Industries We Transform
+            </h1>
+            <p className="text-base sm:text-lg text-neutral-600 leading-relaxed font-normal max-w-3xl pt-1">
+              We build customer acquisition funnels, digital branding, and custom software tailored directly to the real-world unit economics of your business sector.
+            </p>
           </div>
-
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-            {content.h1}
-          </h1>
-
-          <p className="text-base sm:text-lg text-neutral-300 leading-relaxed max-w-3xl mb-8 font-normal">
-            {content.body}
-          </p>
-
-          <Link
-            to="/contact/"
-            className="inline-flex items-center justify-center px-7 py-3.5 rounded-full text-sm font-semibold bg-[#0071E3] hover:bg-[#0077ED] text-white shadow-lg shadow-[#0071E3]/30 transition-all hover:scale-[1.02]"
-          >
-            {content.primaryButton}
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Link>
-        </div>
+        </Container>
       </section>
 
-      {/* 6 Business Types */}
-      <section className="py-20 md:py-28 bg-white border-b border-black/[0.06]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-14 max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#0071E3] mb-2 block">
-              Audience-Driven Strategy
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900">
-              Tailored around how your customers make decisions
-            </h2>
-          </div>
+      {/* ── 2. Open Alternating Editorial Showcase (Clean Human Layout) ── */}
+      <section className="bg-white">
+        <Container size="wide">
+          <div className="divide-y divide-neutral-200">
+            {industriesList.map((ind, index) => {
+              const isEven = index % 2 === 0;
+              const photoData = INDUSTRY_PHOTOS[ind.slug] || {
+                image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80",
+                alt: ind.name,
+              };
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {content.sectors.map((sector, idx) => {
-              const IconComp = sectorIcons[idx % sectorIcons.length];
               return (
                 <div
-                  key={idx}
-                  className="p-8 rounded-3xl bg-[#F9F9FB] border border-black/[0.06] hover:border-[#0071E3] hover:shadow-lg transition-all flex flex-col justify-between group"
+                  key={ind.slug}
+                  id={ind.slug}
+                  className="py-14 sm:py-20 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center"
                 >
-                  <div>
-                    <div className="w-12 h-12 rounded-2xl bg-white border border-black/[0.05] text-[#0071E3] flex items-center justify-center mb-6 group-hover:bg-[#0071E3] group-hover:text-white transition-colors shadow-sm">
-                      <IconComp className="w-6 h-6" />
+                  {/* REAL PHOTOGRAPHY COLUMN */}
+                  <div
+                    className={`${
+                      isEven ? "lg:col-span-6" : "lg:col-span-6 lg:col-start-7"
+                    }`}
+                  >
+                    <div className="relative overflow-hidden rounded-2xl">
+                      <img
+                        src={photoData.image}
+                        alt={photoData.alt}
+                        loading="lazy"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          if (target.src !== "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80") {
+                            target.src = "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80";
+                          }
+                        }}
+                        className="w-full h-[300px] sm:h-[400px] object-cover object-center rounded-2xl hover:scale-[1.02] transition-transform duration-500 ease-out"
+                      />
                     </div>
-
-                    <h3 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-[#0071E3] transition-colors">
-                      {sector.title}
-                    </h3>
-
-                    <p className="text-sm sm:text-base text-neutral-600 leading-relaxed font-normal">
-                      {sector.body}
-                    </p>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-black/[0.06]">
-                    <Link
-                      to="/contact/"
-                      className="text-xs font-semibold text-[#0071E3] hover:underline inline-flex items-center gap-1.5"
-                    >
-                      <span>Discuss this buying journey</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
+                  {/* OPEN EDITORIAL CONTENT COLUMN */}
+                  <div
+                    className={`space-y-4 ${
+                      isEven ? "lg:col-span-6" : "lg:col-span-6 lg:col-start-1 lg:row-start-1"
+                    }`}
+                  >
+                    <div className="space-y-1.5">
+                      <h2 className="text-2xl sm:text-3xl font-normal text-[#DCC195] leading-snug">
+                        {ind.name}
+                      </h2>
+                      <p className="text-base text-neutral-700 font-medium leading-snug">
+                        {ind.tagline}
+                      </p>
+                    </div>
+
+                    <p className="text-sm sm:text-base text-neutral-600 leading-relaxed font-normal">
+                      {ind.heroSubheadline || ind.overview}
+                    </p>
+
+                    {/* Key Results Inline Highlights (Clean Open Text, No Boxes) */}
+                    <div className="pt-1 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-neutral-600 font-normal">
+                      {ind.keyMetrics.map((m, mIdx) => (
+                        <div key={mIdx} className="flex items-center gap-1">
+                          <span>{m.label}:</span>
+                          <span className="font-medium text-[#0E2036]">{m.value}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Clean Action Link */}
+                    <div className="pt-3 border-t border-neutral-100">
+                      <Link
+                        to={`/industries/${ind.slug}`}
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0E2036] hover:underline cursor-pointer group"
+                      >
+                        <span>Explore {ind.shortName} Playbook</span>
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               );
             })}
           </div>
-        </div>
+        </Container>
       </section>
 
-      {/* Our Starting Point */}
-      <section className="py-20 md:py-24 bg-[#F5F5F7]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="p-8 md:p-12 rounded-3xl bg-white border border-black/[0.06] shadow-sm">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#0071E3] mb-2 block">
-              Core Reality
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900 mb-4">
-              {content.startingPoint.h2}
+      {/* ── 3. Consultation Section ── */}
+      <section className="py-16 sm:py-20 bg-neutral-50 border-t border-neutral-200">
+        <Container size="default">
+          <div className="text-center space-y-3 max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-normal text-[#DCC195]">
+              Operating in a Niche or Emerging Sector?
             </h2>
-            <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto font-normal">
-              {content.startingPoint.body}
+            <p className="text-sm sm:text-base text-neutral-600 leading-relaxed font-normal">
+              We frequently architect custom acquisition channels and software solutions for specialized industries across Tamil Nadu, India, and global markets.
             </p>
+            <div className="pt-3">
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={() => openLeadModal("custom-industry-consultation")}
+              >
+                Book a Free Call
+              </Button>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Final Contact */}
-      <section className="py-20 md:py-28 bg-[#0D0D12] text-white text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6">
-            {content.finalContact.h2}
-          </h2>
-          <div className="flex justify-center">
-            <Link
-              to="/contact/"
-              className="px-8 py-4 rounded-full text-base font-semibold bg-[#0071E3] hover:bg-[#0077ED] text-white shadow-xl shadow-[#0071E3]/30 transition-all hover:scale-[1.02] inline-flex items-center gap-2"
-            >
-              {content.finalContact.button}
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
+        </Container>
       </section>
     </div>
   );
-};
+}
 
-export default IndustriesPage;

@@ -33,10 +33,10 @@ export const MacOSInput = React.forwardRef<HTMLInputElement, MacOSInputProps>(
     return (
       <div className="w-full space-y-1.5">
         {label && (
-          <label className="block text-[12px] font-semibold text-neutral-700 tracking-tight select-none">
+          <label className="block text-xs font-semibold text-neutral-700 select-none">
             {label}
             {requiredIndicator && (
-              <span className="text-[#FF3B30] ml-1 font-bold">*</span>
+              <span className="text-neutral-400 font-normal ml-1">(required)</span>
             )}
           </label>
         )}
@@ -53,14 +53,11 @@ export const MacOSInput = React.forwardRef<HTMLInputElement, MacOSInputProps>(
             value={value}
             className={`w-full ${
               Icon ? "pl-9" : "px-3.5"
-            } ${showClearButton && value ? "pr-9" : "pr-3.5"} py-2.5 rounded-[9px] bg-white border border-black/[0.14] text-[13.5px] text-neutral-900 placeholder:text-neutral-400/90 shadow-[inset_0_1px_2px_rgba(0,0,0,0.05)] transition-all duration-150 ease-out hover:border-black/[0.25] focus:outline-none focus:border-[#0071E3] focus:ring-[3px] focus:ring-[#0071E3]/25 disabled:bg-neutral-100 disabled:text-neutral-400 disabled:cursor-not-allowed ${
+            } ${showClearButton && value ? "pr-9" : "pr-3.5"} py-2.5 rounded-xl bg-white border border-neutral-200 text-sm text-neutral-900 placeholder:text-neutral-400 transition-all duration-150 hover:border-neutral-300 focus:outline-none focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 disabled:bg-neutral-100 disabled:text-neutral-400 ${
               error
-                ? "border-[#FF3B30] focus:border-[#FF3B30] focus:ring-[#FF3B30]/25"
+                ? "border-red-500 focus:border-red-500 focus:ring-red-500/20"
                 : ""
             } ${className}`}
-            style={{
-              fontFamily: "var(--font-system)",
-            }}
             {...props}
           />
 
@@ -175,10 +172,10 @@ export const MacOSTextarea = React.forwardRef<
     return (
       <div className="w-full space-y-1.5">
         {label && (
-          <label className="block text-[12px] font-semibold text-neutral-700 tracking-tight select-none">
+          <label className="block text-xs font-semibold text-neutral-700 select-none">
             {label}
             {requiredIndicator && (
-              <span className="text-[#FF3B30] ml-1 font-bold">*</span>
+              <span className="text-neutral-400 font-normal ml-1">(required)</span>
             )}
           </label>
         )}
@@ -186,14 +183,11 @@ export const MacOSTextarea = React.forwardRef<
         <textarea
           ref={ref}
           rows={rows}
-          className={`w-full px-3.5 py-2.5 rounded-[9px] bg-white border border-black/[0.14] text-[13.5px] text-neutral-900 placeholder:text-neutral-400/90 shadow-[inset_0_1px_2px_rgba(0,0,0,0.05)] transition-all duration-150 ease-out hover:border-black/[0.25] focus:outline-none focus:border-[#0071E3] focus:ring-[3px] focus:ring-[#0071E3]/25 disabled:bg-neutral-100 disabled:text-neutral-400 disabled:cursor-not-allowed resize-none ${
+          className={`w-full px-3.5 py-2.5 rounded-xl bg-white border border-neutral-200 text-sm text-neutral-900 placeholder:text-neutral-400 transition-all duration-150 hover:border-neutral-300 focus:outline-none focus:border-neutral-900 focus:ring-1 focus:ring-neutral-900 disabled:bg-neutral-100 disabled:text-neutral-400 resize-none ${
             error
-              ? "border-[#FF3B30] focus:border-[#FF3B30] focus:ring-[#FF3B30]/25"
+              ? "border-red-500 focus:border-red-500 focus:ring-red-500/20"
               : ""
           } ${className}`}
-          style={{
-            fontFamily: "var(--font-system)",
-          }}
           {...props}
         />
 

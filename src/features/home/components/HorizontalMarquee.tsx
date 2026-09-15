@@ -113,32 +113,20 @@ export default function HorizontalMarquee() {
     <div
       key={idx}
       onClick={() => openLeadModal(svc.name)}
-      className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-black/[0.08] shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:border-black/[0.18] transition-all duration-200 cursor-pointer shrink-0 select-none group"
-      style={{
-        fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif",
-      }}
+      className="inline-flex items-center gap-2.5 px-3 py-1 transition-all duration-200 cursor-pointer shrink-0 select-none group font-sans"
     >
       {/* Official Brand Logo */}
       {svc.icon}
 
       {/* Single Service Name */}
-      <span className="text-[13px] font-semibold text-black tracking-tight whitespace-nowrap group-hover:text-[#007AFF] transition-colors">
+      <span className="text-[13.5px] font-semibold text-neutral-800 tracking-tight whitespace-nowrap group-hover:text-[#007AFF] transition-colors">
         {svc.name}
       </span>
     </div>
   );
 
   return (
-    <section
-      className="py-3 border-y border-black/[0.06] overflow-hidden select-none relative"
-      style={{
-        background: "#FBFBFD",
-      }}
-    >
-      {/* Left/Right Subtle Apple Edge Fade */}
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-[#FBFBFD] to-transparent z-10" />
-      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-[#FBFBFD] to-transparent z-10" />
-
+    <section className="py-3 overflow-hidden select-none relative bg-transparent">
       {/* Infinite Horizontal Marquee */}
       <div className="relative w-full flex overflow-x-hidden group">
         <div className="flex shrink-0 items-center gap-3 animate-ticker group-hover:[animation-play-state:paused] whitespace-nowrap">

@@ -45,7 +45,7 @@ const allFaqs = [
     items: [
       {
         q: "What technologies does Real Result use for custom web and software development?",
-        a: "We engineer using modern, enterprise-grade technology stacks: React, Vite, Next.js, and TypeScript on the frontend, combined with Node.js, Python, PostgreSQL, Redis, and AWS/GCP cloud backends. We avoid bloated generic templates to deliver sub-second speeds and bank-grade security.",
+        a: "We engineer using modern, high-performance technology stacks: React, Vite, Next.js, and TypeScript on the frontend, combined with Node.js, Python, PostgreSQL, Redis, and AWS/GCP cloud backends. We avoid bloated generic templates to deliver sub-second speeds and complete data security.",
       },
       {
         q: "Do we own the software and source code after development?",

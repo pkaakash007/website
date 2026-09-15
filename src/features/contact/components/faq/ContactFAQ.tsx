@@ -38,11 +38,11 @@ export const ContactFAQ: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-canvas border-b border-border">
+    <section className="py-20 bg-white border-b border-neutral-200/80">
       <Container size="wide">
         <div className="max-w-3xl mx-auto space-y-10">
           <div className="text-center space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary">
+            <h2 className="text-2xl sm:text-3xl font-bold text-black">
               Frequently Asked Questions
             </h2>
             <p className="text-secondary text-sm">

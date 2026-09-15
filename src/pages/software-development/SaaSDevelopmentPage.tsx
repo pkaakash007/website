@@ -59,7 +59,7 @@ export const SaaSDevelopmentPage: React.FC = () => {
 
             <DirectAnswerBox
               question="What architecture does Real Result use for scalable SaaS platforms?"
-              summary="We architect SaaS platforms using domain-driven micro-services or modular monoliths, multi-tenant PostgreSQL schemas, Redis caching layers, and automated Stripe/Razorpay subscription billing. This enables Indian SaaS founders to launch fast, maintain bank-grade tenant isolation, and scale internationally with minimal DevOps overhead."
+              summary="We architect SaaS platforms using domain-driven micro-services or modular monoliths, multi-tenant PostgreSQL schemas, Redis caching layers, and automated Stripe/Razorpay subscription billing. This enables Indian SaaS founders to launch fast, maintain strict data security, and scale internationally with minimal DevOps overhead."
               takeaways={[
                 "Robust multi-tenant data isolation and tenant lifecycle management",
                 "Automated recurring subscription billing with localized payment methods",

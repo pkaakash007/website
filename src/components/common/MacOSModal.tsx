@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { X, Minus, Plus } from "lucide-react";
+import React, { useEffect } from "react";
+import { X } from "lucide-react";
 
 export interface MacOSModalProps {
   isOpen: boolean;
@@ -14,14 +14,11 @@ export interface MacOSModalProps {
 export const MacOSModal: React.FC<MacOSModalProps> = ({
   isOpen,
   onClose,
-  title = "Real Result — Direct Consultation",
+  title,
   subtitle,
-  badge = "macOS v2.7 • Live SLA",
   children,
   maxWidth = "max-w-xl",
 }) => {
-  const [trafficHovered, setTrafficHovered] = useState(false);
-
   // Close on Escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -46,97 +43,46 @@ export const MacOSModal: React.FC<MacOSModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 transition-all duration-300">
-      {/* ── macOS Ambient Backdrop Scrim ── */}
+      {/* ── Soft Ambient Overlay Scrim ── */}
       <div
-        className="fixed inset-0 bg-black/45 backdrop-blur-[6px] transition-opacity duration-300 animate-in fade-in"
+        className="fixed inset-0 bg-neutral-950/40 backdrop-blur-sm transition-opacity duration-300 animate-in fade-in"
         onClick={onClose}
         aria-label="Close modal overlay"
       />
 
-      {/* ── macOS 27 Window / Modal Container ── */}
+      {/* ── Human Modal Container ── */}
       <div
-        className={`relative w-full ${maxWidth} z-10 overflow-hidden rounded-[22px] border border-black/15 shadow-[0_28px_80px_rgba(0,0,0,0.35),0_10px_30px_rgba(0,0,0,0.15)] bg-white/95 backdrop-blur-3xl transition-all duration-300 animate-in zoom-in-95 fade-in max-h-[92vh] flex flex-col`}
-        style={{
-          fontFamily: "var(--font-system)",
-        }}
+        className={`relative w-full ${maxWidth} z-10 overflow-hidden rounded-2xl border border-neutral-200/80 shadow-2xl bg-white transition-all duration-300 animate-in zoom-in-95 fade-in max-h-[92vh] flex flex-col`}
       >
-        {/* ── macOS Window Header (Title Bar) ── */}
-        <div
-          className="h-11 px-4 flex items-center justify-between border-b border-black/[0.08] bg-neutral-100/70 select-none shrink-0"
-          onMouseEnter={() => setTrafficHovered(true)}
-          onMouseLeave={() => setTrafficHovered(false)}
+        {/* Close Button Top-Right */}
+        <button
+          onClick={onClose}
+          type="button"
+          className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-500 hover:text-neutral-900 flex items-center justify-center transition-colors cursor-pointer"
+          title="Close modal"
+          aria-label="Close modal"
         >
-          {/* Left: macOS Traffic Light Buttons */}
-          <div className="flex items-center gap-2 w-24">
-            {/* Close 🔴 */}
-            <button
-              onClick={onClose}
-              type="button"
-              className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E] flex items-center justify-center cursor-pointer transition-transform active:scale-90"
-              title="Close window"
-              aria-label="Close modal window"
-            >
-              <X
-                className={`w-2 h-2 text-[#4A0002] transition-opacity ${
-                  trafficHovered ? "opacity-100" : "opacity-0"
-                }`}
-                strokeWidth={3}
-              />
-            </button>
+          <X className="w-4 h-4" strokeWidth={2} />
+        </button>
 
-            {/* Minimize 🟡 */}
-            <button
-              onClick={onClose}
-              type="button"
-              className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123] flex items-center justify-center cursor-pointer transition-transform active:scale-90"
-              title="Minimize window"
-              aria-label="Minimize window"
-            >
-              <Minus
-                className={`w-2 h-2 text-[#5E3B00] transition-opacity ${
-                  trafficHovered ? "opacity-100" : "opacity-0"
-                }`}
-                strokeWidth={3}
-              />
-            </button>
-
-            {/* Maximize 🟢 */}
-            <button
-              type="button"
-              className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29] flex items-center justify-center cursor-default transition-transform active:scale-90"
-              title="Zoom window"
-              aria-label="Zoom window"
-            >
-              <Plus
-                className={`w-2 h-2 text-[#0A4D12] transition-opacity ${
-                  trafficHovered ? "opacity-100" : "opacity-0"
-                }`}
-                strokeWidth={3}
-              />
-            </button>
-          </div>
-
-          {/* Center: macOS Window Title */}
-          <div className="flex items-center gap-1.5 truncate px-2 text-center">
-            <span className="text-[13px] font-semibold text-neutral-800 tracking-tight truncate">
+        {/* ── Header Area if title exists ── */}
+        {title && (
+          <div className="px-6 sm:px-8 pt-6 pb-2 pr-14">
+            <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 tracking-tight">
               {title}
-            </span>
-          </div>
-
-          {/* Right: macOS Status Badge / Pill */}
-          <div className="flex items-center justify-end w-24">
-            {badge && (
-              <span className="text-[10.5px] font-semibold text-neutral-500 bg-black/[0.05] px-2 py-0.5 rounded-full tracking-tight whitespace-nowrap">
-                {badge}
-              </span>
+            </h3>
+            {subtitle && (
+              <p className="text-sm text-neutral-500 mt-1">
+                {subtitle}
+              </p>
             )}
           </div>
-        </div>
+        )}
 
-        {/* ── macOS Window Body (Scrollable Content) ── */}
+        {/* ── Scrollable Body Content ── */}
         <div className="overflow-y-auto p-6 sm:p-8 flex-1">
-          {subtitle && (
-            <p className="text-xs text-neutral-500 mb-4 tracking-tight">
+          {!title && subtitle && (
+            <p className="text-sm text-neutral-500 mb-4">
               {subtitle}
             </p>
           )}
@@ -148,3 +94,4 @@ export const MacOSModal: React.FC<MacOSModalProps> = ({
 };
 
 export default MacOSModal;
+
