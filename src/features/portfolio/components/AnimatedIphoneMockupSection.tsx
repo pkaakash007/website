@@ -213,11 +213,20 @@ export const AnimatedIphoneMockupSection: React.FC = () => {
         <div className="relative max-w-5xl mx-auto pt-4 pb-8">
           {/* ── EXACT V-SHAPED DUAL PHONE SHOWCASE (IOS BOTTOM OVERLAPPING ANDROID) ── */}
           <div
-            className="relative flex items-end justify-center h-[620px] sm:h-[690px] w-full max-w-5xl mx-auto pt-6 overflow-visible select-none"
+            className="relative flex items-end justify-center h-[560px] sm:h-[620px] w-full max-w-5xl mx-auto pt-6 overflow-visible select-none"
             style={{
               perspective: "1400px",
             }}
           >
+            {/* ── Soft Ambient Ground Contact Shadow ── */}
+            <div
+              className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[80%] h-10 rounded-full pointer-events-none"
+              style={{
+                background: "radial-gradient(ellipse at center, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.03) 55%, transparent 75%)",
+                filter: "blur(14px)",
+              }}
+            />
+
             {/* ── 1. ANDROID PHONE (Left Arm: Resting Underneath at Bottom) ── */}
             <motion.div
               onClick={() => setActiveFocusedPhone("android")}
@@ -226,8 +235,8 @@ export const AnimatedIphoneMockupSection: React.FC = () => {
                 rotateZ: activeFocusedPhone === "android" ? -7 : -8,
                 rotateY: 8 + mousePos.x * 3,
                 rotateX: 3 - mousePos.y * 3,
-                scale: activeFocusedPhone === "android" ? 1.02 : 0.98,
-                x: 12,
+                scale: activeFocusedPhone === "android" ? 0.92 : 0.88,
+                x: 11,
                 y: activeFocusedPhone === "android" ? -6 : 0,
                 zIndex: activeFocusedPhone === "android" ? 22 : 15,
               }}
@@ -236,27 +245,11 @@ export const AnimatedIphoneMockupSection: React.FC = () => {
               style={{
                 transformOrigin: "bottom right",
                 transformStyle: "preserve-3d",
+                filter: "drop-shadow(0 14px 22px rgba(0, 0, 0, 0.08)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.04))",
               }}
-              title="Android Phone - Left Arm of V"
             >
-              {/* Platform Badge on top of Android */}
-              <div className="absolute -top-11 left-1/2 -translate-x-1/2 z-40 whitespace-nowrap">
-                <span
-                  className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold shadow-md border transition-all duration-300 ${
-                    activeFocusedPhone === "android"
-                      ? "bg-neutral-900 text-white border-emerald-500/60 ring-2 ring-emerald-500/30"
-                      : "bg-white text-neutral-800 border-neutral-200"
-                  }`}
-                >
-                  <span className="text-emerald-500 text-xs">●</span>
-                  <span>Android App</span>
-                </span>
-              </div>
-
               <AndroidShell isActive={activeFocusedPhone === "android"}>
-                {activeAppIndex === 0 && <StoreAppScreen />}
-                {activeAppIndex === 1 && <StoreAppScreen />}
-                {activeAppIndex === 2 && <BookingAppScreen />}
+                <GooglePlayStoreCenterScreen />
               </AndroidShell>
             </motion.div>
 
@@ -268,37 +261,21 @@ export const AnimatedIphoneMockupSection: React.FC = () => {
                 rotateZ: activeFocusedPhone === "ios" ? 7 : 8,
                 rotateY: -8 + mousePos.x * 3,
                 rotateX: 3 - mousePos.y * 3,
-                scale: activeFocusedPhone === "ios" ? 1.03 : 1.0,
-                x: -32,
+                scale: activeFocusedPhone === "ios" ? 0.93 : 0.90,
+                x: -28,
                 y: activeFocusedPhone === "ios" ? -8 : 0,
                 zIndex: 28,
               }}
               transition={{ type: "spring", stiffness: 240, damping: 26 }}
-              className="absolute bottom-6 left-1/2 cursor-pointer transition-shadow drop-shadow-2xl"
+              className="absolute bottom-6 left-1/2 cursor-pointer transition-shadow"
               style={{
                 transformOrigin: "bottom left",
                 transformStyle: "preserve-3d",
+                filter: "drop-shadow(0 16px 26px rgba(0, 0, 0, 0.11)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.05))",
               }}
-              title="Apple iPhone - Bottom overlapping over Android"
             >
-              {/* Platform Badge on top of Apple iPhone */}
-              <div className="absolute -top-11 left-1/2 -translate-x-1/2 z-40 whitespace-nowrap">
-                <span
-                  className={`inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold shadow-md border transition-all duration-300 ${
-                    activeFocusedPhone === "ios"
-                      ? "bg-neutral-900 text-white border-blue-500/60 ring-2 ring-blue-500/30"
-                      : "bg-white text-neutral-800 border-neutral-200"
-                  }`}
-                >
-                  <span className="text-blue-500 text-xs">●</span>
-                  <span>Apple iOS App</span>
-                </span>
-              </div>
-
               <IphoneShell isActive={activeFocusedPhone === "ios"}>
-                {activeAppIndex === 0 && <BillingAppScreen />}
-                {activeAppIndex === 1 && <BillingAppScreen />}
-                {activeAppIndex === 2 && <BookingAppScreen />}
+                <AppleAppStoreCenterScreen />
               </IphoneShell>
             </motion.div>
           </div>
@@ -391,14 +368,10 @@ const AndroidShell: React.FC<DeviceShellProps> = ({ children, isActive }) => {
       }`}
       style={{
         boxShadow: isActive
-          ? "0 30px 70px -15px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.25) inset"
-          : "0 20px 50px -10px rgba(0, 0, 0, 0.3)",
+          ? "0 25px 60px -15px rgba(0, 0, 0, 0.22), 0 10px 25px -8px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.25) inset"
+          : "0 18px 45px -12px rgba(0, 0, 0, 0.14), 0 8px 20px -8px rgba(0, 0, 0, 0.08)",
       }}
     >
-      {/* Right Hardware Buttons: Volume Rocker & Power */}
-      <div className="absolute -right-[12px] top-[140px] w-[3px] h-[54px] bg-neutral-600 rounded-r-sm" />
-      <div className="absolute -right-[12px] top-[210px] w-[3px] h-[34px] bg-neutral-600 rounded-r-sm" />
-
       {/* Outer Metal Bezel */}
       <div className="w-full h-full rounded-[36px] p-[2px] bg-[#0A0B0C] border border-neutral-700/60 flex flex-col overflow-hidden relative">
         {/* Android Display Screen Area */}
@@ -450,25 +423,17 @@ const IphoneShell: React.FC<DeviceShellProps> = ({ children, isActive }) => {
       }`}
       style={{
         boxShadow: isActive
-          ? "0 30px 70px -15px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.25) inset"
-          : "0 20px 50px -10px rgba(0, 0, 0, 0.3)",
+          ? "0 25px 60px -15px rgba(0, 0, 0, 0.22), 0 10px 25px -8px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.25) inset"
+          : "0 18px 45px -12px rgba(0, 0, 0, 0.14), 0 8px 20px -8px rgba(0, 0, 0, 0.08)",
       }}
     >
-      {/* Side Hardware Buttons: Silent switch & volume rocker */}
-      <div className="absolute -left-[12px] top-[115px] w-[3px] h-[28px] bg-neutral-600 rounded-l-sm" />
-      <div className="absolute -left-[12px] top-[155px] w-[3px] h-[48px] bg-neutral-600 rounded-l-sm" />
-      <div className="absolute -left-[12px] top-[215px] w-[3px] h-[48px] bg-neutral-600 rounded-l-sm" />
-      {/* Power button */}
-      <div className="absolute -right-[12px] top-[165px] w-[3px] h-[65px] bg-neutral-600 rounded-r-sm" />
-
       {/* Outer Titanium Bezel highlight */}
       <div className="w-full h-full rounded-[42px] p-[3px] bg-[#0E0F10] border border-neutral-700/60 flex flex-col overflow-hidden relative">
         {/* Dynamic Island Pill at top */}
-        <div className="absolute top-[12px] left-1/2 -translate-x-1/2 z-40 w-[96px] h-[26px] bg-black rounded-full flex items-center justify-between px-2.5 shadow-inner">
-          <div className="w-3 h-3 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#14233c]" />
+        <div className="absolute top-[12px] left-1/2 -translate-x-1/2 z-40 w-[96px] h-[26px] bg-black rounded-full flex items-center justify-end px-3 shadow-inner">
+          <div className="w-3 h-3 rounded-full bg-[#121316] flex items-center justify-center">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#091018]" />
           </div>
-          <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 animate-pulse" />
         </div>
 
         {/* Screen Bezel and Inner Display Content */}
@@ -820,6 +785,67 @@ const BookingAppScreen: React.FC = () => {
           <span>Prescriptions</span>
         </span>
       </div>
+    </div>
+  );
+};
+
+// ─────────────────────────────────────────────────────────
+// SCREEN: GOOGLE PLAY STORE LOGO ON WHITE BACKGROUND (CENTERED ONLY)
+// ─────────────────────────────────────────────────────────
+const GooglePlayStoreCenterScreen: React.FC = () => {
+  return (
+    <div className="h-full w-full flex items-center justify-center bg-white p-6 select-none relative">
+      {/* Centered Play Store Logo */}
+      <motion.div
+        animate={{ scale: [1, 1.03, 1] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center drop-shadow-md"
+      >
+        <svg
+          viewBox="0 0 28.99 31.99"
+          className="w-full h-full"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M13.54 15.28.12 29.34a3.66 3.66 0 0 0 5.33 2.16l15.1-8.6Z"
+            style={{ fill: "#ea4335" }}
+          />
+          <path
+            d="m27.11 12.89-6.53-3.74-7.35 6.45 7.38 7.28 6.48-3.7a3.54 3.54 0 0 0 1.5-4.79 3.62 3.62 0 0 0-1.5-1.5z"
+            style={{ fill: "#fbbc04" }}
+          />
+          <path
+            d="M.12 2.66a3.57 3.57 0 0 0-.12.92v24.84a3.57 3.57 0 0 0 .12.92L14 15.64Z"
+            style={{ fill: "#4285f4" }}
+          />
+          <path
+            d="m13.64 16 6.94-6.85L5.5.51A3.73 3.73 0 0 0 3.63 0 3.64 3.64 0 0 0 .12 2.65Z"
+            style={{ fill: "#34a853" }}
+          />
+        </svg>
+      </motion.div>
+    </div>
+  );
+};
+
+// ─────────────────────────────────────────────────────────
+// SCREEN: APPLE APP STORE LOGO ON WHITE BACKGROUND (CENTERED ONLY)
+// ─────────────────────────────────────────────────────────
+const AppleAppStoreCenterScreen: React.FC = () => {
+  return (
+    <div className="h-full w-full flex items-center justify-center bg-white p-6 select-none relative">
+      {/* Centered Apple App Store Logo */}
+      <motion.div
+        animate={{ scale: [1, 1.03, 1] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        className="w-28 h-28 sm:w-32 sm:h-32 rounded-[28px] sm:rounded-[32px] overflow-hidden drop-shadow-lg flex items-center justify-center"
+      >
+        <img
+          src="/images/apple-app-store-logo.png"
+          alt="Official Apple App Store Logo"
+          className="w-full h-full object-contain"
+        />
+      </motion.div>
     </div>
   );
 };
