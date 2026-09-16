@@ -6,32 +6,26 @@ export const AppDevArchitectureHighlights: React.FC = () => {
     {
       title: "Bank-Grade Data Security",
       desc: "AES-256 encryption at rest, TLS 1.3 in transit, role-based access control (RBAC), and automated vulnerability testing.",
-      spec: "AES-256 · TLS 1.3 · RBAC",
     },
     {
       title: "Sub-100ms API Performance",
       desc: "Optimized database indexing, Redis memory caching layers, connection pooling, and CDN edge caching to ensure lightning-fast responses.",
-      spec: "Redis Cache · Edge CDN · Sub-100ms",
     },
     {
       title: "Multi-Tenant Scalability",
       desc: "Logical or schema-level database isolation, custom tenant domains, automated workspace provisioning, and per-tenant metric tracking.",
-      spec: "Tenant Isolation · Custom Domains",
     },
     {
       title: "Full Intellectual Property Transfer",
       desc: "You retain 100% ownership of source code, git repositories, architectural schematics, and cloud access keys upon project completion.",
-      spec: "100% Source Code & IP Rights",
     },
     {
       title: "Regional & Billing Capabilities",
       desc: "Seamless support for Indian GST billing standards, Tamil Nadu localized tax compliance, multi-currency conversion, and English-Tamil interfaces.",
-      spec: "GST Ready · Bilingual Support",
     },
     {
       title: "Automated Failover & Backups",
       desc: "Hourly encrypted snapshot backups, point-in-time database restoration, multi-availability zone replication, and 99.98% uptime SLA compliance.",
-      spec: "99.98% Uptime SLA · Hourly Snapshots",
     },
   ];
 
@@ -81,11 +75,6 @@ export const AppDevArchitectureHighlights: React.FC = () => {
                   <p className="text-sm text-neutral-600 leading-relaxed font-normal">
                     {item.desc}
                   </p>
-                </div>
-
-                {/* Key Spec Highlight */}
-                <div className="mt-4 pt-3 border-t border-neutral-200/80 flex items-center justify-between text-xs text-neutral-500 font-medium">
-                  <span>{item.spec}</span>
                 </div>
               </div>
             ))}

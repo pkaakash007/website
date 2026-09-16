@@ -8,7 +8,6 @@ import {
   Cloud,
   MessageSquare,
   Shield,
-  ArrowRight,
 } from "lucide-react";
 
 export const appDevDisciplines = [
@@ -202,10 +201,9 @@ export const AppDevServicesGrid: React.FC = () => {
               <button
                 type="button"
                 onClick={() => openLeadModal(`Application Development: ${activeItem.title}`)}
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-[#0E2036] hover:bg-[#162e4c] text-white text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer shadow-xs hover:scale-[1.01] active:scale-[0.99] group"
+                className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-[#0E2036] hover:bg-[#162e4c] text-white text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer shadow-xs hover:scale-[1.01] active:scale-[0.99]"
               >
                 <span>{activeItem.cta}</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-[#DCC195]" />
               </button>
             </div>
 

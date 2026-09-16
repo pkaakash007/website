@@ -642,15 +642,11 @@ export const AppDevTechStackInteractive: React.FC = () => {
                 className="flex flex-col justify-between py-4 border-b border-neutral-200 font-sans"
               >
                 <div>
-                  {/* Top Row: Official Logo + Monospace Tech Code */}
-                  <div className="flex items-center justify-between gap-3 mb-3">
+                  {/* Top Row: Official Logo */}
+                  <div className="mb-3">
                     <div className="w-9 h-9 flex items-center justify-center shrink-0">
                       <TechLogo id={tech.logoId} />
                     </div>
-
-                    <span className="text-xs font-medium text-neutral-400">
-                      {tech.badge}
-                    </span>
                   </div>
 
                   {/* Tech Name */}

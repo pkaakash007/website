@@ -4,7 +4,6 @@ import { Container } from "@/components/layout/Container";
 interface Phase {
   number: string;
   title: string;
-  timing: string;
   summary: string;
   keyPoints: string[];
 }
@@ -13,7 +12,6 @@ const PROCESS_PHASES: Phase[] = [
   {
     number: "01",
     title: "Discovery & Planning",
-    timing: "Phase 1",
     summary:
       "We sit down with you to understand your exact business workflow, specify technical requirements, and define clear project milestones.",
     keyPoints: ["System Architecture Blueprint", "Database Schema Design", "Milestone & Timeline Roadmap"],
@@ -21,7 +19,6 @@ const PROCESS_PHASES: Phase[] = [
   {
     number: "02",
     title: "UI/UX & Interactive Design",
-    timing: "Phase 2",
     summary:
       "We design clickable, high-fidelity prototypes in Figma so you can test every screen, button, and user journey before we write code.",
     keyPoints: ["Mobile & Web Wireframes", "Interactive Clickable Prototype", "Validated User Journeys"],
@@ -29,7 +26,6 @@ const PROCESS_PHASES: Phase[] = [
   {
     number: "03",
     title: "Sprint Development & QA",
-    timing: "Phase 3",
     summary:
       "Our team builds your software in focused 2-week development sprints with regular staging demos, security reviews, and cross-device testing.",
     keyPoints: ["Live Staging Demos", "Full-Stack API Integration", "Security & Speed Audits"],
@@ -37,7 +33,6 @@ const PROCESS_PHASES: Phase[] = [
   {
     number: "04",
     title: "Launch & Source Code Transfer",
-    timing: "Phase 4",
     summary:
       "We handle cloud deployment, publish mobile apps to the App Store and Google Play, and hand over 100% of source code and credentials to your team.",
     keyPoints: ["Production Cloud Setup", "App Store & Play Store Release", "100% IP & Code Ownership"],
@@ -50,9 +45,6 @@ export const AppDevLifecycleTimeline: React.FC = () => {
       <Container size="wide">
         {/* Section Header */}
         <div className="max-w-3xl mb-12 sm:mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#C5A059] tracking-wider uppercase">
-            <span>Development Workflow</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0E2036] leading-tight">
             How We Build &amp; Ship Projects
           </h2>
@@ -69,11 +61,8 @@ export const AppDevLifecycleTimeline: React.FC = () => {
               className="bg-white rounded-2xl p-7 sm:p-8 border border-neutral-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex flex-col justify-between space-y-6 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-shadow duration-200"
             >
               <div className="space-y-4">
-                {/* Phase Badge & Number */}
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[#C5A059] bg-[#C5A059]/10 px-2.5 py-1 rounded-md">
-                    {phase.timing}
-                  </span>
+                {/* Phase Number */}
+                <div className="flex items-center justify-end">
                   <span className="text-sm font-bold text-neutral-400">
                     {phase.number}
                   </span>

@@ -10,10 +10,6 @@ export const AboutHero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column: Headline & Bio */}
           <div className="lg:col-span-7 space-y-4">
-            <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">
-              Real Result • Erode Headquarters, Tamil Nadu
-            </p>
-
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black leading-tight">
               Clear, Direct Digital Growth for Your Business
             </h1>
@@ -29,12 +25,6 @@ export const AboutHero: React.FC = () => {
               >
                 Contact Our Team
               </Link>
-              <a
-                href="#leadership"
-                className="px-6 py-3 text-sm font-semibold text-black border border-neutral-300 hover:bg-neutral-50 rounded-xl transition-colors cursor-pointer"
-              >
-                Meet Our Team
-              </a>
             </div>
           </div>
 

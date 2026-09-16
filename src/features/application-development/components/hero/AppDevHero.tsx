@@ -73,7 +73,7 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
       <Container size="wide" className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center">
           {/* ── Left Column: iOS Typography & Messaging ── */}
-          <div className="lg:col-span-7 space-y-4 sm:space-y-5 flex flex-col justify-center">
+          <div className={`${activeTab === "web" ? "lg:col-span-6" : "lg:col-span-7"} space-y-4 sm:space-y-5 flex flex-col justify-center`}>
 
             {/* ── Top Pill Switcher (Clean Open Tabs) ── */}
             <div className="flex items-center justify-start">
@@ -189,47 +189,16 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
                 Explore Services
               </Button>
             </div>
-
-            {/* Customer Promise Key Highlights Strip */}
-            <div className="pt-3 border-t border-black/[0.07] grid grid-cols-3 gap-3">
-              {activeTab === "mobile" ? (
-                <>
-                  <div>
-                    <div className="text-xs sm:text-sm font-semibold text-black tracking-tight">App &amp; Play Store</div>
-                    <div className="text-[11px] sm:text-xs text-black/50">Guaranteed Publishing</div>
-                  </div>
-                  <div>
-                    <div className="text-xs sm:text-sm font-semibold text-black tracking-tight">100% Code Handover</div>
-                    <div className="text-[11px] sm:text-xs text-black/50">Full IP &amp; Asset Rights</div>
-                  </div>
-                  <div>
-                    <div className="text-xs sm:text-sm font-semibold text-black tracking-tight">Direct Support</div>
-                    <div className="text-[11px] sm:text-xs text-black/50">WhatsApp &amp; Call</div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div>
-                    <div className="text-xs sm:text-sm font-semibold text-black tracking-tight">Fast Mobile Speed</div>
-                    <div className="text-[11px] sm:text-xs text-black/50">Instant Phone Loading</div>
-                  </div>
-                  <div>
-                    <div className="text-xs sm:text-sm font-semibold text-black tracking-tight">WhatsApp Orders</div>
-                    <div className="text-[11px] sm:text-xs text-black/50">Direct Inquiries</div>
-                  </div>
-                  <div>
-                    <div className="text-xs sm:text-sm font-semibold text-black tracking-tight">Fixed Pricing</div>
-                    <div className="text-[11px] sm:text-xs text-black/50">Zero Hidden Charges</div>
-                  </div>
-                </>
-              )}
-            </div>
           </div>
 
           {/* ── Right Column: 3D Device Visualization ── */}
-          <div className="lg:col-span-5 flex justify-center items-center py-6 sm:py-8 lg:py-4">
+          <div className={`${activeTab === "web" ? "lg:col-span-6" : "lg:col-span-5"} flex justify-center items-center py-6 sm:py-8 lg:py-4`}>
             <div
-              className="relative w-full max-w-[360px] sm:max-w-[390px] lg:max-w-[395px] xl:max-w-[420px] flex justify-center px-3 sm:px-5 py-3"
+              className={`relative w-full ${
+                activeTab === "mobile"
+                  ? "max-w-[360px] sm:max-w-[390px] lg:max-w-[395px] xl:max-w-[420px]"
+                  : "max-w-[490px] sm:max-w-[550px] lg:max-w-[600px]"
+              } flex justify-center px-1 sm:px-3 py-2`}
               style={{
                 perspective: "1200px",
               }}
@@ -648,254 +617,280 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
                   </div>
                 </div>
               ) : (
-                /* ────────────────── REALISTIC MACBOOK PRO & macOS DESKTOP ────────────────── */
-                <div
-                  className="relative mx-auto transition-transform duration-500 ease-out hover:scale-[1.02] w-full max-w-[420px] sm:max-w-[460px] lg:max-w-[480px]"
-                  style={{
-                    transform: "rotateY(6deg) rotateX(3deg)",
-                    transformStyle: "preserve-3d",
-                  }}
-                >
-                  {/* ── MacBook Pro Screen Lid ── */}
+                /* ────────────────── ARCHITECTURAL APPLE iMAC MOCKUP ────────────────── */
+                <div className="relative mx-auto transition-transform duration-500 ease-out hover:scale-[1.015] w-full flex flex-col items-center select-none">
+                  
+                  {/* ── 1. iMac Main Display Enclosure ── */}
                   <div
-                    className="relative w-full rounded-[18px] sm:rounded-[20px] p-2 sm:p-2.5 mx-auto overflow-hidden"
+                    className="relative w-full rounded-[20px] sm:rounded-[22px] p-2 sm:p-2.5 overflow-hidden"
                     style={{
-                      background: "linear-gradient(145deg, #2E2F32 0%, #1B1C1E 100%)",
-                      boxShadow:
-                        "0 25px 60px -15px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.12), inset 0 0 0 1px #3E3F42",
+                      background: "linear-gradient(180deg, #E2E4E8 0%, #D0D4DB 70%, #C2C6CE 100%)",
+                      boxShadow: "0 30px 70px -15px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.7) inset, 0 1px 3px rgba(0,0,0,0.1)",
                     }}
                   >
-                    {/* Display Bezel Glare */}
-                    <div className="absolute inset-0 rounded-[18px] sm:rounded-[20px] pointer-events-none border border-white/10 opacity-70" />
+                    {/* Precision Aluminum Edge Chamfer Highlight */}
+                    <div className="absolute inset-0 rounded-[20px] sm:rounded-[22px] border border-white/60 pointer-events-none" />
 
-                    {/* Retina Display Screen */}
-                    <div
-                      className="relative w-full h-[280px] sm:h-[315px] lg:h-[330px] rounded-[14px] overflow-hidden flex flex-col justify-between text-neutral-900 select-none shadow-inner bg-[#F3F4F6]"
-                    >
-                      {/* ── macOS Menu Bar ── */}
-                      <div className="h-5 sm:h-5.5 bg-[#1C1C1E]/90 backdrop-blur-md px-3 flex items-center justify-between text-[8px] sm:text-[9px] text-white/90 shrink-0 border-b border-white/10 z-30">
-                        {/* Left Menu Items */}
-                        <div className="flex items-center gap-2.5">
-                          <AppleLogo className="w-2.5 h-2.5 fill-current text-white/90" />
-                          <span className="font-bold text-white">Safari</span>
-                          <span className="hidden sm:inline text-white/70">File</span>
-                          <span className="hidden sm:inline text-white/70">Edit</span>
-                          <span className="hidden sm:inline text-white/70">View</span>
-                          <span className="hidden sm:inline text-white/70">History</span>
-                          <span className="hidden sm:inline text-white/70">Bookmarks</span>
-                          <span className="hidden sm:inline text-white/70">Window</span>
+                    {/* Display Bezel Frame (Glass Face) */}
+                    <div className="relative w-full bg-[#0D0E12] rounded-[13px] sm:rounded-[15px] overflow-hidden flex flex-col shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1),0_4px_16px_rgba(0,0,0,0.3)]">
+                      
+                      {/* Top Bezel: Embedded FaceTime HD Camera (No Notch Intrusion) */}
+                      <div className="h-4 sm:h-4.5 bg-[#0D0E12] flex items-center justify-center gap-2 px-4 shrink-0">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#1A1C22] border border-white/20 flex items-center justify-center shadow-inner">
+                          <div className="w-0.5 h-0.5 rounded-full bg-[#2563EB]/80" />
                         </div>
-
-                        {/* Top Center Camera Notch */}
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-14 sm:w-16 h-3 bg-black rounded-b-md flex items-center justify-center gap-1.5 px-2">
-                          <div className="w-1 h-1 rounded-full bg-[#1C1C1E] border border-white/20" />
-                          <div className="w-0.5 h-0.5 rounded-full bg-emerald-500 shadow-[0_0_4px_#10B981]" />
-                        </div>
-
-                        {/* Right Status Icons */}
-                        <div className="flex items-center gap-2 text-white/80">
-                          <Search className="w-2 h-2 text-white/70" />
-                          <Wifi className="w-2.5 h-2.5" />
-                          <Battery className="w-3 h-3" />
-                          <span className="font-medium tracking-tight">Tue 9:41 AM</span>
-                        </div>
+                        <div className="w-0.5 h-0.5 rounded-full bg-emerald-400 shadow-[0_0_4px_#34D399]" />
                       </div>
 
-                      {/* ── Full-Bleed Safari Browser Window ── */}
-                      <div className="flex-1 flex flex-col overflow-hidden bg-white z-20">
+                      {/* ── Retina Display Glass Screen ── */}
+                      <div className="relative w-full bg-white flex flex-col overflow-hidden text-neutral-900 shadow-inner">
                         
-                        {/* Safari Unified Header & Toolbar */}
-                        <div className="bg-[#EBECEF] border-b border-black/[0.1] px-2.5 py-1 flex items-center justify-between gap-2 shrink-0">
-                          {/* Window Traffic Lights */}
-                          <div className="flex items-center gap-1.5 shrink-0">
-                            <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56] border border-[#E0443E] shadow-2xs" />
-                            <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E] border border-[#DEA123] shadow-2xs" />
-                            <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F] border border-[#1AAB29] shadow-2xs" />
+                        {/* macOS Menu Bar */}
+                        <div className="h-5 sm:h-5.5 bg-[#1F2026]/95 backdrop-blur-md px-3 sm:px-3.5 flex items-center justify-between text-[8.5px] sm:text-[9.5px] text-white/90 shrink-0 border-b border-white/10 z-30">
+                          {/* Left Menu Items */}
+                          <div className="flex items-center gap-2.5 sm:gap-3">
+                            <AppleLogo className="w-2.5 h-2.5 fill-current text-white/95" />
+                            <span className="font-bold text-white">Safari</span>
+                            <span className="hidden sm:inline text-white/70">File</span>
+                            <span className="hidden sm:inline text-white/70">Edit</span>
+                            <span className="hidden sm:inline text-white/70">View</span>
+                            <span className="hidden sm:inline text-white/70">History</span>
+                            <span className="hidden sm:inline text-white/70">Bookmarks</span>
+                            <span className="hidden sm:inline text-white/70">Window</span>
+                            <span className="hidden sm:inline text-white/70">Help</span>
                           </div>
 
-                          {/* Navigation Buttons */}
-                          <div className="hidden sm:flex items-center gap-1 text-neutral-500 shrink-0">
-                            <span className="text-[10px] font-bold px-0.5 cursor-pointer hover:text-black">‹</span>
-                            <span className="text-[10px] font-bold px-0.5 text-neutral-300">›</span>
-                          </div>
-
-                          {/* Unified Safari Search & URL Bar */}
-                          <div className="flex-1 max-w-[260px] sm:max-w-[280px] flex items-center justify-between px-2.5 py-0.5 rounded-md bg-white border border-black/[0.12] text-[8.5px] text-neutral-700 shadow-2xs">
-                            <div className="flex items-center gap-1.5 overflow-hidden">
-                              <Lock className="w-2.5 h-2.5 text-emerald-600 shrink-0" />
-                              <span className="font-medium text-neutral-900 truncate">
-                                realresult.in/enterprise-store
-                              </span>
-                            </div>
-                            <RotateCw className="w-2 h-2 text-neutral-400 shrink-0 hover:text-black cursor-pointer" />
-                          </div>
-
-                          {/* Right Safari Actions */}
-                          <div className="flex items-center gap-1.5 text-neutral-500 shrink-0">
-                            <SlidersHorizontal className="w-2.5 h-2.5 hover:text-black cursor-pointer" />
+                          {/* Right Status Icons */}
+                          <div className="flex items-center gap-2 sm:gap-2.5 text-white/80 text-[8px] sm:text-[9px]">
+                            <Search className="w-2 h-2 text-white/70 hidden sm:block" />
+                            <Wifi className="w-2.5 h-2.5" />
+                            <Battery className="w-3 h-3 hidden sm:block" />
+                            <span className="font-medium tracking-tight">Tue 9:41 AM</span>
                           </div>
                         </div>
 
-                        {/* ── Live High-Converting Web Application Inside Safari ── */}
-                        <div className="flex-1 bg-[#F9FAFB] overflow-hidden flex flex-col justify-between p-2 sm:p-2.5 text-left font-sans">
+                        {/* Safari Browser Window */}
+                        <div className="flex-1 flex flex-col overflow-hidden bg-white z-20">
                           
-                          {/* Live Web Store / SaaS Header */}
-                          <div className="flex items-center justify-between border-b border-black/[0.06] pb-1.5 shrink-0">
-                            <div className="flex items-center gap-2">
-                              <div className="w-5 h-5 rounded-md bg-[#0E2036] flex items-center justify-center text-white text-[9px] font-bold shadow-xs">
-                                R
-                              </div>
-                              <div>
-                                <div className="text-[10px] font-bold text-[#0E2036] leading-none">REAL RESULT</div>
-                                <div className="text-[6.5px] text-neutral-400 font-medium">Enterprise Growth Platform</div>
-                              </div>
+                          {/* Safari Toolbar */}
+                          <div className="bg-[#EBECEF] border-b border-black/[0.08] px-2.5 sm:px-3 py-1 flex items-center justify-between gap-2.5 shrink-0">
+                            {/* Traffic Lights */}
+                            <div className="flex items-center gap-1.5 shrink-0">
+                              <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56] border border-[#E0443E] shadow-2xs" />
+                              <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E] border border-[#DEA123] shadow-2xs" />
+                              <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F] border border-[#1AAB29] shadow-2xs" />
                             </div>
 
-                            {/* Center Navigation Links */}
-                            <div className="hidden sm:flex items-center gap-2.5 text-[8px] font-medium text-neutral-600">
-                              <span className="text-[#0E2036] font-bold border-b-2 border-[#0E2036] pb-0.5">Overview</span>
-                              <span className="hover:text-black">Storefront</span>
-                              <span className="hover:text-black">Live Orders</span>
-                              <span className="hover:text-black">Analytics</span>
+                            {/* Navigation Chevrons */}
+                            <div className="hidden sm:flex items-center gap-1 text-neutral-500 shrink-0">
+                              <span className="text-[10px] font-bold px-1 text-neutral-600 hover:text-black cursor-pointer">‹</span>
+                              <span className="text-[10px] font-bold px-1 text-neutral-300">›</span>
                             </div>
 
-                            {/* Right Status Pill */}
-                            <div className="flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200">
-                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                              <span className="text-[7.5px] font-bold text-emerald-700">99.99% Live Uptime</span>
+                            {/* Safari Address Bar */}
+                            <div className="flex-1 max-w-[280px] sm:max-w-[320px] flex items-center justify-between px-2.5 py-0.5 rounded-md bg-white border border-black/[0.1] text-[9px] text-neutral-700 shadow-2xs">
+                              <div className="flex items-center gap-1.5 overflow-hidden">
+                                <Lock className="w-2.5 h-2.5 text-emerald-600 shrink-0" />
+                                <span className="font-semibold text-neutral-800 truncate">
+                                  realresult.in/enterprise-store
+                                </span>
+                              </div>
+                              <RotateCw className="w-2 h-2 text-neutral-400 shrink-0 hover:text-black cursor-pointer" />
+                            </div>
+
+                            {/* Right Action */}
+                            <div className="flex items-center gap-1.5 text-neutral-500 shrink-0">
+                              <SlidersHorizontal className="w-2.5 h-2.5 hover:text-black cursor-pointer" />
                             </div>
                           </div>
 
-                          {/* Main Two-Column Dashboard Content */}
-                          <div className="grid grid-cols-12 gap-2 flex-1 py-1.5 overflow-hidden">
+                          {/* Live Web Application Body */}
+                          <div className="bg-[#F8FAFC] overflow-hidden flex flex-col p-2.5 sm:p-3 text-left font-sans gap-2">
                             
-                            {/* Left Column (7 cols): Revenue Analytics & Live Growth Chart */}
-                            <div className="col-span-7 bg-white rounded-lg p-2 border border-black/[0.07] shadow-2xs flex flex-col justify-between">
-                              <div className="flex items-center justify-between">
-                                <div>
-                                  <div className="text-[7.5px] text-neutral-400 uppercase tracking-wider font-semibold">Total Revenue</div>
-                                  <div className="text-[14px] sm:text-[16px] font-extrabold text-[#0E2036] leading-none tracking-tight">
-                                    ₹48,20,500
-                                  </div>
+                            {/* Live Web Store / SaaS Header */}
+                            <div className="flex items-center justify-between border-b border-black/[0.06] pb-1.5 shrink-0">
+                              <div className="flex items-center gap-2">
+                                <div className="w-5.5 h-5.5 rounded-md bg-[#0E2036] flex items-center justify-center text-white text-[9.5px] font-bold shadow-xs">
+                                  R
                                 </div>
-                                <div className="text-right">
-                                  <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[8px] font-bold">
-                                    ↑ 34.8%
-                                  </span>
-                                  <div className="text-[6.5px] text-neutral-400">vs last 30 days</div>
+                                <div>
+                                  <div className="text-[10.5px] font-bold text-[#0E2036] leading-none">REAL RESULT</div>
+                                  <div className="text-[7px] text-neutral-400 font-medium">Enterprise Growth Platform</div>
                                 </div>
                               </div>
 
-                              {/* Real-time Glowing SVG Revenue Curve */}
-                              <div className="w-full h-[46px] sm:h-[52px] relative my-1">
-                                <svg className="w-full h-full" viewBox="0 0 200 60" preserveAspectRatio="none">
-                                  <defs>
-                                    <linearGradient id="mac-rev-grad" x1="0" y1="0" x2="0" y2="1">
-                                      <stop offset="0%" stopColor="#007AFF" stopOpacity="0.35" />
-                                      <stop offset="100%" stopColor="#007AFF" stopOpacity="0" />
-                                    </linearGradient>
-                                  </defs>
-                                  {/* Area Fill */}
-                                  <path
-                                    d="M0,50 Q30,45 60,32 T120,20 T170,12 T200,6 L200,60 L0,60 Z"
-                                    fill="url(#mac-rev-grad)"
-                                  />
-                                  {/* Glowing Line */}
-                                  <path
-                                    d="M0,50 Q30,45 60,32 T120,20 T170,12 T200,6"
-                                    fill="none"
-                                    stroke="#007AFF"
-                                    strokeWidth="2.2"
-                                    strokeLinecap="round"
-                                  />
-                                  {/* Pulse Beacon at Latest Peak */}
-                                  <circle cx="198" cy="6" r="3" fill="#007AFF" />
-                                  <circle cx="198" cy="6" r="6" fill="#007AFF" opacity="0.3" className="animate-ping" />
-                                </svg>
+                              {/* Center Navigation Links */}
+                              <div className="hidden sm:flex items-center gap-2.5 text-[8.5px] font-medium text-neutral-600">
+                                <span className="text-[#0E2036] font-bold border-b-2 border-[#0E2036] pb-0.5">Overview</span>
+                                <span className="hover:text-black cursor-pointer">Storefront</span>
+                                <span className="hover:text-black cursor-pointer">Live Orders</span>
+                                <span className="hover:text-black cursor-pointer">Analytics</span>
                               </div>
 
-                              {/* Performance Metrics Strip */}
-                              <div className="grid grid-cols-3 gap-1 pt-1 border-t border-black/[0.04] text-[7.5px]">
-                                <div>
-                                  <span className="text-neutral-400 block">ROAS</span>
-                                  <span className="font-bold text-[#0E2036]">4.82x High</span>
-                                </div>
-                                <div>
-                                  <span className="text-neutral-400 block">Page Speed</span>
-                                  <span className="font-bold text-emerald-600">0.45s Instant</span>
-                                </div>
-                                <div>
-                                  <span className="text-neutral-400 block">Conversion</span>
-                                  <span className="font-bold text-blue-600">4.9% High</span>
-                                </div>
+                              {/* Right Status Pill */}
+                              <div className="flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200">
+                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                                <span className="text-[8px] font-bold text-emerald-700">99.99% Live Uptime</span>
                               </div>
                             </div>
 
-                            {/* Right Column (5 cols): Live Orders & Sales Feed */}
-                            <div className="col-span-5 bg-white rounded-lg p-2 border border-black/[0.07] shadow-2xs flex flex-col justify-between">
-                              <div className="flex items-center justify-between border-b border-black/[0.04] pb-1">
-                                <span className="text-[8px] font-bold text-[#0E2036]">Live Orders</span>
-                                <span className="text-[7px] text-emerald-600 font-semibold">● Real-time</span>
+                            {/* Main Two-Column Dashboard Content */}
+                            <div className="grid grid-cols-12 gap-2">
+                              
+                              {/* Left Column (7 cols): Revenue Analytics & Live Growth Chart */}
+                              <div className="col-span-7 bg-white rounded-lg p-2.5 border border-black/[0.06] shadow-2xs flex flex-col justify-between">
+                                <div className="flex items-center justify-between mb-1">
+                                  <div>
+                                    <div className="text-[7.5px] text-neutral-400 uppercase tracking-wider font-semibold">Total Revenue</div>
+                                    <div className="text-[16px] sm:text-[18px] font-extrabold text-[#0E2036] leading-none tracking-tight mt-0.5">
+                                      ₹48,20,500
+                                    </div>
+                                  </div>
+                                  <div className="text-right">
+                                    <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-md bg-emerald-50 text-emerald-700 text-[8px] font-bold">
+                                      ↑ 34.8%
+                                    </span>
+                                    <div className="text-[6.5px] text-neutral-400 mt-0.5">vs last 30 days</div>
+                                  </div>
+                                </div>
+
+                                {/* Real-time Glowing SVG Revenue Curve */}
+                                <div className="w-full h-[52px] sm:h-[60px] relative my-1">
+                                  <svg className="w-full h-full" viewBox="0 0 200 60" preserveAspectRatio="none">
+                                    <defs>
+                                      <linearGradient id="imac-rev-grad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stopColor="#007AFF" stopOpacity="0.32" />
+                                        <stop offset="100%" stopColor="#007AFF" stopOpacity="0.0" />
+                                      </linearGradient>
+                                    </defs>
+                                    <path
+                                      d="M0,50 Q30,45 60,32 T120,20 T170,12 T200,6 L200,60 L0,60 Z"
+                                      fill="url(#imac-rev-grad)"
+                                    />
+                                    <path
+                                      d="M0,50 Q30,45 60,32 T120,20 T170,12 T200,6"
+                                      fill="none"
+                                      stroke="#007AFF"
+                                      strokeWidth="2.2"
+                                      strokeLinecap="round"
+                                    />
+                                    <circle cx="198" cy="6" r="3.5" fill="#007AFF" />
+                                    <circle cx="198" cy="6" r="7" fill="#007AFF" opacity="0.35" className="animate-ping" />
+                                  </svg>
+                                </div>
+
+                                {/* Performance Metrics Strip */}
+                                <div className="grid grid-cols-3 gap-1 pt-1.5 border-t border-black/[0.04] text-[8px]">
+                                  <div>
+                                    <span className="text-neutral-400 block text-[7px]">ROAS</span>
+                                    <span className="font-bold text-[#0E2036]">4.82x High</span>
+                                  </div>
+                                  <div>
+                                    <span className="text-neutral-400 block text-[7px]">Page Speed</span>
+                                    <span className="font-bold text-emerald-600">0.45s Instant</span>
+                                  </div>
+                                  <div>
+                                    <span className="text-neutral-400 block text-[7px]">Conversion</span>
+                                    <span className="font-bold text-blue-600">4.9% High</span>
+                                  </div>
+                                </div>
                               </div>
 
-                              <div className="space-y-1.5 py-1">
-                                {/* Order 1 */}
-                                <div className="p-1 rounded bg-[#F8FAFC] border border-black/[0.03]">
-                                  <div className="flex items-center justify-between text-[7.5px]">
-                                    <span className="font-bold text-neutral-800 truncate">Luxury Serum #8492</span>
-                                    <span className="font-extrabold text-emerald-600">₹8,490</span>
+                              {/* Right Column (5 cols): Live Orders & Sales Feed */}
+                              <div className="col-span-5 bg-white rounded-lg p-2.5 border border-black/[0.06] shadow-2xs flex flex-col justify-between">
+                                <div className="flex items-center justify-between border-b border-black/[0.04] pb-1">
+                                  <span className="text-[8.5px] font-bold text-[#0E2036]">Live Orders</span>
+                                  <span className="text-[7.5px] text-emerald-600 font-semibold">● Real-time</span>
+                                </div>
+
+                                <div className="space-y-1.5 py-1">
+                                  {/* Order 1 */}
+                                  <div className="p-1.5 rounded-md bg-[#F8FAFC] border border-black/[0.03]">
+                                    <div className="flex items-center justify-between text-[7.5px]">
+                                      <span className="font-bold text-neutral-800 truncate">Luxury Serum #8492</span>
+                                      <span className="font-extrabold text-emerald-600">₹8,490</span>
+                                    </div>
+                                    <div className="flex items-center justify-between text-[6.5px] text-neutral-400 mt-0.5">
+                                      <span>UPI Instant</span>
+                                      <span className="text-emerald-700 font-medium">Delivered</span>
+                                    </div>
                                   </div>
-                                  <div className="flex items-center justify-between text-[6.5px] text-neutral-400">
-                                    <span>UPI Instant</span>
-                                    <span className="text-emerald-700 font-medium">Delivered</span>
+
+                                  {/* Order 2 */}
+                                  <div className="p-1.5 rounded-md bg-[#F8FAFC] border border-black/[0.03]">
+                                    <div className="flex items-center justify-between text-[7.5px]">
+                                      <span className="font-bold text-neutral-800 truncate">B2B Lead Verified</span>
+                                      <span className="font-extrabold text-blue-600">₹24,990</span>
+                                    </div>
+                                    <div className="flex items-center justify-between text-[6.5px] text-neutral-400 mt-0.5">
+                                      <span>Enterprise Booking</span>
+                                      <span className="text-blue-700 font-medium">Confirmed</span>
+                                    </div>
                                   </div>
                                 </div>
 
-                                {/* Order 2 */}
-                                <div className="p-1 rounded bg-[#F8FAFC] border border-black/[0.03]">
-                                  <div className="flex items-center justify-between text-[7.5px]">
-                                    <span className="font-bold text-neutral-800 truncate">B2B Lead Verified</span>
-                                    <span className="font-extrabold text-blue-600">₹24,990</span>
-                                  </div>
-                                  <div className="flex items-center justify-between text-[6.5px] text-neutral-400">
-                                    <span>Enterprise Booking</span>
-                                    <span className="text-blue-700 font-medium">Confirmed</span>
-                                  </div>
+                                {/* Direct Action */}
+                                <div className="pt-1 border-t border-black/[0.04] flex items-center justify-between text-[7.5px] text-neutral-500">
+                                  <span>Zero Cart Abandon</span>
+                                  <span className="text-[#007AFF] font-bold hover:underline cursor-pointer">View All →</span>
                                 </div>
                               </div>
 
-                              {/* Direct Action */}
-                              <div className="pt-0.5 border-t border-black/[0.04] flex items-center justify-between text-[7px] text-neutral-500">
-                                <span>Zero Cart Abandon</span>
-                                <span className="text-[#007AFF] font-bold cursor-pointer">View All →</span>
+                            </div>
+
+                            {/* Footer Technology & Speed Attribution */}
+                            <div className="flex items-center justify-between text-[7.5px] text-neutral-400 pt-1 border-t border-black/[0.05] shrink-0">
+                              <div className="flex items-center gap-1.5">
+                                <span>Built with Next.js 15</span>
+                                <span>·</span>
+                                <span>Edge CDN Global</span>
+                                <span>·</span>
+                                <span>Stripe &amp; Razorpay Ready</span>
                               </div>
+                              <span className="text-neutral-600 font-semibold">Sub-second Mobile Checkout</span>
                             </div>
 
                           </div>
-
-                          {/* Footer Technology & Speed Attribution */}
-                          <div className="flex items-center justify-between text-[7px] text-neutral-400 pt-1 border-t border-black/[0.05] shrink-0">
-                            <div className="flex items-center gap-1.5">
-                              <span>Built with Next.js 15</span>
-                              <span>·</span>
-                              <span>Edge CDN Global</span>
-                              <span>·</span>
-                              <span>Stripe &amp; Razorpay Ready</span>
-                            </div>
-                            <span className="text-neutral-600 font-semibold">Sub-second Mobile Checkout</span>
-                          </div>
-
                         </div>
+
+                      </div>
+
+                      {/* ── Iconic iMac Aluminum Chin ── */}
+                      <div className="h-7 sm:h-8 bg-gradient-to-r from-[#D5D8E0] via-[#E8EBF1] to-[#D5D8E0] border-t border-white/50 flex items-center justify-center relative shadow-inner">
+                        {/* Subtle Tone-on-Tone Apple Logo */}
+                        <AppleLogo className="w-3.5 h-3.5 fill-current text-[#7A808C] opacity-80" />
                       </div>
 
                     </div>
                   </div>
 
-                  {/* ── MacBook Pro Lower Unibody Aluminum Base ── */}
-                  <div className="relative w-[104%] -ml-[2%] h-3 sm:h-3.5 bg-gradient-to-r from-[#2A2B2E] via-[#3E3F43] to-[#2A2B2E] rounded-b-xl border-t border-white/20 shadow-[0_20px_40px_rgba(0,0,0,0.35)] flex items-center justify-center">
-                    {/* Display Notch Opener Groove */}
-                    <div className="w-14 sm:w-16 h-1 bg-[#1A1A1C] rounded-b-sm shadow-inner" />
+                  {/* ── 2. Realistic Apple Aluminum Stand ── */}
+                  <div className="relative flex flex-col items-center w-full z-0 -mt-0.5">
+                    {/* Stand Neck with Realistic Apple Hinge & Cable Pass-through Hole */}
+                    <div className="w-20 sm:w-24 h-11 sm:h-13 bg-gradient-to-b from-[#B8BCC4] via-[#CED2DA] to-[#A8ACB5] relative flex items-center justify-center shadow-md border-x border-black/10">
+                      {/* Cable Management Hole */}
+                      <div className="w-6 h-6 sm:w-6.5 sm:h-6.5 rounded-full bg-[#18191C] shadow-[inset_0_2px_4px_rgba(0,0,0,0.7)] border border-black/30 flex items-center justify-center">
+                        <div className="w-4 h-4 rounded-full bg-black/60 shadow-inner" />
+                      </div>
+                    </div>
+
+                    {/* Stand Foot / Solid Beveled Aluminum Base Plate */}
+                    <div
+                      className="w-44 sm:w-52 h-3.5 sm:h-4 rounded-[4px] bg-gradient-to-b from-[#E2E5EB] via-[#CFD3DC] to-[#B2B6C0] border border-black/15 shadow-[0_14px_30px_rgba(0,0,0,0.22)]"
+                      style={{
+                        boxShadow: "0 12px 28px -4px rgba(0,0,0,0.25), 0 1px 0 rgba(255,255,255,0.7) inset",
+                      }}
+                    />
+
+                    {/* Ambient Desktop Shadow */}
+                    <div
+                      className="w-56 sm:w-64 h-3.5 rounded-full blur-[8px] opacity-40 -mt-1 pointer-events-none"
+                      style={{
+                        background: "radial-gradient(ellipse at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 70%)",
+                      }}
+                    />
                   </div>
+
                 </div>
               )}
             </div>

@@ -63,10 +63,6 @@ export interface NavDropdownData {
     title: string;
     items: DropdownColItem[];
   };
-  col3: {
-    title: string;
-    items: DropdownColItem[];
-  };
 }
 
 export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
@@ -74,35 +70,25 @@ export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
     col1: {
       title: "Explore Services",
       items: [
-        { label: "Website Design", href: "/application-development" },
-        { label: "Ecommerce Website", href: "/application-development" },
-        { label: "Mobile App Development", href: "/application-development" },
-        { label: "UI/UX Designing", href: "/application-development" },
-        { label: "Digital Marketing", href: "/digital-marketing" },
-        { label: "Search Engine Optimization", href: "/digital-marketing/seo" },
-        { label: "Social Media Marketing", href: "/digital-marketing/social-media-marketing" },
-        { label: "Video Editing & Production", href: "/services#video-editing" },
+        { label: "Website Design & Development", href: "/application-development" },
+        { label: "Ecommerce Online Stores", href: "/application-development" },
+        { label: "Mobile App Development (iOS & Android)", href: "/application-development" },
+        { label: "UI/UX & Product Design", href: "/application-development" },
+        { label: "Search Engine Optimization (SEO)", href: "/digital-marketing/seo" },
+        { label: "Performance Digital Marketing", href: "/digital-marketing" },
+        { label: "Social Media & Meta Ads", href: "/digital-marketing/social-media-marketing" },
+        { label: "Brand Identity & Graphic Design", href: "/services#logo-design" },
       ],
       footerLink: { label: "Explore All 12 Services", href: "/services" },
     },
     col2: {
-      title: "Creative & Branding",
-      items: [
-        { label: "Logo Design & Branding", href: "/services#logo-design" },
-        { label: "Graphic Design", href: "/services#graphic-design" },
-        { label: "Ecommerce Photography", href: "/services#ecommerce-photography" },
-        { label: "Cyber Security Audits", href: "/application-development" },
-        { label: "Content Marketing & PR", href: "/digital-marketing/content-marketing" },
-        { label: "Cloud & Backend Architecture", href: "/application-development" },
-      ],
-    },
-    col3: {
-      title: "Service Delivery",
+      title: "Helpful Topics & Support",
       items: [
         { label: "Free Architecture Consultation", isModal: true },
         { label: "Sub-Second Speed SLA Guarantees", href: "/application-development" },
         { label: "Direct WhatsApp Engineering Desk", isWhatsApp: true },
         { label: "Verified Portfolio & Case Studies", href: "/services" },
+        { label: "Transparent Pricing & Timelines", href: "/contact" },
       ],
     },
   },
@@ -111,34 +97,24 @@ export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
     col1: {
       title: "Explore Marketing",
       items: [
-        { label: "Google Ads & PPC", href: "/digital-marketing" },
-        { label: "Search Engine Optimization", href: "/digital-marketing/seo" },
+        { label: "Google Ads & PPC Campaigns", href: "/digital-marketing" },
+        { label: "Search Engine Optimization (SEO)", href: "/digital-marketing/seo" },
         { label: "Social Media Marketing", href: "/digital-marketing/social-media-marketing" },
         { label: "Instagram & Meta Ads", href: "/digital-marketing" },
-        { label: "Google Maps & Local SEO", href: "/digital-marketing/seo" },
+        { label: "Google Maps & Local 3-Pack SEO", href: "/digital-marketing/seo" },
         { label: "Content Marketing & PR", href: "/digital-marketing/content-marketing" },
-        { label: "Conversion Optimization", href: "/digital-marketing" },
+        { label: "Conversion Rate Optimization", href: "/digital-marketing" },
       ],
       footerLink: { label: "Explore Marketing Hub", href: "/digital-marketing" },
     },
     col2: {
-      title: "Growth Channels",
-      items: [
-        { label: "Direct Phone Call Leads", href: "/digital-marketing" },
-        { label: "WhatsApp Lead Generation", href: "/digital-marketing" },
-        { label: "Tamil Nadu Geo-Targeting", href: "/digital-marketing#reach" },
-        { label: "Ecommerce Ad Scaling", href: "/digital-marketing" },
-        { label: "Short-Form Video & Reels Ads", href: "/services#video-editing" },
-        { label: "Local Google 3-Pack Ranking", href: "/digital-marketing/seo" },
-      ],
-    },
-    col3: {
       title: "Helpful Topics",
       items: [
         { label: "Free Website & SEO Audit", isModal: true },
         { label: "Transparent Weekly Ad Reporting", href: "/digital-marketing#faq" },
         { label: "Marketing FAQs & Timelines", href: "/digital-marketing#faq" },
         { label: "Chat with Marketing Strategist", isWhatsApp: true },
+        { label: "Tamil Nadu Geo-Targeting Playbook", href: "/digital-marketing#reach" },
       ],
     },
   },
@@ -150,7 +126,7 @@ export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
         { label: "iOS Mobile Applications", href: "/application-development" },
         { label: "Android Mobile Applications", href: "/application-development" },
         { label: "Custom Web Applications", href: "/application-development" },
-        { label: "Ecommerce Platforms", href: "/application-development" },
+        { label: "Ecommerce & Store Platforms", href: "/application-development" },
         { label: "UI/UX & Figma Prototypes", href: "/application-development" },
         { label: "Cloud APIs & Microservices", href: "/application-development" },
         { label: "Enterprise SaaS Platforms", href: "/application-development" },
@@ -158,23 +134,13 @@ export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
       footerLink: { label: "Explore Application Engineering", href: "/application-development" },
     },
     col2: {
-      title: "Platforms & Frameworks",
+      title: "Helpful Topics",
       items: [
-        { label: "Apple iOS Ecosystem (Swift / SwiftUI)", href: "/application-development" },
-        { label: "Android Ecosystem (Kotlin / Jetpack)", href: "/application-development" },
-        { label: "React, Next.js & TypeScript Architecture", href: "/application-development" },
-        { label: "UPI & Razorpay Payment Integrations", href: "/application-development" },
-        { label: "App Store & Play Store Submissions", href: "/application-development" },
-        { label: "Biometric Auth & Push Notifications", href: "/application-development" },
-      ],
-    },
-    col3: {
-      title: "Engineering Standards",
-      items: [
+        { label: "Request Technical Quotation", isModal: true },
         { label: "100% Client Source Code IP Ownership", href: "/about" },
         { label: "60fps Native UI & High Performance", href: "/application-development" },
-        { label: "Interactive Modern Tech Stack", href: "/application-development" },
-        { label: "Request Technical Quotation", isModal: true },
+        { label: "UPI & Razorpay Payment Integrations", href: "/application-development" },
+        { label: "Direct WhatsApp Tech Desk", isWhatsApp: true },
       ],
     },
   },
@@ -192,22 +158,13 @@ export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
       footerLink: { label: "Explore Company Profile", href: "/about" },
     },
     col2: {
-      title: "Operating Principles",
+      title: "Corporate & Inquiries",
       items: [
-        { label: "Zero-Bullshit Transparent Metrics", href: "/about#values" },
-        { label: "Engineering-First Quality Standards", href: "/about#values" },
-        { label: "No Code Lock-In Policy", href: "/about#values" },
-        { label: "Client Privacy & Security Protocols", href: "/about" },
-        { label: "Careers & Engineering Culture", href: "/about" },
-      ],
-    },
-    col3: {
-      title: "Corporate Information",
-      items: [
-        { label: "Erode Global HQ & Regional Desks", href: "/contact" },
-        { label: "Corporate GST & Registration", href: "/contact" },
         { label: "Schedule Strategic Partnership Briefing", isModal: true },
         { label: "Direct Founder Discussion Desk", isWhatsApp: true },
+        { label: "No Code Lock-In Policy", href: "/about#values" },
+        { label: "Erode Global HQ & Regional Desks", href: "/contact" },
+        { label: "Corporate GST & Registration", href: "/contact" },
       ],
     },
   },
@@ -226,21 +183,12 @@ export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
       footerLink: { label: "Explore All Contact Channels", href: "/contact" },
     },
     col2: {
-      title: "Direct Assistance",
+      title: "Quick Assistance",
       items: [
         { label: "Request a 15-Min Callback", isModal: true },
         { label: "Technical Support Desk", href: "/contact" },
         { label: "Billing & Accounts Inquiries", href: "/contact" },
-        { label: "Career & Internship Inquiries", href: "/contact" },
-      ],
-    },
-    col3: {
-      title: "Office Hubs",
-      items: [
-        { label: "Perundurai Road, Erode (HQ)", href: "/contact" },
-        { label: "Avinashi Road, Coimbatore", href: "/contact" },
-        { label: "OMR IT Corridor, Chennai", href: "/contact" },
-        { label: "Hours: Mon - Sat (9:00 AM - 7:00 PM)", href: "/contact" },
+        { label: "Office Hours: Mon - Sat (9:00 AM - 7:00 PM)", href: "/contact" },
       ],
     },
   },
@@ -250,32 +198,22 @@ export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
       title: "Explore Industries",
       items: [
         { label: "Healthcare Digital Marketing", href: "/industries/healthcare" },
-        { label: "B2B Digital Marketing", href: "/industries/b2b" },
+        { label: "B2B Manufacturing & Industrial", href: "/industries/b2b" },
         { label: "Ecommerce & D2C Brands", href: "/industries/ecommerce" },
         { label: "Finance & BFSI Marketing", href: "/industries/finance" },
         { label: "Real Estate Digital Marketing", href: "/industries/real-estate" },
         { label: "Education Digital Marketing", href: "/industries/education" },
+        { label: "Electric Vehicles & Automotive", href: "/industries/ev" },
       ],
       footerLink: { label: "Explore All 12 Industry Playbooks", href: "/industries" },
     },
     col2: {
-      title: "Specialized Verticals",
-      items: [
-        { label: "Skincare & Beauty Marketing", href: "/industries/skincare-beauty" },
-        { label: "Electric Vehicles (EV)", href: "/industries/ev" },
-        { label: "Automotive & Dealerships", href: "/industries/automotive" },
-        { label: "FMCG Brand Marketing", href: "/industries/fmcg" },
-        { label: "Home Decor & Furnishings", href: "/industries/home-decor" },
-        { label: "Travel & Hospitality", href: "/industries/travel-tourism" },
-      ],
-    },
-    col3: {
-      title: "Vertical Practice",
+      title: "Helpful Topics",
       items: [
         { label: "Free Industry Strategy Consultation", isModal: true },
         { label: "Healthcare Growth & Compliance Audit", href: "/industries/healthcare" },
         { label: "Direct WhatsApp Specialist Desk", isWhatsApp: true },
-        { label: "Explore All 12 Playbooks", href: "/industries" },
+        { label: "Industry Case Studies & Results", href: "/industries" },
       ],
     },
   },
@@ -597,10 +535,10 @@ export const Header: React.FC = () => {
           onMouseLeave={handleNavMouseLeave}
         >
           {currentData && (
-            <div className="max-w-6xl mx-auto px-10 xl:px-16 pt-8 pb-10">
-              <div className="grid grid-cols-12 gap-8 items-start">
-                {/* ── Column 1: Explore Header & Prominent Bold Typography ── */}
-                <div className="col-span-5 pr-8 border-r border-neutral-100">
+            <div className="max-w-4xl mx-auto px-10 xl:px-14 pt-8 pb-10">
+              <div className="grid grid-cols-12 gap-10 items-start">
+                {/* ── Column 1: Explore Header & Single List of Services ── */}
+                <div className="col-span-7 pr-10 border-r border-neutral-100">
                   <p className="text-[12px] font-semibold text-neutral-400 mb-3 tracking-normal">
                     {currentData.col1.title}
                   </p>
@@ -608,7 +546,7 @@ export const Header: React.FC = () => {
                     {currentData.col1.items.map((item) =>
                       renderItemLink(
                         item,
-                        "text-[21px] xl:text-[23px] font-bold text-neutral-900 hover:text-[#0071e3] transition-colors leading-[1.25] tracking-tight block py-0.5",
+                        "text-[20px] xl:text-[22px] font-bold text-neutral-900 hover:text-[#0071e3] transition-colors leading-[1.28] tracking-tight block py-0.5",
                         "col1"
                       )
                     )}
@@ -627,8 +565,8 @@ export const Header: React.FC = () => {
                   )}
                 </div>
 
-                {/* ── Column 2: Specific Categories / Capabilities ── */}
-                <div className="col-span-4 px-4">
+                {/* ── Column 2: Helpful Topics & Quick Actions ── */}
+                <div className="col-span-5 pl-2">
                   <p className="text-[12px] font-semibold text-neutral-400 mb-3 tracking-normal">
                     {currentData.col2.title}
                   </p>
@@ -636,24 +574,8 @@ export const Header: React.FC = () => {
                     {currentData.col2.items.map((item) =>
                       renderItemLink(
                         item,
-                        "text-[13.5px] font-semibold text-neutral-800 hover:text-[#0071e3] transition-colors block py-0.5",
-                        "col2"
-                      )
-                    )}
-                  </div>
-                </div>
-
-                {/* ── Column 3: Helpful Topics / Resources ── */}
-                <div className="col-span-3 pl-4">
-                  <p className="text-[12px] font-semibold text-neutral-400 mb-3 tracking-normal">
-                    {currentData.col3.title}
-                  </p>
-                  <div className="flex flex-col space-y-2">
-                    {currentData.col3.items.map((item) =>
-                      renderItemLink(
-                        item,
                         "text-[13.5px] font-medium text-neutral-600 hover:text-black transition-colors block py-0.5",
-                        "col3"
+                        "col2"
                       )
                     )}
                   </div>

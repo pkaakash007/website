@@ -71,16 +71,6 @@ export const ContactDirectChannels: React.FC = () => {
             Direct response during IST business hours
           </p>
         </div>
-
-        {/* Turnaround */}
-        <div>
-          <h3 className="font-bold text-black text-base">
-            Response Time
-          </h3>
-          <p className="text-neutral-700 mt-0.5">
-            Proposals and scoping documents delivered within 24 to 48 business hours.
-          </p>
-        </div>
       </div>
     </div>
   );

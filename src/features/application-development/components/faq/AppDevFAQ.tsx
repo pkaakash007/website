@@ -51,9 +51,6 @@ export const AppDevFAQ: React.FC = () => {
     <section className="py-20 sm:py-28 bg-white border-b border-neutral-200/80">
       <Container size="wide">
         <div className="max-w-3xl mb-12 space-y-3">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#C5A059] tracking-wider uppercase">
-            <span>Got Questions?</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0E2036] tracking-tight leading-tight">
             Frequently Asked Questions
           </h2>

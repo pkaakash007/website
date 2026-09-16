@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { Button } from "@/components/common/Button";
 
 export const MarketingConsultationCTA: React.FC = () => {
   return (
@@ -31,13 +30,6 @@ export const MarketingConsultationCTA: React.FC = () => {
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white text-neutral-950 hover:bg-neutral-100 font-bold text-sm sm:text-base shadow-[0_8px_30px_rgba(255,255,255,0.2)] hover:shadow-[0_12px_35px_rgba(255,255,255,0.3)] transition-all duration-200 active:scale-95 cursor-pointer"
             >
               <span>Book a Free Call</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => openLeadModal("us-growth-cta-audit")}
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-sm sm:text-base backdrop-blur-2xl border border-white/30 hover:border-white/50 shadow-[0_8px_30px_rgba(0,0,0,0.2)] transition-all duration-200 active:scale-95 cursor-pointer"
-            >
-              <span>Get a Free Audit</span>
             </button>
           </div>
         </div>
