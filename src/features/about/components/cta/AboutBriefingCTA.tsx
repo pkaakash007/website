@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
 import { openLeadModal } from "@/components/common/LeadModal";
 import { SEO_CONFIG } from "@/config/seo";
+import { ArrowRight } from "lucide-react";
 
 export const AboutBriefingCTA: React.FC = () => {
   return (
@@ -16,16 +17,23 @@ export const AboutBriefingCTA: React.FC = () => {
             <p className="text-base text-neutral-600 leading-relaxed max-w-2xl font-normal">
               Schedule a consultation with our team at our Erode office or connect with us directly to review your website, software, or digital marketing requirements.
             </p>
-            <div className="pt-2 flex flex-wrap items-center gap-4">
+            <div className="pt-2 flex flex-wrap items-center gap-3.5">
               <button
                 onClick={() => openLeadModal("about-briefing-cta")}
-                className="px-6 py-3 text-sm font-semibold text-white bg-neutral-900 hover:bg-neutral-800 rounded transition-colors cursor-pointer"
+                className="px-6 py-3 text-sm font-semibold text-white bg-neutral-900 hover:bg-neutral-800 active:scale-95 rounded-xl transition-all cursor-pointer"
               >
                 Get Started
               </button>
               <Link
+                to="/portfolio"
+                className="inline-flex items-center gap-1.5 px-6 py-3 text-sm font-semibold text-[#0071e3] bg-[#0071e3]/10 hover:bg-[#0071e3]/15 active:scale-95 rounded-xl transition-all cursor-pointer"
+              >
+                <span>View Our Portfolio</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
                 to="/contact"
-                className="px-6 py-3 text-sm font-semibold text-neutral-700 border border-neutral-300 hover:bg-neutral-100 rounded transition-colors"
+                className="px-6 py-3 text-sm font-semibold text-neutral-700 border border-neutral-300 hover:bg-neutral-100 active:scale-95 rounded-xl transition-all"
               >
                 Contact Erode Office
               </Link>

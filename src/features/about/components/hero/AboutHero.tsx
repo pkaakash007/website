@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
+import { ArrowRight } from "lucide-react";
 import AboutHeroSketch from "./AboutHeroSketch";
 
 export const AboutHero: React.FC = () => {
@@ -18,10 +19,17 @@ export const AboutHero: React.FC = () => {
               We are a digital agency based in Erode, Tamil Nadu. We build mobile-friendly websites, custom applications, and run targeted ad campaigns that generate real customer calls and business inquiries.
             </p>
 
-            <div className="pt-4 flex flex-wrap items-center gap-4">
+            <div className="pt-4 flex flex-wrap items-center gap-3.5">
+              <Link
+                to="/portfolio"
+                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-[#0071e3] hover:bg-[#0077ED] active:scale-95 rounded-xl transition-all shadow-sm cursor-pointer"
+              >
+                <span>Our Portfolio</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
               <Link
                 to="/contact"
-                className="px-6 py-3 text-sm font-semibold text-white bg-black hover:bg-neutral-800 rounded-xl transition-colors cursor-pointer"
+                className="px-6 py-3 text-sm font-semibold text-neutral-800 bg-neutral-100 hover:bg-neutral-200 active:scale-95 rounded-xl transition-all cursor-pointer"
               >
                 Contact Our Team
               </Link>

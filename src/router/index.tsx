@@ -12,6 +12,7 @@ import ContactPage from "@/pages/ContactPage";
 import IndustriesPage from "@/pages/IndustriesPage";
 import HealthcareIndustryPage from "@/pages/industries/HealthcareIndustryPage";
 import IndustryDetailPage from "@/pages/industries/IndustryDetailPage";
+import PortfolioPage from "@/pages/PortfolioPage";
 import NotFoundPage from "@/pages/NotFoundPage";
 
 export const router = createBrowserRouter([
@@ -101,10 +102,20 @@ export const router = createBrowserRouter([
         element: <HealthcareIndustryPage />,
       },
 
+      // 7. Our Portfolio Page & Aliases
+      {
+        path: "portfolio",
+        element: <PortfolioPage />,
+      },
+      {
+        path: "our-portfolio",
+        element: <PortfolioPage />,
+      },
+
       // Redirects for legacy routes back to the major pages
       {
         path: "case-studies",
-        element: <Navigate to="/#pillars" replace />,
+        element: <Navigate to="/portfolio" replace />,
       },
       {
         path: "locations/*",

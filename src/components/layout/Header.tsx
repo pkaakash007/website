@@ -87,7 +87,7 @@ export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
         { label: "Free Architecture Consultation", isModal: true },
         { label: "Sub-Second Speed SLA Guarantees", href: "/application-development" },
         { label: "Direct WhatsApp Engineering Desk", isWhatsApp: true },
-        { label: "Verified Portfolio & Case Studies", href: "/services" },
+        { label: "Verified Portfolio & Case Studies", href: "/portfolio" },
         { label: "Transparent Pricing & Timelines", href: "/contact" },
       ],
     },
@@ -151,6 +151,7 @@ export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
       items: [
         { label: "Company Story & Origins", href: "/about#story" },
         { label: "Executive Leadership Team", href: "/about#leadership" },
+        { label: "Verified Portfolio & Case Studies", href: "/portfolio" },
         { label: "Core Operating Values", href: "/about#values" },
         { label: "Scale & Verified Milestones", href: "/about#stats" },
         { label: "Global & Regional Presence", href: "/contact" },

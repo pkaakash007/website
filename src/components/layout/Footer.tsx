@@ -19,6 +19,7 @@ const marketingSilo = [
 
 const softwareSilo = [
   { label: "Application Development Overview", href: "/application-development" },
+  { label: "Our Portfolio (Client Case Studies)", href: "/portfolio" },
   { label: "Custom Web Application Development", href: "/application-development/web-development" },
   { label: "Mobile App Development (iOS/Android)", href: "/application-development/mobile-app-development" },
   { label: "Custom Business ERP Software", href: "/application-development/custom-software-development" },
