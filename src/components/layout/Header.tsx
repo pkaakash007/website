@@ -536,28 +536,28 @@ export const Header: React.FC = () => {
           onMouseLeave={handleNavMouseLeave}
         >
           {currentData && (
-            <div className="max-w-4xl mx-auto px-10 xl:px-14 pt-8 pb-10">
-              <div className="grid grid-cols-12 gap-10 items-start">
+            <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10 xl:px-12 pt-5 pb-6 lg:pt-6 lg:pb-7 xl:pt-7 xl:pb-8 max-h-[calc(100vh-4.5rem)] overflow-y-auto">
+              <div className="grid grid-cols-12 gap-6 lg:gap-8 xl:gap-10 items-start">
                 {/* ── Column 1: Explore Header & Single List of Services ── */}
-                <div className="col-span-7 pr-10 border-r border-neutral-100">
-                  <p className="text-[12px] font-semibold text-neutral-400 mb-3 tracking-normal">
+                <div className="col-span-7 pr-6 lg:pr-8 xl:pr-10 border-r border-neutral-100">
+                  <p className="text-[11px] lg:text-[11.5px] font-semibold text-neutral-400 mb-2 lg:mb-2.5 tracking-normal">
                     {currentData.col1.title}
                   </p>
-                  <div className="flex flex-col space-y-1">
+                  <div className="flex flex-col space-y-0.5 lg:space-y-1">
                     {currentData.col1.items.map((item) =>
                       renderItemLink(
                         item,
-                        "text-[20px] xl:text-[22px] font-bold text-neutral-900 hover:text-[#0071e3] transition-colors leading-[1.28] tracking-tight block py-0.5",
+                        "text-[15px] sm:text-[16px] lg:text-[17px] xl:text-[19px] font-bold text-neutral-900 hover:text-[#0071e3] transition-colors leading-[1.24] tracking-tight block py-0.5",
                         "col1"
                       )
                     )}
                   </div>
                   {currentData.col1.footerLink && (
-                    <div className="mt-5 pt-3.5 border-t border-neutral-100">
+                    <div className="mt-3.5 pt-2.5 lg:mt-4 lg:pt-3 border-t border-neutral-100">
                       <Link
                         to={currentData.col1.footerLink.href}
                         onClick={closeDropdown}
-                        className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-neutral-500 hover:text-[#0071e3] transition-colors"
+                        className="inline-flex items-center gap-1.5 text-[12px] lg:text-[12.5px] font-semibold text-neutral-500 hover:text-[#0071e3] transition-colors"
                       >
                         <span>{currentData.col1.footerLink.label}</span>
                         <ArrowRight className="w-3.5 h-3.5" />
@@ -567,15 +567,15 @@ export const Header: React.FC = () => {
                 </div>
 
                 {/* ── Column 2: Helpful Topics & Quick Actions ── */}
-                <div className="col-span-5 pl-2">
-                  <p className="text-[12px] font-semibold text-neutral-400 mb-3 tracking-normal">
+                <div className="col-span-5 pl-1 lg:pl-2">
+                  <p className="text-[11px] lg:text-[11.5px] font-semibold text-neutral-400 mb-2 lg:mb-2.5 tracking-normal">
                     {currentData.col2.title}
                   </p>
-                  <div className="flex flex-col space-y-2">
+                  <div className="flex flex-col space-y-1 lg:space-y-1.5">
                     {currentData.col2.items.map((item) =>
                       renderItemLink(
                         item,
-                        "text-[13.5px] font-medium text-neutral-600 hover:text-black transition-colors block py-0.5",
+                        "text-[12.5px] lg:text-[13px] xl:text-[13.5px] font-medium text-neutral-600 hover:text-black transition-colors block py-0.5",
                         "col2"
                       )
                     )}

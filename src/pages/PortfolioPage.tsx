@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { Container } from "@/components/layout/Container";
-import { PORTFOLIO_PROJECTS } from "@/features/portfolio/data/portfolioProjects";
 import { PortfolioProject } from "@/features/portfolio/types";
-import BlurNewsStack from "@/features/portfolio/components/BlurNewsStack";
-import AnimatedIphoneMockupSection from "@/features/portfolio/components/AnimatedIphoneMockupSection";
-import MobileShowreelSection from "@/features/portfolio/components/MobileShowreelSection";
+import MotionBlurShowcase from "@/features/portfolio/components/MotionBlurShowcase";
 import PortfolioDetailModal from "@/features/portfolio/components/PortfolioDetailModal";
 
 export const PortfolioPage: React.FC = () => {
@@ -17,7 +14,7 @@ export const PortfolioPage: React.FC = () => {
       {/* ── SEO Metadata ── */}
       <SEOHead
         title="Our Portfolio | Flagship Software & Marketing Case Studies | Real Result"
-        description="Explore verified client productions by Real Result Technology & Marketing across Tamil Nadu. Featuring our iOS-inspired Blur: News Stack interactive showcase."
+        description="Explore verified client productions by Real Result Technology & Marketing across Tamil Nadu. Featuring our Jitter-inspired Orbit: Cards and Motion Blur showcases."
         canonicalPath="/portfolio"
         schema={{
           "@context": "https://schema.org",
@@ -48,19 +45,8 @@ export const PortfolioPage: React.FC = () => {
         </Container>
       </section>
 
-      {/* ── Interactive Hero Stage: Blur: News Stack [iOS] with Scroll-Driven Motion ── */}
-      <section className="relative bg-[#F5F5F7] border-b border-neutral-200/80">
-        <BlurNewsStack
-          projects={PORTFOLIO_PROJECTS}
-          onSelectProject={(project) => setSelectedProject(project)}
-        />
-      </section>
-
-      {/* ── Jitter-Style Animated iPhone Mockup Section ── */}
-      <AnimatedIphoneMockupSection />
-
-      {/* ── Jitter-Style Mobile Showreel Endless Marquee Section ── */}
-      <MobileShowreelSection />
+      {/* ── Kinetic Typography Stage: Motion Blur [Jitter Motion] ── */}
+      <MotionBlurShowcase />
 
       {/* ── Project Detail Modal Drawer ── */}
       <PortfolioDetailModal

@@ -7,6 +7,7 @@ import { openLeadModal } from "@/components/common/LeadModal";
 import { REAL_RESULT_CONFIG, getWhatsAppUrl } from "@/config";
 import { BrandWhatsAppIcon } from "@/components/brand/BrandChannelIcons";
 import { ServiceSketchIllustration } from "@/features/digital-marketing/components/services/ServiceSketchIllustration";
+import ServicesOrbitCardsShowcase from "@/features/services/components/ServicesOrbitCardsShowcase";
 import {
   ArrowRight,
   Sparkles,
@@ -276,32 +277,37 @@ export const ServicesPage: React.FC = () => {
         canonicalPath="/services"
       />
 
-      {/* ── 1. Hero Section (Social Panga Split Layout) ── */}
-      <section className="pt-28 pb-16 sm:pt-36 sm:pb-20 bg-white border-b border-neutral-200/80 relative overflow-hidden">
-        {/* Subtle light aura */}
+      {/* ── 1. Hero Section (Studio Gradient & Split Layout) ── */}
+      <section className="pt-28 pb-16 sm:pt-36 sm:pb-20 bg-gradient-to-b from-[#EEF2F8] via-[#F4F7FB] to-white border-b border-neutral-200/80 relative overflow-hidden">
+        {/* Luminous atmospheric studio gradient blooms */}
         <div aria-hidden className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-10 right-10 w-96 h-96 rounded-full bg-blue-50/60 blur-3xl" />
-          <div className="absolute -bottom-20 left-10 w-80 h-80 rounded-full bg-slate-50 blur-2xl" />
+          <div className="absolute -top-10 right-1/4 w-[650px] h-[520px] rounded-full bg-blue-200/35 blur-[100px]" />
+          <div className="absolute top-1/4 -left-10 w-[500px] h-[450px] rounded-full bg-indigo-100/45 blur-[90px]" />
+          <div className="absolute -bottom-10 right-10 w-[480px] h-[380px] rounded-full bg-cyan-100/40 blur-[80px]" />
         </div>
 
         <Container size="wide" className="relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            {/* Left Column: Big Bold Title */}
-            <div className="lg:col-span-5 space-y-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Column: Big Bold Title & Descriptive Philosophy */}
+            <div className="lg:col-span-5 space-y-6">
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#0E2036] leading-[1.05]">
                 Our <br className="hidden sm:inline" />
                 Services.
               </h1>
+
+              <div className="space-y-4 pt-1">
+                <p className="text-base sm:text-lg text-slate-700 font-normal leading-relaxed text-balance">
+                  We help businesses realize their highest growth velocity by building authentic brand identities, high-intent customer acquisition funnels, and enterprise-grade software.
+                </p>
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
+                  Every business arrives with distinct operational bottlenecks and unit economics. We join hands as your dedicated growth partners—combining engineering precision with bold creative execution to deliver tangible business outcomes every single time.
+                </p>
+              </div>
             </div>
 
-            {/* Right Column: Conversational Agency Philosophy */}
-            <div className="lg:col-span-7 flex flex-col justify-center space-y-5 pt-2 lg:pt-4">
-              <p className="text-lg sm:text-xl text-slate-700 font-normal leading-relaxed text-balance">
-                We help businesses realize their highest growth velocity by building authentic brand identities, high-intent customer acquisition funnels, and enterprise-grade software.
-              </p>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl">
-                Every business arrives with distinct operational bottlenecks and unit economics. We join hands as your dedicated growth partners—combining engineering precision with bold creative execution to deliver tangible business outcomes every single time.
-              </p>
+            {/* Right Column: 3D Orbit Cards Stage */}
+            <div className="lg:col-span-7 flex flex-col items-center justify-center">
+              <ServicesOrbitCardsShowcase services={SERVICES_CATALOG} />
             </div>
           </div>
         </Container>
@@ -318,7 +324,7 @@ export const ServicesPage: React.FC = () => {
                 <div
                   key={service.id}
                   id={service.id}
-                  className={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center ${
+                  className={`scroll-mt-28 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center ${
                     !isEven ? "lg:grid-flow-dense" : ""
                   }`}
                 >

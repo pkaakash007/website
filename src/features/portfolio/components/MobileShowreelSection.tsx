@@ -437,13 +437,13 @@ export const MobileShowreelSection: React.FC = () => {
   return (
     <section
       id="mobile-showreel"
-      className="relative py-24 sm:py-32 bg-[#08090C] text-white overflow-hidden border-b border-neutral-800"
+      className="relative py-24 sm:py-32 bg-white text-neutral-900 overflow-hidden border-b border-neutral-200"
     >
       {/* Background ambient lighting */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-to-tr from-[#0071E3]/15 via-purple-600/10 to-transparent rounded-full blur-3xl opacity-60" />
-        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[550px] bg-gradient-to-tr from-blue-100/50 via-purple-100/40 to-emerald-100/30 rounded-full blur-3xl opacity-70" />
+        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-blue-50/70 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-purple-50/70 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -454,9 +454,9 @@ export const MobileShowreelSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900/90 border border-neutral-800 text-neutral-300 shadow-sm mb-4"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-800 shadow-xs mb-4"
           >
-            <Film className="w-4 h-4 text-blue-400" />
+            <Film className="w-4 h-4 text-[#0071E3]" />
             <span className="text-xs sm:text-sm font-semibold tracking-wide">
               Mobile App Showreel
             </span>
@@ -467,10 +467,10 @@ export const MobileShowreelSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl font-black text-neutral-900 tracking-tight leading-tight"
           >
             Real Screens. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
               Designed for Daily Life.
             </span>
           </motion.h2>
@@ -480,7 +480,7 @@ export const MobileShowreelSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-4 text-base sm:text-lg text-neutral-400 leading-relaxed max-w-2xl mx-auto"
+            className="mt-4 text-base sm:text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto"
           >
             Every button, form, and page is kept clean and simple so that you and your customers can get things done without getting confused.
           </motion.p>
@@ -489,16 +489,16 @@ export const MobileShowreelSection: React.FC = () => {
           <div className="mt-6 flex justify-center">
             <button
               onClick={() => setIsPaused(!isPaused)}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-neutral-900 border border-neutral-700/80 text-xs font-semibold text-neutral-300 hover:text-white hover:bg-neutral-800 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-neutral-200 text-xs font-semibold text-neutral-700 hover:text-neutral-900 hover:bg-neutral-50 shadow-xs transition-colors cursor-pointer"
             >
               {isPaused ? (
                 <>
-                  <Play className="w-3.5 h-3.5 text-emerald-400" />
+                  <Play className="w-3.5 h-3.5 text-emerald-600" />
                   <span>Resume Screen Scroll</span>
                 </>
               ) : (
                 <>
-                  <Pause className="w-3.5 h-3.5 text-amber-400" />
+                  <Pause className="w-3.5 h-3.5 text-amber-600" />
                   <span>Pause Screen Scroll</span>
                 </>
               )}
@@ -508,13 +508,13 @@ export const MobileShowreelSection: React.FC = () => {
 
         {/* ── 3-Column Endless Scrolling Showreel Stage ── */}
         <div
-          className="relative h-[680px] sm:h-[750px] overflow-hidden rounded-3xl border border-neutral-800 bg-[#050608]/70 backdrop-blur-sm p-4 sm:p-6"
+          className="relative h-[680px] sm:h-[750px] overflow-hidden rounded-3xl border border-neutral-200/90 bg-[#F5F5F7] p-4 sm:p-6 shadow-inner"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
           {/* Top & Bottom fade gradients for seamless look */}
-          <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#08090C] to-transparent z-20 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#08090C] to-transparent z-20 pointer-events-none" />
+          <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#F5F5F7] to-transparent z-20 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#F5F5F7] to-transparent z-20 pointer-events-none" />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 h-full">
             {/* ── COLUMN 1: Scrolls Upwards ── */}
@@ -573,32 +573,32 @@ export const MobileShowreelSection: React.FC = () => {
 
         {/* Bottom Feature Strip in simple words */}
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800 text-left">
-            <div className="w-8 h-8 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-sm mb-3">
+          <div className="p-5 rounded-2xl bg-white border border-neutral-200/90 shadow-sm text-left">
+            <div className="w-8 h-8 rounded-xl bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm mb-3">
               ⚡
             </div>
-            <h4 className="text-sm font-bold text-white">Very Fast to Learn</h4>
-            <p className="text-xs text-neutral-400 mt-1 leading-relaxed">
+            <h4 className="text-sm font-bold text-neutral-900">Very Fast to Learn</h4>
+            <p className="text-xs text-neutral-600 mt-1 leading-relaxed">
               Your staff can start billing and taking customer orders in under 5 minutes.
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800 text-left">
-            <div className="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm mb-3">
+          <div className="p-5 rounded-2xl bg-white border border-neutral-200/90 shadow-sm text-left">
+            <div className="w-8 h-8 rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm mb-3">
               🛡️
             </div>
-            <h4 className="text-sm font-bold text-white">Always Works Offline</h4>
-            <p className="text-xs text-neutral-400 mt-1 leading-relaxed">
+            <h4 className="text-sm font-bold text-neutral-900">Always Works Offline</h4>
+            <p className="text-xs text-neutral-600 mt-1 leading-relaxed">
               Keep printing bills even if your Wi-Fi or mobile internet disconnects.
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800 text-left">
-            <div className="w-8 h-8 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-sm mb-3">
+          <div className="p-5 rounded-2xl bg-white border border-neutral-200/90 shadow-sm text-left">
+            <div className="w-8 h-8 rounded-xl bg-purple-50 border border-purple-100 text-purple-600 flex items-center justify-center font-bold text-sm mb-3">
               💬
             </div>
-            <h4 className="text-sm font-bold text-white">WhatsApp Connected</h4>
-            <p className="text-xs text-neutral-400 mt-1 leading-relaxed">
+            <h4 className="text-sm font-bold text-neutral-900">WhatsApp Connected</h4>
+            <p className="text-xs text-neutral-600 mt-1 leading-relaxed">
               Bills, delivery updates, and reminders arrive straight on customer WhatsApp.
             </p>
           </div>

@@ -250,13 +250,15 @@ const SecuritySketch: React.FC = () => (
 
 export interface ServiceSketchIllustrationProps {
   serviceId: string;
+  className?: string;
 }
 
 export const ServiceSketchIllustration: React.FC<ServiceSketchIllustrationProps> = ({
   serviceId,
+  className,
 }) => {
   return (
-    <div className="w-full flex items-center justify-center p-4 sm:p-8 select-none transition-transform duration-300 hover:scale-[1.02]">
+    <div className={className || "w-full flex items-center justify-center p-4 sm:p-8 select-none transition-transform duration-300 hover:scale-[1.02]"}>
       {serviceId.includes("strategy") && <StrategySketch />}
       {serviceId.includes("media") && <MediaSketch />}
       {serviceId.includes("seo") && <SeoSketch />}
