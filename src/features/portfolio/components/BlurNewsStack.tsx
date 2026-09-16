@@ -124,16 +124,10 @@ export const BlurNewsStack: React.FC<BlurNewsStackProps> = ({
         {/* Apple-style subtle radial ambient illumination */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(255,255,255,0.9),transparent_70%)] pointer-events-none" />
 
-        {/* Section Headline & Dynamic Live Scroll Pill */}
-        <div className="relative z-20 text-center mb-6 sm:mb-8 space-y-2">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/[0.05] border border-black/[0.08] backdrop-blur-md text-[11.5px] font-mono font-medium text-neutral-600">
-            <span className="w-2 h-2 rounded-full bg-[#0071e3] animate-pulse" />
-            <span>
-              Card {String(activeIndex + 1).padStart(2, "0")} of {String(total).padStart(2, "0")} · Scroll to Explore
-            </span>
-          </div>
+        {/* Section Headline */}
+        <div className="relative z-20 text-center mb-6 sm:mb-8">
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900">
-            Featured Productions Stack
+            Featured Client Projects
           </h2>
         </div>
 

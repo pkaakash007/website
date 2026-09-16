@@ -5,6 +5,8 @@ import { Container } from "@/components/layout/Container";
 import { PORTFOLIO_PROJECTS } from "@/features/portfolio/data/portfolioProjects";
 import { PortfolioProject } from "@/features/portfolio/types";
 import BlurNewsStack from "@/features/portfolio/components/BlurNewsStack";
+import AnimatedIphoneMockupSection from "@/features/portfolio/components/AnimatedIphoneMockupSection";
+import MobileShowreelSection from "@/features/portfolio/components/MobileShowreelSection";
 import PortfolioDetailModal from "@/features/portfolio/components/PortfolioDetailModal";
 
 export const PortfolioPage: React.FC = () => {
@@ -33,14 +35,14 @@ export const PortfolioPage: React.FC = () => {
 
           <div className="max-w-4xl mx-auto text-center space-y-5 mt-8">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tight leading-[1.08]">
-              Crafted with Rigor. <br />
+              Our Work. <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-900 via-[#0071e3] to-[#C5A059]">
-                Delivered with Speed.
+                Real Results for Real Businesses.
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-              Explore flagship mobile applications, cloud ERPs, spatial web flagships, and autonomous ad engines deployed for enterprise and D2C leaders.
+            <p className="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed font-normal">
+              Take a look at the websites, mobile apps, business software, and digital marketing campaigns we have built for our clients.
             </p>
           </div>
         </Container>
@@ -54,11 +56,11 @@ export const PortfolioPage: React.FC = () => {
         />
       </section>
 
-      {/* ── Companion Full Grid Showcase ── */}
-      <PortfolioGridShowcase
-        projects={PORTFOLIO_PROJECTS}
-        onSelectProject={(project) => setSelectedProject(project)}
-      />
+      {/* ── Jitter-Style Animated iPhone Mockup Section ── */}
+      <AnimatedIphoneMockupSection />
+
+      {/* ── Jitter-Style Mobile Showreel Endless Marquee Section ── */}
+      <MobileShowreelSection />
 
       {/* ── Project Detail Modal Drawer ── */}
       <PortfolioDetailModal
