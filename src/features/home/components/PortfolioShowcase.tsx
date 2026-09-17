@@ -397,6 +397,25 @@ const WEBSITE_PORTFOLIO: WebsitePortfolioItem[] = [
 
   // ── 4. E-Commerce Websites ──────────────────────────────────────────────
   {
+    id: "ec-buddy",
+    client: "Buddy Mattress",
+    sub: "E-commerce Website",
+    url: "buddy-mattress.pages.dev",
+    industry: "Mattresses & Sleep Comfort",
+    topicTitle: "E-Commerce Solutions",
+    topicLink: "/application-development",
+    tagline: "Orthopedic Mattresses, Pillows & Sleep Comfort",
+    badge: "100-Night Trial",
+    brandColor: "#0ea9df",
+    bgGradient: "from-[#0B0D1F] via-[#191142] to-[#0ea9df]",
+    stats: [
+      { label: "Trial Period", value: "100 Nights" },
+      { label: "Warranty", value: "10 Years" },
+    ],
+    features: ["Razorpay Instant Checkout", "Orthopedic Sleep Ergonomics", "Pan-India Free Delivery"],
+    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
     id: "ec1",
     client: "Sree Amman Silk Sarees",
     sub: "E-commerce Website",
@@ -625,19 +644,27 @@ export const PortfolioShowcase: React.FC = () => {
                   </div>
 
                   {/* Browser Address Bar with Lock Icon & Real URL */}
-                  <div className="flex items-center gap-1.5 px-3 py-0.5 rounded-md bg-[#0F172A]/90 border border-white/[0.1] text-[10.5px] font-mono text-slate-300 max-w-[210px] truncate shadow-inner">
+                  <a
+                    href={site.url.startsWith("http") ? site.url : `https://${site.url}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`Visit ${site.url}`}
+                    className="flex items-center gap-1.5 px-3 py-0.5 rounded-md bg-[#0F172A]/90 hover:bg-[#1E293B] border border-white/[0.1] text-[10.5px] font-mono text-slate-300 max-w-[210px] truncate shadow-inner transition-colors cursor-pointer"
+                  >
                     <Lock className="w-2.5 h-2.5 text-emerald-400 shrink-0" />
                     <span className="truncate">https://{site.url}</span>
-                  </div>
+                  </a>
 
                   {/* External icon */}
-                  <button
-                    onClick={() => openLeadModal(`Live URL Preview: ${site.client} (${site.url})`)}
+                  <a
+                    href={site.url.startsWith("http") ? site.url : `https://${site.url}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     title={`Visit ${site.url}`}
-                    className="cursor-pointer text-slate-400 hover:text-white transition-colors"
+                    className="cursor-pointer text-slate-400 hover:text-white transition-colors p-1"
                   >
-                    <ExternalLink className="w-3 h-3" />
-                  </button>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
                 </div>
 
                 {/* ── Real Website Interface Viewport ── */}

@@ -2,7 +2,23 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { ArrowRight } from "lucide-react";
+import {
+  Monitor,
+  ShoppingBag,
+  Smartphone,
+  Palette,
+  TrendingUp,
+  Search,
+  Share2,
+  MessageCircle,
+  Sparkles,
+  Package,
+  Video,
+  Camera,
+  ShieldCheck,
+  ArrowRight,
+  type LucideIcon,
+} from "lucide-react";
 
 export interface ServiceIOSCardItem {
   id: string;
@@ -10,10 +26,9 @@ export interface ServiceIOSCardItem {
   title: string;
   category: "web-apps" | "marketing-seo" | "branding-media" | "security-cloud";
   categoryLabel: string;
-  image: string;
+  icon: LucideIcon;
+  iconBg: string;
   simpleDesc: string;
-  keyPoints: string[];
-  bestFor: string;
   actionUrl: string;
 }
 
@@ -24,63 +39,47 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
     number: "01",
     title: "Website Design",
     category: "web-apps",
-    categoryLabel: "Web & Apps",
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
-    simpleDesc: "Fast, modern websites that look great on mobile phones and bring you customer calls.",
-    keyPoints: [
-      "Loads fast on all mobile phones and laptops",
-      "Direct 1-tap call and WhatsApp chat buttons",
-      "Ready to show up on Google search results",
-    ],
-    bestFor: "Clinics, showrooms, factories, and service businesses",
+    categoryLabel: "WEB & APPS",
+    icon: Monitor,
+    iconBg: "bg-blue-50 text-blue-600 border border-blue-100/80",
+    simpleDesc:
+      "Ultra-fast, mobile-first business websites engineered for instant customer discovery, high Google Lighthouse scores, and effortless lead capture.",
     actionUrl: "/services/website-design",
   },
   {
     id: "ecommerce-platforms",
     number: "02",
-    title: "Online Store & Ecommerce",
+    title: "Ecommerce Platforms",
     category: "web-apps",
-    categoryLabel: "Web & Apps",
-    image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1200&q=80",
-    simpleDesc: "Your own online shop where buyers order and pay with GPay, PhonePe, or Cash on Delivery.",
-    keyPoints: [
-      "Instant UPI, card, and Cash on Delivery payments",
-      "New order alerts sent straight to your WhatsApp",
-      "Easy mobile dashboard to update products and prices",
-    ],
-    bestFor: "Clothing brands, grocery stores, wholesalers, and retail shops",
+    categoryLabel: "WEB & APPS",
+    icon: ShoppingBag,
+    iconBg: "bg-amber-50 text-amber-600 border border-amber-100/80",
+    simpleDesc:
+      "Turnkey digital storefronts with seamless UPI, credit card, and COD checkout. Scalable product catalog with live stock tracking.",
     actionUrl: "/services/ecommerce-platforms",
   },
   {
     id: "mobile-app-development",
     number: "03",
-    title: "iPhone & Android Apps",
+    title: "iOS & Android Mobile Apps",
     category: "web-apps",
-    categoryLabel: "Web & Apps",
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1200&q=80",
-    simpleDesc: "Custom mobile apps built for your brand and published live on the App Store and Play Store.",
-    keyPoints: [
-      "Published on Apple App Store & Google Play Store",
-      "Send push messages and discounts to all users",
-      "Fast, smooth, and works without freezing",
-    ],
-    bestFor: "Delivery businesses, customer booking, and member apps",
+    categoryLabel: "WEB & APPS",
+    icon: Smartphone,
+    iconBg: "bg-emerald-50 text-emerald-600 border border-emerald-100/80",
+    simpleDesc:
+      "Native iOS & Android mobile applications engineered for fluid 60fps performance, biometric authentication, and push retention campaigns.",
     actionUrl: "/services/mobile-app-development",
   },
   {
     id: "ui-ux-architecture",
     number: "04",
-    title: "App & Screen Design",
+    title: "UI/UX & Screen Design",
     category: "web-apps",
-    categoryLabel: "Web & Apps",
-    image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=1200&q=80",
-    simpleDesc: "Clean, simple screen layouts that make your website or app easy for anyone to use.",
-    keyPoints: [
-      "See clickable screen previews before we build it",
-      "Simple, modern Apple-style clean screens",
-      "Designed so customers order without confusion",
-    ],
-    bestFor: "New software ideas, startups, and website revamps",
+    categoryLabel: "WEB & APPS",
+    icon: Palette,
+    iconBg: "bg-purple-50 text-purple-600 border border-purple-100/80",
+    simpleDesc:
+      "Clean, modern Apple-style UI prototypes and interactive screen layouts crafted to guide visitors into ordering without confusion.",
     actionUrl: "/services/ui-ux-architecture",
   },
 
@@ -90,15 +89,11 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
     number: "05",
     title: "Google & Social Media Ads",
     category: "marketing-seo",
-    categoryLabel: "Marketing & SEO",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-    simpleDesc: "Targeted advertisements that bring ready buyers straight to your phone, WhatsApp, and showroom.",
-    keyPoints: [
-      "Show up when people search to buy your product",
-      "Target specific cities, districts, and pin codes",
-      "Clear weekly reports of every phone call and lead",
-    ],
-    bestFor: "Businesses wanting steady customer calls every week",
+    categoryLabel: "MARKETING & SEO",
+    icon: TrendingUp,
+    iconBg: "bg-rose-50 text-rose-600 border border-rose-100/80",
+    simpleDesc:
+      "High-ROI targeted advertisements that bring active buyers straight to your phone, WhatsApp, and showroom every single week.",
     actionUrl: "/services/performance-marketing",
   },
   {
@@ -106,15 +101,11 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
     number: "06",
     title: "Google Maps & Search Ranking",
     category: "marketing-seo",
-    categoryLabel: "Marketing & SEO",
-    image: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&w=1200&q=80",
-    simpleDesc: "Get your business listed #1 on Google Maps and search results so nearby customers call you first.",
-    keyPoints: [
-      "Top 3 rank on Google Maps for local searches",
-      "More directions, phone calls, and showroom visits",
-      "Free long-term visits without paying for every click",
-    ],
-    bestFor: "Clinics, showrooms, restaurants, and local services",
+    categoryLabel: "MARKETING & SEO",
+    icon: Search,
+    iconBg: "bg-indigo-50 text-indigo-600 border border-indigo-100/80",
+    simpleDesc:
+      "Dominant Google Maps 3-Pack and search visibility so nearby customers searching for your products call you first.",
     actionUrl: "/services/seo-geo-ai-search",
   },
   {
@@ -122,31 +113,23 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
     number: "07",
     title: "Instagram Reels & Posts",
     category: "marketing-seo",
-    categoryLabel: "Marketing & SEO",
-    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=80",
-    simpleDesc: "Trending Reels and creative posts that grow your followers and build customer trust in your area.",
-    keyPoints: [
-      "Eye-catching video Reels and photo posters",
-      "Festival greeting designs and special offer cards",
-      "Direct response to customer comments and messages",
-    ],
-    bestFor: "Fashion stores, restaurants, salons, and retail shops",
+    categoryLabel: "MARKETING & SEO",
+    icon: Share2,
+    iconBg: "bg-pink-50 text-pink-600 border border-pink-100/80",
+    simpleDesc:
+      "Eye-catching Reels and creative social media posters that expand followers and establish authority across your local region.",
     actionUrl: "/services/social-media-marketing",
   },
   {
     id: "content-marketing-pr",
     number: "08",
-    title: "Business Copywriting",
+    title: "Business Copywriting & Content",
     category: "marketing-seo",
-    categoryLabel: "Marketing & SEO",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80",
-    simpleDesc: "Clear, persuasive English and Tamil words for your website, sales brochures, and company profiles.",
-    keyPoints: [
-      "Professional text that explains what you do simply",
-      "Company profiles and product sales catalogs",
-      "Fluent English and clean Tamil translations",
-    ],
-    bestFor: "Manufacturers, exporters, and corporate companies",
+    categoryLabel: "MARKETING & SEO",
+    icon: MessageCircle,
+    iconBg: "bg-cyan-50 text-cyan-600 border border-cyan-100/80",
+    simpleDesc:
+      "Persuasive English and Tamil sales copy for websites, company profiles, brochures, and commercial pitch decks.",
     actionUrl: "/services/content-marketing-pr",
   },
 
@@ -156,15 +139,11 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
     number: "09",
     title: "Logo & Brand Identity",
     category: "branding-media",
-    categoryLabel: "Branding & Media",
-    image: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=1200&q=80",
-    simpleDesc: "Distinctive logo design and matching brand colors that make your business look trusted and established.",
-    keyPoints: [
-      "3 to 5 original custom logo choices",
-      "Ready files for signboards, visiting cards, and bills",
-      "100% full copyright ownership transferred to you",
-    ],
-    bestFor: "New startups, opening new shops, and brand makeovers",
+    categoryLabel: "BRANDING & MEDIA",
+    icon: Sparkles,
+    iconBg: "bg-amber-50 text-amber-600 border border-amber-100/80",
+    simpleDesc:
+      "Signature logos and complete brand asset systems that make your business look established, premium, and trustworthy.",
     actionUrl: "/services/brand-identity-logo",
   },
   {
@@ -172,15 +151,11 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
     number: "10",
     title: "Product Packaging & Print",
     category: "branding-media",
-    categoryLabel: "Branding & Media",
-    image: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=800&q=80",
-    simpleDesc: "Eye-catching box packaging, labels, brochures, and banners printed and sized ready for production.",
-    keyPoints: [
-      "Ready-to-print box and label master files",
-      "Clear product details and attractive color schemes",
-      "Quick adjustments and proofs within 48 hours",
-    ],
-    bestFor: "Food products, textiles, retail products, and exports",
+    categoryLabel: "BRANDING & MEDIA",
+    icon: Package,
+    iconBg: "bg-orange-50 text-orange-600 border border-orange-100/80",
+    simpleDesc:
+      "Production-ready label and box packaging engineered to stand out on retail shelves and comply with manufacturing standards.",
     actionUrl: "/services/graphic-design-packaging",
   },
   {
@@ -188,15 +163,11 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
     number: "11",
     title: "Video Shooting & Editing",
     category: "branding-media",
-    categoryLabel: "Branding & Media",
-    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80",
-    simpleDesc: "High-quality video shooting and editing for customer testimonials, product demos, and factory tours.",
-    keyPoints: [
-      "Sharp 4K video recording with clear audio",
-      "Subtitle text in Tamil and English",
-      "Short videos ready for WhatsApp and Instagram",
-    ],
-    bestFor: "Product videos, factory visits, and client reviews",
+    categoryLabel: "BRANDING & MEDIA",
+    icon: Video,
+    iconBg: "bg-red-50 text-red-600 border border-red-100/80",
+    simpleDesc:
+      "Sharp 4K video shooting, customer testimonials, and viral short-form reels with crisp audio and Tamil/English subtitles.",
     actionUrl: "/services/video-editing-motion",
   },
   {
@@ -204,15 +175,11 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
     number: "12",
     title: "Product Photography",
     category: "branding-media",
-    categoryLabel: "Branding & Media",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80",
-    simpleDesc: "Clean, studio-lit photos of your items that make your products look premium on online stores and catalogs.",
-    keyPoints: [
-      "Pure white backgrounds ready for Amazon & online stores",
-      "Attractive lifestyle lighting and close-up detail shots",
-      "High-resolution files ready for print and web",
-    ],
-    bestFor: "Textiles, food items, leather, jewellery, and hardware",
+    categoryLabel: "BRANDING & MEDIA",
+    icon: Camera,
+    iconBg: "bg-sky-50 text-sky-600 border border-sky-100/80",
+    simpleDesc:
+      "Clean studio-lit product photos with pure white backgrounds tailored for ecommerce storefronts, catalogs, and Amazon.",
     actionUrl: "/services/ecommerce-photography",
   },
 
@@ -220,17 +187,13 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
   {
     id: "cyber-security-cloud",
     number: "13",
-    title: "Fast Hosting & Daily Backup",
+    title: "Fast Hosting & Cloud Security",
     category: "security-cloud",
-    categoryLabel: "Security & Cloud",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
-    simpleDesc: "Reliable cloud hosting with daily backups and safety locks to keep your website fast and never offline.",
-    keyPoints: [
-      "99.9% uptime so customers can always open your site",
-      "Automatic daily backups so your data is never lost",
-      "Free SSL security lock badge included",
-    ],
-    bestFor: "Online stores, school portals, and business websites",
+    categoryLabel: "SECURITY & CLOUD",
+    icon: ShieldCheck,
+    iconBg: "bg-slate-100 text-slate-700 border border-slate-200",
+    simpleDesc:
+      "Reliable cloud hosting with automated daily backups, free SSL certificates, and 99.9% uptime to keep your site fast and secure.",
     actionUrl: "/services/cyber-security-cloud",
   },
 ];
@@ -268,10 +231,10 @@ export const ServicesIOSCardsGrid: React.FC<ServicesIOSCardsGridProps> = ({
       : ALL_IOS_SERVICES.filter((s) => s.category === activeFilter);
 
   return (
-    <section id="services-cards" className="py-12 sm:py-16 lg:py-20 bg-[#F5F5F7] scroll-mt-24">
+    <section id="services-cards" className="pt-2 sm:pt-4 pb-16 sm:pb-20 bg-[#F5F5F7] scroll-mt-24">
       <Container size="wide">
-        {/* iOS Segmented Filter Pill Track (Centered on Light Gray Canvas) */}
-        <div className="flex justify-center mb-10 sm:mb-14">
+        {/* iOS Segmented Filter Pill Track */}
+        <div className="flex justify-center mb-8 sm:mb-12">
           <div className="p-1 sm:p-1.5 rounded-full bg-[#E5E5EA]/85 backdrop-blur-md border border-black/[0.04] shadow-inner flex flex-wrap justify-center gap-1 max-w-full">
             {SERVICE_FILTER_TABS.map((tab) => {
               const isActive = activeFilter === tab.id;
@@ -293,73 +256,64 @@ export const ServicesIOSCardsGrid: React.FC<ServicesIOSCardsGridProps> = ({
           </div>
         </div>
 
-        {/* Responsive 3-Column iOS Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Responsive 3-Column Compact Cards Grid (Exact Old Design Scale) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {filteredServices.map((service) => {
+            const IconComp = service.icon;
+
             return (
               <div
                 key={service.id}
                 id={service.id}
-                className="rounded-[28px] sm:rounded-[32px] bg-white border border-black/[0.07] shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.09)] hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group"
+                className="rounded-[24px] sm:rounded-[28px] bg-white border border-black/[0.06] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.07)] hover:-translate-y-1 transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between group"
               >
-                {/* ── Top Full Cover Image ── */}
-                <div className="relative aspect-[16/10] sm:aspect-[16/10.5] w-full overflow-hidden bg-neutral-100">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      if (!target.dataset.fallback) {
-                        target.dataset.fallback = "true";
-                        target.src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80";
-                      }
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent pointer-events-none" />
+                {/* ── Top Row: Left Icon Box + Right Category Pill Badge ── */}
+                <div className="flex items-center justify-between mb-4 sm:mb-5">
+                  <div
+                    className={`w-11 h-11 rounded-2xl flex items-center justify-center shadow-xs ${service.iconBg}`}
+                  >
+                    <IconComp className="w-5 h-5" />
+                  </div>
+                  <span className="text-[10px] font-bold tracking-wider text-neutral-400 bg-neutral-100/90 border border-black/[0.03] px-2.5 py-1 rounded-full uppercase">
+                    {service.categoryLabel}
+                  </span>
                 </div>
 
-                {/* ── Bottom Only White Covered UI: Service Name & Simple Explanation ── */}
-                <div className="p-6 sm:p-7 flex flex-col flex-1 justify-between bg-white">
-                  <div>
-                    {/* Service Name */}
-                    <h3
-                      className="text-xl sm:text-[22px] font-bold text-neutral-900 tracking-tight leading-snug mb-2.5"
-                      style={{ letterSpacing: "-0.02em" }}
-                    >
-                      {service.title}
-                    </h3>
+                {/* ── Service Title & Explanation ── */}
+                <div className="mb-6 flex-1">
+                  <h3
+                    className="text-xl sm:text-[22px] font-bold text-neutral-900 tracking-tight leading-snug mb-2.5"
+                    style={{ letterSpacing: "-0.02em" }}
+                  >
+                    {service.title}
+                  </h3>
+                  <p className="text-[13.5px] sm:text-[14px] text-neutral-600 leading-relaxed font-normal">
+                    {service.simpleDesc}
+                  </p>
+                </div>
 
-                    {/* Few words about the service for simple explanation and understanding */}
-                    <p className="text-[14px] sm:text-[14.5px] text-neutral-600 leading-relaxed font-normal">
-                      {service.simpleDesc}
-                    </p>
-                  </div>
+                {/* ── Compact Card Action Row ── */}
+                <div className="pt-4 border-t border-black/[0.05] flex items-center justify-between gap-3">
+                  <button
+                    type="button"
+                    onClick={() => openLeadModal(`Inquiry: ${service.title}`)}
+                    className="cursor-pointer inline-flex items-center gap-1.5 px-4 sm:px-5 py-2.5 rounded-full bg-neutral-950 hover:bg-black text-white text-xs font-bold shadow-xs transition-all active:scale-[0.98]"
+                  >
+                    <span>Enquire</span>
+                    <img
+                      src="/brand/realresult-mark-transparent.png"
+                      alt=""
+                      className="w-3.5 h-3.5 object-contain filter drop-shadow-[0_0_3px_rgba(229,180,86,0.6)]"
+                    />
+                  </button>
 
-                  {/* iOS Card Action Row */}
-                  <div className="pt-5 mt-6 border-t border-black/[0.06] flex items-center justify-between gap-3">
-                    <button
-                      type="button"
-                      onClick={() => openLeadModal(`Inquiry: ${service.title}`)}
-                      className="cursor-pointer inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-neutral-950 hover:bg-black text-white text-xs font-bold shadow-xs transition-all active:scale-[0.98]"
-                    >
-                      <span>Enquire</span>
-                      <img
-                        src="/brand/realresult-mark-transparent.png"
-                        alt=""
-                        className="w-3.5 h-3.5 object-contain filter drop-shadow-[0_0_3px_rgba(229,180,86,0.6)]"
-                      />
-                    </button>
-
-                    <Link
-                      to={service.actionUrl}
-                      className="text-xs sm:text-[13px] font-semibold text-[#0071E3] hover:underline inline-flex items-center gap-1 group/link"
-                    >
-                      <span>Learn more</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" />
-                    </Link>
-                  </div>
+                  <Link
+                    to={service.actionUrl}
+                    className="text-xs sm:text-[13px] font-semibold text-[#0071E3] hover:underline inline-flex items-center gap-1 group/link"
+                  >
+                    <span>Learn more</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" />
+                  </Link>
                 </div>
               </div>
             );

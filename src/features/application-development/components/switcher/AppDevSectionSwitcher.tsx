@@ -23,6 +23,7 @@ const webPortfolio: Record<string, { name: string; industry: string; image: stri
     { name: "School ERP Portal",        industry: "Education",     image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=700&q=80" },
   ],
   "E-commerce Website": [
+    { name: "Buddy Mattress",           industry: "Sleep & Mattress", image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&q=80" },
     { name: "Textile Sree Store",       industry: "Fashion",       image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=700&q=80" },
     { name: "Nilgiris Organics",        industry: "Grocery",       image: "https://images.unsplash.com/photo-1516594798947-e65505dbb29d?w=700&q=80" },
     { name: "KidZone Toys",             industry: "Toys & Kids",   image: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=700&q=80" },
