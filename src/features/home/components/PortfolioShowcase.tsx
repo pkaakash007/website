@@ -422,60 +422,6 @@ const WEBSITE_PORTFOLIO: WebsitePortfolioItem[] = [
     image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80",
     isLiveIframe: true,
   },
-  {
-    id: "ec1",
-    client: "Sree Amman Silk Sarees",
-    sub: "E-commerce Website",
-    url: "www.sreeammansilks.com",
-    industry: "Handloom Ethnic Fashion",
-    topicTitle: "E-Commerce Solutions",
-    topicLink: "/application-development",
-    tagline: "Pure Kanchipuram Silks Direct Online Store",
-    badge: "Direct Weaver Store",
-    brandColor: "#9D174D",
-    bgGradient: "from-[#2A051C] via-[#831843] to-[#9D174D]",
-    stats: [
-      { label: "Orders Shipped", value: "28K+" },
-      { label: "UPI Rate", value: "82%" },
-    ],
-    features: ["High-Res Fabric Zoom", "Razorpay UPI Instant Checkout", "WhatsApp Cart Recovery"],
-  },
-  {
-    id: "ec2",
-    client: "Nilgiris Pure Organics",
-    sub: "E-commerce Website",
-    url: "www.nilgirisorganics.in",
-    industry: "Farm Fresh Grocery",
-    topicTitle: "E-Commerce Solutions",
-    topicLink: "/application-development",
-    tagline: "Nilgiris Tea, Honey & Spices Direct Store",
-    badge: "Fresh Grocery Store",
-    brandColor: "#166534",
-    bgGradient: "from-[#051C0C] via-[#14532D] to-[#166534]",
-    stats: [
-      { label: "Subscribers", value: "3,400+" },
-      { label: "Delivery", value: "24h Fresh" },
-    ],
-    features: ["Weekly Subscription Engine", "Pincode Delivery Check", "Cold-Chain Packaging"],
-  },
-  {
-    id: "ec3",
-    client: "Kongu Spark Electricals B2B",
-    sub: "E-commerce Website",
-    url: "www.konguspark.com",
-    industry: "Industrial Electricals",
-    topicTitle: "E-Commerce Solutions",
-    topicLink: "/application-development",
-    tagline: "Industrial Cables & Switchgear B2B Wholesale",
-    badge: "B2B Wholesale Store",
-    brandColor: "#1E293B",
-    bgGradient: "from-[#080E1A] via-[#0F172A] to-[#1E293B]",
-    stats: [
-      { label: "B2B Clients", value: "1,200+" },
-      { label: "SKUs", value: "8,500+" },
-    ],
-    features: ["Volume Tiered Pricing", "Datasheet Downloads", "GST Credit Auto Invoicing"],
-  },
 ];
 
 // Digital Marketing & Graphic Design Items
@@ -617,14 +563,6 @@ const LiveWebsitePreview: React.FC<{
           </div>
         </div>
       )}
-
-      {/* Subtle hover expand hint in bottom right */}
-      <div className="absolute bottom-2.5 right-2.5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md text-xs font-semibold text-white shadow-lg border border-white/10">
-          <Maximize2 className="w-3 h-3 text-[#0ea9df]" />
-          <span>Click to Test Responsive</span>
-        </span>
-      </div>
     </div>
   );
 };
@@ -767,7 +705,7 @@ const ResponsiveDeviceModal: React.FC<{
 
 export const PortfolioShowcase: React.FC = () => {
   const [mainTab, setMainTab] = useState<string>("website");
-  const [subTab, setSubTab] = useState<string>("E-commerce Website");
+  const [subTab, setSubTab] = useState<string>("Static Website");
   const [livePreviewModal, setLivePreviewModal] = useState<{ url: string; title: string } | null>(null);
 
   const handleMainTab = (id: string) => {
@@ -854,7 +792,13 @@ export const PortfolioShowcase: React.FC = () => {
 
         {/* ── 1. Website Design Grid: Real Browser Mockups & Navigation Links ── */}
         {mainTab === "website" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            className={`grid gap-6 ${
+              filteredWebsites.length === 1
+                ? "max-w-xl mx-auto grid-cols-1"
+                : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            }`}
+          >
             {filteredWebsites.map((site) => (
               <div
                 key={site.id}
@@ -953,30 +897,12 @@ export const PortfolioShowcase: React.FC = () => {
 
                   {/* ── Action Button ── */}
                   <div className="pt-3.5 border-t border-neutral-100 mt-2">
-                    {site.isLiveIframe ? (
-                      <div className="flex items-center gap-2">
-                        <button
-                          onClick={() => setLivePreviewModal({ url: site.url, title: site.client })}
-                          className="flex-1 py-2.5 px-2.5 rounded-xl text-center text-xs font-bold bg-[#0071E3] hover:bg-[#005bb5] text-white transition-all duration-200 cursor-pointer shadow-xs flex items-center justify-center gap-1.5 active:scale-[0.98]"
-                        >
-                          <Laptop className="w-3.5 h-3.5" />
-                          <span>Responsive View</span>
-                        </button>
-                        <button
-                          onClick={() => openLeadModal(`Build a website like ${site.client}`)}
-                          className="flex-1 py-2.5 px-2 rounded-xl text-center text-xs font-bold bg-neutral-100 hover:bg-[#000000] text-neutral-800 hover:text-white transition-all duration-200 cursor-pointer shadow-sm active:scale-[0.98]"
-                        >
-                          Build Similar Site
-                        </button>
-                      </div>
-                    ) : (
-                      <button
-                        onClick={() => openLeadModal(`Build a website like ${site.client}`)}
-                        className="w-full py-2.5 px-4 rounded-xl text-center text-xs font-bold bg-neutral-100 hover:bg-[#000000] text-neutral-800 hover:text-white transition-all duration-200 cursor-pointer shadow-sm active:scale-[0.98]"
-                      >
-                        Build Similar Site
-                      </button>
-                    )}
+                    <button
+                      onClick={() => openLeadModal(`Build a website like ${site.client}`)}
+                      className="w-full py-2.5 px-4 rounded-xl text-center text-xs font-bold bg-neutral-100 hover:bg-[#000000] text-neutral-800 hover:text-white transition-all duration-200 cursor-pointer shadow-sm active:scale-[0.98]"
+                    >
+                      Build Similar Site
+                    </button>
                   </div>
                 </div>
               </div>
