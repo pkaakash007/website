@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Container } from "@/components/layout/Container";
 import { openLeadModal } from "@/components/common/LeadModal";
 import {
@@ -13,6 +13,11 @@ import {
   Layers,
   Palette,
   Megaphone,
+  Laptop,
+  Tablet,
+  Smartphone,
+  Maximize2,
+  X,
 } from "lucide-react";
 
 // ─── Data Definitions ────────────────────────────────────────────────────────
@@ -62,6 +67,7 @@ export interface WebsitePortfolioItem {
   stats: { label: string; value: string }[];
   features: string[];
   image?: string;
+  isLiveIframe?: boolean;
 }
 
 const WEBSITE_PORTFOLIO: WebsitePortfolioItem[] = [
@@ -414,6 +420,7 @@ const WEBSITE_PORTFOLIO: WebsitePortfolioItem[] = [
     ],
     features: ["Razorpay Instant Checkout", "Orthopedic Sleep Ergonomics", "Pan-India Free Delivery"],
     image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80",
+    isLiveIframe: true,
   },
   {
     id: "ec1",
@@ -538,11 +545,230 @@ const getWebsitePreviewImage = (site: WebsitePortfolioItem): string => {
   }
 };
 
+// ─── Live Website Responsive Preview Components ──────────────────────────────
+
+const LiveWebsitePreview: React.FC<{
+  url: string;
+  title: string;
+  onOpenModal: () => void;
+}> = ({ url, title, onOpenModal }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerSize, setContainerSize] = useState<{ width: number; height: number }>({ width: 0, height: 0 });
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const updateSize = () => {
+      if (containerRef.current) {
+        setContainerSize({
+          width: containerRef.current.clientWidth,
+          height: containerRef.current.clientHeight,
+        });
+      }
+    };
+    updateSize();
+
+    const resizeObserver = new ResizeObserver(() => {
+      updateSize();
+    });
+    resizeObserver.observe(containerRef.current);
+    return () => resizeObserver.disconnect();
+  }, []);
+
+  const fullUrl = url.startsWith("http") ? url : `https://${url}`;
+
+  // Proportional responsive scaling
+  const scale = containerSize.width > 0 ? containerSize.width / 1280 : 0.3;
+  const virtualHeight =
+    scale > 0 && containerSize.height > 0
+      ? Math.ceil(containerSize.height / scale)
+      : 800;
+
+  return (
+    <div
+      ref={containerRef}
+      onClick={onOpenModal}
+      className="relative w-full h-full overflow-hidden bg-[#F8FAFC] select-none cursor-pointer group"
+    >
+      {/* Live Iframe Viewport */}
+      <iframe
+        src={fullUrl}
+        title={title}
+        loading="lazy"
+        onLoad={() => setIsLoaded(true)}
+        className="border-0 pointer-events-none absolute top-0 left-0"
+        style={{
+          width: "1280px",
+          height: `${virtualHeight}px`,
+          transform: `scale(${scale})`,
+          transformOrigin: "top left",
+          opacity: isLoaded ? 1 : 0,
+          transition: "opacity 0.4s ease-in-out",
+        }}
+      />
+
+      {/* Loading Skeleton */}
+      {!isLoaded && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-900 text-slate-300 z-10 gap-2">
+          <div className="w-7 h-7 rounded-full border-2 border-emerald-400/30 border-t-emerald-400 animate-spin" />
+          <div className="flex items-center gap-2 text-[11px] font-mono text-slate-300">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>Loading {url}...</span>
+          </div>
+        </div>
+      )}
+
+      {/* Subtle hover expand hint in bottom right */}
+      <div className="absolute bottom-2.5 right-2.5 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md text-xs font-semibold text-white shadow-lg border border-white/10">
+          <Maximize2 className="w-3 h-3 text-[#0ea9df]" />
+          <span>Click to Test Responsive</span>
+        </span>
+      </div>
+    </div>
+  );
+};
+
+const ResponsiveDeviceModal: React.FC<{
+  url: string;
+  title: string;
+  onClose: () => void;
+}> = ({ url, title, onClose }) => {
+  const [device, setDevice] = useState<"desktop" | "tablet" | "mobile">("desktop");
+  const fullUrl = url.startsWith("http") ? url : `https://${url}`;
+
+  // Close on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
+  const deviceWidths = {
+    desktop: "w-full max-w-[1220px]",
+    tablet: "w-[768px]",
+    mobile: "w-[390px]",
+  };
+
+  return (
+    <div
+      onClick={onClose}
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/85 backdrop-blur-md animate-ae-fade-in"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="flex flex-col w-full h-[94vh] max-w-7xl bg-[#0F172A] rounded-2xl sm:rounded-3xl border border-white/10 shadow-2xl overflow-hidden"
+      >
+        {/* Top Control Bar */}
+        <div className="flex items-center justify-between px-4 py-3 bg-[#1E293B] border-b border-white/10 text-white shrink-0">
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="flex items-center gap-1.5">
+              <button
+                onClick={onClose}
+                className="w-3 h-3 rounded-full bg-[#FF5F56] hover:opacity-80 transition-opacity cursor-pointer"
+                title="Close"
+              />
+              <span className="w-3 h-3 rounded-full bg-[#FFBD2E] inline-block" />
+              <span className="w-3 h-3 rounded-full bg-[#27C93F] inline-block" />
+            </div>
+            <div className="truncate text-xs sm:text-sm font-bold text-slate-200">
+              {title} <span className="text-slate-400 font-normal">({url})</span>
+            </div>
+          </div>
+
+          {/* Device Switcher */}
+          <div className="flex items-center p-1 rounded-full bg-slate-900/80 border border-white/10 gap-1">
+            <button
+              onClick={() => setDevice("desktop")}
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                device === "desktop"
+                  ? "bg-white text-slate-900 shadow-sm"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              <Laptop className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Desktop</span>
+            </button>
+            <button
+              onClick={() => setDevice("tablet")}
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                device === "tablet"
+                  ? "bg-white text-slate-900 shadow-sm"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              <Tablet className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Tablet</span>
+            </button>
+            <button
+              onClick={() => setDevice("mobile")}
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                device === "mobile"
+                  ? "bg-white text-slate-900 shadow-sm"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              <Smartphone className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Mobile</span>
+            </button>
+          </div>
+
+          {/* External Link & Close */}
+          <div className="flex items-center gap-2">
+            <a
+              href={fullUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-medium border border-white/10 transition-colors"
+            >
+              <span>Open in New Tab</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+            <button
+              onClick={onClose}
+              className="p-1.5 rounded-full hover:bg-white/10 text-slate-400 hover:text-white transition-colors cursor-pointer"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+        {/* Viewport Canvas */}
+        <div className="flex-1 bg-slate-950 p-2 sm:p-6 overflow-auto flex items-center justify-center">
+          <div
+            className={`h-full transition-all duration-300 bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col ${deviceWidths[device]}`}
+          >
+            {/* Simulated Address Bar */}
+            <div className="px-3 py-1.5 bg-slate-100 border-b border-slate-200 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+              <span className="flex items-center gap-1">
+                <Lock className="w-3 h-3 text-emerald-500" />
+                {fullUrl}
+              </span>
+              <span className="text-[10px] text-slate-400 uppercase tracking-wide">
+                {device === "desktop" ? "1220px Desktop View" : device === "tablet" ? "768px Tablet View" : "390px Mobile View"}
+              </span>
+            </div>
+            {/* Live Interactive Iframe */}
+            <iframe
+              src={fullUrl}
+              title={`${title} - ${device}`}
+              className="w-full flex-1 border-0"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // ─── Component ───────────────────────────────────────────────────────────────
 
 export const PortfolioShowcase: React.FC = () => {
   const [mainTab, setMainTab] = useState<string>("website");
-  const [subTab, setSubTab] = useState<string>("Static Website");
+  const [subTab, setSubTab] = useState<string>("E-commerce Website");
+  const [livePreviewModal, setLivePreviewModal] = useState<{ url: string; title: string } | null>(null);
 
   const handleMainTab = (id: string) => {
     setMainTab(id);
@@ -669,37 +895,46 @@ export const PortfolioShowcase: React.FC = () => {
 
                 {/* ── Real Website Interface Viewport ── */}
                 <div className="relative aspect-[16/10] overflow-hidden bg-neutral-900 group">
-                  <img
-                    src={getWebsitePreviewImage(site)}
-                    alt={site.client}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      if (!target.dataset.fallback) {
-                        target.dataset.fallback = "true";
-                        target.src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80";
-                      }
-                    }}
-                  />
-                  {/* Subtle glass & dark gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20 pointer-events-none" />
+                  {site.isLiveIframe ? (
+                    <LiveWebsitePreview
+                      url={site.url}
+                      title={site.client}
+                      onOpenModal={() => setLivePreviewModal({ url: site.url, title: site.client })}
+                    />
+                  ) : (
+                    <>
+                      <img
+                        src={getWebsitePreviewImage(site)}
+                        alt={site.client}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          if (!target.dataset.fallback) {
+                            target.dataset.fallback = "true";
+                            target.src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80";
+                          }
+                        }}
+                      />
+                      {/* Subtle glass & dark gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20 pointer-events-none" />
 
-
-                  {/* Mini Website Hero Banner & Stats Overlay */}
-                  <div className="absolute bottom-2.5 inset-x-3 text-white pointer-events-none z-10">
-                    <h4 className="text-[12.5px] font-bold leading-snug line-clamp-1 text-white drop-shadow-sm mb-1">
-                      {site.tagline}
-                    </h4>
-                    <div className="flex items-center gap-1.5">
-                      {site.stats.map((s, sIdx) => (
-                        <span key={sIdx} className="inline-flex items-center gap-1 bg-black/50 backdrop-blur-sm rounded px-1.5 py-0.5 text-[9px] text-white/90 border border-white/10">
-                          <span className="text-white/60">{s.label}:</span>
-                          <span className="font-bold text-white">{s.value}</span>
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                      {/* Mini Website Hero Banner & Stats Overlay */}
+                      <div className="absolute bottom-2.5 inset-x-3 text-white pointer-events-none z-10">
+                        <h4 className="text-[12.5px] font-bold leading-snug line-clamp-1 text-white drop-shadow-sm mb-1">
+                          {site.tagline}
+                        </h4>
+                        <div className="flex items-center gap-1.5">
+                          {site.stats.map((s, sIdx) => (
+                            <span key={sIdx} className="inline-flex items-center gap-1 bg-black/50 backdrop-blur-sm rounded px-1.5 py-0.5 text-[9px] text-white/90 border border-white/10">
+                              <span className="text-white/60">{s.label}:</span>
+                              <span className="font-bold text-white">{s.value}</span>
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 {/* ── Card Body & Navigation Links ── */}
@@ -718,13 +953,30 @@ export const PortfolioShowcase: React.FC = () => {
 
                   {/* ── Action Button ── */}
                   <div className="pt-3.5 border-t border-neutral-100 mt-2">
-                    {/* Action button */}
-                    <button
-                      onClick={() => openLeadModal(`Build a website like ${site.client}`)}
-                      className="w-full py-2.5 px-4 rounded-xl text-center text-xs font-bold bg-neutral-100 hover:bg-[#000000] text-neutral-800 hover:text-white transition-all duration-200 cursor-pointer shadow-sm active:scale-[0.98]"
-                    >
-                      Build Similar Site
-                    </button>
+                    {site.isLiveIframe ? (
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => setLivePreviewModal({ url: site.url, title: site.client })}
+                          className="flex-1 py-2.5 px-2.5 rounded-xl text-center text-xs font-bold bg-[#0071E3] hover:bg-[#005bb5] text-white transition-all duration-200 cursor-pointer shadow-xs flex items-center justify-center gap-1.5 active:scale-[0.98]"
+                        >
+                          <Laptop className="w-3.5 h-3.5" />
+                          <span>Responsive View</span>
+                        </button>
+                        <button
+                          onClick={() => openLeadModal(`Build a website like ${site.client}`)}
+                          className="flex-1 py-2.5 px-2 rounded-xl text-center text-xs font-bold bg-neutral-100 hover:bg-[#000000] text-neutral-800 hover:text-white transition-all duration-200 cursor-pointer shadow-sm active:scale-[0.98]"
+                        >
+                          Build Similar Site
+                        </button>
+                      </div>
+                    ) : (
+                      <button
+                        onClick={() => openLeadModal(`Build a website like ${site.client}`)}
+                        className="w-full py-2.5 px-4 rounded-xl text-center text-xs font-bold bg-neutral-100 hover:bg-[#000000] text-neutral-800 hover:text-white transition-all duration-200 cursor-pointer shadow-sm active:scale-[0.98]"
+                      >
+                        Build Similar Site
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
@@ -787,7 +1039,14 @@ export const PortfolioShowcase: React.FC = () => {
           </div>
         )}
 
-
+        {/* Responsive Device Testing Modal */}
+        {livePreviewModal && (
+          <ResponsiveDeviceModal
+            url={livePreviewModal.url}
+            title={livePreviewModal.title}
+            onClose={() => setLivePreviewModal(null)}
+          />
+        )}
 
       </Container>
     </section>
