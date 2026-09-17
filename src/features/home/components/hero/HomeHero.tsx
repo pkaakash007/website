@@ -125,18 +125,19 @@ export const HomeHero: React.FC = () => {
                 Tamil Nadu&apos;s premier agency unifying high-converting digital marketing campaigns with scalable custom web &amp; mobile application engineering.
               </p>
 
-              {/* Clean Inline CTAs */}
-              <div className="flex flex-wrap items-center gap-6">
+              {/* Reference-Matched Pill CTAs */}
+              <div className="flex flex-wrap items-center gap-4 sm:gap-5">
                 <button
                   type="button"
                   onClick={() => openLeadModal("home-hero-white-gold")}
-                  className="cursor-pointer transition-colors text-sm sm:text-base font-extrabold text-[#0E2036] hover:text-[#C5A059] flex items-center gap-2"
+                  className="group cursor-pointer inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#BE934E] hover:bg-[#b08642] text-white font-bold text-sm sm:text-base shadow-[0_12px_26px_-6px_rgba(190,147,78,0.45)] hover:shadow-[0_16px_32px_-6px_rgba(190,147,78,0.55)] transition-all duration-200 active:scale-[0.98]"
                 >
                   <span>Start Your Project</span>
+                  <ArrowRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white transition-transform duration-200 group-hover:translate-x-1" />
                 </button>
                 <a
                   href="#pillars"
-                  className="cursor-pointer transition-colors text-sm sm:text-base font-bold text-neutral-700 hover:text-[#0E2036] flex items-center gap-1.5"
+                  className="cursor-pointer inline-flex items-center justify-center px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white border border-neutral-300 hover:border-neutral-400 hover:bg-neutral-50 text-neutral-800 font-bold text-sm sm:text-base shadow-sm transition-all duration-200 active:scale-[0.98]"
                 >
                   <span>Explore Services</span>
                 </a>

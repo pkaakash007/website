@@ -475,7 +475,7 @@ const GENERAL_PORTFOLIO: GeneralPortfolioItem[] = [
   // Graphic Design
   { id: "gd1", client: "Farms Craft Organic", category: "design", sub: "Package Design", image: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=600&q=80", tagline: "Biodegradable Food Pouch & Labeling", metrics: "Export Packaging Grade" },
   { id: "gd2", client: "Nilgiris Green Leaf Tea", category: "design", sub: "Package Design", image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80", tagline: "Luxury Matte Tin Canister Typography", metrics: "Award Winning Design" },
-  { id: "gd3", client: "Sree Textiles & Silks", category: "design", sub: "Logo Design", image: "https://images.unsplash.com/photo-1626785774625-0b1c2c4eab67?w=600&q=80", tagline: "Minimalist Peacock Loom Brand Mark", metrics: "Full Vector Identity" },
+  { id: "gd3", client: "Sree Textiles & Silks", category: "design", sub: "Logo Design", image: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=600&q=80", tagline: "Minimalist Peacock Loom Brand Mark", metrics: "Full Vector Identity" },
   { id: "gd4", client: "Erode Shopping Fest", category: "design", sub: "Ads Poster", image: "https://images.unsplash.com/photo-1542744094-24638eff58bb?w=600&q=80", tagline: "High-Contrast Billboard & Social Creatives", metrics: "Multi-Format Assets" },
   { id: "gd5", client: "Nilgiris Natural Honey", category: "design", sub: "Catalogue", image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80", tagline: "24-Page Premium B2B Export Brochure", metrics: "Print Ready CMYK" },
   { id: "gd6", client: "Two Leaf One Bud Tea", category: "design", sub: "Website Banner", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", tagline: "Retina Web Headers & Promotional Strips", metrics: "Web & Mobile Ready" },
@@ -541,7 +541,7 @@ export const PortfolioShowcase: React.FC = () => {
   return (
     <section
       id="portfolio"
-      className="pt-4 lg:pt-6 pb-20 lg:pb-28 scroll-mt-20"
+      className="pt-14 sm:pt-16 lg:pt-20 pb-20 lg:pb-28 scroll-mt-20"
       style={{ background: "#F2F2F7" }}
     >
       <Container size="wide">
@@ -647,6 +647,13 @@ export const PortfolioShowcase: React.FC = () => {
                     alt={site.client}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.dataset.fallback) {
+                        target.dataset.fallback = "true";
+                        target.src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80";
+                      }
+                    }}
                   />
                   {/* Subtle glass & dark gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20 pointer-events-none" />
@@ -714,6 +721,13 @@ export const PortfolioShowcase: React.FC = () => {
                     alt={item.client}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.dataset.fallback) {
+                        target.dataset.fallback = "true";
+                        target.src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80";
+                      }
+                    }}
                   />
                   <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur text-white text-[10.5px] font-semibold">
                     {item.sub}

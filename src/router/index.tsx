@@ -5,6 +5,7 @@ import { RootLayout } from "@/layouts/RootLayout";
 // The Core Pages
 import HomePage from "@/pages/HomePage";
 import ServicesPage from "@/pages/ServicesPage";
+import ServiceDetailPage from "@/pages/services/ServiceDetailPage";
 import DigitalMarketingHubPage from "@/pages/digital-marketing/DigitalMarketingHubPage";
 import ApplicationDevelopmentPage from "@/pages/ApplicationDevelopmentPage";
 import AboutPage from "@/pages/AboutPage";
@@ -26,14 +27,14 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
 
-      // 2. All Services Page (12 Core Offerings)
+      // 2. All Services Page & Detail Pages
       {
         path: "services",
         element: <ServicesPage />,
       },
       {
-        path: "services/*",
-        element: <ServicesPage />,
+        path: "services/:slug",
+        element: <ServiceDetailPage />,
       },
 
       // 3. Digital Marketing Page & Aliases

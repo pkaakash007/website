@@ -3,311 +3,384 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import {
   ArrowRight,
   CheckCircle2,
-  HelpCircle,
+  Phone,
+  MessageCircle,
+  ArrowLeft,
   ChevronDown,
   ChevronUp,
-  Layers,
-  Sparkles,
-  ArrowUpRight,
-  Compass,
 } from "lucide-react";
 import { SEOHead } from "@/components/seo/SEOHead";
-import { SERVICES_BY_SLUG, DedicatedService } from "@/data/websiteContent";
+import { Container } from "@/components/layout/Container";
+import { openLeadModal } from "@/components/common/LeadModal";
+import { getWhatsAppUrl } from "@/config";
+import { DETAILED_SERVICES_MAP, DetailedServiceInfo } from "@/features/services/data/servicesDetailsData";
+import { SERVICES_BY_SLUG } from "@/data/servicesData";
 
 export const ServiceDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  if (!slug || !SERVICES_BY_SLUG[slug]) {
-    return <Navigate to="/services/" replace />;
+  // 1. Check in our new curated 13 services map
+  const detailedService: DetailedServiceInfo | undefined = slug ? DETAILED_SERVICES_MAP[slug] : undefined;
+
+  // 2. Fallback to legacy service map if applicable
+  const legacyService = slug ? SERVICES_BY_SLUG[slug] : undefined;
+
+  if (!detailedService && !legacyService) {
+    return <Navigate to="/services" replace />;
   }
 
-  const service: DedicatedService = SERVICES_BY_SLUG[slug];
+  // If matched our 13 core curated services, render the short & sweet executive layout
+  if (detailedService) {
+    const service = detailedService;
+    const whatsappUrl = getWhatsAppUrl(`Hello Real Result team, I would like to discuss your ${service.title} service for my business.`);
 
-  const hubLink = service.category === "digital-marketing"
-    ? { label: "Digital Marketing", href: "/services/digital-marketing/" }
-    : service.category === "calling-messaging"
-    ? { label: "Calling & Messaging", href: "/services/calling-messaging/" }
-    : { label: "Websites, Apps & Software", href: "/services/development/" };
+    return (
+      <div className="flex flex-col min-h-screen bg-[#F5F5F7] text-[#1D1D1F] font-sans selection:bg-[#0071E3] selection:text-white">
+        <SEOHead
+          title={`${service.title} | Real Result Services`}
+          description={service.simpleDesc}
+          canonicalPath={`/services/${service.id}`}
+        />
 
-  return (
-    <div className="flex flex-col min-h-screen bg-[#F5F5F7] text-[#1D1D1F]">
-      <SEOHead
-        title={service.seoTitle}
-        description={service.metaDescription}
-        canonicalPath={service.url}
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: service.h1,
-          description: service.heroBody,
-          provider: {
-            "@type": "Organization",
-            name: "Real Result",
-            url: "https://realresult.in",
-          },
-          areaServed: "Worldwide",
-        }}
-      />
+        {/* ── Top Hero Section ── */}
+        <section className="pt-28 sm:pt-36 pb-12 sm:pb-16 bg-white border-b border-black/[0.05]">
+          <Container size="wide">
+            {/* Breadcrumbs */}
+            <div className="flex items-center gap-2 text-xs sm:text-sm text-[#86868B] mb-6">
+              <Link to="/" className="hover:text-black transition-colors">Home</Link>
+              <span>/</span>
+              <Link to="/services" className="hover:text-black transition-colors">Services</Link>
+              <span>/</span>
+              <span className="text-black font-semibold">{service.title}</span>
+            </div>
 
-      {/* ── BREADCRUMBS & HERO ── */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-b from-[#0D0D12] via-[#12121A] to-[#181824] text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(0,113,227,0.22),rgba(255,255,255,0))] pointer-events-none" />
-
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-xs text-neutral-400 mb-8" aria-label="Breadcrumb">
-            <Link to="/" className="hover:text-white transition-colors">Home</Link>
-            <span>/</span>
-            <Link to={hubLink.href} className="hover:text-white transition-colors">{hubLink.label}</Link>
-            <span>/</span>
-            <span className="text-white font-medium">{service.h1}</span>
-          </nav>
-
-          {/* Eyebrow badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold tracking-wide text-blue-300 mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#0071E3]" />
-            {service.eyebrow}
-          </div>
-
-          {/* Main H1 Title */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4 leading-tight">
-            {service.h1}
-          </h1>
-
-          {/* Display Hook */}
-          {service.displayHook && (
-            <p className="text-xl sm:text-2xl font-semibold text-blue-200/90 mb-6">
-              {service.displayHook}
-            </p>
-          )}
-
-          {/* Body */}
-          <p className="text-base sm:text-lg text-neutral-300 leading-relaxed max-w-3xl mb-10 font-normal">
-            {service.heroBody}
-          </p>
-
-          {/* Action buttons */}
-          <div className="flex flex-wrap items-center gap-4">
-            <Link
-              to={service.primaryCtaDestination}
-              className="inline-flex items-center justify-center px-7 py-3.5 rounded-full text-sm font-semibold bg-[#0071E3] hover:bg-[#0077ED] text-white shadow-lg shadow-[#0071E3]/30 transition-all hover:scale-[1.02]"
-            >
-              {service.primaryButton}
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Link>
-
-            {service.secondaryLink && (
-              <a
-                href="#scope"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-sm font-semibold bg-white/10 hover:bg-white/15 text-neutral-200 border border-white/15 backdrop-blur-sm transition-all"
+            <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+              {/* H1 Title */}
+              <h1
+                className="text-3xl sm:text-5xl lg:text-6xl font-black text-neutral-950 tracking-tight leading-[1.12] mb-5"
+                style={{ letterSpacing: "-0.03em" }}
               >
-                {service.secondaryLink}
-              </a>
-            )}
-          </div>
-        </div>
-      </section>
+                {service.title}
+              </h1>
 
-      {/* ── 2. PROBLEM & CONTEXT SECTION ── */}
-      {service.problemH2 && (
-        <section className="py-16 md:py-24 bg-white border-b border-black/[0.06]">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="p-8 md:p-12 rounded-3xl bg-[#F9F9FB] border border-black/[0.06] shadow-sm">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#0071E3] mb-3 block">
-                The Core Friction Point
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900 mb-4">
-                {service.problemH2}
-              </h2>
-              <p className="text-base sm:text-lg text-neutral-600 leading-relaxed font-normal">
-                {service.problemBody}
+              {/* Tagline / Subtitle */}
+              <p className="text-base sm:text-lg lg:text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed mb-8 font-normal">
+                {service.tagline}
               </p>
-            </div>
-          </div>
-        </section>
-      )}
 
-      {/* ── 3. BENEFITS: "What can this help your business do?" ── */}
-      {service.benefits.length > 0 && (
-        <section className="py-16 md:py-24 bg-[#F5F5F7]">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-10">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#0071E3] mb-2 block">
-                Expected Outcomes
-              </span>
-              <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-neutral-900">
-                {service.benefitsH2}
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {service.benefits.map((benefit, i) => (
-                <div
-                  key={i}
-                  className="bg-white p-7 rounded-2xl border border-black/[0.06] shadow-sm flex flex-col justify-between"
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center justify-center gap-3.5 mb-10">
+                <button
+                  type="button"
+                  onClick={() => openLeadModal(`Inquiry for ${service.title}`)}
+                  className="cursor-pointer inline-flex items-center justify-center gap-2.5 px-7 py-3.5 sm:px-8 sm:py-4 rounded-full bg-gradient-to-r from-[#0E2036] via-[#142B47] to-[#0E2036] border border-[#C5A059]/50 hover:border-[#E5B456] text-white font-bold text-sm sm:text-base shadow-md transition-all active:scale-[0.98]"
                 >
-                  <div className="w-9 h-9 rounded-full bg-blue-50 text-[#0071E3] flex items-center justify-center font-bold text-xs mb-5">
-                    0{i + 1}
-                  </div>
-                  <p className="text-base font-semibold text-neutral-800 leading-snug">
-                    {benefit}
+                  <span>Discuss Your Project</span>
+                  <img
+                    src="/brand/realresult-mark-transparent.png"
+                    alt=""
+                    className="w-4 h-4 object-contain filter drop-shadow-[0_0_3px_rgba(229,180,86,0.6)]"
+                  />
+                </button>
+
+                <a
+                  href="tel:+918111033390"
+                  className="cursor-pointer inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:px-7 sm:py-4 rounded-full bg-white hover:bg-neutral-50 text-[#0E2036] border border-neutral-300 font-bold text-sm sm:text-base shadow-xs transition-all active:scale-[0.98]"
+                >
+                  <Phone className="w-4 h-4 text-[#C5A059]" />
+                  <span>Call +91 81110 33390</span>
+                </a>
+
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:px-7 sm:py-4 rounded-full bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#128C7E] border border-[#25D366]/30 font-bold text-sm sm:text-base transition-all active:scale-[0.98]"
+                >
+                  <MessageCircle className="w-4 h-4 text-[#25D366]" />
+                  <span>WhatsApp Chat</span>
+                </a>
+              </div>
+
+              {/* ── Featured Visual Showcase ── */}
+              <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-[28px] sm:rounded-[36px] overflow-hidden border border-black/[0.08] shadow-2xl bg-neutral-100 group">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.dataset.fallback) {
+                      target.dataset.fallback = "true";
+                      target.src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80";
+                    }
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-6 sm:bottom-6 sm:left-8 text-left text-white">
+                  <p className="text-xs uppercase tracking-widest text-white/80 font-semibold mb-1">
+                    Featured Discipline
+                  </p>
+                  <p className="text-lg sm:text-2xl font-bold">
+                    {service.title}
                   </p>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ── 4. SCOPE: "What can the service include?" (Anchor: #scope) ── */}
-      <section id="scope" className="py-16 md:py-24 bg-white border-y border-black/[0.06]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#0071E3] mb-2 block">
-              Deliverables &amp; Work
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-neutral-900">
-              {service.scopeH2}
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {service.scope.map((item, i) => (
-              <div
-                key={i}
-                className="p-5 rounded-xl bg-[#F9F9FB] border border-black/[0.05] hover:border-[#0071E3]/30 transition-all flex items-start gap-3"
-              >
-                <CheckCircle2 className="w-5 h-5 text-[#0071E3] shrink-0 mt-0.5" />
-                <span className="text-sm font-medium text-neutral-800 leading-snug">
-                  {item}
-                </span>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 5. APPROACH: "How does Real Result approach the work?" ── */}
-      {service.approachBody && (
-        <section className="py-16 md:py-24 bg-[#0D0D12] text-white">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="p-8 md:p-12 rounded-3xl bg-white/[0.04] border border-white/[0.08]">
-              <div className="flex items-center gap-3 mb-4 text-[#0071E3]">
-                <Compass className="w-6 h-6" />
-                <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">
-                  Execution Philosophy
-                </span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-4">
-                {service.approachH2}
-              </h2>
-              <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">
-                {service.approachBody}
-              </p>
             </div>
-          </div>
+          </Container>
         </section>
-      )}
 
-      {/* ── 6. QUESTIONS BEFORE YOU START (FAQ ACCORDION) ── */}
-      {service.faqs.length > 0 && (
-        <section className="py-16 md:py-24 bg-[#F5F5F7]">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-10 text-center">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#0071E3] mb-2 block">
-                Clarity First
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900">
-                Questions before you start
-              </h2>
-            </div>
+        {/* ── 1. WHY YOUR PRODUCT NEEDS THIS SERVICE ── */}
+        <section className="py-16 sm:py-20 bg-white">
+          <Container size="wide">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12 sm:mb-16">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#0071E3] mb-2 block">
+                  The Core Advantage
+                </span>
+                <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-900 tracking-tight leading-tight mb-4">
+                  {service.whyYourProductNeedsThis.heading}
+                </h2>
+                <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-3xl mx-auto font-normal">
+                  {service.whyYourProductNeedsThis.summary}
+                </p>
+              </div>
 
-            <div className="space-y-4">
-              {service.faqs.map((faq, i) => {
-                const isOpen = openFaq === i;
-                return (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {service.whyYourProductNeedsThis.points.map((pt, idx) => (
                   <div
-                    key={i}
-                    className="bg-white rounded-2xl border border-black/[0.06] overflow-hidden shadow-sm"
+                    key={idx}
+                    className="p-6 sm:p-7 rounded-2xl bg-[#F9F9FB] border border-black/[0.05] hover:border-[#0071E3]/30 transition-all shadow-xs"
                   >
-                    <button
-                      onClick={() => setOpenFaq(isOpen ? null : i)}
-                      className="w-full p-6 text-left flex items-center justify-between gap-4 font-semibold text-neutral-900 hover:text-[#0071E3] transition-colors"
-                    >
-                      <span className="text-base sm:text-lg">{faq.question}</span>
-                      {isOpen ? (
-                        <ChevronUp className="w-5 h-5 text-neutral-400 shrink-0" />
-                      ) : (
-                        <ChevronDown className="w-5 h-5 text-neutral-400 shrink-0" />
-                      )}
-                    </button>
-                    {isOpen && (
-                      <div className="px-6 pb-6 pt-1 text-sm text-neutral-600 leading-relaxed border-t border-neutral-100 font-normal">
-                        {faq.answer}
-                      </div>
-                    )}
+                    <div className="w-8 h-8 rounded-full bg-[#0071E3]/10 text-[#0071E3] flex items-center justify-center font-bold text-xs mb-4">
+                      0{idx + 1}
+                    </div>
+                    <h3 className="text-base sm:text-lg font-bold text-neutral-900 mb-2">
+                      {pt.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
+                      {pt.desc}
+                    </p>
                   </div>
-                );
-              })}
+                ))}
+              </div>
             </div>
-          </div>
+          </Container>
         </section>
-      )}
 
-      {/* ── 7. RELATED SERVICES ── */}
-      {service.relatedServices.length > 0 && (
-        <section className="py-16 md:py-20 bg-white border-t border-black/[0.06]">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-8">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#0071E3] mb-2 block">
-                Connected Growth
-              </span>
-              <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-neutral-900">
-                Related services
-              </h2>
+        {/* ── 2. WHY YOU NEED THIS NOW ── */}
+        <section className="py-16 sm:py-20 bg-[#F5F5F7] border-y border-black/[0.06]">
+          <Container size="wide">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#0071E3] mb-2 block">
+                  Real Business Impact
+                </span>
+                <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-900 tracking-tight">
+                  {service.whyYouNeedThisNow.heading}
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {service.whyYouNeedThisNow.reasons.map((reason, idx) => (
+                  <div
+                    key={idx}
+                    className="p-6 sm:p-7 rounded-2xl bg-white border border-black/[0.06] shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                  >
+                    <div>
+                      <h3 className="text-base sm:text-lg font-bold text-neutral-900 mb-2">
+                        {reason.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
+                        {reason.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
+          </Container>
+        </section>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {service.relatedServices.map((rel, i) => (
-                <Link
-                  key={i}
-                  to={rel.href}
-                  className="p-5 rounded-2xl bg-[#F9F9FB] border border-black/[0.06] hover:border-[#0071E3] hover:shadow-md transition-all group flex items-center justify-between"
-                >
-                  <span className="text-sm font-semibold text-neutral-900 group-hover:text-[#0071E3] transition-colors">
-                    {rel.title}
+        {/* ── 3. WHAT YOU GET (DELIVERABLES CHECKLIST) ── */}
+        <section className="py-16 sm:py-20 bg-white">
+          <Container size="wide">
+            <div className="max-w-4xl mx-auto">
+              <div className="mb-10 text-center sm:text-left">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#0071E3] mb-2 block">
+                  Complete Scope
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 tracking-tight">
+                  What you receive when you work with us
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {service.whatYouGet.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="p-5 rounded-xl bg-[#F9F9FB] border border-black/[0.05] flex items-start gap-3.5 shadow-2xs"
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-[#0071E3] shrink-0 mt-0.5" />
+                    <span className="text-sm font-medium text-neutral-800 leading-snug">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* ── 4. HOW WE DELIVER IT (3 SIMPLE STEPS) ── */}
+        <section className="py-16 sm:py-20 bg-[#F5F5F7] border-t border-black/[0.06]">
+          <Container size="wide">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#0071E3] mb-2 block">
+                  Clear & Transparent
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 tracking-tight">
+                  How we deliver your {service.title}
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {service.howWeDeliver.map((step, idx) => (
+                  <div
+                    key={idx}
+                    className="p-6 sm:p-7 rounded-2xl bg-white border border-black/[0.06] shadow-sm relative"
+                  >
+                    <span className="text-2xl font-black text-[#0071E3] block mb-2 font-mono">
+                      {step.step}
+                    </span>
+                    <h3 className="text-base sm:text-lg font-bold text-neutral-900 mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-normal">
+                      {step.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* ── 5. QUICK FAQS ── */}
+        {service.faqs.length > 0 && (
+          <section className="py-16 sm:py-20 bg-white border-t border-black/[0.06]">
+            <Container size="default">
+              <div className="max-w-3xl mx-auto">
+                <div className="text-center mb-10">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#0071E3] mb-2 block">
+                    Got Questions?
                   </span>
-                  <ArrowRight className="w-4 h-4 text-neutral-400 group-hover:text-[#0071E3] group-hover:translate-x-1 transition-all shrink-0 ml-2" />
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+                  <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 tracking-tight">
+                    Frequently Asked Questions
+                  </h2>
+                </div>
 
-      {/* ── 8. FINAL CONTACT CTA BANNER ── */}
-      <section className="py-20 md:py-28 bg-[#0D0D12] text-white text-center relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <span className="text-xs font-semibold uppercase tracking-widest text-[#0071E3] bg-[#0071E3]/15 px-3 py-1 rounded-full border border-[#0071E3]/20 inline-block mb-4">
-            Next Move
-          </span>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6">
-            {service.finalContactH2 || `Ready to move forward with ${service.h1}?`}
-          </h2>
-          <div className="flex justify-center">
-            <Link
-              to={service.primaryCtaDestination}
-              className="px-8 py-4 rounded-full text-base font-semibold bg-[#0071E3] hover:bg-[#0077ED] text-white shadow-xl shadow-[#0071E3]/30 transition-all hover:scale-[1.02] inline-flex items-center gap-2"
-            >
-              {service.finalContactButton || "Let’s Talk Growth"}
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
+                <div className="space-y-3.5">
+                  {service.faqs.map((faq, i) => {
+                    const isOpen = openFaq === i;
+                    return (
+                      <div
+                        key={i}
+                        className="bg-[#F9F9FB] rounded-2xl border border-black/[0.05] overflow-hidden"
+                      >
+                        <button
+                          type="button"
+                          onClick={() => setOpenFaq(isOpen ? null : i)}
+                          className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-bold text-neutral-900 hover:text-[#0071E3] transition-colors cursor-pointer"
+                        >
+                          <span className="text-sm sm:text-base">{faq.q}</span>
+                          {isOpen ? (
+                            <ChevronUp className="w-4 h-4 text-neutral-400 shrink-0" />
+                          ) : (
+                            <ChevronDown className="w-4 h-4 text-neutral-400 shrink-0" />
+                          )}
+                        </button>
+                        {isOpen && (
+                          <div className="px-5 sm:px-6 pb-6 text-xs sm:text-sm text-neutral-600 leading-relaxed border-t border-black/[0.04] pt-3 font-normal">
+                            {faq.a}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </Container>
+          </section>
+        )}
+
+        {/* ── 6. EXECUTIVE DARK FLOATING CTA CARD ── */}
+        <section className="py-16 sm:py-20 bg-[#F5F5F7]">
+          <Container size="wide">
+            <div className="max-w-4xl mx-auto rounded-[32px] sm:rounded-[36px] lg:rounded-[40px] bg-[#16171A] border border-white/[0.08] shadow-[0_24px_50px_rgba(0,0,0,0.18)] px-6 py-14 sm:px-12 sm:py-18 text-center relative overflow-hidden">
+              {/* Top Pill Tag */}
+              <div className="inline-block px-3.5 py-1 rounded-full bg-white/[0.08] border border-white/[0.06] text-neutral-400 text-[11px] font-semibold tracking-wider uppercase mb-5 select-none">
+                ERODE, TAMIL NADU
+              </div>
+
+              {/* Headline */}
+              <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.12] mb-4">
+                Ready to get started with<br className="hidden sm:inline" /> {service.title}?
+              </h2>
+
+              {/* Subtitle */}
+              <p className="text-sm sm:text-base text-neutral-400 leading-relaxed max-w-xl mx-auto mb-8 font-normal">
+                Talk directly with our team to discuss your project, get honest guidance, and receive a free quote.
+              </p>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-8">
+                <button
+                  type="button"
+                  onClick={() => openLeadModal(`Bottom CTA: ${service.title}`)}
+                  className="group cursor-pointer inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white hover:bg-neutral-100 text-[#0E2036] font-bold text-sm sm:text-[15px] shadow-sm transition-all duration-200 active:scale-[0.98]"
+                >
+                  <span>Get a Free Quote</span>
+                  <span className="inline-flex items-center gap-1 shrink-0 ml-1">
+                    <ArrowRight className="w-4 h-4 text-neutral-500 group-hover:translate-x-0.5 transition-transform" />
+                    <img
+                      src="/brand/realresult-mark-transparent.png"
+                      alt=""
+                      className="w-4 h-4 object-contain opacity-75"
+                    />
+                  </span>
+                </button>
+
+                <a
+                  href="tel:+918111033390"
+                  className="cursor-pointer inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-white/[0.05] hover:bg-white/[0.09] border border-white/15 text-white font-semibold text-sm sm:text-[15px] transition-all duration-200 active:scale-[0.98]"
+                >
+                  <Phone className="w-4 h-4 text-[#E5B456]" />
+                  <span>+91 81110 33390</span>
+                </a>
+              </div>
+
+              {/* Back to All Services link */}
+              <div>
+                <Link
+                  to="/services"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-400 hover:text-white transition-colors"
+                >
+                  <ArrowLeft className="w-3.5 h-3.5" />
+                  <span>Back to All Services</span>
+                </Link>
+              </div>
+            </div>
+          </Container>
+        </section>
+      </div>
+    );
+  }
+
+  // Fallback for any legacy slug
+  return <Navigate to="/services" replace />;
 };
 
 export default ServiceDetailPage;

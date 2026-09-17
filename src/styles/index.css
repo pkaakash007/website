@@ -568,3 +568,12 @@ textarea:not([class*="custom-"]) {
 .animate-arrow-float  { animation: arrowFloat 2s ease-in-out infinite; }
 .animate-ios-fade-up  { animation: ios-fade-up 0.5s cubic-bezier(0.32,0.72,0,1) both; }
 .animate-ios-scale-in { animation: ios-scale-in 0.45s cubic-bezier(0.32,0.72,0,1) both; }
+
+/* ── Scrollbar Utilities ─────────────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { SEOHead } from "@/components/seo/SEOHead";
 import { Container } from "@/components/layout/Container";
@@ -6,8 +6,8 @@ import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
 import { REAL_RESULT_CONFIG, getWhatsAppUrl } from "@/config";
 import { BrandWhatsAppIcon } from "@/components/brand/BrandChannelIcons";
-import { ServiceSketchIllustration } from "@/features/digital-marketing/components/services/ServiceSketchIllustration";
-import ServicesOrbitCardsShowcase from "@/features/services/components/ServicesOrbitCardsShowcase";
+import ServicesTopIntroHeader from "@/features/services/components/ServicesTopIntroHeader";
+import ServicesIOSCardsGrid from "@/features/services/components/ServicesIOSCardsGrid";
 import {
   ArrowRight,
   Sparkles,
@@ -277,111 +277,11 @@ export const ServicesPage: React.FC = () => {
         canonicalPath="/services"
       />
 
-      {/* ── 1. Hero Section (Studio Gradient & Split Layout) ── */}
-      <section className="pt-28 pb-16 sm:pt-36 sm:pb-20 bg-gradient-to-b from-[#EEF2F8] via-[#F4F7FB] to-white border-b border-neutral-200/80 relative overflow-hidden">
-        {/* Luminous atmospheric studio gradient blooms */}
-        <div aria-hidden className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-10 right-1/4 w-[650px] h-[520px] rounded-full bg-blue-200/35 blur-[100px]" />
-          <div className="absolute top-1/4 -left-10 w-[500px] h-[450px] rounded-full bg-indigo-100/45 blur-[90px]" />
-          <div className="absolute -bottom-10 right-10 w-[480px] h-[380px] rounded-full bg-cyan-100/40 blur-[80px]" />
-        </div>
+      {/* ── 0. Top Intro Header: All your digital operations. Engineered to perfection. ── */}
+      <ServicesTopIntroHeader />
 
-        <Container size="wide" className="relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Column: Big Bold Title & Descriptive Philosophy */}
-            <div className="lg:col-span-5 space-y-6">
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#0E2036] leading-[1.05]">
-                Our <br className="hidden sm:inline" />
-                Services.
-              </h1>
-
-              <div className="space-y-4 pt-1">
-                <p className="text-base sm:text-lg text-slate-700 font-normal leading-relaxed text-balance">
-                  We help businesses realize their highest growth velocity by building authentic brand identities, high-intent customer acquisition funnels, and enterprise-grade software.
-                </p>
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
-                  Every business arrives with distinct operational bottlenecks and unit economics. We join hands as your dedicated growth partners—combining engineering precision with bold creative execution to deliver tangible business outcomes every single time.
-                </p>
-              </div>
-            </div>
-
-            {/* Right Column: 3D Orbit Cards Stage */}
-            <div className="lg:col-span-7 flex flex-col items-center justify-center">
-              <ServicesOrbitCardsShowcase services={SERVICES_CATALOG} />
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* ── 2. The Signature Alternating Zig-Zag Showcase (Social Panga Layout) ── */}
-      <section className="py-16 sm:py-24 bg-white divide-y divide-neutral-100">
-        <Container size="wide">
-          <div className="space-y-20 sm:space-y-28">
-            {SERVICES_CATALOG.map((service, index) => {
-              const isEven = index % 2 === 0;
-
-              return (
-                <div
-                  key={service.id}
-                  id={service.id}
-                  className={`scroll-mt-28 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center ${
-                    !isEven ? "lg:grid-flow-dense" : ""
-                  }`}
-                >
-                  {/* TEXT CONTENT COLUMN */}
-                  <div
-                    className={`space-y-6 ${
-                      isEven ? "lg:col-span-6" : "lg:col-span-6 lg:col-start-7"
-                    }`}
-                  >
-                    {/* Top Index */}
-                    <div className="flex items-center gap-3">
-                      <span className="text-3xl sm:text-4xl font-black font-mono tracking-tight text-neutral-300">
-                        {service.number}
-                      </span>
-                    </div>
-
-                    {/* Headline */}
-                    <div>
-                      <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0E2036] leading-tight">
-                        {service.title}
-                      </h2>
-                      <p className="text-xs sm:text-sm font-medium text-slate-500 mt-1">
-                        {service.subtitle}
-                      </p>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-base text-slate-700 leading-relaxed font-normal">
-                      {service.description}
-                    </p>
-
-                    {/* Deliverables List */}
-                    <div className="space-y-2 pt-1">
-                      {service.deliverables.map((item, dIdx) => (
-                        <div key={dIdx} className="text-xs sm:text-sm text-slate-700 font-medium">
-                          <span>{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* VISUAL ILLUSTRATION & MOCKUP STAGE */}
-                  <div
-                    className={`${
-                      isEven ? "lg:col-span-6" : "lg:col-span-6 lg:col-start-1"
-                    }`}
-                  >
-                    <ServiceSketchIllustration
-                      serviceId={service.id}
-                    />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </Container>
-      </section>
+      {/* ── 1. iOS Services Cards Grid with Top Full Cover Images & Clean White Description UI ── */}
+      <ServicesIOSCardsGrid />
 
       {/* ── 3. Structured 4-Stage Methodology (Social Panga "How We Work") ── */}
       <section className="py-20 sm:py-28 bg-neutral-50 border-t border-neutral-200/80">
@@ -439,33 +339,51 @@ export const ServicesPage: React.FC = () => {
         </Container>
       </section>
 
-      {/* ── 4. Strategic Discussion CTA Section ── */}
-      <section className="py-20 sm:py-24 bg-white border-t border-neutral-200/80">
-        <Container size="default">
-          <div className="text-center space-y-5 max-w-2xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0E2036]">
-              Ready to Accelerate Your Business Growth?
+      {/* ── 4. Executive Dark CTA Card: Ready to grow your business online? ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-[#F5F5F7]">
+        <Container size="wide">
+          <div className="max-w-4xl mx-auto rounded-[32px] sm:rounded-[36px] lg:rounded-[40px] bg-[#16171A] border border-white/[0.08] shadow-[0_24px_50px_rgba(0,0,0,0.18)] px-6 py-14 sm:px-12 sm:py-18 lg:px-16 lg:py-20 text-center relative overflow-hidden">
+            {/* Top Pill Tag */}
+            <div className="inline-block px-3.5 py-1 rounded-full bg-white/[0.08] border border-white/[0.06] text-neutral-400 text-[11px] font-semibold tracking-wider uppercase mb-5 select-none">
+              ERODE, TAMIL NADU
+            </div>
+
+            {/* Headline */}
+            <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-extrabold text-white tracking-tight leading-[1.12] mb-5">
+              Ready to grow your business<br className="hidden sm:inline" /> online?
             </h2>
-            <p className="text-base text-slate-600 leading-relaxed">
-              Connect directly with our team in Erode. We will analyze your requirements and provide a clear, transparent strategy within 8 business hours.
+
+            {/* Subtitle */}
+            <p className="text-sm sm:text-base text-neutral-400 leading-relaxed max-w-xl mx-auto mb-8 font-normal">
+              Talk directly with our team to discuss your project, get honest guidance, and receive a free quote.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Button
-                variant="primary"
-                size="lg"
-                onClick={() => openLeadModal("services-bottom-cta")}
-                className="w-full sm:w-auto"
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5">
+              {/* White Pill Button with Real Result mark & Arrow */}
+              <button
+                type="button"
+                onClick={() => openLeadModal("services-get-quote")}
+                className="group cursor-pointer inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white hover:bg-neutral-100 text-[#0E2036] font-bold text-sm sm:text-[15px] shadow-sm transition-all duration-200 active:scale-[0.98]"
               >
-                Schedule Strategy Session
-              </Button>
+                <span>Get a Free Quote</span>
+                <span className="inline-flex items-center gap-1 shrink-0 ml-1">
+                  <ArrowRight className="w-4 h-4 text-neutral-500 group-hover:translate-x-0.5 transition-transform" />
+                  <img
+                    src="/brand/realresult-mark-transparent.png"
+                    alt=""
+                    className="w-4 h-4 object-contain opacity-75"
+                  />
+                </span>
+              </button>
 
+              {/* Dark Pill Phone Button */}
               <a
-                href={`tel:${REAL_RESULT_CONFIG.contact.phone.replace(/\s+/g, "")}`}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-neutral-300 hover:bg-neutral-50 text-[#0E2036] text-sm font-semibold transition-colors"
+                href="tel:+918111033390"
+                className="cursor-pointer inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-white/[0.05] hover:bg-white/[0.09] border border-white/15 text-white font-semibold text-sm sm:text-[15px] transition-all duration-200 active:scale-[0.98]"
               >
-                <Phone className="w-4 h-4 text-[#1d4ed8]" />
-                <span>Call {REAL_RESULT_CONFIG.contact.phone}</span>
+                <Phone className="w-4 h-4 text-[#E5B456]" />
+                <span>+91 81110 33390</span>
               </a>
             </div>
           </div>

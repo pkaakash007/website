@@ -599,22 +599,32 @@ export const AppDevTechStackInteractive: React.FC = () => {
           </p>
         </div>
 
-        {/* ── Category Filter Links ── */}
-        <div className="flex justify-center mb-10 pb-4 border-b border-neutral-200">
-          <div className="flex flex-wrap items-center justify-center gap-6">
+        {/* ── Category Filter Segmented Track (Apple / iOS Style) ── */}
+        <div className="flex justify-center mb-12 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="inline-flex items-center p-1 sm:p-1.5 rounded-full bg-[#E5E5EA]/85 border border-black/[0.04] shadow-[inset_0_1px_2px_rgba(0,0,0,0.06)] gap-1 shrink-0">
             {techCategories.map((cat) => {
               const isSelected = activeTab === cat.id;
+              const Icon = cat.icon;
               return (
                 <button
                   key={cat.id}
                   type="button"
                   onClick={() => setActiveTab(cat.id)}
-                  className={`text-sm font-medium transition-colors cursor-pointer select-none ${
-                    isSelected
-                      ? "text-neutral-900 font-semibold border-b-2 border-neutral-900 pb-1 -mb-[17px]"
-                      : "text-neutral-500 hover:text-neutral-900"
-                  }`}
+                  className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm transition-all duration-200 cursor-pointer select-none whitespace-nowrap"
+                  style={{
+                    fontWeight: isSelected ? 700 : 500,
+                    background: isSelected ? "#FFFFFF" : "transparent",
+                    color: isSelected ? "#000000" : "rgba(60,60,67,0.72)",
+                    boxShadow: isSelected
+                      ? "0 2px 8px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.06)"
+                      : "none",
+                  }}
                 >
+                  <Icon
+                    className={`w-4 h-4 shrink-0 transition-colors ${
+                      isSelected ? "text-[#0071E3]" : "text-neutral-500"
+                    }`}
+                  />
                   <span>{cat.name}</span>
                 </button>
               );

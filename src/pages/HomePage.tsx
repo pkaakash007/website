@@ -1,6 +1,7 @@
 import React from "react";
 import { SEOHead } from "@/components/seo/SEOHead";
 import HomeHero from "@/features/home/components/hero/HomeHero";
+import PortfolioShowcase from "@/features/home/components/PortfolioShowcase";
 import HorizontalMarquee from "@/features/home/components/HorizontalMarquee";
 import HomePillarsDualShowcase from "@/features/home/components/pillars/HomePillarsDualShowcase";
 import HomeIndustriesGrid from "@/features/home/components/HomeIndustriesGrid";
@@ -26,7 +27,10 @@ export const HomePage: React.FC = () => {
       {/* 1. Hero: Core Agency Positioning & 3D Centerpiece */}
       <HomeHero />
 
-      {/* 2. Continuous Horizontal Scroll Animation Strip */}
+      {/* 2. Our Live Work Portfolio Showcase (Directly Next to Hero Area) */}
+      <PortfolioShowcase />
+
+      {/* 3. Continuous Horizontal Scroll Animation Strip */}
       <div className="w-full shrink-0 py-6 bg-white border-y border-neutral-100 overflow-hidden">
         <HorizontalMarquee />
       </div>
