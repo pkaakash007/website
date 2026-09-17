@@ -213,8 +213,11 @@ export default function IndustriesPage() {
           <div className="max-w-4xl mx-auto text-center space-y-5">
             {/* High-Contrast Bold Headline */}
             <h1
-              className="text-4xl sm:text-6xl lg:text-[64px] font-extrabold text-neutral-900 tracking-tight leading-[1.08]"
-              style={{ letterSpacing: "-0.035em" }}
+              className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#1D1D1F] leading-[1.08]"
+              style={{
+                fontFamily: '"SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif',
+                letterSpacing: "-0.03em",
+              }}
             >
               Industries We{" "}
               <span className="bg-gradient-to-r from-[#0071E3] via-[#0E2036] to-[#0071E3] bg-clip-text text-transparent">
