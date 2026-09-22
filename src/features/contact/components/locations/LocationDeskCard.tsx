@@ -57,22 +57,12 @@ export const LocationDeskCard: React.FC<DeskProps> = ({
     <div className="bg-white rounded-[22px] p-6 sm:p-7 border border-black/[0.07] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group h-full">
       <div className="space-y-4">
         {/* macOS Window Title Bar */}
-        <div className="flex items-center justify-between pb-3 border-b border-black/[0.05]">
+        <div className="flex items-center pb-3 border-b border-black/[0.05]">
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56] border border-[#E0443E]/50 inline-block" />
             <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E] border border-[#DEA123]/50 inline-block" />
             <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F] border border-[#1AAB29]/50 inline-block" />
           </div>
-          {isHQ ? (
-            <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-100">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#34C759] animate-pulse" />
-              Central Hub
-            </span>
-          ) : (
-            <span className="text-[11px] font-mono font-medium px-2 py-0.5 rounded-md bg-black/[0.04] text-neutral-400">
-              {config.code}
-            </span>
-          )}
         </div>
 
         {/* Icon & Details */}

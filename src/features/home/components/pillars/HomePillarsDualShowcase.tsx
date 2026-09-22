@@ -19,9 +19,6 @@ export const HomePillarsDualShowcase: React.FC = () => {
         
         {/* ── Section Header (Apple Minimalist) ── */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-black/[0.05] text-[#86868b] mb-3">
-            Core Capabilities
-          </span>
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-semibold text-[#1d1d1f] tracking-[-0.03em] leading-tight mb-3">
             Our Two Main Services
           </h2>

@@ -42,9 +42,6 @@ export const ContactFAQ: React.FC = () => {
       <Container size="wide">
         <div className="max-w-3xl mx-auto space-y-10">
           <div className="text-center space-y-3">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-black/[0.05] text-[#86868B]">
-              Operating Policies &amp; FAQs
-            </span>
             <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-semibold text-[#1D1D1F] tracking-[-0.025em] leading-tight">
               Frequently Asked Questions
             </h2>

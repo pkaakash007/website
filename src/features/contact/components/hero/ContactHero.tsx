@@ -14,9 +14,6 @@ export const ContactHero: React.FC = () => {
         </div>
 
         <div className="max-w-3xl space-y-4">
-          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-black/[0.05] text-[#86868B]">
-            Consultation &amp; Executive Access
-          </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.03em] text-[#1D1D1F] leading-tight">
             Contact Real Result
           </h1>

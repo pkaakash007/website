@@ -26,9 +26,6 @@ export const AboutCoreValues: React.FC = () => {
     <section className="py-16 sm:py-24 bg-white border-b border-black/[0.06]">
       <Container size="wide">
         <div className="max-w-3xl mb-12 space-y-3">
-          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-black/[0.05] text-[#86868B]">
-            Operating Standards
-          </span>
           <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-semibold text-[#1D1D1F] tracking-[-0.025em] leading-tight">
             Our Core Operating Principles
           </h2>
