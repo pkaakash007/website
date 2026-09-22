@@ -13,7 +13,6 @@ import {
   MessageCircle,
   Stethoscope,
   ShoppingBag,
-  Car,
   Briefcase,
   CheckCircle2,
   Layers,
@@ -78,18 +77,6 @@ const INDUSTRY_PHOTOS: Record<string, { image: string; alt: string; categoryGrou
     categoryGroup: "consumer",
     icon: Layers,
   },
-  ev: {
-    image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1200&q=80",
-    alt: "Modern electric vehicle charging at power station",
-    categoryGroup: "automotive",
-    icon: Car,
-  },
-  automotive: {
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
-    alt: "Luxury sports vehicle in modern automotive showroom",
-    categoryGroup: "automotive",
-    icon: Car,
-  },
   "travel-tourism": {
     image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80",
     alt: "Luxury tropical resort swimming pool and hotel suite",
@@ -99,11 +86,10 @@ const INDUSTRY_PHOTOS: Record<string, { image: string; alt: string; categoryGrou
 };
 
 const CATEGORY_TABS = [
-  { id: "all", label: "All Sectors", count: 12, icon: Globe },
+  { id: "all", label: "All Sectors", count: 10, icon: Globe },
   { id: "specialized", label: "Specialized & Tech", count: 3, icon: Cpu },
   { id: "consumer", label: "Consumer & Retail", count: 5, icon: ShoppingBag },
   { id: "b2b", label: "B2B & Enterprise", count: 2, icon: Briefcase },
-  { id: "automotive", label: "Automotive & EV", count: 2, icon: Car },
 ];
 
 const SUB_TABS: Record<string, string[]> = {
@@ -114,7 +100,6 @@ const SUB_TABS: Record<string, string[]> = {
     "Ecommerce",
     "B2B Enterprise",
     "Financial Services",
-    "EV & Automotive",
   ],
   specialized: [
     "All Specialized",
@@ -135,11 +120,6 @@ const SUB_TABS: Record<string, string[]> = {
     "All B2B",
     "B2B Enterprise",
   ],
-  automotive: [
-    "All Mobility",
-    "Electric Vehicles (EV)",
-    "Auto Dealerships",
-  ],
 };
 
 const SUB_TAB_SLUG_MAP: Record<string, string | string[]> = {
@@ -154,15 +134,15 @@ const SUB_TAB_SLUG_MAP: Record<string, string | string[]> = {
   "Skincare & Beauty": "skincare-beauty",
   "Home Decor": "home-decor",
   "Travel & Tourism": "travel-tourism",
-  "Electric Vehicles (EV)": "ev",
-  "Auto Dealerships": "automotive",
-  "EV & Automotive": ["ev", "automotive"],
 };
 
 export default function IndustriesPage() {
   const [activeTab, setActiveTab] = useState("all");
   const [subTab, setSubTab] = useState("All Sectors");
-  const rawList = Object.values(INDUSTRIES_DATA);
+  const rawList = useMemo(
+    () => Object.values(INDUSTRIES_DATA).filter((item) => item.slug !== "ev" && item.slug !== "automotive"),
+    []
+  );
 
   const handleMainTab = (id: string) => {
     setActiveTab(id);
@@ -198,7 +178,7 @@ export default function IndustriesPage() {
     <div className="flex flex-col min-h-screen font-sans bg-[#FBFBFA] text-neutral-900 selection:bg-[#0071E3]/20 selection:text-[#0071E3]">
       <SEOHead
         title="Industries We Transform | Real Result Growth Agency"
-        description="Category-specific digital strategy and custom software engineering across 12 sectors: Healthcare, B2B, Ecommerce, Real Estate, Manufacturing, Financial Services, and EV."
+        description="Category-specific digital strategy and custom software engineering across 10 sectors: Healthcare, B2B, Ecommerce, Real Estate, Skincare & Beauty, and Financial Services."
         canonicalPath="/industries"
       />
 
@@ -220,7 +200,7 @@ export default function IndustriesPage() {
               }}
             >
               Industries We{" "}
-              <span className="bg-gradient-to-r from-[#0071E3] via-[#0E2036] to-[#0071E3] bg-clip-text text-transparent">
+              <span className="text-gradient-glowing">
                 Transform.
               </span>
             </h1>
@@ -408,7 +388,7 @@ export default function IndustriesPage() {
               Why Vertical Specialization Beats Generic Agencies
             </h2>
             <p className="text-sm sm:text-base text-neutral-600 leading-relaxed font-normal">
-              A healthcare clinic requires HIPAA & medical ethics compliance; a real estate developer requires high-ticket qualification funnels; an EV firm requires charging network adoption. We build specifically for your sector.
+              A healthcare clinic requires medical ethics compliance; a real estate developer requires high-ticket qualification funnels; an ecommerce brand requires high-conversion retention funnels. We build specifically for your sector.
             </p>
           </div>
 

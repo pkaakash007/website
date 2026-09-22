@@ -589,7 +589,7 @@ export const AppDevTechStackInteractive: React.FC = () => {
         <div className="text-center mb-10">
           <h2 style={{
             fontSize: "clamp(1.8rem,4vw,2.6rem)", fontWeight: 700,
-            letterSpacing: "-0.025em", color: "#DCC195", lineHeight: 1.15,
+            letterSpacing: "-0.025em", color: "#000000", lineHeight: 1.15,
             marginBottom: "10px",
           }}>
             Technologies We Use

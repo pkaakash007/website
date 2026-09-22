@@ -577,3 +577,37 @@ textarea:not([class*="custom-"]) {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ── Animated Shifting Gradient (Crisp, No Glow) ─────────────── */
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.text-gradient-flow,
+.text-gradient-glowing {
+  background: linear-gradient(
+    120deg,
+    #0071E3 0%,
+    #7C3AED 22%,
+    #EC4899 45%,
+    #06B6D4 68%,
+    #3B82F6 85%,
+    #0071E3 100%
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+  animation: gradient-flow 6s ease-in-out infinite;
+  will-change: background-position;
+}

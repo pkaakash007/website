@@ -43,13 +43,13 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
   if (status === "success") {
     return (
-      <div className="p-8 sm:p-10 rounded-2xl bg-white border border-neutral-200 text-center flex flex-col items-center justify-center space-y-4 animate-in fade-in zoom-in-95 duration-300">
-        <div className="w-12 h-12 rounded-full bg-neutral-900 text-white flex items-center justify-center">
-          <CheckCircle2 className="w-6 h-6" />
+      <div className="p-8 sm:p-10 rounded-2xl bg-white border border-black/[0.06] text-center flex flex-col items-center justify-center space-y-4 animate-in fade-in zoom-in-95 duration-300">
+        <div className="w-12 h-12 rounded-2xl bg-[#34C759] text-white flex items-center justify-center shadow-xs">
+          <CheckCircle2 className="w-6 h-6 stroke-[2.5]" />
         </div>
-        <h3 className="text-xl font-bold text-neutral-900 tracking-tight">Message Received</h3>
-        <p className="text-neutral-600 max-w-md text-sm">
-          Thank you, <span className="font-semibold text-neutral-900">{formData.name || "there"}</span>. We have received your inquiry and will reach out to you within 24 hours.
+        <h3 className="text-xl font-semibold text-[#1D1D1F] tracking-tight">Message Received</h3>
+        <p className="text-[#86868B] max-w-md text-sm leading-relaxed">
+          Thank you, <span className="font-semibold text-[#1D1D1F]">{formData.name || "there"}</span>. We have received your inquiry and our director will reach out to you within 24 hours.
         </p>
         <button
           type="button"
@@ -64,7 +64,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
               message: "",
             });
           }}
-          className="mt-4 text-xs font-semibold text-neutral-900 hover:underline cursor-pointer"
+          className="mt-4 text-xs font-semibold text-[#0071E3] hover:underline cursor-pointer"
         >
           Send another message
         </button>
@@ -82,6 +82,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
           <MacOSInput
             label="Full Name"
+            requiredIndicator
             required
             placeholder="e.g. Alex Morgan"
             value={formData.name}
@@ -89,6 +90,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
           />
           <MacOSInput
             label="Company Name"
+            requiredIndicator
             required
             placeholder="e.g. Acme Corp"
             value={formData.company}
@@ -100,6 +102,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
           <MacOSInput
             label="Business Email"
+            requiredIndicator
             required
             type="email"
             placeholder="alex@company.com"
@@ -128,8 +131,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({
                 onClick={() => setFormData({ ...formData, areaOfInterest: area })}
                 className={`px-3.5 py-1.5 text-xs rounded-full font-medium transition-all cursor-pointer select-none ${
                   formData.areaOfInterest === area
-                    ? "bg-neutral-900 text-white shadow-xs"
-                    : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200/70 border border-neutral-200/60"
+                    ? "bg-[#0071E3] text-white shadow-xs"
+                    : "bg-[#F5F5F7] text-neutral-700 hover:bg-neutral-200/80 border border-black/[0.04]"
                 }`}
               >
                 {area}
@@ -152,19 +155,19 @@ export const ContactForm: React.FC<ContactFormProps> = ({
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="w-full py-3 px-6 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white font-semibold text-sm transition-all duration-150 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+            className="w-full py-3.5 px-6 rounded-xl bg-[#0071E3] hover:bg-[#0077ED] text-white font-semibold text-sm transition-all duration-150 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 shadow-xs active:scale-[0.99]"
           >
             {status === "submitting" ? (
               <>
                 <Loader2 className="w-4 h-4 animate-spin text-white" />
-                <span>Sending...</span>
+                <span>Submitting Briefing...</span>
               </>
             ) : (
               <span>Schedule Consultation</span>
             )}
           </button>
-          <p className="text-xs text-neutral-500 text-center mt-3">
-            We respect your privacy. Your information is strictly confidential.
+          <p className="text-xs text-[#86868B] text-center mt-3">
+            We respect your privacy. Your information is strictly confidential under NDA.
           </p>
         </div>
       </div>
@@ -173,4 +176,3 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 };
 
 export default ContactForm;
-

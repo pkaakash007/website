@@ -27,18 +27,21 @@ export const AboutLeadershipTeam: React.FC = () => {
   ];
 
   return (
-    <section id="leadership" className="py-16 sm:py-20 bg-white border-b border-neutral-200 scroll-mt-20">
+    <section id="leadership" className="py-16 sm:py-24 bg-white border-b border-black/[0.06] scroll-mt-20">
       <Container size="wide">
-        <div className="max-w-3xl mb-12 space-y-2">
-          <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 tracking-tight">
+        <div className="max-w-3xl mb-12 space-y-3">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-black/[0.05] text-[#86868B]">
+            Core Directors
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-semibold text-[#1D1D1F] tracking-[-0.025em] leading-tight">
             Our Leadership Team
           </h2>
-          <p className="text-base text-neutral-600 leading-relaxed">
+          <p className="text-base text-[#86868B] leading-relaxed">
             Directly managed by experienced engineering and digital marketing specialists who actively oversee every client project.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {leaders.map((leader, idx) => (
             <LeaderBioCard
               key={idx}

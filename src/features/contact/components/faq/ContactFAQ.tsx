@@ -38,19 +38,22 @@ export const ContactFAQ: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-white border-b border-neutral-200/80">
+    <section className="py-16 sm:py-24 bg-white border-b border-black/[0.06]">
       <Container size="wide">
         <div className="max-w-3xl mx-auto space-y-10">
           <div className="text-center space-y-3">
-            <h2 className="text-2xl sm:text-3xl font-bold text-black">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-black/[0.05] text-[#86868B]">
+              Operating Policies &amp; FAQs
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-semibold text-[#1D1D1F] tracking-[-0.025em] leading-tight">
               Frequently Asked Questions
             </h2>
-            <p className="text-secondary text-sm">
+            <p className="text-base text-[#86868B] max-w-xl mx-auto leading-relaxed">
               Answers regarding our consultation process, NDAs, and engagement timelines.
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="bg-white rounded-[24px] border border-black/[0.08] shadow-[0_2px_16px_rgba(0,0,0,0.03)] divide-y divide-black/[0.06] overflow-hidden p-2 sm:p-3">
             {contactFaqs.map((faq, idx) => (
               <ContactFAQItem
                 key={idx}

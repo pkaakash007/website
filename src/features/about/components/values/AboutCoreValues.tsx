@@ -23,18 +23,21 @@ export const AboutCoreValues: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-white border-b border-neutral-200">
+    <section className="py-16 sm:py-24 bg-white border-b border-black/[0.06]">
       <Container size="wide">
-        <div className="max-w-3xl mb-12 space-y-2">
-          <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 tracking-tight">
+        <div className="max-w-3xl mb-12 space-y-3">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-black/[0.05] text-[#86868B]">
+            Operating Standards
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-semibold text-[#1D1D1F] tracking-[-0.025em] leading-tight">
             Our Core Operating Principles
           </h2>
-          <p className="text-base text-neutral-600 leading-relaxed">
+          <p className="text-base text-[#86868B] leading-relaxed">
             The standards that guide how we build software, manage marketing campaigns, and support our client partners.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {values.map((val, idx) => (
             <ValueItemCard
               key={idx}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { 
   Smartphone, 
   Search, 
@@ -7,132 +8,218 @@ import {
   BarChart3, 
   Globe, 
   ShieldCheck, 
-  Check 
+  Layers,
+  ChevronRight 
 } from "lucide-react";
 
 export const HomePillarsDualShowcase: React.FC = () => {
   return (
-    <section id="pillars" className="py-20 sm:py-28 scroll-mt-20 bg-white border-t border-neutral-200/60">
+    <section id="pillars" className="py-20 sm:py-28 scroll-mt-20 bg-[#F5F5F7]/70 border-t border-black/[0.04]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* ── Section Header ── */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0E2036] tracking-tight leading-tight mb-4">
+        {/* ── Section Header (Apple Minimalist) ── */}
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-black/[0.05] text-[#86868b] mb-3">
+            Core Capabilities
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-semibold text-[#1d1d1f] tracking-[-0.03em] leading-tight mb-3">
             Our Two Main Services
           </h2>
-          <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-[17px] text-[#86868b] leading-relaxed max-w-2xl mx-auto">
             Instead of hiring separate agencies, we handle both: performance marketing to bring you real customers, and custom software engineering to build your web &amp; mobile apps.
           </p>
         </div>
 
-        {/* ── Dual Pillars Grid ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        {/* ── Dual Pillars Grid (iOS Inset Grouped Cards) ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           
           {/* ── PILLAR 01: Digital Marketing ── */}
-          <div>
-            {/* Title & Description */}
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0E2036] tracking-tight leading-snug mb-3">
-              Get More Phone Calls &amp; WhatsApp Inquiries
-            </h3>
-            <p className="text-sm sm:text-base text-neutral-600 leading-relaxed mb-8">
-              We manage targeted ad campaigns on Google, YouTube, Instagram, and Facebook. Every rupee spent is tracked directly to phone calls, messages, and customer visits.
-            </p>
+          <div className="flex flex-col justify-between bg-white rounded-[24px] sm:rounded-[28px] p-6 sm:p-8 lg:p-9 border border-black/[0.06] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_28px_rgba(0,0,0,0.06)] transition-all duration-300">
+            <div>
+              {/* Title & Description */}
+              <h3 className="text-2xl sm:text-[26px] font-semibold text-[#1d1d1f] tracking-[-0.02em] leading-snug mb-2">
+                Get More Qualified Leads &amp; Sales
+              </h3>
+              <p className="text-sm sm:text-[15px] text-[#86868b] leading-relaxed mb-6">
+                We manage targeted ad campaigns on Google, YouTube, Instagram, and Facebook. Every rupee spent is tracked directly to qualified leads, customer conversions, and sales.
+              </p>
 
-            {/* Deliverables / Features List */}
-            <div className="space-y-4">
-              <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center text-[#0E2036] shrink-0 mt-0.5">
-                  <Search className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-[#0E2036]">Google Search &amp; Display Ads</h4>
-                  <p className="text-xs sm:text-sm text-neutral-500 leading-normal">Appear at the top when high-intent buyers search for your products or services.</p>
+              {/* iOS Inset Grouped Table */}
+              <div className="bg-[#F5F5F7] rounded-2xl p-1.5 border border-black/[0.04]">
+                <div className="divide-y divide-black/[0.05]">
+                  
+                  {/* Item 1 */}
+                  <div className="group flex items-start sm:items-center gap-3.5 p-3 rounded-xl hover:bg-white/90 transition-colors duration-150">
+                    <div className="w-10 h-10 rounded-[12px] bg-[#007AFF] text-white flex items-center justify-center shrink-0 shadow-sm">
+                      <Search className="w-5 h-5 stroke-[2.2]" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-[14px] sm:text-[15px] font-semibold text-[#1d1d1f] tracking-tight">
+                        Google Search &amp; Display Ads
+                      </h4>
+                      <p className="text-xs sm:text-[13px] text-[#86868b] leading-normal">
+                        Appear at the top when high-intent buyers search for your products or services.
+                      </p>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-[#86868b] transition-colors" />
+                  </div>
+
+                  {/* Item 2 */}
+                  <div className="group flex items-start sm:items-center gap-3.5 p-3 rounded-xl hover:bg-white/90 transition-colors duration-150">
+                    <div className="w-10 h-10 rounded-[12px] bg-[#34C759] text-white flex items-center justify-center shrink-0 shadow-sm">
+                      <MapPin className="w-5 h-5 stroke-[2.2]" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-[14px] sm:text-[15px] font-semibold text-[#1d1d1f] tracking-tight">
+                        Google Maps &amp; Local SEO
+                      </h4>
+                      <p className="text-xs sm:text-[13px] text-[#86868b] leading-normal">
+                        Help local customers easily locate your shop, showroom, office, or clinic.
+                      </p>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-[#86868b] transition-colors" />
+                  </div>
+
+                  {/* Item 3 */}
+                  <div className="group flex items-start sm:items-center gap-3.5 p-3 rounded-xl hover:bg-white/90 transition-colors duration-150">
+                    <div className="w-10 h-10 rounded-[12px] bg-[#AF52DE] text-white flex items-center justify-center shrink-0 shadow-sm">
+                      <MessageSquare className="w-5 h-5 stroke-[2.2]" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-[14px] sm:text-[15px] font-semibold text-[#1d1d1f] tracking-tight">
+                        Instagram &amp; Facebook Targeted Ads
+                      </h4>
+                      <p className="text-xs sm:text-[13px] text-[#86868b] leading-normal">
+                        Eye-catching photo and video campaigns aimed at ready buyers in your city.
+                      </p>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-[#86868b] transition-colors" />
+                  </div>
+
+                  {/* Item 4 */}
+                  <div className="group flex items-start sm:items-center gap-3.5 p-3 rounded-xl hover:bg-white/90 transition-colors duration-150">
+                    <div className="w-10 h-10 rounded-[12px] bg-[#FF9500] text-white flex items-center justify-center shrink-0 shadow-sm">
+                      <BarChart3 className="w-5 h-5 stroke-[2.2]" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-[14px] sm:text-[15px] font-semibold text-[#1d1d1f] tracking-tight">
+                        Call &amp; Lead Analytics
+                      </h4>
+                      <p className="text-xs sm:text-[13px] text-[#86868b] leading-normal">
+                        Transparent tracking so you know exactly how many leads your budget produces.
+                      </p>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-[#86868b] transition-colors" />
+                  </div>
+
                 </div>
               </div>
+            </div>
 
-              <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center text-[#0E2036] shrink-0 mt-0.5">
-                  <MapPin className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-[#0E2036]">Google Maps &amp; Local SEO</h4>
-                  <p className="text-xs sm:text-sm text-neutral-500 leading-normal">Help local customers easily locate your shop, showroom, office, or clinic.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center text-[#0E2036] shrink-0 mt-0.5">
-                  <MessageSquare className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-[#0E2036]">Instagram &amp; Facebook Targeted Ads</h4>
-                  <p className="text-xs sm:text-sm text-neutral-500 leading-normal">Eye-catching photo and video campaigns aimed at ready buyers in your city.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center text-[#0E2036] shrink-0 mt-0.5">
-                  <BarChart3 className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-[#0E2036]">Call &amp; Lead Analytics</h4>
-                  <p className="text-xs sm:text-sm text-neutral-500 leading-normal">Transparent tracking so you know exactly how many leads your budget produces.</p>
-                </div>
-              </div>
+            {/* Apple Card Footer Action */}
+            <div className="pt-6 mt-6 border-t border-black/[0.04]">
+              <Link 
+                to="/digital-marketing" 
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0071e3] hover:underline"
+              >
+                <span>View all marketing services</span>
+                <ChevronRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
 
           {/* ── PILLAR 02: Application Development ── */}
-          <div>
-            {/* Title & Description */}
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0E2036] tracking-tight leading-snug mb-3">
-              Custom Websites &amp; Mobile Applications
-            </h3>
-            <p className="text-sm sm:text-base text-neutral-600 leading-relaxed mb-8">
-              We design and engineer fast websites, mobile apps, and custom business portals tailored to your operations, with 100% full source code ownership.
-            </p>
+          <div className="flex flex-col justify-between bg-white rounded-[24px] sm:rounded-[28px] p-6 sm:p-8 lg:p-9 border border-black/[0.06] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_28px_rgba(0,0,0,0.06)] transition-all duration-300">
+            <div>
+              {/* Title & Description */}
+              <h3 className="text-2xl sm:text-[26px] font-semibold text-[#1d1d1f] tracking-[-0.02em] leading-snug mb-2">
+                Custom Websites &amp; Mobile Applications
+              </h3>
+              <p className="text-sm sm:text-[15px] text-[#86868b] leading-relaxed mb-6">
+                We design and engineer fast websites, mobile apps, and custom business portals tailored to your operations, with 100% full source code ownership.
+              </p>
 
-            {/* Deliverables / Features List */}
-            <div className="space-y-4">
-              <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center text-[#0E2036] shrink-0 mt-0.5">
-                  <Smartphone className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-[#0E2036]">iOS &amp; Android Native Mobile Apps</h4>
-                  <p className="text-xs sm:text-sm text-neutral-500 leading-normal">Published to Google Play Store and Apple App Store with smooth user experience.</p>
+              {/* iOS Inset Grouped Table */}
+              <div className="bg-[#F5F5F7] rounded-2xl p-1.5 border border-black/[0.04]">
+                <div className="divide-y divide-black/[0.05]">
+                  
+                  {/* Item 1 */}
+                  <div className="group flex items-start sm:items-center gap-3.5 p-3 rounded-xl hover:bg-white/90 transition-colors duration-150">
+                    <div className="w-10 h-10 rounded-[12px] bg-[#007AFF] text-white flex items-center justify-center shrink-0 shadow-sm">
+                      <Smartphone className="w-5 h-5 stroke-[2.2]" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-[14px] sm:text-[15px] font-semibold text-[#1d1d1f] tracking-tight">
+                        iOS &amp; Android Native Mobile Apps
+                      </h4>
+                      <p className="text-xs sm:text-[13px] text-[#86868b] leading-normal">
+                        Published to Google Play Store and Apple App Store with smooth user experience.
+                      </p>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-[#86868b] transition-colors" />
+                  </div>
+
+                  {/* Item 2 */}
+                  <div className="group flex items-start sm:items-center gap-3.5 p-3 rounded-xl hover:bg-white/90 transition-colors duration-150">
+                    <div className="w-10 h-10 rounded-[12px] bg-[#30B0C7] text-white flex items-center justify-center shrink-0 shadow-sm">
+                      <Globe className="w-5 h-5 stroke-[2.2]" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-[14px] sm:text-[15px] font-semibold text-[#1d1d1f] tracking-tight">
+                        High-Performance Websites
+                      </h4>
+                      <p className="text-xs sm:text-[13px] text-[#86868b] leading-normal">
+                        Clean, fast-loading, mobile-friendly websites designed to convert visitors.
+                      </p>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-[#86868b] transition-colors" />
+                  </div>
+
+                  {/* Item 3 */}
+                  <div className="group flex items-start sm:items-center gap-3.5 p-3 rounded-xl hover:bg-white/90 transition-colors duration-150">
+                    <div className="w-10 h-10 rounded-[12px] bg-[#5856D6] text-white flex items-center justify-center shrink-0 shadow-sm">
+                      <Layers className="w-5 h-5 stroke-[2.2]" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-[14px] sm:text-[15px] font-semibold text-[#1d1d1f] tracking-tight">
+                        Business Portals &amp; Billing Systems
+                      </h4>
+                      <p className="text-xs sm:text-[13px] text-[#86868b] leading-normal">
+                        Custom software built for managing orders, inventory, bookings, and team operations.
+                      </p>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-[#86868b] transition-colors" />
+                  </div>
+
+                  {/* Item 4 */}
+                  <div className="group flex items-start sm:items-center gap-3.5 p-3 rounded-xl hover:bg-white/90 transition-colors duration-150">
+                    <div className="w-10 h-10 rounded-[12px] bg-[#34C759] text-white flex items-center justify-center shrink-0 shadow-sm">
+                      <ShieldCheck className="w-5 h-5 stroke-[2.2]" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-[14px] sm:text-[15px] font-semibold text-[#1d1d1f] tracking-tight">
+                        100% Source Code &amp; IP Ownership
+                      </h4>
+                      <p className="text-xs sm:text-[13px] text-[#86868b] leading-normal">
+                        You retain full ownership of all source code, assets, and design files with zero recurring lock-in.
+                      </p>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-[#86868b] transition-colors" />
+                  </div>
+
                 </div>
               </div>
+            </div>
 
-              <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center text-[#0E2036] shrink-0 mt-0.5">
-                  <Globe className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-[#0E2036]">High-Performance Websites</h4>
-                  <p className="text-xs sm:text-sm text-neutral-500 leading-normal">Clean, fast-loading, mobile-friendly websites designed to convert visitors.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center text-[#0E2036] shrink-0 mt-0.5">
-                  <Check className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-[#0E2036]">Business Portals &amp; Billing Systems</h4>
-                  <p className="text-xs sm:text-sm text-neutral-500 leading-normal">Custom software built for managing orders, inventory, bookings, and team operations.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-neutral-100 flex items-center justify-center text-[#0E2036] shrink-0 mt-0.5">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-[#0E2036]">100% Source Code &amp; IP Ownership</h4>
-                  <p className="text-xs sm:text-sm text-neutral-500 leading-normal">You retain full ownership of all source code, assets, and design files with zero recurring lock-in.</p>
-                </div>
-              </div>
+            {/* Apple Card Footer Action */}
+            <div className="pt-6 mt-6 border-t border-black/[0.04]">
+              <Link 
+                to="/application-development" 
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0071e3] hover:underline"
+              >
+                <span>View development stack</span>
+                <ChevronRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
 
