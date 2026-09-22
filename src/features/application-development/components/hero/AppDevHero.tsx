@@ -161,14 +161,15 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
                 : "We create fast-loading websites and online platforms that make your business look established, load instantly on mobile phones, and convert visitors into direct phone calls and WhatsApp orders."}
             </p>
 
-            {/* App Store & Google Play Store Official Badges */}
+            {/* App Store & Google Play Store Badges */}
             {activeTab === "mobile" && (
-              <div className="flex flex-wrap items-center gap-3 pt-0.5">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E5E5EA]/70 border border-black/[0.08] text-xs sm:text-[13px] font-semibold text-neutral-800 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+              <div className="flex flex-wrap items-center gap-4 pt-0.5 text-xs sm:text-sm font-semibold text-neutral-700">
+                <div className="flex items-center gap-2">
                   <AppStoreLogo className="w-4 h-4 rounded-xs shrink-0" />
                   <span>Apple App Store</span>
                 </div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E5E5EA]/70 border border-black/[0.08] text-xs sm:text-[13px] font-semibold text-neutral-800 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+                <span className="text-neutral-300">•</span>
+                <div className="flex items-center gap-2">
                   <GooglePlayLogo className="w-3.5 h-3.5 shrink-0" />
                   <span>Google Play Store</span>
                 </div>
@@ -306,11 +307,8 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
                           
                           {/* Safari Toolbar */}
                           <div className="bg-[#EBECEF] border-b border-black/[0.08] px-2.5 sm:px-3 py-1 flex items-center justify-between gap-2.5 shrink-0">
-                            {/* Traffic Lights */}
-                            <div className="flex items-center gap-1.5 shrink-0">
-                              <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56] border border-[#E0443E] shadow-2xs" />
-                              <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E] border border-[#DEA123] shadow-2xs" />
-                              <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F] border border-[#1AAB29] shadow-2xs" />
+                            <div className="flex items-center gap-1.5 shrink-0 text-[10px] font-semibold text-neutral-500">
+                              <span>Web Preview</span>
                             </div>
 
                             {/* Navigation Chevrons */}
@@ -407,7 +405,6 @@ export const AppDevHero: React.FC<AppDevHeroProps> = ({
                                       strokeLinecap="round"
                                     />
                                     <circle cx="198" cy="6" r="3.5" fill="#007AFF" />
-                                    <circle cx="198" cy="6" r="7" fill="#007AFF" opacity="0.35" className="animate-ping" />
                                   </svg>
                                 </div>
 

@@ -37,10 +37,9 @@ export const HowWeWorkPage: React.FC = () => {
             <span className="text-white font-medium">How We Work</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold tracking-wide text-blue-300 mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#0071E3]" />
+          <p className="text-xs font-bold uppercase tracking-wider text-blue-400 mb-4">
             {content.eyebrow}
-          </div>
+          </p>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
             {content.h1}
@@ -112,7 +111,7 @@ export const HowWeWorkPage: React.FC = () => {
       <section className="py-20 md:py-28 bg-[#F5F5F7]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-8 md:p-12 rounded-3xl bg-[#0D0D12] text-white">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#0071E3] bg-[#0071E3]/15 px-3 py-1 rounded-full border border-[#0071E3]/20 inline-block mb-4">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#0071E3] block mb-3">
               Partnership Alignment
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-8">

@@ -2,7 +2,6 @@ import React from "react";
 import { Image } from "@/components/common/Image";
 import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
 import { ContactForm } from "@/components/common/ContactForm";
 import { getWhatsAppUrl } from "@/config";
@@ -136,12 +135,7 @@ export default function MarketingPage() {
         <div className="absolute top-10 right-10 w-[500px] h-[350px] bg-gold/5 rounded-full blur-3xl pointer-events-none" />
 
         <Container size="wide">
-          <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono font-bold tracking-widest uppercase">
-              <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-              PRIMARY GROWTH DIVISION • REAL RESULT
-            </div>
-
+          <div className="max-w-4xl space-y-6">
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-primary leading-[1.08]">
               Make your brand{" "}
               <span className="relative inline-block text-primary">
@@ -212,7 +206,7 @@ export default function MarketingPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-xs font-mono text-white/90">
-                <span className="bg-charcoal/80 px-3 py-1 rounded-full border border-charcoal-border">
+                <span className="text-white/80">
                   Metropolitan Media Orchestration
                 </span>
                 <span className="text-gold">100% Attributed</span>
@@ -226,8 +220,7 @@ export default function MarketingPage() {
       <section id="digital" className="py-20 bg-white border-b border-border">
         <Container size="wide">
           <div className="max-w-2xl mb-14">
-            <Badge variant="gold">DIGITAL ACQUISITION</Badge>
-            <h2 className="text-3xl sm:text-4xl font-black text-primary tracking-tight mt-3">
+            <h2 className="text-3xl sm:text-4xl font-black text-primary tracking-tight">
               High-Intent Search & Conversion Funnels
             </h2>
             <p className="text-sm text-secondary mt-2">
@@ -248,7 +241,7 @@ export default function MarketingPage() {
                       <div className="w-12 h-12 rounded-2xl bg-white border border-border flex items-center justify-center text-primary group-hover:bg-gold group-hover:text-black transition-colors shadow-2xs">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-full bg-white border border-border text-muted">
+                      <span className="text-[11px] font-medium text-muted">
                         {item.category}
                       </span>
                     </div>
@@ -281,8 +274,7 @@ export default function MarketingPage() {
       <section className="py-20 bg-canvas border-b border-border">
         <Container size="wide">
           <div className="max-w-2xl mb-14">
-            <Badge variant="gold">MASS MEDIA & BROADCAST</Badge>
-            <h2 className="text-3xl sm:text-4xl font-black text-primary tracking-tight mt-3">
+            <h2 className="text-3xl sm:text-4xl font-black text-primary tracking-tight">
               High-Impact Outdoor & Broadcast Reach
             </h2>
             <p className="text-sm text-secondary mt-2">
@@ -324,8 +316,7 @@ export default function MarketingPage() {
       <section className="py-20 bg-white border-b border-border">
         <Container size="wide">
           <div className="max-w-2xl mb-14">
-            <Badge variant="gold">GROWTH & INFLUENCE</Badge>
-            <h2 className="text-3xl sm:text-4xl font-black text-primary tracking-tight mt-3">
+            <h2 className="text-3xl sm:text-4xl font-black text-primary tracking-tight">
               Influence, Attribution & Closed-Loop Analytics
             </h2>
             <p className="text-sm text-secondary mt-2">
@@ -362,7 +353,6 @@ export default function MarketingPage() {
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5 space-y-6">
-              <Badge variant="gold">CAMPAIGN PLANNING</Badge>
               <h2 className="text-3xl sm:text-4xl font-black text-primary tracking-tight">
                 Plan Your Next Campaign
               </h2>

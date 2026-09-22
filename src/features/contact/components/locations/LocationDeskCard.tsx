@@ -56,17 +56,8 @@ export const LocationDeskCard: React.FC<DeskProps> = ({
   return (
     <div className="bg-white rounded-[22px] p-6 sm:p-7 border border-black/[0.07] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group h-full">
       <div className="space-y-4">
-        {/* macOS Window Title Bar */}
-        <div className="flex items-center pb-3 border-b border-black/[0.05]">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56] border border-[#E0443E]/50 inline-block" />
-            <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E] border border-[#DEA123]/50 inline-block" />
-            <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F] border border-[#1AAB29]/50 inline-block" />
-          </div>
-        </div>
-
         {/* Icon & Details */}
-        <div className="flex items-center gap-3 pt-1">
+        <div className="flex items-center gap-3">
           <div className={`w-10 h-10 rounded-xl ${config.bg} ${config.color} flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shrink-0`}>
             <IconComponent className="w-5 h-5 stroke-[2.2]" />
           </div>

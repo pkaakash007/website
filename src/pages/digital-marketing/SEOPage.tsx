@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
 import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
@@ -101,7 +100,6 @@ export const SEOPage: React.FC = () => {
       <section className="py-20 bg-canvas border-b border-border">
         <Container size="wide">
           <div className="max-w-3xl mb-14 space-y-3">
-            <Badge variant="gold">FOUR-STAGE SEO ENGINE</Badge>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary">
               Our Systematic SEO Framework
             </h2>
@@ -143,13 +141,10 @@ export const SEOPage: React.FC = () => {
                   key={st.step}
                   className="p-6 rounded-3xl bg-white border border-border shadow-card space-y-4"
                 >
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-start">
                     <div className="w-10 h-10 rounded-xl bg-surface flex items-center justify-center text-primary">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="font-mono text-xs font-bold text-gold-700">
-                      STAGE {st.step}
-                    </span>
                   </div>
                   <h3 className="text-lg font-bold text-primary">{st.title}</h3>
                   <p className="text-xs text-secondary leading-relaxed">{st.desc}</p>

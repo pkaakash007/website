@@ -35,10 +35,9 @@ export const InsightDetailPage: React.FC = () => {
             <span className="text-white font-medium">Article</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold tracking-wide text-blue-300 mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#0071E3]" />
+          <p className="text-xs font-bold uppercase tracking-wider text-blue-400 mb-4">
             {content.category} · 4 min read
-          </div>
+          </p>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
             {content.h1}
@@ -55,15 +54,10 @@ export const InsightDetailPage: React.FC = () => {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           {content.sections.map((sec) => (
             <div key={sec.num} className="space-y-3">
-              <div className="flex items-center gap-3">
-                <span className="text-sm font-black text-[#0071E3] bg-blue-50 px-2.5 py-1 rounded-md">
-                  0{sec.num}
-                </span>
-                <h2 className="text-xl sm:text-2xl font-bold text-neutral-900">
-                  {sec.title}
-                </h2>
-              </div>
-              <p className="text-base sm:text-lg text-neutral-700 leading-relaxed pl-10 font-normal">
+              <h2 className="text-xl sm:text-2xl font-bold text-neutral-900">
+                {sec.title}
+              </h2>
+              <p className="text-base sm:text-lg text-neutral-700 leading-relaxed font-normal">
                 {sec.body}
               </p>
             </div>

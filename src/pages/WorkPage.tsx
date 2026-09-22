@@ -37,11 +37,6 @@ export const WorkPage: React.FC = () => {
             <span className="text-white font-medium">Our Work</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold tracking-wide text-blue-300 mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#0071E3]" />
-            {content.eyebrow}
-          </div>
-
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
             {content.h1}
           </h1>
@@ -93,7 +88,7 @@ export const WorkPage: React.FC = () => {
                       {project.category}
                     </span>
                     {project.isConcept && (
-                      <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+                      <span className="text-[11px] font-medium text-amber-700">
                         {project.label || "Concept project"}
                       </span>
                     )}

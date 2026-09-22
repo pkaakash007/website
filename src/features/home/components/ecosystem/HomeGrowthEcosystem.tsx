@@ -44,7 +44,6 @@ export const HomeGrowthEcosystem: React.FC = () => {
     <section className="py-20 bg-white border-b border-border">
       <Container size="wide">
         <div className="max-w-3xl mb-14 space-y-3">
-          <Badge variant="outline">Integrated Infrastructure</Badge>
           <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
             The Synchronized Growth Machine
           </h2>

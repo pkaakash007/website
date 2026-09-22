@@ -54,7 +54,7 @@ export default function PerformanceMarketing() {
       <Container size="wide">
         {/* Header */}
         <div className="max-w-4xl mb-14 sm:mb-20">
-          <p className="text-xs font-mono uppercase tracking-widest font-bold text-primary mb-4">
+          <p className="text-xs font-bold uppercase tracking-wider text-gold-700 mb-3">
             PERFORMANCE ARCHITECTURE
           </p>
 
@@ -83,18 +83,7 @@ export default function PerformanceMarketing() {
                       : "bg-canvas hover:bg-surface text-primary border-border"
                   }`}
                 >
-                  <div className="flex items-center justify-between mb-4">
-                    <span
-                      className={`text-xs font-mono font-bold ${
-                        isSelected ? "text-gold" : "text-muted"
-                      }`}
-                    >
-                      0{idx + 1}
-                    </span>
-                    {isSelected && (
-                      <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-                    )}
-                  </div>
+
 
                   <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight">
                     {stage.name}

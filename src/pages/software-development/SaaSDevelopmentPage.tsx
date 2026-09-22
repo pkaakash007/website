@@ -40,11 +40,6 @@ export const SaaSDevelopmentPage: React.FC = () => {
           />
 
           <div className="max-w-4xl space-y-6 mt-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold">
-              <Cloud className="w-3.5 h-3.5 text-gold-600" />
-              <span>Multi-Tenant Cloud Platforms</span>
-            </div>
-
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
               SaaS Development in{" "}
               <span className="text-gold-700">

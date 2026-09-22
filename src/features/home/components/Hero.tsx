@@ -29,13 +29,6 @@ export default function Hero() {
 
       <Container size="wide">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-6 sm:space-y-8">
-          {/* Eyebrow Badge */}
-          <div className="animate-in fade-in slide-in-from-bottom-3 duration-500">
-            <Badge variant="outline" className="shadow-2xs">
-              Modern Business Solutions
-            </Badge>
-          </div>
-
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-semibold tracking-tight text-primary leading-[1.08] animate-in fade-in slide-in-from-bottom-4 duration-600">
             One Partner for Technology, Marketing, AI Communication & HR.
@@ -72,13 +65,8 @@ export default function Hero() {
           {/* Top Bar / Switcher Tabs */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 mb-6 border-b border-border gap-4">
             <div className="flex items-center gap-2">
-              <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-400/80"></div>
-                <div className="w-3 h-3 rounded-full bg-amber-400/80"></div>
-                <div className="w-3 h-3 rounded-full bg-emerald-400/80"></div>
-              </div>
-              <span className="text-xs font-mono text-muted ml-2">
-                realresult.enterprise / unified-engine v2.4
+              <span className="text-sm font-semibold text-primary">
+                Unified Solutions Platform
               </span>
             </div>
 
@@ -136,10 +124,10 @@ export default function Hero() {
             {/* Left Interactive Panel */}
             <div className="lg:col-span-7 space-y-4">
               {activeTab === "ai" && (
-                <div className="space-y-4">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-brand-teal-light text-brand-teal-dark text-xs font-medium border border-brand-teal-border">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-brand-teal uppercase tracking-wider">
                     <PhoneCall className="w-3.5 h-3.5" />
-                    Regional Voice & AI Telephony Engine
+                    Regional Voice & AI Telephony
                   </div>
                   <h3 className="text-2xl font-bold text-primary tracking-tight">
                     Natural Multilingual Conversations at Scale
@@ -168,8 +156,8 @@ export default function Hero() {
               )}
 
               {activeTab === "tech" && (
-                <div className="space-y-4">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-medium border border-blue-200">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-blue-600 uppercase tracking-wider">
                     <Code2 className="w-3.5 h-3.5" />
                     Custom Software & Cloud Architecture
                   </div>
@@ -200,8 +188,8 @@ export default function Hero() {
               )}
 
               {activeTab === "marketing" && (
-                <div className="space-y-4">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-700 text-xs font-medium border border-indigo-200">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-indigo-600 uppercase tracking-wider">
                     <TrendingUp className="w-3.5 h-3.5" />
                     Omnichannel Growth & Attribution
                   </div>
@@ -232,8 +220,8 @@ export default function Hero() {
               )}
 
               {activeTab === "hr" && (
-                <div className="space-y-4">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-xs font-medium border border-emerald-200">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-emerald-600 uppercase tracking-wider">
                     <Users className="w-3.5 h-3.5" />
                     Human Capital & Talent Search
                   </div>
@@ -270,8 +258,9 @@ export default function Hero() {
                 <span className="font-semibold text-primary flex items-center gap-1.5">
                   <Activity className="w-3.5 h-3.5 text-brand-teal" /> Live Execution Stream
                 </span>
-                <span className="font-mono text-[10px] text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
-                  HEALTHY (99.98%)
+                <span className="text-xs font-medium text-emerald-600 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  99.98% Healthy
                 </span>
               </div>
 

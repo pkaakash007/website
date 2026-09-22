@@ -93,11 +93,11 @@ export const MotionBlurShowcase: React.FC = () => {
 
       <div className="relative max-w-5xl mx-auto px-6 sm:px-8 text-center select-none">
         {/* Top Tag */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-100 border border-neutral-200/80 text-xs font-semibold text-neutral-700 mb-8 sm:mb-12">
+        <div className="flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-8 sm:mb-12">
           <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
           <span>Motion Blur Spec</span>
-          <span className="text-neutral-300">•</span>
-          <span className="text-neutral-500 font-mono">{currentSlide.category}</span>
+          <span className="text-neutral-300">/</span>
+          <span className="text-neutral-700">{currentSlide.category}</span>
         </div>
 
         {/* ── Main Kinetic Motion Blur Text Stage ── */}

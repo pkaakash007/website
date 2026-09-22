@@ -78,15 +78,17 @@ export const PortfolioDetailModal: React.FC<PortfolioDetailModalProps> = ({
             </button>
 
             {/* Hero Tags */}
-            <div className="relative z-10 flex flex-wrap items-center gap-2 mb-3">
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/20 backdrop-blur-md border border-white/25">
+            <div className="relative z-10 flex flex-wrap items-center gap-3 mb-3 text-xs text-white/90 font-medium">
+              <span className="font-semibold uppercase tracking-wider text-[#C5A059]">
                 {project.categoryTag}
               </span>
-              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-black/40 backdrop-blur-md border border-white/10 text-white/80">
+              <span className="text-white/40">•</span>
+              <span className="inline-flex items-center gap-1 text-white/80">
                 <MapPin className="w-3 h-3 text-white/60" />
                 {project.location}
               </span>
-              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-mono bg-black/40 backdrop-blur-md border border-white/10 text-white/80">
+              <span className="text-white/40">•</span>
+              <span className="inline-flex items-center gap-1 text-white/80">
                 <Calendar className="w-3 h-3 text-white/60" />
                 {project.year}
               </span>

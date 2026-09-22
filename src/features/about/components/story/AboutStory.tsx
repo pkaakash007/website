@@ -3,27 +3,15 @@ import { Container } from "@/components/layout/Container";
 import { UserCheck, FileCheck2, MapPin, Globe, ShieldCheck } from "lucide-react";
 
 export const AboutStory: React.FC = () => {
-  const cities = ["Coimbatore", "Chennai", "Tiruppur", "Salem", "Madurai", "Trichy"];
 
   return (
     <section className="py-16 sm:py-24 bg-[#F5F5F7] border-b border-black/[0.06]">
       <Container size="wide">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* ── Left: macOS Main Application Window Card ── */}
-          <div className="lg:col-span-7 bg-white/90 backdrop-blur-xl rounded-[24px] border border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col">
-            {/* macOS Window Header Bar */}
-            <div className="px-5 py-3.5 bg-black/[0.02] border-b border-black/[0.06] flex items-center select-none">
-              <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]/50 inline-block" />
-                <span className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]/50 inline-block" />
-                <span className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]/50 inline-block" />
-              </div>
-            </div>
-
-            {/* Window Content */}
-            <div className="p-7 sm:p-9 flex-1 flex flex-col justify-between gap-6">
-              <div className="space-y-4">
+          {/* ── Left: Content Card ── */}
+          <div className="lg:col-span-7 bg-white/90 backdrop-blur-xl rounded-[24px] border border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col p-7 sm:p-9 justify-between gap-6">
+            <div className="space-y-4">
                 <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-semibold text-[#1D1D1F] tracking-[-0.025em] leading-tight">
                   Where Quality Meets Commercial Performance
                 </h2>
@@ -65,7 +53,6 @@ export const AboutStory: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
 
           {/* ── Right: macOS Widget Stack ── */}
           <div className="lg:col-span-5 flex flex-col gap-4">
@@ -94,16 +81,9 @@ export const AboutStory: React.FC = () => {
               <p className="text-xs sm:text-[13.5px] text-[#86868B] leading-relaxed mb-3">
                 Active client relationships across regional commercial and manufacturing centers:
               </p>
-              <div className="flex flex-wrap gap-1.5">
-                {cities.map((city) => (
-                  <span
-                    key={city}
-                    className="text-[11px] font-medium px-2.5 py-1 rounded-lg bg-[#F5F5F7] text-neutral-700 border border-black/[0.04]"
-                  >
-                    {city}
-                  </span>
-                ))}
-              </div>
+              <p className="text-xs sm:text-[13px] font-medium text-[#1D1D1F] leading-relaxed">
+                Coimbatore &nbsp;·&nbsp; Chennai &nbsp;·&nbsp; Tiruppur &nbsp;·&nbsp; Salem &nbsp;·&nbsp; Madurai &nbsp;·&nbsp; Trichy
+              </p>
             </div>
 
             {/* Widget 3: Quality Standards */}

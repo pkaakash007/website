@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
 import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
@@ -45,10 +44,9 @@ export const TamilNaduHubPage: React.FC = () => {
           <Breadcrumbs items={[{ label: "Locations", href: "/locations/tamil-nadu" }, { label: "Tamil Nadu Network" }]} />
 
           <div className="max-w-4xl space-y-6 mt-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold">
-              <MapPin className="w-3.5 h-3.5 text-gold-600" />
-              <span>Statewide Regional Presence · Tamil Nadu, India</span>
-            </div>
+            <p className="text-xs font-bold uppercase tracking-wider text-gold-700">
+              Statewide Regional Presence · Tamil Nadu, India
+            </p>
 
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
               Digital Marketing & Software Company in{" "}
@@ -92,7 +90,6 @@ export const TamilNaduHubPage: React.FC = () => {
       <section className="py-20 bg-canvas border-b border-border">
         <Container size="wide">
           <div className="max-w-3xl mb-14 space-y-3">
-            <Badge variant="gold">TAMIL NADU SERVICE HUBS</Badge>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary">
               Explore Our District-Level Operations
             </h2>
@@ -114,7 +111,7 @@ export const TamilNaduHubPage: React.FC = () => {
                       📍 {loc.city}
                     </span>
                     {loc.slug === "erode" && (
-                      <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-gold text-black font-bold">
+                      <span className="text-xs font-bold text-gold-700 uppercase tracking-wider">
                         HQ
                       </span>
                     )}

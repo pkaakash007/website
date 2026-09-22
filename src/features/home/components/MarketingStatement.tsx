@@ -13,10 +13,9 @@ export default function MarketingStatement() {
       <Container size="wide">
         {/* Section Eyebrow & Title */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-800 text-xs font-mono uppercase tracking-widest mb-4 font-bold">
-            <TrendingUp className="w-3.5 h-3.5 text-gold-600" />
-            MARKETING & MEDIA
-          </div>
+          <p className="text-xs font-bold uppercase tracking-wider text-gold-700 mb-3">
+            MARKETING &amp; MEDIA
+          </p>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-primary tracking-tight leading-[1.1]">
             From attention to action.
           </h2>
@@ -42,8 +41,7 @@ export default function MarketingStatement() {
 
             {/* Content overlay */}
             <div className="relative z-10 space-y-4 max-w-xl">
-              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-gold font-bold">
-                <span className="w-2 h-2 rounded-full bg-gold" />
+              <div className="text-xs uppercase tracking-wider text-gold-300 font-bold">
                 Integrated Media Dominance
               </div>
               <h3 className="text-2xl sm:text-4xl font-black tracking-tight leading-tight text-white">
@@ -103,8 +101,7 @@ export default function MarketingStatement() {
                   &ldquo;Marketing that moves audiences from passive awareness into active conversion.&rdquo;
                 </div>
               </div>
-              <div className="mt-4 pt-3 border-t border-charcoal-border flex items-center gap-2 text-xs text-charcoal-muted">
-                <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+              <div className="mt-4 pt-3 border-t border-charcoal-border text-xs text-charcoal-muted">
                 Strategy • Creative • Media • Attribution
               </div>
             </div>

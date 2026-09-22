@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
 
 export const MarketingGrowthMetrics: React.FC = () => {
   const metrics = [
@@ -30,7 +29,6 @@ export const MarketingGrowthMetrics: React.FC = () => {
     <section className="py-20 bg-charcoal text-white relative">
       <Container size="wide">
         <div className="max-w-3xl mb-12 space-y-3">
-          <Badge variant="gold">Proven Performance</Badge>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
             Performance Quantified, Not Promised.
           </h2>

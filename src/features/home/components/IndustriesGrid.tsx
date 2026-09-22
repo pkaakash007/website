@@ -98,7 +98,6 @@ export default function IndustriesGrid() {
                     : "bg-canvas text-secondary hover:text-primary hover:bg-surface border border-border"
                 }`}
               >
-                {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-gold" />}
                 <span>{sector.name}</span>
               </button>
             );
@@ -159,8 +158,8 @@ export default function IndustriesGrid() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
               <div className="absolute bottom-6 left-6 right-6 z-10">
-                <span className="text-xs font-mono uppercase tracking-widest text-gold font-bold bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-gold/30">
-                  {active.name} PRACTICE
+                <span className="text-xs font-semibold uppercase tracking-wider text-gold-300 drop-shadow-md">
+                  {active.name} Practice
                 </span>
               </div>
             </div>

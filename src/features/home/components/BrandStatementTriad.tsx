@@ -8,7 +8,7 @@ import { ArrowUpRight } from "lucide-react";
 const TRIAD_WORDS = [
   {
     word: "CREATE",
-    eyebrow: "01 / ORIGINATION",
+    eyebrow: "ORIGINATION",
     tagline: "Unforgettable Brand Ideas",
     description: "Creative direction, provocative campaign narratives, visual identity, and thumb-stopping cultural moments.",
     image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80",
@@ -17,7 +17,7 @@ const TRIAD_WORDS = [
   },
   {
     word: "REACH",
-    eyebrow: "02 / DISTRIBUTION",
+    eyebrow: "DISTRIBUTION",
     tagline: "Every Meaningful Screen",
     description: "Television broadcast, dynamic outdoor DOOH, cinema, transit, paid search, and high-frequency social media.",
     image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80",
@@ -26,7 +26,7 @@ const TRIAD_WORDS = [
   },
   {
     word: "GROW",
-    eyebrow: "03 / IMPACT",
+    eyebrow: "IMPACT",
     tagline: "Engineered Performance",
     description: "Closed-loop attribution, real-time analytics, high-intent lead conversion, and market share expansion.",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
@@ -43,22 +43,22 @@ export default function BrandStatementTriad() {
       <Container size="wide">
         {/* Minimal text, Monumental Typography */}
         <div className="max-w-4xl mb-16 sm:mb-24">
-          <p className="text-xs font-mono uppercase tracking-widest text-primary mb-6 font-bold">
-            BRAND PRINCIPLE
+          <p className="text-xs font-bold uppercase tracking-wider text-gold-700 mb-3">
+            STRATEGIC IMPACT
           </p>
-
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-primary tracking-tight leading-[1.05] uppercase">
-            ATTENTION IS EARNED. <br />
-            <span className="text-gold-700">GROWTH IS</span> ENGINEERED.
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-primary uppercase leading-[1.05]">
+            THREE WORDS. <br />
+            <span className="text-gold-700">INFINITE</span> SCALE.
           </h2>
         </div>
 
-        {/* The Three Visual Words: CREATE, REACH, GROW */}
+        {/* 3 Full-Height Architectural Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {TRIAD_WORDS.map((item, idx) => {
             const isHovered = activeWord === idx;
             return (
-              <Link key={item.word}
+              <Link
+                key={item.word}
                 to={item.href}
                 onMouseEnter={() => setActiveWord(idx)}
                 onMouseLeave={() => setActiveWord(null)}
@@ -74,7 +74,7 @@ export default function BrandStatementTriad() {
 
                 {/* Top Badge & Number */}
                 <div className="relative z-10 flex items-center justify-between">
-                  <span className="text-[11px] font-mono uppercase tracking-widest text-gold-300 font-bold bg-black/40 backdrop-blur-xs px-3 py-1 rounded-full border border-gold-400/30">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-gold-300 drop-shadow-sm">
                     {item.eyebrow}
                   </span>
                   <div className="w-9 h-9 rounded-full bg-white/10 backdrop-blur-xs border border-white/20 flex items-center justify-center text-white group-hover:bg-gold group-hover:text-black group-hover:border-gold transition-all duration-300">

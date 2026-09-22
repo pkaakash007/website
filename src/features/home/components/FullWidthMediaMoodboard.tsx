@@ -47,7 +47,7 @@ export default function FullWidthMediaMoodboard() {
             {MOODBOARD_PLACES.map((item) => (
               <span
                 key={item.name}
-                className="px-4 py-2 rounded-full text-xs font-mono uppercase font-bold tracking-widest bg-white/10 hover:bg-gold hover:text-black border border-white/15 transition-all duration-200 cursor-default"
+                className="px-3.5 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider bg-white/10 text-white border border-white/15"
               >
                 {item.name}
               </span>

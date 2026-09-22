@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
 import { ContactForm } from "@/components/common/ContactForm";
 import {
@@ -89,7 +88,6 @@ export default function TechnologyPage() {
         <div className="absolute top-1/3 right-1/4 w-[500px] h-[300px] bg-blue-50/70 rounded-full blur-3xl -z-10"></div>
         <Container size="wide">
           <div className="max-w-3xl space-y-6">
-            <Badge variant="default">Technology & Software Engineering</Badge>
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
               Architecting Enterprise Software & Cloud Systems.
             </h1>
@@ -136,8 +134,7 @@ export default function TechnologyPage() {
       <section id="capabilities" className="py-20 bg-white">
         <Container size="wide">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <Badge variant="outline">ENGINEERING SERVICES</Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight mt-3">
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
               Full-Lifecycle Software Engineering
             </h2>
             <p className="text-sm sm:text-base text-secondary mt-2">
@@ -180,7 +177,6 @@ export default function TechnologyPage() {
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5 space-y-6">
-              <Badge variant="default">ENGINEERING CONSULTATION</Badge>
               <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
                 Plan Your Technical Roadmap With Us
               </h2>

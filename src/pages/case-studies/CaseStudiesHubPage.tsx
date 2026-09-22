@@ -60,10 +60,9 @@ export const CaseStudiesHubPage: React.FC = () => {
           <Breadcrumbs items={[{ label: "Case Studies" }]} />
 
           <div className="max-w-4xl space-y-6 mt-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold">
-              <Award className="w-3.5 h-3.5 text-gold-600" />
-              <span>Verifiable Outcomes · Tamil Nadu Enterprises</span>
-            </div>
+            <p className="text-xs font-bold uppercase tracking-wider text-gold-700">
+              Verifiable Outcomes · Tamil Nadu Enterprises
+            </p>
 
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
               Quantified Case Studies &{" "}
@@ -102,7 +101,7 @@ export const CaseStudiesHubPage: React.FC = () => {
               >
                 <div className="lg:col-span-8 space-y-4">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-gold-50 text-gold-900 border border-gold-200 font-bold">
+                    <span className="text-xs font-bold uppercase tracking-wider text-gold-700">
                       {cs.industry}
                     </span>
                     <span className="text-xs text-muted">Client: {cs.client}</span>

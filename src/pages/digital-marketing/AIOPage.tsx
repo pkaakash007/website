@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
 import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
@@ -97,7 +96,6 @@ export const AIOPage: React.FC = () => {
       <section className="py-20 bg-canvas border-b border-border">
         <Container size="wide">
           <div className="max-w-3xl mb-14 space-y-3">
-            <Badge variant="gold">AIO ARCHITECTURE</Badge>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary">
               Elements That Trigger AI Overview Citations
             </h2>

@@ -1093,7 +1093,7 @@ export const MediaVisualStrip: React.FC = () => {
               
               <div className="space-y-5">
                 {/* Platform Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neutral-100 text-xs font-semibold text-neutral-800 w-fit">
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-600">
                   <span className="shrink-0">{current.logo}</span>
                   <span>{current.name}</span>
                 </div>

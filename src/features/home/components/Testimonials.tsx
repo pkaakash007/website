@@ -57,7 +57,7 @@ export default function Testimonials() {
                       <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-white border border-border text-muted">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-muted">
                     {item.division}
                   </span>
                 </div>
@@ -74,7 +74,7 @@ export default function Testimonials() {
                 <div className="text-[11px] text-secondary">
                   {item.role}, <span className="text-primary font-medium">{item.company}</span>
                 </div>
-                <div className="mt-3 text-[11px] font-semibold text-brand-teal-dark bg-brand-teal-light/70 px-2.5 py-1 rounded-md inline-block">
+                <div className="mt-3 text-xs font-semibold text-brand-teal-dark">
                   ★ {item.metric}
                 </div>
               </div>

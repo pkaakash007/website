@@ -10,16 +10,6 @@ export const AboutBriefingCTA: React.FC = () => {
     <section className="py-16 sm:py-24 bg-[#F5F5F7] border-b border-black/[0.06]">
       <Container size="wide">
         <div className="bg-white/95 backdrop-blur-xl rounded-[28px] border border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.04)] overflow-hidden">
-          
-          {/* macOS Titlebar */}
-          <div className="px-5 py-3.5 bg-black/[0.02] border-b border-black/[0.06] flex items-center select-none">
-            <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]/50 inline-block" />
-              <span className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]/50 inline-block" />
-              <span className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]/50 inline-block" />
-            </div>
-          </div>
-
           <div className="p-8 sm:p-12 lg:p-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             {/* Left Content Area */}
@@ -79,7 +69,7 @@ export const AboutBriefingCTA: React.FC = () => {
                   <Phone className="w-3.5 h-3.5 text-[#0071E3]" />
                   <span>{SEO_CONFIG.displayPhone}</span>
                 </div>
-                <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-100">
+                <span className="text-xs font-semibold text-emerald-700">
                   Open Mon - Sat
                 </span>
               </div>

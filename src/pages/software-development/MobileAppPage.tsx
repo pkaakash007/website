@@ -41,14 +41,6 @@ export const MobileAppPage: React.FC = () => {
           />
 
           <div className="max-w-4xl space-y-6 mt-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-900 text-xs font-semibold tracking-wide shadow-2xs">
-              <AppleLogo className="w-3.5 h-3.5 fill-current" />
-              <span className="w-1 h-1 rounded-full bg-neutral-400" />
-              <AndroidLogo className="w-3.5 h-3.5 fill-current text-[#3DDC84]" />
-              <span className="w-1 h-1 rounded-full bg-neutral-400" />
-              <span>Cross-Platform iOS & Android Engineering</span>
-            </div>
-
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
               Mobile App Development in{" "}
               <span className="text-gold-700">

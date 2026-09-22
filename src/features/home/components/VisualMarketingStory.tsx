@@ -10,7 +10,7 @@ import { ArrowRight, ArrowUpRight, Eye } from "lucide-react";
 const MARKETING_WORLDS = [
   {
     id: "creative-campaign",
-    category: "01 / CREATIVE CAMPAIGN",
+    category: "CREATIVE CAMPAIGN",
     title: "Provocative Ideas That Stop the Scroll",
     subtitle: "High-concept art direction, cinematic narrative, and identity systems crafted to live in the cultural conversation.",
     image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1600&q=85",
@@ -19,7 +19,7 @@ const MARKETING_WORLDS = [
   },
   {
     id: "outdoor-media",
-    category: "02 / OUTDOOR MEDIA",
+    category: "OUTDOOR MEDIA",
     title: "Monumental Physical Stature",
     subtitle: "High-impact digital out-of-home (DOOH), prime metropolitan billboards, and transit dominance.",
     image: "https://images.unsplash.com/photo-1508873696983-2df5293cb32b?auto=format&fit=crop&w=1200&q=85",
@@ -28,7 +28,7 @@ const MARKETING_WORLDS = [
   },
   {
     id: "digital-advertising",
-    category: "03 / DIGITAL ADVERTISING",
+    category: "DIGITAL ADVERTISING",
     title: "Algorithmic Precision at Global Scale",
     subtitle: "Programmatic display, Connected TV (CTV), and automated auction bidding targeting high-intent consumer cohorts.",
     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=85",
@@ -37,7 +37,7 @@ const MARKETING_WORLDS = [
   },
   {
     id: "social-content",
-    category: "04 / SOCIAL CONTENT & CULTURE",
+    category: "SOCIAL CONTENT & CULTURE",
     title: "Viral Velocity & Social-First Formats",
     subtitle: "Short-form vertical video, creator collaborations, and organic resonance that drives genuine brand fandom.",
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=85",
@@ -46,7 +46,7 @@ const MARKETING_WORLDS = [
   },
   {
     id: "audience-media",
-    category: "05 / AUDIENCE & MEDIA",
+    category: "AUDIENCE & MEDIA",
     title: "Broadcast Frequency & Mass Immersion",
     subtitle: "Television sports sponsorships, cinema surround audio, and prime-time streaming placements.",
     image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=85",
@@ -55,7 +55,7 @@ const MARKETING_WORLDS = [
   },
   {
     id: "performance-marketing",
-    category: "06 / PERFORMANCE MARKETING",
+    category: "PERFORMANCE MARKETING",
     title: "Verifiable Revenue Engine",
     subtitle: "Continuous split-testing, high-intent transactional search, dynamic number insertion, and multi-touch attribution.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=85",
@@ -112,7 +112,7 @@ export default function VisualMarketingStory() {
 
               {/* Top Tags */}
               <div className="relative z-10 flex flex-wrap items-center justify-between gap-3">
-                <span className="text-[11px] font-mono uppercase tracking-widest text-gold-300 font-bold bg-black/60 backdrop-blur-xs px-3.5 py-1 rounded-full border border-gold-400/40">
+                <span className="text-xs font-semibold uppercase tracking-wider text-gold-300 drop-shadow-sm">
                   {item.category}
                 </span>
 
@@ -135,9 +135,9 @@ export default function VisualMarketingStory() {
                   {item.tags.map((t) => (
                     <span
                       key={t}
-                      className="text-[10px] font-mono tracking-wider uppercase px-2.5 py-1 rounded-lg bg-white/15 text-white/90 border border-white/10 backdrop-blur-xs"
+                      className="text-xs font-medium text-white/80"
                     >
-                      {t}
+                      {t} ·
                     </span>
                   ))}
                 </div>

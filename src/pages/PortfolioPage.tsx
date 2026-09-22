@@ -58,10 +58,6 @@ export const PortfolioPage: React.FC = () => {
 
         <Container size="wide" className="relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 space-y-3">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-[11px] font-bold uppercase tracking-wider text-[#0071e3]">
-              <span>✦</span>
-              <span>Interactive Discipline Deck</span>
-            </span>
             <h2 className="text-3xl sm:text-4xl font-black text-[#0E2036] tracking-tight">
               Orbit: Cards Showcase
             </h2>

@@ -21,11 +21,6 @@ export const TermsPage: React.FC = () => {
             <span className="text-white font-medium">Website Terms</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold tracking-wide text-blue-300 mb-6">
-            <FileText className="w-3.5 h-3.5" />
-            Terms of Use
-          </div>
-
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
             Website Terms
           </h1>

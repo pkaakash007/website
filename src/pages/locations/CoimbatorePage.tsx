@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
 import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
@@ -51,10 +50,9 @@ export const CoimbatorePage: React.FC = () => {
           />
 
           <div className="max-w-4xl space-y-6 mt-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold">
-              <MapPin className="w-3.5 h-3.5 text-gold-600" />
-              <span>Industrial & Technology Capital · Coimbatore, Tamil Nadu</span>
-            </div>
+            <p className="text-xs font-bold uppercase tracking-wider text-gold-700">
+              Industrial &amp; Technology Capital · Coimbatore, Tamil Nadu
+            </p>
 
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
               Best Digital Marketing Agency in{" "}
@@ -101,7 +99,6 @@ export const CoimbatorePage: React.FC = () => {
       <section className="py-20 bg-canvas border-b border-border">
         <Container size="wide">
           <div className="max-w-3xl space-y-6">
-            <Badge variant="gold">COIMBATORE MARKET INSIGHTS</Badge>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary">
               Engineering Search Dominance for the Manchester of South India
             </h2>

@@ -46,10 +46,9 @@ export const SalemPage: React.FC = () => {
           />
 
           <div className="max-w-4xl space-y-6 mt-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold">
-              <MapPin className="w-3.5 h-3.5 text-gold-600" />
-              <span>Steel & Agro-Processing Hub · Salem, Tamil Nadu</span>
-            </div>
+            <p className="text-xs font-bold uppercase tracking-wider text-gold-700">
+              Steel &amp; Agro-Processing Hub · Salem, Tamil Nadu
+            </p>
 
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
               Digital Marketing & Software in{" "}

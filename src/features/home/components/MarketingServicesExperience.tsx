@@ -255,9 +255,8 @@ export default function MarketingServicesExperience() {
                     {activeData.catalogItems.map((item) => (
                       <span
                         key={item}
-                        className="text-xs font-mono px-3 py-1.5 rounded-xl bg-canvas border border-border text-primary font-semibold flex items-center gap-1.5"
+                        className="text-xs px-2.5 py-1 rounded-lg bg-neutral-100 text-neutral-800 font-medium"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-gold" />
                         {item}
                       </span>
                     ))}
@@ -311,9 +310,9 @@ export default function MarketingServicesExperience() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
               <div className="relative z-10 space-y-3">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-gold font-bold bg-black/60 px-3 py-1 rounded-full border border-gold/30">
+                <div className="text-xs font-semibold uppercase tracking-wider text-gold-300 drop-shadow-md">
                   {activeData.statsLabel}
-                </span>
+                </div>
                 <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                   &ldquo;Marketing that moves markets, not just metrics.&rdquo;
                 </div>

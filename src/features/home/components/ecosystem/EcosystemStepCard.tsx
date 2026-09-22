@@ -24,10 +24,7 @@ export const EcosystemStepCard: React.FC<StepProps> = ({
       className="p-7 rounded-2xl bg-canvas border border-border hover:border-gold/60 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
     >
       <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <span className="text-xl font-bold text-gold-700">
-            {num}
-          </span>
+        <div className="flex items-center justify-start mb-2">
           <div className="w-10 h-10 rounded-xl bg-white border border-border flex items-center justify-center text-primary group-hover:text-gold-700 transition-colors">
             <Icon className="w-5 h-5" />
           </div>

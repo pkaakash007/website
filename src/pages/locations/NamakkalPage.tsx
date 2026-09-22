@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
 import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
@@ -79,10 +78,9 @@ export const NamakkalPage: React.FC = () => {
           />
 
           <div className="max-w-4xl space-y-6 mt-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold">
-              <MapPin className="w-3.5 h-3.5 text-gold-600" />
-              <span>Poultry & Transport Logistics Capital · Namakkal & Paramathi Velur, TN</span>
-            </div>
+            <p className="text-xs font-bold uppercase tracking-wider text-gold-700">
+              Poultry &amp; Transport Logistics Capital · Namakkal &amp; Paramathi Velur, TN
+            </p>
 
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
               Digital Marketing Agency & Software in{" "}
@@ -140,8 +138,7 @@ export const NamakkalPage: React.FC = () => {
             {/* Location Credentials */}
             <div className="lg:col-span-6 p-8 rounded-3xl bg-white border border-border shadow-card flex flex-col justify-between space-y-6">
               <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs font-mono font-bold">
-                  <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+                <div className="text-xs font-semibold text-emerald-700 uppercase tracking-wider">
                   Verified Google Business Profile
                 </div>
                 <h3 className="text-2xl font-bold text-primary">
@@ -249,7 +246,6 @@ export const NamakkalPage: React.FC = () => {
       <section className="py-20 bg-white border-b border-border">
         <Container size="wide">
           <div className="max-w-3xl mb-14 space-y-3">
-            <Badge variant="gold">NAMAKKAL SECTOR EXPERTISE</Badge>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary">
               Engineered for Namakkal's Core Industries
             </h2>

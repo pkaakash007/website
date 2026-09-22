@@ -30,8 +30,8 @@ export default function AICommunicationBridge() {
       <Container size="wide">
         {/* Transition Header (15% Weight Supporting Extension) */}
         <div className="max-w-4xl mb-14 sm:mb-20">
-          <p className="text-xs font-mono uppercase tracking-widest font-bold text-primary mb-4">
-            CONVERSATIONAL CONTINUITY · 15% CAPABILITY
+          <p className="text-xs font-bold uppercase tracking-wider text-gold-700 mb-3">
+            CONVERSATIONAL CONTINUITY
           </p>
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-primary tracking-tight uppercase leading-[1.08]">
@@ -86,7 +86,7 @@ export default function AICommunicationBridge() {
                 {CAPABILITY_PILLS.map((pill) => (
                   <span
                     key={pill}
-                    className="px-4 py-2 rounded-full text-xs font-mono tracking-wider uppercase bg-white/5 border border-white/15 text-gray-200"
+                    className="px-3.5 py-1.5 rounded-lg text-xs font-medium text-white/90 bg-white/10 border border-white/10"
                   >
                     {pill}
                   </span>

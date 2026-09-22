@@ -64,10 +64,9 @@ export const InsightsPage: React.FC = () => {
             <span className="text-white font-medium">Insights</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold tracking-wide text-blue-300 mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#0071E3]" />
+          <p className="text-xs font-bold uppercase tracking-wider text-blue-400 mb-4">
             {content.eyebrow}
-          </div>
+          </p>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
             {content.h1}
@@ -103,7 +102,7 @@ export const InsightsPage: React.FC = () => {
           <div className="p-8 md:p-12 rounded-3xl bg-[#F9F9FB] border border-black/[0.06] hover:border-[#0071E3] hover:shadow-xl transition-all mb-12 group">
             <div className="max-w-3xl">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-[#0071E3]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#0071E3]">
                   Featured Insight
                 </span>
                 <span className="text-xs font-medium text-neutral-400">

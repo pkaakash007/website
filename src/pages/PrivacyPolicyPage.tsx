@@ -21,10 +21,9 @@ export const PrivacyPolicyPage: React.FC = () => {
             <span className="text-white font-medium">Privacy Policy</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold tracking-wide text-blue-300 mb-6">
-            <ShieldCheck className="w-3.5 h-3.5" />
+          <p className="text-xs font-bold uppercase tracking-wider text-blue-400 mb-4">
             Compliance &amp; Governance
-          </div>
+          </p>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
             Privacy Policy

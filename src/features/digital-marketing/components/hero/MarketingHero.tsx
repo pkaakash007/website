@@ -146,12 +146,6 @@ export const MarketingHero: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
               
-              {/* Top Instagram & Meta Badge */}
-              <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-[11px] text-white font-semibold border border-white/20">
-                <InstagramIcon className="w-3.5 h-3.5" />
-                <span>Instagram &amp; Meta Ads</span>
-              </div>
-
               {/* Bottom Details Overlay */}
               <div className="absolute bottom-3 inset-x-3 text-white">
                 <p className="text-[13px] font-bold leading-tight text-white">
@@ -239,12 +233,6 @@ export const MarketingHero: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
               
-              {/* Top Google Ads Badge */}
-              <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-[11px] text-white font-semibold border border-white/20">
-                <GoogleAdsIcon className="w-3.5 h-3.5" />
-                <span>Google Search &amp; Maps</span>
-              </div>
-
               {/* Bottom Details Overlay */}
               <div className="absolute bottom-3 inset-x-3 text-white">
                 <p className="text-[13px] font-bold leading-tight text-white">

@@ -100,15 +100,14 @@ export default function HeroMarketing() {
               </div>
 
               {/* Watermark Tag */}
-              <div className="absolute top-6 left-6 z-10 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-white text-[11px] font-mono tracking-wider uppercase">
-                <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-                <span>REAL RESULT CAMPAIGN NETWORK</span>
+              <div className="absolute top-6 left-6 z-10 text-white text-xs font-semibold tracking-wider uppercase drop-shadow-md">
+                REAL RESULT CAMPAIGN NETWORK
               </div>
 
               {/* Bottom Image Caption & Narrative */}
               <div className="absolute bottom-6 left-6 right-6 z-10 flex flex-col sm:flex-row sm:items-end justify-between gap-3 text-white">
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-gold-300 font-bold">
+                  <div className="text-xs uppercase tracking-wider text-gold-300 font-bold">
                     Omnichannel Presence
                   </div>
                   <div className="text-xl sm:text-2xl font-black uppercase tracking-tight text-white mt-0.5">
@@ -116,7 +115,7 @@ export default function HeroMarketing() {
                   </div>
                 </div>
 
-                <div className="text-[11px] font-mono text-gray-300 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 shrink-0 self-start sm:self-auto">
+                <div className="text-xs font-semibold uppercase tracking-wider text-gray-200 drop-shadow-md shrink-0 self-start sm:self-auto">
                   HIGH-IMPACT REACH
                 </div>
               </div>

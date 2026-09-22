@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Container } from "@/components/layout/Container";
-import { Badge } from "@/components/common/Badge";
 import {
   Search,
   Users,
@@ -94,7 +93,6 @@ export const MarketingFunnelInteractive: React.FC = () => {
     <section className="py-20 bg-white border-b border-border">
       <Container size="wide">
         <div className="max-w-3xl mb-12 space-y-3">
-          <Badge variant="outline">System Architecture</Badge>
           <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
             The Synchronized Revenue Funnel
           </h2>

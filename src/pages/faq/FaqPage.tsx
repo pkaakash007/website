@@ -32,8 +32,7 @@ export const FaqPage: React.FC = () => {
             <span className="text-white font-medium">Real Result FAQs</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold tracking-wide text-blue-300 mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#0071E3]" />
+          <div className="text-xs font-semibold uppercase tracking-wider text-blue-300 mb-4">
             Frequently Asked Questions
           </div>
 

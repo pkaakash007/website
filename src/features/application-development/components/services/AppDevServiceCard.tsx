@@ -37,20 +37,6 @@ export const AppDevServiceCard: React.FC<ServiceProps> = ({
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10 pointer-events-none" />
-
-            {/* Top Left: Category Badge */}
-            {badge && (
-              <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/65 backdrop-blur-md text-[11px] font-semibold text-white tracking-wide uppercase">
-                {badge}
-              </span>
-            )}
-
-            {/* Top Right: Index Number */}
-            {number && (
-              <span className="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/90 backdrop-blur-md text-neutral-900 font-bold text-xs flex items-center justify-center font-mono shadow-xs">
-                {number}
-              </span>
-            )}
           </div>
         )}
 

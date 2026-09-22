@@ -67,11 +67,11 @@ export const OrbitCardsShowcase: React.FC<OrbitCardsShowcaseProps> = ({
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* ── Top Header Callout ── */}
         <div className="text-center space-y-3 mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-neutral-200/80 shadow-xs text-xs font-semibold text-neutral-700">
+          <div className="flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-2">
             <Sparkles className="w-3.5 h-3.5 text-amber-500" />
             <span>Interactive Showreel</span>
-            <span className="text-neutral-300">•</span>
-            <span className="text-neutral-500 font-mono">Orbit: Cards</span>
+            <span className="text-neutral-300">/</span>
+            <span className="text-neutral-700">Orbit: Cards</span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-neutral-900 tracking-tight">

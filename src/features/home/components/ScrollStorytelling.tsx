@@ -66,10 +66,6 @@ export default function ScrollStorytelling() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-gold/30 text-gold-300 text-xs font-mono uppercase tracking-widest mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-              Scroll-Driven Methodology
-            </div>
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
               The Journey of Impact.
             </h2>
@@ -152,7 +148,7 @@ export default function ScrollStorytelling() {
 
             {/* Overlaid Stage Content */}
             <div className="relative z-10 space-y-3 max-w-lg">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 border border-gold/40 text-gold text-xs font-mono font-bold">
+              <div className="text-xs font-semibold text-gold tracking-wider uppercase">
                 STAGE {stages[activeStage].number} • {stages[activeStage].title}
               </div>
               <h4 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">

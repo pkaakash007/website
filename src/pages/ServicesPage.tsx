@@ -343,11 +343,6 @@ export const ServicesPage: React.FC = () => {
       <section className="py-16 sm:py-20 lg:py-24 bg-[#F5F5F7]">
         <Container size="wide">
           <div className="max-w-4xl mx-auto rounded-[32px] sm:rounded-[36px] lg:rounded-[40px] bg-[#16171A] border border-white/[0.08] shadow-[0_24px_50px_rgba(0,0,0,0.18)] px-6 py-14 sm:px-12 sm:py-18 lg:px-16 lg:py-20 text-center relative overflow-hidden">
-            {/* Top Pill Tag */}
-            <div className="inline-block px-3.5 py-1 rounded-full bg-white/[0.08] border border-white/[0.06] text-neutral-400 text-[11px] font-semibold tracking-wider uppercase mb-5 select-none">
-              ERODE, TAMIL NADU
-            </div>
-
             {/* Headline */}
             <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-extrabold text-white tracking-tight leading-[1.12] mb-5">
               Ready to grow your business<br className="hidden sm:inline" /> online?

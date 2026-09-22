@@ -69,11 +69,6 @@ export const ResourcesHubPage: React.FC = () => {
           <Breadcrumbs items={[{ label: "Resources & Insights" }]} />
 
           <div className="max-w-4xl space-y-6 mt-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-50 border border-gold-300 text-gold-900 text-xs font-mono uppercase tracking-widest font-bold">
-              <BookOpen className="w-3.5 h-3.5 text-gold-600" />
-              <span>Thought Leadership & AI-Answer Knowledge Base</span>
-            </div>
-
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
               Search, AI & Software{" "}
               <span className="text-gold-700">
@@ -111,7 +106,7 @@ export const ResourcesHubPage: React.FC = () => {
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="font-mono font-bold uppercase tracking-wider text-gold-800 bg-gold-50 border border-gold-200 px-2.5 py-1 rounded-full">
+                    <span className="font-semibold uppercase tracking-wider text-gold-700">
                       {art.category}
                     </span>
                     <span className="text-muted">{art.readTime}</span>

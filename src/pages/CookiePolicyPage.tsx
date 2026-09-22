@@ -20,9 +20,9 @@ export const CookiePolicyPage: React.FC = () => {
             <span className="text-white font-medium">Cookie Policy</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold tracking-wide text-blue-300 mb-6">
+          <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-blue-300 mb-4">
             <Cookie className="w-3.5 h-3.5" />
-            Cookie Choices
+            <span>Cookie Choices</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">

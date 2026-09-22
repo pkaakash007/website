@@ -54,8 +54,7 @@ export default function UnifiedModel() {
           {/* Header Row */}
           <div className="grid grid-cols-1 md:grid-cols-12 bg-surface border-b border-border p-5 sm:p-6 text-xs font-bold uppercase tracking-wider">
             <div className="md:col-span-4 text-muted">Operational Capability</div>
-            <div className="md:col-span-4 text-brand-teal-dark flex items-center gap-1.5 mt-2 md:mt-0">
-              <span className="w-2 h-2 rounded-full bg-brand-teal"></span>
+            <div className="md:col-span-4 text-brand-teal-dark mt-2 md:mt-0">
               Real Result Unified Model
             </div>
             <div className="md:col-span-4 text-muted mt-2 md:mt-0">

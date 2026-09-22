@@ -30,7 +30,6 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
         className
       )}
     >
-      {badge && <Badge variant={badgeVariant}>{badge}</Badge>}
 
       {/* Aeren-style heading: heavy weight, very tight tracking */}
       <h2

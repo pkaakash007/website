@@ -46,19 +46,8 @@ export const ContactPage: React.FC = () => {
             </div>
 
             {/* Inquiry Form Window */}
-            <div className="lg:col-span-7 bg-white/95 backdrop-blur-xl rounded-[24px] border border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.04)] overflow-hidden">
-              {/* macOS Window Header Bar */}
-              <div className="px-5 py-3.5 bg-black/[0.02] border-b border-black/[0.06] flex items-center select-none">
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]/50 inline-block" />
-                  <span className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]/50 inline-block" />
-                  <span className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]/50 inline-block" />
-                </div>
-              </div>
-
-              {/* Window Content */}
-              <div className="p-7 sm:p-9">
-                <div className="mb-6 space-y-1.5">
+            <div className="lg:col-span-7 bg-white/95 backdrop-blur-xl rounded-[24px] border border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.04)] overflow-hidden p-7 sm:p-9">
+              <div className="mb-6 space-y-1.5">
                   <h3 className="text-2xl font-semibold text-[#1D1D1F] tracking-tight">
                     Send Us a Message
                   </h3>
@@ -69,7 +58,6 @@ export const ContactPage: React.FC = () => {
                 <ContactForm defaultDivision="Digital Marketing" />
               </div>
             </div>
-          </div>
         </Container>
       </section>
 

@@ -6,9 +6,9 @@ export const ContactDirectChannels: React.FC = () => {
   return (
     <div className="space-y-6">
       <div className="space-y-2">
-        <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-black/[0.05] text-[#86868B]">
+        <p className="text-xs font-bold uppercase tracking-wider text-neutral-500">
           Direct Access
-        </span>
+        </p>
         <h2 className="text-2xl sm:text-3xl font-semibold text-[#1D1D1F] tracking-tight">
           Direct Contact Channels
         </h2>
@@ -34,7 +34,7 @@ export const ContactDirectChannels: React.FC = () => {
                 </span>
               </div>
             </div>
-            <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-black/[0.05] text-[#86868B]">
+            <span className="text-xs font-medium text-neutral-500">
               HQ Erode
             </span>
           </div>
@@ -73,8 +73,7 @@ export const ContactDirectChannels: React.FC = () => {
                 </a>
               </div>
             </div>
-            <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-100">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#34C759] animate-pulse" />
+            <span className="text-xs font-medium text-emerald-600">
               Available
             </span>
           </div>
@@ -102,7 +101,7 @@ export const ContactDirectChannels: React.FC = () => {
                 </a>
               </div>
             </div>
-            <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-black/[0.05] text-[#86868B]">
+            <span className="text-xs font-medium text-neutral-500">
               &lt; 4h SLA
             </span>
           </div>
@@ -132,7 +131,7 @@ export const ContactDirectChannels: React.FC = () => {
                 </a>
               </div>
             </div>
-            <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60">
+            <span className="text-xs font-medium text-emerald-600">
               Instant Chat
             </span>
           </div>

@@ -454,12 +454,10 @@ export const MobileShowreelSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-800 shadow-xs mb-4"
+            className="flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#0071E3] mb-4"
           >
             <Film className="w-4 h-4 text-[#0071E3]" />
-            <span className="text-xs sm:text-sm font-semibold tracking-wide">
-              Mobile App Showreel
-            </span>
+            <span>Mobile App Showreel</span>
           </motion.div>
 
           <motion.h2

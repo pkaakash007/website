@@ -132,8 +132,8 @@ export const MarketingMediaGallery: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-neutral-900 text-white mb-4 shadow-2xs">
-              <BarChart2 className="w-3.5 h-3.5 text-emerald-400" />
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">
+              <BarChart2 className="w-3.5 h-3.5 text-emerald-600" />
               <span>Proven Performance Across US &amp; Global Verticals</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 leading-tight">
@@ -186,16 +186,12 @@ export const MarketingMediaGallery: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
                   {/* Top Badge */}
-                  <div className="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[11px] text-white font-semibold border border-white/15">
-                    <span
-                      className="w-2 h-2 rounded-full"
-                      style={{ backgroundColor: study.tagColor }}
-                    />
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/75 backdrop-blur-md text-[11px] text-white font-medium border border-white/10">
                     <span>{study.badge}</span>
                   </div>
 
                   {/* Top Right Client Location */}
-                  <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10.5px] text-neutral-900 font-bold shadow-xs">
+                  <div className="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-white/90 backdrop-blur-md text-[10.5px] text-neutral-900 font-semibold shadow-xs">
                     {study.clientLocation}
                   </div>
 

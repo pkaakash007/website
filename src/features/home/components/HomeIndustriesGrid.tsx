@@ -152,16 +152,14 @@ export const HomeIndustriesGrid: React.FC = () => {
                           {ind.heroSubheadline || ind.overview}
                         </p>
 
-                        {/* Key Deliverables (Clean Neutral Pills) */}
+                        {/* Key Deliverables */}
                         {ind.pillars && ind.pillars.length > 0 && (
-                          <div className="flex flex-wrap gap-2 pt-2">
+                          <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 pt-2 text-xs sm:text-sm font-medium text-neutral-700">
                             {ind.pillars.slice(0, 3).map((pil, pIdx) => (
-                              <span
-                                key={pIdx}
-                                className="inline-flex items-center px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-neutral-100 text-neutral-800 border border-neutral-200/80"
-                              >
-                                {pil.title}
-                              </span>
+                              <React.Fragment key={pIdx}>
+                                {pIdx > 0 && <span className="text-neutral-300">•</span>}
+                                <span>{pil.title}</span>
+                              </React.Fragment>
                             ))}
                           </div>
                         )}

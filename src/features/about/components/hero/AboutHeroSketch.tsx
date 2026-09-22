@@ -22,12 +22,7 @@ export const AboutHeroSketch: React.FC = () => {
             strokeWidth="2.5"
             strokeLinejoin="round"
           />
-          {/* Top Marker Strip */}
-          <line x1="0" y1="36" x2="300" y2="36" stroke="#111111" strokeWidth="1.5" />
-          <circle cx="20" cy="18" r="4" fill="#EF4444" />
-          <circle cx="34" cy="18" r="4" fill="#F59E0B" />
-          <circle cx="48" cy="18" r="4" fill="#10B981" />
-          <text x="70" y="22" fontSize="11" fontFamily="Arial, sans-serif" fontWeight="bold" fill="#111111">
+          <text x="25" y="32" fontSize="13" fontFamily="Arial, sans-serif" fontWeight="bold" fill="#111111">
             Real Result — Engineering &amp; Strategy
           </text>
 
@@ -44,13 +39,13 @@ export const AboutHeroSketch: React.FC = () => {
             ✦ Direct Growth
           </text>
 
-          {/* Tech Stack Pills */}
-          <rect x="150" y="105" width="125" height="20" rx="10" fill="#F3F4F6" stroke="#111111" strokeWidth="1.5" />
-          <text x="160" y="119" fontSize="10" fontFamily="monospace" fill="#111111">
-            &lt;Custom Web &amp; App/&gt;
+          {/* Tech Stack Cards */}
+          <rect x="150" y="105" width="125" height="20" rx="6" fill="#F3F4F6" stroke="#111111" strokeWidth="1.5" />
+          <text x="160" y="119" fontSize="10" fontFamily="sans-serif" fill="#111111">
+            Custom Web &amp; App
           </text>
           
-          <rect x="150" y="130" width="125" height="20" rx="10" fill="#E0F2FE" stroke="#111111" strokeWidth="1.5" />
+          <rect x="150" y="130" width="125" height="20" rx="6" fill="#E0F2FE" stroke="#111111" strokeWidth="1.5" />
           <text x="160" y="144" fontSize="10" fontFamily="Arial, sans-serif" fontWeight="bold" fill="#0369A1">
             Targeted Ads &amp; SEO
           </text>

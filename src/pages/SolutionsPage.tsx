@@ -36,11 +36,6 @@ export const SolutionsPage: React.FC = () => {
             <span className="text-white font-medium">Growth Solutions</span>
           </nav>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold tracking-wide text-blue-300 mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#0071E3]" />
-            {content.eyebrow}
-          </div>
-
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
             {content.h1}
           </h1>
@@ -104,7 +99,7 @@ export const SolutionsPage: React.FC = () => {
                       {obs.services.map((svc, i) => (
                         <span
                           key={i}
-                          className="text-xs font-medium bg-white px-3 py-1 rounded-full border border-black/[0.06] text-neutral-800 shadow-sm"
+                          className="text-xs text-neutral-600 bg-neutral-100 px-2 py-0.5 rounded-md"
                         >
                           {svc}
                         </span>

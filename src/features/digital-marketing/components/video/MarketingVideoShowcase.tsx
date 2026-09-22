@@ -53,10 +53,9 @@ export const MarketingVideoShowcase: React.FC = () => {
       <Container size="wide" className="relative z-10">
         {/* Header Badge & Title in Clean Indian English */}
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold text-gold-300 mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-gold-400" />
-            <span>Clear 4K Video Marketing & Campaign Showcase</span>
-          </div>
+          <p className="text-xs font-bold uppercase tracking-wider text-gold-400 mb-3">
+            Clear 4K Video Marketing &amp; Campaign Showcase
+          </p>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight mb-4">
             See How Smooth Video Ads Drive Customer Calls Every Single Day
           </h2>
@@ -72,14 +71,7 @@ export const MarketingVideoShowcase: React.FC = () => {
           <div className="relative rounded-3xl sm:rounded-[36px] p-2 sm:p-3.5 bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 shadow-[0_25px_70px_rgba(0,0,0,0.7)] border border-gray-700/60">
             {/* Apple iPhone Inner Bezel Screen */}
             <div className="relative rounded-2xl sm:rounded-[28px] overflow-hidden bg-black aspect-video flex items-center justify-center group">
-              
-              {/* Dynamic Island / Top Status Pill */}
-              <div className="absolute top-3 sm:top-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 px-3 py-1 rounded-full bg-black/85 backdrop-blur-xl border border-white/10 text-[11px] text-gray-300 shadow-md pointer-events-none">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="font-semibold text-white tracking-wide">4K ULTRA HD</span>
-                <span className="text-gray-500">•</span>
-                <span>60 FPS SMOOTH</span>
-              </div>
+
 
               {/* High-Resolution HTML5 Video Element */}
               <video
