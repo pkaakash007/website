@@ -1,0 +1,22 @@
+;; =====================================================================
+;; DNS for AI Discovery (DNS-AID) Zone File for realresult.in
+;; Specifications:
+;; - draft-mozleywilliams-dnsop-dnsaid (IETF Standards Track)
+;; - RFC 9460 (SVCB and HTTPS DNS Resource Records)
+;; - isitagentready.com Agent Discoverability Standard
+;; =====================================================================
+
+;; 1. A2A (Agent-to-Agent) Endpoints
+_a2a._agents.realresult.in. 3600 IN SVCB 1 realresult.in. alpn="a2a" port=443 mandatory=alpn,port
+_a2a._agents.realresult.in. 3600 IN HTTPS 1 realresult.in. alpn="a2a" port=443 mandatory=alpn,port
+
+;; 2. MCP (Model Context Protocol) Server Endpoints
+_mcp._agents.realresult.in. 3600 IN SVCB 1 realresult.in. alpn="mcp" port=443 mandatory=alpn,port
+_mcp._agents.realresult.in. 3600 IN HTTPS 1 realresult.in. alpn="mcp" port=443 mandatory=alpn,port
+
+;; 3. Index Discovery Entrypoints
+_index._agents.realresult.in. 3600 IN SVCB 1 realresult.in. alpn="h2,h3" port=443 mandatory=alpn,port
+_index._agents.realresult.in. 3600 IN HTTPS 1 realresult.in. alpn="h2,h3" port=443 mandatory=alpn,port
+
+;; 4. Index Capabilities & Cards TXT Record
+_index._agents.realresult.in. 3600 IN TXT "v=aid1; a2a=1; mcp=1; card=https://realresult.in/.well-known/agent-card.json; mcp-card=https://realresult.in/.well-known/mcp/server-card.json; catalog=https://realresult.in/.well-known/api-catalog"

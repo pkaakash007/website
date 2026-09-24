@@ -1541,6 +1541,7 @@ Localized B2B market consultation and high-intent commercial positioning for Sou
     headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
     headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
     headers.set("Vary", "Accept"); // Crucial for edge caching with content negotiation
+    headers.set("Content-Signal", "ai-train=no, search=yes, ai-input=yes");
     headers.set(
       "Link",
       '</.well-known/api-catalog>; rel="api-catalog", </api/openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json", </api/docs>; rel="service-doc"; type="text/html", </llms.txt>; rel="describedby"; type="text/plain"'

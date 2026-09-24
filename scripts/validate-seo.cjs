@@ -33,6 +33,10 @@ if (fs.existsSync(robotsPath)) {
   assert(robotsContent.includes('User-agent: Googlebot'), 'robots.txt explicitly permits Googlebot');
   assert(robotsContent.includes('User-agent: OAI-SearchBot'), 'robots.txt explicitly permits OAI-SearchBot (ChatGPT Search)');
   assert(robotsContent.includes('User-agent: PerplexityBot'), 'robots.txt explicitly permits PerplexityBot');
+  assert(robotsContent.includes('Content-Signal:'), 'robots.txt declares Content-Signal directives');
+  assert(robotsContent.includes('ai-train='), 'robots.txt declares ai-train preference');
+  assert(robotsContent.includes('search='), 'robots.txt declares search preference');
+  assert(robotsContent.includes('ai-input='), 'robots.txt declares ai-input preference');
   assert(robotsContent.includes('Sitemap: https://realresult.in/sitemap.xml'), 'robots.txt references official XML sitemap');
 }
 
@@ -120,6 +124,29 @@ for (const pageRel of pagesToVerify) {
     const hasSEOHead = content.includes('<SEOHead');
     assert(hasSEOHead, `  └─ Implements <SEOHead>: ${path.basename(pageRel)}`);
   }
+}
+
+// 6. Validate DNS for AI Discovery (DNS-AID)
+console.log('\n📁 6. Validating DNS for AI Discovery (DNS-AID) Configuration...');
+const dnsScriptPath = path.join(ROOT_DIR, 'scripts/setup-dns-aid.cjs');
+assert(fs.existsSync(dnsScriptPath), 'scripts/setup-dns-aid.cjs exists');
+
+const zoneFilePath = path.join(ROOT_DIR, 'scripts/dns-aid.zone');
+assert(fs.existsSync(zoneFilePath), 'scripts/dns-aid.zone BIND file exists');
+if (fs.existsSync(zoneFilePath)) {
+  const zoneContent = fs.readFileSync(zoneFilePath, 'utf8');
+  assert(zoneContent.includes('_a2a._agents.realresult.in'), 'zone defines _a2a._agents endpoint');
+  assert(zoneContent.includes('_mcp._agents.realresult.in'), 'zone defines _mcp._agents endpoint');
+  assert(zoneContent.includes('_index._agents.realresult.in'), 'zone defines _index._agents endpoint');
+  assert(zoneContent.includes('SVCB 1 realresult.in. alpn="a2a"'), 'zone declares SVCB with alpn="a2a"');
+  assert(zoneContent.includes('HTTPS 1 realresult.in. alpn="a2a"'), 'zone declares HTTPS with alpn="a2a"');
+  assert(zoneContent.includes('v=aid1;'), 'zone declares DNS-AID TXT capabilities index');
+}
+
+const llmsPath = path.join(ROOT_DIR, 'public/llms.txt');
+if (fs.existsSync(llmsPath)) {
+  const llmsContent = fs.readFileSync(llmsPath, 'utf8');
+  assert(llmsContent.includes('_index._agents.realresult.in'), 'llms.txt documents DNS-AID discovery records');
 }
 
 // Summary Report
