@@ -31,15 +31,29 @@ export const AppDevPillarCard: React.FC = () => {
 
         {/* Image */}
         <div className="overflow-hidden rounded-xl aspect-[16/10]">
-          <img
-            src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=600&q=75"
-            alt="Application Development"
-            width={600}
-            height={375}
-            loading="lazy"
-            decoding="async"
-            className="w-full h-full object-cover image-warm-filter transition-transform duration-500 group-hover:scale-[1.02]"
-          />
+          <picture>
+            <source
+              type="image/avif"
+              srcSet="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&fm=avif&w=400&q=75 400w, https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&fm=avif&w=600&q=75 600w"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+            />
+            <source
+              type="image/webp"
+              srcSet="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&fm=webp&w=400&q=75 400w, https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&fm=webp&w=600&q=75 600w"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=600&q=75"
+              srcSet="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=400&q=75 400w, https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=600&q=75 600w"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+              alt="Application Development"
+              width={600}
+              height={375}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover image-warm-filter transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+          </picture>
         </div>
 
         <p className="text-[15px] text-[rgba(15,15,14,0.55)] leading-[1.65]">

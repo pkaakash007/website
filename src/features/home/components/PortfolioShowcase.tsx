@@ -491,6 +491,70 @@ const getWebsitePreviewImage = (site: WebsitePortfolioItem): string => {
   }
 };
 
+const PortfolioCardImage: React.FC<{
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  className?: string;
+}> = ({
+  src,
+  alt,
+  width = 400,
+  height = 250,
+  className = "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500",
+}) => {
+  const isUnsplash = src.includes("images.unsplash.com");
+  const baseUrl = isUnsplash ? src.split("?")[0] : src;
+
+  if (!isUnsplash) {
+    return (
+      <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className={className}
+        loading="lazy"
+        decoding="async"
+      />
+    );
+  }
+
+  return (
+    <picture>
+      <source
+        type="image/avif"
+        srcSet={`${baseUrl}?auto=format&fit=crop&fm=avif&w=400&q=75 400w, ${baseUrl}?auto=format&fit=crop&fm=avif&w=800&q=75 800w`}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+      />
+      <source
+        type="image/webp"
+        srcSet={`${baseUrl}?auto=format&fit=crop&fm=webp&w=400&q=75 400w, ${baseUrl}?auto=format&fit=crop&fm=webp&w=800&q=75 800w`}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+      />
+      <img
+        src={`${baseUrl}?auto=format&fit=crop&w=400&q=75`}
+        srcSet={`${baseUrl}?auto=format&fit=crop&w=400&q=75 400w, ${baseUrl}?auto=format&fit=crop&w=800&q=75 800w`}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+        alt={alt}
+        width={width}
+        height={height}
+        className={className}
+        loading="lazy"
+        decoding="async"
+        onError={(e) => {
+          const target = e.currentTarget;
+          if (!target.dataset.fallback) {
+            target.dataset.fallback = "true";
+            target.src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=75";
+          }
+        }}
+      />
+    </picture>
+  );
+};
+
 // ─── Live Website Responsive Preview Components ──────────────────────────────
 
 const LiveWebsitePreview: React.FC<{
@@ -838,21 +902,12 @@ export const PortfolioShowcase: React.FC = () => {
                     />
                   ) : (
                     <>
-                      <img
+                      <PortfolioCardImage
                         src={getWebsitePreviewImage(site)}
                         alt={site.client}
                         width={400}
                         height={250}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                        decoding="async"
-                        onError={(e) => {
-                          const target = e.currentTarget;
-                          if (!target.dataset.fallback) {
-                            target.dataset.fallback = "true";
-                            target.src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=75";
-                          }
-                        }}
                       />
                       {/* Subtle glass & dark gradient overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20 pointer-events-none" />
@@ -915,21 +970,12 @@ export const PortfolioShowcase: React.FC = () => {
               >
                 {/* Visual Image container */}
                 <div className="aspect-[16/10] overflow-hidden bg-neutral-100 relative">
-                  <img
+                  <PortfolioCardImage
                     src={item.image}
                     alt={item.client}
                     width={400}
                     height={250}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    decoding="async"
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      if (!target.dataset.fallback) {
-                        target.dataset.fallback = "true";
-                        target.src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=75";
-                      }
-                    }}
                   />
                 </div>
 

@@ -140,15 +140,45 @@ export const HomeIndustriesGrid: React.FC = () => {
 
                     {/* Right-side Authentic Sector Image with Explicit Dimensions */}
                     <div className="lg:col-span-5 xl:col-span-5 relative min-h-[240px] sm:min-h-[300px] lg:min-h-full aspect-[4/3] lg:aspect-auto bg-neutral-100 overflow-hidden">
-                      <img
-                        src={photoUrl}
-                        alt={ind.name}
-                        width={600}
-                        height={480}
-                        className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700 ease-out"
-                        loading="lazy"
-                        decoding="async"
-                      />
+                      {(() => {
+                        const isUnsplash = photoUrl.includes("images.unsplash.com");
+                        const baseUrl = isUnsplash ? photoUrl.split("?")[0] : photoUrl;
+                        return isUnsplash ? (
+                          <picture>
+                            <source
+                              type="image/avif"
+                              srcSet={`${baseUrl}?auto=format&fit=crop&fm=avif&w=400&q=75 400w, ${baseUrl}?auto=format&fit=crop&fm=avif&w=800&q=75 800w`}
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+                            />
+                            <source
+                              type="image/webp"
+                              srcSet={`${baseUrl}?auto=format&fit=crop&fm=webp&w=400&q=75 400w, ${baseUrl}?auto=format&fit=crop&fm=webp&w=800&q=75 800w`}
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+                            />
+                            <img
+                              src={`${baseUrl}?auto=format&fit=crop&w=600&q=75`}
+                              srcSet={`${baseUrl}?auto=format&fit=crop&w=400&q=75 400w, ${baseUrl}?auto=format&fit=crop&w=800&q=75 800w`}
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+                              alt={ind.name}
+                              width={600}
+                              height={480}
+                              className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700 ease-out"
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          </picture>
+                        ) : (
+                          <img
+                            src={photoUrl}
+                            alt={ind.name}
+                            width={600}
+                            height={480}
+                            className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700 ease-out"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        );
+                      })()}
                     </div>
 
                   </div>

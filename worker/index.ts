@@ -1554,10 +1554,9 @@ Localized B2B market consultation and high-intent commercial positioning for Sou
     headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
     headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
     headers.set("Content-Signal", "ai-train=no, search=yes, ai-input=yes");
-    headers.set("Link", discoveryLinks);
-
-    // Only apply Vary: Accept where route content negotiation can actually occur (HTML vs Markdown)
+    // Only apply Link headers & Vary: Accept where route content negotiation can actually occur (HTML vs Markdown)
     if (!isStaticAsset) {
+      headers.set("Link", discoveryLinks);
       headers.set("Vary", "Accept");
     }
 
