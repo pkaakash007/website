@@ -55,6 +55,10 @@ export const HomeLeadBanner: React.FC = () => {
                   <img
                     src="/brand/realresult-mark-transparent.png"
                     alt="Real Result"
+                    width={16}
+                    height={16}
+                    loading="lazy"
+                    decoding="async"
                     className="w-4 h-4 object-contain filter drop-shadow-[0_0_4px_rgba(229,180,86,0.5)]"
                   />
                 </div>

@@ -1,14 +1,10 @@
-@import './fonts.css';
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* ============================================================
    AEREN & APPLE DESIGN SYSTEM
-   Featuring Official Apple San Francisco (SF Pro, SF Compact, SF Mono)
+   Featuring Zero-Network Native System Typography Stack
    Applied across the full Real Result application
    ============================================================ */
 
@@ -63,15 +59,16 @@
   --token-gold-light: #f9f4e7;
   --token-gold-dark:  #8e6d2e;
 
-  /* ── Typography (Google Sans System) ────────────────── */
-  --font-google-sans: 'Google Sans', 'Plus Jakarta Sans', 'Product Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-sf-display: 'Google Sans', 'Plus Jakarta Sans', 'Product Sans', sans-serif;
-  --font-sf-text:    'Google Sans', 'Plus Jakarta Sans', 'Product Sans', sans-serif;
-  --font-sf:         'Google Sans', 'Plus Jakarta Sans', sans-serif;
-  --font-system:     'Google Sans', 'Plus Jakarta Sans', 'Product Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-inter:      'Google Sans', 'Plus Jakarta Sans', sans-serif;
-  --font-karla:      'Google Sans', 'Plus Jakarta Sans', sans-serif;
-  --font-mono:       'SF Mono', 'JetBrains Mono', ui-monospace, monospace;
+  /* ── Typography (Zero-Network System Typography Stack) ──────── */
+  --font-system:      system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-google-sans: var(--font-system);
+  --font-sf-display:  var(--font-system);
+  --font-sf-text:     var(--font-system);
+  --font-sf:          var(--font-system);
+  --font-inter:       var(--font-system);
+  --font-karla:       var(--font-system);
+  --font-serif:       Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono:        ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 
   /* ── Easing ─────────────────────────────────────────────────── */
   --ease-ae:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -89,39 +86,25 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
+  cursor: default;
 }
 
 body {
   background-color: var(--ae-canvas);
   color: var(--ae-ink);
-  font-family: var(--font-google-sans) !important;
+  font-family: var(--font-system) !important;
   overflow-x: hidden;
   letter-spacing: -0.015em;
-  cursor: default;
-}
-
-/* ============================================================
-   NATIVE macOS CURSOR SYSTEM
-   Uses native hardware-accelerated macOS system cursors for Mac devices
-   ============================================================ */
-html {
-  cursor: default;
-}
-
-body {
-  font-family: 'Google Sans', 'Product Sans', 'Inter', 'Plus Jakarta Sans', sans-serif !important;
-  color: #202124;
-  background-color: #ffffff;
   font-weight: 400;
   line-height: 1.6;
-  letter-spacing: normal;
+  cursor: default;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Google Sans', 'Product Sans', 'Inter', sans-serif !important;
-  font-weight: 400;
+  font-family: var(--font-system) !important;
+  font-weight: 600;
   letter-spacing: -0.012em;
   color: #0E2036;
 }

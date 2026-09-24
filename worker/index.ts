@@ -1494,17 +1494,33 @@ Localized B2B market consultation and high-intent commercial positioning for Sou
       url.searchParams.get("format") === "markdown" ||
       url.pathname.endsWith(".md");
 
-    // Don't intercept static assets (.js, .css, images, fonts, xml)
+    // Don't intercept static assets (.js, .css, images, fonts, media, json, well-known)
     const isStaticAsset =
       url.pathname.startsWith("/assets/") ||
+      url.pathname.startsWith("/.well-known/") ||
       url.pathname.endsWith(".js") ||
       url.pathname.endsWith(".css") ||
       url.pathname.endsWith(".png") ||
       url.pathname.endsWith(".jpg") ||
       url.pathname.endsWith(".jpeg") ||
+      url.pathname.endsWith(".webp") ||
+      url.pathname.endsWith(".avif") ||
+      url.pathname.endsWith(".gif") ||
       url.pathname.endsWith(".svg") ||
       url.pathname.endsWith(".ico") ||
-      url.pathname.endsWith(".xml");
+      url.pathname.endsWith(".woff") ||
+      url.pathname.endsWith(".woff2") ||
+      url.pathname.endsWith(".otf") ||
+      url.pathname.endsWith(".ttf") ||
+      url.pathname.endsWith(".mp4") ||
+      url.pathname.endsWith(".webm") ||
+      url.pathname.endsWith(".json") ||
+      url.pathname.endsWith(".xml") ||
+      url.pathname.endsWith(".pdf") ||
+      url.pathname.endsWith(".txt");
+
+    const discoveryLinks =
+      '</.well-known/api-catalog>; rel="api-catalog", </.well-known/ard.json>; rel="ard"; type="application/json", </.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/json", </api/openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json", </api/docs>; rel="service-doc"; type="text/html", </llms.txt>; rel="describedby"; type="text/plain"';
 
     if (isMarkdownRequested && !isStaticAsset) {
       const markdown = getMarkdownForRoute(url.pathname);
@@ -1519,10 +1535,7 @@ Localized B2B market consultation and high-intent commercial positioning for Sou
       mdHeaders.set("Referrer-Policy", "strict-origin-when-cross-origin");
       mdHeaders.set("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
       mdHeaders.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
-      mdHeaders.set(
-        "Link",
-        '</.well-known/api-catalog>; rel="api-catalog", </api/openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json", </api/docs>; rel="service-doc"; type="text/html", </llms.txt>; rel="describedby"; type="text/plain"'
-      );
+      mdHeaders.set("Link", discoveryLinks);
 
       return new Response(markdown, {
         status: 200,
@@ -1540,16 +1553,39 @@ Localized B2B market consultation and high-intent commercial positioning for Sou
     headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
     headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
     headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
-    headers.set("Vary", "Accept"); // Crucial for edge caching with content negotiation
     headers.set("Content-Signal", "ai-train=no, search=yes, ai-input=yes");
-    headers.set(
-      "Link",
-      '</.well-known/api-catalog>; rel="api-catalog", </api/openapi.json>; rel="service-desc"; type="application/vnd.oai.openapi+json", </api/docs>; rel="service-doc"; type="text/html", </llms.txt>; rel="describedby"; type="text/plain"'
-    );
+    headers.set("Link", discoveryLinks);
+
+    // Only apply Vary: Accept where route content negotiation can actually occur (HTML vs Markdown)
+    if (!isStaticAsset) {
+      headers.set("Vary", "Accept");
+    }
 
     // 7. Cache optimizations
     if (url.pathname.startsWith("/assets/")) {
+      // Hashed build assets get 1-year immutable caching
       headers.set("Cache-Control", "public, max-age=31536000, immutable");
+    } else if (
+      url.pathname.startsWith("/images/") ||
+      url.pathname.startsWith("/brand/") ||
+      url.pathname.startsWith("/fonts/") ||
+      url.pathname.endsWith(".webp") ||
+      url.pathname.endsWith(".avif") ||
+      url.pathname.endsWith(".png") ||
+      url.pathname.endsWith(".jpg") ||
+      url.pathname.endsWith(".jpeg") ||
+      url.pathname.endsWith(".svg") ||
+      url.pathname.endsWith(".woff") ||
+      url.pathname.endsWith(".woff2") ||
+      url.pathname.endsWith(".mp4")
+    ) {
+      // Unhashed public media get 30-day cache with stale-while-revalidate
+      headers.set("Cache-Control", "public, max-age=2592000, stale-while-revalidate=86400");
+    } else if (url.pathname.startsWith("/.well-known/")) {
+      headers.set("Cache-Control", "public, max-age=3600, stale-while-revalidate=86400");
+      if (url.pathname.endsWith(".json")) {
+        headers.set("Content-Type", "application/json; charset=utf-8");
+      }
     } else if (url.pathname === "/sitemap.xml") {
       headers.set("Content-Type", "application/xml; charset=utf-8");
       headers.set("Cache-Control", "public, max-age=3600, stale-while-revalidate=86400");

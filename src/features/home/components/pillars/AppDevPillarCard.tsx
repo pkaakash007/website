@@ -30,11 +30,15 @@ export const AppDevPillarCard: React.FC = () => {
         </div>
 
         {/* Image */}
-        <div className="overflow-hidden rounded-xl">
+        <div className="overflow-hidden rounded-xl aspect-[16/10]">
           <img
-            src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=800&q=80"
+            src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=600&q=75"
             alt="Application Development"
-            className="w-full h-56 sm:h-64 object-cover image-warm-filter transition-transform duration-500 group-hover:scale-[1.02]"
+            width={600}
+            height={375}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover image-warm-filter transition-transform duration-500 group-hover:scale-[1.02]"
           />
         </div>
 

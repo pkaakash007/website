@@ -36,50 +36,6 @@ const INDUSTRY_PHOTOS: Record<string, string> = {
 
 export const HomeIndustriesGrid: React.FC = () => {
   const industriesList = Object.values(INDUSTRIES_DATA);
-  const cardRefs = React.useRef<(HTMLDivElement | null)[]>([]);
-  const [coveredIndices, setCoveredIndices] = React.useState<boolean[]>([]);
-
-  React.useEffect(() => {
-    const checkCoveredCards = () => {
-      if (!cardRefs.current.length) return;
-      const newCovered: boolean[] = [];
-
-      for (let i = 0; i < industriesList.length; i++) {
-        const nextCard = cardRefs.current[i + 1];
-        const currentCard = cardRefs.current[i];
-
-        if (nextCard && currentCard) {
-          const nextRect = nextCard.getBoundingClientRect();
-          const currentRect = currentCard.getBoundingClientRect();
-          // If the next card has reached or passed the top of the current card,
-          // mark the current card as covered so it doesn't peek out when scrolling past
-          if (nextRect.top <= currentRect.top + 16) {
-            newCovered[i] = true;
-          } else {
-            newCovered[i] = false;
-          }
-        } else {
-          newCovered[i] = false;
-        }
-      }
-
-      setCoveredIndices((prev) => {
-        const isDifferent =
-          newCovered.some((val, idx) => val !== prev[idx]) ||
-          newCovered.length !== prev.length;
-        return isDifferent ? newCovered : prev;
-      });
-    };
-
-    window.addEventListener("scroll", checkCoveredCards, { passive: true });
-    window.addEventListener("resize", checkCoveredCards, { passive: true });
-    checkCoveredCards();
-
-    return () => {
-      window.removeEventListener("scroll", checkCoveredCards);
-      window.removeEventListener("resize", checkCoveredCards);
-    };
-  }, [industriesList.length]);
 
   return (
     <section className="pt-20 pb-12 sm:pt-24 sm:pb-16 bg-[#FBFBFA] border-t border-b border-neutral-200 font-sans relative">
@@ -107,25 +63,23 @@ export const HomeIndustriesGrid: React.FC = () => {
           </div>
         </div>
 
-        {/* ── Apple-Style Smooth Stacking Cards Deck ── */}
+        {/* ── Apple-Style Smooth Stacking Cards Deck (Pure CSS Sticky Stacking) ── */}
         <div className="relative pb-12 sm:pb-16">
           {industriesList.map((ind, index) => {
             const detailUrl =
               ind.slug === "healthcare" ? "/industries/healthcare" : `/industries/${ind.slug}`;
             const photoUrl =
               INDUSTRY_PHOTOS[ind.slug] ||
-              "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80";
+              "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=75";
 
             const isLast = index === industriesList.length - 1;
-            const isCovered = coveredIndices[index];
 
             return (
               <div
                 key={ind.slug}
-                ref={(el) => (cardRefs.current[index] = el)}
-                className={`sticky top-24 sm:top-28 md:top-32 transition-opacity duration-200 ${
+                className={`sticky top-24 sm:top-28 md:top-32 ${
                   isLast ? "mb-0" : "mb-16 sm:mb-24 lg:mb-32"
-                } ${isCovered ? "opacity-0 pointer-events-none invisible" : "opacity-100 pointer-events-auto visible"}`}
+                }`}
                 style={{
                   zIndex: index + 10,
                 }}
@@ -142,8 +96,8 @@ export const HomeIndustriesGrid: React.FC = () => {
                           {ind.name}
                         </h3>
 
-                        {/* Tagline */}
-                        <p className="text-sm sm:text-base font-medium text-[#C5A059]">
+                        {/* Tagline (WCAG AA Compliant accessible gold) */}
+                        <p className="text-sm sm:text-base font-medium text-[#8E6D2E]">
                           {ind.tagline}
                         </p>
 
@@ -184,13 +138,16 @@ export const HomeIndustriesGrid: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Right-side Authentic Sector Image */}
-                    <div className="lg:col-span-5 xl:col-span-5 relative min-h-[240px] sm:min-h-[300px] lg:min-h-full bg-neutral-100 overflow-hidden">
+                    {/* Right-side Authentic Sector Image with Explicit Dimensions */}
+                    <div className="lg:col-span-5 xl:col-span-5 relative min-h-[240px] sm:min-h-[300px] lg:min-h-full aspect-[4/3] lg:aspect-auto bg-neutral-100 overflow-hidden">
                       <img
                         src={photoUrl}
                         alt={ind.name}
+                        width={600}
+                        height={480}
                         className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700 ease-out"
                         loading="lazy"
+                        decoding="async"
                       />
                     </div>
 
@@ -204,9 +161,9 @@ export const HomeIndustriesGrid: React.FC = () => {
         {/* Bottom Clean Consultation Banner */}
         <div className="mt-6 p-6 sm:p-8 rounded-2xl bg-white/80 backdrop-blur-xl border border-neutral-200/80 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="space-y-1.5 text-center sm:text-left max-w-2xl">
-            <h4 className="text-lg sm:text-xl font-bold text-neutral-900">
+            <h3 className="text-lg sm:text-xl font-bold text-neutral-900">
               Need marketing or software for your specific business?
-            </h4>
+            </h3>
             <p className="text-sm text-neutral-600 font-normal">
               We engineer custom customer acquisition funnels, brand identities, and software platforms for businesses across Tamil Nadu.
             </p>

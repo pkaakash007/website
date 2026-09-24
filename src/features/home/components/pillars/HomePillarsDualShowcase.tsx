@@ -22,7 +22,7 @@ export const HomePillarsDualShowcase: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-semibold text-[#1d1d1f] tracking-[-0.03em] leading-tight mb-3">
             Our Two Main Services
           </h2>
-          <p className="text-base sm:text-[17px] text-[#86868b] leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-[17px] text-neutral-600 leading-relaxed max-w-2xl mx-auto">
             Instead of hiring separate agencies, we handle both: performance marketing to bring you real customers, and custom software engineering to build your web &amp; mobile apps.
           </p>
         </div>
@@ -37,7 +37,7 @@ export const HomePillarsDualShowcase: React.FC = () => {
               <h3 className="text-2xl sm:text-[26px] font-semibold text-[#1d1d1f] tracking-[-0.02em] leading-snug mb-2">
                 Get More Qualified Leads &amp; Sales
               </h3>
-              <p className="text-sm sm:text-[15px] text-[#86868b] leading-relaxed mb-6">
+              <p className="text-sm sm:text-[15px] text-neutral-600 leading-relaxed mb-6">
                 We manage targeted ad campaigns on Google, YouTube, Instagram, and Facebook. Every rupee spent is tracked directly to qualified leads, customer conversions, and sales.
               </p>
 
@@ -54,11 +54,11 @@ export const HomePillarsDualShowcase: React.FC = () => {
                       <h4 className="text-[14px] sm:text-[15px] font-semibold text-[#1d1d1f] tracking-tight">
                         Google Search &amp; Display Ads
                       </h4>
-                      <p className="text-xs sm:text-[13px] text-[#86868b] leading-normal">
+                      <p className="text-xs sm:text-[13px] text-neutral-600 leading-normal">
                         Appear at the top when high-intent buyers search for your products or services.
                       </p>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-[#86868b] transition-colors" />
+                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-neutral-600 transition-colors" />
                   </div>
 
                   {/* Item 2 */}
@@ -70,11 +70,11 @@ export const HomePillarsDualShowcase: React.FC = () => {
                       <h4 className="text-[14px] sm:text-[15px] font-semibold text-[#1d1d1f] tracking-tight">
                         Google Maps &amp; Local SEO
                       </h4>
-                      <p className="text-xs sm:text-[13px] text-[#86868b] leading-normal">
+                      <p className="text-xs sm:text-[13px] text-neutral-600 leading-normal">
                         Help local customers easily locate your shop, showroom, office, or clinic.
                       </p>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-[#86868b] transition-colors" />
+                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-neutral-600 transition-colors" />
                   </div>
 
                   {/* Item 3 */}
@@ -86,11 +86,11 @@ export const HomePillarsDualShowcase: React.FC = () => {
                       <h4 className="text-[14px] sm:text-[15px] font-semibold text-[#1d1d1f] tracking-tight">
                         Instagram &amp; Facebook Targeted Ads
                       </h4>
-                      <p className="text-xs sm:text-[13px] text-[#86868b] leading-normal">
+                      <p className="text-xs sm:text-[13px] text-neutral-600 leading-normal">
                         Eye-catching photo and video campaigns aimed at ready buyers in your city.
                       </p>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-[#86868b] transition-colors" />
+                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-neutral-600 transition-colors" />
                   </div>
 
                   {/* Item 4 */}
@@ -102,11 +102,11 @@ export const HomePillarsDualShowcase: React.FC = () => {
                       <h4 className="text-[14px] sm:text-[15px] font-semibold text-[#1d1d1f] tracking-tight">
                         Call &amp; Lead Analytics
                       </h4>
-                      <p className="text-xs sm:text-[13px] text-[#86868b] leading-normal">
+                      <p className="text-xs sm:text-[13px] text-neutral-600 leading-normal">
                         Transparent tracking so you know exactly how many leads your budget produces.
                       </p>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-[#86868b] transition-colors" />
+                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-neutral-600 transition-colors" />
                   </div>
 
                 </div>
@@ -132,7 +132,7 @@ export const HomePillarsDualShowcase: React.FC = () => {
               <h3 className="text-2xl sm:text-[26px] font-semibold text-[#1d1d1f] tracking-[-0.02em] leading-snug mb-2">
                 Custom Websites &amp; Mobile Applications
               </h3>
-              <p className="text-sm sm:text-[15px] text-[#86868b] leading-relaxed mb-6">
+              <p className="text-sm sm:text-[15px] text-neutral-600 leading-relaxed mb-6">
                 We design and engineer fast websites, mobile apps, and custom business portals tailored to your operations, with 100% full source code ownership.
               </p>
 
@@ -149,11 +149,11 @@ export const HomePillarsDualShowcase: React.FC = () => {
                       <h4 className="text-[14px] sm:text-[15px] font-semibold text-[#1d1d1f] tracking-tight">
                         iOS &amp; Android Native Mobile Apps
                       </h4>
-                      <p className="text-xs sm:text-[13px] text-[#86868b] leading-normal">
+                      <p className="text-xs sm:text-[13px] text-neutral-600 leading-normal">
                         Published to Google Play Store and Apple App Store with smooth user experience.
                       </p>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-[#86868b] transition-colors" />
+                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-neutral-600 transition-colors" />
                   </div>
 
                   {/* Item 2 */}
@@ -165,11 +165,11 @@ export const HomePillarsDualShowcase: React.FC = () => {
                       <h4 className="text-[14px] sm:text-[15px] font-semibold text-[#1d1d1f] tracking-tight">
                         High-Performance Websites
                       </h4>
-                      <p className="text-xs sm:text-[13px] text-[#86868b] leading-normal">
+                      <p className="text-xs sm:text-[13px] text-neutral-600 leading-normal">
                         Clean, fast-loading, mobile-friendly websites designed to convert visitors.
                       </p>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-[#86868b] transition-colors" />
+                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-neutral-600 transition-colors" />
                   </div>
 
                   {/* Item 3 */}
@@ -181,11 +181,11 @@ export const HomePillarsDualShowcase: React.FC = () => {
                       <h4 className="text-[14px] sm:text-[15px] font-semibold text-[#1d1d1f] tracking-tight">
                         Business Portals &amp; Billing Systems
                       </h4>
-                      <p className="text-xs sm:text-[13px] text-[#86868b] leading-normal">
+                      <p className="text-xs sm:text-[13px] text-neutral-600 leading-normal">
                         Custom software built for managing orders, inventory, bookings, and team operations.
                       </p>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-[#86868b] transition-colors" />
+                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-neutral-600 transition-colors" />
                   </div>
 
                   {/* Item 4 */}
@@ -197,11 +197,11 @@ export const HomePillarsDualShowcase: React.FC = () => {
                       <h4 className="text-[14px] sm:text-[15px] font-semibold text-[#1d1d1f] tracking-tight">
                         100% Source Code &amp; IP Ownership
                       </h4>
-                      <p className="text-xs sm:text-[13px] text-[#86868b] leading-normal">
+                      <p className="text-xs sm:text-[13px] text-neutral-600 leading-normal">
                         You retain full ownership of all source code, assets, and design files with zero recurring lock-in.
                       </p>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-[#86868b] transition-colors" />
+                    <ChevronRight className="w-4 h-4 text-[#c7c7cc] shrink-0 self-center hidden sm:block group-hover:text-neutral-600 transition-colors" />
                   </div>
 
                 </div>

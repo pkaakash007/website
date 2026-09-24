@@ -248,8 +248,15 @@ export const Header: React.FC = () => {
   const pathname = location.pathname;
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 8);
-    window.addEventListener("scroll", onScroll);
+    let lastScrolled = window.scrollY > 8;
+    const onScroll = () => {
+      const nextScrolled = window.scrollY > 8;
+      if (nextScrolled !== lastScrolled) {
+        lastScrolled = nextScrolled;
+        setIsScrolled(nextScrolled);
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -402,15 +409,14 @@ export const Header: React.FC = () => {
       {/* ── Desktop Navigation Bar ── */}
       <div className="hidden lg:flex items-center justify-between px-8 xl:px-12 h-16">
         {/* LEFT: Logo */}
-        <Link
-          to="/"
+        <div
           className="shrink-0 flex items-center cursor-pointer"
           onMouseEnter={() => handleNavMouseEnter(undefined)}
           onClick={handleScrollToTop}
           title="Go to Top / Home"
         >
-          <BrandLogo size="md" theme="light" />
-        </Link>
+          <BrandLogo size="md" theme="light" href="/" />
+        </div>
 
         {/* RIGHT: Nav links + Apple-Style Dropdown + CTA */}
         <div className="flex items-center gap-1">
@@ -478,13 +484,13 @@ export const Header: React.FC = () => {
           </Button>
 
           {/* Right Edge: Vertical Divider */}
-          <div className="h-5 w-px bg-neutral-200/90 mx-1 xl:mx-2 shrink-0" />
+          <div className="hidden xl:block h-5 w-px bg-neutral-200/90 mx-1 xl:mx-2 shrink-0" />
 
           {/* Right Edge: Official Phone Number */}
           <a
             href={`tel:${REAL_RESULT_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
             onMouseEnter={() => handleNavMouseEnter(undefined)}
-            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[12.5px] xl:text-[13px] font-semibold text-neutral-800 hover:text-[#0071e3] hover:bg-black/[0.04] transition-colors shrink-0 tracking-tight"
+            className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[12.5px] xl:text-[13px] font-semibold text-neutral-800 hover:text-[#0071e3] hover:bg-black/[0.04] transition-colors shrink-0 tracking-tight"
             title={`Call Real Result: ${REAL_RESULT_CONFIG.contact.phone}`}
           >
             <Phone className="w-3.5 h-3.5 text-[#0071e3] shrink-0" />
@@ -492,7 +498,7 @@ export const Header: React.FC = () => {
           </a>
 
           {/* Right Edge: LinkedIn & Instagram Icons */}
-          <div className="flex items-center gap-0.5 shrink-0" onMouseEnter={() => handleNavMouseEnter(undefined)}>
+          <div className="hidden xl:flex items-center gap-0.5 shrink-0" onMouseEnter={() => handleNavMouseEnter(undefined)}>
             <a
               href="https://www.linkedin.com/company/realresultmarketing"
               target="_blank"
@@ -596,13 +602,13 @@ export const Header: React.FC = () => {
 
       {/* ── Mobile Navigation Bar ── */}
       <div className="lg:hidden flex items-center justify-between px-5 h-14">
-        <Link to="/" onClick={handleScrollToTop} className="cursor-pointer" title="Go to Top / Home">
-          <BrandLogo size="sm" theme="light" />
-        </Link>
+        <div onClick={handleScrollToTop} className="cursor-pointer" title="Go to Top / Home">
+          <BrandLogo size="sm" theme="light" href="/" />
+        </div>
         <div className="flex items-center gap-1">
           <a
             href={`tel:${REAL_RESULT_CONFIG.contact.phone.replace(/[^0-9+]/g, "")}`}
-            className="p-2 rounded-xl transition-colors cursor-pointer text-neutral-700 hover:text-[#0071e3] hover:bg-black/[0.06]"
+            className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center p-2.5 rounded-xl transition-colors cursor-pointer text-neutral-700 hover:text-[#0071e3] hover:bg-black/[0.06]"
             aria-label="Call Real Result"
             title={`Call ${REAL_RESULT_CONFIG.contact.phone}`}
           >
@@ -610,7 +616,7 @@ export const Header: React.FC = () => {
           </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="p-2 rounded-xl cursor-pointer transition-colors"
+            className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center p-2.5 rounded-xl cursor-pointer transition-colors"
             style={{ background: mobileOpen ? "rgba(0,0,0,0.06)" : "transparent" }}
             aria-label="Toggle menu"
           >

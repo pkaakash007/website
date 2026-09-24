@@ -736,7 +736,7 @@ export const PortfolioShowcase: React.FC = () => {
           }}>
             Our Live Work Portfolio
           </h2>
-          <p style={{ fontSize: "15px", color: "rgba(60,60,67,0.70)", maxWidth: "560px", margin: "0 auto", lineHeight: 1.6 }}>
+          <p style={{ fontSize: "15px", color: "#475569", maxWidth: "560px", margin: "0 auto", lineHeight: 1.6 }}>
             Explore actual websites, dynamic applications, and enterprise systems we engineered for businesses across Tamil Nadu.
           </p>
         </div>
@@ -753,7 +753,7 @@ export const PortfolioShowcase: React.FC = () => {
                   className="flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer select-none"
                   style={{
                     background: isActive ? "#000000" : "transparent",
-                    color: isActive ? "#FFFFFF" : "rgba(60,60,67,0.70)",
+                    color: isActive ? "#FFFFFF" : "#333336",
                     boxShadow: isActive ? "0 2px 10px rgba(0,0,0,0.18)" : "none",
                   }}
                 >
@@ -777,7 +777,7 @@ export const PortfolioShowcase: React.FC = () => {
                   className="px-4 py-2 rounded-full text-xs sm:text-[13px] font-semibold transition-all duration-200 cursor-pointer select-none"
                   style={{
                     background: isActive ? "#FFFFFF" : "transparent",
-                    color: isActive ? "#000000" : "rgba(60,60,67,0.65)",
+                    color: isActive ? "#000000" : "#333336",
                     boxShadow: isActive ? "0 2px 8px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)" : "none",
                   }}
                 >
@@ -841,13 +841,16 @@ export const PortfolioShowcase: React.FC = () => {
                       <img
                         src={getWebsitePreviewImage(site)}
                         alt={site.client}
+                        width={400}
+                        height={250}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
+                        decoding="async"
                         onError={(e) => {
                           const target = e.currentTarget;
                           if (!target.dataset.fallback) {
                             target.dataset.fallback = "true";
-                            target.src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80";
+                            target.src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=75";
                           }
                         }}
                       />
@@ -856,9 +859,9 @@ export const PortfolioShowcase: React.FC = () => {
 
                       {/* Mini Website Hero Banner & Stats Overlay */}
                       <div className="absolute bottom-2.5 inset-x-3 text-white pointer-events-none z-10">
-                        <h4 className="text-[12.5px] font-bold leading-snug line-clamp-1 text-white drop-shadow-sm mb-1">
+                        <p className="text-[12.5px] font-bold leading-snug line-clamp-1 text-white drop-shadow-sm mb-1">
                           {site.tagline}
-                        </h4>
+                        </p>
                         <div className="flex items-center gap-1.5">
                           {site.stats.map((s, sIdx) => (
                             <span key={sIdx} className="inline-flex items-center gap-1 bg-black/50 backdrop-blur-sm rounded px-1.5 py-0.5 text-[9px] text-white/90 border border-white/10">
@@ -915,13 +918,16 @@ export const PortfolioShowcase: React.FC = () => {
                   <img
                     src={item.image}
                     alt={item.client}
+                    width={400}
+                    height={250}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       const target = e.currentTarget;
                       if (!target.dataset.fallback) {
                         target.dataset.fallback = "true";
-                        target.src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80";
+                        target.src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=75";
                       }
                     }}
                   />

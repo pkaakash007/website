@@ -199,7 +199,7 @@ export const HomeBrandImpactCaseStudies: React.FC = () => {
                   className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full transition-colors ${
                     isSelected
                       ? "bg-neutral-100 text-neutral-800 border border-neutral-200"
-                      : "bg-neutral-200/60 text-neutral-500"
+                      : "bg-neutral-200/60 text-neutral-700"
                   }`}
                 >
                   {item.era}
@@ -224,16 +224,21 @@ export const HomeBrandImpactCaseStudies: React.FC = () => {
               >
                 {/* Left: Clean Brand Visual with iOS Glass Badge */}
                 <div className="lg:col-span-5 relative min-h-[240px] sm:min-h-[300px] lg:min-h-[460px] bg-neutral-900 overflow-hidden">
-                  <img
-                    src={story.image}
-                    alt={story.brand}
-                    className="w-full h-full object-cover absolute inset-0 transition-transform duration-500 hover:scale-105"
-                    loading="eager"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src =
-                        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80";
-                    }}
-                  />
+                  {isVisible && (
+                    <img
+                      src={story.image}
+                      alt={story.brand}
+                      width={600}
+                      height={460}
+                      className="w-full h-full object-cover absolute inset-0 transition-transform duration-500 hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src =
+                          "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=720&q=75";
+                      }}
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
 
                   {/* Brand Heading Overlay */}
@@ -259,19 +264,19 @@ export const HomeBrandImpactCaseStudies: React.FC = () => {
                     {/* iOS Widget-Style Before & After Cards */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-1">
                       <div className="p-4 rounded-2xl bg-neutral-50/90 backdrop-blur-sm border border-neutral-200/80 shadow-2xs">
-                        <span className="text-[11px] font-semibold text-neutral-400 uppercase tracking-wider block">
+                        <span className="text-[11px] font-semibold text-neutral-600 uppercase tracking-wider block">
                           Before
                         </span>
-                        <div className="text-2xl sm:text-3xl font-bold text-neutral-700 mt-0.5">
+                        <div className="text-2xl sm:text-3xl font-bold text-neutral-800 mt-0.5">
                           {story.before.stat}
                         </div>
-                        <p className="text-xs text-neutral-500 mt-0.5 font-normal">
+                        <p className="text-xs text-neutral-600 mt-0.5 font-normal">
                           {story.before.text}
                         </p>
                       </div>
 
                       <div className="p-4 rounded-2xl bg-gradient-to-br from-amber-50/80 to-emerald-50/50 backdrop-blur-sm border border-amber-200/90 shadow-2xs">
-                        <span className="text-[11px] font-semibold text-[#C5A059] uppercase tracking-wider block">
+                        <span className="text-[11px] font-semibold text-[#8E6D2E] uppercase tracking-wider block">
                           After Marketing
                         </span>
                         <div className="text-2xl sm:text-3xl font-bold text-neutral-950 mt-0.5">
@@ -287,7 +292,7 @@ export const HomeBrandImpactCaseStudies: React.FC = () => {
                   {/* Lesson + Apple-Style Action Button */}
                   <div className="pt-4 sm:pt-5 border-t border-neutral-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
                     <div className="max-w-md">
-                      <span className="text-[11px] font-semibold text-neutral-400 uppercase tracking-wider block">
+                      <span className="text-[11px] font-semibold text-neutral-600 uppercase tracking-wider block">
                         Key Takeaway
                       </span>
                       <p className="text-xs sm:text-sm text-neutral-800 font-medium mt-0.5 leading-snug">

@@ -28,12 +28,15 @@ export const MarketingPillarCard: React.FC = () => {
           </div>
         </div>
 
-        {/* Image — no rounded frame, slight inset */}
-        <div className="overflow-hidden rounded-xl">
+        <div className="overflow-hidden rounded-xl aspect-[16/10]">
           <img
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=75"
             alt="Digital Marketing Growth"
-            className="w-full h-56 sm:h-64 object-cover image-warm-filter transition-transform duration-500 group-hover:scale-[1.02]"
+            width={600}
+            height={375}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover image-warm-filter transition-transform duration-500 group-hover:scale-[1.02]"
           />
         </div>
 
@@ -50,7 +53,7 @@ export const MarketingPillarCard: React.FC = () => {
             "Google Maps Local Pack",
           ].map((f) => (
             <div key={f} className="flex items-center gap-2 text-[13px] font-medium text-[rgba(15,15,14,0.65)]">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#c5a059] shrink-0" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#8e6d2e] shrink-0" />
               <span>{f}</span>
             </div>
           ))}

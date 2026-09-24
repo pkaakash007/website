@@ -75,7 +75,7 @@ const AD_PLATFORMS: AdPlatformSample[] = [
     headline: "Reach local buyers scrolling Instagram",
     description:
       "We create eye-catching photo and Reels video ads that bring you direct customer messages and sales inquiries.",
-    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=75",
     deliverables: [
       "Photo & Reels video ads made for your brand",
       "Direct Click-to-WhatsApp button for instant chats",
@@ -91,7 +91,7 @@ const AD_PLATFORMS: AdPlatformSample[] = [
     headline: "Show video commercials on YouTube",
     description:
       "Get your brand video in front of customers watching YouTube on mobile phones and Smart TVs in your area.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=75",
     deliverables: [
       "High-quality 15-second commercial video ads",
       "Direct booking and call button right on the screen",
@@ -107,7 +107,7 @@ const AD_PLATFORMS: AdPlatformSample[] = [
     headline: "Be #1 when customers search on Google",
     description:
       "Show up right at the very top when people in your city search for your exact products or services.",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=75",
     deliverables: [
       "Top #1 placement on Google Search results",
       "Direct Click-to-Call button for instant phone calls",
@@ -123,7 +123,7 @@ const AD_PLATFORMS: AdPlatformSample[] = [
     headline: "Get direct inquiries on your WhatsApp",
     description:
       "Skip long website forms. Connect interested customers straight to your team's WhatsApp with one tap.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=75",
     deliverables: [
       "1-click WhatsApp message button on every ad",
       "Instant customer conversations and fast bookings",
@@ -139,7 +139,7 @@ const AD_PLATFORMS: AdPlatformSample[] = [
     headline: "Reach business owners and decision makers",
     description:
       "Put your business proposals directly in front of company directors, managers, and factory owners.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=75",
     deliverables: [
       "Target by exact job title, industry & company size",
       "Sponsored product demos and case studies",
@@ -155,7 +155,7 @@ const AD_PLATFORMS: AdPlatformSample[] = [
     headline: "Sell more products on Amazon",
     description:
       "Show your products right at the top of Amazon search when buyers are ready to order with 1-click.",
-    image: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=600&q=75",
     deliverables: [
       "Top-of-search Amazon Sponsored Product placement",
       "Prime Video commercials and brand store design",
@@ -171,7 +171,7 @@ const AD_PLATFORMS: AdPlatformSample[] = [
     headline: "Advertise during live cricket & movies",
     description:
       "Show your video ads to millions of viewers watching live sports matches and blockbuster OTT shows.",
-    image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=600&q=75",
     deliverables: [
       "Video commercials during live cricket match overs",
       "Big-screen Smart TV & mobile video distribution",
@@ -187,7 +187,7 @@ const AD_PLATFORMS: AdPlatformSample[] = [
     headline: "Reach listeners with audio commercials",
     description:
       "Speak directly to customers while they commute, workout, or listen to their favorite music and podcasts.",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=75",
     deliverables: [
       "30-second clear voice audio commercial spots",
       "Clickable promo cards with discount codes",
@@ -280,7 +280,7 @@ export const MediaVisualStrip: React.FC = () => {
                                 <span className="text-xs font-bold text-neutral-900 block leading-tight">
                                   mangataandgallo
                                 </span>
-                                <span className="text-[10px] text-neutral-400 font-normal">Sponsored</span>
+                                <span className="text-[10px] text-neutral-600 font-normal">Sponsored</span>
                               </div>
                             </div>
                             <MoreHorizontal className="w-4 h-4 text-neutral-500" />
@@ -291,16 +291,20 @@ export const MediaVisualStrip: React.FC = () => {
                             <img
                               src={current.image}
                               alt="Instagram Real Ad"
+                              width={320}
+                              height={250}
                               className="w-full h-full object-cover"
+                              loading="lazy"
+                              decoding="async"
                             />
                           </div>
 
                           {/* Action CTA Bar */}
                           <div className="px-3.5 py-2 bg-[#FAFAFA] border-y border-neutral-100 flex items-center justify-between shrink-0">
-                            <span className="text-xs font-bold text-[#0095F6]">
+                            <span className="text-xs font-bold text-[#0066cc]">
                               Learn More
                             </span>
-                            <span className="text-[10px] text-neutral-400">mangataandgallo.com</span>
+                            <span className="text-[10px] text-neutral-600">mangataandgallo.com</span>
                           </div>
 
                           {/* Engagement Bar & Caption */}
@@ -355,7 +359,11 @@ export const MediaVisualStrip: React.FC = () => {
                             <img
                               src={current.image}
                               alt="YouTube Video Ad"
+                              width={320}
+                              height={175}
                               className="w-full h-full object-cover"
+                              loading="lazy"
+                              decoding="async"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
 
@@ -398,9 +406,9 @@ export const MediaVisualStrip: React.FC = () => {
 
                           {/* Video Details */}
                           <div className="px-3 py-1.5 space-y-1.5">
-                            <h4 className="text-[11px] font-bold text-neutral-900 leading-snug line-clamp-1">
+                            <p className="text-[11px] font-bold text-neutral-900 leading-snug line-clamp-1">
                               Painless Dental Implants & Laser Surgery — Aura Clinic
-                            </h4>
+                            </p>
                             <div className="flex items-center gap-2 text-[9px] text-neutral-500">
                               <span>180K views</span>
                               <span>•</span>
@@ -539,9 +547,9 @@ export const MediaVisualStrip: React.FC = () => {
                                 <MoreHorizontal className="w-3 h-3 text-neutral-400" />
                               </div>
 
-                              <h4 className="text-[11px] font-bold text-[#1A0DAB] leading-tight hover:underline cursor-pointer">
+                              <p className="text-[11px] font-bold text-[#1A0DAB] leading-tight hover:underline cursor-pointer">
                                 Royal Villas & Gated Communities — Free Site Visit Today
-                              </h4>
+                              </p>
 
                               <div className="flex items-center gap-1 text-[8px] text-neutral-600">
                                 <span className="text-amber-500 font-bold">★ 4.9</span>
@@ -576,9 +584,9 @@ export const MediaVisualStrip: React.FC = () => {
                                 <span className="text-neutral-400">·</span>
                                 <span className="text-neutral-500 truncate">https://www.greenacrehomes.com</span>
                               </div>
-                              <h4 className="text-[10px] font-bold text-[#1A0DAB] leading-tight">
+                              <p className="text-[10px] font-bold text-[#1A0DAB] leading-tight">
                                 GreenAcre Premium 3 & 4 BHK Independent Villas
-                              </h4>
+                              </p>
                               <p className="text-[9px] text-neutral-600 line-clamp-1">
                                 Prime location with 30+ amenities, swimming pool & gym. Ready to occupy.
                               </p>
@@ -592,9 +600,9 @@ export const MediaVisualStrip: React.FC = () => {
                             {/* Organic Result 3 */}
                             <div className="p-2 rounded-xl bg-white border border-neutral-200/90 shadow-2xs space-y-0.5">
                               <span className="text-[8px] text-neutral-500 truncate block">https://www.magicbricks.com › coimbatore</span>
-                              <h5 className="text-[10px] font-semibold text-neutral-900 line-clamp-1">
+                              <p className="text-[10px] font-semibold text-neutral-900 line-clamp-1">
                                 Top 10 Luxury Gated Community Villas in Coimbatore
-                              </h5>
+                              </p>
                               <p className="text-[8px] text-neutral-500 line-clamp-1">Explore 500+ verified luxury villas with price trends.</p>
                             </div>
                           </div>
@@ -660,7 +668,11 @@ export const MediaVisualStrip: React.FC = () => {
                             <img
                               src={current.image}
                               alt="Facebook Real Ad"
+                              width={320}
+                              height={175}
                               className="w-full h-full object-cover"
+                              loading="lazy"
+                              decoding="async"
                             />
                           </div>
 
@@ -753,7 +765,11 @@ export const MediaVisualStrip: React.FC = () => {
                             <img
                               src={current.image}
                               alt="LinkedIn Real Ad"
+                              width={320}
+                              height={175}
                               className="w-full h-full object-cover"
+                              loading="lazy"
+                              decoding="async"
                             />
                           </div>
 
@@ -844,15 +860,19 @@ export const MediaVisualStrip: React.FC = () => {
                               <img
                                 src={current.image}
                                 alt="Amazon Sponsored Product"
+                                width={320}
+                                height={150}
                                 className="w-full h-full object-cover"
+                                loading="lazy"
+                                decoding="async"
                               />
                             </div>
 
                             {/* Product Info & Pricing */}
                             <div>
-                              <h4 className="text-[10px] font-semibold text-neutral-900 line-clamp-2 leading-tight">
+                              <p className="text-[10px] font-semibold text-neutral-900 line-clamp-2 leading-tight">
                                 Kaveri Pure Cold-Pressed Virgin Coconut Oil (1 Litre) — 100% Raw & Organic
-                              </h4>
+                              </p>
                               <div className="flex items-center gap-1 text-[8px] text-amber-500 font-bold mt-0.5">
                                 <span>★★★★★ 4.8</span>
                                 <span className="text-neutral-500 font-normal">(2,410) • 5K+ bought</span>
@@ -917,7 +937,11 @@ export const MediaVisualStrip: React.FC = () => {
                             <img
                               src={current.image}
                               alt="Hotstar OTT Live Video Ad"
+                              width={320}
+                              height={180}
                               className="w-full h-full object-cover"
+                              loading="lazy"
+                              decoding="async"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/40" />
 
@@ -1009,7 +1033,11 @@ export const MediaVisualStrip: React.FC = () => {
                               <img
                                 src={current.image}
                                 alt="Spotify Audio Ad Companion"
+                                width={265}
+                                height={155}
                                 className="w-full h-full object-cover"
+                                loading="lazy"
+                                decoding="async"
                               />
                             </div>
                           </div>
@@ -1018,7 +1046,7 @@ export const MediaVisualStrip: React.FC = () => {
                           <div className="px-5 py-1 space-y-1">
                             <div className="flex items-center justify-between">
                               <div>
-                                <h4 className="text-xs font-bold text-white">Feel the Speed — UrbanKicks Pro</h4>
+                                <p className="text-xs font-bold text-white">Feel the Speed — UrbanKicks Pro</p>
                                 <span className="text-[9px] text-[#1DB954] font-semibold block">
                                   Sponsored by UrbanKicks
                                 </span>

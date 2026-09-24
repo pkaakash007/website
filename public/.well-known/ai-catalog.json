@@ -1,0 +1,47 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Real Result Marketing & Technology Solutions",
+    "identifier": "did:web:realresult.in",
+    "documentationUrl": "https://realresult.in/api/docs",
+    "logoUrl": "https://realresult.in/brand/realresult-logo.jpeg"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:realresult.in:a2a:real-result-agent",
+      "displayName": "Real Result AI Agent",
+      "type": "application/a2a-agent-card+json",
+      "url": "https://realresult.in/.well-known/agent-card.json",
+      "description": "Agent discovery card for Real Result marketing, GEO, technical SEO and custom software capabilities.",
+      "capabilities": [
+        "digital-marketing",
+        "generative-engine-optimization",
+        "technical-seo",
+        "custom-software"
+      ],
+      "representativeQueries": [
+        "Find Real Result digital marketing and GEO services",
+        "Find Real Result custom software and application development capabilities"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "identifier": "urn:air:realresult.in:mcp:real-result-server",
+      "displayName": "Real Result MCP Server",
+      "type": "application/mcp-server-card+json",
+      "url": "https://realresult.in/.well-known/mcp/server-card.json",
+      "description": "Machine-readable MCP server discovery information for Real Result.",
+      "capabilities": [
+        "service-discovery",
+        "technical-seo",
+        "geo",
+        "software-development"
+      ],
+      "representativeQueries": [
+        "Find Real Result MCP tools for SEO and GEO",
+        "Find Real Result MCP resources for software development"
+      ],
+      "version": "1.0.0"
+    }
+  ]
+}

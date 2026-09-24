@@ -289,39 +289,41 @@ export const REALRESULT_WEBMCP_TOOLS: WebMcpTool[] = [
 let globalAbortController: AbortController | null = null;
 
 /**
- * Registers all WebMCP tools on navigator.modelContext with AbortController signal
+ * Registers all WebMCP tools on document/navigator.modelContext with AbortController signal
  */
 export function registerWebMcpTools(): boolean {
-  if (typeof navigator === "undefined") return false;
+  if (typeof window === "undefined") return false;
 
-  const nav = navigator as any;
-  if (!nav.modelContext) {
+  const modelContext =
+    (typeof document !== "undefined" && (document as any).modelContext) ||
+    (typeof navigator !== "undefined" && (navigator as any).modelContext);
+
+  if (!modelContext) {
     return false;
   }
 
-  // Abort previous registrations if any
+  const win = window as any;
+  win.__registered_webmcp_tools = win.__registered_webmcp_tools || new Set();
+
+  // If already registered and controller is active, this is idempotent
+  if (globalAbortController && !globalAbortController.signal.aborted && win.__registered_webmcp_tools.size > 0) {
+    return true;
+  }
+
+  // Abort previous registrations and reset internal set
   if (globalAbortController) {
     globalAbortController.abort();
   }
+  win.__registered_webmcp_tools.clear();
 
   globalAbortController = new AbortController();
   const { signal } = globalAbortController;
-
-  const mc = nav.modelContext;
-
-  const win = typeof window !== "undefined" ? (window as any) : null;
-  if (win) {
-    win.__registered_webmcp_tools = win.__registered_webmcp_tools || new Set();
-  }
+  win.__webmcp_abort_controller = globalAbortController;
 
   for (const tool of REALRESULT_WEBMCP_TOOLS) {
-    if (win && win.__registered_webmcp_tools.has(tool.name)) {
-      continue;
-    }
-
     try {
-      if (typeof mc.registerTool === "function") {
-        mc.registerTool(
+      if (typeof modelContext.registerTool === "function") {
+        modelContext.registerTool(
           {
             name: tool.name,
             title: tool.title || tool.name,
@@ -332,10 +334,10 @@ export function registerWebMcpTools(): boolean {
           },
           { signal }
         );
-        if (win) win.__registered_webmcp_tools.add(tool.name);
-      } else if (typeof mc.provideContext === "function") {
+        win.__registered_webmcp_tools.add(tool.name);
+      } else if (typeof modelContext.provideContext === "function") {
         // Fallback for earlier draft implementations
-        mc.provideContext({
+        modelContext.provideContext({
           tools: [
             {
               name: tool.name,
@@ -345,27 +347,37 @@ export function registerWebMcpTools(): boolean {
             },
           ],
         });
-        if (win) win.__registered_webmcp_tools.add(tool.name);
+        win.__registered_webmcp_tools.add(tool.name);
       }
     } catch (err) {
       console.warn(`[WebMCP] Failed to register tool ${tool.name}:`, err);
     }
   }
 
-  // Store controller on window for debugging & inspection
-  if (typeof window !== "undefined") {
-    (window as any).__webmcp_abort_controller = globalAbortController;
-  }
-
   return true;
 }
 
-/**
- * Unregisters all WebMCP tools by aborting the signal
- */
 export function unregisterWebMcpTools(): void {
   if (globalAbortController) {
     globalAbortController.abort();
     globalAbortController = null;
   }
+  const win = typeof window !== "undefined" ? (window as any) : null;
+  if (win && win.__registered_webmcp_tools) {
+    win.__registered_webmcp_tools.clear();
+  }
 }
+
+if (typeof window !== "undefined") {
+  const win = window as any;
+  win.__registerWebMcpTools = registerWebMcpTools;
+  win.__unregisterWebMcpTools = unregisterWebMcpTools;
+  win.__REALRESULT_WEBMCP_TOOLS = REALRESULT_WEBMCP_TOOLS;
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+      registerWebMcpTools();
+    });
+  }
+}
+

@@ -3,9 +3,10 @@ import { openLeadModal } from "@/components/common/LeadModal";
 import { ArrowRight } from "lucide-react";
 
 const TypewriterText: React.FC = () => {
-  const [displayText, setDisplayText] = useState("");
+  const [displayText, setDisplayText] = useState("Get Real Results.");
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isStarted, setIsStarted] = useState(false);
 
   const words = [
     "Get Real Results.",
@@ -15,6 +16,31 @@ const TypewriterText: React.FC = () => {
   ];
 
   useEffect(() => {
+    // Respect prefers-reduced-motion
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    // Delay start until after first paint and idle settle
+    let idleId: number | NodeJS.Timeout;
+    const startTimeout = setTimeout(() => {
+      if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+        idleId = (window as any).requestIdleCallback(() => setIsStarted(true), { timeout: 3000 });
+      } else {
+        setIsStarted(true);
+      }
+    }, 2500);
+
+    return () => {
+      clearTimeout(startTimeout);
+      if (typeof window !== "undefined" && "cancelIdleCallback" in window && typeof idleId === "number") {
+        (window as any).cancelIdleCallback(idleId);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isStarted) return;
     const currentWord = words[wordIndex];
     let timer: NodeJS.Timeout;
 
@@ -40,10 +66,10 @@ const TypewriterText: React.FC = () => {
     }
 
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting, wordIndex]);
+  }, [displayText, isDeleting, wordIndex, isStarted]);
 
   return (
-    <span className="inline-flex items-center min-h-[1.15em]">
+    <span className="inline-block min-h-[1.2em] min-w-[12ch]">
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#A67C1E]">
         {displayText}
       </span>
@@ -130,7 +156,7 @@ export const HomeHero: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => openLeadModal("home-hero-white-gold")}
-                  className="group cursor-pointer inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#BE934E] hover:bg-[#b08642] text-white font-bold text-sm sm:text-base shadow-[0_12px_26px_-6px_rgba(190,147,78,0.45)] hover:shadow-[0_16px_32px_-6px_rgba(190,147,78,0.55)] transition-all duration-200 active:scale-[0.98]"
+                  className="group cursor-pointer inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#876326] hover:bg-[#785820] text-white font-bold text-sm sm:text-base shadow-[0_12px_26px_-6px_rgba(135,99,38,0.45)] hover:shadow-[0_16px_32px_-6px_rgba(135,99,38,0.55)] transition-all duration-200 active:scale-[0.98]"
                 >
                   <span>Start Your Project</span>
                   <ArrowRight className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white transition-transform duration-200 group-hover:translate-x-1" />
@@ -156,11 +182,36 @@ export const HomeHero: React.FC = () => {
                 }}
               />
               <div className="relative z-10 w-full max-w-[640px] transition-transform duration-500 hover:scale-102">
-                <img
-                  src="/images/hero-3d-rocket-transparent.png?v=pure3d"
-                  alt="3D Space Rocket Launching from Laptop with Gold Coins and Analytics Charts"
-                  className="w-full h-auto object-contain pointer-events-none filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.06)]"
-                />
+                <picture>
+                  <source
+                    type="image/avif"
+                    srcSet="
+                      /images/hero/hero-rocket-480.avif 480w,
+                      /images/hero/hero-rocket-768.avif 768w,
+                      /images/hero/hero-rocket-1200.avif 1200w
+                    "
+                    sizes="(max-width: 1023px) 100vw, 58vw"
+                  />
+                  <source
+                    type="image/webp"
+                    srcSet="
+                      /images/hero/hero-rocket-480.webp 480w,
+                      /images/hero/hero-rocket-768.webp 768w,
+                      /images/hero/hero-rocket-1200.webp 1200w
+                    "
+                    sizes="(max-width: 1023px) 100vw, 58vw"
+                  />
+                  <img
+                    src="/images/hero/hero-rocket-1200.webp"
+                    width={1200}
+                    height={896}
+                    alt="3D Space Rocket Launching from Laptop with Gold Coins and Analytics Charts"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="w-full h-auto object-contain pointer-events-none filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.06)]"
+                  />
+                </picture>
               </div>
             </div>
 

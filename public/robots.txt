@@ -48,3 +48,7 @@ Allow: /
 
 # Canonical XML Sitemap
 Sitemap: https://realresult.in/sitemap.xml
+
+# Agent Resource Discovery (ARD) - Declared via HTML <link rel="ard"> & Link headers
+# Agentmap: https://realresult.in/.well-known/ard.json
+# Agentmap: https://realresult.in/.well-known/ai-catalog.json

@@ -1,20 +1,21 @@
-import React from "react";
+import React, { lazy } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { RootLayout } from "@/layouts/RootLayout";
 
-// The Core Pages
 import HomePage from "@/pages/HomePage";
-import ServicesPage from "@/pages/ServicesPage";
-import ServiceDetailPage from "@/pages/services/ServiceDetailPage";
-import DigitalMarketingHubPage from "@/pages/digital-marketing/DigitalMarketingHubPage";
-import ApplicationDevelopmentPage from "@/pages/ApplicationDevelopmentPage";
-import AboutPage from "@/pages/AboutPage";
-import ContactPage from "@/pages/ContactPage";
-import IndustriesPage from "@/pages/IndustriesPage";
-import HealthcareIndustryPage from "@/pages/industries/HealthcareIndustryPage";
-import IndustryDetailPage from "@/pages/industries/IndustryDetailPage";
-import PortfolioPage from "@/pages/PortfolioPage";
-import NotFoundPage from "@/pages/NotFoundPage";
+
+// Route-level code split pages for secondary routes
+const ServicesPage = lazy(() => import("@/pages/ServicesPage"));
+const ServiceDetailPage = lazy(() => import("@/pages/services/ServiceDetailPage"));
+const DigitalMarketingHubPage = lazy(() => import("@/pages/digital-marketing/DigitalMarketingHubPage"));
+const ApplicationDevelopmentPage = lazy(() => import("@/pages/ApplicationDevelopmentPage"));
+const AboutPage = lazy(() => import("@/pages/AboutPage"));
+const ContactPage = lazy(() => import("@/pages/ContactPage"));
+const IndustriesPage = lazy(() => import("@/pages/IndustriesPage"));
+const HealthcareIndustryPage = lazy(() => import("@/pages/industries/HealthcareIndustryPage"));
+const IndustryDetailPage = lazy(() => import("@/pages/industries/IndustryDetailPage"));
+const PortfolioPage = lazy(() => import("@/pages/PortfolioPage"));
+const NotFoundPage = lazy(() => import("@/pages/NotFoundPage"));
 
 export const router = createBrowserRouter([
   {

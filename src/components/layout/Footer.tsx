@@ -101,10 +101,10 @@ export const Footer: React.FC = () => {
 
           {/* Middle Narrative (separated by clean vertical divider line) */}
           <div className="lg:col-span-6 lg:border-l lg:border-[#EAEAEA] lg:pl-10 space-y-1.5">
-            <span className="text-[11px] font-semibold tracking-[0.25em] text-[#B88746] uppercase block font-sans">
+            <span className="text-[11px] font-semibold tracking-[0.25em] text-[#8E6D2E] uppercase block font-sans">
               STRATEGY &nbsp;·&nbsp; TECHNOLOGY &nbsp;·&nbsp; GROWTH
             </span>
-            <h2 className="text-2xl sm:text-[28px] lg:text-[31px] font-['Playfair_Display',Georgia,serif] font-normal text-[#111827] tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-[28px] lg:text-[31px] font-serif font-normal text-[#111827] tracking-tight leading-tight">
               Helping brands grow with purpose.
             </h2>
             <p className="text-xs sm:text-[13.5px] text-[#6B7280] font-normal leading-normal">
@@ -255,43 +255,43 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
-            {/* Social Media Circular Buttons */}
+            {/* Social Media Circular Buttons (min 44px touch target) */}
             <div className="pt-4 flex items-center gap-2.5">
               <a
                 href="https://www.linkedin.com/company/realresult"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-8 h-8 rounded-full bg-[#EDEDED] hover:bg-[#E2E2E2] text-[#111111] flex items-center justify-center transition-colors cursor-pointer"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-[#EDEDED] hover:bg-[#E2E2E2] text-[#111111] flex items-center justify-center transition-colors cursor-pointer"
               >
-                <LinkedInIcon className="w-3.5 h-3.5" />
+                <LinkedInIcon className="w-4 h-4" />
               </a>
               <a
                 href="https://www.instagram.com/realresultmarketing"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-8 h-8 rounded-full bg-[#EDEDED] hover:bg-[#E2E2E2] text-[#111111] flex items-center justify-center transition-colors cursor-pointer"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-[#EDEDED] hover:bg-[#E2E2E2] text-[#111111] flex items-center justify-center transition-colors cursor-pointer"
               >
-                <InstagramIcon className="w-3.5 h-3.5" />
+                <InstagramIcon className="w-4 h-4" />
               </a>
               <a
                 href="https://www.youtube.com/@realresult"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="w-8 h-8 rounded-full bg-[#EDEDED] hover:bg-[#E2E2E2] text-[#111111] flex items-center justify-center transition-colors cursor-pointer"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-[#EDEDED] hover:bg-[#E2E2E2] text-[#111111] flex items-center justify-center transition-colors cursor-pointer"
               >
-                <YoutubeIcon className="w-3.5 h-3.5" />
+                <YoutubeIcon className="w-4 h-4" />
               </a>
               <a
                 href="https://www.facebook.com/realresult"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="w-8 h-8 rounded-full bg-[#EDEDED] hover:bg-[#E2E2E2] text-[#111111] flex items-center justify-center transition-colors cursor-pointer"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-[#EDEDED] hover:bg-[#E2E2E2] text-[#111111] flex items-center justify-center transition-colors cursor-pointer"
               >
-                <FacebookIcon className="w-3.5 h-3.5" />
+                <FacebookIcon className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -305,11 +305,11 @@ export const Footer: React.FC = () => {
 
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-3">
-              <Link to="/privacy-policy" className="hover:text-[#111827] transition-colors">
+              <Link to="/privacy-policy" className="hover:text-[#111827] transition-colors py-2 inline-block">
                 Privacy Policy
               </Link>
               <span className="text-[#D1D5DB]">|</span>
-              <Link to="/terms" className="hover:text-[#111827] transition-colors">
+              <Link to="/terms" className="hover:text-[#111827] transition-colors py-2 inline-block">
                 Terms of Service
               </Link>
             </div>
@@ -317,9 +317,9 @@ export const Footer: React.FC = () => {
             <button
               type="button"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="inline-flex items-center gap-2 text-xs text-[#4B5563] hover:text-[#111827] transition-colors cursor-pointer group select-none ml-2"
+              className="min-h-[44px] inline-flex items-center gap-2 py-2 px-1 text-xs text-[#4B5563] hover:text-[#111827] transition-colors cursor-pointer group select-none ml-2"
             >
-              <span className="w-7 h-7 rounded-full border border-[#9CA3AF] group-hover:border-[#111827] flex items-center justify-center transition-colors">
+              <span className="w-8 h-8 rounded-full border border-[#9CA3AF] group-hover:border-[#111827] flex items-center justify-center transition-colors">
                 <ArrowUp className="w-3.5 h-3.5 text-[#4B5563] group-hover:text-[#111827]" />
               </span>
               <span className="text-xs font-normal">Back to Top</span>
