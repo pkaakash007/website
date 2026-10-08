@@ -17,6 +17,18 @@ const IndustryDetailPage = lazy(() => import("@/pages/industries/IndustryDetailP
 const PortfolioPage = lazy(() => import("@/pages/PortfolioPage"));
 const NotFoundPage = lazy(() => import("@/pages/NotFoundPage"));
 
+// Regional Location Hubs & City Pages
+const TamilNaduHubPage = lazy(() => import("@/pages/locations/TamilNaduHubPage"));
+const NamakkalPage = lazy(() => import("@/pages/locations/NamakkalPage"));
+const SalemPage = lazy(() => import("@/pages/locations/SalemPage"));
+const ErodeHQPage = lazy(() => import("@/pages/locations/ErodeHQPage"));
+const CoimbatorePage = lazy(() => import("@/pages/locations/CoimbatorePage"));
+const ChennaiPage = lazy(() => import("@/pages/locations/ChennaiPage"));
+const TiruppurPage = lazy(() => import("@/pages/locations/TiruppurPage"));
+const MaduraiPage = lazy(() => import("@/pages/locations/MaduraiPage"));
+const TrichyPage = lazy(() => import("@/pages/locations/TrichyPage"));
+const TirunelveliPage = lazy(() => import("@/pages/locations/TirunelveliPage"));
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -38,13 +50,9 @@ export const router = createBrowserRouter([
         element: <ServiceDetailPage />,
       },
 
-      // 3. Digital Marketing Page & Aliases
+      // 3. Digital Marketing Hub Page & Aliases
       {
         path: "digital-marketing",
-        element: <DigitalMarketingHubPage />,
-      },
-      {
-        path: "digital-marketing/*",
         element: <DigitalMarketingHubPage />,
       },
       {
@@ -52,7 +60,7 @@ export const router = createBrowserRouter([
         element: <Navigate to="/digital-marketing" replace />,
       },
 
-      // 3. Application Development Page & Aliases
+      // 4. Application Development Page & Aliases
       {
         path: "application-development",
         element: <ApplicationDevelopmentPage />,
@@ -74,19 +82,19 @@ export const router = createBrowserRouter([
         element: <Navigate to="/application-development" replace />,
       },
 
-      // 4. About Page
+      // 5. About Page
       {
         path: "about",
         element: <AboutPage />,
       },
 
-      // 5. Contact Page
+      // 6. Contact Page
       {
         path: "contact",
         element: <ContactPage />,
       },
 
-      // 6. Industries Hub & Vertical Playbooks
+      // 7. Industries Hub & Vertical Playbooks
       {
         path: "industries",
         element: <IndustriesPage />,
@@ -104,7 +112,79 @@ export const router = createBrowserRouter([
         element: <HealthcareIndustryPage />,
       },
 
-      // 7. Our Portfolio Page & Aliases
+      // 8. Regional Location Hubs & Top Ranking Target Pages
+      {
+        path: "locations",
+        element: <Navigate to="/locations/tamil-nadu" replace />,
+      },
+      {
+        path: "locations/tamil-nadu",
+        element: <TamilNaduHubPage />,
+      },
+      {
+        path: "locations/namakkal",
+        element: <NamakkalPage />,
+      },
+      {
+        path: "locations/salem",
+        element: <SalemPage />,
+      },
+      {
+        path: "locations/erode",
+        element: <ErodeHQPage />,
+      },
+      {
+        path: "locations/coimbatore",
+        element: <CoimbatorePage />,
+      },
+      {
+        path: "locations/chennai",
+        element: <ChennaiPage />,
+      },
+      {
+        path: "locations/tiruppur",
+        element: <TiruppurPage />,
+      },
+      {
+        path: "locations/madurai",
+        element: <MaduraiPage />,
+      },
+      {
+        path: "locations/trichy",
+        element: <TrichyPage />,
+      },
+      {
+        path: "locations/tirunelveli",
+        element: <TirunelveliPage />,
+      },
+
+      // Fast location aliases & SEO redirects
+      {
+        path: "namakkal",
+        element: <Navigate to="/locations/namakkal" replace />,
+      },
+      {
+        path: "salem",
+        element: <Navigate to="/locations/salem" replace />,
+      },
+      {
+        path: "erode",
+        element: <Navigate to="/locations/erode" replace />,
+      },
+      {
+        path: "digital-marketing/namakkal",
+        element: <Navigate to="/locations/namakkal" replace />,
+      },
+      {
+        path: "digital-marketing/salem",
+        element: <Navigate to="/locations/salem" replace />,
+      },
+      {
+        path: "digital-marketing/erode",
+        element: <Navigate to="/locations/erode" replace />,
+      },
+
+      // 9. Our Portfolio Page & Aliases
       {
         path: "portfolio",
         element: <PortfolioPage />,
@@ -114,14 +194,10 @@ export const router = createBrowserRouter([
         element: <PortfolioPage />,
       },
 
-      // Redirects for legacy routes back to the major pages
+      // 10. Redirects for legacy routes back to the major pages
       {
         path: "case-studies",
         element: <Navigate to="/portfolio" replace />,
-      },
-      {
-        path: "locations/*",
-        element: <Navigate to="/contact" replace />,
       },
       {
         path: "faq",

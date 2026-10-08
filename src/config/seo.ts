@@ -91,9 +91,9 @@ export const TAMIL_NADU_LOCATIONS: Record<string, LocationMeta> = {
     slug: "erode",
     city: "Erode",
     region: "Kongu Region, Tamil Nadu",
-    title: "Digital Marketing Agency & Software Company in Erode | Real Result HQ",
+    title: "Best Digital Marketing Company in Erode | Top SEO Agency HQ - Real Result",
     description:
-      "Real Result Marketing Headquarters in Erode, Tamil Nadu. Providing top-tier SEO, Google Ads, custom ERP/web development, and AI software for textile, turmeric, and manufacturing enterprises.",
+      "Looking for the best digital marketing company in Erode? Real Result HQ provides #1 Google SEO, Google Ads, local Maps 3-pack ranking & custom software in Erode, TN.",
     industries: ["Textile Processing & Machinery", "Turmeric & Agro-Commodities", "Automotive Ancillaries", "Healthcare & Hospitals"],
     localContext:
       "As our corporate headquarters, our Erode engineering and marketing lab provides direct, on-ground consulting for Kongu region businesses transitioning from traditional channels to high-intent global search and automated enterprise software.",
@@ -143,9 +143,9 @@ export const TAMIL_NADU_LOCATIONS: Record<string, LocationMeta> = {
     slug: "salem",
     city: "Salem",
     region: "Central-Western Tamil Nadu",
-    title: "Digital Marketing Agency & Web Development Company in Salem",
+    title: "Best Digital Marketing Company in Salem | Top SEO & PPC Agency - Real Result",
     description:
-      "Results-driven digital marketing, local SEO, and business software engineering for Salem's steel, sago, textile, and retail enterprises.",
+      "Looking for the best digital marketing company in Salem? Real Result delivers #1 Google SEO rankings, Google Ads, social media & custom web software in Salem, TN.",
     industries: ["Steel & Metallurgical Manufacturing", "Sago & Starch Processing", "Retail & Gold Jewelry", "Silver Artistry"],
     localContext:
       "Serving Salem's industrial corridors with high-intent B2B search visibility, localized Google Maps optimization, and modernized billing/inventory web platforms.",
@@ -195,9 +195,9 @@ export const TAMIL_NADU_LOCATIONS: Record<string, LocationMeta> = {
     slug: "namakkal",
     city: "Namakkal",
     region: "Central Kongu Region, Tamil Nadu",
-    title: "Digital Marketing Agency & Software Company in Namakkal | Real Result",
+    title: "Best Digital Marketing Company in Namakkal | Top SEO & Web Agency - Real Result",
     description:
-      "Results-driven digital marketing agency, local SEO, Google Ads, and custom business software engineering in Namakkal and Paramathi Velur for poultry, transport, agro, and manufacturing sectors.",
+      "Looking for the best digital marketing company in Namakkal? Real Result delivers #1 Google SEO rankings, Google Ads, local Maps 3-pack optimization & custom software in Namakkal & Paramathi Velur.",
     industries: [
       "Poultry & Egg Production Logistics",
       "Commercial Truck Body Building & Fleet Logistics",
