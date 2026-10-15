@@ -21,6 +21,9 @@ export interface DivisionConfig {
   isPrimary: boolean;
 }
 
+import { SOCIAL_LINKS } from "./seo";
+export { SOCIAL_LINKS };
+
 export const REAL_RESULT_CONFIG = {
   brandName: "Real Result",
   shortName: "Real Result",
@@ -62,6 +65,8 @@ export const REAL_RESULT_CONFIG = {
     phone: "+91 98420 12345",
     address: "148/2, Perundurai Road, Near Collectorate, Erode, Tamil Nadu 638011",
   },
+
+  social: SOCIAL_LINKS,
 
   divisions: [
     {

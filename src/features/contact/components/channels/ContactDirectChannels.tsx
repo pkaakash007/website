@@ -1,6 +1,6 @@
 import React from "react";
-import { SEO_CONFIG } from "@/config/seo";
-import { Building2, Phone, Mail, MessageSquare, ArrowUpRight } from "lucide-react";
+import { SEO_CONFIG, SOCIAL_LINKS } from "@/config/seo";
+import { Building2, Phone, Mail, MessageSquare, ArrowUpRight, Share2 } from "lucide-react";
 
 export const ContactDirectChannels: React.FC = () => {
   return (
@@ -138,6 +138,88 @@ export const ContactDirectChannels: React.FC = () => {
           <p className="text-xs text-[#86868B] pl-13">
             Direct executive messaging during IST business hours
           </p>
+        </div>
+
+        {/* 5. Official Social Media Channels */}
+        <div className="bg-white rounded-[20px] p-5 border border-black/[0.07] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_20px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all group">
+          <div className="flex items-start justify-between gap-3 mb-2.5">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-600 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shrink-0">
+                <Share2 className="w-5 h-5 stroke-[2.2]" />
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-[#1D1D1F]">
+                  Official Social Channels
+                </h3>
+                <span className="text-[11px] text-neutral-400">
+                  Verified Business Accounts
+                </span>
+              </div>
+            </div>
+            <span className="text-xs font-medium text-neutral-500">
+              Active Daily
+            </span>
+          </div>
+          <p className="text-xs text-[#86868B] pl-13 mb-3">
+            Follow our daily case studies, ads, client results, and technology announcements.
+          </p>
+          <div className="pl-13 flex flex-wrap items-center gap-2">
+            <a
+              href={SOCIAL_LINKS.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              title="Facebook"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-neutral-100 hover:bg-[#1877F2] hover:text-white text-neutral-700 transition-colors"
+            >
+              <span>Facebook</span>
+              <ArrowUpRight className="w-3 h-3" />
+            </a>
+            <a
+              href={SOCIAL_LINKS.x}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X (Twitter)"
+              title="X"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-neutral-100 hover:bg-black hover:text-white text-neutral-700 transition-colors"
+            >
+              <span>X</span>
+              <ArrowUpRight className="w-3 h-3" />
+            </a>
+            <a
+              href={SOCIAL_LINKS.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-neutral-100 hover:bg-[#0A66C2] hover:text-white text-neutral-700 transition-colors"
+            >
+              <span>LinkedIn</span>
+              <ArrowUpRight className="w-3 h-3" />
+            </a>
+            <a
+              href={SOCIAL_LINKS.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              title="YouTube"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-neutral-100 hover:bg-[#FF0000] hover:text-white text-neutral-700 transition-colors"
+            >
+              <span>YouTube</span>
+              <ArrowUpRight className="w-3 h-3" />
+            </a>
+            <a
+              href={SOCIAL_LINKS.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              title="Instagram"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-neutral-100 hover:bg-[#E4405F] hover:text-white text-neutral-700 transition-colors"
+            >
+              <span>Instagram</span>
+              <ArrowUpRight className="w-3 h-3" />
+            </a>
+          </div>
         </div>
       </div>
     </div>

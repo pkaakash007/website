@@ -24,6 +24,14 @@ export interface SEOConfig {
   businessHours: string;
 }
 
+export const SOCIAL_LINKS = {
+  facebook: "https://www.facebook.com/people/Real-Result-Marketing-Digital-Ads-Expert/61585261640135/",
+  x: "https://x.com/RealResult_in",
+  linkedin: "https://www.linkedin.com/in/real-result-50445a442/",
+  youtube: "https://www.youtube.com/channel/UCicDHwdRdTSOdJSwpFXkuSg",
+  instagram: "https://www.instagram.com/real_result_/",
+};
+
 export const SEO_CONFIG: SEOConfig = {
   siteName: "Real Result Marketing",
   legalName: "Real Result Marketing & Technology Solutions Private Limited",
@@ -47,11 +55,11 @@ export const SEO_CONFIG: SEOConfig = {
     },
   },
   socialProfiles: [
-    "https://www.linkedin.com/company/realresultmarketing",
-    "https://twitter.com/realresultmktg",
-    "https://www.facebook.com/realresultmarketing",
-    "https://www.instagram.com/realresultmarketing",
-    "https://www.youtube.com/@realresultmarketing",
+    SOCIAL_LINKS.facebook,
+    SOCIAL_LINKS.x,
+    SOCIAL_LINKS.linkedin,
+    SOCIAL_LINKS.youtube,
+    SOCIAL_LINKS.instagram,
   ],
   serviceAreas: [
     "Tamil Nadu",

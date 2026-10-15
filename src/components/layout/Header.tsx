@@ -13,6 +13,25 @@ import { BrandLogo } from "@/components/common/BrandLogo";
 import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
 import { getWhatsAppUrl, REAL_RESULT_CONFIG } from "@/config";
+import { SOCIAL_LINKS } from "@/config/seo";
+
+const HeaderFacebookIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+  </svg>
+);
+
+const HeaderXIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
+
+const HeaderYoutubeIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+  </svg>
+);
 
 const HeaderLinkedInIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
   <svg
@@ -497,10 +516,30 @@ export const Header: React.FC = () => {
             <span className="whitespace-nowrap">{REAL_RESULT_CONFIG.contact.phone}</span>
           </a>
 
-          {/* Right Edge: LinkedIn & Instagram Icons */}
+          {/* Right Edge: Official Social Media Channels */}
           <div className="hidden xl:flex items-center gap-0.5 shrink-0" onMouseEnter={() => handleNavMouseEnter(undefined)}>
             <a
-              href="https://www.linkedin.com/company/realresultmarketing"
+              href={SOCIAL_LINKS.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Real Result on Facebook"
+              title="Facebook"
+              className="p-1.5 rounded-lg text-neutral-700 hover:text-[#1877F2] hover:bg-black/[0.04] transition-colors"
+            >
+              <HeaderFacebookIcon className="w-4 h-4" />
+            </a>
+            <a
+              href={SOCIAL_LINKS.x}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Real Result on X"
+              title="X"
+              className="p-1.5 rounded-lg text-neutral-700 hover:text-black hover:bg-black/[0.04] transition-colors"
+            >
+              <HeaderXIcon className="w-4 h-4" />
+            </a>
+            <a
+              href={SOCIAL_LINKS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Follow Real Result on LinkedIn"
@@ -510,7 +549,17 @@ export const Header: React.FC = () => {
               <HeaderLinkedInIcon className="w-4 h-4" />
             </a>
             <a
-              href="https://www.instagram.com/realresultmarketing"
+              href={SOCIAL_LINKS.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Subscribe to Real Result on YouTube"
+              title="YouTube"
+              className="p-1.5 rounded-lg text-neutral-700 hover:text-[#FF0000] hover:bg-black/[0.04] transition-colors"
+            >
+              <HeaderYoutubeIcon className="w-4 h-4" />
+            </a>
+            <a
+              href={SOCIAL_LINKS.instagram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Follow Real Result on Instagram"
@@ -773,21 +822,53 @@ export const Header: React.FC = () => {
                 <span>{REAL_RESULT_CONFIG.contact.phone}</span>
               </a>
 
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-0.5">
                 <a
-                  href="https://www.linkedin.com/company/realresultmarketing"
+                  href={SOCIAL_LINKS.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Real Result on Facebook"
+                  title="Facebook"
+                  className="p-2 rounded-lg text-neutral-700 hover:text-[#1877F2] hover:bg-black/[0.05]"
+                >
+                  <HeaderFacebookIcon className="w-4 h-4" />
+                </a>
+                <a
+                  href={SOCIAL_LINKS.x}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Real Result on X"
+                  title="X"
+                  className="p-2 rounded-lg text-neutral-700 hover:text-black hover:bg-black/[0.05]"
+                >
+                  <HeaderXIcon className="w-4 h-4" />
+                </a>
+                <a
+                  href={SOCIAL_LINKS.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Follow Real Result on LinkedIn"
+                  title="LinkedIn"
                   className="p-2 rounded-lg text-neutral-700 hover:text-[#0A66C2] hover:bg-black/[0.05]"
                 >
                   <HeaderLinkedInIcon className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://www.instagram.com/realresultmarketing"
+                  href={SOCIAL_LINKS.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Subscribe to Real Result on YouTube"
+                  title="YouTube"
+                  className="p-2 rounded-lg text-neutral-700 hover:text-[#FF0000] hover:bg-black/[0.05]"
+                >
+                  <HeaderYoutubeIcon className="w-4 h-4" />
+                </a>
+                <a
+                  href={SOCIAL_LINKS.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Follow Real Result on Instagram"
+                  title="Instagram"
                   className="p-2 rounded-lg text-neutral-700 hover:text-[#E4405F] hover:bg-black/[0.05]"
                 >
                   <HeaderInstagramIcon className="w-4 h-4" />
