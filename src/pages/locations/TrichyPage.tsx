@@ -31,7 +31,7 @@ export const TrichyPage: React.FC = () => {
             postalCode: "620001",
             addressCountry: "IN",
           },
-          telephone: "+919842012345",
+          telephone: "+918111033390",
           areaServed: "Tiruchirappalli, Tamil Nadu",
         }}
       />

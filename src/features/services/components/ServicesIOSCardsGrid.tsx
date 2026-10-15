@@ -25,7 +25,7 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
     title: "Website Design",
     category: "web-apps",
     categoryLabel: "Web & Apps",
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/services/website-design.webp",
     simpleDesc: "Fast, modern websites that look great on mobile phones and bring you customer calls.",
     keyPoints: [
       "Loads fast on all mobile phones and laptops",
@@ -41,7 +41,7 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
     title: "Online Store & Ecommerce",
     category: "web-apps",
     categoryLabel: "Web & Apps",
-    image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/services/ecommerce-platforms.webp",
     simpleDesc: "Your own online shop where buyers order and pay with GPay, PhonePe, or Cash on Delivery.",
     keyPoints: [
       "Instant UPI, card, and Cash on Delivery payments",
@@ -57,7 +57,7 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
     title: "iPhone & Android Apps",
     category: "web-apps",
     categoryLabel: "Web & Apps",
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/services/mobile-app-development.webp",
     simpleDesc: "Custom mobile apps built for your brand and published live on the App Store and Play Store.",
     keyPoints: [
       "Published on Apple App Store & Google Play Store",
@@ -67,31 +67,14 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
     bestFor: "Delivery businesses, customer booking, and member apps",
     actionUrl: "/services/mobile-app-development",
   },
-  {
-    id: "ui-ux-architecture",
-    number: "04",
-    title: "App & Screen Design",
-    category: "web-apps",
-    categoryLabel: "Web & Apps",
-    image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=1200&q=80",
-    simpleDesc: "Clean, simple screen layouts that make your website or app easy for anyone to use.",
-    keyPoints: [
-      "See clickable screen previews before we build it",
-      "Simple, modern Apple-style clean screens",
-      "Designed so customers order without confusion",
-    ],
-    bestFor: "New software ideas, startups, and website revamps",
-    actionUrl: "/services/ui-ux-architecture",
-  },
-
   // ── 2. Digital Marketing & SEO ──
   {
     id: "performance-marketing",
-    number: "05",
+    number: "04",
     title: "Google & Social Media Ads",
     category: "marketing-seo",
     categoryLabel: "Marketing & SEO",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/services/performance-marketing.webp",
     simpleDesc: "Targeted advertisements that bring ready buyers straight to your phone, WhatsApp, and showroom.",
     keyPoints: [
       "Show up when people search to buy your product",
@@ -103,11 +86,11 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
   },
   {
     id: "seo-geo-ai-search",
-    number: "06",
+    number: "05",
     title: "Google Maps & Search Ranking",
     category: "marketing-seo",
     categoryLabel: "Marketing & SEO",
-    image: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/services/seo-geo-ai-search.webp",
     simpleDesc: "Get your business listed #1 on Google Maps and search results so nearby customers call you first.",
     keyPoints: [
       "Top 3 rank on Google Maps for local searches",
@@ -119,7 +102,7 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
   },
   {
     id: "social-media-marketing",
-    number: "07",
+    number: "06",
     title: "Instagram Reels & Posts",
     category: "marketing-seo",
     categoryLabel: "Marketing & SEO",
@@ -133,27 +116,10 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
     bestFor: "Fashion stores, restaurants, salons, and retail shops",
     actionUrl: "/services/social-media-marketing",
   },
-  {
-    id: "content-marketing-pr",
-    number: "08",
-    title: "Business Copywriting",
-    category: "marketing-seo",
-    categoryLabel: "Marketing & SEO",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80",
-    simpleDesc: "Clear, persuasive English and Tamil words for your website, sales brochures, and company profiles.",
-    keyPoints: [
-      "Professional text that explains what you do simply",
-      "Company profiles and product sales catalogs",
-      "Fluent English and clean Tamil translations",
-    ],
-    bestFor: "Manufacturers, exporters, and corporate companies",
-    actionUrl: "/services/content-marketing-pr",
-  },
-
   // ── 3. Creative, Branding & Media ──
   {
     id: "brand-identity-logo",
-    number: "09",
+    number: "07",
     title: "Logo & Brand Identity",
     category: "branding-media",
     categoryLabel: "Branding & Media",
@@ -168,28 +134,12 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
     actionUrl: "/services/brand-identity-logo",
   },
   {
-    id: "graphic-design-packaging",
-    number: "10",
-    title: "Product Packaging & Print",
-    category: "branding-media",
-    categoryLabel: "Branding & Media",
-    image: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=800&q=80",
-    simpleDesc: "Eye-catching box packaging, labels, brochures, and banners printed and sized ready for production.",
-    keyPoints: [
-      "Ready-to-print box and label master files",
-      "Clear product details and attractive color schemes",
-      "Quick adjustments and proofs within 48 hours",
-    ],
-    bestFor: "Food products, textiles, retail products, and exports",
-    actionUrl: "/services/graphic-design-packaging",
-  },
-  {
     id: "video-editing-motion",
-    number: "11",
+    number: "08",
     title: "Video Shooting & Editing",
     category: "branding-media",
     categoryLabel: "Branding & Media",
-    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/services/video-editing-motion.webp",
     simpleDesc: "High-quality video shooting and editing for customer testimonials, product demos, and factory tours.",
     keyPoints: [
       "Sharp 4K video recording with clear audio",
@@ -201,7 +151,7 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
   },
   {
     id: "ecommerce-photography",
-    number: "12",
+    number: "09",
     title: "Product Photography",
     category: "branding-media",
     categoryLabel: "Branding & Media",
@@ -215,32 +165,13 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
     bestFor: "Textiles, food items, leather, jewellery, and hardware",
     actionUrl: "/services/ecommerce-photography",
   },
-
-  // ── 4. Security & Cloud ──
-  {
-    id: "cyber-security-cloud",
-    number: "13",
-    title: "Fast Hosting & Daily Backup",
-    category: "security-cloud",
-    categoryLabel: "Security & Cloud",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
-    simpleDesc: "Reliable cloud hosting with daily backups and safety locks to keep your website fast and never offline.",
-    keyPoints: [
-      "99.9% uptime so customers can always open your site",
-      "Automatic daily backups so your data is never lost",
-      "Free SSL security lock badge included",
-    ],
-    bestFor: "Online stores, school portals, and business websites",
-    actionUrl: "/services/cyber-security-cloud",
-  },
 ];
 
 export const SERVICE_FILTER_TABS = [
-  { id: "all", label: "All Services (13)" },
+  { id: "all", label: "All Services (9)" },
   { id: "web-apps", label: "Web & Apps" },
   { id: "marketing-seo", label: "Marketing & SEO" },
   { id: "branding-media", label: "Branding & Media" },
-  { id: "security-cloud", label: "Security & Cloud" },
 ];
 
 interface ServicesIOSCardsGridProps {

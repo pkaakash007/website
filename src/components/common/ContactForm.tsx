@@ -112,7 +112,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
           <MacOSInput
             label="Phone Number"
             type="tel"
-            placeholder="+91 98420 12345"
+            placeholder="+91 81110 33390"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
           />

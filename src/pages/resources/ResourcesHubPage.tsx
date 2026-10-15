@@ -43,7 +43,7 @@ const articles = [
     category: "Local SEO",
     readTime: "6 min read",
     summary:
-      "Step-by-step local search guide to ranking in Google Maps 3-Pack across Coimbatore, Erode, Chennai, and regional districts using authentic citation signals and geotagged imagery.",
+      "Step-by-step local search guide to ranking in Google Maps 3-Pack across Salem, Erode, Namakkal, Paramathi Velur, and Coimbatore using authentic citation signals and geotagged imagery.",
     keyTakeaway: "Exact NAP consistency and authentic, keyword-rich review responses are the two highest-weighted local map pack ranking factors.",
   },
 ];

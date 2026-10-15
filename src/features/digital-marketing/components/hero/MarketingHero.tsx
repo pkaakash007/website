@@ -227,9 +227,9 @@ export const MarketingHero: React.FC = () => {
           <div className="lg:col-span-3 flex flex-col rounded-[26px] bg-neutral-900/80 backdrop-blur-xl border border-white/15 shadow-[0_16px_40px_rgba(0,0,0,0.5)] overflow-hidden group hover:border-white/30 transition-all duration-300">
             <div className="relative aspect-[4/5] overflow-hidden bg-neutral-950">
               <img
-                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
+                src="/images/marketing/google-maps-search-ads.webp"
                 alt="Google Search & Maps Ads Campaign"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
               

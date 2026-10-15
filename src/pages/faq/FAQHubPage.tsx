@@ -62,11 +62,11 @@ const allFaqs = [
     items: [
       {
         q: "Where is Real Result located, and can we meet in person?",
-        a: "Our corporate headquarters is located at 148/2, Perundurai Road, Near Collectorate, Erode, Tamil Nadu. We welcome client visits at our Erode office and our leadership team regularly conducts on-site strategy sessions across Coimbatore, Chennai, Tiruppur, Salem, and statewide.",
+        a: "Our registered office is located in Paramathi Velur, Namakkal, and our regional headquarters is on Perundurai Road, Erode, Tamil Nadu. We welcome client visits and our leadership team regularly conducts on-site strategy sessions across Salem, Erode, Namakkal, Paramathi Velur, and Coimbatore.",
       },
       {
         q: "How do we get started with an audit or consultation?",
-        a: "You can click 'Request Consultation' on any page, reach us directly by phone at +91 98420 12345, or message our WhatsApp desk for an immediate response from a senior strategist.",
+        a: "You can click 'Request Consultation' on any page, reach us directly by phone at +91 81110 33390, or message our WhatsApp desk for an immediate response from a senior strategist.",
       },
     ],
   },

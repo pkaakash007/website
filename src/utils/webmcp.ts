@@ -126,14 +126,14 @@ export const REALRESULT_WEBMCP_TOOLS: WebMcpTool[] = [
     name: "get_regional_office",
     title: "Get Regional Office Details",
     description:
-      "Fetch verified corporate address, phone number, Google Place ID, and primary industries for Real Result Tamil Nadu regional branches (Namakkal, Erode, Coimbatore, Chennai).",
+      "Fetch verified corporate address, phone number, Google Place ID, and primary industries for Real Result Tamil Nadu regional branches (Salem, Erode, Namakkal, Paramathi Velur, Coimbatore).",
     inputSchema: {
       type: "object",
       properties: {
         location: {
           type: "string",
           description: "Target location name",
-          enum: ["namakkal", "erode", "coimbatore", "chennai"],
+          enum: ["namakkal", "erode", "coimbatore", "salem", "paramathi-velur"],
         },
       },
       required: ["location"],
@@ -145,7 +145,7 @@ export const REALRESULT_WEBMCP_TOOLS: WebMcpTool[] = [
         namakkal: {
           city: "Namakkal",
           district: "Namakkal District, Tamil Nadu",
-          phone: "+91 98420 12345",
+          phone: "+91 81110 33390",
           email: "namakkal@realresult.in",
           googlePlaceId: "ChIJCeVk0hrVqzsRp7foI1ppMUo",
           reviewUrl: "https://realresult.in/review",
@@ -155,11 +155,24 @@ export const REALRESULT_WEBMCP_TOOLS: WebMcpTool[] = [
             "Agro-Commodity Export Marketing",
           ],
         },
+        "paramathi-velur": {
+          city: "Paramathi Velur",
+          district: "Namakkal District, Tamil Nadu (Registered Office)",
+          phone: "+91 81110 33390",
+          email: "realresult.dev@gmail.com",
+          googlePlaceId: "ChIJCeVk0hrVqzsRp7foI1ppMUo",
+          reviewUrl: "https://realresult.in/review",
+          primarySectors: [
+            "Local Agro Trading & Betel Leaf Processing",
+            "Omnichannel Retail & Healthcare Clinics",
+            "Local SEO, Google Business Profile & Google Maps Ranking",
+          ],
+        },
         erode: {
           city: "Erode",
           district: "Erode District, Tamil Nadu (Corporate HQ)",
-          phone: "+91 98420 12345",
-          email: "hello@realresult.in",
+          phone: "+91 81110 33390",
+          email: "realresult.dev@gmail.com",
           googlePlaceId: "ChIJCeVk0hrVqzsRp7foI1ppMUo",
           reviewUrl: "https://realresult.in/review",
           primarySectors: [
@@ -168,10 +181,23 @@ export const REALRESULT_WEBMCP_TOOLS: WebMcpTool[] = [
             "Enterprise Cloud & Software Engineering",
           ],
         },
+        salem: {
+          city: "Salem",
+          district: "Salem District, Tamil Nadu",
+          phone: "+91 81110 33390",
+          email: "salem@realresult.in",
+          googlePlaceId: "ChIJCeVk0hrVqzsRp7foI1ppMUo",
+          reviewUrl: "https://realresult.in/review",
+          primarySectors: [
+            "Steel, Sago & Mineral Process Industries",
+            "High-Volume Retail Showrooms & Hospitals",
+            "B2B Industrial Lead Generation & Custom ERPs",
+          ],
+        },
         coimbatore: {
           city: "Coimbatore",
           district: "Coimbatore District, Tamil Nadu",
-          phone: "+91 98420 12345",
+          phone: "+91 81110 33390",
           email: "coimbatore@realresult.in",
           reviewUrl: "https://realresult.in/review",
           primarySectors: [
@@ -180,21 +206,9 @@ export const REALRESULT_WEBMCP_TOOLS: WebMcpTool[] = [
             "SaaS & Enterprise Automation",
           ],
         },
-        chennai: {
-          city: "Chennai",
-          district: "Chennai Metropolitan, Tamil Nadu",
-          phone: "+91 98420 12345",
-          email: "chennai@realresult.in",
-          reviewUrl: "https://realresult.in/review",
-          primarySectors: [
-            "Global B2B Technology & AI Operations",
-            "Automotive Supply Chain Portals",
-            "Generative Engine Optimization (GEO)",
-          ],
-        },
       };
 
-      return offices[loc] || { error: `Location '${args.location}' not found. Available: namakkal, erode, coimbatore, chennai.` };
+      return offices[loc] || { error: `Location '${args.location}' not found. Available: namakkal, erode, coimbatore, salem, paramathi-velur.` };
     },
   },
   {

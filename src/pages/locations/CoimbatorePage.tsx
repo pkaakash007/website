@@ -21,7 +21,8 @@ export const CoimbatorePage: React.FC = () => {
         schema={{
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          name: "Real Result Marketing - Coimbatore Operations",
+          name: "Real Result - Best Digital Marketing Agency & Company in Coimbatore",
+          alternateName: "Real Result Marketing Coimbatore",
           url: "https://realresult.in/locations/coimbatore",
           address: {
             "@type": "PostalAddress",
@@ -35,7 +36,7 @@ export const CoimbatorePage: React.FC = () => {
             latitude: loc.geo.latitude,
             longitude: loc.geo.longitude,
           },
-          telephone: "+919842012345",
+          telephone: "+918111033390",
           areaServed: "Coimbatore, Tamil Nadu",
         }}
       />

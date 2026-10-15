@@ -31,7 +31,7 @@ export const TirunelveliPage: React.FC = () => {
             postalCode: "627001",
             addressCountry: "IN",
           },
-          telephone: "+919842012345",
+          telephone: "+918111033390",
           areaServed: "Tirunelveli, Tamil Nadu",
         }}
       />

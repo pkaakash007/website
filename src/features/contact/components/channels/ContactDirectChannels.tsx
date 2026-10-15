@@ -1,226 +1,130 @@
 import React from "react";
 import { SEO_CONFIG, SOCIAL_LINKS } from "@/config/seo";
-import { Building2, Phone, Mail, MessageSquare, ArrowUpRight, Share2 } from "lucide-react";
 
 export const ContactDirectChannels: React.FC = () => {
   return (
-    <div className="space-y-6">
-      <div className="space-y-2">
-        <p className="text-xs font-bold uppercase tracking-wider text-neutral-500">
-          Direct Access
-        </p>
-        <h2 className="text-2xl sm:text-3xl font-semibold text-[#1D1D1F] tracking-tight">
-          Direct Contact Channels
+    <div className="bg-white rounded-[24px] border border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.04)] p-7 sm:p-9 space-y-7">
+      {/* Header */}
+      <div>
+        <span className="text-xs font-semibold uppercase tracking-wider text-neutral-400 block mb-1">
+          Direct Channels
+        </span>
+        <h2 className="text-2xl font-semibold text-[#111827] tracking-tight">
+          Get in Touch
         </h2>
-        <p className="text-sm text-[#86868B]">
-          Direct communication pathways with our team in Erode.
+        <p className="text-sm text-[#6B7280] mt-1.5 leading-relaxed">
+          Reach out by phone, WhatsApp, or email. You are also welcome to visit us at our office in Paramathi Velur.
         </p>
       </div>
 
-      <div className="space-y-3.5">
-        {/* 1. Corporate Headquarters */}
-        <div className="bg-white rounded-[20px] p-5 border border-black/[0.07] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_20px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all group">
-          <div className="flex items-start justify-between gap-3 mb-2.5">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#0071E3]/10 text-[#0071E3] flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shrink-0">
-                <Building2 className="w-5 h-5 stroke-[2.2]" />
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-[#1D1D1F]">
-                  Corporate Headquarters
-                </h3>
-                <span className="text-[11px] text-neutral-400">
-                  Central Engineering Lab
-                </span>
-              </div>
-            </div>
-            <span className="text-xs font-medium text-neutral-500">
-              HQ Erode
-            </span>
-          </div>
-          <p className="text-xs text-[#86868B] leading-relaxed pl-13">
-            {SEO_CONFIG.headquarters.streetAddress}, {SEO_CONFIG.headquarters.addressLocality}, {SEO_CONFIG.headquarters.addressRegion} {SEO_CONFIG.headquarters.postalCode}, India
+      {/* Contact Points List */}
+      <div className="divide-y divide-neutral-100 space-y-5 pt-1">
+        
+        {/* 1. Office Location */}
+        <div className="pt-5 first:pt-0">
+          <span className="text-xs font-semibold uppercase tracking-wider text-neutral-400 block mb-1">
+            Office Location
+          </span>
+          <p className="text-sm font-medium text-[#111827] leading-snug">
+            Paramathi Velur, Namakkal District, Tamil Nadu 638182
           </p>
-          <div className="pl-13 pt-2">
+          <div className="mt-2 flex items-center gap-3 text-xs font-medium">
             <a
-              href="https://maps.google.com/?q=Erode,Tamil+Nadu"
+              href={SOCIAL_LINKS.google}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-xs font-semibold text-[#0071E3] hover:text-[#0077ED] transition-colors"
+              className="text-[#0071E3] hover:underline"
             >
-              <span>Get Directions</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              Google Maps &rarr;
+            </a>
+            <span className="text-neutral-300">&bull;</span>
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=11.1111972,78.0058805"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-600 hover:text-black hover:underline"
+            >
+              Get Directions &rarr;
             </a>
           </div>
         </div>
 
-        {/* 2. Telephone */}
-        <div className="bg-white rounded-[20px] p-5 border border-black/[0.07] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_20px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all group">
-          <div className="flex items-start justify-between gap-3 mb-2.5">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#34C759]/10 text-[#34C759] flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shrink-0">
-                <Phone className="w-5 h-5 stroke-[2.2]" />
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-[#1D1D1F]">
-                  Telephone Desk
-                </h3>
-                <a
-                  href={`tel:${SEO_CONFIG.telephone}`}
-                  className="text-xs font-semibold text-[#1D1D1F] hover:text-[#0071E3] transition-colors block"
-                >
-                  {SEO_CONFIG.displayPhone}
-                </a>
-              </div>
-            </div>
-            <span className="text-xs font-medium text-emerald-600">
-              Available
-            </span>
-          </div>
-          <p className="text-xs text-[#86868B] pl-13">
-            Monday – Saturday: 9:00 AM – 6:30 PM IST
+        {/* 2. Phone */}
+        <div className="pt-5">
+          <span className="text-xs font-semibold uppercase tracking-wider text-neutral-400 block mb-1">
+            Phone
+          </span>
+          <a
+            href={`tel:${SEO_CONFIG.telephone}`}
+            className="text-base font-semibold text-[#111827] hover:text-[#0071E3] transition-colors block leading-tight"
+          >
+            {SEO_CONFIG.displayPhone}
+          </a>
+          <p className="text-xs text-[#6B7280] mt-1 font-normal">
+            Monday &ndash; Saturday, 9:00 AM &ndash; 6:30 PM IST
           </p>
         </div>
 
-        {/* 3. Email Inquiries */}
-        <div className="bg-white rounded-[20px] p-5 border border-black/[0.07] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_20px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all group">
-          <div className="flex items-start justify-between gap-3 mb-2.5">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#FF9500]/10 text-[#FF9500] flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shrink-0">
-                <Mail className="w-5 h-5 stroke-[2.2]" />
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-[#1D1D1F]">
-                  Email Inquiries
-                </h3>
-                <a
-                  href={`mailto:${SEO_CONFIG.email}`}
-                  className="text-xs font-semibold text-[#1D1D1F] hover:text-[#0071E3] transition-colors block"
-                >
-                  {SEO_CONFIG.email}
-                </a>
-              </div>
-            </div>
-            <span className="text-xs font-medium text-neutral-500">
-              &lt; 4h SLA
-            </span>
-          </div>
-          <p className="text-xs text-[#86868B] pl-13">
-            Campaign briefs: <span className="text-neutral-700 font-medium">campaigns@realresult.in</span>
+        {/* 3. WhatsApp */}
+        <div className="pt-5">
+          <span className="text-xs font-semibold uppercase tracking-wider text-neutral-400 block mb-1">
+            WhatsApp
+          </span>
+          <a
+            href="https://wa.me/918111033390?text=Hello%20Real%20Result%20Team,%20I%20would%20like%20to%20discuss%20a%20project."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold text-[#111827] hover:text-[#0071E3] transition-colors inline-block"
+          >
+            +91 81110 33390 &rarr;
+          </a>
+          <p className="text-xs text-[#6B7280] mt-1 font-normal">
+            Direct chat for new project inquiries
           </p>
         </div>
 
-        {/* 4. WhatsApp Direct */}
-        <div className="bg-white rounded-[20px] p-5 border border-black/[0.07] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_20px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all group">
-          <div className="flex items-start justify-between gap-3 mb-2.5">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#25D366]/15 text-[#128C7E] flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shrink-0">
-                <MessageSquare className="w-5 h-5 stroke-[2.2]" />
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-[#1D1D1F]">
-                  WhatsApp Channel
-                </h3>
-                <a
-                  href="https://wa.me/919842012345?text=Hello%20Real%20Result%20Team,%20I%20would%20like%20to%20discuss%20a%20project."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs font-semibold text-[#1D1D1F] hover:text-[#128C7E] transition-colors block"
-                >
-                  +91 98420 12345
-                </a>
-              </div>
-            </div>
-            <span className="text-xs font-medium text-emerald-600">
-              Instant Chat
-            </span>
-          </div>
-          <p className="text-xs text-[#86868B] pl-13">
-            Direct executive messaging during IST business hours
+        {/* 4. Email */}
+        <div className="pt-5">
+          <span className="text-xs font-semibold uppercase tracking-wider text-neutral-400 block mb-1">
+            Email
+          </span>
+          <a
+            href={`mailto:${SEO_CONFIG.email}`}
+            className="text-sm font-semibold text-[#111827] hover:text-[#0071E3] transition-colors block leading-tight"
+          >
+            {SEO_CONFIG.email}
+          </a>
+          <p className="text-xs text-[#6B7280] mt-1 font-normal">
+            Proposals: campaigns@realresult.in
           </p>
         </div>
 
-        {/* 5. Official Social Media Channels */}
-        <div className="bg-white rounded-[20px] p-5 border border-black/[0.07] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_20px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all group">
-          <div className="flex items-start justify-between gap-3 mb-2.5">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-600 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shrink-0">
-                <Share2 className="w-5 h-5 stroke-[2.2]" />
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-[#1D1D1F]">
-                  Official Social Channels
-                </h3>
-                <span className="text-[11px] text-neutral-400">
-                  Verified Business Accounts
-                </span>
-              </div>
-            </div>
-            <span className="text-xs font-medium text-neutral-500">
-              Active Daily
-            </span>
-          </div>
-          <p className="text-xs text-[#86868B] pl-13 mb-3">
-            Follow our daily case studies, ads, client results, and technology announcements.
-          </p>
-          <div className="pl-13 flex flex-wrap items-center gap-2">
-            <a
-              href={SOCIAL_LINKS.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              title="Facebook"
-              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-neutral-100 hover:bg-[#1877F2] hover:text-white text-neutral-700 transition-colors"
-            >
-              <span>Facebook</span>
-              <ArrowUpRight className="w-3 h-3" />
-            </a>
-            <a
-              href={SOCIAL_LINKS.x}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X (Twitter)"
-              title="X"
-              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-neutral-100 hover:bg-black hover:text-white text-neutral-700 transition-colors"
-            >
-              <span>X</span>
-              <ArrowUpRight className="w-3 h-3" />
-            </a>
-            <a
-              href={SOCIAL_LINKS.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              title="LinkedIn"
-              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-neutral-100 hover:bg-[#0A66C2] hover:text-white text-neutral-700 transition-colors"
-            >
-              <span>LinkedIn</span>
-              <ArrowUpRight className="w-3 h-3" />
-            </a>
-            <a
-              href={SOCIAL_LINKS.youtube}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube"
-              title="YouTube"
-              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-neutral-100 hover:bg-[#FF0000] hover:text-white text-neutral-700 transition-colors"
-            >
-              <span>YouTube</span>
-              <ArrowUpRight className="w-3 h-3" />
-            </a>
-            <a
-              href={SOCIAL_LINKS.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              title="Instagram"
-              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-neutral-100 hover:bg-[#E4405F] hover:text-white text-neutral-700 transition-colors"
-            >
-              <span>Instagram</span>
-              <ArrowUpRight className="w-3 h-3" />
-            </a>
+        {/* 5. Social Links */}
+        <div className="pt-5">
+          <span className="text-xs font-semibold uppercase tracking-wider text-neutral-400 block mb-2">
+            Social Profiles
+          </span>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-medium text-neutral-600">
+            {[
+              { name: "LinkedIn", href: SOCIAL_LINKS.linkedin },
+              { name: "Instagram", href: SOCIAL_LINKS.instagram },
+              { name: "YouTube", href: SOCIAL_LINKS.youtube },
+              { name: "X (Twitter)", href: SOCIAL_LINKS.x },
+              { name: "Facebook", href: SOCIAL_LINKS.facebook },
+            ].map((s) => (
+              <a
+                key={s.name}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-black hover:underline transition-colors"
+              >
+                {s.name} &rarr;
+              </a>
+            ))}
           </div>
         </div>
+
       </div>
     </div>
   );

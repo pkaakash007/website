@@ -13,8 +13,8 @@ export const TamilNaduHubPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <SEOHead
-        title="Digital Marketing & Software Company in Tamil Nadu | Real Result Network"
-        description="Real Result Marketing & Technology operations across Tamil Nadu. Headquartered in Erode with active client partnerships in Coimbatore, Chennai, Tiruppur, and statewide."
+        title="Best Digital Marketing Agency & Software Company in Tamil Nadu | Salem, Erode, Namakkal, Paramathi Velur, Coimbatore"
+        description="Real Result Marketing is the best digital marketing agency and custom software company serving Salem, Erode, Namakkal, Paramathi Velur, and Coimbatore. High-intent SEO, Google Maps rankings, and custom apps."
         canonicalPath="/locations/tamil-nadu"
         schema={{
           "@context": "https://schema.org",
@@ -34,7 +34,7 @@ export const TamilNaduHubPage: React.FC = () => {
             latitude: 11.341,
             longitude: 77.7172,
           },
-          telephone: "+919842012345",
+          telephone: "+918111033390",
           areaServed: Object.values(TAMIL_NADU_LOCATIONS).map((l) => l.city),
         }}
       />
@@ -45,11 +45,11 @@ export const TamilNaduHubPage: React.FC = () => {
 
           <div className="max-w-4xl space-y-6 mt-4">
             <p className="text-xs font-bold uppercase tracking-wider text-gold-700">
-              Statewide Regional Presence · Tamil Nadu, India
+              Target Districts · Salem, Erode, Namakkal, Paramathi Velur, Coimbatore
             </p>
 
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
-              Digital Marketing & Software Company in{" "}
+              Best Digital Marketing Agency & Company in{" "}
               <span className="text-gold-700">
                 Tamil Nadu
               </span>
@@ -57,12 +57,12 @@ export const TamilNaduHubPage: React.FC = () => {
             </h1>
 
             <p className="text-base sm:text-xl text-secondary leading-relaxed font-normal">
-              Serving the dynamic commercial corridors of Tamil Nadu. Headquartered in Erode, we deliver localized search dominance, Google Maps visibility, high-ROI Google Ads, and custom enterprise software for businesses statewide.
+              Serving the key commercial corridors of Tamil Nadu across Salem, Erode, Namakkal, Paramathi Velur, and Coimbatore. We deliver localized search dominance, Google Maps rankings, high-ROI Google Ads, and custom enterprise software for businesses.
             </p>
 
             <DirectAnswerBox
               question="Where does Real Result operate in Tamil Nadu?"
-              summary="Real Result Marketing operates its central headquarters and engineering laboratory in Erode, Tamil Nadu, with dedicated consulting and client management across Coimbatore, Chennai, Tiruppur, Salem, Madurai, Trichy, and Tirunelveli. We combine on-ground local business familiarity with tier-1 international technical SEO and software standards."
+              summary="Real Result Marketing operates its registered office in Paramathi Velur, Namakkal, and central operations in Erode, Tamil Nadu, with dedicated consulting and client management across Salem, Erode, Namakkal, Paramathi Velur, and Coimbatore. We combine on-ground local business familiarity with tier-1 international technical SEO and software standards."
               takeaways={[
                 "Centralized Headquarters: Perundurai Road, Erode, Tamil Nadu",
                 "Direct support for industrial, manufacturing, textile, and SaaS sectors",

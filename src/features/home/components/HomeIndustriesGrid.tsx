@@ -36,6 +36,60 @@ const INDUSTRY_PHOTOS: Record<string, string> = {
 
 export const HomeIndustriesGrid: React.FC = () => {
   const industriesList = Object.values(INDUSTRIES_DATA);
+  const cardRefs = React.useRef<(HTMLDivElement | null)[]>([]);
+  const [coveredIndices, setCoveredIndices] = React.useState<boolean[]>([]);
+
+  React.useEffect(() => {
+    let ticking = false;
+
+    const checkCoveredCards = () => {
+      if (!cardRefs.current.length) return;
+      const newCovered: boolean[] = [];
+
+      for (let i = 0; i < industriesList.length; i++) {
+        const nextCard = cardRefs.current[i + 1];
+        const currentCard = cardRefs.current[i];
+
+        if (nextCard && currentCard) {
+          const nextRect = nextCard.getBoundingClientRect();
+          const currentRect = currentCard.getBoundingClientRect();
+          // If the next card has reached or passed the top of the current card,
+          // mark the current card as covered so it gracefully recedes into the stack
+          if (nextRect.top <= currentRect.top + 16) {
+            newCovered[i] = true;
+          } else {
+            newCovered[i] = false;
+          }
+        } else {
+          newCovered[i] = false;
+        }
+      }
+
+      setCoveredIndices((prev) => {
+        const isDifferent =
+          newCovered.some((val, idx) => val !== prev[idx]) ||
+          newCovered.length !== prev.length;
+        return isDifferent ? newCovered : prev;
+      });
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(checkCoveredCards);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    checkCoveredCards();
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [industriesList.length]);
 
   return (
     <section className="pt-20 pb-12 sm:pt-24 sm:pb-16 bg-[#FBFBFA] border-t border-b border-neutral-200 font-sans relative">
@@ -63,7 +117,7 @@ export const HomeIndustriesGrid: React.FC = () => {
           </div>
         </div>
 
-        {/* ── Apple-Style Smooth Stacking Cards Deck (Pure CSS Sticky Stacking) ── */}
+        {/* ── Apple-Style Smooth Stacking Cards Deck (Sticky Scroll Stacking) ── */}
         <div className="relative pb-12 sm:pb-16">
           {industriesList.map((ind, index) => {
             const detailUrl =
@@ -73,12 +127,18 @@ export const HomeIndustriesGrid: React.FC = () => {
               "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=75";
 
             const isLast = index === industriesList.length - 1;
+            const isCovered = coveredIndices[index];
 
             return (
               <div
                 key={ind.slug}
-                className={`sticky top-24 sm:top-28 md:top-32 ${
+                ref={(el) => (cardRefs.current[index] = el)}
+                className={`sticky top-24 sm:top-28 md:top-32 transition-all duration-300 ease-out ${
                   isLast ? "mb-0" : "mb-16 sm:mb-24 lg:mb-32"
+                } ${
+                  isCovered
+                    ? "opacity-0 scale-[0.98] pointer-events-none invisible"
+                    : "opacity-100 scale-100 pointer-events-auto visible"
                 }`}
                 style={{
                   zIndex: index + 10,

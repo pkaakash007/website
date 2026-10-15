@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
 import { ArrowRight } from "lucide-react";
-import AboutHeroSketch from "./AboutHeroSketch";
 
 export const AboutHero: React.FC = () => {
   return (
@@ -36,9 +35,15 @@ export const AboutHero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Hand-drawn Human Sketch Illustration */}
+          {/* Right Column: About Us Illustration */}
           <div className="lg:col-span-5 flex items-center justify-center">
-            <AboutHeroSketch />
+            <div className="w-full max-w-[480px] p-2 flex items-center justify-center">
+              <img
+                src="/images/about/about-us-hero.webp"
+                alt="About Us - Real Result Digital Agency"
+                className="w-full h-auto max-h-[340px] object-contain select-none"
+              />
+            </div>
           </div>
         </div>
       </Container>

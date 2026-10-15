@@ -37,7 +37,7 @@ export const DETAILED_SERVICES_MAP: Record<string, DetailedServiceInfo> = {
     id: "website-design",
     title: "Website Design",
     categoryLabel: "Web & Apps",
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/services/website-design.webp",
     tagline: "Your digital showroom that works 24/7 to turn casual visitors into direct customer phone calls and orders.",
     simpleDesc: "Fast, modern websites that look great on mobile phones and bring you customer calls.",
     whyYourProductNeedsThis: {
@@ -119,7 +119,7 @@ export const DETAILED_SERVICES_MAP: Record<string, DetailedServiceInfo> = {
     id: "ecommerce-platforms",
     title: "Online Store & Ecommerce",
     categoryLabel: "Web & Apps",
-    image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/services/ecommerce-platforms.webp",
     tagline: "Your own branded online shop where buyers browse, order, and pay instantly without marketplace commissions.",
     simpleDesc: "Your own online shop where buyers order and pay with GPay, PhonePe, or Cash on Delivery.",
     whyYourProductNeedsThis: {
@@ -197,7 +197,7 @@ export const DETAILED_SERVICES_MAP: Record<string, DetailedServiceInfo> = {
     id: "mobile-app-development",
     title: "iPhone & Android Apps",
     categoryLabel: "Web & Apps",
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/services/mobile-app-development.webp",
     tagline: "Put your business icon directly on your customer's phone screen with live Apple App Store & Google Play publishing.",
     simpleDesc: "Custom mobile apps built for your brand and published live on the App Store and Play Store.",
     whyYourProductNeedsThis: {
@@ -353,7 +353,7 @@ export const DETAILED_SERVICES_MAP: Record<string, DetailedServiceInfo> = {
     id: "performance-marketing",
     title: "Google & Social Media Ads",
     categoryLabel: "Marketing & SEO",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/services/performance-marketing.webp",
     tagline: "High-intent advertising campaigns that put your offer directly in front of customers with money in hand.",
     simpleDesc: "Targeted advertisements that bring ready buyers straight to your phone, WhatsApp, and showroom.",
     whyYourProductNeedsThis: {
@@ -431,7 +431,7 @@ export const DETAILED_SERVICES_MAP: Record<string, DetailedServiceInfo> = {
     id: "seo-geo-ai-search",
     title: "Google Maps & Search Ranking",
     categoryLabel: "Marketing & SEO",
-    image: "https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/services/seo-geo-ai-search.webp",
     tagline: "Dominate the Google 3-Pack Maps and organic search so nearby customers call you instead of competitors.",
     simpleDesc: "Get your business listed #1 on Google Maps and search results so nearby customers call you first.",
     whyYourProductNeedsThis: {
@@ -821,7 +821,7 @@ export const DETAILED_SERVICES_MAP: Record<string, DetailedServiceInfo> = {
     id: "video-editing-motion",
     title: "Video Shooting & Editing",
     categoryLabel: "Branding & Media",
-    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/services/video-editing-motion.webp",
     tagline: "Crisp 4K video storytelling that showcases your factory, customer reviews, and product craftsmanship.",
     simpleDesc: "High-quality video shooting and editing for customer testimonials, product demos, and factory tours.",
     whyYourProductNeedsThis: {
@@ -890,7 +890,7 @@ export const DETAILED_SERVICES_MAP: Record<string, DetailedServiceInfo> = {
       },
       {
         q: "Do you provide on-location video shooting in Tamil Nadu?",
-        a: "Yes, our camera crew shoots across Erode, Coimbatore, Salem, Tiruppur, Chennai, and throughout Tamil Nadu.",
+        a: "Yes, our camera crew shoots across Salem, Erode, Namakkal, Paramathi Velur, and Coimbatore.",
       },
     ],
   },

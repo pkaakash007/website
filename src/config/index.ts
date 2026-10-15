@@ -47,8 +47,8 @@ export const REAL_RESULT_CONFIG = {
 
   // Centralized WhatsApp configuration (Tamil Nadu, India format: +91)
   whatsapp: {
-    number: "919842012345",
-    displayNumber: "+91 98420 12345",
+    number: "918111033390",
+    displayNumber: "+91 81110 33390",
     defaultMessage: "Hello Real Result Marketing team, I would like to discuss growing my business.",
     contextMessages: {
       marketing: "Hello Real Result team, I would like to discuss digital marketing, SEO & Google Ads for our business.",
@@ -60,9 +60,9 @@ export const REAL_RESULT_CONFIG = {
   },
   
   contact: {
-    email: "hello@realresult.in",
+    email: "realresult.dev@gmail.com",
     supportEmail: "campaigns@realresult.in",
-    phone: "+91 98420 12345",
+    phone: "+91 81110 33390",
     address: "148/2, Perundurai Road, Near Collectorate, Erode, Tamil Nadu 638011",
   },
 
@@ -94,7 +94,7 @@ export const REAL_RESULT_CONFIG = {
       name: "Tamil Nadu Hubs",
       eyebrow: "REGIONAL DOMINANCE",
       headline: "Serving enterprise corridors across Tamil Nadu.",
-      description: "Dedicated client advisory and engineering deployment across Erode (HQ), Coimbatore, Chennai, Tiruppur, Salem, Namakkal, Madurai, Trichy, and Tirunelveli.",
+      description: "Dedicated client advisory and engineering deployment across Salem, Erode, Namakkal, Paramathi Velur, and Coimbatore.",
       href: "/locations/tamil-nadu",
       badge: "Tamil Nadu Network",
       isPrimary: false,

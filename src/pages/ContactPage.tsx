@@ -12,23 +12,30 @@ export const ContactPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white font-sans">
       <SEOHead
-        title="Contact Real Result | Erode Headquarters & Tamil Nadu Hubs"
-        description="Connect directly with senior digital marketing strategists and software engineering directors. Corporate headquarters in Erode with regional desks across Coimbatore, Chennai, and Tiruppur."
+        title="Contact Real Result Marketing | Best Digital Marketing Agency & Office in Salem, Erode, Namakkal, Paramathi Velur, Coimbatore"
+        description="Connect with Real Result Marketing, the best digital marketing agency and custom software company in Tamil Nadu. Visit our registered office in Paramathi Velur, Namakkal, or our regional hubs in Erode, Salem, and Coimbatore."
         canonicalPath="/contact"
         schema={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          name: "Contact Real Result Marketing & Technology",
+          name: "Contact Real Result Marketing",
           url: "https://realresult.in/contact",
           telephone: SEO_CONFIG.telephone,
           email: SEO_CONFIG.email,
+          hasMap:
+            "https://www.google.com/maps/place/Real+Result+Marketing/@11.1112024,78.0010096,17z/data=!3m1!4b1!4m6!3m5!1s0x3babd5a621e9d483:0x7610d4ed000d0c45!8m2!3d11.1111972!4d78.0058805!16s%2Fg%2F11p1gkwbj4",
           address: {
             "@type": "PostalAddress",
-            streetAddress: SEO_CONFIG.headquarters.streetAddress,
-            addressLocality: "Erode",
+            streetAddress: "Paramathi Velur",
+            addressLocality: "Paramathi Velur, Namakkal",
             addressRegion: "Tamil Nadu",
-            postalCode: "638011",
+            postalCode: "638182",
             addressCountry: "IN",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: 11.1111972,
+            longitude: 78.0058805,
           },
         }}
       />

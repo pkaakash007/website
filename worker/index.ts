@@ -678,7 +678,7 @@ export default {
           url: "https://realresult.in",
         },
         documentationUrl: "https://realresult.in/api/docs",
-        iconUrl: "https://realresult.in/brand/realresult-logo.jpeg",
+        iconUrl: "https://realresult.in/brand/real-result-marketing-logo-tamil-nadu.png",
         supportedInterfaces: [
           {
             url: "https://realresult.in/api",
@@ -1163,7 +1163,7 @@ Localized B2B market consultation and high-intent commercial positioning for Sou
 - Chennai: Enterprise cloud tech, SaaS, automotive manufacturing
 
 ## Contact
-- Phone: +91 98420 12345
+- Phone: +91 81110 33390
 - Email: hello@realresult.in
 - Review & Feedback: https://realresult.in/review
 `,

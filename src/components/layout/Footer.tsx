@@ -4,152 +4,128 @@ import { Container } from "./Container";
 import { BrandLogo } from "@/components/common/BrandLogo";
 import { SEO_CONFIG, SOCIAL_LINKS } from "@/config/seo";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { ArrowRight, ArrowUp, Phone, Mail, MapPin } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
-// ─── Social Media Icons (Pixel-Perfect Clean Vectors) ──────────────────────────
+// ─── Pixel-Perfect Brand Social Icons ─────────────────────────────────────────
 
-const FacebookIcon: React.FC<{ className?: string }> = ({ className = "w-3.5 h-3.5" }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-  </svg>
-);
-
-const XIcon: React.FC<{ className?: string }> = ({ className = "w-3.5 h-3.5" }) => (
+const XIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>
 );
 
-const LinkedInIcon: React.FC<{ className?: string }> = ({ className = "w-3.5 h-3.5" }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.65 1.65 0 0 0-1.66 1.66 1.66 1.66 0 0 0 1.66 1.66 1.66 1.66 0 0 0 1.66-1.66 1.65 1.65 0 0 0-1.66-1.66Z" />
+const FacebookIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true">
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
   </svg>
 );
 
-const YoutubeIcon: React.FC<{ className?: string }> = ({ className = "w-3.5 h-3.5" }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+const YoutubeIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="#FF0000" aria-hidden="true">
     <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
   </svg>
 );
 
-const InstagramIcon: React.FC<{ className?: string }> = ({ className = "w-3.5 h-3.5" }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden="true"
-  >
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+const LinkedInIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
+    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.65 1.65 0 0 0-1.66 1.66 1.66 1.66 0 0 0 1.66 1.66 1.66 1.66 0 0 0 1.66-1.66 1.65 1.65 0 0 0-1.66-1.66Z" />
   </svg>
 );
 
-// ─── Link Definitions (Exact Mirror of User Reference) ───────────────────────
+const InstagramIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4" }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#fdf497" />
+        <stop offset="5%" stopColor="#fdf497" />
+        <stop offset="45%" stopColor="#fd5949" />
+        <stop offset="60%" stopColor="#d6249f" />
+        <stop offset="90%" stopColor="#285AEB" />
+      </linearGradient>
+    </defs>
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="url(#ig-grad)" strokeWidth="2" />
+    <circle cx="12" cy="12" r="4" stroke="url(#ig-grad)" strokeWidth="2" />
+    <circle cx="18" cy="6" r="1.2" fill="url(#ig-grad)" />
+  </svg>
+);
+
+// ─── 5 Navigation Column Data ─────────────────────────────────────────────────
 
 const servicesLinks = [
   { label: "Digital Marketing", href: "/digital-marketing" },
-  { label: "SEO", href: "/digital-marketing/seo" },
-  { label: "Google Ads", href: "/digital-marketing/google-ads" },
-  { label: "Social Media Marketing", href: "/digital-marketing/social-media-marketing" },
+  { label: "Search Engine Optimization (SEO)", href: "/services/seo" },
+  { label: "Generative Engine Optimization (GEO)", href: "/services/ai-search-optimization" },
+  { label: "Google Ads & PPC", href: "/digital-marketing" },
+  { label: "Social Media Marketing", href: "/digital-marketing" },
   { label: "Web & App Development", href: "/application-development" },
-  { label: "Business Software", href: "/application-development/custom-software-development" },
-  { label: "Content & Branding", href: "/digital-marketing/content-marketing" },
+  { label: "Custom Enterprise ERP", href: "/application-development" },
+  { label: "AI Voice & Telephony", href: "/application-development" },
+  { label: "Content & Brand Identity", href: "/digital-marketing" },
 ];
 
 const industriesLinks = [
-  { label: "Real Estate", href: "/industries" },
-  { label: "Education", href: "/industries" },
-  { label: "Healthcare", href: "/industries" },
-  { label: "Manufacturing", href: "/industries" },
-  { label: "Retail & E-commerce", href: "/industries" },
-  { label: "Local Businesses", href: "/industries" },
-  { label: "Startups & SMEs", href: "/industries" },
+  { label: "Real Estate & Housing", href: "/industries" },
+  { label: "Education & Institutions", href: "/industries" },
+  { label: "Healthcare & Clinics", href: "/industries/healthcare" },
+  { label: "Textile & Manufacturing", href: "/industries" },
+  { label: "Retail & Supermarkets", href: "/industries" },
+  { label: "Solar & Energy Solutions", href: "/industries" },
+  { label: "Startups & Local SMEs", href: "/industries" },
+  { label: "Client Knowledge Base", href: "/about#clients" },
 ];
 
 const companyLinks = [
   { label: "About Us", href: "/about" },
-  { label: "Our Work", href: "/portfolio" },
-  { label: "Case Studies", href: "/services" },
-  { label: "Careers", href: "/contact" },
-  { label: "Contact", href: "/contact" },
+  { label: "Our Story", href: "/about" },
+  { label: "Client Partners", href: "/about" },
+  { label: "Customer Stories & Work", href: "/portfolio" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 const locationsLinks = [
-  { label: "Erode", href: "/locations/erode" },
-  { label: "Coimbatore", href: "/locations/coimbatore" },
-  { label: "Chennai", href: "/locations/chennai" },
-  { label: "Trichy", href: "/locations/trichy" },
-  { label: "Salem", href: "/locations/salem" },
-  { label: "Madurai", href: "/locations/madurai" },
-  { label: "Tiruppur", href: "/locations/tiruppur" },
-  { label: "Namakkal", href: "/locations/namakkal" },
+  { label: "Erode Headquarters", href: "/locations/erode" },
+  { label: "Namakkal Office", href: "/locations/namakkal" },
+  { label: "Paramathi Velur Desk", href: "/locations/paramathi-velur" },
+  { label: "Salem Regional Office", href: "/locations/salem" },
+  { label: "Coimbatore Tech Center", href: "/locations/coimbatore" },
 ];
-
-// ─── Main Footer Component ────────────────────────────────────────────────────
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-white text-[#111111] pt-14 pb-10 border-t border-[#EAEAEA] font-sans">
+    <footer className="bg-white text-[#111111] font-sans border-t border-[#EAEAEA] select-none">
+      
+      {/* ── 1. Top Section: "Ready to do your best work?" ── */}
+      <div className="pt-16 pb-12 sm:pt-20 sm:pb-16 text-center border-b border-black/[0.06] px-4">
+        <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-normal text-[#1D1D1F] tracking-tight leading-tight">
+          Ready to do your best work?
+        </h2>
+        <p className="text-base sm:text-lg lg:text-xl text-[#555558] mt-2 mb-8 font-normal">
+          Let&apos;s get you started.
+        </p>
+        <Link
+          to="/contact"
+          className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#E42525] hover:bg-[#CE1E1E] text-white text-sm sm:text-[14px] font-bold uppercase tracking-[0.16em] rounded-xs shadow-xs hover:shadow-md transition-all active:scale-95 cursor-pointer"
+        >
+          <span>LET&apos;S START YOURS</span>
+          <ChevronRight className="w-3.5 h-3.5 stroke-[3]" />
+        </Link>
+      </div>
+
       <Container size="wide">
-        
-        {/* ── 1. Top Row: Brand Logo | Editorial Header | CTA Button ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pb-11">
+        {/* ── 2. Five Navigation Columns ── */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-10 pt-12 sm:pt-16 pb-12 sm:pb-16">
           
-          {/* Logo */}
-          <div className="lg:col-span-3 flex items-center">
-            <BrandLogo size="lg" theme="light" />
-          </div>
-
-          {/* Middle Narrative (separated by clean vertical divider line) */}
-          <div className="lg:col-span-6 lg:border-l lg:border-[#EAEAEA] lg:pl-10 space-y-1.5">
-            <span className="text-[11px] font-semibold tracking-[0.25em] text-[#8E6D2E] uppercase block font-sans">
-              STRATEGY &nbsp;·&nbsp; TECHNOLOGY &nbsp;·&nbsp; GROWTH
-            </span>
-            <h2 className="text-2xl sm:text-[28px] lg:text-[31px] font-serif font-normal text-[#111827] tracking-tight leading-tight">
-              Helping brands grow with purpose.
-            </h2>
-            <p className="text-xs sm:text-[13.5px] text-[#6B7280] font-normal leading-normal">
-              Digital marketing, technology and creativity — all under one roof.
-            </p>
-          </div>
-
-          {/* Right CTA Button and Microcopy (Right-Aligned, Caption Centered) */}
-          <div className="lg:col-span-3 flex justify-start lg:justify-end">
-            <div className="flex flex-col items-center">
-              <button
-                type="button"
-                onClick={() => openLeadModal("footer-cta")}
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-3 rounded-full text-[13.5px] font-medium text-[#1A1815] bg-gradient-to-r from-[#C8974F] to-[#AB7831] hover:from-[#BD8C44] hover:to-[#9E6C26] shadow-xs hover:shadow transition-all cursor-pointer select-none group"
-              >
-                <span>Book a Free Consultation</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 text-[#1A1815]" />
-              </button>
-              <span className="text-xs text-[#71717A] mt-2 font-normal text-center">
-                No obligations. Just a conversation.
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* ── 2. Middle Grid: 5 Linking Columns with Thin Vertical Dividers ── */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-0 pt-10 pb-12 border-t border-[#EAEAEA]">
-          
-          {/* Column 1: SERVICES */}
-          <div className="lg:pr-8 space-y-4">
-            <h3 className="text-[11.5px] font-bold text-[#111111] tracking-[0.14em] uppercase">
-              SERVICES
+          {/* Column 1: Services */}
+          <div>
+            <h3 className="text-lg sm:text-[19px] font-semibold text-[#111827] mb-5 tracking-tight">
+              Services &amp; Solutions
             </h3>
             <ul className="space-y-3">
               {servicesLinks.map((item, idx) => (
                 <li key={idx}>
                   <Link
                     to={item.href}
-                    className="text-xs sm:text-[13px] text-[#4B5563] hover:text-[#111827] transition-colors leading-relaxed inline-block"
+                    className="text-sm sm:text-[15px] text-[#4B5563] hover:text-[#111827] font-medium transition-colors leading-relaxed inline-block"
                   >
                     {item.label}
                   </Link>
@@ -158,17 +134,17 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 2: INDUSTRIES */}
-          <div className="lg:border-l lg:border-[#EAEAEA] lg:px-8 space-y-4">
-            <h3 className="text-[11.5px] font-bold text-[#111111] tracking-[0.14em] uppercase">
-              INDUSTRIES
+          {/* Column 2: Industries */}
+          <div>
+            <h3 className="text-lg sm:text-[19px] font-semibold text-[#111827] mb-5 tracking-tight">
+              Industries
             </h3>
             <ul className="space-y-3">
               {industriesLinks.map((item, idx) => (
                 <li key={idx}>
                   <Link
                     to={item.href}
-                    className="text-xs sm:text-[13px] text-[#4B5563] hover:text-[#111827] transition-colors leading-relaxed inline-block"
+                    className="text-sm sm:text-[15px] text-[#4B5563] hover:text-[#111827] font-medium transition-colors leading-relaxed inline-block"
                   >
                     {item.label}
                   </Link>
@@ -177,17 +153,17 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3: COMPANY */}
-          <div className="lg:border-l lg:border-[#EAEAEA] lg:px-8 space-y-4">
-            <h3 className="text-[11.5px] font-bold text-[#111111] tracking-[0.14em] uppercase">
-              COMPANY
+          {/* Column 3: Community */}
+          <div>
+            <h3 className="text-lg sm:text-[19px] font-semibold text-[#111827] mb-5 tracking-tight">
+              Company
             </h3>
             <ul className="space-y-3">
               {companyLinks.map((item, idx) => (
                 <li key={idx}>
                   <Link
                     to={item.href}
-                    className="text-xs sm:text-[13px] text-[#4B5563] hover:text-[#111827] transition-colors leading-relaxed inline-block"
+                    className="text-sm sm:text-[15px] text-[#4B5563] hover:text-[#111827] font-medium transition-colors leading-relaxed inline-block"
                   >
                     {item.label}
                   </Link>
@@ -196,17 +172,17 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 4: LOCATIONS */}
-          <div className="lg:border-l lg:border-[#EAEAEA] lg:px-8 space-y-4">
-            <h3 className="text-[11.5px] font-bold text-[#111111] tracking-[0.14em] uppercase">
-              LOCATIONS
+          {/* Column 4: Locations */}
+          <div>
+            <h3 className="text-lg sm:text-[19px] font-semibold text-[#111827] mb-5 tracking-tight">
+              Locations &amp; Hubs
             </h3>
             <ul className="space-y-3">
               {locationsLinks.map((item, idx) => (
                 <li key={idx}>
                   <Link
                     to={item.href}
-                    className="text-xs sm:text-[13px] text-[#4B5563] hover:text-[#111827] transition-colors leading-relaxed inline-block"
+                    className="text-sm sm:text-[15px] text-[#4B5563] hover:text-[#111827] font-medium transition-colors leading-relaxed inline-block"
                   >
                     {item.label}
                   </Link>
@@ -215,139 +191,154 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 5: CONTACT US */}
-          <div className="col-span-2 md:col-span-1 lg:border-l lg:border-[#EAEAEA] lg:pl-8 space-y-4">
-            <div>
-              <h3 className="text-[11.5px] font-bold text-[#111111] tracking-[0.14em] uppercase">
-                CONTACT US
-              </h3>
-              {/* Small gold line under CONTACT US heading */}
-              <div className="w-8 h-[2px] bg-[#B88746] mt-1.5" />
-            </div>
+          {/* Column 5: Contact Sales */}
+          <div className="col-span-2 md:col-span-1 space-y-4">
+            <h3 className="text-lg sm:text-[19px] font-semibold text-[#111827] mb-5 tracking-tight">
+              Contact Sales
+            </h3>
 
-            <div className="space-y-3.5 text-xs sm:text-[13px] pt-1">
-              {/* Phone */}
+            {/* Phone */}
+            <div>
+              <span className="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1">
+                Phone
+              </span>
               <a
                 href={`tel:${SEO_CONFIG.telephone}`}
-                className="flex items-center gap-3 text-[#374151] hover:text-[#111827] transition-colors group"
+                className="block text-base sm:text-[17px] text-[#111827] hover:text-[#0071E3] transition-colors font-semibold leading-snug"
               >
-                <div className="w-7 h-7 rounded-full bg-[#FAF5EE] text-[#B88746] flex items-center justify-center shrink-0 border border-[#F1E6D4]/50 group-hover:bg-[#F3EAD9] transition-colors">
-                  <Phone className="w-3.5 h-3.5" />
-                </div>
-                <span className="font-normal">{SEO_CONFIG.displayPhone}</span>
+                {SEO_CONFIG.displayPhone}
               </a>
+            </div>
 
-              {/* Email */}
+            {/* Email */}
+            <div>
+              <span className="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1">
+                Email
+              </span>
               <a
                 href={`mailto:${SEO_CONFIG.email}`}
-                className="flex items-center gap-3 text-[#374151] hover:text-[#111827] transition-colors group"
+                className="block text-sm sm:text-[15px] text-[#111827] hover:text-[#0071E3] transition-colors font-semibold leading-snug"
               >
-                <div className="w-7 h-7 rounded-full bg-[#FAF5EE] text-[#B88746] flex items-center justify-center shrink-0 border border-[#F1E6D4]/50 group-hover:bg-[#F3EAD9] transition-colors">
-                  <Mail className="w-3.5 h-3.5" />
-                </div>
-                <span className="font-normal">{SEO_CONFIG.email}</span>
+                {SEO_CONFIG.email}
               </a>
+            </div>
 
-              {/* Address */}
-              <div className="flex items-start gap-3 text-[#4B5563]">
-                <div className="w-7 h-7 rounded-full bg-[#FAF5EE] text-[#B88746] flex items-center justify-center shrink-0 border border-[#F1E6D4]/50 mt-0.5">
-                  <MapPin className="w-3.5 h-3.5" />
-                </div>
-                <div className="leading-relaxed text-[#4B5563] text-xs sm:text-[13px]">
-                  <p>{SEO_CONFIG.headquarters.streetAddress},</p>
-                  <p>Near Collectorate,</p>
-                  <p>{SEO_CONFIG.headquarters.addressLocality}, {SEO_CONFIG.headquarters.addressRegion} {SEO_CONFIG.headquarters.postalCode}</p>
-                </div>
+            {/* Office Location */}
+            <div>
+              <span className="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1">
+                Office Location
+              </span>
+              <p className="text-sm sm:text-[15px] text-[#374151] font-normal leading-relaxed">
+                Paramathi Velur, Namakkal District, Tamil Nadu 638182
+              </p>
+              <a
+                href={SOCIAL_LINKS.google}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-[#0071E3] hover:text-[#005bb5] mt-1.5"
+              >
+                <span>Find on Google Maps</span>
+                <ChevronRight className="w-3.5 h-3.5 stroke-[2.5]" />
+              </a>
+            </div>
+
+            {/* Quick Support & Concierge Action Links with dashed line */}
+            <div className="pt-3 border-t border-dashed border-neutral-300 space-y-2.5">
+              <div>
+                <button
+                  type="button"
+                  onClick={() => openLeadModal("footer-support")}
+                  className="inline-flex items-center gap-1 text-sm sm:text-[15px] font-medium text-[#0071E3] hover:text-[#005bb5] hover:underline cursor-pointer"
+                >
+                  <span>Support</span>
+                  <ChevronRight className="w-3.5 h-3.5 stroke-[2.5]" />
+                </button>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  onClick={() => openLeadModal("footer-concierge")}
+                  className="inline-flex items-center gap-1 text-sm sm:text-[15px] font-medium text-[#0071E3] hover:text-[#005bb5] hover:underline cursor-pointer"
+                >
+                  <span>Talk to Concierge</span>
+                  <ChevronRight className="w-3.5 h-3.5 stroke-[2.5]" />
+                </button>
               </div>
             </div>
-
-            {/* Social Media Circular Buttons (min 44px touch target) */}
-            <div className="pt-4 flex items-center gap-2.5">
-              <a
-                href={SOCIAL_LINKS.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                title="Follow Real Result on Facebook"
-                className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-[#EDEDED] hover:bg-[#1877F2] hover:text-white text-[#111111] flex items-center justify-center transition-all cursor-pointer shadow-sm hover:scale-105"
-              >
-                <FacebookIcon className="w-4 h-4" />
-              </a>
-              <a
-                href={SOCIAL_LINKS.x}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X (Twitter)"
-                title="Follow Real Result on X"
-                className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-[#EDEDED] hover:bg-black hover:text-white text-[#111111] flex items-center justify-center transition-all cursor-pointer shadow-sm hover:scale-105"
-              >
-                <XIcon className="w-4 h-4" />
-              </a>
-              <a
-                href={SOCIAL_LINKS.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                title="Connect with Real Result on LinkedIn"
-                className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-[#EDEDED] hover:bg-[#0A66C2] hover:text-white text-[#111111] flex items-center justify-center transition-all cursor-pointer shadow-sm hover:scale-105"
-              >
-                <LinkedInIcon className="w-4 h-4" />
-              </a>
-              <a
-                href={SOCIAL_LINKS.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                title="Subscribe to Real Result on YouTube"
-                className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-[#EDEDED] hover:bg-[#FF0000] hover:text-white text-[#111111] flex items-center justify-center transition-all cursor-pointer shadow-sm hover:scale-105"
-              >
-                <YoutubeIcon className="w-4 h-4" />
-              </a>
-              <a
-                href={SOCIAL_LINKS.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                title="Follow Real Result on Instagram"
-                className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-[#EDEDED] hover:bg-gradient-to-tr hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF] hover:text-white text-[#111111] flex items-center justify-center transition-all cursor-pointer shadow-sm hover:scale-105"
-              >
-                <InstagramIcon className="w-4 h-4" />
-              </a>
-            </div>
           </div>
+
         </div>
 
-        {/* ── 3. Bottom Strip: Copyright & Legal & Back to Top ── */}
-        <div className="pt-8 border-t border-[#EAEAEA] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6B7280]">
-          <p className="font-normal">
-            © 2026 Real Result. All rights reserved.
-          </p>
-
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-3">
-              <Link to="/privacy-policy" className="hover:text-[#111827] transition-colors py-2 inline-block">
-                Privacy Policy
-              </Link>
-              <span className="text-[#D1D5DB]">|</span>
-              <Link to="/terms" className="hover:text-[#111827] transition-colors py-2 inline-block">
-                Terms of Service
-              </Link>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="min-h-[44px] inline-flex items-center gap-2 py-2 px-1 text-xs text-[#4B5563] hover:text-[#111827] transition-colors cursor-pointer group select-none ml-2"
-            >
-              <span className="w-8 h-8 rounded-full border border-[#9CA3AF] group-hover:border-[#111827] flex items-center justify-center transition-colors">
-                <ArrowUp className="w-3.5 h-3.5 text-[#4B5563] group-hover:text-[#111827]" />
-              </span>
-              <span className="text-xs font-normal">Back to Top</span>
-            </button>
-          </div>
+        {/* ── 3. Centered Social Media Icons ── */}
+        <div className="pt-8 pb-10 border-t border-black/[0.08] flex items-center justify-center gap-6">
+          <a
+            href={SOCIAL_LINKS.x}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X (Twitter)"
+            title="Real Result on X"
+            className="w-9 h-9 flex items-center justify-center text-black hover:scale-115 transition-transform cursor-pointer"
+          >
+            <XIcon className="w-5 h-5" />
+          </a>
+          <a
+            href={SOCIAL_LINKS.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            title="Real Result on Facebook"
+            className="w-9 h-9 flex items-center justify-center hover:scale-115 transition-transform cursor-pointer"
+          >
+            <FacebookIcon className="w-5 h-5" />
+          </a>
+          <a
+            href={SOCIAL_LINKS.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            title="Real Result on YouTube"
+            className="w-9 h-9 flex items-center justify-center hover:scale-115 transition-transform cursor-pointer"
+          >
+            <YoutubeIcon className="w-5 h-5" />
+          </a>
+          <a
+            href={SOCIAL_LINKS.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            title="Real Result on LinkedIn"
+            className="w-9 h-9 flex items-center justify-center hover:scale-115 transition-transform cursor-pointer"
+          >
+            <LinkedInIcon className="w-5 h-5" />
+          </a>
+          <a
+            href={SOCIAL_LINKS.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            title="Real Result on Instagram"
+            className="w-9 h-9 flex items-center justify-center hover:scale-115 transition-transform cursor-pointer"
+          >
+            <InstagramIcon className="w-5 h-5" />
+          </a>
         </div>
-
       </Container>
+
+      {/* ── 4. Dark Navy / Midnight Bottom Strip ── */}
+      <div className="bg-[#0B0C1E] text-white py-9 border-t border-black/20 text-center px-4">
+        <div className="max-w-7xl mx-auto flex flex-col items-center justify-center">
+          {/* Centered Brand Mark */}
+          <div className="mb-3 hover:scale-105 transition-transform duration-200">
+            <BrandLogo size="lg" theme="dark" href="/" />
+          </div>
+
+          {/* Copyright notice */}
+          <p className="text-xs sm:text-sm text-neutral-300 font-normal tracking-wide leading-relaxed">
+            &copy; 2026, Real Result Marketing &amp; Technology Solutions Pvt. Ltd. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+
     </footer>
   );
 };

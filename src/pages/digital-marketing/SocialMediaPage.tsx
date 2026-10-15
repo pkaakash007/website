@@ -58,7 +58,7 @@ export const SocialMediaPage: React.FC = () => {
 
             <DirectAnswerBox
               question="What is Real Result's Social Media Strategy for Tamil Nadu businesses?"
-              summary="We develop creative assets tailored to Tamil Nadu's diverse consumer and business landscapes. From LinkedIn thought leadership campaigns for Coimbatore and Chennai manufacturing and IT firms to high-velocity Instagram and Facebook direct-response funnels for retail and consumer brands, our performance social strategy turns impressions into measurable customer inquiries."
+              summary="We develop creative assets tailored to Tamil Nadu's diverse consumer and business landscapes. From LinkedIn thought leadership campaigns for Coimbatore, Salem, and Erode manufacturing and industrial firms to high-velocity Instagram and Facebook direct-response funnels for retail, poultry, and consumer brands in Namakkal and Paramathi Velur, our performance social strategy turns impressions into measurable customer inquiries."
               takeaways={[
                 "B2B LinkedIn lead generation targeting executive decision-makers",
                 "High-converting Meta (Instagram & Facebook) catalog and lead ad funnels",

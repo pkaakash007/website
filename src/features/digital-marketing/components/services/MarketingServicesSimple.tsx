@@ -161,7 +161,7 @@ export const CORE_MARKETING_SERVICES: CoreMarketingService[] = [
     category: "Google Ads & Microsoft Advertising",
     icon: GoogleAdsIcon,
     tabIcon: Search,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/marketing/google-search-ads.webp",
     tagline: "Capture Active Buyers at the Exact Moment of Commercial Intent",
     description:
       "We design rigorous Alpha/Beta search account architectures, negative keyword shields, and value-based bidding algorithms to capture high-intent enterprise buyers and commercial shoppers with minimal CPC waste.",

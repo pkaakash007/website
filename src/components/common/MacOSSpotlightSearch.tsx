@@ -41,8 +41,8 @@ const SEARCH_CATALOG: SearchResultItem[] = [
   // Company & Contact
   { id: "c1", title: "About Real Result — Leadership & Story", category: "Company", href: "/about", icon: Building },
   { id: "c2", title: "Core Operating Values & Engineering SLA", category: "Company", href: "/about#values", icon: Building },
-  { id: "c3", title: "Contact Corporate Headquarters (Erode, TN)", category: "Contact", href: "/contact", icon: Phone },
-  { id: "c4", title: "Regional Technology Desks (Coimbatore, Chennai)", category: "Contact", href: "/contact", icon: Phone },
+  { id: "c3", title: "Paramathi Velur Registered Office & Erode HQ", category: "Contact", href: "/contact", icon: Phone },
+  { id: "c4", title: "Salem & Coimbatore Regional Desks", category: "Contact", href: "/contact", icon: Phone },
 ];
 
 export const MacOSSpotlightSearch: React.FC = () => {

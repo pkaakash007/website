@@ -4,7 +4,9 @@ import AboutHero from "@/features/about/components/hero/AboutHero";
 import AboutStory from "@/features/about/components/story/AboutStory";
 import AboutCoreValues from "@/features/about/components/values/AboutCoreValues";
 import AboutMilestonesStats from "@/features/about/components/stats/AboutMilestonesStats";
+import AboutClientLogos from "@/features/about/components/clients/AboutClientLogos";
 import AboutLeadershipTeam from "@/features/about/components/leadership/AboutLeadershipTeam";
+import AboutSocialChannels from "@/features/about/components/social/AboutSocialChannels";
 import AboutBriefingCTA from "@/features/about/components/cta/AboutBriefingCTA";
 
 export const AboutPage: React.FC = () => {
@@ -36,10 +38,16 @@ export const AboutPage: React.FC = () => {
       {/* 4. Verified Milestones & Scale Telemetry */}
       <AboutMilestonesStats />
 
-      {/* 5. Multidisciplinary Leadership Team */}
+      {/* 5. Verified Client Logos & Regional Partnerships */}
+      <AboutClientLogos />
+
+      {/* 6. Multidisciplinary Leadership Team */}
       <AboutLeadershipTeam />
 
-      {/* 6. Strategic Partnership Briefing CTA */}
+      {/* 7. Official Social Media & Publishing Channels */}
+      <AboutSocialChannels />
+
+      {/* 8. Strategic Partnership Briefing CTA */}
       <AboutBriefingCTA />
     </div>
   );

@@ -36,7 +36,7 @@ export const ChennaiPage: React.FC = () => {
             latitude: loc.geo.latitude,
             longitude: loc.geo.longitude,
           },
-          telephone: "+919842012345",
+          telephone: "+918111033390",
           areaServed: "Chennai, Tamil Nadu",
         }}
       />

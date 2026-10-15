@@ -73,6 +73,25 @@ export interface WebsitePortfolioItem {
 const WEBSITE_PORTFOLIO: WebsitePortfolioItem[] = [
   // ── 1. Static Websites ──────────────────────────────────────────────────
   {
+    id: "aravinth-dental",
+    client: "Dr. Aravinth Dental Care",
+    sub: "Static Website",
+    url: "aravinth-dental-care.pages.dev",
+    isLiveIframe: true,
+    industry: "Dentistry & Oral Healthcare",
+    topicTitle: "Static Web Development",
+    topicLink: "/application-development",
+    tagline: "Comprehensive Dental Care, Implants & Root Canal in Namakkal",
+    badge: "Dentist in Namakkal",
+    brandColor: "#276B65",
+    bgGradient: "from-[#0A2421] via-[#1A4D48] to-[#276B65]",
+    stats: [
+      { label: "Location", value: "Namakkal, TN" },
+      { label: "Specialty", value: "Multi-Specialty" },
+    ],
+    features: ["Root Canal & Orthodontics", "Dental Implants & Braces", "Fast Static CDN"],
+  },
+  {
     id: "vm",
     client: "Vmmeditech Healthcare",
     sub: "Static Website",
@@ -407,6 +426,7 @@ const WEBSITE_PORTFOLIO: WebsitePortfolioItem[] = [
     client: "Buddy Mattress",
     sub: "E-commerce Website",
     url: "buddy-mattress.pages.dev",
+    isLiveIframe: true,
     industry: "Mattresses & Sleep Comfort",
     topicTitle: "E-Commerce Solutions",
     topicLink: "/application-development",
@@ -419,8 +439,6 @@ const WEBSITE_PORTFOLIO: WebsitePortfolioItem[] = [
       { label: "Warranty", value: "10 Years" },
     ],
     features: ["Razorpay Instant Checkout", "Orthopedic Sleep Ergonomics", "Pan-India Free Delivery"],
-    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80",
-    isLiveIframe: true,
   },
 ];
 
@@ -555,7 +573,7 @@ const PortfolioCardImage: React.FC<{
   );
 };
 
-// ─── Live Website Responsive Preview Components ──────────────────────────────
+// ─── Live Website Proportional Responsive Preview Component ─────────────────
 
 const LiveWebsitePreview: React.FC<{
   url: string;
@@ -587,8 +605,8 @@ const LiveWebsitePreview: React.FC<{
 
   const fullUrl = url.startsWith("http") ? url : `https://${url}`;
 
-  // Proportional responsive scaling
-  const scale = containerSize.width > 0 ? containerSize.width / 1280 : 0.3;
+  // Proportional responsive scaling: 1280px standard desktop viewport scaled to container
+  const scale = containerSize.width > 0 ? containerSize.width / 1280 : 0.3125;
   const virtualHeight =
     scale > 0 && containerSize.height > 0
       ? Math.ceil(containerSize.height / scale)
@@ -597,38 +615,60 @@ const LiveWebsitePreview: React.FC<{
   return (
     <div
       ref={containerRef}
-      onClick={onOpenModal}
-      className="relative w-full h-full overflow-hidden bg-[#F8FAFC] select-none cursor-pointer group"
+      className="relative w-full h-full overflow-hidden bg-slate-900 select-none group"
     >
-      {/* Live Iframe Viewport */}
+      {/* Real Live Website Iframe */}
       <iframe
         src={fullUrl}
         title={title}
         loading="lazy"
         onLoad={() => setIsLoaded(true)}
-        className="border-0 pointer-events-none absolute top-0 left-0"
+        className="border-0 pointer-events-none absolute top-0 left-0 transition-opacity duration-300"
         style={{
           width: "1280px",
           height: `${virtualHeight}px`,
           transform: `scale(${scale})`,
           transformOrigin: "top left",
-          opacity: isLoaded ? 1 : 0,
-          transition: "opacity 0.4s ease-in-out",
+          opacity: isLoaded ? 1 : 0.05,
         }}
       />
 
-      {/* Loading Skeleton */}
+      {/* Subtle loader shimmer while iframe mounts */}
       {!isLoaded && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-900 text-slate-300 z-10 gap-2">
-          <div className="w-7 h-7 rounded-full border-2 border-emerald-400/30 border-t-emerald-400 animate-spin" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-950 text-slate-300 z-10 gap-2">
+          <div className="w-6 h-6 rounded-full border-2 border-emerald-400/30 border-t-emerald-400 animate-spin" />
           <div className="text-[11px] font-mono text-slate-300">
             <span>Loading {url}...</span>
           </div>
         </div>
       )}
+
+      {/* Hover action overlay */}
+      <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2.5 z-20 pointer-events-none">
+        <button
+          type="button"
+          onClick={onOpenModal}
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white text-neutral-900 text-xs font-bold shadow-lg pointer-events-auto hover:bg-neutral-100 transition-colors cursor-pointer"
+        >
+          <Maximize2 className="w-3.5 h-3.5 text-[#0071E3]" />
+          <span>Test Devices</span>
+        </button>
+        <a
+          href={fullUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/80 text-white text-xs font-bold border border-white/20 shadow-lg pointer-events-auto hover:bg-black transition-colors cursor-pointer"
+        >
+          <span>Visit Live Site</span>
+          <ExternalLink className="w-3.5 h-3.5" />
+        </a>
+      </div>
     </div>
   );
 };
+
+// ─── Live Website Responsive Preview Modal ──────────────────────────────────
 
 const ResponsiveDeviceModal: React.FC<{
   url: string;
@@ -880,20 +920,31 @@ export const PortfolioShowcase: React.FC = () => {
                     <span className="truncate">https://{site.url}</span>
                   </a>
 
-                  {/* External icon */}
-                  <a
-                    href={site.url.startsWith("http") ? site.url : `https://${site.url}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={`Visit ${site.url}`}
-                    className="cursor-pointer text-slate-400 hover:text-white transition-colors p-1"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
+                  {/* External icon & Device preview button */}
+                  <div className="flex items-center gap-1">
+                    <button
+                      onClick={() => setLivePreviewModal({ url: site.url, title: site.client })}
+                      title="Test responsive devices"
+                      className="cursor-pointer text-slate-400 hover:text-white transition-colors p-1 rounded hover:bg-white/10"
+                      aria-label="Test responsive devices"
+                    >
+                      <Laptop className="w-3.5 h-3.5" />
+                    </button>
+                    <a
+                      href={site.url.startsWith("http") ? site.url : `https://${site.url}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`Visit ${site.url}`}
+                      className="cursor-pointer text-slate-400 hover:text-white transition-colors p-1 rounded hover:bg-white/10"
+                      aria-label="Open in new tab"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
                 </div>
 
                 {/* ── Real Website Interface Viewport ── */}
-                <div className="relative aspect-[16/10] overflow-hidden bg-neutral-900 group">
+                <div className="relative aspect-[16/10] overflow-hidden bg-neutral-900 group/viewport block">
                   {site.isLiveIframe ? (
                     <LiveWebsitePreview
                       url={site.url}
@@ -901,16 +952,30 @@ export const PortfolioShowcase: React.FC = () => {
                       onOpenModal={() => setLivePreviewModal({ url: site.url, title: site.client })}
                     />
                   ) : (
-                    <>
+                    <a
+                      href={site.url.startsWith("http") ? site.url : `https://${site.url}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`Visit ${site.client} (${site.url})`}
+                      className="relative w-full h-full block cursor-pointer group/img"
+                    >
                       <PortfolioCardImage
                         src={getWebsitePreviewImage(site)}
                         alt={site.client}
                         width={400}
                         height={250}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500"
                       />
                       {/* Subtle glass & dark gradient overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20 pointer-events-none" />
+
+                      {/* Hover action pill */}
+                      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-20">
+                        <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/95 text-neutral-900 text-xs font-bold shadow-lg transform translate-y-1 group-hover/img:translate-y-0 transition-transform duration-300">
+                          <span>Visit Live Site</span>
+                          <ExternalLink className="w-3.5 h-3.5 text-neutral-700" />
+                        </span>
+                      </div>
 
                       {/* Mini Website Hero Banner & Stats Overlay */}
                       <div className="absolute bottom-2.5 inset-x-3 text-white pointer-events-none z-10">
@@ -918,17 +983,17 @@ export const PortfolioShowcase: React.FC = () => {
                           {site.tagline}
                         </p>
                         <div className="flex items-center gap-1.5">
-                          {site.stats.map((s, sIdx) => (
-                            <span key={sIdx} className="inline-flex items-center gap-1 bg-black/50 backdrop-blur-sm rounded px-1.5 py-0.5 text-[9px] text-white/90 border border-white/10">
-                              <span className="text-white/60">{s.label}:</span>
-                              <span className="font-bold text-white">{s.value}</span>
+                          {site.stats.map((s, idx) => (
+                            <span key={idx} className="inline-block text-[10px] font-medium px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs border border-white/10 text-white/90">
+                              {s.label}: <strong className="text-white font-bold">{s.value}</strong>
                             </span>
                           ))}
                         </div>
                       </div>
-                    </>
+                    </a>
                   )}
                 </div>
+
 
                 {/* ── Card Body & Navigation Links ── */}
                 <div className="p-5 flex flex-col flex-1 justify-between bg-white">
@@ -946,12 +1011,30 @@ export const PortfolioShowcase: React.FC = () => {
 
                   {/* ── Action Button ── */}
                   <div className="pt-3.5 border-t border-neutral-100 mt-2">
-                    <button
-                      onClick={() => openLeadModal(`Build a website like ${site.client}`)}
-                      className="w-full py-2.5 px-4 rounded-xl text-center text-xs font-bold bg-neutral-100 hover:bg-[#000000] text-neutral-800 hover:text-white transition-all duration-200 cursor-pointer shadow-sm active:scale-[0.98]"
-                    >
-                      Build Similar Site
-                    </button>
+                    {site.isLiveIframe ? (
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => setLivePreviewModal({ url: site.url, title: site.client })}
+                          className="flex-1 py-2.5 px-2.5 rounded-xl text-center text-xs font-bold bg-[#0071E3] hover:bg-[#005bb5] text-white transition-all duration-200 cursor-pointer shadow-xs flex items-center justify-center gap-1.5 active:scale-[0.98]"
+                        >
+                          <Laptop className="w-3.5 h-3.5" />
+                          <span>Responsive View</span>
+                        </button>
+                        <button
+                          onClick={() => openLeadModal(`Build a website like ${site.client}`)}
+                          className="flex-1 py-2.5 px-2 rounded-xl text-center text-xs font-bold bg-neutral-100 hover:bg-[#000000] text-neutral-800 hover:text-white transition-all duration-200 cursor-pointer shadow-sm active:scale-[0.98]"
+                        >
+                          Build Similar Site
+                        </button>
+                      </div>
+                    ) : (
+                      <button
+                        onClick={() => openLeadModal(`Build a website like ${site.client}`)}
+                        className="w-full py-2.5 px-4 rounded-xl text-center text-xs font-bold bg-neutral-100 hover:bg-[#000000] text-neutral-800 hover:text-white transition-all duration-200 cursor-pointer shadow-sm active:scale-[0.98]"
+                      >
+                        Build Similar Site
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>

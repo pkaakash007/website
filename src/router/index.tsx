@@ -17,17 +17,13 @@ const IndustryDetailPage = lazy(() => import("@/pages/industries/IndustryDetailP
 const PortfolioPage = lazy(() => import("@/pages/PortfolioPage"));
 const NotFoundPage = lazy(() => import("@/pages/NotFoundPage"));
 
-// Regional Location Hubs & City Pages
+// Regional Location Hubs & City Pages (Salem, Erode, Namakkal, Paramathi Velur, Coimbatore)
 const TamilNaduHubPage = lazy(() => import("@/pages/locations/TamilNaduHubPage"));
 const NamakkalPage = lazy(() => import("@/pages/locations/NamakkalPage"));
 const SalemPage = lazy(() => import("@/pages/locations/SalemPage"));
 const ErodeHQPage = lazy(() => import("@/pages/locations/ErodeHQPage"));
 const CoimbatorePage = lazy(() => import("@/pages/locations/CoimbatorePage"));
-const ChennaiPage = lazy(() => import("@/pages/locations/ChennaiPage"));
-const TiruppurPage = lazy(() => import("@/pages/locations/TiruppurPage"));
-const MaduraiPage = lazy(() => import("@/pages/locations/MaduraiPage"));
-const TrichyPage = lazy(() => import("@/pages/locations/TrichyPage"));
-const TirunelveliPage = lazy(() => import("@/pages/locations/TirunelveliPage"));
+const ParamathiVelurPage = lazy(() => import("@/pages/locations/ParamathiVelurPage"));
 
 export const router = createBrowserRouter([
   {
@@ -138,27 +134,33 @@ export const router = createBrowserRouter([
         element: <CoimbatorePage />,
       },
       {
+        path: "locations/paramathi-velur",
+        element: <ParamathiVelurPage />,
+      },
+
+      // Legacy/removed city redirects -> Tamil Nadu Hub
+      {
         path: "locations/chennai",
-        element: <ChennaiPage />,
+        element: <Navigate to="/locations/tamil-nadu" replace />,
       },
       {
         path: "locations/tiruppur",
-        element: <TiruppurPage />,
+        element: <Navigate to="/locations/tamil-nadu" replace />,
       },
       {
         path: "locations/madurai",
-        element: <MaduraiPage />,
+        element: <Navigate to="/locations/tamil-nadu" replace />,
       },
       {
         path: "locations/trichy",
-        element: <TrichyPage />,
+        element: <Navigate to="/locations/tamil-nadu" replace />,
       },
       {
         path: "locations/tirunelveli",
-        element: <TirunelveliPage />,
+        element: <Navigate to="/locations/tamil-nadu" replace />,
       },
 
-      // Fast location aliases & SEO redirects
+      // Fast location aliases & SEO redirects (Targeting 5 districts: Salem, Erode, Namakkal, Paramathi Velur, Coimbatore)
       {
         path: "namakkal",
         element: <Navigate to="/locations/namakkal" replace />,
@@ -172,6 +174,14 @@ export const router = createBrowserRouter([
         element: <Navigate to="/locations/erode" replace />,
       },
       {
+        path: "paramathi-velur",
+        element: <Navigate to="/locations/paramathi-velur" replace />,
+      },
+      {
+        path: "coimbatore",
+        element: <Navigate to="/locations/coimbatore" replace />,
+      },
+      {
         path: "digital-marketing/namakkal",
         element: <Navigate to="/locations/namakkal" replace />,
       },
@@ -182,6 +192,14 @@ export const router = createBrowserRouter([
       {
         path: "digital-marketing/erode",
         element: <Navigate to="/locations/erode" replace />,
+      },
+      {
+        path: "digital-marketing/paramathi-velur",
+        element: <Navigate to="/locations/paramathi-velur" replace />,
+      },
+      {
+        path: "digital-marketing/coimbatore",
+        element: <Navigate to="/locations/coimbatore" replace />,
       },
 
       // 9. Our Portfolio Page & Aliases

@@ -1,49 +1,51 @@
 import React from "react";
-import { UserCheck, Code2, Lock, HeartHandshake } from "lucide-react";
 
 interface ValueProps {
+  number: string;
+  category: string;
   title: string;
   desc: string;
-  number?: string;
+  commitment: string;
 }
 
-const VALUE_ICONS: Record<string, { icon: React.FC<{ className?: string }>; bg: string; text: string }> = {
-  "01": { icon: UserCheck, bg: "bg-[#0071E3]/10", text: "text-[#0071E3]" },
-  "02": { icon: Code2, bg: "bg-[#34C759]/10", text: "text-[#34C759]" },
-  "03": { icon: Lock, bg: "bg-[#FF9500]/10", text: "text-[#FF9500]" },
-  "04": { icon: HeartHandshake, bg: "bg-[#AF52DE]/10", text: "text-[#AF52DE]" },
-};
-
-export const ValueItemCard: React.FC<ValueProps> = ({ title, desc, number }) => {
-  const iconConfig = (number && VALUE_ICONS[number]) || {
-    icon: Code2,
-    bg: "bg-black/[0.05]",
-    text: "text-neutral-800",
-  };
-  const IconComponent = iconConfig.icon;
-
+export const ValueItemCard: React.FC<ValueProps> = ({
+  number,
+  category,
+  title,
+  desc,
+  commitment,
+}) => {
   return (
-    <div className="bg-white rounded-[22px] p-6 sm:p-7 border border-black/[0.07] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-      <div className="space-y-4">
-        {/* macOS Top Bar with Icon */}
-        <div className="flex items-center">
-          <div className={`w-10 h-10 rounded-xl ${iconConfig.bg} ${iconConfig.text} flex items-center justify-center transition-transform duration-300 group-hover:scale-105`}>
-            <IconComponent className="w-5 h-5 stroke-[2.2]" />
-          </div>
+    <div className="group flex flex-col justify-between p-6 sm:p-7 bg-white transition-colors duration-200 hover:bg-[#FAFAFC]">
+      <div>
+        {/* Editorial Index & Category Header */}
+        <div className="flex items-center justify-between pb-4 border-b border-black/[0.06]">
+          <span className="font-mono text-xs font-semibold text-neutral-400 tracking-wider">
+            {number}
+          </span>
+          <span className="text-[11px] font-medium text-neutral-500 tracking-wider uppercase">
+            {category}
+          </span>
         </div>
 
-        <h3 className="text-lg font-semibold text-[#1D1D1F] tracking-tight leading-snug">
+        {/* Value Title */}
+        <h3 className="text-base sm:text-lg font-semibold text-[#111111] tracking-tight leading-snug mt-5 mb-2.5 group-hover:text-[#0071E3] transition-colors">
           {title}
         </h3>
 
-        <p className="text-xs sm:text-[13px] text-[#86868B] leading-relaxed">
+        {/* Narrative Description */}
+        <p className="text-xs sm:text-[13.5px] text-neutral-600 leading-relaxed font-normal">
           {desc}
         </p>
+      </div>
+
+      {/* Grounded Commitment Line */}
+      <div className="pt-5 mt-6 border-t border-black/[0.04] flex items-center gap-2 text-xs font-medium text-neutral-500">
+        <span className="w-1.5 h-1.5 rounded-full bg-neutral-900 group-hover:bg-[#0071E3] transition-colors shrink-0" />
+        <span>{commitment}</span>
       </div>
     </div>
   );
 };
 
 export default ValueItemCard;
-
-

@@ -19,9 +19,9 @@ const contactFaqs: FAQItem[] = [
       "Yes, absolutely. We routinely sign standard bilateral NDAs before reviewing proprietary source code, internal databases, product roadmaps, or confidential sales telemetry.",
   },
   {
-    question: "Can we visit your headquarters in Erode for an in-person meeting?",
+    question: "Can we visit your offices in Paramathi Velur, Erode, or Salem for an in-person meeting?",
     answer:
-      "Yes. We welcome prospective clients and partners to our Erode engineering headquarters. We also arrange in-person briefings in Coimbatore, Chennai, Tiruppur, or Salem upon prior appointment.",
+      "Yes. We welcome prospective clients and partners to our registered office in Paramathi Velur, Namakkal, and our regional headquarters in Erode. We also arrange in-person briefings across Salem and Coimbatore upon prior appointment.",
   },
   {
     question: "What is your typical project engagement structure?",

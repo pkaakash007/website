@@ -69,7 +69,7 @@ export const SEOPage: React.FC = () => {
 
             <DirectAnswerBox
               question="What sets Real Result Marketing's SEO services apart in Tamil Nadu?"
-              summary="Real Result Marketing is an engineering-first SEO company based in Erode, Tamil Nadu, serving businesses across Coimbatore, Chennai, and statewide. We solve critical technical bottlenecks—Core Web Vitals, JavaScript hydration, crawl budget optimization, and programmatic topic clustering—combined with authoritative digital PR, delivering predictable top-tier Google rankings without deceptive or spam tactics."
+              summary="Real Result Marketing is an engineering-first SEO company and digital marketing agency based in Tamil Nadu, serving businesses across Salem, Erode, Namakkal, Paramathi Velur, and Coimbatore. We solve critical technical bottlenecks—Core Web Vitals, JavaScript hydration, crawl budget optimization, and programmatic topic clustering—combined with authoritative digital PR, delivering predictable top-tier Google rankings without deceptive or spam tactics."
               takeaways={[
                 "Exclusively 100% white-hat, sustainable search methodologies",
                 "Advanced Core Web Vitals and crawlability engineering",

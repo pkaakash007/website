@@ -31,7 +31,7 @@ export const TiruppurPage: React.FC = () => {
             postalCode: "641604",
             addressCountry: "IN",
           },
-          telephone: "+919842012345",
+          telephone: "+918111033390",
           areaServed: "Tiruppur, Tamil Nadu",
         }}
       />

@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
 import { openLeadModal } from "@/components/common/LeadModal";
-import { ShieldCheck, Phone, ArrowUpRight } from "lucide-react";
+import { Phone, ArrowUpRight } from "lucide-react";
 
 export const HomeLeadBanner: React.FC = () => {
   return (
@@ -42,8 +41,8 @@ export const HomeLeadBanner: React.FC = () => {
               Talk to our team in Erode. Whether you need Google Ads, SEO, or a custom app — we&apos;ll create a clear plan that works for your business and budget.
             </p>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            {/* Action Button */}
+            <div className="flex items-center justify-center pt-2">
               <button
                 type="button"
                 onClick={() => openLeadModal("home-cta-outperform")}
@@ -63,21 +62,10 @@ export const HomeLeadBanner: React.FC = () => {
                   />
                 </div>
               </button>
-
-              <Link
-                to="/contact"
-                className="cursor-pointer inline-flex items-center justify-center px-7 py-3.5 sm:px-8 sm:py-4 rounded-full bg-transparent border border-white/20 hover:border-white/40 hover:bg-white/[0.05] text-white/90 hover:text-white font-bold text-sm sm:text-base transition-all duration-200 active:scale-[0.98]"
-              >
-                <span>Contact Erode HQ</span>
-              </Link>
             </div>
 
             {/* Trust Signals Footer Strip */}
             <div className="pt-8 border-t border-white/[0.08] flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-neutral-400">
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-3.5 h-3.5 text-neutral-400" />
-                <span>Strict Mutual NDA</span>
-              </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-neutral-400" />
                 <a href="tel:+918111033390" className="hover:text-white transition-colors">

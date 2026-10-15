@@ -87,13 +87,14 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
   cursor: default;
+  overflow-x: clip;
 }
 
 body {
   background-color: var(--ae-canvas);
   color: var(--ae-ink);
   font-family: var(--font-system) !important;
-  overflow-x: hidden;
+  overflow-x: clip;
   letter-spacing: -0.015em;
   font-weight: 400;
   line-height: 1.6;

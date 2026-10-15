@@ -21,8 +21,8 @@ export const LocalSEOPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <SEOHead
-        title="Local SEO Company in Tamil Nadu | Google Maps 3-Pack | Real Result"
-        description="Dominate local search and Google Maps across Coimbatore, Erode, Chennai, and Tamil Nadu. Real Result Marketing optimizes Google Business Profiles, citations, and local reviews."
+        title="Best Local SEO Company in Tamil Nadu | Google Maps 3-Pack | Real Result"
+        description="Dominate local search and Google Maps across Salem, Erode, Namakkal, Paramathi Velur, and Coimbatore. Real Result Marketing is the best local SEO agency optimizing Google Business Profiles, local citations, and reviews."
         canonicalPath="/digital-marketing/local-seo"
         schema={{
           "@context": "https://schema.org",
@@ -34,7 +34,7 @@ export const LocalSEOPage: React.FC = () => {
             url: "https://realresult.in",
           },
           serviceType: "Local SEO Services",
-          areaServed: ["Tamil Nadu", "Erode", "Coimbatore", "Chennai", "Salem", "Tiruppur"],
+          areaServed: ["Tamil Nadu", "Erode", "Namakkal", "Paramathi Velur", "Salem", "Coimbatore"],
         }}
       />
 
@@ -149,30 +149,36 @@ export const LocalSEOPage: React.FC = () => {
           <h3 className="text-xl font-bold text-primary mb-6">
             Active Tamil Nadu Local Search Hubs
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
             <Link
               to="/locations/erode"
-              className="p-4 rounded-xl bg-canvas hover:bg-surface border border-border transition-colors text-sm font-semibold text-primary"
+              className="p-4 rounded-xl bg-canvas hover:bg-surface border border-border transition-colors text-sm font-semibold text-primary text-center"
             >
               📍 Erode Headquarters
             </Link>
             <Link
+              to="/locations/namakkal"
+              className="p-4 rounded-xl bg-canvas hover:bg-surface border border-border transition-colors text-sm font-semibold text-primary text-center"
+            >
+              📍 Namakkal Hub
+            </Link>
+            <Link
+              to="/locations/paramathi-velur"
+              className="p-4 rounded-xl bg-canvas hover:bg-surface border border-border transition-colors text-sm font-semibold text-primary text-center"
+            >
+              📍 Paramathi Velur Desk
+            </Link>
+            <Link
+              to="/locations/salem"
+              className="p-4 rounded-xl bg-canvas hover:bg-surface border border-border transition-colors text-sm font-semibold text-primary text-center"
+            >
+              📍 Salem Regional Hub
+            </Link>
+            <Link
               to="/locations/coimbatore"
-              className="p-4 rounded-xl bg-canvas hover:bg-surface border border-border transition-colors text-sm font-semibold text-primary"
+              className="p-4 rounded-xl bg-canvas hover:bg-surface border border-border transition-colors text-sm font-semibold text-primary text-center"
             >
-              📍 Coimbatore Hub
-            </Link>
-            <Link
-              to="/locations/chennai"
-              className="p-4 rounded-xl bg-canvas hover:bg-surface border border-border transition-colors text-sm font-semibold text-primary"
-            >
-              📍 Chennai Metro
-            </Link>
-            <Link
-              to="/locations/tiruppur"
-              className="p-4 rounded-xl bg-canvas hover:bg-surface border border-border transition-colors text-sm font-semibold text-primary"
-            >
-              📍 Tiruppur Knitwear Hub
+              📍 Coimbatore Center
             </Link>
           </div>
         </Container>

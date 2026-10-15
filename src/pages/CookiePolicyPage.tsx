@@ -54,8 +54,8 @@ export const CookiePolicyPage: React.FC = () => {
             <h2 className="text-2xl font-bold text-neutral-900 mb-3">3. Managing Your Choices</h2>
             <p>
               You may manage or disable cookies at any time through your browser settings. For questions about our cookie usage, email{" "}
-              <a href="mailto:hello@realresult.in" className="text-[#0071E3] underline">
-                hello@realresult.in
+              <a href="mailto:realresult.dev@gmail.com" className="text-[#0071E3] underline">
+                realresult.dev@gmail.com
               </a>.
             </p>
           </div>

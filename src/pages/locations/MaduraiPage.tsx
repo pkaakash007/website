@@ -31,7 +31,7 @@ export const MaduraiPage: React.FC = () => {
             postalCode: "625001",
             addressCountry: "IN",
           },
-          telephone: "+919842012345",
+          telephone: "+918111033390",
           areaServed: "Madurai, Tamil Nadu",
         }}
       />

@@ -7,11 +7,10 @@ export interface ServiceCategoryTab {
 }
 
 export const SERVICE_FILTER_TABS: ServiceCategoryTab[] = [
-  { id: "all", label: "All Services (13)" },
+  { id: "all", label: "All Services (9)" },
   { id: "web-apps", label: "Web & Apps" },
   { id: "marketing-seo", label: "Marketing & SEO" },
   { id: "branding-media", label: "Branding & Media" },
-  { id: "security-cloud", label: "Security & Cloud" },
 ];
 
 export const ServicesTopIntroHeader: React.FC = () => {

@@ -7,6 +7,7 @@ import { Globe, Smartphone, ExternalLink, ChevronLeft, ChevronRight } from "luci
 // ─── Web Portfolio Data ──────────────────────────────────────────────────────
 const webPortfolio: Record<string, { name: string; industry: string; image: string }[]> = {
   "Static Website": [
+    { name: "Dr. Aravinth Dental Care", industry: "Dentistry & Healthcare", image: "https://aravinth-dental-care.pages.dev/images/clinic-operatory.jpg" },
     { name: "Vmmeditech",               industry: "Healthcare",     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80" },
     { name: "Anitha Packers & Movers",  industry: "Logistics",     image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=80" },
     { name: "Greensprout School",       industry: "Education",     image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&q=80" },

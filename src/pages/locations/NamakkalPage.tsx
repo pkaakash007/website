@@ -94,7 +94,7 @@ export const NamakkalPage: React.FC = () => {
             image: SEO_CONFIG.logo,
             telephone: SEO_CONFIG.telephone,
             email: SEO_CONFIG.email,
-            hasMap: "https://maps.app.goo.gl/Be2565mN74uVgZ7p9",
+            hasMap: "https://www.google.com/maps/place/Real+Result+Marketing/@11.1112024,78.0010096,17z/data=!3m1!4b1!4m6!3m5!1s0x3babd5a621e9d483:0x7610d4ed000d0c45!8m2!3d11.1111972!4d78.0058805!16s%2Fg%2F11p1gkwbj4",
             priceRange: "$$",
             aggregateRating: {
               "@type": "AggregateRating",
@@ -229,7 +229,7 @@ export const NamakkalPage: React.FC = () => {
                 Get Free Growth Audit &amp; Proposal
               </Button>
               <a
-                href="https://maps.app.goo.gl/Be2565mN74uVgZ7p9"
+                href="https://www.google.com/maps/place/Real+Result+Marketing/@11.1112024,78.0010096,17z/data=!3m1!4b1!4m6!3m5!1s0x3babd5a621e9d483:0x7610d4ed000d0c45!8m2!3d11.1111972!4d78.0058805!16s%2Fg%2F11p1gkwbj4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border text-sm font-semibold text-primary hover:bg-canvas hover:border-gold/50 transition-colors"
@@ -274,7 +274,7 @@ export const NamakkalPage: React.FC = () => {
                     <Compass className="w-5 h-5 text-gold-700 shrink-0" />
                     <div>
                       <strong className="text-primary block">GPS Coordinates:</strong>
-                      11.1112509° N, 78.0057796° E
+                      11.1111972° N, 78.0058805° E
                     </div>
                   </div>
 
@@ -282,7 +282,7 @@ export const NamakkalPage: React.FC = () => {
                     <Phone className="w-5 h-5 text-gold-700 shrink-0" />
                     <div>
                       <strong className="text-primary block">Direct Phone Support:</strong>
-                      +91 98420 12345
+                      +91 81110 33390
                     </div>
                   </div>
 
@@ -298,7 +298,7 @@ export const NamakkalPage: React.FC = () => {
 
               <div className="pt-4 border-t border-border flex flex-wrap items-center gap-3">
                 <a
-                  href="https://maps.app.goo.gl/Be2565mN74uVgZ7p9"
+                  href="https://www.google.com/maps/place/Real+Result+Marketing/@11.1112024,78.0010096,17z/data=!3m1!4b1!4m6!3m5!1s0x3babd5a621e9d483:0x7610d4ed000d0c45!8m2!3d11.1111972!4d78.0058805!16s%2Fg%2F11p1gkwbj4"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-white text-xs font-mono font-bold hover:bg-black transition-colors"
@@ -705,7 +705,7 @@ export const NamakkalPage: React.FC = () => {
                 Request Free Namakkal Growth Audit
               </Button>
               <a
-                href="https://maps.app.goo.gl/Be2565mN74uVgZ7p9"
+                href="https://www.google.com/maps/place/Real+Result+Marketing/@11.1112024,78.0010096,17z/data=!3m1!4b1!4m6!3m5!1s0x3babd5a621e9d483:0x7610d4ed000d0c45!8m2!3d11.1111972!4d78.0058805!16s%2Fg%2F11p1gkwbj4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-charcoal-border text-sm font-semibold text-white hover:border-gold transition-colors"

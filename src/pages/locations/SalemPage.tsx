@@ -235,7 +235,7 @@ export const SalemPage: React.FC = () => {
                     <Phone className="w-5 h-5 text-gold-700 shrink-0" />
                     <div>
                       <strong className="text-primary block">Client Desk:</strong>
-                      +91 98420 12345
+                      +91 81110 33390
                     </div>
                   </div>
 
@@ -243,7 +243,7 @@ export const SalemPage: React.FC = () => {
                     <Mail className="w-5 h-5 text-gold-700 shrink-0" />
                     <div>
                       <strong className="text-primary block">Email Inquiries:</strong>
-                      hello@realresult.in
+                      realresult.dev@gmail.com
                     </div>
                   </div>
 

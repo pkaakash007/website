@@ -195,10 +195,9 @@ export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
       items: [
         { label: "Direct WhatsApp Support", isWhatsApp: true },
         { label: "Phone Consultation Call", isPhone: true },
-        { label: "Initiate Project Scoping", href: "/contact" },
-        { label: "Erode Global Headquarters", href: "/contact" },
-        { label: "Coimbatore Technology Desk", href: "/contact" },
-        { label: "Chennai Regional Office", href: "/contact" },
+        { label: "Namakkal & Paramathi Velur Office", href: "/contact" },
+        { label: "Erode HQ & Salem Regional Office", href: "/contact" },
+        { label: "Coimbatore Technology Center", href: "/contact" },
       ],
       footerLink: { label: "Explore All Contact Channels", href: "/contact" },
     },

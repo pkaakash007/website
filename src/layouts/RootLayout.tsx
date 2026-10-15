@@ -16,7 +16,7 @@ export const RootLayout: React.FC = () => {
   useScrollToTop();
 
   return (
-    <div className="flex flex-col min-h-screen text-[#0F0F0E] bg-white font-sans overflow-x-hidden">
+    <div className="flex flex-col min-h-screen text-[#0F0F0E] bg-white font-sans overflow-x-clip">
       <Header />
       <main className="flex-grow">
         <React.Suspense fallback={<RouteFallback />}>

@@ -8,40 +8,34 @@ import RegionalHubCard from "./RegionalHubCard";
 export const MarketingRegionalGlobalReach: React.FC = () => {
   const hubs = [
     {
-      city: "Erode (Headquarters)",
+      city: "Erode (Corporate Operations)",
       type: "Executive Growth Lab & Central Ops",
       specialization: "Agro-processing, Textiles, Engineering & Statewide Management",
-      link: "/contact",
+      link: "/locations/erode",
     },
     {
-      city: "Coimbatore",
-      type: "Industrial Hub",
-      specialization: "Pumps, Foundries, Precision Engineering, Medical Tech & SaaS",
-      link: "/contact",
+      city: "Namakkal",
+      type: "Commercial Logistics Hub",
+      specialization: "Poultry Farming ERPs, Truck Body Logistics & Agro B2B Portals",
+      link: "/locations/namakkal",
     },
     {
-      city: "Chennai",
-      type: "Enterprise & Metro Desk",
-      specialization: "Automotive, Port Logistics, SaaS Exports & Deep-Tech Brands",
-      link: "/contact",
-    },
-    {
-      city: "Tiruppur",
-      type: "Export Capital Hub",
-      specialization: "Knitwear Global Exports, Garments & B2B Manufacturer Inquiries",
-      link: "/contact",
+      city: "Paramathi Velur",
+      type: "Registered Office",
+      specialization: "Local Search Optimization, Google Maps 3-Pack & Agro-Commodities",
+      link: "/locations/paramathi-velur",
     },
     {
       city: "Salem",
       type: "Manufacturing & Retail Desk",
       specialization: "Steel, Minerals, Sago Industry & Commercial Retail Chains",
-      link: "/contact",
+      link: "/locations/salem",
     },
     {
-      city: "Madurai & South TN",
-      type: "Regional Growth Desk",
-      specialization: "Food Products, Agro Exports & Multi-location Retail",
-      link: "/contact",
+      city: "Coimbatore",
+      type: "Industrial & Tech Hub",
+      specialization: "Pumps, Foundries, Precision Engineering, Medical Tech & SaaS",
+      link: "/locations/coimbatore",
     },
   ];
 
@@ -51,13 +45,13 @@ export const MarketingRegionalGlobalReach: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 space-y-5">
             <p className="text-xs font-mono uppercase tracking-widest font-bold text-gold-800">
-              TAMIL NADU COVERAGE
+              TARGET REGIONAL COVERAGE
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-tight">
               Rooted in Tamil Nadu. Helping You Get Customers Everywhere.
             </h2>
             <p className="text-base text-secondary leading-relaxed">
-              We are located right here in Tamil Nadu. Whether you want customers from your own city (Erode, Coimbatore, Tiruppur, Salem, Chennai, Madurai) or you want buyers from all over India and abroad, our local team handles everything for you.
+              We are located right here in Tamil Nadu. Whether you want customers from your own city (Salem, Erode, Namakkal, Paramathi Velur, Coimbatore) or you want buyers from all over India and abroad, our local team handles everything for you.
             </p>
             <div className="p-4 rounded-xl bg-white border border-border space-y-1.5">
               <span className="text-xs font-semibold text-[#8E6D2E]">

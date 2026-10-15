@@ -51,7 +51,7 @@ export const AboutBriefingCTA: React.FC = () => {
             {/* Right macOS Inset Inspector Panel */}
             <div className="lg:col-span-4 bg-[#F5F5F7] rounded-2xl p-6 border border-black/[0.04] space-y-4">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-[#FF9500]/10 text-[#FF9500] flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-neutral-200 text-neutral-800 flex items-center justify-center">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>

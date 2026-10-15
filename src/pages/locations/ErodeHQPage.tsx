@@ -47,7 +47,7 @@ export const ErodeHQPage: React.FC = () => {
     {
       question: "Where is the Real Result office located in Erode?",
       answer:
-        "Our official headquarters and engineering lab is located at 148/2, Perundurai Road, Near Collectorate, Erode, Tamil Nadu 638011. You can visit us for in-person strategy sessions or reach our consulting team directly at +91 98420 12345.",
+        "Our official headquarters and engineering lab is located at 148/2, Perundurai Road, Near Collectorate, Erode, Tamil Nadu 638011. You can visit us for in-person strategy sessions or reach our consulting team directly at +91 81110 33390.",
     },
     {
       question: "How does SEO help textile and turmeric exporters in Erode?",
@@ -94,7 +94,7 @@ export const ErodeHQPage: React.FC = () => {
             },
             address: {
               "@type": "PostalAddress",
-              streetAddress: SEO_CONFIG.headquarters.streetAddress,
+              streetAddress: "Perundurai Road, Near Collectorate",
               addressLocality: "Erode",
               addressRegion: "Tamil Nadu",
               postalCode: "638011",
@@ -194,7 +194,7 @@ export const ErodeHQPage: React.FC = () => {
                 "Physical Corporate Office: 148/2, Perundurai Road, Near Collectorate, Erode 638011",
                 "Proven #1 Google Rankings across Erode, Perundurai, Bhavani, and Gobichettipalayam",
                 "Complete in-house software engineering and performance marketing teams",
-                "Dedicated regional phone and WhatsApp support desk (+91 98420 12345)",
+                "Dedicated regional phone and WhatsApp support desk (+91 81110 33390)",
               ]}
             />
 
@@ -243,7 +243,7 @@ export const ErodeHQPage: React.FC = () => {
                     <Phone className="w-5 h-5 text-gold-700 shrink-0" />
                     <div>
                       <strong className="text-primary block">Direct Line:</strong>
-                      +91 98420 12345
+                      +91 81110 33390
                     </div>
                   </div>
 
@@ -251,7 +251,7 @@ export const ErodeHQPage: React.FC = () => {
                     <Mail className="w-5 h-5 text-gold-700 shrink-0" />
                     <div>
                       <strong className="text-primary block">Email:</strong>
-                      hello@realresult.in
+                      realresult.dev@gmail.com
                     </div>
                   </div>
 
