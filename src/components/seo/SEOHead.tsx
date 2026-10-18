@@ -144,6 +144,18 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         name: area,
       })),
       openingHours: SEO_CONFIG.businessHours,
+      priceRange: "$$",
+      knowsAbout: [
+        "Digital Marketing",
+        "Performance Marketing",
+        "Meta Ads Management",
+        "Google Ads Optimization",
+        "CRM Setup and Business Automation",
+        "AI Telecalling and IVR Solutions",
+        "Lead Generation",
+        "Local SEO & Google Maps 3-Pack Optimization",
+        "Full-Stack Web & Software Engineering",
+      ],
       sameAs: SEO_CONFIG.socialProfiles,
     };
 

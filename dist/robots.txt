@@ -8,6 +8,9 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 Disallow: /private/
+Disallow: /shop/
+Disallow: /*.shtml$
+Disallow: /*.php$
 
 # Explicitly Allow Leading Search Engine & AI Retrieval Agents
 User-agent: Googlebot

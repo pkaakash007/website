@@ -24,6 +24,7 @@ const SalemPage = lazy(() => import("@/pages/locations/SalemPage"));
 const ErodeHQPage = lazy(() => import("@/pages/locations/ErodeHQPage"));
 const CoimbatorePage = lazy(() => import("@/pages/locations/CoimbatorePage"));
 const ParamathiVelurPage = lazy(() => import("@/pages/locations/ParamathiVelurPage"));
+const DigitalMarketingAgencyNamakkalPage = lazy(() => import("@/pages/locations/DigitalMarketingAgencyNamakkalPage"));
 
 export const router = createBrowserRouter([
   {
@@ -137,6 +138,10 @@ export const router = createBrowserRouter([
         path: "locations/paramathi-velur",
         element: <ParamathiVelurPage />,
       },
+      {
+        path: "digital-marketing-agency-namakkal",
+        element: <DigitalMarketingAgencyNamakkalPage />,
+      },
 
       // Legacy/removed city redirects -> Tamil Nadu Hub
       {
@@ -183,7 +188,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "digital-marketing/namakkal",
-        element: <Navigate to="/locations/namakkal" replace />,
+        element: <Navigate to="/digital-marketing-agency-namakkal" replace />,
       },
       {
         path: "digital-marketing/salem",

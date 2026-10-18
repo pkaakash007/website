@@ -74,9 +74,11 @@ export const SEO_CONFIG: SEOConfig = {
     SOCIAL_LINKS.quora,
   ],
   serviceAreas: [
-    "Erode",
     "Namakkal",
     "Paramathi Velur",
+    "Tiruchengode",
+    "Rasipuram",
+    "Erode",
     "Salem",
     "Coimbatore",
     "Kongu Region, Tamil Nadu",

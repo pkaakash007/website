@@ -84,7 +84,7 @@ const companyLinks = [
 
 const locationsLinks = [
   { label: "Erode Headquarters", href: "/locations/erode" },
-  { label: "Namakkal Office", href: "/locations/namakkal" },
+  { label: "Namakkal Agency Hub", href: "/digital-marketing-agency-namakkal" },
   { label: "Paramathi Velur Desk", href: "/locations/paramathi-velur" },
   { label: "Salem Regional Office", href: "/locations/salem" },
   { label: "Coimbatore Tech Center", href: "/locations/coimbatore" },

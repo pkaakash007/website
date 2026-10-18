@@ -241,4 +241,44 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     quoteAuthor: "A. Chandrasekhar",
     quoteRole: "VP of Retail Operations, Strata Group",
   },
+  {
+    id: "namakkal-realestate",
+    slug: "namakkal-real-estate-meta-ads-automation",
+    title: "Namakkal Real Estate Growth Engine",
+    headline: "500+ Qualified High-Ticket Property Leads via Meta Ads",
+    subtitle: "Full-Funnel Paid Acquisition & Automated WhatsApp CRM Pipeline",
+    category: "Performance Marketing & Automation",
+    categoryTag: "Meta Ads & CRM Automation",
+    client: "Kongu Promoters & Land Developers",
+    location: "Namakkal & Tiruchengode",
+    year: "YEAR 25",
+    templateLabel: "Case Study — Namakkal",
+    accentColor: "#C5A059",
+    glowColor: "rgba(197, 160, 89, 0.45)",
+    cardGradient: "linear-gradient(135deg, #1c180e 0%, #2f2714 45%, #141108 100%)",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Modern luxury residential villa development in green landscape",
+    metrics: [
+      { value: "520+", label: "Verified Buyer Inquiries" },
+      { value: "₹38 Cr+", label: "Property Sales Pipeline" },
+      { value: "< 15s", label: "Automated Lead Routing" },
+    ],
+    deliverables: [
+      "Precision Meta Lead Generation Ads (Facebook & Instagram)",
+      "Instant WhatsApp CRM Bot & Sales Rep Dispatch",
+      "Interactive 3D Master Plan Landing Page",
+      "Dynamic Retargeting for High-Net-Worth Investors",
+    ],
+    techStack: ["Meta Ads Engine", "WhatsApp Cloud API", "Custom CRM", "React", "Cloudflare Workers"],
+    overview:
+      "A complete performance marketing and lead automation engine engineered for a premier real estate developer in Namakkal, generating over 500 verified high-ticket plot and villa buyers within 90 days.",
+    challenge:
+      "Traditional newspaper advertisements and roadside hoardings delivered poor tracking, slow inquiry response times, and high cost-per-acquisition.",
+    solution:
+      "Deployed laser-targeted Meta video ad creative focusing on DTCP approvals and location benefits, coupled with an instant WhatsApp qualification funnel that connected prospective buyers to sales consultants in under 15 seconds.",
+    impactQuote:
+      "Real Result Marketing completely transformed our lead generation. Their Meta Ads automation and CRM setup helped our real estate business grow rapidly in Namakkal.",
+    quoteAuthor: "M. Karthikeyan",
+    quoteRole: "Managing Director, Kongu Promoters",
+  },
 ];

@@ -51,13 +51,14 @@ if (fs.existsSync(sitemapPath)) {
   assert(sitemapContent.includes('<loc>https://realresult.in/digital-marketing/seo</loc>'), 'sitemap includes SEO pillar');
   assert(sitemapContent.includes('<loc>https://realresult.in/digital-marketing/geo</loc>'), 'sitemap includes GEO pillar');
   assert(sitemapContent.includes('<loc>https://realresult.in/digital-marketing/aio</loc>'), 'sitemap includes AIO pillar');
-  assert(sitemapContent.includes('<loc>https://realresult.in/software-development</loc>'), 'sitemap includes software development hub');
+  assert(sitemapContent.includes('<loc>https://realresult.in/application-development</loc>'), 'sitemap includes application development hub');
   assert(sitemapContent.includes('<loc>https://realresult.in/locations/erode</loc>'), 'sitemap includes Erode HQ location');
   assert(sitemapContent.includes('<loc>https://realresult.in/locations/coimbatore</loc>'), 'sitemap includes Coimbatore location');
-  assert(sitemapContent.includes('<loc>https://realresult.in/locations/chennai</loc>'), 'sitemap includes Chennai location');
+  assert(sitemapContent.includes('<loc>https://realresult.in/locations/salem</loc>'), 'sitemap includes Salem location');
   assert(sitemapContent.includes('<loc>https://realresult.in/locations/namakkal</loc>'), 'sitemap includes Namakkal location');
-  assert(sitemapContent.includes('<loc>https://realresult.in/case-studies</loc>'), 'sitemap includes case studies');
-  assert(sitemapContent.includes('<loc>https://realresult.in/faq</loc>'), 'sitemap includes FAQ hub');
+  assert(sitemapContent.includes('<loc>https://realresult.in/digital-marketing-agency-namakkal</loc>'), 'sitemap includes digital marketing agency Namakkal landing page');
+  assert(sitemapContent.includes('<loc>https://realresult.in/locations/paramathi-velur</loc>'), 'sitemap includes Paramathi Velur location');
+  assert(sitemapContent.includes('<loc>https://realresult.in/portfolio</loc>'), 'sitemap includes portfolio');
 }
 
 // 3. Validate SEOHead Component and Central Config
@@ -110,6 +111,7 @@ const pagesToVerify = [
   'src/pages/locations/TrichyPage.tsx',
   'src/pages/locations/TirunelveliPage.tsx',
   'src/pages/locations/NamakkalPage.tsx',
+  'src/pages/locations/DigitalMarketingAgencyNamakkalPage.tsx',
   'src/pages/case-studies/CaseStudiesHubPage.tsx',
   'src/pages/resources/ResourcesHubPage.tsx',
   'src/pages/faq/FAQHubPage.tsx',

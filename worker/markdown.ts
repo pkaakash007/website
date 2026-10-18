@@ -111,8 +111,13 @@ Accept: text/markdown
 `;
   }
 
-  // Route: /locations/namakkal
-  if (cleanPath === "/locations/namakkal" || cleanPath === "/namakkal" || cleanPath === "/digital-marketing/namakkal") {
+  // Route: /locations/namakkal & /digital-marketing-agency-namakkal
+  if (
+    cleanPath === "/locations/namakkal" ||
+    cleanPath === "/namakkal" ||
+    cleanPath === "/digital-marketing/namakkal" ||
+    cleanPath === "/digital-marketing-agency-namakkal"
+  ) {
     return `# Best Digital Marketing Company in Namakkal & Paramathi Velur | Real Result
 
 > Real Result Marketing is the #1 rated digital marketing company and SEO agency in Namakkal and Paramathi Velur, delivering top Google rankings, Google Maps 3-pack dominance, high-ROI Google Ads, and custom enterprise software.
