@@ -1,15 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Home, ArrowRight, Phone } from "lucide-react";
+import { Link, useLocation, Navigate } from "react-router-dom";
+import { Home, ArrowRight } from "lucide-react";
 import { SEOHead } from "@/components/seo/SEOHead";
 
 export const NotFoundPage: React.FC = () => {
+  const location = useLocation();
+  const rawPath = (location.pathname + location.search).toLowerCase();
+
+  // Detect rogue legacy URLs: date permalinks (/2020/...), lottery/gambling spam, WordPress artifacts, shop spam
+  const isLegacySpam = /^\/(?:19|20)\d{2}(?:\/|$)|nagaland|lotter|sambad|dhankesari|satta|matka|kalyan|baccarat|casino|poker|bet365|wp-|\.shtml|\.php/.test(
+    rawPath
+  );
+
+  // Instantly redirect legacy spam URLs to home so spam URLs vanish from browser
+  if (isLegacySpam) {
+    return <Navigate to="/" replace />;
+  }
+
   return (
     <div className="flex flex-col min-h-screen bg-[#F5F5F7] text-[#1D1D1F] justify-center items-center py-24 px-4 sm:px-6">
       <SEOHead
         title="Page Not Found | Real Result"
         description="Find your way to services, contact details, or the homepage of Real Result."
         canonicalPath="/404/"
+        noIndex={true}
       />
 
       <div className="max-w-md w-full bg-white p-8 sm:p-12 rounded-3xl border border-black/[0.06] shadow-xl text-center">
@@ -33,7 +47,7 @@ export const NotFoundPage: React.FC = () => {
           </Link>
 
           <Link
-            to="/services/"
+            to="/services"
             className="w-full py-3 px-6 rounded-full text-sm font-semibold bg-[#F5F5F7] hover:bg-neutral-200 text-neutral-800 transition-all inline-flex items-center justify-center gap-2"
           >
             Explore Our Services
@@ -41,7 +55,7 @@ export const NotFoundPage: React.FC = () => {
           </Link>
 
           <Link
-            to="/contact/"
+            to="/contact"
             className="w-full py-3 px-6 rounded-full text-sm font-semibold border border-black/[0.08] hover:bg-neutral-50 text-neutral-700 transition-all inline-flex items-center justify-center gap-2"
           >
             Contact Us

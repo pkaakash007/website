@@ -28,30 +28,54 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
-    // 1b. Urgent Security & SEO De-indexation: Purge Japanese e-commerce spam pages (/shop/*.shtml)
-    // Returns HTTP 410 Gone + noindex so Googlebot rapidly drops rogue URLs from search results
+    // 1b. Urgent Security & SEO De-indexation: Purge Fake Pages, Lottery Spam & Legacy WordPress URLs
+    // Intercepts rogue URLs at edge before SPA index.html loads, returning HTTP 410 Gone + noindex.
+    // Rapidly drops rogue URLs from search engine indexes (Google, Bing) and stops Microsoft Clarity analytics pollution.
     const lowerPath = url.pathname.toLowerCase();
-    if (
-      lowerPath.startsWith("/shop/") ||
-      lowerPath === "/shop" ||
+    const fullSearch = url.search.toLowerCase();
+    const fullTarget = lowerPath + fullSearch;
+
+    const isDateSpam = /^\/(?:19|20)\d{2}(?:\/|$)/.test(lowerPath);
+    const isLotteryOrGamblingSpam = /(?:nagaland|lotteri|lottery|sambad|dhankesari|satta|matka|kalyan|baccarat|casino|poker|bet365|slot-online|judislot|gacor|togel|sbobet|roulette|blackjack|pragmatic)/.test(fullTarget);
+    const isWordPressCmsArtifact =
+      lowerPath.startsWith("/wp-") ||
+      lowerPath.startsWith("/wp/") ||
+      lowerPath.startsWith("/xmlrpc") ||
+      lowerPath.startsWith("/tag/") ||
+      lowerPath.startsWith("/category/") ||
+      lowerPath.startsWith("/author/") ||
+      lowerPath.startsWith("/feed") ||
+      lowerPath.startsWith("/comments/") ||
+      lowerPath.startsWith("/trackback") ||
+      url.searchParams.has("p") ||
+      url.searchParams.has("page_id") ||
+      url.searchParams.has("cat") ||
+      url.searchParams.has("m");
+    const isShopOrScriptSpam =
+      lowerPath.startsWith("/shop") ||
+      lowerPath.startsWith("/product/") ||
+      lowerPath.startsWith("/products/") ||
+      lowerPath.startsWith("/item/") ||
+      lowerPath.startsWith("/cart") ||
+      lowerPath.startsWith("/checkout") ||
       lowerPath.endsWith(".shtml") ||
-      lowerPath.startsWith("/wp-admin") ||
-      lowerPath.startsWith("/wp-content") ||
-      lowerPath.startsWith("/wp-includes") ||
-      lowerPath.endsWith(".php")
-    ) {
-      return new Response(
-        "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><title>410 Gone</title><meta name=\"robots\" content=\"noindex, nofollow, noarchive\"></head><body style=\"font-family:sans-serif;padding:40px;text-align:center;\"><h1>410 Gone</h1><p>This resource has been permanently removed.</p></body></html>",
-        {
-          status: 410,
-          statusText: "Gone",
-          headers: {
-            "Content-Type": "text/html; charset=utf-8",
-            "X-Robots-Tag": "noindex, nofollow, noarchive",
-            "Cache-Control": "public, max-age=604800, stale-while-revalidate=86400",
-          },
-        }
-      );
+      lowerPath.endsWith(".php") ||
+      lowerPath.endsWith(".asp") ||
+      lowerPath.endsWith(".aspx") ||
+      lowerPath.endsWith(".cgi") ||
+      lowerPath.endsWith(".env") ||
+      lowerPath.endsWith(".sql");
+
+    if (isDateSpam || isLotteryOrGamblingSpam || isWordPressCmsArtifact || isShopOrScriptSpam) {
+      return new Response(null, {
+        status: 301,
+        statusText: "Moved Permanently",
+        headers: {
+          Location: "https://realresult.in/",
+          "X-Robots-Tag": "noindex, nofollow, noarchive",
+          "Cache-Control": "public, max-age=31536000, immutable",
+        },
+      });
     }
 
     // 2. Direct Google Review Redirect: Opens Google Maps 5-Star Write Review Modal

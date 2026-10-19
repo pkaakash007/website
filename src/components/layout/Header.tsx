@@ -87,152 +87,78 @@ export interface NavDropdownData {
 export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
   services: {
     col1: {
-      title: "Explore Services",
+      title: "Core Services",
       items: [
-        { label: "Website Design & Development", href: "/application-development" },
-        { label: "Ecommerce Online Stores", href: "/application-development" },
-        { label: "Mobile App Development (iOS & Android)", href: "/application-development" },
-        { label: "UI/UX & Product Design", href: "/application-development" },
-        { label: "Search Engine Optimization (SEO)", href: "/digital-marketing/seo" },
-        { label: "Performance Digital Marketing", href: "/digital-marketing" },
-        { label: "Social Media & Meta Ads", href: "/digital-marketing/social-media-marketing" },
-        { label: "Brand Identity & Graphic Design", href: "/services#logo-design" },
+        { label: "Website Design & Development", href: "/services/website-design" },
+        { label: "Ecommerce Online Stores", href: "/services/ecommerce-platforms" },
+        { label: "Mobile App Development (iOS & Android)", href: "/services/mobile-app-development" },
+        { label: "Search Engine Optimization (SEO)", href: "/services/seo-geo-ai-search" },
+        { label: "Performance Marketing & Ads", href: "/services/performance-marketing" },
+        { label: "Social Media Marketing", href: "/services/social-media-marketing" },
+        { label: "Brand Identity & Logo Design", href: "/services/brand-identity-logo" },
+        { label: "4K Commercial Video & Reels", href: "/services/video-editing-motion" },
       ],
-      footerLink: { label: "Explore All 12 Services", href: "/services" },
+      footerLink: { label: "Explore All Services", href: "/services" },
     },
     col2: {
-      title: "Helpful Topics & Support",
+      title: "Capabilities",
       items: [
-        { label: "Free Architecture Consultation", isModal: true },
-        { label: "Sub-Second Speed SLA Guarantees", href: "/application-development" },
-        { label: "Direct WhatsApp Engineering Desk", isWhatsApp: true },
-        { label: "Verified Portfolio & Case Studies", href: "/portfolio" },
-        { label: "Transparent Pricing & Timelines", href: "/contact" },
+        { label: "Custom Software Engineering", href: "/application-development" },
+        { label: "Digital Marketing Growth Hub", href: "/digital-marketing" },
+        { label: "Verified Client Portfolio", href: "/portfolio" },
+        { label: "Healthcare Marketing Playbook", href: "/industries/healthcare" },
+        { label: "Schedule Free Consultation", isModal: true },
       ],
     },
   },
 
   marketing: {
     col1: {
-      title: "Explore Marketing",
+      title: "Marketing Pillars",
       items: [
-        { label: "Google Ads & PPC Campaigns", href: "/digital-marketing" },
         { label: "Search Engine Optimization (SEO)", href: "/digital-marketing/seo" },
-        { label: "Social Media Marketing", href: "/digital-marketing/social-media-marketing" },
-        { label: "Instagram & Meta Ads", href: "/digital-marketing" },
-        { label: "Google Maps & Local 3-Pack SEO", href: "/digital-marketing/seo" },
-        { label: "Content Marketing & PR", href: "/digital-marketing/content-marketing" },
-        { label: "Conversion Rate Optimization", href: "/digital-marketing" },
+        { label: "Google Maps & Local 3-Pack SEO", href: "/digital-marketing/local-seo" },
+        { label: "Generative Engine Optimization (GEO)", href: "/digital-marketing/geo" },
+        { label: "AI Search Optimization (AIO)", href: "/digital-marketing/aio" },
+        { label: "Google Ads & PPC Campaigns", href: "/digital-marketing/google-ads" },
+        { label: "Social Media & Meta Ads", href: "/digital-marketing/social-media-marketing" },
+        { label: "Content Marketing & Copywriting", href: "/digital-marketing/content-marketing" },
+        { label: "Conversion Rate Optimization (CRO)", href: "/digital-marketing/conversion-rate-optimization" },
       ],
       footerLink: { label: "Explore Marketing Hub", href: "/digital-marketing" },
     },
     col2: {
-      title: "Helpful Topics",
+      title: "Regional Agency Desks",
       items: [
-        { label: "Free Website & SEO Audit", isModal: true },
-        { label: "Transparent Weekly Ad Reporting", href: "/digital-marketing#faq" },
-        { label: "Marketing FAQs & Timelines", href: "/digital-marketing#faq" },
-        { label: "Chat with Marketing Strategist", isWhatsApp: true },
-        { label: "Tamil Nadu Geo-Targeting Playbook", href: "/digital-marketing#reach" },
-      ],
-    },
-  },
-
-  "app-dev": {
-    col1: {
-      title: "Explore Engineering",
-      items: [
-        { label: "iOS Mobile Applications", href: "/application-development" },
-        { label: "Android Mobile Applications", href: "/application-development" },
-        { label: "Custom Web Applications", href: "/application-development" },
-        { label: "Ecommerce & Store Platforms", href: "/application-development" },
-        { label: "UI/UX & Figma Prototypes", href: "/application-development" },
-        { label: "Cloud APIs & Microservices", href: "/application-development" },
-        { label: "Enterprise SaaS Platforms", href: "/application-development" },
-      ],
-      footerLink: { label: "Explore Application Engineering", href: "/application-development" },
-    },
-    col2: {
-      title: "Helpful Topics",
-      items: [
-        { label: "Request Technical Quotation", isModal: true },
-        { label: "100% Client Source Code IP Ownership", href: "/about" },
-        { label: "60fps Native UI & High Performance", href: "/application-development" },
-        { label: "UPI & Razorpay Payment Integrations", href: "/application-development" },
-        { label: "Direct WhatsApp Tech Desk", isWhatsApp: true },
-      ],
-    },
-  },
-
-  about: {
-    col1: {
-      title: "Explore Real Result",
-      items: [
-        { label: "Company Story & Origins", href: "/about#story" },
-        { label: "Executive Leadership Team", href: "/about#leadership" },
-        { label: "Verified Portfolio & Case Studies", href: "/portfolio" },
-        { label: "Core Operating Values", href: "/about#values" },
-        { label: "Scale & Verified Milestones", href: "/about#stats" },
-        { label: "Global & Regional Presence", href: "/contact" },
-      ],
-      footerLink: { label: "Explore Company Profile", href: "/about" },
-    },
-    col2: {
-      title: "Corporate & Inquiries",
-      items: [
-        { label: "Schedule Strategic Partnership Briefing", isModal: true },
-        { label: "Direct Founder Discussion Desk", isWhatsApp: true },
-        { label: "No Code Lock-In Policy", href: "/about#values" },
-        { label: "Erode Global HQ & Regional Desks", href: "/contact" },
-        { label: "Corporate GST & Registration", href: "/contact" },
-      ],
-    },
-  },
-
-  contact: {
-    col1: {
-      title: "Get in Touch",
-      items: [
-        { label: "Direct WhatsApp Support", isWhatsApp: true },
-        { label: "Phone Consultation Call", isPhone: true },
-        { label: "Namakkal & Paramathi Velur Office", href: "/contact" },
-        { label: "Erode HQ & Salem Regional Office", href: "/contact" },
-        { label: "Coimbatore Technology Center", href: "/contact" },
-      ],
-      footerLink: { label: "Explore All Contact Channels", href: "/contact" },
-    },
-    col2: {
-      title: "Quick Assistance",
-      items: [
-        { label: "Request a 15-Min Callback", isModal: true },
-        { label: "Technical Support Desk", href: "/contact" },
-        { label: "Billing & Accounts Inquiries", href: "/contact" },
-        { label: "Office Hours: Mon - Sat (9:00 AM - 7:00 PM)", href: "/contact" },
+        { label: "Namakkal Marketing Agency", href: "/digital-marketing-agency-namakkal" },
+        { label: "Erode Global Headquarters", href: "/locations/erode" },
+        { label: "Salem Regional Office", href: "/locations/salem" },
+        { label: "Coimbatore Technology Center", href: "/locations/coimbatore" },
+        { label: "Paramathi Velur Desk", href: "/locations/paramathi-velur" },
       ],
     },
   },
 
   industries: {
     col1: {
-      title: "Explore Industries",
+      title: "Target Sectors",
       items: [
-        { label: "Healthcare Digital Marketing", href: "/industries/healthcare" },
+        { label: "Healthcare & Clinics", href: "/industries/healthcare" },
         { label: "B2B Manufacturing & Industrial", href: "/industries/b2b" },
-        { label: "Ecommerce & D2C Brands", href: "/industries/ecommerce" },
-        { label: "Finance & BFSI Marketing", href: "/industries/finance" },
-        { label: "Real Estate Digital Marketing", href: "/industries/real-estate" },
-        { label: "Education Digital Marketing", href: "/industries/education" },
-        { label: "Electric Vehicles & Automotive", href: "/industries/ev" },
+        { label: "Ecommerce & Retail Stores", href: "/industries/ecommerce" },
+        { label: "Finance & BFSI Companies", href: "/industries/finance" },
+        { label: "Real Estate & Builders", href: "/industries/real-estate" },
+        { label: "Schools & Educational Institutes", href: "/industries/education" },
+        { label: "Electric Vehicles (EV) & Automotive", href: "/industries/ev" },
       ],
-      footerLink: { label: "Explore All 12 Industry Playbooks", href: "/industries" },
+      footerLink: { label: "Explore All Industries", href: "/industries" },
     },
     col2: {
-      title: "Helpful Topics",
+      title: "Success Stories",
       items: [
-        { label: "Free Industry Strategy Consultation", isModal: true },
-        { label: "Healthcare Growth & Compliance Audit", href: "/industries/healthcare" },
-        { label: "Direct WhatsApp Specialist Desk", isWhatsApp: true },
-        { label: "Industry Case Studies & Results", href: "/industries" },
+        { label: "Verified Client Work & Results", href: "/portfolio" },
+        { label: "Tamil Nadu Market Coverage", href: "/locations/tamil-nadu" },
+        { label: "Book Strategy Consultation", isModal: true },
       ],
     },
   },
@@ -249,10 +175,10 @@ const NAV_LINKS: NavLinkConfig[] = [
   { label: "Home", href: "/", hasDropdown: false },
   { label: "Services", href: "/services", hasDropdown: true, dropdownKey: "services" },
   { label: "Digital Marketing", href: "/digital-marketing", hasDropdown: true, dropdownKey: "marketing" },
-  { label: "App Development", href: "/application-development", hasDropdown: true, dropdownKey: "app-dev" },
+  { label: "App Development", href: "/application-development", hasDropdown: false },
   { label: "Industry", href: "/industries", hasDropdown: true, dropdownKey: "industries" },
-  { label: "About", href: "/about", hasDropdown: true, dropdownKey: "about" },
-  { label: "Contact", href: "/contact", hasDropdown: true, dropdownKey: "contact" },
+  { label: "About", href: "/about", hasDropdown: false },
+  { label: "Contact", href: "/contact", hasDropdown: false },
 ];
 
 export const Header: React.FC = () => {

@@ -36,9 +36,23 @@
     <link rel="ard" href="/.well-known/ard.json" type="application/json" />
     <link rel="ai-catalog" href="/.well-known/ai-catalog.json" type="application/json" />
 
-    <!-- Microsoft Clarity Analytics -->
+    <!-- Immediate pre-render redirect: purge legacy spam or rogue URLs -->
+    <script>
+      (function(){
+        var p = (window.location.pathname + window.location.search).toLowerCase();
+        if (/^\/(?:19|20)\d{2}(?:\/|$)|nagaland|lotter|sambad|dhankesari|satta|matka|kalyan|baccarat|casino|poker|bet365|wp-|\.shtml|\.php/.test(p)) {
+          window.location.replace("/");
+        }
+      })();
+    </script>
+
+    <!-- Microsoft Clarity Analytics (Filtered: excludes legacy spam, lottery bots & rogue permalinks) -->
     <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
+        var p = (window.location.pathname + window.location.search).toLowerCase();
+        if (/^\/(?:19|20)\d{2}\/|nagaland|lotter|sambad|dhankesari|satta|matka|baccarat|casino|wp-|\.shtml|\.php/.test(p)) {
+          return;
+        }
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);

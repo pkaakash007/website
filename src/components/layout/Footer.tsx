@@ -336,6 +336,21 @@ export const Footer: React.FC = () => {
           <p className="text-xs sm:text-sm text-neutral-300 font-normal tracking-wide leading-relaxed">
             &copy; 2026, Real Result Marketing &amp; Technology Solutions Pvt. Ltd. All Rights Reserved.
           </p>
+
+          {/* Legal Compliance Links */}
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-neutral-400 mt-3 font-normal">
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-neutral-600">•</span>
+            <Link to="/terms" className="hover:text-white transition-colors">
+              Terms of Service
+            </Link>
+            <span className="text-neutral-600">•</span>
+            <Link to="/cookie-policy" className="hover:text-white transition-colors">
+              Cookie Policy
+            </Link>
+          </div>
         </div>
       </div>
 

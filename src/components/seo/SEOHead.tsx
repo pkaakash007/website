@@ -11,6 +11,7 @@ export interface SEOHeadProps {
   publishedTime?: string;
   modifiedTime?: string;
   author?: string;
+  noIndex?: boolean;
 }
 
 export const SEOHead: React.FC<SEOHeadProps> = ({
@@ -23,6 +24,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   publishedTime,
   modifiedTime,
   author,
+  noIndex = false,
 }) => {
   const canonicalUrl = `${SEO_CONFIG.url}${canonicalPath.startsWith("/") ? canonicalPath : `/${canonicalPath}`}`.replace(/\/$/, "");
   const fullTitle = title.includes("Real Result") ? title : `${title} | ${SEO_CONFIG.siteName}`;
@@ -44,7 +46,13 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
 
     // 2. Standard Search Meta & Local SEO
     setMeta("name", "description", description);
-    setMeta("name", "robots", "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1");
+    setMeta(
+      "name",
+      "robots",
+      noIndex
+        ? "noindex, nofollow, noarchive, nosnippet"
+        : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    );
     setMeta("name", "keywords", "Real Result Marketing, best digital marketing company in Erode, best digital marketing agency in Erode, best digital marketing company in Namakkal, best digital marketing agency in Namakkal, best digital marketing company in Paramathi Velur, best digital marketing agency in Paramathi Velur, best digital marketing company in Salem, best digital marketing agency in Salem, best digital marketing agency in Coimbatore, best digital marketing company in Coimbatore, best SEO company in Erode, best SEO agency in Namakkal, best SEO company in Salem, best SEO company in Coimbatore, top marketing company in Tamil Nadu, best marketing agency, best web design company in Erode, best Google Ads agency, Real Result logo, Real Result in Tamil Nadu");
     setMeta("name", "geo.region", "IN-TN");
     setMeta("name", "geo.placename", "Paramathi Velur, Namakkal, Tamil Nadu");

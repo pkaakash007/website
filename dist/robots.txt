@@ -11,6 +11,25 @@ Disallow: /private/
 Disallow: /shop/
 Disallow: /*.shtml$
 Disallow: /*.php$
+Disallow: /201*/
+Disallow: /202*/
+Disallow: /*nagaland*
+Disallow: /*lotteri*
+Disallow: /*lottery*
+Disallow: /*sambad*
+Disallow: /*dhankesari*
+Disallow: /*satta*
+Disallow: /*matka*
+Disallow: /wp-*
+Disallow: /wp/
+Disallow: /tag/
+Disallow: /category/
+Disallow: /author/
+Disallow: /feed/
+Disallow: /comments/
+Disallow: /xmlrpc.php
+Disallow: /*?*lottery*
+Disallow: /*?*nagaland*
 
 # Explicitly Allow Leading Search Engine & AI Retrieval Agents
 User-agent: Googlebot
