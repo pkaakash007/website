@@ -33,7 +33,7 @@ export const NotFoundPage: React.FC = () => {
           </Link>
 
           <Link
-            to="/services/"
+            to="/services"
             className="w-full py-3 px-6 rounded-full text-sm font-semibold bg-[#F5F5F7] hover:bg-neutral-200 text-neutral-800 transition-all inline-flex items-center justify-center gap-2"
           >
             Explore Our Services
@@ -41,7 +41,7 @@ export const NotFoundPage: React.FC = () => {
           </Link>
 
           <Link
-            to="/contact/"
+            to="/contact"
             className="w-full py-3 px-6 rounded-full text-sm font-semibold border border-black/[0.08] hover:bg-neutral-50 text-neutral-700 transition-all inline-flex items-center justify-center gap-2"
           >
             Contact Us

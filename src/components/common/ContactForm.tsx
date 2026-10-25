@@ -84,7 +84,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             label="Full Name"
             requiredIndicator
             required
-            placeholder="e.g. Alex Morgan"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
@@ -92,7 +91,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             label="Company Name"
             requiredIndicator
             required
-            placeholder="e.g. Acme Corp"
             value={formData.company}
             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
           />
@@ -105,14 +103,12 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             requiredIndicator
             required
             type="email"
-            placeholder="alex@company.com"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           />
           <MacOSInput
             label="Phone Number"
             type="tel"
-            placeholder="+91 81110 33390"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
           />
@@ -145,7 +141,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         <MacOSTextarea
           label="Project Scope or Requirements"
           rows={compact ? 3 : 4}
-          placeholder="Tell us about your project, timeline, or goals..."
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
         />

@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { LeadModal } from "@/components/common/LeadModal";
 import { ScrollToTopButton } from "@/components/common/ScrollToTopButton";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
+import { ErrorBoundary } from "@/components/common/ErrorBoundary";
 
 const RouteFallback: React.FC = () => (
   <div className="min-h-screen flex items-center justify-center" aria-busy="true" aria-label="Loading page content">
@@ -19,9 +20,11 @@ export const RootLayout: React.FC = () => {
     <div className="flex flex-col min-h-screen text-[#0F0F0E] bg-white font-sans overflow-x-clip">
       <Header />
       <main className="flex-grow">
-        <React.Suspense fallback={<RouteFallback />}>
-          <Outlet />
-        </React.Suspense>
+        <ErrorBoundary>
+          <React.Suspense fallback={<RouteFallback />}>
+            <Outlet />
+          </React.Suspense>
+        </ErrorBoundary>
       </main>
       <Footer />
 

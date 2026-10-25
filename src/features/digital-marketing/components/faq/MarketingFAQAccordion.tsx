@@ -9,34 +9,39 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "How do we get started working together?",
+    question: "What does a digital marketing company do?",
     answer:
-      "We begin with a free strategy consultation to understand your business goals, target audience, and current marketing efforts. Within 2 to 3 days, we share a customized growth roadmap and budget plan for your approval.",
+      "A digital marketing company helps businesses increase online visibility, generate qualified leads, and grow revenue through internet channels. Core services include Search Engine Optimization (SEO), Pay-Per-Click advertising (Google Ads and Meta Ads), social media management, content creation, conversion rate optimization (CRO), and automated lead management. Real Result manages end-to-end strategy, execution, and closed-loop ROI tracking.",
   },
   {
-    question: "How do you measure and report campaign results?",
+    question: "Why is digital marketing important for business growth?",
     answer:
-      "We provide transparent weekly reports and real-time dashboards tracking actual phone calls, WhatsApp inquiries, lead quality, and sales conversions — not just superficial likes or impressions.",
+      "Digital marketing connects your business directly with customers actively searching for your products and services. Unlike traditional broad advertising, digital marketing allows precise audience targeting, real-time campaign adjustments, measurable conversion tracking, and predictable customer acquisition costs.",
   },
   {
-    question: "What are your contract terms and monthly retainers?",
+    question: "What is the difference between SEO and Google Ads (PPC)?",
     answer:
-      "We work on flexible monthly retainers without locking you into long-term contracts. You retain 100% complete ownership of your ad accounts, creative assets, and lead databases at all times.",
+      "SEO (Search Engine Optimization) earns organic, non-paid rankings on search engines over time through technical site improvements, quality content, and backlinks. Google Ads (Pay-Per-Click) provides immediate placement at the top of search results by paying for each ad click. An effective growth strategy pairs Google Ads for immediate leads with SEO for compounding long-term traffic.",
   },
   {
-    question: "What monthly budget do I need to run ads?",
+    question: "How long does it take to see results from digital marketing?",
     answer:
-      "We tailor your ad spend to your business scale and goals. For local businesses and clinics, campaigns can start effectively from ₹20,000 to ₹50,000 per month, while scaling e-commerce brands and multi-location companies typically deploy ₹1,00,000 to ₹5,00,000+ monthly.",
+      "Paid advertising campaigns (Google Ads and Meta Ads) typically generate inquiries and sales within 48 to 72 hours of launch. Organic SEO, content marketing, and brand building generally require 3 to 6 months to achieve top search rankings and steady organic inbound traffic.",
   },
   {
-    question: "Who creates the ad designs, videos, and copywriting?",
+    question: "How much does digital marketing cost per month?",
     answer:
-      "Our in-house creative team handles everything from scriptwriting, video editing, and graphic design to landing page creation and ad copy. All creatives are sent for your review and approval before going live.",
+      "Digital marketing costs vary based on business size, competition, and goals. Most growing businesses invest 5% to 15% of gross revenue into marketing. Local campaigns typically start between ₹20,000 and ₹50,000 per month, while scaling multi-location brands and e-commerce companies deploy ₹1,00,000 to ₹5,00,000+ monthly.",
   },
   {
-    question: "How fast can our campaigns go live?",
+    question: "How do you track and calculate digital marketing ROI?",
     answer:
-      "Once we finalize the strategy and receive access to your accounts, our team creates your ad creatives, sets up tracking pixels, and launches your first live campaign within 5 to 7 business days.",
+      "Digital marketing ROI is calculated by dividing net profit generated from campaigns by the total marketing cost, multiplied by 100: [(Revenue - Marketing Cost) / Marketing Cost] × 100. We track return through dynamic call tracking, Google Analytics 4 (GA4), CRM integration, and conversion pixels to measure exact cost per lead (CPL) and return on ad spend (ROAS).",
+  },
+  {
+    question: "Which digital marketing channel delivers the highest ROI?",
+    answer:
+      "Search Engine Optimization (SEO) and Google Search Ads consistently deliver the highest ROI for high-intent B2B and service businesses because they capture active search demand. For visual consumer products and local retail, Meta Ads (Instagram and Facebook) and short-form video generate rapid customer acquisition and strong brand affinity.",
   },
 ];
 
@@ -47,8 +52,25 @@ export const MarketingFAQAccordion: React.FC = () => {
     setOpenIndex(openIndex === idx ? null : idx);
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <section id="faq" className="py-20 sm:py-28 bg-white border-b border-neutral-200/80 scroll-mt-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Container size="wide">
         <div className="max-w-3xl">
           <div className="space-y-3 mb-12">
@@ -56,7 +78,7 @@ export const MarketingFAQAccordion: React.FC = () => {
               Frequently Asked Questions
             </h2>
             <p className="text-base text-neutral-600 font-normal leading-relaxed">
-              Direct, transparent answers regarding ad tracking, monthly retainers, ROI reporting, and timelines.
+              Clear, search-optimized answers to the most searched questions about digital marketing, SEO, Google Ads, and campaign ROI.
             </p>
           </div>
 

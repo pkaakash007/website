@@ -244,7 +244,7 @@ export const CORE_MARKETING_SERVICES: CoreMarketingService[] = [
     projectedLift: "+70% to +140%",
     cadence: "Monthly Sprints",
     attribution: "GBP Calls & Directions",
-    link: "/digital-marketing/seo",
+    link: "/digital-marketing/local-seo",
   },
   {
     id: "cro-funnel",
@@ -267,7 +267,7 @@ export const CORE_MARKETING_SERVICES: CoreMarketingService[] = [
     projectedLift: "+40% to +80%",
     cadence: "Weekly Sprints",
     attribution: "Funnel Event Sync",
-    link: "/digital-marketing/cro",
+    link: "/digital-marketing/conversion-rate-optimization",
   },
   {
     id: "analytics-tracking",

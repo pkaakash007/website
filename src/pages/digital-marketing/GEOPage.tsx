@@ -84,8 +84,8 @@ export const GEOPage: React.FC = () => {
               >
                 Schedule GEO Assessment
               </Button>
-              <Button variant="secondary" size="lg" href="/resources">
-                Read GEO Technical Guide
+              <Button variant="secondary" size="lg" href="/digital-marketing/aio">
+                Explore AI Search & AIO Guide
               </Button>
             </div>
           </div>

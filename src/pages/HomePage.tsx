@@ -139,7 +139,9 @@ export const HomePage: React.FC = () => {
       </div>
 
       {/* 4. Flagship Dual Showcase: Digital Marketing & Application Development */}
-      <HomePillarsDualShowcase />
+      <div id="pillars" className="scroll-mt-20">
+        <HomePillarsDualShowcase />
+      </div>
 
       {/* 5. Verified Growth Stats & SEO, AEO, GEO Performance Data */}
       <HomeGrowthDiscoveryStats />

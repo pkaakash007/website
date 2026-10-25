@@ -60,6 +60,22 @@ export const router = createBrowserRouter([
         element: <ServicesPage />,
       },
       {
+        path: "services/seo",
+        element: <Navigate to="/digital-marketing/seo" replace />,
+      },
+      {
+        path: "services/ai-search-optimization",
+        element: <Navigate to="/digital-marketing/geo" replace />,
+      },
+      {
+        path: "services/google-ads",
+        element: <Navigate to="/digital-marketing/google-ads" replace />,
+      },
+      {
+        path: "services/social-media-marketing",
+        element: <Navigate to="/digital-marketing/social-media-marketing" replace />,
+      },
+      {
         path: "services/:slug",
         element: <ServiceDetailPage />,
       },
@@ -100,6 +116,10 @@ export const router = createBrowserRouter([
       {
         path: "digital-marketing/conversion-rate-optimization",
         element: <CROPage />,
+      },
+      {
+        path: "digital-marketing/cro",
+        element: <Navigate to="/digital-marketing/conversion-rate-optimization" replace />,
       },
       {
         path: "marketing",
@@ -148,6 +168,14 @@ export const router = createBrowserRouter([
       {
         path: "industries/healthcare",
         element: <HealthcareIndustryPage />,
+      },
+      {
+        path: "industries/fmcg",
+        element: <Navigate to="/industries" replace />,
+      },
+      {
+        path: "industries/food-beverage-fmcg",
+        element: <Navigate to="/industries" replace />,
       },
       {
         path: "industries/:slug",
@@ -259,11 +287,15 @@ export const router = createBrowserRouter([
       },
       {
         path: "our-portfolio",
-        element: <PortfolioPage />,
+        element: <Navigate to="/portfolio" replace />,
       },
       {
         path: "work",
         element: <WorkPage />,
+      },
+      {
+        path: "engagement",
+        element: <Navigate to="/about" replace />,
       },
 
       // 10. How We Work Page

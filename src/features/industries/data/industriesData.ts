@@ -415,48 +415,9 @@ export const INDUSTRIES_DATA: Record<string, IndustryItem> = {
     ],
   },
 
-  fmcg: {
-    slug: "fmcg",
-    name: "FMCG Marketing",
-    shortName: "FMCG & Food",
-    category: "Consumer & Retail",
-    isExpert: false,
-    tagline: "Retail Distribution, Shelf Velocity & Mass Consumer Brand Love",
-    heroHeadline: "FMCG Digital Marketing & Consumer Brand Agency",
-    heroSubheadline:
-      "Build household brand recognition, drive quick-commerce orders on Blinkit & Zepto, and support general trade retail shelf velocity.",
-    overview:
-      "Modern FMCG brands must dominate both offline retail shelves and instant 10-minute delivery apps. Real Result builds memorable consumer campaigns, packaging design, and quick-commerce performance marketing.",
-    keyMetrics: [
-      { label: "Quick Commerce Sales Growth", value: "4.8x" },
-      { label: "Brand Recall Lift", value: "+65%" },
-      { label: "Retail Partner Inquiries", value: "+180%" },
-      { label: "Video View-Through Rate", value: "42%" },
-    ],
-    pillars: [
-      { number: "01", title: "Quick-Commerce Ad Management", description: "Sponsored product ads on Blinkit, Zepto, and Instamart." },
-      { number: "02", title: "Vernacular Video & TVC Films", description: "High-impact regional language video commercials." },
-      { number: "03", title: "Micro-Influencer Recipe & Review Blitz", description: "Scalable creator content showing real kitchen and lifestyle usage." },
-      { number: "04", title: "Trade & Superstockist Generation", description: "Attract wholesale distributors and modern trade buyers." },
-    ],
-    subVerticals: [
-      { title: "Packaged Foods & Snacks", description: "Taste-first video reels, impulse buy campaigns." },
-      { title: "Beverages & Cold Brews", description: "Youth-centric lifestyle branding and festival marketing." },
-      { title: "Personal Hygiene & Cleaning", description: "Trust-first efficacy demonstrations and family packs." },
-    ],
-    services: ["Quick Commerce Ads", "Influencer Gifting & Review Blitz", "Packaging & Shelf Creative Design", "Regional Video Ads"],
-    faqs: [
-      {
-        question: "How do you measure ROI for FMCG brands selling primarily offline?",
-        answer:
-          "We use geo-targeted store lift studies, quick-commerce digital attribution, and distributor wholesale order growth across regional test markets.",
-      },
-    ],
-  },
-
   ecommerce: {
     slug: "ecommerce",
-    name: "Ecommerce Marketing Company",
+    name: "Ecommerce Digital Marketing",
     shortName: "Ecommerce & D2C",
     category: "Consumer & Retail",
     isExpert: false,

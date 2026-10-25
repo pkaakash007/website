@@ -28,44 +28,36 @@ const INDUSTRY_PHOTOS: Record<string, { image: string; alt: string }> = {
     alt: "B2B enterprise corporate strategy meeting",
   },
   finance: {
-    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
-    alt: "Fintech mobile payment and banking analytics",
+    image: "/images/industries/finance-marketing.png",
+    alt: "Finance and wealth growth investment bags with rupee symbol and houses",
   },
   "bfsi-fintech": {
-    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
-    alt: "Fintech mobile payment and banking analytics",
+    image: "/images/industries/finance-marketing.png",
+    alt: "Finance and wealth growth investment bags with rupee symbol and houses",
   },
   "real-estate": {
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-    alt: "Modern luxury real estate architecture",
+    image: "/images/industries/real-estate-marketing.png",
+    alt: "Digital Marketing for Real Estate luxury villa and home development campaigns",
   },
   "real-estate-construction": {
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-    alt: "Modern luxury real estate architecture",
+    image: "/images/industries/real-estate-marketing.png",
+    alt: "Digital Marketing for Real Estate luxury villa and home development campaigns",
   },
   education: {
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
-    alt: "University education campus students",
+    image: "/images/industries/education-marketing.png",
+    alt: "Education Digital Marketing admissions and institutional growth",
   },
   "education-edtech": {
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
-    alt: "University education campus students",
-  },
-  fmcg: {
-    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
-    alt: "Food and beverage retail product showcase",
-  },
-  "food-beverage-fmcg": {
-    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
-    alt: "Food and beverage retail product showcase",
+    image: "/images/industries/education-marketing.png",
+    alt: "Education Digital Marketing admissions and institutional growth",
   },
   ecommerce: {
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
-    alt: "Modern retail store and customer shopping experience",
+    image: "/images/industries/ecommerce-marketing.png",
+    alt: "Ecommerce Digital Marketing online store packages on laptop with shopping cart",
   },
   "ecommerce-retail": {
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
-    alt: "Modern retail store and customer shopping experience",
+    image: "/images/industries/ecommerce-marketing.png",
+    alt: "Ecommerce Digital Marketing online store packages on laptop with shopping cart",
   },
   "skincare-beauty": {
     image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=1600&q=80",
@@ -88,12 +80,12 @@ const INDUSTRY_PHOTOS: Record<string, { image: string; alt: string }> = {
     alt: "Automotive vehicle showroom",
   },
   "travel-tourism": {
-    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80",
-    alt: "Luxury resort and travel destination",
+    image: "/images/industries/tourism-marketing.png",
+    alt: "Tourism Marketing with travelers, yellow suitcase luggage and tropical resort on phone",
   },
   "hospitality-travel": {
-    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80",
-    alt: "Luxury resort and travel destination",
+    image: "/images/industries/tourism-marketing.png",
+    alt: "Tourism Marketing with travelers, yellow suitcase luggage and tropical resort on phone",
   },
   "textile-manufacturing": {
     image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1200&q=80",

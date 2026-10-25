@@ -4,6 +4,11 @@ import App from "./App";
 import "@/styles/index.css";
 import { registerWebMcpTools } from "./utils/webmcp";
 
+// Handle chunk load errors when new builds are deployed to Cloudflare
+window.addEventListener("vite:preloadError", () => {
+  window.location.reload();
+});
+
 // Register WebMCP browser tools for AI agent interaction
 registerWebMcpTools();
 

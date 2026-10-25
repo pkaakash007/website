@@ -31,7 +31,7 @@ export const ThankYouPage: React.FC = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
           <Link
-            to="/services/"
+            to="/services"
             className="w-full sm:w-auto px-7 py-3.5 rounded-full text-sm font-semibold bg-[#0071E3] hover:bg-[#0077ED] text-white shadow-lg shadow-[#0071E3]/25 transition-all inline-flex items-center justify-center gap-2"
           >
             Explore Our Services

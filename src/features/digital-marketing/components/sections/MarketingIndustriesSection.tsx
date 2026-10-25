@@ -33,7 +33,7 @@ const INDUSTRIES_LIST: IndustryItem[] = [
     name: "Retail & E-Commerce",
     category: "Online & Retail Brands",
     summary: "Get more daily orders, higher order values, and repeat buyers through high-performing ads.",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/industries/ecommerce-marketing.png",
     slug: "ecommerce",
     points: [
       "Instagram and Meta video ads that drive direct sales",
@@ -59,7 +59,7 @@ const INDUSTRIES_LIST: IndustryItem[] = [
     name: "Real Estate & Builders",
     category: "Developers & Promoters",
     summary: "Attract genuine, budget-verified homebuyers and book confirmed site visits for your projects.",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/industries/real-estate-marketing.png",
     slug: "real-estate",
     points: [
       "Qualified lead forms to filter out casual callers",
@@ -72,7 +72,7 @@ const INDUSTRIES_LIST: IndustryItem[] = [
     name: "Education & Colleges",
     category: "Institutions & Academies",
     summary: "Fill student admission seats and build institutional reputation during peak admission seasons.",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/industries/education-marketing.png",
     slug: "education",
     points: [
       "Targeted course search ads across South India",

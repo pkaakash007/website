@@ -43,15 +43,19 @@ export const DigitalMarketingHubPage: React.FC = () => {
       <MarketingWhySpecialSection />
 
       {/* 5. 12 Industry Verticals & Sector Playbooks */}
-      <MarketingIndustriesSection />
+      <div id="reach" className="scroll-mt-20">
+        <MarketingIndustriesSection />
+      </div>
 
       {/* 6. 4-Stage Growth Methodology & Target Client Profiles */}
       <MarketingProcessSimple />
 
-      {/* 6. Frequently Asked Questions */}
-      <MarketingFAQAccordion />
+      {/* 7. Frequently Asked Questions */}
+      <div id="faq" className="scroll-mt-20">
+        <MarketingFAQAccordion />
+      </div>
 
-      {/* 7. Executive Consultation CTA */}
+      {/* 8. Executive Consultation CTA */}
       <MarketingConsultationCTA />
     </div>
   );

@@ -30,19 +30,29 @@ export const AboutPage: React.FC = () => {
       <AboutHero />
 
       {/* 2. Origin & Operating Model */}
-      <AboutStory />
+      <div id="story" className="scroll-mt-20">
+        <AboutStory />
+      </div>
 
       {/* 3. Core Operating Values */}
-      <AboutCoreValues />
+      <div id="values" className="scroll-mt-20">
+        <AboutCoreValues />
+      </div>
 
       {/* 4. Verified Milestones & Scale Telemetry */}
-      <AboutMilestonesStats />
+      <div id="stats" className="scroll-mt-20">
+        <AboutMilestonesStats />
+      </div>
 
       {/* 5. Verified Client Logos & Regional Partnerships */}
-      <AboutClientLogos />
+      <div id="clients" className="scroll-mt-20">
+        <AboutClientLogos />
+      </div>
 
       {/* 6. Multidisciplinary Leadership Team */}
-      <AboutLeadershipTeam />
+      <div id="leadership" className="scroll-mt-20">
+        <AboutLeadershipTeam />
+      </div>
 
       {/* 7. Official Social Media & Publishing Channels */}
       <AboutSocialChannels />

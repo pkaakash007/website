@@ -46,7 +46,7 @@ export const WorkPage: React.FC = () => {
           </p>
 
           <Link
-            to="/contact/?interest=project"
+            to="/contact?interest=project"
             className="inline-flex items-center justify-center px-7 py-3.5 rounded-full text-sm font-semibold bg-[#0071E3] hover:bg-[#0077ED] text-white shadow-lg shadow-[#0071E3]/30 transition-all hover:scale-[1.02]"
           >
             {content.primaryButton}

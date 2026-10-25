@@ -53,23 +53,23 @@ const InstagramIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4"
 
 const servicesLinks = [
   { label: "Digital Marketing", href: "/digital-marketing" },
-  { label: "Search Engine Optimization (SEO)", href: "/services/seo" },
-  { label: "Generative Engine Optimization (GEO)", href: "/services/ai-search-optimization" },
-  { label: "Google Ads & PPC", href: "/digital-marketing" },
-  { label: "Social Media Marketing", href: "/digital-marketing" },
+  { label: "Search Engine Optimization (SEO)", href: "/digital-marketing/seo" },
+  { label: "Generative Engine Optimization (GEO)", href: "/digital-marketing/geo" },
+  { label: "Google Ads & PPC", href: "/digital-marketing/google-ads" },
+  { label: "Social Media Marketing", href: "/digital-marketing/social-media-marketing" },
   { label: "Web & App Development", href: "/application-development" },
-  { label: "Custom Enterprise ERP", href: "/application-development" },
-  { label: "AI Voice & Telephony", href: "/application-development" },
-  { label: "Content & Brand Identity", href: "/digital-marketing" },
+  { label: "Custom Enterprise ERP", href: "/services/crm-erp" },
+  { label: "AI Voice & Telephony", href: "/services/ai-solutions" },
+  { label: "Content & Brand Identity", href: "/digital-marketing/content-marketing" },
 ];
 
 const industriesLinks = [
-  { label: "Real Estate & Housing", href: "/industries" },
-  { label: "Education & Institutions", href: "/industries" },
+  { label: "Real Estate & Housing", href: "/industries/real-estate" },
+  { label: "Education & Institutions", href: "/industries/education" },
   { label: "Healthcare & Clinics", href: "/industries/healthcare" },
-  { label: "Textile & Manufacturing", href: "/industries" },
-  { label: "Retail & Supermarkets", href: "/industries" },
-  { label: "Solar & Energy Solutions", href: "/industries" },
+  { label: "Textile & Manufacturing", href: "/industries/b2b" },
+  { label: "Retail & Supermarkets", href: "/industries/ecommerce" },
+  { label: "Solar & Energy Solutions", href: "/industries/ev" },
   { label: "Startups & Local SMEs", href: "/industries" },
   { label: "Client Knowledge Base", href: "/about#clients" },
 ];

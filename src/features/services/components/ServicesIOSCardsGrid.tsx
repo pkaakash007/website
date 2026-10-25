@@ -231,8 +231,11 @@ export const ServicesIOSCardsGrid: React.FC<ServicesIOSCardsGridProps> = ({
               <div
                 key={service.id}
                 id={service.id}
-                className="rounded-[28px] sm:rounded-[32px] bg-white border border-black/[0.07] shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.09)] hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group"
+                className="scroll-mt-24 rounded-[28px] sm:rounded-[32px] bg-white border border-black/[0.07] shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.09)] hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group relative"
               >
+                {service.id === "brand-identity-logo" && (
+                  <span id="logo-design" className="absolute -top-24" />
+                )}
                 {/* ── Top Full Cover Image ── */}
                 <div className="relative aspect-[16/10] sm:aspect-[16/10.5] w-full overflow-hidden bg-neutral-100">
                   <img
