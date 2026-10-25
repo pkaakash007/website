@@ -51,7 +51,7 @@ export const AppDevServiceCard: React.FC<ServiceProps> = ({
 
           {/* Technology Pills */}
           <div className="pt-3 border-t border-neutral-100">
-            <p className="text-[11px] font-semibold text-neutral-400 uppercase tracking-wider mb-2">
+            <p className="text-[11px] font-semibold text-neutral-600 uppercase tracking-wider mb-2">
               Technologies &amp; Tools
             </p>
             <div className="flex flex-wrap items-center gap-1.5 text-xs text-neutral-700">

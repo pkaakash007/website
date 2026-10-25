@@ -38,7 +38,7 @@ const ARCHITECTURE_SCREENS: ArchitectureScreen[] = [
             <span className="text-xs font-semibold text-neutral-900">
               Active Protection
             </span>
-            <span className="text-xs text-neutral-400 font-medium">Standard 01</span>
+            <span className="text-xs text-neutral-600 font-medium">Standard 01</span>
           </div>
 
           {/* Main Icon & Title */}
@@ -104,7 +104,7 @@ const ARCHITECTURE_SCREENS: ArchitectureScreen[] = [
             <span className="text-xs font-semibold text-neutral-900">
               Global Edge Cache
             </span>
-            <span className="text-xs text-neutral-400 font-medium">Standard 02</span>
+            <span className="text-xs text-neutral-600 font-medium">Standard 02</span>
           </div>
 
           {/* Speed Stat Callout */}
@@ -155,7 +155,7 @@ const ARCHITECTURE_SCREENS: ArchitectureScreen[] = [
             <span className="text-xs font-semibold text-neutral-900">
               Multi-Tenant Cloud
             </span>
-            <span className="text-xs text-neutral-400 font-medium">Standard 03</span>
+            <span className="text-xs text-neutral-600 font-medium">Standard 03</span>
           </div>
 
           <div className="mt-3.5 flex items-center gap-3">
@@ -208,7 +208,7 @@ const ARCHITECTURE_SCREENS: ArchitectureScreen[] = [
             <span className="text-xs font-semibold text-neutral-900">
               Code Ownership
             </span>
-            <span className="text-xs text-neutral-400 font-medium">Standard 04</span>
+            <span className="text-xs text-neutral-600 font-medium">Standard 04</span>
           </div>
 
           <div className="mt-3.5 p-3.5 rounded-2xl bg-neutral-50 border border-neutral-200/70 text-center">
@@ -256,7 +256,7 @@ const ARCHITECTURE_SCREENS: ArchitectureScreen[] = [
             <span className="text-xs font-semibold text-neutral-900">
               Tax &amp; Compliance
             </span>
-            <span className="text-xs text-neutral-400 font-medium">Standard 05</span>
+            <span className="text-xs text-neutral-600 font-medium">Standard 05</span>
           </div>
 
           <div className="mt-3.5 flex items-center gap-3">
@@ -308,7 +308,7 @@ const ARCHITECTURE_SCREENS: ArchitectureScreen[] = [
             <span className="text-xs font-semibold text-neutral-900">
               Hourly Snapshots
             </span>
-            <span className="text-xs text-neutral-400 font-medium">Standard 06</span>
+            <span className="text-xs text-neutral-600 font-medium">Standard 06</span>
           </div>
 
           <div className="mt-3.5 p-3.5 rounded-2xl bg-neutral-50 border border-neutral-200/70">

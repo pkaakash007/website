@@ -594,7 +594,7 @@ export const AppDevTechStackInteractive: React.FC = () => {
           }}>
             Technologies We Use
           </h2>
-          <p style={{ fontSize: "15px", color: "#86868b", maxWidth: "560px", margin: "0 auto", lineHeight: 1.55, fontWeight: 400 }}>
+          <p style={{ fontSize: "15px", color: "#4B5563", maxWidth: "560px", margin: "0 auto", lineHeight: 1.55, fontWeight: 400 }}>
             We build your apps and websites using the world's most trusted, secure, and modern technologies—so your business runs fast, smooth, and reliably.
           </p>
         </div>
@@ -614,7 +614,7 @@ export const AppDevTechStackInteractive: React.FC = () => {
                   style={{
                     fontWeight: isSelected ? 700 : 500,
                     background: isSelected ? "#FFFFFF" : "transparent",
-                    color: isSelected ? "#000000" : "rgba(60,60,67,0.72)",
+                    color: isSelected ? "#000000" : "#374151",
                     boxShadow: isSelected
                       ? "0 2px 8px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.06)"
                       : "none",

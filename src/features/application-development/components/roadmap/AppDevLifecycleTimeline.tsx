@@ -63,7 +63,7 @@ export const AppDevLifecycleTimeline: React.FC = () => {
               <div className="space-y-4">
                 {/* Phase Number */}
                 <div className="flex items-center justify-end">
-                  <span className="text-sm font-bold text-neutral-400">
+                  <span className="text-sm font-bold text-neutral-600">
                     {phase.number}
                   </span>
                 </div>
@@ -81,7 +81,7 @@ export const AppDevLifecycleTimeline: React.FC = () => {
 
               {/* Deliverable Items */}
               <div className="pt-4 border-t border-neutral-100 space-y-2">
-                <span className="text-xs font-semibold text-neutral-400 uppercase tracking-wider block">
+                <span className="text-xs font-semibold text-neutral-600 uppercase tracking-wider block">
                   Key Deliverables
                 </span>
                 <ul className="space-y-1.5">
