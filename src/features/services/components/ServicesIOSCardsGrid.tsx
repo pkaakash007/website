@@ -201,6 +201,9 @@ export const ServicesIOSCardsGrid: React.FC<ServicesIOSCardsGridProps> = ({
   return (
     <section id="services-cards" className="py-12 sm:py-16 lg:py-20 bg-[#F5F5F7] scroll-mt-24">
       <Container size="wide">
+        {/* Accessible Section Heading for Sequential Order (h1 -> h2 -> h3) */}
+        <h2 className="sr-only">Our Core Services & Solutions Catalog</h2>
+
         {/* iOS Segmented Filter Pill Track (Centered on Light Gray Canvas) */}
         <div className="flex justify-center mb-10 sm:mb-14">
           <div className="p-1 sm:p-1.5 rounded-full bg-[#E5E5EA]/85 backdrop-blur-md border border-black/[0.04] shadow-inner flex flex-wrap justify-center gap-1 max-w-full">
@@ -214,7 +217,7 @@ export const ServicesIOSCardsGrid: React.FC<ServicesIOSCardsGridProps> = ({
                   className={`cursor-pointer select-none px-4 sm:px-5 py-2 rounded-full text-xs sm:text-[13px] transition-all duration-200 ${
                     isActive
                       ? "bg-white text-[#1D1D1F] font-bold shadow-[0_2px_8px_rgba(0,0,0,0.12)]"
-                      : "text-[#86868B] font-semibold hover:text-[#1D1D1F]"
+                      : "text-neutral-700 font-semibold hover:text-[#1D1D1F]"
                   }`}
                 >
                   {tab.label}
@@ -288,9 +291,11 @@ export const ServicesIOSCardsGrid: React.FC<ServicesIOSCardsGridProps> = ({
 
                     <Link
                       to={service.actionUrl}
+                      aria-label={`Learn more about ${service.title}`}
                       className="text-xs sm:text-[13px] font-semibold text-[#0071E3] hover:underline inline-flex items-center gap-1 group/link"
                     >
                       <span>Learn more</span>
+                      <span className="sr-only"> about {service.title}</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 transition-transform" />
                     </Link>
                   </div>

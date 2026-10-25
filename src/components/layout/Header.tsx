@@ -457,7 +457,7 @@ export const Header: React.FC = () => {
                       fontWeight: isActive(link.href) || isCurrentActive ? 600 : 500,
                       color:
                         isActive(link.href) || isCurrentActive
-                          ? "#C5A059"
+                          ? "#855800"
                           : "rgba(0,0,0,0.70)",
                       background: "transparent",
                       letterSpacing: "-0.005em",
@@ -480,7 +480,7 @@ export const Header: React.FC = () => {
                 style={{
                   fontSize: "13.5px",
                   fontWeight: isActive(link.href) ? 600 : 500,
-                  color: isActive(link.href) ? "#C5A059" : "rgba(0,0,0,0.70)",
+                  color: isActive(link.href) ? "#855800" : "rgba(0,0,0,0.70)",
                   background: "transparent",
                   letterSpacing: "-0.005em",
                 }}
