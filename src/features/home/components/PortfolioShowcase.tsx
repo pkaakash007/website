@@ -77,7 +77,6 @@ const WEBSITE_PORTFOLIO: WebsitePortfolioItem[] = [
     client: "Dr. Aravinth Dental Care",
     sub: "Static Website",
     url: "aravinth-dental-care.pages.dev",
-    isLiveIframe: true,
     industry: "Dentistry & Oral Healthcare",
     topicTitle: "Static Web Development",
     topicLink: "/application-development",
@@ -426,7 +425,6 @@ const WEBSITE_PORTFOLIO: WebsitePortfolioItem[] = [
     client: "Buddy Mattress",
     sub: "E-commerce Website",
     url: "buddy-mattress.pages.dev",
-    isLiveIframe: true,
     industry: "Mattresses & Sleep Comfort",
     topicTitle: "E-Commerce Solutions",
     topicLink: "/application-development",
@@ -573,100 +571,6 @@ const PortfolioCardImage: React.FC<{
   );
 };
 
-// ─── Live Website Proportional Responsive Preview Component ─────────────────
-
-const LiveWebsitePreview: React.FC<{
-  url: string;
-  title: string;
-  onOpenModal: () => void;
-}> = ({ url, title, onOpenModal }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [containerSize, setContainerSize] = useState<{ width: number; height: number }>({ width: 0, height: 0 });
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-    const updateSize = () => {
-      if (containerRef.current) {
-        setContainerSize({
-          width: containerRef.current.clientWidth,
-          height: containerRef.current.clientHeight,
-        });
-      }
-    };
-    updateSize();
-
-    const resizeObserver = new ResizeObserver(() => {
-      updateSize();
-    });
-    resizeObserver.observe(containerRef.current);
-    return () => resizeObserver.disconnect();
-  }, []);
-
-  const fullUrl = url.startsWith("http") ? url : `https://${url}`;
-
-  // Proportional responsive scaling: 1280px standard desktop viewport scaled to container
-  const scale = containerSize.width > 0 ? containerSize.width / 1280 : 0.3125;
-  const virtualHeight =
-    scale > 0 && containerSize.height > 0
-      ? Math.ceil(containerSize.height / scale)
-      : 800;
-
-  return (
-    <div
-      ref={containerRef}
-      className="relative w-full h-full overflow-hidden bg-slate-900 select-none group"
-    >
-      {/* Real Live Website Iframe */}
-      <iframe
-        src={fullUrl}
-        title={title}
-        loading="lazy"
-        onLoad={() => setIsLoaded(true)}
-        className="border-0 pointer-events-none absolute top-0 left-0 transition-opacity duration-300"
-        style={{
-          width: "1280px",
-          height: `${virtualHeight}px`,
-          transform: `scale(${scale})`,
-          transformOrigin: "top left",
-          opacity: isLoaded ? 1 : 0.05,
-        }}
-      />
-
-      {/* Subtle loader shimmer while iframe mounts */}
-      {!isLoaded && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-950 text-slate-300 z-10 gap-2">
-          <div className="w-6 h-6 rounded-full border-2 border-emerald-400/30 border-t-emerald-400 animate-spin" />
-          <div className="text-[11px] font-mono text-slate-300">
-            <span>Loading {url}...</span>
-          </div>
-        </div>
-      )}
-
-      {/* Hover action overlay */}
-      <div className="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-2.5 z-20 pointer-events-none">
-        <button
-          type="button"
-          onClick={onOpenModal}
-          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white text-neutral-900 text-xs font-bold shadow-lg pointer-events-auto hover:bg-neutral-100 transition-colors cursor-pointer"
-        >
-          <Maximize2 className="w-3.5 h-3.5 text-[#0071E3]" />
-          <span>Test Devices</span>
-        </button>
-        <a
-          href={fullUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/80 text-white text-xs font-bold border border-white/20 shadow-lg pointer-events-auto hover:bg-black transition-colors cursor-pointer"
-        >
-          <span>Visit Live Site</span>
-          <ExternalLink className="w-3.5 h-3.5" />
-        </a>
-      </div>
-    </div>
-  );
-};
 
 // ─── Live Website Responsive Preview Modal ──────────────────────────────────
 
@@ -945,53 +849,45 @@ export const PortfolioShowcase: React.FC = () => {
 
                 {/* ── Real Website Interface Viewport ── */}
                 <div className="relative aspect-[16/10] overflow-hidden bg-neutral-900 group/viewport block">
-                  {site.isLiveIframe ? (
-                    <LiveWebsitePreview
-                      url={site.url}
-                      title={site.client}
-                      onOpenModal={() => setLivePreviewModal({ url: site.url, title: site.client })}
+                  <a
+                    href={site.url.startsWith("http") ? site.url : `https://${site.url}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`Visit ${site.client} (${site.url})`}
+                    className="relative w-full h-full block cursor-pointer group/img"
+                  >
+                    <PortfolioCardImage
+                      src={getWebsitePreviewImage(site)}
+                      alt={site.client}
+                      width={400}
+                      height={250}
+                      className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500"
                     />
-                  ) : (
-                    <a
-                      href={site.url.startsWith("http") ? site.url : `https://${site.url}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title={`Visit ${site.client} (${site.url})`}
-                      className="relative w-full h-full block cursor-pointer group/img"
-                    >
-                      <PortfolioCardImage
-                        src={getWebsitePreviewImage(site)}
-                        alt={site.client}
-                        width={400}
-                        height={250}
-                        className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500"
-                      />
-                      {/* Subtle glass & dark gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20 pointer-events-none" />
+                    {/* Subtle glass & dark gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/20 pointer-events-none" />
 
-                      {/* Hover action pill */}
-                      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-20">
-                        <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/95 text-neutral-900 text-xs font-bold shadow-lg transform translate-y-1 group-hover/img:translate-y-0 transition-transform duration-300">
-                          <span>Visit Live Site</span>
-                          <ExternalLink className="w-3.5 h-3.5 text-neutral-700" />
-                        </span>
-                      </div>
+                    {/* Hover action pill */}
+                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-20">
+                      <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/95 text-neutral-900 text-xs font-bold shadow-lg transform translate-y-1 group-hover/img:translate-y-0 transition-transform duration-300">
+                        <span>Visit Live Site</span>
+                        <ExternalLink className="w-3.5 h-3.5 text-neutral-700" />
+                      </span>
+                    </div>
 
-                      {/* Mini Website Hero Banner & Stats Overlay */}
-                      <div className="absolute bottom-2.5 inset-x-3 text-white pointer-events-none z-10">
-                        <p className="text-[12.5px] font-bold leading-snug line-clamp-1 text-white drop-shadow-sm mb-1">
-                          {site.tagline}
-                        </p>
-                        <div className="flex items-center gap-1.5">
-                          {site.stats.map((s, idx) => (
-                            <span key={idx} className="inline-block text-[10px] font-medium px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs border border-white/10 text-white/90">
-                              {s.label}: <strong className="text-white font-bold">{s.value}</strong>
-                            </span>
-                          ))}
-                        </div>
+                    {/* Mini Website Hero Banner & Stats Overlay */}
+                    <div className="absolute bottom-2.5 inset-x-3 text-white pointer-events-none z-10">
+                      <p className="text-[12.5px] font-bold leading-snug line-clamp-1 text-white drop-shadow-sm mb-1">
+                        {site.tagline}
+                      </p>
+                      <div className="flex items-center gap-1.5">
+                        {site.stats.map((s, idx) => (
+                          <span key={idx} className="inline-block text-[10px] font-medium px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs border border-white/10 text-white/90">
+                            {s.label}: <strong className="text-white font-bold">{s.value}</strong>
+                          </span>
+                        ))}
                       </div>
-                    </a>
-                  )}
+                    </div>
+                  </a>
                 </div>
 
 

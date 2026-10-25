@@ -2,10 +2,16 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { LeadModal } from "@/components/common/LeadModal";
-import { ScrollToTopButton } from "@/components/common/ScrollToTopButton";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { ErrorBoundary } from "@/components/common/ErrorBoundary";
+
+// Lazy-load global interactive overlays to keep critical render path minimal
+const LeadModal = React.lazy(() =>
+  import("@/components/common/LeadModal").then((m) => ({ default: m.LeadModal }))
+);
+const ScrollToTopButton = React.lazy(() =>
+  import("@/components/common/ScrollToTopButton").then((m) => ({ default: m.ScrollToTopButton }))
+);
 
 const RouteFallback: React.FC = () => (
   <div className="min-h-screen flex items-center justify-center" aria-busy="true" aria-label="Loading page content">
@@ -29,8 +35,10 @@ export const RootLayout: React.FC = () => {
       <Footer />
 
       {/* Global Interactive Overlays & Floating Actions */}
-      <LeadModal />
-      <ScrollToTopButton />
+      <React.Suspense fallback={null}>
+        <LeadModal />
+        <ScrollToTopButton />
+      </React.Suspense>
     </div>
   );
 };

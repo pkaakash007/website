@@ -51,13 +51,14 @@ if (fs.existsSync(sitemapPath)) {
   assert(sitemapContent.includes('<loc>https://realresult.in/digital-marketing/seo</loc>'), 'sitemap includes SEO pillar');
   assert(sitemapContent.includes('<loc>https://realresult.in/digital-marketing/geo</loc>'), 'sitemap includes GEO pillar');
   assert(sitemapContent.includes('<loc>https://realresult.in/digital-marketing/aio</loc>'), 'sitemap includes AIO pillar');
-  assert(sitemapContent.includes('<loc>https://realresult.in/software-development</loc>'), 'sitemap includes software development hub');
+  assert(sitemapContent.includes('<loc>https://realresult.in/application-development</loc>'), 'sitemap includes application development pillar');
+  assert(sitemapContent.includes('<loc>https://realresult.in/services</loc>'), 'sitemap includes services hub');
+  assert(sitemapContent.includes('<loc>https://realresult.in/portfolio</loc>'), 'sitemap includes portfolio');
   assert(sitemapContent.includes('<loc>https://realresult.in/locations/erode</loc>'), 'sitemap includes Erode HQ location');
   assert(sitemapContent.includes('<loc>https://realresult.in/locations/coimbatore</loc>'), 'sitemap includes Coimbatore location');
-  assert(sitemapContent.includes('<loc>https://realresult.in/locations/chennai</loc>'), 'sitemap includes Chennai location');
   assert(sitemapContent.includes('<loc>https://realresult.in/locations/namakkal</loc>'), 'sitemap includes Namakkal location');
-  assert(sitemapContent.includes('<loc>https://realresult.in/case-studies</loc>'), 'sitemap includes case studies');
-  assert(sitemapContent.includes('<loc>https://realresult.in/faq</loc>'), 'sitemap includes FAQ hub');
+  assert(sitemapContent.includes('<loc>https://realresult.in/locations/paramathi-velur</loc>'), 'sitemap includes Paramathi Velur location');
+  assert(sitemapContent.includes('<loc>https://realresult.in/locations/salem</loc>'), 'sitemap includes Salem location');
 }
 
 // 3. Validate SEOHead Component and Central Config
@@ -85,6 +86,10 @@ const pagesToVerify = [
   'src/pages/HomePage.tsx',
   'src/pages/AboutPage.tsx',
   'src/pages/ContactPage.tsx',
+  'src/pages/ServicesPage.tsx',
+  'src/pages/PortfolioPage.tsx',
+  'src/pages/IndustriesPage.tsx',
+  'src/pages/ApplicationDevelopmentPage.tsx',
   'src/pages/digital-marketing/DigitalMarketingHubPage.tsx',
   'src/pages/digital-marketing/SEOPage.tsx',
   'src/pages/digital-marketing/LocalSEOPage.tsx',
@@ -94,25 +99,15 @@ const pagesToVerify = [
   'src/pages/digital-marketing/SocialMediaPage.tsx',
   'src/pages/digital-marketing/ContentMarketingPage.tsx',
   'src/pages/digital-marketing/CROPage.tsx',
-  'src/pages/software-development/SoftwareHubPage.tsx',
-  'src/pages/software-development/WebDevelopmentPage.tsx',
-  'src/pages/software-development/MobileAppPage.tsx',
-  'src/pages/software-development/CustomSoftwarePage.tsx',
-  'src/pages/software-development/SaaSDevelopmentPage.tsx',
-  'src/pages/software-development/AIDevelopmentPage.tsx',
   'src/pages/locations/TamilNaduHubPage.tsx',
   'src/pages/locations/ErodeHQPage.tsx',
   'src/pages/locations/CoimbatorePage.tsx',
-  'src/pages/locations/ChennaiPage.tsx',
-  'src/pages/locations/TiruppurPage.tsx',
   'src/pages/locations/SalemPage.tsx',
-  'src/pages/locations/MaduraiPage.tsx',
-  'src/pages/locations/TrichyPage.tsx',
-  'src/pages/locations/TirunelveliPage.tsx',
   'src/pages/locations/NamakkalPage.tsx',
-  'src/pages/case-studies/CaseStudiesHubPage.tsx',
-  'src/pages/resources/ResourcesHubPage.tsx',
-  'src/pages/faq/FAQHubPage.tsx',
+  'src/pages/locations/ParamathiVelurPage.tsx',
+  'src/pages/services/ServiceDetailPage.tsx',
+  'src/pages/industries/HealthcareIndustryPage.tsx',
+  'src/pages/industries/IndustryDetailPage.tsx',
 ];
 
 for (const pageRel of pagesToVerify) {
@@ -147,6 +142,56 @@ const llmsPath = path.join(ROOT_DIR, 'public/llms.txt');
 if (fs.existsSync(llmsPath)) {
   const llmsContent = fs.readFileSync(llmsPath, 'utf8');
   assert(llmsContent.includes('_index._agents.realresult.in'), 'llms.txt documents DNS-AID discovery records');
+}
+
+// 7. Validate index.html On-Page SEO (Title, Meta Description, Headings, Social Media)
+console.log('\n📁 7. Validating index.html On-Page SEO (SEOptimer & Seobility criteria)...');
+const indexPath = path.join(ROOT_DIR, 'index.html');
+assert(fs.existsSync(indexPath), 'index.html exists');
+if (fs.existsSync(indexPath)) {
+  const indexContent = fs.readFileSync(indexPath, 'utf8');
+  
+  // Title Length: strictly 50-60 characters
+  const titleMatch = indexContent.match(/<title>(.*?)<\/title>/i);
+  assert(Boolean(titleMatch), 'index.html has <title> tag');
+  if (titleMatch) {
+    const titleText = titleMatch[1].replace(/&amp;/g, '&');
+    const titleLen = titleText.length;
+    assert(titleLen >= 50 && titleLen <= 60, `Title length is ${titleLen} chars (target: 50-60 chars): "${titleText}"`);
+  }
+
+  // Meta Description Length: strictly 100-130 characters
+  const descMatch = indexContent.match(/<meta\s+name=["']description["']\s+content="([^"]*)"/i) || indexContent.match(/<meta\s+name=["']description["']\s+content='([^']*)'/i);
+  assert(Boolean(descMatch), 'index.html has meta description');
+  if (descMatch) {
+    const descText = descMatch[1].replace(/&amp;/g, '&');
+    const descLen = descText.length;
+    assert(descLen >= 100 && descLen <= 130, `Meta description length is ${descLen} chars (target: 100-130 chars): "${descText}"`);
+  }
+
+  // H1 Heading: strictly 10-70 characters
+  const h1Match = indexContent.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+  assert(Boolean(h1Match), 'index.html has <h1> tag in semantic pre-render');
+  if (h1Match) {
+    const h1Text = h1Match[1].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+    const h1Len = h1Text.length;
+    assert(h1Len >= 10 && h1Len <= 70, `H1 length is ${h1Len} chars (target: 10-70 chars): "${h1Text}"`);
+  }
+
+  // Headings hierarchy: H2, H3, H4 present
+  const hasH2 = /<h2[^>]*>/i.test(indexContent);
+  const hasH3 = /<h3[^>]*>/i.test(indexContent);
+  const hasH4 = /<h4[^>]*>/i.test(indexContent);
+  assert(hasH2, 'index.html contains <h2> tags');
+  assert(hasH3, 'index.html contains <h3> tags');
+  assert(hasH4, 'index.html contains <h4> tags');
+
+  // Social Media Links: YouTube, X/Twitter, LinkedIn, Instagram, Facebook
+  assert(indexContent.includes('youtube.com'), 'index.html links to YouTube channel');
+  assert(indexContent.includes('x.com') || indexContent.includes('twitter.com'), 'index.html links to X (Twitter) profile');
+  assert(indexContent.includes('linkedin.com'), 'index.html links to LinkedIn company/profile');
+  assert(indexContent.includes('instagram.com'), 'index.html links to Instagram profile');
+  assert(indexContent.includes('facebook.com'), 'index.html links to Facebook page');
 }
 
 // Summary Report

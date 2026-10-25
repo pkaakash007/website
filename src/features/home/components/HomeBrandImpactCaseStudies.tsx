@@ -66,7 +66,7 @@ const BRAND_STORIES: BrandStory[] = [
     tagline: "Just Do It",
     logo: <NikeLogo className="w-4 h-4" />,
     headline: "How Nike 10x'd revenue from $877M to $9.2 Billion",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=75",
     story:
       "In 1988, Nike was losing to Reebok. Instead of advertising shoe soles and technical features, they launched 'Just Do It'—celebrating the grit of everyday runners and athletes.",
     before: {
@@ -86,7 +86,7 @@ const BRAND_STORIES: BrandStory[] = [
     tagline: "1984 Super Bowl",
     logo: <AppleLogo className="w-4 h-4" />,
     headline: "Creating the personal computer market with one ad",
-    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=700&q=75",
     story:
       "Computers were seen as cold corporate machines owned only by big companies. Apple aired a single 60-second ad positioning Macintosh as a tool for creative individuals.",
     before: {
@@ -106,7 +106,7 @@ const BRAND_STORIES: BrandStory[] = [
     tagline: "Share a Coke",
     logo: <CocaColaLogo className="w-4 h-4" />,
     headline: "Reversing a 10-year sales decline by printing names on bottles",
-    image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=700&q=75",
     story:
       "Soda sales were dropping as youth moved away from sugary drinks. Coca-Cola replaced its logo with 250 common names, turning everyday drinks into personal gifts.",
     before: {
@@ -126,7 +126,7 @@ const BRAND_STORIES: BrandStory[] = [
     tagline: "The Taste Challenge",
     logo: <PepsiLogo className="w-4 h-4" />,
     headline: "Beating a 70-year market leader in grocery aisles",
-    image: "https://images.unsplash.com/photo-1553456558-aff63285bdd1?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1553456558-aff63285bdd1?auto=format&fit=crop&w=700&q=75",
     story:
       "Coca-Cola dominated 70% of soda sales. Pepsi ran blind taste tests across shopping malls proving people preferred Pepsi, turning skepticism into record sales.",
     before: {
@@ -146,7 +146,7 @@ const BRAND_STORIES: BrandStory[] = [
     tagline: "Spotify Wrapped",
     logo: <SpotifyLogo className="w-4 h-4" />,
     headline: "Turning user data into a viral annual social phenomenon",
-    image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=700&q=75",
     story:
       "All streaming apps have the exact same songs for the same price. Spotify used listening data to create customized year-end cards that users proudly share online for free.",
     before: {

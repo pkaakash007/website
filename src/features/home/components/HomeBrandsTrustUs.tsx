@@ -27,41 +27,59 @@ export const HomeBrandsTrustUs: React.FC = () => {
           <div className="flex w-max items-center animate-ticker group-hover:[animation-play-state:paused]">
             {/* First track */}
             <div className="flex items-center shrink-0">
-              {logos.map((client) => (
-                <Link
-                  key={`track1-${client.id}`}
-                  to="/about#clients"
-                  className="flex items-center justify-center px-6 sm:px-9 py-2 shrink-0 group/item transition-transform duration-200 cursor-pointer"
-                  title={`${client.name} — ${client.category}`}
-                >
-                  <img
-                    src={client.logoUrl}
-                    alt={`${client.name} logo`}
-                    loading="lazy"
-                    className="h-8 sm:h-10 w-auto max-w-[120px] sm:max-w-[150px] object-contain mix-blend-multiply group-hover/item:scale-105 transition-all duration-200"
-                  />
-                </Link>
-              ))}
+              {logos.map((client) => {
+                const webpUrl = client.logoUrl.replace(/\.png$/, ".webp");
+                return (
+                  <Link
+                    key={`track1-${client.id}`}
+                    to="/about#clients"
+                    className="flex items-center justify-center px-6 sm:px-9 py-2 shrink-0 group/item transition-transform duration-200 cursor-pointer"
+                    title={`${client.name} — ${client.category}`}
+                  >
+                    <picture>
+                      <source type="image/webp" srcSet={webpUrl} />
+                      <img
+                        src={client.logoUrl}
+                        alt={`${client.name} logo`}
+                        width={150}
+                        height={40}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-8 sm:h-10 w-auto max-w-[120px] sm:max-w-[150px] object-contain mix-blend-multiply group-hover/item:scale-105 transition-all duration-200"
+                      />
+                    </picture>
+                  </Link>
+                );
+              })}
             </div>
 
             {/* Second track for seamless infinite looping */}
             <div aria-hidden className="flex items-center shrink-0">
-              {logos.map((client) => (
-                <Link
-                  key={`track2-${client.id}`}
-                  to="/about#clients"
-                  tabIndex={-1}
-                  className="flex items-center justify-center px-6 sm:px-9 py-2 shrink-0 group/item transition-transform duration-200 cursor-pointer"
-                  title={`${client.name} — ${client.category}`}
-                >
-                  <img
-                    src={client.logoUrl}
-                    alt=""
-                    loading="lazy"
-                    className="h-8 sm:h-10 w-auto max-w-[120px] sm:max-w-[150px] object-contain mix-blend-multiply group-hover/item:scale-105 transition-all duration-200"
-                  />
-                </Link>
-              ))}
+              {logos.map((client) => {
+                const webpUrl = client.logoUrl.replace(/\.png$/, ".webp");
+                return (
+                  <Link
+                    key={`track2-${client.id}`}
+                    to="/about#clients"
+                    tabIndex={-1}
+                    className="flex items-center justify-center px-6 sm:px-9 py-2 shrink-0 group/item transition-transform duration-200 cursor-pointer"
+                    title={`${client.name} — ${client.category}`}
+                  >
+                    <picture>
+                      <source type="image/webp" srcSet={webpUrl} />
+                      <img
+                        src={client.logoUrl}
+                        alt=""
+                        width={150}
+                        height={40}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-8 sm:h-10 w-auto max-w-[120px] sm:max-w-[150px] object-contain mix-blend-multiply group-hover/item:scale-105 transition-all duration-200"
+                      />
+                    </picture>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>

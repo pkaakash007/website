@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { BrandLogo } from "@/components/common/BrandLogo";
 import { Button } from "@/components/common/Button";
-import { openLeadModal } from "@/components/common/LeadModal";
+import { openLeadModal } from "@/utils/leadModalEvents";
 import { getWhatsAppUrl, REAL_RESULT_CONFIG } from "@/config";
 import { SOCIAL_LINKS } from "@/config/seo";
 

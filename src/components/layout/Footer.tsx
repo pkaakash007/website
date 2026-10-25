@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Container } from "./Container";
 import { BrandLogo } from "@/components/common/BrandLogo";
 import { SEO_CONFIG, SOCIAL_LINKS } from "@/config/seo";
-import { openLeadModal } from "@/components/common/LeadModal";
+import { openLeadModal } from "@/utils/leadModalEvents";
 import { ChevronRight } from "lucide-react";
 
 // ─── Pixel-Perfect Brand Social Icons ─────────────────────────────────────────

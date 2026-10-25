@@ -22,9 +22,23 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
 
-    // 1. Enforce Canonical Domain: redirect www.realresult.in -> realresult.in (301)
+    // 1. Enforce HTTPS: Redirect http:// -> https:// (301 Permanent)
+    const proto =
+      request.headers.get("x-forwarded-proto") ||
+      (url.protocol ? url.protocol.replace(":", "") : "https");
+
+    if (proto === "http" || url.protocol === "http:") {
+      url.protocol = "https:";
+      if (url.hostname === "www.realresult.in") {
+        url.hostname = "realresult.in";
+      }
+      return Response.redirect(url.toString(), 301);
+    }
+
+    // 2. Enforce Canonical Domain: redirect www.realresult.in -> realresult.in (301)
     if (url.hostname === "www.realresult.in") {
       url.hostname = "realresult.in";
+      url.protocol = "https:";
       return Response.redirect(url.toString(), 301);
     }
 
@@ -1553,6 +1567,7 @@ Localized B2B market consultation and high-intent commercial positioning for Sou
     headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
     headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
     headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
+    headers.set("Content-Security-Policy", "upgrade-insecure-requests");
     headers.set("Content-Signal", "ai-train=no, search=yes, ai-input=yes");
     // Only apply Link headers & Vary: Accept where route content negotiation can actually occur (HTML vs Markdown)
     if (!isStaticAsset) {

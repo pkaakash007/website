@@ -1,22 +1,24 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { SEOHead } from "@/components/seo/SEOHead";
 import HomeHero from "@/features/home/components/hero/HomeHero";
-import PortfolioShowcase from "@/features/home/components/PortfolioShowcase";
-import HorizontalMarquee from "@/features/home/components/HorizontalMarquee";
-import HomePillarsDualShowcase from "@/features/home/components/pillars/HomePillarsDualShowcase";
-import HomeGrowthDiscoveryStats from "@/features/home/components/HomeGrowthDiscoveryStats";
-import HomeBrandImpactCaseStudies from "@/features/home/components/HomeBrandImpactCaseStudies";
-import MediaVisualStrip from "@/features/home/components/MediaVisualStrip";
-import HomeIndustriesGrid from "@/features/home/components/HomeIndustriesGrid";
 import HomeBrandsTrustUs from "@/features/home/components/HomeBrandsTrustUs";
-import HomeLeadBanner from "@/features/home/components/cta/HomeLeadBanner";
+
+// Code-split below-the-fold modules to minimize initial main-thread work and eliminate unused JS
+const PortfolioShowcase = lazy(() => import("@/features/home/components/PortfolioShowcase"));
+const HorizontalMarquee = lazy(() => import("@/features/home/components/HorizontalMarquee"));
+const HomePillarsDualShowcase = lazy(() => import("@/features/home/components/pillars/HomePillarsDualShowcase"));
+const HomeGrowthDiscoveryStats = lazy(() => import("@/features/home/components/HomeGrowthDiscoveryStats"));
+const HomeBrandImpactCaseStudies = lazy(() => import("@/features/home/components/HomeBrandImpactCaseStudies"));
+const MediaVisualStrip = lazy(() => import("@/features/home/components/MediaVisualStrip"));
+const HomeIndustriesGrid = lazy(() => import("@/features/home/components/HomeIndustriesGrid"));
+const HomeLeadBanner = lazy(() => import("@/features/home/components/cta/HomeLeadBanner"));
 
 export const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <SEOHead
-        title="Real Result | Best Digital Marketing Agency in Namakkal & Tamil Nadu"
-        description="Real Result – Best digital marketing and leading marketing agency in Namakkal. Trusted by 200+ businesses across Salem, Erode, Namakkal, Coimbatore for SEO, Google Ads, social media marketing, website design and mobile app development."
+        title="Real Result | Best Digital Marketing Agency in Tamil Nadu"
+        description="Real Result is Tamil Nadu's premier digital marketing, SEO, Google Ads, and custom enterprise software development agency."
         canonicalPath="/"
         schema={{
           "@context": "https://schema.org",
@@ -27,8 +29,8 @@ export const HomePage: React.FC = () => {
           description:
             "Real Result is the best digital marketing agency in Namakkal, Tamil Nadu. We are a leading marketing agency founded to help small and medium businesses grow online. We offer SEO, Google Ads, Social Media Marketing, Website Design, Mobile App Development, and Branding services across Namakkal, Salem, Erode, and Coimbatore.",
           url: "https://realresult.in",
-          logo: "https://realresult.in/logo.png",
-          image: "https://realresult.in/og-image.jpg",
+          logo: "https://realresult.in/brand/real-result-marketing-logo-tamil-nadu.png",
+          image: "https://realresult.in/brand/real-result-marketing-logo-tamil-nadu.png",
           telephone: "+91-8111033390",
           email: "realresult.in@gmail.com",
           foundingDate: "2020",
@@ -115,8 +117,13 @@ export const HomePage: React.FC = () => {
           },
           sameAs: [
             "https://realresult.in",
-            "https://www.instagram.com/real_result/",
-            "https://www.facebook.com/profile.php?id=61585261640135",
+            "https://search.google.com/local/writereview?placeid=ChIJCeVk0hrVqzsRp7foI1ppMUo",
+            "https://www.youtube.com/channel/UCicDHwdRdTSOdJSwpFXkuSg",
+            "https://x.com/RealResult_in",
+            "https://twitter.com/RealResult_in",
+            "https://www.linkedin.com/in/real-result-50445a442/",
+            "https://www.instagram.com/real_result_/",
+            "https://www.facebook.com/people/Real-Result-Marketing-Digital-Ads-Expert/61585261640135/",
           ],
           aggregateRating: {
             "@type": "AggregateRating",
@@ -130,36 +137,39 @@ export const HomePage: React.FC = () => {
       {/* 1. Hero: Core Agency Positioning & 3D Centerpiece */}
       <HomeHero />
 
-      {/* 2. Our Live Work Portfolio Showcase */}
-      <PortfolioShowcase />
-
-      {/* 3. Continuous Horizontal Scroll Animation Strip */}
-      <div className="w-full shrink-0 py-6 bg-white border-y border-neutral-100 overflow-hidden">
-        <HorizontalMarquee />
-      </div>
-
-      {/* 4. Flagship Dual Showcase: Digital Marketing & Application Development */}
-      <div id="pillars" className="scroll-mt-20">
-        <HomePillarsDualShowcase />
-      </div>
-
-      {/* 5. Verified Growth Stats & SEO, AEO, GEO Performance Data */}
-      <HomeGrowthDiscoveryStats />
-
-      {/* 6. Why Marketing Matters for Your Brand (Iconic Brand Case Studies & Reach Data) */}
-      <HomeBrandImpactCaseStudies />
-
-      {/* 7. Brands That Trust Us: Regional Client Logos & Moving Forward Carousel */}
+      {/* 2. Brands That Trust Us: Above-the-fold Social Proof Marquee */}
       <HomeBrandsTrustUs />
 
-      {/* 8. Where We Run Your Ads (Multi-Platform Mobile Ad Showcase) */}
-      <MediaVisualStrip />
+      {/* Below-the-fold sections streamed asynchronously */}
+      <Suspense fallback={<div className="min-h-[120px]" />}>
+        {/* 3. Our Live Work Portfolio Showcase */}
+        <PortfolioShowcase />
 
-      {/* 9. 12 Specialized Industries Grid with Live Category Tabs */}
-      <HomeIndustriesGrid />
+        {/* 4. Continuous Horizontal Scroll Animation Strip */}
+        <div className="w-full shrink-0 py-6 bg-white border-y border-neutral-100 overflow-hidden">
+          <HorizontalMarquee />
+        </div>
 
-      {/* 10. Final High-Impact Consultation Banner */}
-      <HomeLeadBanner />
+        {/* 5. Flagship Dual Showcase: Digital Marketing & Application Development */}
+        <div id="pillars" className="scroll-mt-20">
+          <HomePillarsDualShowcase />
+        </div>
+
+        {/* 6. Verified Growth Stats & SEO, AEO, GEO Performance Data */}
+        <HomeGrowthDiscoveryStats />
+
+        {/* 7. Why Marketing Matters for Your Brand (Iconic Brand Case Studies & Reach Data) */}
+        <HomeBrandImpactCaseStudies />
+
+        {/* 8. Where We Run Your Ads (Multi-Platform Mobile Ad Showcase) */}
+        <MediaVisualStrip />
+
+        {/* 9. 12 Specialized Industries Grid with Live Category Tabs */}
+        <HomeIndustriesGrid />
+
+        {/* 10. Final High-Impact Consultation Banner */}
+        <HomeLeadBanner />
+      </Suspense>
     </div>
   );
 };

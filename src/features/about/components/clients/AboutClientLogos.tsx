@@ -65,12 +65,18 @@ export const AboutClientLogos: React.FC = () => {
             >
               {/* Logo Frame (Transparent, No Background Box) */}
               <div className="w-full h-20 sm:h-24 flex items-center justify-center p-2 overflow-hidden">
-                <img
-                  src={client.logoUrl}
-                  alt={`${client.name} logo`}
-                  loading="lazy"
-                  className="max-h-12 sm:max-h-14 max-w-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-200"
-                />
+                <picture>
+                  <source type="image/webp" srcSet={client.logoUrl.replace(/\.png$/, ".webp")} />
+                  <img
+                    src={client.logoUrl}
+                    alt={`${client.name} logo`}
+                    width={150}
+                    height={48}
+                    loading="lazy"
+                    decoding="async"
+                    className="max-h-12 sm:max-h-14 max-w-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-200"
+                  />
+                </picture>
               </div>
 
               {/* Client Name & Sector */}

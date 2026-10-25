@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { openLeadModal } from "@/components/common/LeadModal";
+import { openLeadModal } from "@/utils/leadModalEvents";
 import { ArrowRight } from "lucide-react";
 
 const TypewriterText: React.FC = () => {

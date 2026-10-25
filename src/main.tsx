@@ -9,8 +9,14 @@ window.addEventListener("vite:preloadError", () => {
   window.location.reload();
 });
 
-// Register WebMCP browser tools for AI agent interaction
-registerWebMcpTools();
+// Register WebMCP browser tools for AI agents after first paint and idle settle
+if (typeof window !== "undefined") {
+  if ("requestIdleCallback" in window) {
+    (window as any).requestIdleCallback(() => registerWebMcpTools(), { timeout: 4000 });
+  } else {
+    setTimeout(registerWebMcpTools, 2000);
+  }
+}
 
 const rootElement = document.getElementById("root");
 

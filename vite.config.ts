@@ -13,6 +13,16 @@ export default defineConfig({
   build: {
     target: "es2020",
     cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom", "react-router-dom"],
+          motion: ["framer-motion"],
+          icons: ["lucide-react"],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 800,
   },
   server: {
     port: 3000,
