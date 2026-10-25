@@ -81,7 +81,7 @@ export const MarketingWhySpecialSection: React.FC = () => {
               className="bg-[#FBFBFA] rounded-2xl p-6 sm:p-7 border border-neutral-200/80 hover:border-neutral-300 hover:bg-white hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                <div className="text-xs font-semibold text-neutral-400 tracking-wider uppercase mb-3">
+                <div className="text-xs font-semibold text-neutral-600 tracking-wider uppercase mb-3">
                   {String(idx + 1).padStart(2, "0")}
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-[#0E2036] mb-2.5 tracking-tight group-hover:text-[#C5A059] transition-colors">

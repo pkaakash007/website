@@ -51,7 +51,7 @@ export const MarketingProcessSimple: React.FC = () => {
                 className="bg-white rounded-2xl p-7 border border-neutral-200/80 shadow-xs flex flex-col justify-between"
               >
                 <div>
-                  <div className="text-xs font-bold text-[#C5A059] mb-3 uppercase tracking-wider">
+                  <div className="text-xs font-bold text-[#855800] mb-3 uppercase tracking-wider">
                     Step {step.num}
                   </div>
 

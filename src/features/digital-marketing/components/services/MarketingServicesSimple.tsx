@@ -397,7 +397,7 @@ export const MarketingServicesSimple: React.FC = () => {
 
               {/* Core Deliverables Checklist */}
               <div className="p-5 sm:p-6 rounded-2xl bg-white border border-black/[0.06] shadow-2xs space-y-3">
-                <p className="text-xs font-bold text-neutral-400 uppercase tracking-wider">
+                <p className="text-xs font-bold text-neutral-600 uppercase tracking-wider">
                   ENTERPRISE DELIVERABLES &amp; CAMPAIGN ARCHITECTURE:
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
@@ -463,7 +463,7 @@ export const MarketingServicesSimple: React.FC = () => {
                 {/* Bottom Overlay Glass Card */}
                 <div className="absolute bottom-4 left-4 right-4 p-4 sm:p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-white/60 shadow-lg flex items-center justify-between gap-4">
                   <div className="min-w-0">
-                    <p className="text-[11px] font-bold text-neutral-400 uppercase tracking-wider truncate">
+                    <p className="text-[11px] font-bold text-neutral-600 uppercase tracking-wider truncate">
                       Expected Growth Outcome
                     </p>
                     <p className="text-sm sm:text-base font-bold text-neutral-900 truncate mt-0.5">

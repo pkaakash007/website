@@ -142,7 +142,7 @@ export const MarketingIndustriesSection: React.FC = () => {
                     }`}
                   >
                     <div className="space-y-0.5">
-                      <span className={`text-[11px] font-semibold uppercase tracking-wider block ${isActive ? "text-[#C5A059]" : "text-neutral-400"}`}>
+                      <span className={`text-[11px] font-semibold uppercase tracking-wider block ${isActive ? "text-[#855800]" : "text-neutral-600"}`}>
                         {ind.category}
                       </span>
                       <h3 className={`text-base sm:text-lg font-bold ${isActive ? "text-[#0E2036]" : "text-neutral-700"}`}>
@@ -151,7 +151,7 @@ export const MarketingIndustriesSection: React.FC = () => {
                     </div>
 
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${
-                      isActive ? "bg-[#0E2036] text-white" : "text-neutral-400"
+                      isActive ? "bg-[#0E2036] text-white" : "text-neutral-500"
                     }`}>
                       <ArrowRight className="w-4 h-4" />
                     </div>
@@ -193,7 +193,7 @@ export const MarketingIndustriesSection: React.FC = () => {
 
                   {/* 3 Simple What We Do Points */}
                   <div className="space-y-2.5 pt-2 border-t border-neutral-100">
-                    <span className="text-xs font-semibold text-neutral-400 uppercase tracking-wider block">
+                    <span className="text-xs font-semibold text-neutral-600 uppercase tracking-wider block">
                       What We Deliver:
                     </span>
                     <div className="space-y-2">
