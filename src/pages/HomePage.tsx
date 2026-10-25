@@ -15,14 +15,115 @@ export const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <SEOHead
-        title="Real Result | Best Digital Marketing Agency & Company in Tamil Nadu"
-        description="Tamil Nadu's best digital marketing agency and custom software company serving Salem, Erode, Namakkal, Paramathi Velur, and Coimbatore. Delivering top-tier SEO, Google Ads, website design, and mobile app development."
+        title="Real Result | Best Digital Marketing Agency in Namakkal & Tamil Nadu"
+        description="Real Result – Best digital marketing and leading marketing agency in Namakkal. Trusted by 200+ businesses across Salem, Erode, Namakkal, Coimbatore for SEO, Google Ads, social media marketing, website design and mobile app development."
         canonicalPath="/"
         schema={{
           "@context": "https://schema.org",
-          "@type": "WebSite",
+          "@type": "LocalBusiness",
+          "@id": "https://realresult.in/#organization",
           name: "Real Result Marketing & Technology",
+          alternateName: "Real Result",
+          description:
+            "Real Result is the best digital marketing agency in Namakkal, Tamil Nadu. We are a leading marketing agency founded to help small and medium businesses grow online. We offer SEO, Google Ads, Social Media Marketing, Website Design, Mobile App Development, and Branding services across Namakkal, Salem, Erode, and Coimbatore.",
           url: "https://realresult.in",
+          logo: "https://realresult.in/logo.png",
+          image: "https://realresult.in/og-image.jpg",
+          telephone: "+91-8111033390",
+          email: "realresult.in@gmail.com",
+          foundingDate: "2020",
+          numberOfEmployees: { "@type": "QuantitativeValue", value: "15" },
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Namakkal",
+            addressLocality: "Namakkal",
+            addressRegion: "Tamil Nadu",
+            postalCode: "637001",
+            addressCountry: "IN",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: "11.2189",
+            longitude: "78.1676",
+          },
+          areaServed: [
+            { "@type": "City", name: "Namakkal" },
+            { "@type": "City", name: "Salem" },
+            { "@type": "City", name: "Erode" },
+            { "@type": "City", name: "Coimbatore" },
+            { "@type": "City", name: "Paramathi Velur" },
+          ],
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Digital Marketing Services",
+            itemListElement: [
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "SEO – Search Engine Optimization",
+                  description:
+                    "Best SEO services in Namakkal. We rank your website on Google first page with proven on-page and off-page SEO strategies.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Google Ads & PPC",
+                  description:
+                    "High-converting Google Ads campaigns for businesses in Namakkal and Tamil Nadu.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Social Media Marketing",
+                  description:
+                    "Facebook, Instagram, and YouTube marketing to grow your brand presence in Namakkal.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Website Design & Development",
+                  description:
+                    "Professional business websites and e-commerce stores designed for Namakkal businesses.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Mobile App Development",
+                  description:
+                    "Custom Android and iOS mobile application development for businesses across Tamil Nadu.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Branding & Poster Design",
+                  description:
+                    "Creative branding, logo design, and poster design for businesses in Namakkal.",
+                },
+              },
+            ],
+          },
+          sameAs: [
+            "https://realresult.in",
+            "https://www.instagram.com/real_result/",
+            "https://www.facebook.com/profile.php?id=61585261640135",
+          ],
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.9",
+            reviewCount: "8",
+            bestRating: "5",
+          },
         }}
       />
 
