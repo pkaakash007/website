@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import { SEO_CONFIG } from "@/config/seo";
 

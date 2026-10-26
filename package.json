@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "worker:dev": "wrangler dev",
-    "deploy": "npm run build && wrangler deploy",
+    "deploy": "next build && wrangler deploy",
     "validate:seo": "node scripts/validate-seo.cjs",
     "setup:dns": "node scripts/setup-dns-aid.cjs"
   },
@@ -16,6 +16,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.28",
     "lucide-react": "^0.428.0",
+    "next": "^16.4.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.0",
@@ -28,14 +29,12 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/three": "^0.185.4",
-    "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.19",
     "pngjs": "^7.0.0",
     "postcss": "^8.4.39",
     "sharp": "^0.35.4",
     "tailwindcss": "^3.4.6",
     "typescript": "^5.5.3",
-    "vite": "^5.4.1",
     "wrangler": "^4.129.0"
   }
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
-import type { ServiceOffering } from "@/pages/ServicesPage";
+import type { ServiceOffering } from "@/views/ServicesPage";
 import { ServiceSketchIllustration } from "@/features/digital-marketing/components/services/ServiceSketchIllustration";
 
 interface ServicesOrbitCardsShowcaseProps {

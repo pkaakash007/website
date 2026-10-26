@@ -131,7 +131,9 @@ export const HomeIndustriesGrid: React.FC = () => {
             return (
               <div
                 key={ind.slug}
-                ref={(el) => (cardRefs.current[index] = el)}
+                ref={(el) => {
+                  cardRefs.current[index] = el;
+                }}
                 className={`sticky top-24 sm:top-28 md:top-32 transition-all duration-300 ease-out ${
                   isLast ? "mb-0" : "mb-16 sm:mb-24 lg:mb-32"
                 } ${

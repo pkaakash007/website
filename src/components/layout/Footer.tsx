@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container } from "./Container";
@@ -199,9 +201,9 @@ export const Footer: React.FC = () => {
 
             {/* Phone */}
             <div>
-              <span className="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1">
+              <h4 className="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1">
                 Phone
-              </span>
+              </h4>
               <a
                 href={`tel:${SEO_CONFIG.telephone}`}
                 className="block text-base sm:text-[17px] text-[#111827] hover:text-[#0071E3] transition-colors font-semibold leading-snug"
@@ -212,9 +214,9 @@ export const Footer: React.FC = () => {
 
             {/* Email */}
             <div>
-              <span className="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1">
+              <h4 className="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1">
                 Email
-              </span>
+              </h4>
               <a
                 href={`mailto:${SEO_CONFIG.email}`}
                 className="block text-sm sm:text-[15px] text-[#111827] hover:text-[#0071E3] transition-colors font-semibold leading-snug"
@@ -225,9 +227,9 @@ export const Footer: React.FC = () => {
 
             {/* Office Location */}
             <div>
-              <span className="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1">
+              <h4 className="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1">
                 Office Location
-              </span>
+              </h4>
               <p className="text-sm sm:text-[15px] text-[#374151] font-normal leading-relaxed">
                 Paramathi Velur, Namakkal District, Tamil Nadu 638182
               </p>

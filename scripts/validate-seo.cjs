@@ -83,31 +83,31 @@ assert(fs.existsSync(answerBoxPath), 'src/components/seo/DirectAnswerBox.tsx exi
 // 5. Validate Pages & Schema Injection
 console.log('\n📁 5. Validating Page Coverage and Schema.org Implementation...');
 const pagesToVerify = [
-  'src/pages/HomePage.tsx',
-  'src/pages/AboutPage.tsx',
-  'src/pages/ContactPage.tsx',
-  'src/pages/ServicesPage.tsx',
-  'src/pages/PortfolioPage.tsx',
-  'src/pages/IndustriesPage.tsx',
-  'src/pages/ApplicationDevelopmentPage.tsx',
-  'src/pages/digital-marketing/DigitalMarketingHubPage.tsx',
-  'src/pages/digital-marketing/SEOPage.tsx',
-  'src/pages/digital-marketing/LocalSEOPage.tsx',
-  'src/pages/digital-marketing/GEOPage.tsx',
-  'src/pages/digital-marketing/AIOPage.tsx',
-  'src/pages/digital-marketing/GoogleAdsPage.tsx',
-  'src/pages/digital-marketing/SocialMediaPage.tsx',
-  'src/pages/digital-marketing/ContentMarketingPage.tsx',
-  'src/pages/digital-marketing/CROPage.tsx',
-  'src/pages/locations/TamilNaduHubPage.tsx',
-  'src/pages/locations/ErodeHQPage.tsx',
-  'src/pages/locations/CoimbatorePage.tsx',
-  'src/pages/locations/SalemPage.tsx',
-  'src/pages/locations/NamakkalPage.tsx',
-  'src/pages/locations/ParamathiVelurPage.tsx',
-  'src/pages/services/ServiceDetailPage.tsx',
-  'src/pages/industries/HealthcareIndustryPage.tsx',
-  'src/pages/industries/IndustryDetailPage.tsx',
+  'src/views/HomePage.tsx',
+  'src/views/AboutPage.tsx',
+  'src/views/ContactPage.tsx',
+  'src/views/ServicesPage.tsx',
+  'src/views/PortfolioPage.tsx',
+  'src/views/IndustriesPage.tsx',
+  'src/views/ApplicationDevelopmentPage.tsx',
+  'src/views/digital-marketing/DigitalMarketingHubPage.tsx',
+  'src/views/digital-marketing/SEOPage.tsx',
+  'src/views/digital-marketing/LocalSEOPage.tsx',
+  'src/views/digital-marketing/GEOPage.tsx',
+  'src/views/digital-marketing/AIOPage.tsx',
+  'src/views/digital-marketing/GoogleAdsPage.tsx',
+  'src/views/digital-marketing/SocialMediaPage.tsx',
+  'src/views/digital-marketing/ContentMarketingPage.tsx',
+  'src/views/digital-marketing/CROPage.tsx',
+  'src/views/locations/TamilNaduHubPage.tsx',
+  'src/views/locations/ErodeHQPage.tsx',
+  'src/views/locations/CoimbatorePage.tsx',
+  'src/views/locations/SalemPage.tsx',
+  'src/views/locations/NamakkalPage.tsx',
+  'src/views/locations/ParamathiVelurPage.tsx',
+  'src/views/services/ServiceDetailPage.tsx',
+  'src/views/industries/HealthcareIndustryPage.tsx',
+  'src/views/industries/IndustryDetailPage.tsx',
 ];
 
 for (const pageRel of pagesToVerify) {
@@ -146,8 +146,10 @@ if (fs.existsSync(llmsPath)) {
 
 // 7. Validate index.html On-Page SEO (Title, Meta Description, Headings, Social Media)
 console.log('\n📁 7. Validating index.html On-Page SEO (SEOptimer & Seobility criteria)...');
-const indexPath = path.join(ROOT_DIR, 'index.html');
-assert(fs.existsSync(indexPath), 'index.html exists');
+const indexPath = fs.existsSync(path.join(ROOT_DIR, 'out/index.html'))
+  ? path.join(ROOT_DIR, 'out/index.html')
+  : (fs.existsSync(path.join(ROOT_DIR, 'dist/index.html')) ? path.join(ROOT_DIR, 'dist/index.html') : path.join(ROOT_DIR, 'index.html'));
+assert(fs.existsSync(indexPath), `index.html exists: ${path.relative(ROOT_DIR, indexPath)}`);
 if (fs.existsSync(indexPath)) {
   const indexContent = fs.readFileSync(indexPath, 'utf8');
   
@@ -194,6 +196,125 @@ if (fs.existsSync(indexPath)) {
   assert(indexContent.includes('facebook.com'), 'index.html links to Facebook page');
 }
 
+// 8. Validate All 52 Pre-Rendered Static HTML Pages in out/ (Next.js) or dist/
+console.log('\n📁 8. Validating All 52 Pre-Rendered Static HTML Pages in build output...');
+const outDir = path.join(ROOT_DIR, 'out');
+const distDir = fs.existsSync(outDir) ? outDir : path.join(ROOT_DIR, 'dist');
+assert(fs.existsSync(distDir), `Build output directory exists: ${path.relative(ROOT_DIR, distDir)}`);
+
+const EXPECTED_ROUTES = [
+  '/',
+  '/about',
+  '/contact',
+  '/services',
+  '/portfolio',
+  '/industries',
+  '/industries/healthcare',
+  '/industries/b2b',
+  '/industries/finance',
+  '/industries/real-estate',
+  '/industries/education',
+  '/industries/ecommerce',
+  '/industries/skincare-beauty',
+  '/industries/home-decor',
+  '/industries/ev',
+  '/industries/automotive',
+  '/industries/travel-tourism',
+  '/services/website-design',
+  '/services/ecommerce-platforms',
+  '/services/mobile-app-development',
+  '/services/ui-ux-architecture',
+  '/services/performance-marketing',
+  '/services/seo-geo-ai-search',
+  '/services/content-marketing-pr',
+  '/services/brand-identity-logo',
+  '/services/graphic-design-packaging',
+  '/services/video-editing-motion',
+  '/services/ecommerce-photography',
+  '/services/cyber-security-cloud',
+  '/services/digital-marketing',
+  '/digital-marketing',
+  '/digital-marketing/seo',
+  '/digital-marketing/local-seo',
+  '/digital-marketing/geo',
+  '/digital-marketing/aio',
+  '/digital-marketing/google-ads',
+  '/digital-marketing/social-media-marketing',
+  '/digital-marketing/content-marketing',
+  '/digital-marketing/conversion-rate-optimization',
+  '/application-development',
+  '/locations/tamil-nadu',
+  '/locations/erode',
+  '/locations/namakkal',
+  '/locations/paramathi-velur',
+  '/locations/salem',
+  '/locations/coimbatore',
+  '/privacy-policy',
+  '/terms',
+  '/cookie-policy',
+  '/how-we-work',
+  '/work',
+  '/thank-you'
+];
+
+for (const r of EXPECTED_ROUTES) {
+  const clean = r.replace(/\/+$/, '') || '/';
+  const filePath1 = clean === '/' ? path.join(distDir, 'index.html') : path.join(distDir, clean.replace(/^\//, ''), 'index.html');
+  const filePath2 = path.join(distDir, `${clean.replace(/^\//, '')}.html`);
+  const actualPath = fs.existsSync(filePath1) ? filePath1 : (fs.existsSync(filePath2) ? filePath2 : filePath1);
+  const fileExists = fs.existsSync(actualPath);
+  assert(fileExists, `Pre-rendered file exists for ${r}: ${path.relative(ROOT_DIR, actualPath)}`);
+  
+  if (fileExists) {
+    const html = fs.readFileSync(actualPath, 'utf8');
+    
+    // Title tag validation (50-60 chars)
+    const titleM = html.match(/<title>(.*?)<\/title>/i);
+    assert(Boolean(titleM), `  └─ ${r} has <title> tag`);
+    if (titleM) {
+      const titleClean = titleM[1]
+        .replace(/&amp;/g, '&')
+        .replace(/&#x27;/g, "'")
+        .replace(/&quot;/g, '"')
+        .trim();
+      const len = titleClean.length;
+      assert(len >= 50 && len <= 60, `     └─ Title length is ${len} (50-60 target): "${titleClean}"`);
+    }
+
+    // Meta description validation (100-130 chars)
+    const descM = html.match(/<meta\s+name=["']description["']\s+content="([^"]*)"/i);
+    assert(Boolean(descM), `  └─ ${r} has meta description`);
+    if (descM) {
+      const rawText = descM[1]
+        .replace(/&#x27;/g, "'")
+        .replace(/&amp;/g, '&')
+        .replace(/&quot;/g, '"');
+      const len = rawText.trim().length;
+      assert(len >= 100 && len <= 130, `     └─ Description length is ${len} (100-130 target)`);
+    }
+
+    // Canonical link validation
+    const canonicalRegex = new RegExp(`href=["']https://realresult\\.in${clean === '/' ? '/?' : clean}/?["']`, 'i');
+    assert(canonicalRegex.test(html), `  └─ Canonical matches: https://realresult.in${clean}`);
+
+    // H1 tag validation (10-70 chars)
+    const h1M = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+    assert(Boolean(h1M), `  └─ ${r} has <h1> tag`);
+    if (h1M) {
+      const h1Text = h1M[1].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+      assert(h1Text.length >= 10 && h1Text.length <= 70, `     └─ H1 length is ${h1Text.length} (10-70 target): "${h1Text}"`);
+    }
+
+    // Headings hierarchy
+    assert(/<h2[^>]*>/i.test(html), `  └─ ${r} has <h2>`);
+    assert(/<h3[^>]*>/i.test(html), `  └─ ${r} has <h3>`);
+    assert(/<h4[^>]*>/i.test(html), `  └─ ${r} has <h4>`);
+
+    // Schema.org structured data
+    assert(html.includes('application/ld+json'), `  └─ ${r} has JSON-LD schema`);
+  }
+}
+
 // Summary Report
 console.log('\n========================================================');
 console.log(`📊 AUDIT RESULTS: ${passCount} Checks Passed | ${failCount} Checks Failed`);
@@ -205,3 +326,4 @@ if (failCount > 0) {
   console.log('🚀 ALL TECHNICAL SEO, GEO, AND AIO INTEGRITY CHECKS PASSED!\n');
   process.exit(0);
 }
+
