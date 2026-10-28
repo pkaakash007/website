@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   },
   other: {
     "geo.region": "IN-TN",
-    "geo.placename": "Paramathi Velur, Namakkal, Tamil Nadu",
-    "geo.position": "11.1111972;78.0058805",
-    "ICBM": "11.1111972, 78.0058805",
+    "geo.placename": "Namakkal, Tamil Nadu, 637001",
+    "geo.position": "11.2189;78.1674",
+    "ICBM": "11.2189, 78.1674",
   },
 };
 
@@ -35,13 +35,13 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "ProfessionalService"],
   "@id": "https://realresult.in/locations/namakkal#organization",
-  "name": "Real Result Marketing & Technology Solutions",
+  "name": "Real Result - Best Digital Marketing Agency in Namakkal",
   "alternateName": [
     "Real Result",
     "Real Result Marketing",
-    "Real Result in Tamil Nadu",
+    "Real Result Namakkal",
     "Best Digital Marketing Company in Namakkal"
   ],
   "url": "https://realresult.in/locations/namakkal",
@@ -49,19 +49,30 @@ export default function Page() {
   "image": "https://realresult.in/brand/real-result-marketing-logo-tamil-nadu.png",
   "telephone": "+91-8111033390",
   "email": "hello@realresult.in",
-  "description": "Best digital marketing company in Namakkal and Paramathi Velur. #1 Google SEO rankings, Google Ads, and poultry farm ERP.",
+  "description": "Best digital marketing company in Namakkal city and district. #1 Google SEO rankings, Google Ads, Maps 3-Pack, and enterprise software.",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Paramathi Velur",
+    "streetAddress": "Salem Road",
+    "addressLocality": "Namakkal",
     "addressRegion": "Tamil Nadu",
-    "postalCode": "637207",
+    "postalCode": "637001",
     "addressCountry": "IN"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 11.1111972,
-    "longitude": 78.0058805
-  }
+    "latitude": 11.2189,
+    "longitude": 78.1674
+  },
+  "areaServed": [
+    "Namakkal",
+    "Salem Road",
+    "R.P. Pudur",
+    "Tiruchengode",
+    "Rasipuram",
+    "Paramathi Velur",
+    "Mohanur",
+    "Sendamangalam"
+  ]
 }) }}
       />
       <NamakkalPage />

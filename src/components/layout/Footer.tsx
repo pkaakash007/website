@@ -86,6 +86,7 @@ const companyLinks = [
 
 const locationsLinks = [
   { label: "Erode Headquarters", href: "/locations/erode" },
+  { label: "Digital Marketing Agency in Namakkal", href: "/digital-marketing-agency-namakkal" },
   { label: "Namakkal Office", href: "/locations/namakkal" },
   { label: "Paramathi Velur Desk", href: "/locations/paramathi-velur" },
   { label: "Salem Regional Office", href: "/locations/salem" },

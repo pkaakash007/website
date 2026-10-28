@@ -35,6 +35,10 @@ import {
   Star,
   ShieldCheck,
   Zap,
+  Video,
+  Camera,
+  Mic,
+  Sparkles,
 } from "lucide-react";
 
 export const NamakkalPage: React.FC = () => {
@@ -107,10 +111,10 @@ export const NamakkalPage: React.FC = () => {
             },
             address: {
               "@type": "PostalAddress",
-              streetAddress: "Paramathi Velur",
+              streetAddress: "Salem Road",
               addressLocality: "Namakkal",
               addressRegion: "Tamil Nadu",
-              postalCode: "638182",
+              postalCode: "637001",
               addressCountry: "IN",
             },
             geo: {
@@ -534,6 +538,160 @@ export const NamakkalPage: React.FC = () => {
                 </li>
               </ul>
             </div>
+
+            {/* Service 7: On-Site Reels & Ad Shooting */}
+            <div className="p-8 rounded-3xl bg-canvas border border-border hover:border-gold/50 shadow-card transition-all space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-gold-100 flex items-center justify-center text-gold-800">
+                <Video className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-primary">
+                On-Site Reels &amp; Commercial Video Shooting
+              </h3>
+              <p className="text-sm text-secondary leading-relaxed">
+                Full-scale video production in Namakkal. We bring professional 4K cinema cameras, drone footage, and studio lighting to your factory, showroom, or retail store to produce viral Instagram Reels and YouTube Shorts.
+              </p>
+              <ul className="space-y-2 pt-2 text-xs font-medium text-primary">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-600 shrink-0" />
+                  <span>On-location factory & showroom video shoots</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-600 shrink-0" />
+                  <span>High-retention Reels & YouTube Shorts editing</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-600 shrink-0" />
+                  <span>Direct-response video ad creatives</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Service 8: Product Photography & Packaging Design */}
+            <div className="p-8 rounded-3xl bg-canvas border border-border hover:border-gold/50 shadow-card transition-all space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-gold-100 flex items-center justify-center text-gold-800">
+                <Camera className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-primary">
+                Product Photography &amp; Packaging Design
+              </h3>
+              <p className="text-sm text-secondary leading-relaxed">
+                Transform ordinary products into luxury brands. Premium studio photography for Amazon, Flipkart, and direct e-commerce catalogs, combined with distinctive box and packaging artwork for Namakkal brands.
+              </p>
+              <ul className="space-y-2 pt-2 text-xs font-medium text-primary">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-600 shrink-0" />
+                  <span>Studio lighting & crisp e-commerce product shoots</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-600 shrink-0" />
+                  <span>Poultry, consumer & industrial packaging designs</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-600 shrink-0" />
+                  <span>High-resolution social media marketing banners</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Service 9: Voice Over & Brand Anchoring */}
+            <div className="p-8 rounded-3xl bg-canvas border border-border hover:border-gold/50 shadow-card transition-all space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-gold-100 flex items-center justify-center text-gold-800">
+                <Mic className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-primary">
+                Voice Over &amp; Brand Anchoring
+              </h3>
+              <p className="text-sm text-secondary leading-relaxed">
+                Give your brand a distinctive, trustworthy voice. Professional native Tamil and English voiceover artists and camera-ready anchors for commercial ads, corporate walkthroughs, and social campaigns.
+              </p>
+              <ul className="space-y-2 pt-2 text-xs font-medium text-primary">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-600 shrink-0" />
+                  <span>Native Tamil & English commercial voiceover</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-600 shrink-0" />
+                  <span>Professional on-camera anchors for brand reels</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-600 shrink-0" />
+                  <span>Audio mastering for radio & digital streaming ads</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── 3.5 Why Real Result vs Traditional WordPress Agencies ─────────── */}
+      <section className="py-20 bg-charcoal text-white border-b border-charcoal-border">
+        <Container size="wide">
+          <div className="max-w-3xl mb-14 space-y-3">
+            <span className="text-xs font-mono uppercase tracking-widest text-gold font-bold">
+              Engineering Excellence
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
+              Why Namakkal Brands Choose Real Result Over Basic Template Agencies
+            </h2>
+            <p className="text-sm sm:text-base text-gray-300">
+              Most local agencies install bloated WordPress Elementor themes that load in 6 seconds and break when updated. Here is how our engineering-first approach gives you an unfair competitive advantage:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-8 rounded-3xl bg-white/5 border border-white/10 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-bold uppercase tracking-wider">
+                Traditional Template Agencies
+              </div>
+              <h3 className="text-xl font-bold text-white">
+                Generic WordPress &amp; Basic Freelancers
+              </h3>
+              <ul className="space-y-3 text-sm text-gray-400">
+                <li className="flex items-start gap-2.5">
+                  <span className="text-red-400 font-bold shrink-0">✕</span>
+                  <span>Slow bloated WordPress themes with 30+ plugins that score 30/100 on Google PageSpeed.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-red-400 font-bold shrink-0">✕</span>
+                  <span>No custom software capabilities — cannot build custom ERPs, logistics LR portals, or live calculators.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-red-400 font-bold shrink-0">✕</span>
+                  <span>No Generative Engine Optimization (GEO) — invisible to ChatGPT Search, Perplexity, and Google AI Overviews.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-red-400 font-bold shrink-0">✕</span>
+                  <span>Vanity metrics without revenue accountability — focused on likes rather than real inquiries and sales.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="p-8 rounded-3xl bg-gold/10 border border-gold/30 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/30 text-gold-300 text-xs font-bold uppercase tracking-wider">
+                The Real Result Advantage
+              </div>
+              <h3 className="text-xl font-bold text-white">
+                Engineered Performance &amp; Full Commercial Growth
+              </h3>
+              <ul className="space-y-3 text-sm text-gray-200">
+                <li className="flex items-start gap-2.5">
+                  <span className="text-gold font-bold shrink-0">✓</span>
+                  <span>Sub-second load times engineered with Next.js, React, and Cloudflare global edge network.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-gold font-bold shrink-0">✓</span>
+                  <span>Full-stack custom software engineering for poultry batch ERPs, fleet billing, and WhatsApp order bots.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-gold font-bold shrink-0">✓</span>
+                  <span>Agent-native SEO &amp; GEO protocols ensuring your brand is cited #1 by AI search engines.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-gold font-bold shrink-0">✓</span>
+                  <span>Dedicated on-ground video crew in Namakkal for 4K video ads, reels shooting, and commercial photography.</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </Container>
       </section>
@@ -633,6 +791,234 @@ export const NamakkalPage: React.FC = () => {
                   <span>Brand reputation & Google Maps 5-star reviews</span>
                 </li>
               </ul>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── 4.5 Namakkal Client Case Studies & Local Proof ────────────────── */}
+      <section className="py-20 bg-white border-b border-border">
+        <Container size="wide">
+          <div className="max-w-3xl mb-14 space-y-3">
+            <span className="text-xs font-bold uppercase tracking-wider text-gold-700">
+              Proven Local Results
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary">
+              Real Client Growth Stories Across Namakkal
+            </h2>
+            <p className="text-sm sm:text-base text-secondary">
+              We don&apos;t just promise rankings — we deliver verified customer inquiries, Google Maps 3-Pack domination, and measurable revenue for Namakkal businesses:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Case Study 1: Dental Clinic */}
+            <div className="p-8 rounded-3xl bg-canvas border border-border hover:border-gold/50 shadow-card transition-all space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 text-xs font-bold uppercase tracking-wider">
+                Healthcare &amp; Dental
+              </div>
+              <h3 className="text-xl font-bold text-primary">
+                Dr. Aravinth Dental Care, Namakkal
+              </h3>
+              <div className="text-3xl font-black text-gold-700">
+                +320%
+                <span className="text-xs font-medium text-secondary ml-2">Patient Bookings</span>
+              </div>
+              <p className="text-sm text-secondary leading-relaxed">
+                Ranked #1 on Google Maps across Namakkal city within 90 days. Overhauled local NAP citations, optimized Google Business Profile with treatment keywords, and automated 5-star patient review collection.
+              </p>
+              <ul className="space-y-2 pt-2 text-xs font-medium text-primary">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-600 shrink-0" />
+                  <span>#1 Google Maps 3-Pack rank for &quot;best dental clinic in Namakkal&quot;</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-600 shrink-0" />
+                  <span>85+ verified 5-star Google patient reviews</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Case Study 2: Poultry Syndicate */}
+            <div className="p-8 rounded-3xl bg-canvas border border-border hover:border-gold/50 shadow-card transition-all space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-700 text-xs font-bold uppercase tracking-wider">
+                Poultry &amp; Feed Exports
+              </div>
+              <h3 className="text-xl font-bold text-primary">
+                Namakkal Egg Traders &amp; Hatcheries Syndicate
+              </h3>
+              <div className="text-3xl font-black text-gold-700">
+                4.2x
+                <span className="text-xs font-medium text-secondary ml-2">Wholesale Inquiries</span>
+              </div>
+              <p className="text-sm text-secondary leading-relaxed">
+                Scaled commercial B2B procurement inquiries from Mumbai, Delhi, and Bangalore through nationwide Google Ads and SEO funnels. Custom live egg rate ticker and wholesale buyer inquiry forms.
+              </p>
+              <ul className="space-y-2 pt-2 text-xs font-medium text-primary">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-600 shrink-0" />
+                  <span>Top rankings for &quot;wholesale egg suppliers Tamil Nadu&quot;</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-600 shrink-0" />
+                  <span>High-volume institutional purchase pipeline</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Case Study 3: Transport & Body Works */}
+            <div className="p-8 rounded-3xl bg-canvas border border-border hover:border-gold/50 shadow-card transition-all space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 text-purple-700 text-xs font-bold uppercase tracking-wider">
+                Fleet &amp; Lorry Fabrication
+              </div>
+              <h3 className="text-xl font-bold text-primary">
+                Kongu Logistics &amp; Trailer Fabrication
+              </h3>
+              <div className="text-3xl font-black text-gold-700">
+                ₹1.4 Cr
+                <span className="text-xs font-medium text-secondary ml-2">New Fleet Contracts</span>
+              </div>
+              <p className="text-sm text-secondary leading-relaxed">
+                Deployed high-intent search ads targeting interstate fleet owners for commercial truck body works along Salem Main Road. Automated customer inquiry routing straight to company WhatsApp.
+              </p>
+              <ul className="space-y-2 pt-2 text-xs font-medium text-primary">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-600 shrink-0" />
+                  <span>38 qualified monthly high-ticket lorry fabrication inquiries</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-gold-600 shrink-0" />
+                  <span>Integrated digital LR trip dispatch tracking software</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── 4.6 Namakkal Local Presence & Service Area Map ───────────────── */}
+      <section className="py-20 bg-canvas border-b border-border">
+        <Container size="wide">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <span className="text-xs font-bold uppercase tracking-wider text-gold-700">
+                Local Proximity &amp; Service Hub
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-primary">
+                Serving Clients Across Namakkal City &amp; District
+              </h2>
+              <p className="text-sm sm:text-base text-secondary leading-relaxed">
+                Whether your business is situated along Salem Main Road, Mohanur Road, or the commercial poultry belt, our dedicated consulting team provides in-person on-ground growth audits and rapid execution.
+              </p>
+
+              <div className="space-y-3.5 text-sm text-primary">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="block text-primary">Namakkal Office Hub:</strong>
+                    <span className="text-secondary">Salem Road, Namakkal, Tamil Nadu 637001</span>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Phone className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="block text-primary">Direct Direct Hotline:</strong>
+                    <a href="tel:+918111033390" className="text-gold-700 font-semibold hover:underline">
+                      +91 81110 33390
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="block text-primary">Operating Hours:</strong>
+                    <span className="text-secondary">Monday – Saturday: 9:00 AM – 6:30 PM (Sunday Closed)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-2 flex flex-wrap gap-3">
+                <a
+                  href="/review"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gold-600 hover:bg-gold-700 text-white text-xs font-bold uppercase tracking-wider shadow-sm transition-all cursor-pointer"
+                >
+                  <Star className="w-4 h-4 fill-white" />
+                  <span>Leave a 5-Star Google Review</span>
+                </a>
+                <a
+                  href="https://www.google.com/maps/place/Namakkal,+Tamil+Nadu/@11.2189,78.1674,14z"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border hover:border-gold text-xs font-bold uppercase tracking-wider text-primary transition-all cursor-pointer"
+                >
+                  <Navigation className="w-4 h-4 text-gold-600" />
+                  <span>Open in Google Maps</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Visual Location Frame */}
+            <div className="rounded-3xl overflow-hidden border border-border shadow-card bg-white p-6 space-y-4">
+              <div className="flex items-center justify-between pb-3 border-b border-border">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="text-xs font-bold uppercase tracking-wider text-primary">
+                    Active Coverage Zone
+                  </span>
+                </div>
+                <span className="text-xs text-secondary font-mono">11.2189° N, 78.1674° E</span>
+              </div>
+
+              <div className="bg-canvas rounded-2xl p-6 border border-border/60 space-y-3">
+                <h3 className="text-lg font-bold text-primary">
+                  Namakkal Priority Service Areas
+                </h3>
+                <div className="grid grid-cols-2 gap-2 text-xs font-medium text-secondary">
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-gold-600" />
+                    <span>Namakkal Town Center</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-gold-600" />
+                    <span>Salem Main Road</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-gold-600" />
+                    <span>Mohanur Road</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-gold-600" />
+                    <span>R.P. Pudur &amp; Nallipalayam</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-gold-600" />
+                    <span>Tiruchengode</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-gold-600" />
+                    <span>Rasipuram &amp; Sendamangalam</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-gold-600" />
+                    <span>Paramathi Velur Desk</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-gold-600" />
+                    <span>Thummankurichi Belt</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-4 rounded-xl bg-gold-50 border border-gold-200 text-xs text-gold-900 leading-relaxed flex items-start gap-2.5">
+                <ShieldCheck className="w-5 h-5 text-gold-700 shrink-0 mt-0.5" />
+                <span>
+                  <strong>Local Verification Guarantee:</strong> Our team conducts on-site strategy workshops, photo/video production shoots, and executive growth consulting directly at your Namakkal business location.
+                </span>
+              </div>
             </div>
           </div>
         </Container>

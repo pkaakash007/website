@@ -111,28 +111,37 @@ Accept: text/markdown
 `;
   }
 
-  // Route: /locations/namakkal
-  if (cleanPath === "/locations/namakkal" || cleanPath === "/namakkal" || cleanPath === "/digital-marketing/namakkal") {
-    return `# Best Digital Marketing Company in Namakkal & Paramathi Velur | Real Result
+  // Route: /locations/namakkal & /digital-marketing-agency-namakkal
+  if (
+    cleanPath === "/locations/namakkal" ||
+    cleanPath === "/digital-marketing-agency-namakkal" ||
+    cleanPath === "/namakkal" ||
+    cleanPath === "/digital-marketing/namakkal"
+  ) {
+    return `# Best Digital Marketing Agency in Namakkal | Real Result
 
-> Real Result Marketing is the #1 rated digital marketing company and SEO agency in Namakkal and Paramathi Velur, delivering top Google rankings, Google Maps 3-pack dominance, high-ROI Google Ads, and custom enterprise software.
+> Real Result Marketing is the #1 rated digital marketing agency, SEO company, and custom software developer in Namakkal, delivering top Google rankings, Google Maps 3-pack dominance, high-ROI Google Ads, on-site reels video shoots, and custom enterprise software.
 
 ## Verified Location & Google Business Credentials
-- **Operational Facility**: Paramathi Velur, Namakkal District, Tamil Nadu 638182, India
-- **GPS Coordinates**: 11.1112509° N, 78.0057796° E
-- **Google Maps Listing**: https://maps.app.goo.gl/Be2565mN74uVgZ7p9
+- **Namakkal Office Hub**: Salem Road, Namakkal City, Tamil Nadu 637001, India
+- **Regional Operations**: Paramathi Velur, Namakkal District, Tamil Nadu 638182, India
+- **GPS Coordinates**: 11.2189° N, 78.1674° E (Namakkal City Centroid)
+- **Google Maps Listing**: https://www.google.com/maps/place/Namakkal,+Tamil+Nadu/@11.2189,78.1674,14z
 - **Google Place ID**: ChIJCeVk0hrVqzsRp7foI1ppMUo (CID: 0x4a31695a23e8b7a7)
 - **Direct Telephone**: +91 81110 33390
 - **Direct Email**: hello@realresult.in
-- **Service Coverage Area**: Namakkal, Paramathi Velur, Tiruchengode, Rasipuram, Mohanur, and statewide Tamil Nadu.
+- **Service Coverage Area**: Namakkal Town, Salem Main Road, Mohanur Road, R.P. Pudur, Tiruchengode, Rasipuram, Paramathi Velur, and statewide Tamil Nadu.
 
 ## Core Digital Marketing & Software Services in Namakkal
-1. **Search Engine Optimization (SEO)**: Rank #1 on Google for high-intent B2B commercial terms.
-2. **Google Maps 3-Pack Local SEO**: Dominate local search map packs for incoming customer phone calls and inquiries.
+1. **Search Engine Optimization (SEO)**: Rank #1 on Google for high-intent B2B commercial terms in Namakkal.
+2. **Google Maps 3-Pack Local SEO**: Dominate local search map packs for incoming customer phone calls and patient bookings.
 3. **Google Ads & PPC Management**: High-conversion paid search campaigns driving verified wholesale inquiries.
-4. **Social Media Marketing (SMM)**: High-production Instagram reels, Facebook ads, and LinkedIn B2B lead funnels.
-5. **High-Speed Website Development**: Sub-second page loads engineered with React, Vite, and built-in SEO.
-6. **Poultry Farm ERP & Transport Software**: Custom batch tracking, feed conversion (FCR) calculators, and transport fleet LR/billing software.
+4. **On-Site Reels & Ad Video Production**: Professional 4K camera shoots, drone video, and reels editing across Namakkal businesses.
+5. **Product Photography & Packaging Design**: Amazon/Flipkart studio photography and poultry/industrial box packaging.
+6. **Voice Over & Brand Anchoring**: Native Tamil and English professional commercial voiceovers.
+7. **Social Media Marketing (SMM)**: High-production Instagram reels, Facebook ads, and LinkedIn B2B lead funnels.
+8. **High-Speed Website Development**: Sub-second page loads engineered with Next.js, React, and built-in SEO.
+9. **Poultry Farm ERP & Transport Software**: Custom batch tracking, feed conversion (FCR) calculators, and transport fleet LR/billing software.
 
 ## Specialized Industry Solutions for Namakkal
 

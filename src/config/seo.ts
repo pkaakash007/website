@@ -131,10 +131,10 @@ export const TAMIL_NADU_LOCATIONS: Record<string, LocationMeta> = {
     ],
     localContext:
       "Namakkal is India's egg capital and commercial transport powerhouse. We deliver high-intent B2B SEO, Google Maps 3-pack dominance, and automated fleet/hatchery ERP software for businesses across Namakkal, Paramathi Velur, Tiruchengode, and Rasipuram.",
-    postalCode: "638182",
-    geo: { latitude: 11.1111972, longitude: 78.0058805 },
-    mapUrl: GOOGLE_MAPS_URL,
-    address: "Paramathi Velur, Namakkal District, Tamil Nadu 638182, India",
+    postalCode: "637001",
+    geo: { latitude: 11.2189, longitude: 78.1674 },
+    mapUrl: "https://www.google.com/maps/place/Namakkal,+Tamil+Nadu/@11.2189,78.1674,14z",
+    address: "Salem Road, Namakkal, Tamil Nadu 637001, India",
   },
   "paramathi-velur": {
     slug: "paramathi-velur",
