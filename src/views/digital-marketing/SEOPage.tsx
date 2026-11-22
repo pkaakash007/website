@@ -90,7 +90,7 @@ export const SEOPage: React.FC = () => {
               >
                 Request Free SEO Audit
               </Button>
-              <Button variant="secondary" size="lg" href="/case-studies">
+              <Button variant="secondary" size="lg" href="/portfolio">
                 View SEO Case Studies
               </Button>
             </div>

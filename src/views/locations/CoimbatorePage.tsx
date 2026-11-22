@@ -90,7 +90,7 @@ export const CoimbatorePage: React.FC = () => {
               >
                 Book Coimbatore Strategy Session
               </Button>
-              <Button variant="secondary" size="lg" href="/case-studies">
+              <Button variant="secondary" size="lg" href="/portfolio">
                 Explore Coimbatore Case Studies
               </Button>
             </div>

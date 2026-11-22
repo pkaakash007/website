@@ -180,6 +180,13 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       height: 615,
     };
 
+        // Avoid injecting duplicate CSR schema on the homepage where authoritative SSR schema is pre-rendered
+    if ((canonicalPath === "/" || canonicalPath === "") && !schema) {
+      const existing = document.head.querySelector("#realresult-schema-jsonld");
+      if (existing) existing.remove();
+      return;
+    }
+
     const baseSchemas = [defaultOrgSchema, logoImageSchema];
     const schemaToInject = schema
       ? (Array.isArray(schema) ? [...baseSchemas, ...schema] : [...baseSchemas, schema])

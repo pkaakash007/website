@@ -33,6 +33,7 @@ if (fs.existsSync(robotsPath)) {
   assert(robotsContent.includes('User-agent: Googlebot'), 'robots.txt explicitly permits Googlebot');
   assert(robotsContent.includes('User-agent: OAI-SearchBot'), 'robots.txt explicitly permits OAI-SearchBot (ChatGPT Search)');
   assert(robotsContent.includes('User-agent: PerplexityBot'), 'robots.txt explicitly permits PerplexityBot');
+  assert(robotsContent.includes('User-agent: ExaSearchBot'), 'robots.txt explicitly permits ExaSearchBot (Exa AI Search)');
   assert(robotsContent.includes('Content-Signal:'), 'robots.txt declares Content-Signal directives');
   assert(robotsContent.includes('ai-train='), 'robots.txt declares ai-train preference');
   assert(robotsContent.includes('search='), 'robots.txt declares search preference');

@@ -36,13 +36,13 @@ export const REAL_RESULT_CONFIG = {
   subheadline: "Real Result helps businesses attract the right audience, turn interest into enquiries, and keep customers connected through digital marketing and targeted communication.",
   positioning: "Digital marketing, customer communication, and supporting technology for your next business goal.",
   
-  // Real Business Coordinates in Erode, Tamil Nadu, India
+  // Real Business Coordinates in Paramathi Velur, Namakkal, Tamil Nadu, India
   location: {
-    headquarters: "Erode, Tamil Nadu, India",
-    address: "148/2, Perundurai Road, Near Collectorate, Erode, Tamil Nadu 638011",
+    headquarters: "Paramathi Velur, Namakkal, Tamil Nadu, India",
+    address: "High School Building, 12/32, Paramathi Velur, Padamudipalayam, Tamil Nadu 638182",
     region: "Tamil Nadu",
     country: "India",
-    pinCode: "638011",
+    pinCode: "638182",
   },
 
   // Centralized WhatsApp configuration (Tamil Nadu, India format: +91)
@@ -63,7 +63,7 @@ export const REAL_RESULT_CONFIG = {
     email: "realresult.dev@gmail.com",
     supportEmail: "campaigns@realresult.in",
     phone: "+91 81110 33390",
-    address: "148/2, Perundurai Road, Near Collectorate, Erode, Tamil Nadu 638011",
+    address: "High School Building, 12/32, Paramathi Velur, Padamudipalayam, Tamil Nadu 638182",
   },
 
   social: SOCIAL_LINKS,

@@ -60,8 +60,8 @@ const servicesLinks = [
   { label: "Google Ads & PPC", href: "/digital-marketing/google-ads" },
   { label: "Social Media Marketing", href: "/digital-marketing/social-media-marketing" },
   { label: "Web & App Development", href: "/application-development" },
-  { label: "Custom Enterprise ERP", href: "/services/crm-erp" },
-  { label: "AI Voice & Telephony", href: "/services/ai-solutions" },
+  { label: "Custom Enterprise ERP", href: "/application-development" },
+  { label: "AI Voice & Telephony", href: "/digital-marketing/aio" },
   { label: "Content & Brand Identity", href: "/digital-marketing/content-marketing" },
 ];
 

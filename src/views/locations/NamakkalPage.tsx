@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
@@ -32,6 +32,9 @@ import {
   Code2,
   HelpCircle,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ArrowRight,
   Star,
   ShieldCheck,
   Zap,
@@ -40,6 +43,299 @@ import {
   Mic,
   Sparkles,
 } from "lucide-react";
+
+// ── Namakkal Luxury Hero Slider (Styled after Home Hero) ─────────────────────
+const NamakkalHeroSlider: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const slides = [
+    {
+      id: "heritage-growth",
+      badge: "Rated #1 Digital Marketing Agency in Namakkal & Paramathi Velur",
+      badgeIcon: Star,
+      titlePrefix: "Best Digital Marketing",
+      titleHighlight: "Company in Namakkal.",
+      description:
+        "Dominate Google search results, capture verified commercial buyers nationwide, and accelerate your business growth with Tamil Nadu's premier digital marketing & application engineering agency.",
+      primaryCta: {
+        label: "Start Your Project",
+        action: () => openLeadModal("namakkal-hero-primary"),
+      },
+      secondaryCta: {
+        label: "Explore Services",
+        href: "#services",
+        isExternal: false,
+      },
+      tabLabel: "Namakkal Heritage",
+      tabIcon: Sparkles,
+    },
+    {
+      id: "google-ranking",
+      badge: "Google Maps 3-Pack & Local SEO Authority",
+      badgeIcon: Award,
+      titlePrefix: "Rank #1 on Google.",
+      titleHighlight: "Get Real Results.",
+      description:
+        "When high-intent commercial buyers in Namakkal, Tiruchengode, or Rasipuram search for your services, place your business in the Top 3 Google Maps pack with guaranteed customer phone calls.",
+      primaryCta: {
+        label: "Get Free SEO Audit",
+        action: () => openLeadModal("namakkal-seo-audit"),
+      },
+      secondaryCta: {
+        label: "Open in Google Maps",
+        href: "https://www.google.com/maps/place/Real+Result+Marketing/@11.1112024,78.0010096,17z/data=!3m1!4b1!4m6!3m5!1s0x3babd5a621e9d483:0x7610d4ed000d0c45!8m2!3d11.1111972!4d78.0058805!16s%2Fg%2F11p1gkwbj4",
+        isExternal: true,
+      },
+      tabLabel: "Google #1 Dominance",
+      tabIcon: Search,
+    },
+    {
+      id: "kongu-industry",
+      badge: "Built for Transport & Poultry Powerhouses",
+      badgeIcon: Truck,
+      titlePrefix: "Scale Fleet & Agro.",
+      titleHighlight: "Kongu Tech Engine.",
+      description:
+        "Bespoke buyer acquisition funnels and custom ERP portals engineered specifically for Namakkal's world-renowned lorry body builders, commercial fleets, and 4.5+ Cr daily egg supply chains.",
+      primaryCta: {
+        label: "Schedule Consultation",
+        action: () => openLeadModal("namakkal-industry-consult"),
+      },
+      secondaryCta: {
+        label: "Direct Desk: 8111033390",
+        href: "tel:+918111033390",
+        isExternal: false,
+      },
+      tabLabel: "Fleet & Poultry Tech",
+      tabIcon: Cpu,
+    },
+  ];
+
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6500);
+    return () => clearInterval(interval);
+  }, [isPaused, slides.length]);
+
+  const slide = slides[currentSlide];
+  const BadgeIcon = slide.badgeIcon;
+
+  return (
+    <div
+      className="relative overflow-hidden bg-white border-b border-border"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* ── Background: Clean Canvas with Subtle Gold Ambient Curves ── */}
+      <div className="relative bg-gradient-to-b from-[#FAF8F5] via-white to-white text-neutral-900 pt-10 sm:pt-14 lg:pt-16 pb-12 sm:pb-16 overflow-hidden">
+        
+        {/* Ambient Fluid Ribbon Curves & Star Sparkles */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
+          {/* Ambient Warm Gold Radial Glows */}
+          <div
+            className="absolute -top-10 right-1/4 w-[650px] h-[650px] rounded-full opacity-60"
+            style={{
+              background: "radial-gradient(circle, rgba(197,160,89,0.18) 0%, rgba(197,160,89,0.04) 50%, transparent 75%)",
+              filter: "blur(60px)",
+            }}
+          />
+          <div
+            className="absolute top-1/3 left-[-6%] w-[520px] h-[520px] rounded-full opacity-40"
+            style={{
+              background: "radial-gradient(circle, rgba(197,160,89,0.12) 0%, transparent 70%)",
+              filter: "blur(50px)",
+            }}
+          />
+
+          {/* Sweeping Luminous Fluid Ribbon in Brand Gold */}
+          <svg
+            viewBox="0 0 1440 650"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="absolute inset-0 w-full h-full object-cover opacity-35 preserve-3d"
+          >
+            <path
+              d="M-80 420C220 560 520 180 920 360C1220 500 1420 260 1560 300V700H-80V420Z"
+              fill="url(#namakkalGoldRibbon)"
+            />
+            <defs>
+              <linearGradient id="namakkalGoldRibbon" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#C5A059" stopOpacity="0.22" />
+                <stop offset="60%" stopColor="#DFC58E" stopOpacity="0.10" />
+                <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0.02" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          {/* Golden Star Sparkles (#C5A059) */}
+          <span className="absolute top-10 left-[18%] text-[#C5A059] text-xl animate-pulse select-none">✦</span>
+          <span className="absolute top-28 left-[36%] text-[#C5A059]/70 text-sm animate-ping select-none">★</span>
+          <span className="absolute top-16 right-[44%] text-[#C5A059] text-lg animate-pulse select-none">✦</span>
+          <span className="absolute top-36 right-[12%] text-[#C5A059]/80 text-sm animate-ping select-none">★</span>
+          <span className="absolute bottom-24 left-[8%] text-[#C5A059]/60 text-lg select-none">✦</span>
+          <span className="absolute bottom-16 right-[40%] text-[#C5A059]/80 text-sm animate-pulse select-none">✦</span>
+        </div>
+
+        {/* ── Main Hero Grid ── */}
+        <Container size="wide">
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Locations", href: "/locations/tamil-nadu" },
+              { label: "Namakkal & Paramathi Velur" },
+            ]}
+          />
+
+          <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-12 items-center">
+            
+            {/* ── LEFT COLUMN: High-Contrast Typography & Pill CTAs ── */}
+            <div className="lg:col-span-5 xl:col-span-5 flex flex-col items-start text-left z-20">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-50 border border-gold-200 text-xs font-semibold text-gold-800 mb-4 shadow-xs">
+                <BadgeIcon className="w-3.5 h-3.5 text-gold-600 fill-gold-600/20" />
+                <span>{slide.badge}</span>
+              </div>
+
+              {/* Headline */}
+              <h1
+                className="text-4xl sm:text-5xl lg:text-[46px] xl:text-[52px] font-black tracking-tight text-neutral-950 leading-[1.08] mb-4 min-h-[2.2em]"
+                style={{ letterSpacing: "-0.035em" }}
+              >
+                {slide.titlePrefix}
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C5A059] via-[#D4AF37] to-[#A67C1E]">
+                  {slide.titleHighlight}
+                </span>
+              </h1>
+
+              {/* Subtitle */}
+              <p className="text-sm sm:text-base text-neutral-600 leading-relaxed max-w-xl font-normal">
+                {slide.description}
+              </p>
+            </div>
+
+            {/* ── RIGHT COLUMN: Pure Centerpiece Display (Matching HomeHero Style) ── */}
+            <div className="lg:col-span-7 xl:col-span-7 relative flex items-center justify-center min-h-[420px] sm:min-h-[480px] lg:min-h-[520px]">
+              {/* Subtle Warm Gold Radial Base Glow */}
+              <div
+                className="absolute -bottom-6 inset-x-4 h-[280px] rounded-full pointer-events-none opacity-70"
+                style={{
+                  background: "radial-gradient(ellipse at center, rgba(197,160,89,0.25) 0%, transparent 72%)",
+                  filter: "blur(40px)",
+                }}
+              />
+
+              {/* SLIDE 0: Pure Namakkal Fort Architectural Sketch Directly on Canvas */}
+              {currentSlide === 0 && (
+                <div className="relative z-10 w-full max-w-[760px] xl:max-w-[880px] transition-all duration-500 animate-in fade-in zoom-in-95">
+                  <div
+                    className="relative overflow-hidden transition-all duration-700"
+                    style={{
+                      maskImage:
+                        "radial-gradient(ellipse 98% 95% at 50% 50%, black 84%, transparent 100%)",
+                      WebkitMaskImage:
+                        "radial-gradient(ellipse 98% 95% at 50% 50%, black 84%, transparent 100%)",
+                    }}
+                  >
+                    <img
+                      src="/images/namakkal-fort-artistic-sketch.jpg"
+                      alt="Architectural sketch of Namakkal Rock Fort and Kamalalayam Lake Mandapam"
+                      className="w-full h-auto object-contain transition-transform duration-700 ease-out hover:scale-[1.02] filter drop-shadow-[0_16px_36px_rgba(197,160,89,0.22)]"
+                    />
+                  </div>
+                </div>
+              )}
+
+              {/* SLIDE 1: 3D Isometric Rocket Launcher Centerpiece */}
+              {currentSlide === 1 && (
+                <div className="relative z-10 w-full max-w-[620px] xl:max-w-[680px] transition-all duration-500 animate-in fade-in zoom-in-95">
+                  <picture>
+                    <source
+                      type="image/avif"
+                      srcSet="/images/hero/hero-rocket-768.avif 768w, /images/hero/hero-rocket-1200.avif 1200w"
+                      sizes="(max-width: 1023px) 100vw, 58vw"
+                    />
+                    <source
+                      type="image/webp"
+                      srcSet="/images/hero/hero-rocket-768.webp 768w, /images/hero/hero-rocket-1200.webp 1200w"
+                      sizes="(max-width: 1023px) 100vw, 58vw"
+                    />
+                    <img
+                      src="/images/hero/hero-rocket-1200.webp"
+                      width={1200}
+                      height={896}
+                      alt="3D Space Rocket Launching from Laptop with Gold Coins and Analytics Charts"
+                      className="w-full h-auto object-contain pointer-events-none filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.06)]"
+                    />
+                  </picture>
+                </div>
+              )}
+
+              {/* SLIDE 2: Industry Fleet & Poultry Tech Centerpiece (Direct on Canvas, No Rigid Modal) */}
+              {currentSlide === 2 && (
+                <div className="relative z-10 w-full max-w-[580px] xl:max-w-[640px] transition-all duration-500 animate-in fade-in zoom-in-95 space-y-3">
+                  <div className="flex items-center justify-between pb-2 mb-2 border-b border-neutral-300/60 text-[11px] font-mono tracking-wider text-[#8E6D2E]">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#C5A059]">✦</span>
+                      <span>KONGU INDUSTRIAL CORRIDOR</span>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-gold-100 text-[#8E6D2E] text-[10px] font-bold">
+                      Namakkal Commercial Engine
+                    </span>
+                  </div>
+
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-white/85 backdrop-blur-xs border border-neutral-200/90 shadow-sm transition-transform duration-300 hover:scale-[1.01]">
+                      <div className="p-2.5 rounded-xl bg-gold-500/10 text-gold-700 shrink-0">
+                        <Truck className="w-5 h-5 text-gold-700" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-neutral-900">Transport Fleet &amp; Lorry Body Works</div>
+                        <div className="text-[11px] text-neutral-600 leading-relaxed">
+                          Nationwide freight contracts, tanker fabrication &amp; commercial fleet leads.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-white/85 backdrop-blur-xs border border-neutral-200/90 shadow-sm transition-transform duration-300 hover:scale-[1.01]">
+                      <div className="p-2.5 rounded-xl bg-primary/5 text-primary shrink-0">
+                        <Egg className="w-5 h-5 text-gold-700" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-neutral-900">Poultry &amp; Egg Supply Logistics</div>
+                        <div className="text-[11px] text-neutral-600 leading-relaxed">
+                          Connecting Namakkal&apos;s 4.5+ Cr daily egg supply chain with wholesale buyers.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-white/85 backdrop-blur-xs border border-neutral-200/90 shadow-sm transition-transform duration-300 hover:scale-[1.01]">
+                      <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-700 shrink-0">
+                        <Cpu className="w-5 h-5 text-emerald-700" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-neutral-900">Custom Enterprise Software &amp; ERP</div>
+                        <div className="text-[11px] text-neutral-600 leading-relaxed">
+                          Hatchery batch tracking, trip billing &amp; automated LR logistics systems.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+            </div>
+
+          </div>
+        </Container>
+
+      </div>
+    </div>
+  );
+};
 
 export const NamakkalPage: React.FC = () => {
   const loc = TAMIL_NADU_LOCATIONS.namakkal;
@@ -186,66 +482,22 @@ export const NamakkalPage: React.FC = () => {
         ]}
       />
 
-      {/* ── 1. Hero Section ────────────────────────────────────────────────── */}
-      <section className="pt-12 pb-16 sm:pt-20 sm:pb-24 bg-white border-b border-border">
+      {/* ── 1. Hero Section: Multi-Slide Hero Slider (Matched to HomeHero Style) ─ */}
+      <NamakkalHeroSlider />
+
+      {/* ── 1.1 Direct Answer Box for Google AI Overviews & Featured Snippet ─ */}
+      <section className="py-8 sm:py-12 bg-white border-b border-border">
         <Container size="wide">
-          <Breadcrumbs
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Locations", href: "/locations/tamil-nadu" },
-              { label: "Namakkal & Paramathi Velur" },
+          <DirectAnswerBox
+            question="Why is Real Result the best digital marketing company in Namakkal?"
+            summary="Real Result Marketing is the top-ranked digital marketing company in Namakkal and Paramathi Velur, delivering end-to-end growth solutions including #1 Google SEO rankings, Google Maps 3-pack dominance, high-ROI Google Ads, social media marketing, and custom web/ERP software. Our deep local expertise in Namakkal's poultry, transport fleet, and agro-industrial sectors ensures measurable revenue growth and verified customer inquiries."
+            takeaways={[
+              "Verified Regional Facility: Paramathi Velur, Namakkal District, Tamil Nadu 638182",
+              "Proven #1 Google Rankings across Namakkal, Paramathi Velur, Tiruchengode, & Rasipuram",
+              "Deep specialization in Poultry Farm ERP, Transport Logistics & Lorry Body Works marketing",
+              "Complete Full-Funnel Growth: SEO + Performance PPC + High-Speed Websites + Social Media",
             ]}
           />
-
-          <div className="max-w-4xl space-y-6 mt-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-50 border border-gold-200 text-xs font-semibold text-gold-800">
-              <Star className="w-3.5 h-3.5 fill-gold-600 text-gold-600" />
-              <span>Rated #1 Digital Marketing Agency in Namakkal &amp; Paramathi Velur</span>
-            </div>
-
-            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
-              Best Digital Marketing Company in{" "}
-              <span className="text-gold-700">Namakkal</span>.
-            </h1>
-
-            <p className="text-base sm:text-xl text-secondary leading-relaxed font-normal">
-              Dominate Google search results, capture verified commercial buyers nationwide, and accelerate your business growth. Real Result delivers industry-leading SEO, high-ROI Google Ads, local Google Maps dominance, and bespoke software engineered specifically for Namakkal's world-renowned poultry farms, lorry body builders, transport fleets, and industrial manufacturers.
-            </p>
-
-            {/* Direct Answer Box for Google AI Overviews & Featured Snippet */}
-            <DirectAnswerBox
-              question="Why is Real Result the best digital marketing company in Namakkal?"
-              summary="Real Result Marketing is the top-ranked digital marketing company in Namakkal and Paramathi Velur, delivering end-to-end growth solutions including #1 Google SEO rankings, Google Maps 3-pack dominance, high-ROI Google Ads, social media marketing, and custom web/ERP software. Our deep local expertise in Namakkal's poultry, transport fleet, and agro-industrial sectors ensures measurable revenue growth and verified customer inquiries."
-              takeaways={[
-                "Verified Regional Facility: Paramathi Velur, Namakkal District, Tamil Nadu 638182",
-                "Proven #1 Google Rankings across Namakkal, Paramathi Velur, Tiruchengode, & Rasipuram",
-                "Deep specialization in Poultry Farm ERP, Transport Logistics & Lorry Body Works marketing",
-                "Complete Full-Funnel Growth: SEO + Performance PPC + High-Speed Websites + Social Media",
-              ]}
-            />
-
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <Button
-                variant="gold"
-                size="lg"
-                withArrow
-                onClick={() => openLeadModal("namakkal-inquiry")}
-                className="cursor-pointer"
-              >
-                Get Free Growth Audit &amp; Proposal
-              </Button>
-              <a
-                href="https://www.google.com/maps/place/Real+Result+Marketing/@11.1112024,78.0010096,17z/data=!3m1!4b1!4m6!3m5!1s0x3babd5a621e9d483:0x7610d4ed000d0c45!8m2!3d11.1111972!4d78.0058805!16s%2Fg%2F11p1gkwbj4"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border text-sm font-semibold text-primary hover:bg-canvas hover:border-gold/50 transition-colors"
-              >
-                <Navigation className="w-4 h-4 text-gold-600" />
-                <span>Open in Google Maps</span>
-                <ExternalLink className="w-3.5 h-3.5 text-muted" />
-              </a>
-            </div>
-          </div>
         </Container>
       </section>
 
@@ -256,10 +508,6 @@ export const NamakkalPage: React.FC = () => {
             {/* Location Credentials */}
             <div className="lg:col-span-6 p-8 rounded-3xl bg-white border border-border shadow-card flex flex-col justify-between space-y-6">
               <div className="space-y-4">
-                <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 uppercase tracking-wider">
-                  <ShieldCheck className="w-4 h-4" />
-                  <span>Verified Google Business Profile</span>
-                </div>
                 <h2 className="text-2xl font-bold text-primary">
                   Real Result — Namakkal Operations
                 </h2>
@@ -640,9 +888,6 @@ export const NamakkalPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="p-8 rounded-3xl bg-white/5 border border-white/10 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-bold uppercase tracking-wider">
-                Traditional Template Agencies
-              </div>
               <h3 className="text-xl font-bold text-white">
                 Generic WordPress &amp; Basic Freelancers
               </h3>
@@ -667,9 +912,6 @@ export const NamakkalPage: React.FC = () => {
             </div>
 
             <div className="p-8 rounded-3xl bg-gold/10 border border-gold/30 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/30 text-gold-300 text-xs font-bold uppercase tracking-wider">
-                The Real Result Advantage
-              </div>
               <h3 className="text-xl font-bold text-white">
                 Engineered Performance &amp; Full Commercial Growth
               </h3>
@@ -814,9 +1056,6 @@ export const NamakkalPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Case Study 1: Dental Clinic */}
             <div className="p-8 rounded-3xl bg-canvas border border-border hover:border-gold/50 shadow-card transition-all space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-700 text-xs font-bold uppercase tracking-wider">
-                Healthcare &amp; Dental
-              </div>
               <h3 className="text-xl font-bold text-primary">
                 Dr. Aravinth Dental Care, Namakkal
               </h3>
@@ -841,9 +1080,6 @@ export const NamakkalPage: React.FC = () => {
 
             {/* Case Study 2: Poultry Syndicate */}
             <div className="p-8 rounded-3xl bg-canvas border border-border hover:border-gold/50 shadow-card transition-all space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-700 text-xs font-bold uppercase tracking-wider">
-                Poultry &amp; Feed Exports
-              </div>
               <h3 className="text-xl font-bold text-primary">
                 Namakkal Egg Traders &amp; Hatcheries Syndicate
               </h3>
@@ -868,9 +1104,6 @@ export const NamakkalPage: React.FC = () => {
 
             {/* Case Study 3: Transport & Body Works */}
             <div className="p-8 rounded-3xl bg-canvas border border-border hover:border-gold/50 shadow-card transition-all space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 text-purple-700 text-xs font-bold uppercase tracking-wider">
-                Fleet &amp; Lorry Fabrication
-              </div>
               <h3 className="text-xl font-bold text-primary">
                 Kongu Logistics &amp; Trailer Fabrication
               </h3>
@@ -962,17 +1195,7 @@ export const NamakkalPage: React.FC = () => {
             </div>
 
             {/* Visual Location Frame */}
-            <div className="rounded-3xl overflow-hidden border border-border shadow-card bg-white p-6 space-y-4">
-              <div className="flex items-center justify-between pb-3 border-b border-border">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-xs font-bold uppercase tracking-wider text-primary">
-                    Active Coverage Zone
-                  </span>
-                </div>
-                <span className="text-xs text-secondary font-mono">11.2189° N, 78.1674° E</span>
-              </div>
-
+            <div className="rounded-3xl overflow-hidden border border-border shadow-card bg-white p-6">
               <div className="bg-canvas rounded-2xl p-6 border border-border/60 space-y-3">
                 <h3 className="text-lg font-bold text-primary">
                   Namakkal Priority Service Areas
@@ -1011,13 +1234,6 @@ export const NamakkalPage: React.FC = () => {
                     <span>Thummankurichi Belt</span>
                   </div>
                 </div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-gold-50 border border-gold-200 text-xs text-gold-900 leading-relaxed flex items-start gap-2.5">
-                <ShieldCheck className="w-5 h-5 text-gold-700 shrink-0 mt-0.5" />
-                <span>
-                  <strong>Local Verification Guarantee:</strong> Our team conducts on-site strategy workshops, photo/video production shoots, and executive growth consulting directly at your Namakkal business location.
-                </span>
               </div>
             </div>
           </div>

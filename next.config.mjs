@@ -11,6 +11,9 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+  experimental: {
+    agentUpgrade: 'security',
+  },
   turbopack: {
     resolveAlias: {
       'react-router-dom': './src/utils/router-adapter.tsx',

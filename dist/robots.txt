@@ -46,6 +46,11 @@ User-agent: Meta-ExternalAgent
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
 
+# Exa AI Search Crawler (https://exa.ai)
+User-agent: ExaSearchBot
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+Allow: /
+
 # Canonical XML Sitemap
 Sitemap: https://realresult.in/sitemap.xml
 

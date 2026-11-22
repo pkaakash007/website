@@ -4,6 +4,14 @@ import WorkPage from "@/views/WorkPage";
 export const metadata: Metadata = {
   title: "Client Portfolio & Case Studies | Real Result Marketing",
   description: "Explore our commercial portfolio of digital marketing campaigns, Google Ads, and custom web software in Tamil Nadu.",
+  robots: {
+    index: false,
+    follow: true,
+    googleBot: {
+      index: false,
+      follow: true,
+    },
+  },
   alternates: {
     canonical: "https://realresult.in/work",
   },

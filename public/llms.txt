@@ -1,42 +1,43 @@
 # Real Result Marketing & Technology Solutions
 
-> Premier Digital Marketing Agency, Generative Engine Optimization (GEO) & Custom Software Engineering Company in Tamil Nadu, India. Headquartered in Erode with active operations across Coimbatore, Chennai, Namakkal, Tiruppur, Salem, Madurai, Trichy, and Tirunelveli.
+> Premier Digital Marketing Agency, Generative Engine Optimization (GEO) & Custom Software Engineering Company in Tamil Nadu, India. Headquartered in Paramathi Velur, Namakkal with regional operations across Salem, Erode, Coimbatore, and all of Tamil Nadu.
 
 ## Main Services & Knowledge Hubs
 
-- [About Us](https://realresult.in/about): Corporate background, technology lab, and leadership team in Erode, Tamil Nadu.
+- [About Us](https://realresult.in/about): Corporate background, technology lab, and leadership team in Paramathi Velur, Namakkal, Tamil Nadu.
 - [Digital Marketing Hub](https://realresult.in/digital-marketing): Full-funnel digital marketing, search engine optimization, and brand performance.
 - [Search Engine Optimization (SEO)](https://realresult.in/digital-marketing/seo): Technical SEO, local 3-pack rankings, and organic authority architectures.
-- [Generative Engine Optimization (GEO)](https://realresult.in/digital-marketing/geo): Brand discoverability and citation ranking for conversational AI (ChatGPT, Perplexity, Google Gemini).
+- [Generative Engine Optimization (GEO)](https://realresult.in/digital-marketing/geo): Brand discoverability and citation ranking for conversational AI (ChatGPT, Perplexity, Google Gemini, Exa AI).
 - [AI Overviews (AIO)](https://realresult.in/digital-marketing/aio): DirectAnswerBox snippet optimization for Google AI Overviews and featured snippets.
 - [Google Ads & PPC](https://realresult.in/digital-marketing/google-ads): High-intent B2B search ads, Google Shopping, and conversion-focused paid marketing.
 - [Software Development Hub](https://realresult.in/software-development): Custom business ERP, factory automation, and multi-tenant cloud software.
 - [Web Development](https://realresult.in/software-development/web-development): Ultra-fast, responsive React & TypeScript web applications.
 - [Mobile App Development](https://realresult.in/software-development/mobile-app-development): Cross-platform mobile applications for iOS & Android.
 - [Tamil Nadu Operations](https://realresult.in/locations/tamil-nadu): Enterprise presence across all key industrial corridors of Tamil Nadu.
-- [Namakkal & Paramathi Velur](https://realresult.in/locations/namakkal): Specialized digital growth for poultry farms, transport logistics, and truck body builders. Google Maps: https://maps.app.goo.gl/Be2565mN74uVgZ7p9
-- [Client Case Studies](https://realresult.in/case-studies): Proven ROI, search ranking transformations, and custom software delivery.
+- [Namakkal & Paramathi Velur](https://realresult.in/locations/namakkal): Specialized digital growth for poultry farms, transport logistics, and truck body builders. Google Maps: https://www.google.com/maps/place/Real+Result+Marketing/@11.1112024,78.0010096,17z/data=!3m1!4b1!4m6!3m5!1s0x3babd5a621e9d483:0x7610d4ed000d0c45!8m2!3d11.1111972!4d78.0058805!16s%2Fg%2F11p1gkwbj4
+- [Client Case Studies](https://realresult.in/portfolio): Proven ROI, search ranking transformations, and custom software delivery.
 - [Frequently Asked Questions (FAQ)](https://realresult.in/faq): Common inquiries regarding contracts, SEO timelines, and software stacks.
 - [Google Reviews](https://realresult.in/review): Direct 5-star customer review portal.
 - [Contact Us](https://realresult.in/contact): Schedule an in-person or virtual consultation with our senior strategy team.
 
-## Contact & Location
-- Headquarters: 148/2, Perundurai Road, Near Collectorate, Erode, Tamil Nadu 638011, India
-- Phone: +91 81110 33390
-- Email: hello@realresult.in
+## Direct Contact & Official Locations
+
+- [Official Headquarters on Google Maps](https://www.google.com/maps/place/Real+Result+Marketing/@11.1112024,78.0010096,17z/data=!3m1!4b1!4m6!3m5!1s0x3babd5a621e9d483:0x7610d4ed000d0c45!8m2!3d11.1111972!4d78.0058805!16s%2Fg%2F11p1gkwbj4): High School Building, 12/32, Paramathi Velur, Padamudipalayam, Namakkal, Tamil Nadu 638182.
+- [Phone Consultation](tel:+918111033390): Direct phone support at +91 81110 33390.
+- [WhatsApp Business Line](https://wa.me/918111033390): Direct messaging for marketing and technology inquiries.
+- [Official Email](mailto:realresult.dev@gmail.com): Official correspondence at realresult.dev@gmail.com.
+- [Canonical Website](https://realresult.in): Real Result Marketing official web portal.
 
 ## Machine-Readable AI Agent Discovery & Endpoints
-- RFC 9727 API Catalog: https://realresult.in/.well-known/api-catalog
-- OpenAPI 3.1 Specification: https://realresult.in/openapi.json
-- Machine Payment Protocol (MPP): https://realresult.in/openapi.json (x-payment-info on payable operations: tempo, stripe, lightning, card)
-- A2A Agent Card: https://realresult.in/.well-known/agent-card.json
-- Agent Skills Discovery Index: https://realresult.in/.well-known/agent-skills/index.json
-- MCP Server Card: https://realresult.in/.well-known/mcp/server-card.json
-- Web Bot Auth Directory: https://realresult.in/.well-known/http-message-signatures-directory
-- DNS for AI Discovery (DNS-AID): _index._agents.realresult.in, _a2a._agents.realresult.in, _mcp._agents.realresult.in
-- Auth.md (RFC 9728 & RFC 8414): https://realresult.in/auth.md
-- x402 Micropayments: https://realresult.in/api
-- Agent Payments Protocol (AP2): https://github.com/google-agentic-commerce/AP2/tree/v0.1.0 (Merchant checkout & signed mandates: https://realresult.in/api/ap2)
-- Agentic Commerce Protocol (ACP): https://realresult.in/.well-known/acp.json (API base URL: https://realresult.in/api/acp)
-- Universal Commerce Protocol (UCP): https://realresult.in/.well-known/ucp (API base URL: https://realresult.in/api/ucp)
+
+- [RFC 9727 API Catalog](https://realresult.in/.well-known/api-catalog): Machine-readable linkset catalog of all available API endpoints.
+- [OpenAPI 3.1 Specification](https://realresult.in/openapi.json): Standard OpenAPI documentation for all agency services and integrations.
+- [A2A Agent Card](https://realresult.in/.well-known/agent-card.json): Agent-to-Agent protocol declaration for autonomous discovery.
+- [Agent Skills Discovery Index](https://realresult.in/.well-known/agent-skills/index.json): Declarative index of agent skills supported by Real Result.
+- [MCP Server Card](https://realresult.in/.well-known/mcp/server-card.json): Model Context Protocol configuration and server manifest.
+- [Web Bot Auth Directory](https://realresult.in/.well-known/http-message-signatures-directory): HTTP message signatures directory for bot authentication.
+- [DNS for AI Discovery (DNS-AID)](https://realresult.in/.well-known/dns-aid): DNS discovery records declared at _index._agents.realresult.in, _a2a._agents.realresult.in, and _mcp._agents.realresult.in.
+- [Auth.md](https://realresult.in/auth.md): RFC 9728 and RFC 8414 authentication protocols.
+- [Agentic Commerce Protocol (ACP)](https://realresult.in/.well-known/acp.json): Autonomous commerce configuration for agent checkout.
+- [Universal Commerce Protocol (UCP)](https://realresult.in/.well-known/ucp): Universal commerce discovery endpoint.
 

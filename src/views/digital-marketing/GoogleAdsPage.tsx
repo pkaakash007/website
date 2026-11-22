@@ -86,7 +86,7 @@ export const GoogleAdsPage: React.FC = () => {
               >
                 Request PPC Audit
               </Button>
-              <Button variant="secondary" size="lg" href="/case-studies">
+              <Button variant="secondary" size="lg" href="/portfolio">
                 View ROAS Results
               </Button>
             </div>

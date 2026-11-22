@@ -42,6 +42,40 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
+    // 2b. Urgent SEO & Security De-indexation: Purge Japanese e-commerce spam & CMS probes
+    // Returns HTTP 410 Gone + noindex so Googlebot rapidly drops rogue URLs from search results
+    const lowerPath = url.pathname.toLowerCase();
+    const isSpamUrl =
+      lowerPath.startsWith("/shop/") ||
+      lowerPath === "/shop" ||
+      lowerPath.endsWith(".shtml") ||
+      lowerPath.includes(".shtml") ||
+      lowerPath.startsWith("/wp-admin") ||
+      lowerPath.startsWith("/wp-content") ||
+      lowerPath.startsWith("/wp-includes") ||
+      lowerPath.startsWith("/wp-json") ||
+      lowerPath.endsWith("/xmlrpc.php") ||
+      lowerPath.endsWith(".php") ||
+      lowerPath.endsWith(".asp") ||
+      lowerPath.endsWith(".aspx") ||
+      lowerPath.endsWith(".jsp") ||
+      lowerPath.endsWith(".cgi");
+
+    if (isSpamUrl) {
+      return new Response(
+        "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><title>410 Gone</title><meta name=\"robots\" content=\"noindex, nofollow, noarchive\"></head><body style=\"font-family:sans-serif;padding:40px;text-align:center;\"><h1>410 Gone</h1><p>This resource has been permanently removed.</p></body></html>",
+        {
+          status: 410,
+          statusText: "Gone",
+          headers: {
+            "Content-Type": "text/html; charset=utf-8",
+            "X-Robots-Tag": "noindex, nofollow, noarchive",
+            "Cache-Control": "public, max-age=604800, stale-while-revalidate=86400",
+          },
+        }
+      );
+    }
+
     // 2. Direct Google Review Redirect: Opens Google Maps 5-Star Write Review Modal
     if (
       url.pathname === "/review" ||
@@ -1569,6 +1603,10 @@ Localized B2B market consultation and high-intent commercial positioning for Sou
     headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
     headers.set("Content-Security-Policy", "upgrade-insecure-requests");
     headers.set("Content-Signal", "ai-train=no, search=yes, ai-input=yes");
+    if (response.status === 404) {
+      headers.set("X-Robots-Tag", "noindex, nofollow");
+      headers.set("Cache-Control", "public, max-age=86400");
+    }
     // Only apply Link headers & Vary: Accept where route content negotiation can actually occur (HTML vs Markdown)
     if (!isStaticAsset) {
       headers.set("Link", discoveryLinks);

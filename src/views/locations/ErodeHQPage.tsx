@@ -49,7 +49,7 @@ export const ErodeHQPage: React.FC = () => {
     {
       question: "Where is the Real Result office located in Erode?",
       answer:
-        "Our official headquarters and engineering lab is located at 148/2, Perundurai Road, Near Collectorate, Erode, Tamil Nadu 638011. You can visit us for in-person strategy sessions or reach our consulting team directly at +91 81110 33390.",
+        "Our regional operations office and engineering lab is located at 148/2, Perundurai Road, Near Collectorate, Erode, Tamil Nadu 638011. You can visit us for in-person strategy sessions or reach our consulting team directly at +91 81110 33390.",
     },
     {
       question: "How does SEO help textile and turmeric exporters in Erode?",
@@ -191,9 +191,9 @@ export const ErodeHQPage: React.FC = () => {
 
             <DirectAnswerBox
               question="Why is Real Result the top digital marketing agency in Erode?"
-              summary="Real Result Marketing is headquartered at 148/2, Perundurai Road, Erode. We deliver proven #1 Google search rankings, Google Maps 3-pack dominance, high-converting Google Ads campaigns, and custom software systems designed specifically for the Kongu region's manufacturing, textile, agro-commodity, and healthcare enterprises."
+              summary="Real Result Marketing operates a dedicated regional office at 148/2, Perundurai Road, Erode. We deliver proven #1 Google search rankings, Google Maps 3-pack dominance, high-converting Google Ads campaigns, and custom software systems designed specifically for the Kongu region's manufacturing, textile, agro-commodity, and healthcare enterprises."
               takeaways={[
-                "Physical Corporate Office: 148/2, Perundurai Road, Near Collectorate, Erode 638011",
+                "Regional Operational Office: 148/2, Perundurai Road, Near Collectorate, Erode 638011",
                 "Proven #1 Google Rankings across Erode, Perundurai, Bhavani, and Gobichettipalayam",
                 "Complete in-house software engineering and performance marketing teams",
                 "Dedicated regional phone and WhatsApp support desk (+91 81110 33390)",

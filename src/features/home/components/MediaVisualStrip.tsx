@@ -566,7 +566,7 @@ export const MediaVisualStrip: React.FC = () => {
                               <div className="pt-1 flex flex-wrap gap-1 border-t border-neutral-100">
                                 <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-blue-50 text-[8px] font-semibold text-blue-700">
                                   <Phone className="w-2 h-2" />
-                                  <span>Call +91 98765 43210</span>
+                                  <span>Call +91 98XXX XXXXX</span>
                                 </span>
                                 <span className="px-1.5 py-0.5 rounded bg-neutral-100 text-[8px] font-medium text-neutral-700">
                                   Floor Plans

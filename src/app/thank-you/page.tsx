@@ -4,6 +4,14 @@ import ThankYouPage from "@/views/ThankYouPage";
 export const metadata: Metadata = {
   title: "Thank You for Inquiring | Real Result Marketing Agency",
   description: "Thank you for reaching out to Real Result Marketing. Our technical advisory desk will review your details and connect shortly.",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
   alternates: {
     canonical: "https://realresult.in/thank-you",
   },

@@ -52,7 +52,7 @@ export const SEO_CONFIG: SEOConfig = {
   displayPhone: "+91 81110 33390",
   email: "realresult.dev@gmail.com",
   headquarters: {
-    streetAddress: "Paramathi Velur",
+    streetAddress: "High School Building, 12/32, Paramathi Velur, Padamudipalayam",
     addressLocality: "Paramathi Velur, Namakkal",
     addressRegion: "Tamil Nadu",
     postalCode: "638182",
@@ -74,12 +74,12 @@ export const SEO_CONFIG: SEOConfig = {
     SOCIAL_LINKS.quora,
   ],
   serviceAreas: [
-    "Erode",
     "Namakkal",
-    "Paramathi Velur",
     "Salem",
+    "Erode",
+    "Paramathi Velur",
     "Coimbatore",
-    "Kongu Region, Tamil Nadu",
+    "Tamil Nadu",
   ],
   businessHours: "Mo-Sa 09:00-18:30",
 };
