@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
+import { TAMIL_NADU_LOCATIONS } from "@/config/seo";
 import { Button } from "@/components/common/Button";
-import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { DirectAnswerBox } from "@/components/seo/DirectAnswerBox";
 import { openLeadModal } from "@/components/common/LeadModal";
@@ -22,23 +22,6 @@ import {
 export const LocalSEOPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <SEOHead
-        title="Best Local SEO Company in Tamil Nadu | Google Maps 3-Pack | Real Result"
-        description="Dominate local search and Google Maps across Salem, Erode, Namakkal, Paramathi Velur, and Coimbatore. Real Result Marketing is the best local SEO agency optimizing Google Business Profiles, local citations, and reviews."
-        canonicalPath="/digital-marketing/local-seo"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: "Local SEO & Google Business Profile Optimization",
-          provider: {
-            "@type": "Organization",
-            name: "Real Result Marketing",
-            url: "https://realresult.in",
-          },
-          serviceType: "Local SEO Services",
-          areaServed: ["Tamil Nadu", "Erode", "Namakkal", "Paramathi Velur", "Salem", "Coimbatore"],
-        }}
-      />
 
       <section className="pt-12 pb-16 sm:pt-20 sm:pb-24 bg-white border-b border-border">
         <Container size="wide">
@@ -148,40 +131,19 @@ export const LocalSEOPage: React.FC = () => {
       {/* City Links */}
       <section className="py-16 bg-white border-b border-border">
         <Container size="wide">
-          <h3 className="text-xl font-bold text-primary mb-6">
-            Active Tamil Nadu Local Search Hubs
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
-            <Link
-              to="/locations/erode"
-              className="p-4 rounded-xl bg-canvas hover:bg-surface border border-border transition-colors text-sm font-semibold text-primary text-center"
-            >
-              📍 Erode Headquarters
-            </Link>
-            <Link
-              to="/locations/namakkal"
-              className="p-4 rounded-xl bg-canvas hover:bg-surface border border-border transition-colors text-sm font-semibold text-primary text-center"
-            >
-              📍 Namakkal Hub
-            </Link>
-            <Link
-              to="/locations/paramathi-velur"
-              className="p-4 rounded-xl bg-canvas hover:bg-surface border border-border transition-colors text-sm font-semibold text-primary text-center"
-            >
-              📍 Paramathi Velur Desk
-            </Link>
-            <Link
-              to="/locations/salem"
-              className="p-4 rounded-xl bg-canvas hover:bg-surface border border-border transition-colors text-sm font-semibold text-primary text-center"
-            >
-              📍 Salem Regional Hub
-            </Link>
-            <Link
-              to="/locations/coimbatore"
-              className="p-4 rounded-xl bg-canvas hover:bg-surface border border-border transition-colors text-sm font-semibold text-primary text-center"
-            >
-              📍 Coimbatore Center
-            </Link>
+          <h2 className="text-xl font-bold text-primary mb-6">
+            Local SEO by City
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {Object.values(TAMIL_NADU_LOCATIONS).map((loc) => (
+              <Link
+                key={loc.slug}
+                to={`/locations/${loc.slug}/`}
+                className="p-4 rounded-xl bg-canvas hover:bg-surface border border-border transition-colors text-sm font-semibold text-primary text-center"
+              >
+                Local SEO in {loc.city}
+              </Link>
+            ))}
           </div>
         </Container>
       </section>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Image } from "@/components/common/Image";
 
 export interface BrandLogoProps {

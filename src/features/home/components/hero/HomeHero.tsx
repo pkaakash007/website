@@ -137,6 +137,11 @@ export const HomeHero: React.FC = () => {
             {/* ── LEFT COLUMN: High-Contrast Typography & Pill CTA ── */}
             <div className="lg:col-span-5 xl:col-span-5 flex flex-col items-start text-left z-20">
 
+              {/* Keyword eyebrow: tells users, Google and AI engines who we are and where */}
+              <p className="inline-flex items-center gap-2 mb-4 px-3.5 py-1.5 rounded-full bg-[#876326]/10 border border-[#876326]/25 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#6b4e1d]">
+                Digital Marketing Agency · Namakkal · Karur · Paramathi Velur
+              </p>
+
               {/* Main Headline */}
               <h1
                 className="text-4xl sm:text-5xl lg:text-[52px] xl:text-[58px] font-black tracking-tight text-neutral-950 leading-[1.08] mb-4"
@@ -148,7 +153,7 @@ export const HomeHero: React.FC = () => {
 
               {/* Subtitle Description */}
               <p className="text-sm sm:text-base text-neutral-600 leading-relaxed max-w-xl mb-8 font-normal">
-                Tamil Nadu&apos;s premier agency unifying high-converting digital marketing campaigns with scalable custom web &amp; mobile application engineering.
+                Real Result is a digital marketing agency in Paramathi Velur helping businesses in Namakkal, Karur and across Tamil Nadu win customers with SEO, Google Ads, Google Maps, social media, AI search and fast websites.
               </p>
 
               {/* Reference-Matched Pill CTAs */}

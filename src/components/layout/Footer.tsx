@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "./Container";
 import { BrandLogo } from "@/components/common/BrandLogo";
 import { SEO_CONFIG, SOCIAL_LINKS } from "@/config/seo";
@@ -54,43 +54,50 @@ const InstagramIcon: React.FC<{ className?: string }> = ({ className = "w-4 h-4"
 // ─── 5 Navigation Column Data ─────────────────────────────────────────────────
 
 const servicesLinks = [
-  { label: "Digital Marketing", href: "/digital-marketing" },
-  { label: "Search Engine Optimization (SEO)", href: "/digital-marketing/seo" },
-  { label: "Generative Engine Optimization (GEO)", href: "/digital-marketing/geo" },
-  { label: "Google Ads & PPC", href: "/digital-marketing/google-ads" },
-  { label: "Social Media Marketing", href: "/digital-marketing/social-media-marketing" },
-  { label: "Web & App Development", href: "/application-development" },
-  { label: "Custom Enterprise ERP", href: "/application-development" },
-  { label: "AI Voice & Telephony", href: "/digital-marketing/aio" },
-  { label: "Content & Brand Identity", href: "/digital-marketing/content-marketing" },
+  { label: "Digital Marketing", href: "/digital-marketing/" },
+  { label: "SEO Services", href: "/digital-marketing/seo/" },
+  { label: "Local SEO & Google Maps", href: "/digital-marketing/local-seo/" },
+  { label: "Google Ads & PPC", href: "/digital-marketing/google-ads/" },
+  { label: "Social Media Marketing", href: "/digital-marketing/social-media-marketing/" },
+  { label: "GEO & AI Search", href: "/digital-marketing/geo/" },
+  { label: "Website Design", href: "/services/website-design/" },
+  { label: "App & Software Development", href: "/application-development/" },
+  { label: "All Services", href: "/services/" },
 ];
 
 const industriesLinks = [
-  { label: "Real Estate & Housing", href: "/industries/real-estate" },
-  { label: "Education & Institutions", href: "/industries/education" },
-  { label: "Healthcare & Clinics", href: "/industries/healthcare" },
-  { label: "Textile & Manufacturing", href: "/industries/b2b" },
-  { label: "Retail & Supermarkets", href: "/industries/ecommerce" },
-  { label: "Solar & Energy Solutions", href: "/industries/ev" },
-  { label: "Startups & Local SMEs", href: "/industries" },
-  { label: "Client Knowledge Base", href: "/about#clients" },
+  { label: "Real Estate & Housing", href: "/industries/real-estate/" },
+  { label: "Education & Institutions", href: "/industries/education/" },
+  { label: "Healthcare & Clinics", href: "/industries/healthcare/" },
+  { label: "Textile & Manufacturing", href: "/industries/b2b/" },
+  { label: "Retail & E-commerce", href: "/industries/ecommerce/" },
+  { label: "Automotive & Body Building", href: "/industries/automotive/" },
+  { label: "Solar & EV", href: "/industries/ev/" },
+  { label: "All Industries", href: "/industries/" },
 ];
 
 const companyLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "Our Story", href: "/about" },
-  { label: "Client Partners", href: "/about" },
-  { label: "Customer Stories & Work", href: "/portfolio" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "About Us", href: "/about/" },
+  { label: "Our Clients", href: "/about/#clients" },
+  { label: "How We Work", href: "/how-we-work/" },
+  { label: "Portfolio", href: "/portfolio/" },
+  { label: "Contact Us", href: "/contact/" },
 ];
 
 const locationsLinks = [
-  { label: "Erode Headquarters", href: "/locations/erode" },
-  { label: "Digital Marketing Agency in Namakkal", href: "/digital-marketing-agency-namakkal" },
-  { label: "Namakkal Office", href: "/locations/namakkal" },
-  { label: "Paramathi Velur Desk", href: "/locations/paramathi-velur" },
-  { label: "Salem Regional Office", href: "/locations/salem" },
-  { label: "Coimbatore Tech Center", href: "/locations/coimbatore" },
+  { label: "Digital Marketing in Namakkal", href: "/locations/namakkal/" },
+  { label: "Digital Marketing in Karur", href: "/locations/karur/" },
+  { label: "Digital Marketing in Paramathi Velur", href: "/locations/paramathi-velur/" },
+  { label: "Digital Marketing in Salem", href: "/locations/salem/" },
+  { label: "Digital Marketing in Erode", href: "/locations/erode/" },
+  { label: "Digital Marketing in Coimbatore", href: "/locations/coimbatore/" },
+  { label: "All Areas We Serve", href: "/locations/tamil-nadu/" },
+];
+
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy/" },
+  { label: "Terms of Service", href: "/terms/" },
+  { label: "Cookie Policy", href: "/cookie-policy/" },
 ];
 
 export const Footer: React.FC = () => {
@@ -231,9 +238,9 @@ export const Footer: React.FC = () => {
               <h4 className="block text-xs font-bold text-neutral-500 uppercase tracking-wider mb-1">
                 Office Location
               </h4>
-              <p className="text-sm sm:text-[15px] text-[#374151] font-normal leading-relaxed">
-                Paramathi Velur, Namakkal District, Tamil Nadu 638182
-              </p>
+              <address className="not-italic text-sm sm:text-[15px] text-[#374151] font-normal leading-relaxed">
+                {SEO_CONFIG.displayAddress}
+              </address>
               <a
                 href={SOCIAL_LINKS.google}
                 target="_blank"
@@ -337,8 +344,15 @@ export const Footer: React.FC = () => {
 
           {/* Copyright notice */}
           <p className="text-xs sm:text-sm text-neutral-300 font-normal tracking-wide leading-relaxed">
-            &copy; 2026, Real Result Marketing &amp; Technology Solutions Pvt. Ltd. All Rights Reserved.
+            &copy; {new Date().getFullYear()} {SEO_CONFIG.legalName}. All rights reserved.
           </p>
+          <nav aria-label="Legal" className="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-neutral-400">
+            {legalLinks.map((item) => (
+              <Link key={item.href} to={item.href} className="hover:text-white transition-colors">
+                {item.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </div>
 

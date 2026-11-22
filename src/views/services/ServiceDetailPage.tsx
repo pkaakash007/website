@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, Link, Navigate } from "@/utils/router-adapter";
 import {
   ArrowRight,
   CheckCircle2,
@@ -11,40 +11,24 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
-import { SEOHead } from "@/components/seo/SEOHead";
 import { Container } from "@/components/layout/Container";
 import { openLeadModal } from "@/components/common/LeadModal";
 import { getWhatsAppUrl } from "@/config";
 import { DETAILED_SERVICES_MAP, DetailedServiceInfo } from "@/features/services/data/servicesDetailsData";
-import { SERVICES_BY_SLUG } from "@/data/servicesData";
 
 export const ServiceDetailPage: React.FC<{ slug?: string }> = ({ slug: propSlug }) => {
   const params = useParams<{ slug: string }>();
   const slug = propSlug || params.slug;
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  // 1. Check in our new curated 13 services map
   const detailedService: DetailedServiceInfo | undefined = slug ? DETAILED_SERVICES_MAP[slug] : undefined;
 
-  // 2. Fallback to legacy service map if applicable
-  const legacyService = slug ? SERVICES_BY_SLUG[slug] : undefined;
-
-  if (!detailedService && !legacyService) {
-    return <Navigate to="/services" replace />;
-  }
-
-  // If matched our 13 core curated services, render the short & sweet executive layout
   if (detailedService) {
     const service = detailedService;
     const whatsappUrl = getWhatsAppUrl(`Hello Real Result team, I would like to discuss your ${service.title} service for my business.`);
 
     return (
       <div className="flex flex-col min-h-screen bg-[#F5F5F7] text-[#1D1D1F] font-sans selection:bg-[#0071E3] selection:text-white">
-        <SEOHead
-          title={`${service.title} | Real Result Services`}
-          description={service.simpleDesc}
-          canonicalPath={`/services/${service.id}`}
-        />
 
         {/* ── Top Hero Section ── */}
         <section className="pt-28 sm:pt-36 pb-12 sm:pb-16 bg-white border-b border-black/[0.05]">
@@ -305,8 +289,8 @@ export const ServiceDetailPage: React.FC<{ slug?: string }> = ({ slug: propSlug 
                             <ChevronDown className="w-4 h-4 text-neutral-400 shrink-0" />
                           )}
                         </button>
-                        {isOpen && (
-                          <div className="px-5 sm:px-6 pb-6 text-xs sm:text-sm text-neutral-600 leading-relaxed border-t border-black/[0.04] pt-3 font-normal">
+                        {(
+                          <div hidden={!(isOpen)} className="px-5 sm:px-6 pb-6 text-xs sm:text-sm text-neutral-600 leading-relaxed border-t border-black/[0.04] pt-3 font-normal">
                             {faq.a}
                           </div>
                         )}

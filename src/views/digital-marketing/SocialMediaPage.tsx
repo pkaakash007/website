@@ -1,11 +1,10 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
-import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { DirectAnswerBox } from "@/components/seo/DirectAnswerBox";
 import { openLeadModal } from "@/components/common/LeadModal";
@@ -14,23 +13,6 @@ import { Share2, Users, Target, BarChart2 } from "lucide-react";
 export const SocialMediaPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <SEOHead
-        title="Performance Social Media Marketing in Tamil Nadu | Real Result"
-        description="Targeted Meta (Instagram & Facebook) and LinkedIn paid social advertising campaigns designed for high lead conversion and brand authority across Tamil Nadu."
-        canonicalPath="/digital-marketing/social-media-marketing"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: "Social Media Marketing Services",
-          provider: {
-            "@type": "Organization",
-            name: "Real Result Marketing",
-            url: "https://realresult.in",
-          },
-          serviceType: "Paid Social & Community Marketing",
-          areaServed: "Tamil Nadu, India",
-        }}
-      />
 
       <section className="pt-12 pb-16 sm:pt-20 sm:pb-24 bg-white border-b border-border">
         <Container size="wide">

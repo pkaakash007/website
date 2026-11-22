@@ -1,13 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
-import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { DirectAnswerBox } from "@/components/seo/DirectAnswerBox";
-import { TAMIL_NADU_LOCATIONS, SEO_CONFIG } from "@/config/seo";
+import { TAMIL_NADU_LOCATIONS, SEO_CONFIG, GOOGLE_REVIEW_URL } from "@/config/seo";
 import { openLeadModal } from "@/components/common/LeadModal";
 import {
   MapPin,
@@ -43,6 +42,8 @@ import {
   Mic,
   Sparkles,
 } from "lucide-react";
+import { LOCATION_FAQS } from "@/content/locationFaqs";
+import { LocalMarketSections } from "@/components/seo/LocalMarketSections";
 
 // ── Namakkal Luxury Hero Slider (Styled after Home Hero) ─────────────────────
 const NamakkalHeroSlider: React.FC = () => {
@@ -52,7 +53,7 @@ const NamakkalHeroSlider: React.FC = () => {
   const slides = [
     {
       id: "heritage-growth",
-      badge: "Rated #1 Digital Marketing Agency in Namakkal & Paramathi Velur",
+      badge: "Digital Marketing Agency for Namakkal & Paramathi Velur",
       badgeIcon: Star,
       titlePrefix: "Best Digital Marketing",
       titleHighlight: "Company in Namakkal.",
@@ -74,10 +75,10 @@ const NamakkalHeroSlider: React.FC = () => {
       id: "google-ranking",
       badge: "Google Maps 3-Pack & Local SEO Authority",
       badgeIcon: Award,
-      titlePrefix: "Rank #1 on Google.",
+      titlePrefix: "Get Found on Google.",
       titleHighlight: "Get Real Results.",
       description:
-        "When high-intent commercial buyers in Namakkal, Tiruchengode, or Rasipuram search for your services, place your business in the Top 3 Google Maps pack with guaranteed customer phone calls.",
+        "When high-intent commercial buyers in Namakkal, Tiruchengode, or Rasipuram search for your services, we work to get your business into the Google Maps top results, with one-tap call and WhatsApp buttons that turn searches into enquiries.",
       primaryCta: {
         label: "Get Free SEO Audit",
         action: () => openLeadModal("namakkal-seo-audit"),
@@ -87,7 +88,7 @@ const NamakkalHeroSlider: React.FC = () => {
         href: "https://www.google.com/maps/place/Real+Result+Marketing/@11.1112024,78.0010096,17z/data=!3m1!4b1!4m6!3m5!1s0x3babd5a621e9d483:0x7610d4ed000d0c45!8m2!3d11.1111972!4d78.0058805!16s%2Fg%2F11p1gkwbj4",
         isExternal: true,
       },
-      tabLabel: "Google #1 Dominance",
+      tabLabel: "Google Maps & SEO",
       tabIcon: Search,
     },
     {
@@ -345,142 +346,10 @@ export const NamakkalPage: React.FC = () => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const faqs = [
-    {
-      question: "Which is the best digital marketing company in Namakkal?",
-      answer:
-        "Real Result Marketing is widely recognized as the best digital marketing company in Namakkal and Paramathi Velur. We combine high-ROI Search Engine Optimization (SEO), high-converting Google Ads, Google Maps 3-pack local dominance, and custom enterprise software specifically tailored to Namakkal's poultry, transport logistics, and manufacturing sectors.",
-    },
-    {
-      question: "How much do digital marketing services cost in Namakkal?",
-      answer:
-        "Digital marketing pricing in Namakkal depends on your business scale and growth goals. Real Result offers flexible monthly retainers starting from affordable local business SEO packages to comprehensive multi-channel growth retainers (SEO + Google Ads + Social Media + Custom Web Development) designed to deliver 5x to 10x ROI.",
-    },
-    {
-      question: "How does SEO help poultry and transport businesses in Namakkal?",
-      answer:
-        "For poultry farms, hatcheries, and egg traders, SEO puts your brand in front of nationwide wholesale buyers, distributors, and institutional buyers searching on Google. For transport operators and lorry body builders, local and B2B SEO drives high-ticket freight contracts, tanker/trailer fabrication inquiries, and corporate fleet bookings.",
-    },
-    {
-      question: "Can you help my Namakkal business rank in the Google Maps 3-Pack?",
-      answer:
-        "Yes. We execute rigorous Local SEO including Google Business Profile optimization, local citation building across Tamil Nadu directories, geotagged media optimization, review management funnels, and localized schema markup to get your business into the top 3 Google Maps results across Namakkal, Paramathi Velur, Tiruchengode, and Rasipuram.",
-    },
-    {
-      question: "Do you build custom websites and software for companies in Namakkal?",
-      answer:
-        "Yes. Beyond digital marketing, our full-stack software engineering team builds custom web applications, poultry batch & feed management ERPs, transport trip/LR tracking platforms, and distributor billing systems using modern React, TypeScript, and high-performance cloud databases.",
-    },
-    {
-      question: "Where is Real Result located in Namakkal?",
-      answer:
-        "Our regional operational facility is located in Paramathi Velur, Namakkal District, Tamil Nadu (PIN: 638182). We provide on-ground consulting, in-person strategy sessions, and direct phone/WhatsApp support across the entire Kongu region.",
-    },
-  ];
+  const faqs = LOCATION_FAQS["namakkal"];
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <SEOHead
-        title="Best Digital Marketing Company in Namakkal | Top SEO & Web Agency - Real Result"
-        description="Looking for the best digital marketing company in Namakkal? Real Result delivers #1 Google SEO rankings, Google Ads, local Maps 3-pack optimization & custom software in Namakkal & Paramathi Velur."
-        canonicalPath="/locations/namakkal"
-        schema={[
-          {
-            "@context": "https://schema.org",
-            "@type": ["LocalBusiness", "ProfessionalService"],
-            "@id": "https://realresult.in/locations/namakkal#business",
-            name: "Real Result - Best Digital Marketing Company in Namakkal",
-            alternateName: "Real Result Marketing Namakkal",
-            url: "https://realresult.in/locations/namakkal",
-            logo: SEO_CONFIG.logo,
-            image: SEO_CONFIG.logo,
-            telephone: SEO_CONFIG.telephone,
-            email: SEO_CONFIG.email,
-            hasMap: "https://www.google.com/maps/place/Real+Result+Marketing/@11.1112024,78.0010096,17z/data=!3m1!4b1!4m6!3m5!1s0x3babd5a621e9d483:0x7610d4ed000d0c45!8m2!3d11.1111972!4d78.0058805!16s%2Fg%2F11p1gkwbj4",
-            priceRange: "$$",
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "128",
-              bestRating: "5",
-              worstRating: "1",
-            },
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "Salem Road",
-              addressLocality: "Namakkal",
-              addressRegion: "Tamil Nadu",
-              postalCode: "637001",
-              addressCountry: "IN",
-            },
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: loc.geo.latitude,
-              longitude: loc.geo.longitude,
-            },
-            openingHours: "Mo-Sa 09:00-18:30",
-            areaServed: [
-              "Namakkal",
-              "Paramathi Velur",
-              "Tiruchengode",
-              "Rasipuram",
-              "Mohanur",
-              "Sendamangalam",
-              "Tamil Nadu",
-            ],
-            hasOfferCatalog: {
-              "@type": "OfferCatalog",
-              name: "Digital Marketing & Software Services in Namakkal",
-              itemListElement: [
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Search Engine Optimization (SEO) in Namakkal",
-                    description: "Top-ranked Google SEO to dominate search results and capture high-intent B2B buyers.",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Google Ads & PPC Management",
-                    description: "High-ROI paid search and commercial lead generation campaigns.",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Google Maps 3-Pack Local SEO",
-                    description: "Local Business Profile optimization to capture customer inquiries in Namakkal.",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Poultry Farm & Transport Fleet Custom Software",
-                    description: "Tailored ERP portals, flock batch trackers, and transport billing systems.",
-                  },
-                },
-              ],
-            },
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: faqs.map((faq) => ({
-              "@type": "Question",
-              name: faq.question,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: faq.answer,
-              },
-            })),
-          },
-        ]}
-      />
 
       {/* ── 1. Hero Section: Multi-Slide Hero Slider (Matched to HomeHero Style) ─ */}
       <NamakkalHeroSlider />
@@ -489,11 +358,11 @@ export const NamakkalPage: React.FC = () => {
       <section className="py-8 sm:py-12 bg-white border-b border-border">
         <Container size="wide">
           <DirectAnswerBox
-            question="Why is Real Result the best digital marketing company in Namakkal?"
-            summary="Real Result Marketing is the top-ranked digital marketing company in Namakkal and Paramathi Velur, delivering end-to-end growth solutions including #1 Google SEO rankings, Google Maps 3-pack dominance, high-ROI Google Ads, social media marketing, and custom web/ERP software. Our deep local expertise in Namakkal's poultry, transport fleet, and agro-industrial sectors ensures measurable revenue growth and verified customer inquiries."
+            question="Which digital marketing agency serves Namakkal?"
+            summary="Real Result Marketing is a digital marketing agency based in Paramathi Velur, Namakkal district, about 25 km from Namakkal town. It provides SEO, Google Maps (local SEO), Google Ads, social media marketing, AI search optimisation, websites and custom ERP software, with specialist experience in Namakkal's poultry, transport, lorry body-building and education sectors."
             takeaways={[
-              "Verified Regional Facility: Paramathi Velur, Namakkal District, Tamil Nadu 638182",
-              "Proven #1 Google Rankings across Namakkal, Paramathi Velur, Tiruchengode, & Rasipuram",
+              "Office: Padamudipalayam, Paramathi Velur, Namakkal District 638182",
+              "Local search campaigns across Namakkal, Tiruchengode, Rasipuram & Paramathi Velur",
               "Deep specialization in Poultry Farm ERP, Transport Logistics & Lorry Body Works marketing",
               "Complete Full-Funnel Growth: SEO + Performance PPC + High-Speed Websites + Social Media",
             ]}
@@ -579,8 +448,8 @@ export const NamakkalPage: React.FC = () => {
 
                 <div className="grid grid-cols-2 gap-4 pt-2">
                   <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1">
-                    <div className="text-2xl font-bold text-gold">#1</div>
-                    <div className="text-xs text-gray-300">Google Search Rank for Core Keywords</div>
+                    <div className="text-2xl font-bold text-gold">GEO</div>
+                    <div className="text-xs text-gray-300">Visibility in Google &amp; AI Search Answers</div>
                   </div>
                   <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1">
                     <div className="text-2xl font-bold text-gold">10x</div>
@@ -926,7 +795,7 @@ export const NamakkalPage: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-gold font-bold shrink-0">✓</span>
-                  <span>Agent-native SEO &amp; GEO protocols ensuring your brand is cited #1 by AI search engines.</span>
+                  <span>Structured data and answer-first content that help AI search engines cite your brand.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-gold font-bold shrink-0">✓</span>
@@ -1148,15 +1017,15 @@ export const NamakkalPage: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-primary">Namakkal Office Hub:</strong>
-                    <span className="text-secondary">Salem Road, Namakkal, Tamil Nadu 637001</span>
+                    <strong className="block text-primary">Our Office (about 25 km from Namakkal):</strong>
+                    <span className="text-secondary">{SEO_CONFIG.displayAddress}</span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <Phone className="w-5 h-5 text-gold-600 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-primary">Direct Direct Hotline:</strong>
+                    <strong className="block text-primary">Phone &amp; WhatsApp:</strong>
                     <a href="tel:+918111033390" className="text-gold-700 font-semibold hover:underline">
                       +91 81110 33390
                     </a>
@@ -1174,7 +1043,7 @@ export const NamakkalPage: React.FC = () => {
 
               <div className="pt-2 flex flex-wrap gap-3">
                 <a
-                  href="/review"
+                  href={GOOGLE_REVIEW_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gold-600 hover:bg-gold-700 text-white text-xs font-bold uppercase tracking-wider shadow-sm transition-all cursor-pointer"
@@ -1273,8 +1142,8 @@ export const NamakkalPage: React.FC = () => {
                     }`}
                   />
                 </button>
-                {openFaq === idx && (
-                  <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-secondary leading-relaxed border-t border-border/50 bg-white">
+                {(
+                  <div hidden={!(openFaq === idx)} className="px-6 pb-6 pt-1 text-sm sm:text-base text-secondary leading-relaxed border-t border-border/50 bg-white">
                     {faq.answer}
                   </div>
                 )}
@@ -1283,6 +1152,8 @@ export const NamakkalPage: React.FC = () => {
           </div>
         </Container>
       </section>
+
+      <LocalMarketSections loc={loc} />
 
       {/* ── 6. High-Converting CTA Banner ──────────────────────────────────── */}
       <section className="py-20 bg-charcoal text-white relative overflow-hidden">

@@ -36,8 +36,8 @@ export const ContactFAQItem: React.FC<FAQProps> = ({
         </div>
       </button>
 
-      {isOpen && (
-        <div className="pt-3 text-xs sm:text-[13px] text-[#86868B] leading-relaxed font-normal">
+      {(
+        <div hidden={!(isOpen)} className="pt-3 text-xs sm:text-[13px] text-[#86868B] leading-relaxed font-normal">
           {answer}
         </div>
       )}

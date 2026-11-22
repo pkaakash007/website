@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
 import { openLeadModal } from "@/components/common/LeadModal";
 import { ArrowRight } from "lucide-react";
@@ -91,7 +91,7 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
     category: "marketing-seo",
     categoryLabel: "Marketing & SEO",
     image: "/images/services/seo-geo-ai-search.webp",
-    simpleDesc: "Get your business listed #1 on Google Maps and search results so nearby customers call you first.",
+    simpleDesc: "Get your business to the top of Google Maps and search results so nearby customers call you first.",
     keyPoints: [
       "Top 3 rank on Google Maps for local searches",
       "More directions, phone calls, and showroom visits",
@@ -114,7 +114,7 @@ export const ALL_IOS_SERVICES: ServiceIOSCardItem[] = [
       "Direct response to customer comments and messages",
     ],
     bestFor: "Fashion stores, restaurants, salons, and retail shops",
-    actionUrl: "/services/social-media-marketing",
+    actionUrl: "/digital-marketing/social-media-marketing/",
   },
   // ── 3. Creative, Branding & Media ──
   {

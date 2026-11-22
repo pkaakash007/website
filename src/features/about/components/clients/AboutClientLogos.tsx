@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
 import { ArrowRight, CheckCircle2, Building2 } from "lucide-react";
 import { CLIENT_LOGOS, CLIENT_CATEGORIES, ClientLogoItem } from "../../data/clientLogosData";

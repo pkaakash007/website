@@ -1,7 +1,6 @@
 "use client";
 
 import React, { lazy, Suspense } from "react";
-import { SEOHead } from "@/components/seo/SEOHead";
 import HomeHero from "@/features/home/components/hero/HomeHero";
 import HomeBrandsTrustUs from "@/features/home/components/HomeBrandsTrustUs";
 
@@ -18,11 +17,6 @@ const HomeLeadBanner = lazy(() => import("@/features/home/components/cta/HomeLea
 export const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <SEOHead
-        title="Real Result | Best Digital Marketing Agency in Tamil Nadu"
-        description="Real Result is Tamil Nadu's premier digital marketing, SEO, Google Ads, and custom enterprise software development agency."
-        canonicalPath="/"
-      />
 
       {/* 1. Hero: Core Agency Positioning & 3D Centerpiece */}
       <HomeHero />

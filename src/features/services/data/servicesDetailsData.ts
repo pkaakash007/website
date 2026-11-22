@@ -433,7 +433,7 @@ export const DETAILED_SERVICES_MAP: Record<string, DetailedServiceInfo> = {
     categoryLabel: "Marketing & SEO",
     image: "/images/services/seo-geo-ai-search.webp",
     tagline: "Dominate the Google 3-Pack Maps and organic search so nearby customers call you instead of competitors.",
-    simpleDesc: "Get your business listed #1 on Google Maps and search results so nearby customers call you first.",
+    simpleDesc: "Get your business to the top of Google Maps, search results and AI answers so nearby customers call you first.",
     whyYourProductNeedsThis: {
       heading: "Why Google Maps ranking is the most valuable asset for local business",
       summary: "When someone needs a clinic, school, textile showroom, lawyer, or industrial equipment, they open Google Maps and call one of the top 3 businesses shown. If your Google Business Profile isn't optimized, you are practically invisible to local buyers. Local SEO brings continuous phone calls every week without paying for clicks.",

@@ -106,8 +106,8 @@ export const MarketingFAQAccordion: React.FC = () => {
                     />
                   </button>
 
-                  {isOpen && (
-                    <div className="pt-2 pb-3 text-sm sm:text-base text-neutral-600 leading-relaxed font-normal">
+                  {(
+                    <div hidden={!(isOpen)} className="pt-2 pb-3 text-sm sm:text-base text-neutral-600 leading-relaxed font-normal">
                       {faq.answer}
                     </div>
                   )}

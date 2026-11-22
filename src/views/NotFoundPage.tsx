@@ -1,18 +1,12 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Home, ArrowRight, Phone } from "lucide-react";
-import { SEOHead } from "@/components/seo/SEOHead";
 
 export const NotFoundPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-[#F5F5F7] text-[#1D1D1F] justify-center items-center py-24 px-4 sm:px-6">
-      <SEOHead
-        title="Page Not Found | Real Result"
-        description="Find your way to services, contact details, or the homepage of Real Result."
-        canonicalPath="/404/"
-      />
 
       <div className="max-w-md w-full bg-white p-8 sm:p-12 rounded-3xl border border-black/[0.06] shadow-xl text-center">
         <span className="text-5xl font-black text-[#0071E3] block mb-4">404</span>

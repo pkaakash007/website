@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, Link, Navigate } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
-import { SEOHead } from "@/components/seo/SEOHead";
 import { openLeadModal } from "@/components/common/LeadModal";
 import { getWhatsAppUrl } from "@/config";
 import {
@@ -131,11 +130,6 @@ export const IndustryDetailPage: React.FC<{ slug?: string }> = ({ slug: propSlug
 
   return (
     <div className="flex flex-col min-h-screen font-sans bg-white text-neutral-900">
-      <SEOHead
-        title={`${industry.name} Digital Strategy & Growth | Real Result`}
-        description={industry.heroSubheadline}
-        canonicalPath={`/industries/${industry.slug}`}
-      />
 
       {/* ── 1. Hero Section (White Editorial Layout with Right Image Blend) ── */}
       <section className="relative pt-24 pb-16 sm:pt-32 sm:pb-24 border-b border-neutral-200 bg-white text-neutral-900 overflow-hidden">
@@ -306,8 +300,8 @@ export const IndustryDetailPage: React.FC<{ slug?: string }> = ({ slug: propSlug
                         }`}
                       />
                     </button>
-                    {isOpen && (
-                      <div className="pt-2.5 pb-2 text-sm text-neutral-600 leading-relaxed font-normal">
+                    {(
+                      <div hidden={!(isOpen)} className="pt-2.5 pb-2 text-sm text-neutral-600 leading-relaxed font-normal">
                         {faq.answer}
                       </div>
                     )}

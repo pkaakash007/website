@@ -6,11 +6,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "worker:dev": "wrangler dev",
-    "deploy": "next build && wrangler deploy",
+    "start": "npx wrangler dev",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p worker",
     "validate:seo": "node scripts/validate-seo.cjs",
-    "setup:dns": "node scripts/setup-dns-aid.cjs"
+    "deploy": "next build && node scripts/validate-seo.cjs && wrangler deploy"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -19,18 +18,14 @@
     "next": "^16.4.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.0",
-    "tailwind-merge": "^2.5.2",
-    "three": "^0.185.1"
+    "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260907.1",
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@types/three": "^0.185.4",
     "autoprefixer": "^10.4.19",
-    "pngjs": "^7.0.0",
     "postcss": "^8.4.39",
     "sharp": "^0.35.4",
     "tailwindcss": "^3.4.6",

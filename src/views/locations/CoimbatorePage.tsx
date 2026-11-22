@@ -1,10 +1,9 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
-import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { DirectAnswerBox } from "@/components/seo/DirectAnswerBox";
 import { TAMIL_NADU_LOCATIONS } from "@/config/seo";
@@ -16,32 +15,6 @@ export const CoimbatorePage: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <SEOHead
-        title="Best Digital Marketing Agency & SEO Company in Coimbatore | Real Result"
-        description="Top digital marketing agency and custom software development company in Coimbatore, Tamil Nadu. Dominating Google Maps, B2B SEO, Google Ads, and custom SaaS web apps."
-        canonicalPath="/locations/coimbatore"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: "Real Result - Best Digital Marketing Agency & Company in Coimbatore",
-          alternateName: "Real Result Marketing Coimbatore",
-          url: "https://realresult.in/locations/coimbatore",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Coimbatore",
-            addressRegion: "Tamil Nadu",
-            postalCode: "641018",
-            addressCountry: "IN",
-          },
-          geo: {
-            "@type": "GeoCoordinates",
-            latitude: loc.geo.latitude,
-            longitude: loc.geo.longitude,
-          },
-          telephone: "+918111033390",
-          areaServed: "Coimbatore, Tamil Nadu",
-        }}
-      />
 
       <section className="pt-12 pb-16 sm:pt-20 sm:pb-24 bg-white border-b border-border">
         <Container size="wide">
@@ -76,7 +49,7 @@ export const CoimbatorePage: React.FC = () => {
                 "B2B export SEO targeting US, European, and Middle Eastern industrial buyers",
                 "Google Business Profile 3-pack domination across Coimbatore commercial zones",
                 "Custom web and software development replacing slow legacy ERP tools",
-                "Direct local client management from our nearby Kongu headquarters",
+                "Client management from our Paramathi Velur office",
               ]}
             />
 

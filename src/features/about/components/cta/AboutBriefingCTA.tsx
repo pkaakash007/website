@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
 import { openLeadModal } from "@/components/common/LeadModal";
 import { SEO_CONFIG } from "@/config/seo";
@@ -55,13 +55,13 @@ export const AboutBriefingCTA: React.FC = () => {
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#1D1D1F] text-sm">Central Operations</h4>
-                  <span className="text-[11px] text-neutral-400">Headquarters Lab</span>
+                  <h4 className="font-semibold text-[#1D1D1F] text-sm">Our Office</h4>
+                  <span className="text-[11px] text-neutral-500">Paramathi Velur, Namakkal District</span>
                 </div>
               </div>
 
               <p className="text-xs text-[#86868B] leading-relaxed">
-                {SEO_CONFIG.headquarters.streetAddress}, {SEO_CONFIG.headquarters.addressLocality}, {SEO_CONFIG.headquarters.addressRegion} {SEO_CONFIG.headquarters.postalCode}, India
+                {SEO_CONFIG.displayAddress}
               </p>
 
               <div className="pt-3 border-t border-black/[0.06] flex items-center justify-between">

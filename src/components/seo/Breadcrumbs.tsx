@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { ChevronRight, Home } from "lucide-react";
 
 export interface BreadcrumbItem {
@@ -12,7 +12,9 @@ export interface BreadcrumbsProps {
   className?: string;
 }
 
-export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = "" }) => {
+export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items: rawItems, className = "" }) => {
+  // Home is always rendered as the leading icon link, so drop duplicate "Home" items.
+  const items = rawItems.filter((item) => item.href !== "/" && item.label !== "Home");
   return (
     <nav
       aria-label="Breadcrumb"

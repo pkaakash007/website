@@ -1,31 +1,26 @@
-export interface SEOConfig {
-  siteName: string;
-  legalName: string;
-  url: string;
-  domain: string;
-  logo: string;
-  description: string;
-  telephone: string;
-  displayPhone: string;
-  email: string;
-  headquarters: {
-    streetAddress: string;
-    addressLocality: string;
-    addressRegion: string;
-    postalCode: string;
-    addressCountry: string;
-    geo: {
-      latitude: number;
-      longitude: number;
-    };
-  };
-  socialProfiles: string[];
-  serviceAreas: string[];
-  businessHours: string;
+/**
+ * Single source of truth for business facts (NAP), brand profiles and the
+ * service-area locations. Everything that renders an address, phone number,
+ * schema.org entity, sitemap entry, llms.txt or Markdown-for-agents response
+ * must read from here so the details stay identical everywhere — consistent
+ * NAP is a core local-SEO ranking signal.
+ *
+ * This file must stay framework-free (no React, no Next imports): the
+ * Cloudflare worker imports it too.
+ */
+
+export const SITE_URL = "https://realresult.in";
+
+export interface FaqItem {
+  question: string;
+  answer: string;
 }
 
 export const GOOGLE_MAPS_URL =
   "https://www.google.com/maps/place/Real+Result+Marketing/@11.1112024,78.0010096,17z/data=!3m1!4b1!4m6!3m5!1s0x3babd5a621e9d483:0x7610d4ed000d0c45!8m2!3d11.1111972!4d78.0058805!16s%2Fg%2F11p1gkwbj4";
+
+export const GOOGLE_REVIEW_URL =
+  "https://search.google.com/local/writereview?placeid=ChIJCeVk0hrVqzsRp7foI1ppMUo";
 
 export const SOCIAL_LINKS = {
   google: GOOGLE_MAPS_URL,
@@ -40,146 +35,211 @@ export const SOCIAL_LINKS = {
   quora: "https://www.quora.com/profile/Real-Result-1",
 };
 
-export const SEO_CONFIG: SEOConfig = {
+export const SEO_CONFIG = {
   siteName: "Real Result Marketing",
+  shortName: "Real Result",
   legalName: "Real Result Marketing & Technology Solutions Private Limited",
-  url: "https://realresult.in",
+  url: SITE_URL,
   domain: "realresult.in",
-  logo: "https://realresult.in/brand/real-result-marketing-logo-tamil-nadu.png",
+  locale: "en_IN",
+  language: "en-IN",
+  /** Square brand mark used for schema.org `logo` (min 112x112 for Google). */
+  logo: `${SITE_URL}/brand/real-result-marketing-logo-tamil-nadu.png`,
+  logoWidth: 250,
+  logoHeight: 213,
+  /** 1200x630 social preview card. */
+  ogImage: `${SITE_URL}/og-image.jpg`,
   description:
-    "Real Result Marketing is the best digital marketing agency and custom software development company in Tamil Nadu, India. Headquartered in Paramathi Velur, Namakkal with regional operations across Salem, Erode, and Coimbatore. Delivering ROI-focused SEO, GEO, Google Ads, web applications, and enterprise AI software.",
+    "Real Result Marketing is a digital marketing agency in Paramathi Velur, Namakkal district, Tamil Nadu. We help businesses in Namakkal, Karur and Paramathi Velur win customers with SEO, Google Ads, Google Maps (local SEO), social media marketing, AI search optimisation (GEO/AIO) and website development.",
   telephone: "+918111033390",
   displayPhone: "+91 81110 33390",
   email: "realresult.dev@gmail.com",
   headquarters: {
-    streetAddress: "High School Building, 12/32, Paramathi Velur, Padamudipalayam",
-    addressLocality: "Paramathi Velur, Namakkal",
+    streetAddress: "High School Building, 12/32, Padamudipalayam",
+    addressLocality: "Paramathi Velur",
+    addressDistrict: "Namakkal",
     addressRegion: "Tamil Nadu",
     postalCode: "638182",
     addressCountry: "IN",
-    geo: {
-      latitude: 11.1111972,
-      longitude: 78.0058805,
-    },
+    geo: { latitude: 11.1111972, longitude: 78.0058805 },
   },
+  /** One-line postal address for visible text. */
+  displayAddress:
+    "High School Building, 12/32, Padamudipalayam, Paramathi Velur, Namakkal District, Tamil Nadu 638182",
+  businessHours: "Mo-Sa 09:00-18:30",
+  openingDays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  opens: "09:00",
+  closes: "18:30",
+  priceRange: "₹₹",
   socialProfiles: [
     GOOGLE_MAPS_URL,
     SOCIAL_LINKS.facebook,
-    SOCIAL_LINKS.x,
+    SOCIAL_LINKS.instagram,
     SOCIAL_LINKS.linkedin,
     SOCIAL_LINKS.youtube,
-    SOCIAL_LINKS.instagram,
+    SOCIAL_LINKS.x,
     SOCIAL_LINKS.medium,
     SOCIAL_LINKS.reddit,
     SOCIAL_LINKS.quora,
   ],
-  serviceAreas: [
-    "Namakkal",
-    "Salem",
-    "Erode",
-    "Paramathi Velur",
-    "Coimbatore",
-    "Tamil Nadu",
-  ],
-  businessHours: "Mo-Sa 09:00-18:30",
+  /** Priority markets first. */
+  serviceAreas: ["Namakkal", "Karur", "Paramathi Velur", "Salem", "Erode", "Coimbatore", "Tamil Nadu"],
 };
 
 export interface LocationMeta {
   slug: string;
   city: string;
+  district: string;
   region: string;
+  /** Primary markets get stronger internal linking and sitemap priority. */
+  priority: "primary" | "secondary";
   title: string;
   description: string;
   industries: string[];
   localContext: string;
+  /** Towns and neighbourhoods covered from this market. */
+  areas: string[];
   postalCode: string;
-  geo: {
-    latitude: number;
-    longitude: number;
-  };
-  mapUrl?: string;
-  address?: string;
+  geo: { latitude: number; longitude: number };
+  wikipedia: string;
+  /** Approximate road distance from the Paramathi Velur office. */
+  distanceFromOffice: string;
 }
 
+/**
+ * Service-area markets. Only Paramathi Velur has a physical office; every
+ * other entry is a market we serve from there, so location pages must never
+ * publish a separate street address for them.
+ */
 export const TAMIL_NADU_LOCATIONS: Record<string, LocationMeta> = {
-  erode: {
-    slug: "erode",
-    city: "Erode",
-    region: "Kongu Region, Tamil Nadu",
-    title: "Best Digital Marketing Company in Erode | Top SEO Agency & Marketing Company - Real Result",
-    description:
-      "Looking for the best digital marketing company in Erode? Real Result is the #1 digital marketing agency in Erode providing top Google SEO, Google Ads, local Google Maps 3-pack ranking & custom software.",
-    industries: ["Textile Processing & Machinery", "Turmeric & Agro-Commodities", "Automotive Ancillaries", "Healthcare & Hospitals"],
-    localContext:
-      "As our central operations and engineering laboratory, our Erode team provides direct, on-ground consulting for Kongu region businesses transitioning from traditional channels to high-intent search, Google Ads, and automated enterprise software.",
-    postalCode: "638011",
-    geo: { latitude: 11.341, longitude: 77.7172 },
-  },
   namakkal: {
     slug: "namakkal",
     city: "Namakkal",
-    region: "Central Kongu Region, Tamil Nadu",
-    title: "Best Digital Marketing Company in Namakkal | Top SEO Agency & Web Company - Real Result",
+    district: "Namakkal",
+    region: "Kongu Nadu, Tamil Nadu",
+    priority: "primary",
+    title: "Best Digital Marketing Agency in Namakkal | Real Result",
     description:
-      "Looking for the best digital marketing company in Namakkal? Real Result is the leading digital marketing agency in Namakkal delivering #1 Google SEO rankings, Google Ads, local Maps 3-pack optimization & custom software in Namakkal & Paramathi Velur.",
+      "Real Result is a Namakkal digital marketing agency for SEO, Google Ads, Google Maps ranking, social media and websites. Local team in Paramathi Velur. Call +91 81110 33390.",
     industries: [
-      "Poultry & Egg Production Logistics",
-      "Commercial Truck Body Building & Fleet Logistics",
-      "Agro-Processing & Farming Technology",
-      "Industrial Fabrication & Machinery",
-      "Educational Institutions & Healthcare",
+      "Poultry & egg production",
+      "Truck & lorry body building",
+      "Transport & logistics fleets",
+      "Schools, colleges & coaching centres",
+      "Hospitals & clinics",
+      "Real estate & construction",
     ],
     localContext:
-      "Namakkal is India's egg capital and commercial transport powerhouse. We deliver high-intent B2B SEO, Google Maps 3-pack dominance, and automated fleet/hatchery ERP software for businesses across Namakkal, Paramathi Velur, Tiruchengode, and Rasipuram.",
+      "Namakkal is India's egg capital and one of the country's biggest lorry body-building and transport hubs. We help Namakkal businesses get found on Google Search, Google Maps and AI assistants when buyers search for them, and turn those searches into calls and WhatsApp enquiries.",
+    areas: ["Namakkal Town", "Tiruchengode", "Rasipuram", "Mohanur", "Sendamangalam", "Komarapalayam", "Pallipalayam", "Paramathi Velur"],
     postalCode: "637001",
     geo: { latitude: 11.2189, longitude: 78.1674 },
-    mapUrl: "https://www.google.com/maps/place/Namakkal,+Tamil+Nadu/@11.2189,78.1674,14z",
-    address: "Salem Road, Namakkal, Tamil Nadu 637001, India",
+    wikipedia: "https://en.wikipedia.org/wiki/Namakkal",
+    distanceFromOffice: "about 25 km",
+  },
+  karur: {
+    slug: "karur",
+    city: "Karur",
+    district: "Karur",
+    region: "Kongu Nadu, Tamil Nadu",
+    priority: "primary",
+    title: "Best Digital Marketing Agency in Karur | Real Result",
+    description:
+      "Real Result is a Karur digital marketing agency for home-textile exporters, bus body builders and local businesses: SEO, Google Ads, Google Maps and websites. Call +91 81110 33390.",
+    industries: [
+      "Home textiles & export houses",
+      "Bus & coach body building",
+      "Mosquito-net & technical textiles",
+      "Retail, jewellery & showrooms",
+      "Hospitals & clinics",
+      "Schools & colleges",
+    ],
+    localContext:
+      "Karur is India's home-textile export capital and a major bus body-building centre, just across the Cauvery from our Paramathi Velur office. We help Karur manufacturers win export and B2B enquiries through Google and AI search, and help local shops and clinics rank on Google Maps.",
+    areas: ["Karur Town", "Vengamedu", "Thanthonimalai", "Pasupathipalayam", "Kulithalai", "Aravakurichi", "Krishnarayapuram", "Pugalur", "Velayuthampalayam"],
+    postalCode: "639001",
+    geo: { latitude: 10.9601, longitude: 78.0766 },
+    wikipedia: "https://en.wikipedia.org/wiki/Karur",
+    distanceFromOffice: "about 20 km",
   },
   "paramathi-velur": {
     slug: "paramathi-velur",
     city: "Paramathi Velur",
+    district: "Namakkal",
     region: "Namakkal District, Tamil Nadu",
-    title: "Best Digital Marketing Company in Paramathi Velur | Top SEO Agency & Marketing Company - Real Result",
+    priority: "primary",
+    title: "Best Digital Marketing Agency in Paramathi Velur | Real Result",
     description:
-      "Looking for the best digital marketing company in Paramathi Velur? Real Result delivers top Google SEO rankings, Google Ads, local Maps 3-pack optimization, and custom web design in Paramathi Velur, Namakkal.",
+      "Real Result's office is in Paramathi Velur. We do SEO, Google Ads, Google Maps ranking, social media and websites for Paramathi Velur, Namakkal and Karur businesses. Visit or call us.",
     industries: [
-      "Poultry & Agro-Commodities",
-      "Fleet Transport & Logistics",
-      "Retail, Showrooms & Local Services",
-      "Healthcare, Hospitals & Clinics",
+      "Poultry & agro-commodities",
+      "Betel leaf, banana & sugarcane trade",
+      "Transport & logistics",
+      "Retail, showrooms & local services",
+      "Hospitals & clinics",
     ],
     localContext:
-      "Paramathi Velur is the official registered office of Real Result Marketing. Located along the Cauvery belt connecting Namakkal, Karur, and Erode, we provide direct on-ground strategy, local Google Maps ranking, and high-ROI digital marketing.",
+      "Paramathi Velur is home to the Real Result office, on the Cauvery between Namakkal and Karur. Local businesses can meet our team in person, and we run their Google Maps listing, search ads, social media and website from right here.",
+    areas: ["Paramathi Velur Town", "Padamudipalayam", "Pothanur", "Jedarpalayam", "Pandamangalam", "Kabilarmalai", "Nanjai Edayar", "Mohanur"],
     postalCode: "638182",
     geo: { latitude: 11.1111972, longitude: 78.0058805 },
-    mapUrl: GOOGLE_MAPS_URL,
-    address: "Paramathi Velur, Namakkal District, Tamil Nadu 638182, India",
+    wikipedia: "https://en.wikipedia.org/wiki/Paramathi-Velur",
+    distanceFromOffice: "our office",
   },
   salem: {
     slug: "salem",
     city: "Salem",
-    region: "Central-Western Tamil Nadu",
-    title: "Best Digital Marketing Company in Salem | Top SEO Agency & Marketing Company - Real Result",
+    district: "Salem",
+    region: "Kongu Nadu, Tamil Nadu",
+    priority: "secondary",
+    title: "Digital Marketing Agency in Salem | SEO & Google Ads | Real Result",
     description:
-      "Looking for the best digital marketing company in Salem? Real Result delivers #1 Google SEO rankings, Google Ads, social media marketing, local search, and custom web software in Salem, TN.",
-    industries: ["Steel & Metallurgical Manufacturing", "Sago & Starch Processing", "Retail & Gold Jewelry", "Silver Artistry"],
+      "SEO, Google Ads, Google Maps ranking and websites for Salem businesses, from steel and sago units to retail and jewellery showrooms. Real Result, Tamil Nadu.",
+    industries: ["Steel & metal fabrication", "Sago & starch processing", "Retail & gold jewellery", "Silver artistry", "Textiles & handlooms"],
     localContext:
-      "Serving Salem's industrial and retail corridors with high-intent B2B search visibility, localized Google Maps optimization, and modernized billing/inventory web platforms.",
+      "We serve Salem's industrial and retail businesses with B2B search visibility, Google Maps optimisation and fast websites, managed from our Paramathi Velur office.",
+    areas: ["Salem City", "Attur", "Omalur", "Mettur", "Edappadi", "Sankagiri"],
     postalCode: "636001",
     geo: { latitude: 11.6643, longitude: 78.146 },
+    wikipedia: "https://en.wikipedia.org/wiki/Salem,_Tamil_Nadu",
+    distanceFromOffice: "about 70 km",
+  },
+  erode: {
+    slug: "erode",
+    city: "Erode",
+    district: "Erode",
+    region: "Kongu Nadu, Tamil Nadu",
+    priority: "secondary",
+    title: "Digital Marketing Agency in Erode | SEO & Google Ads | Real Result",
+    description:
+      "SEO, Google Ads, Google Maps ranking and websites for Erode textile, turmeric and healthcare businesses. Real Result serves Erode from Paramathi Velur.",
+    industries: ["Textile processing & machinery", "Turmeric & agro-commodities", "Automotive ancillaries", "Healthcare & hospitals"],
+    localContext:
+      "We help Erode businesses move from traditional channels to search, Google Ads and modern websites. Erode is an easy drive from our Paramathi Velur office.",
+    areas: ["Erode City", "Perundurai", "Bhavani", "Gobichettipalayam", "Chennimalai", "Kodumudi"],
+    postalCode: "638001",
+    geo: { latitude: 11.341, longitude: 77.7172 },
+    wikipedia: "https://en.wikipedia.org/wiki/Erode",
+    distanceFromOffice: "about 45 km",
   },
   coimbatore: {
     slug: "coimbatore",
     city: "Coimbatore",
+    district: "Coimbatore",
     region: "Western Tamil Nadu",
-    title: "Best Digital Marketing Agency in Coimbatore | Top SEO Company & Marketing Agency - Real Result",
+    priority: "secondary",
+    title: "Digital Marketing Agency in Coimbatore | SEO & PPC | Real Result",
     description:
-      "Leading digital marketing agency and custom software development company in Coimbatore, Tamil Nadu. Dominating Google Search, local SEO, precision B2B PPC, and engineering custom SaaS applications.",
-    industries: ["Foundry & Precision Engineering", "Pumps & Motors Manufacturing", "Textile Machinery", "SaaS & HealthTech", "Higher Education"],
+      "B2B SEO, Google Ads and websites for Coimbatore manufacturers, pump and foundry exporters, SaaS startups and colleges. Real Result, Tamil Nadu.",
+    industries: ["Foundry & precision engineering", "Pumps & motors", "Textile machinery", "SaaS & HealthTech", "Higher education"],
     localContext:
-      "Coimbatore is the industrial engine of Tamil Nadu. We empower Coimbatore manufacturers, exporters, and startups to outrank global competitors on Google Search and AI answer engines while automating operations with bespoke software.",
+      "We help Coimbatore manufacturers, exporters and startups get found on Google Search and AI answer engines by the buyers they want.",
+    areas: ["Coimbatore City", "Tiruppur", "Pollachi", "Mettupalayam", "Sulur"],
     postalCode: "641018",
     geo: { latitude: 11.0168, longitude: 76.9558 },
+    wikipedia: "https://en.wikipedia.org/wiki/Coimbatore",
+    distanceFromOffice: "about 130 km",
   },
 };
+
+export const PRIMARY_LOCATIONS = Object.values(TAMIL_NADU_LOCATIONS).filter((l) => l.priority === "primary");

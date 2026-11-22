@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
-import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { DirectAnswerBox } from "@/components/seo/DirectAnswerBox";
 import { TAMIL_NADU_LOCATIONS, SEO_CONFIG } from "@/config/seo";
@@ -32,6 +31,7 @@ import {
   Star,
   ShieldCheck,
 } from "lucide-react";
+import { LOCATION_FAQS } from "@/content/locationFaqs";
 
 export const SalemPage: React.FC = () => {
   const loc = TAMIL_NADU_LOCATIONS.salem;
@@ -41,119 +41,10 @@ export const SalemPage: React.FC = () => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const faqs = [
-    {
-      question: "Which is the best digital marketing company in Salem?",
-      answer:
-        "Real Result Marketing is widely recognized as the best digital marketing company in Salem, Tamil Nadu. We specialize in ROI-driven Search Engine Optimization (SEO), high-converting Google Ads, Google Maps local 3-pack dominance, and custom software systems designed for Salem's steel fabricators, sago/starch producers, silver artisans, and large-scale retail businesses.",
-    },
-    {
-      question: "What digital marketing services do you provide in Salem?",
-      answer:
-        "Our complete service suite in Salem includes: 1) Search Engine Optimization (SEO) for #1 Google rankings, 2) Google Ads & PPC Lead Generation, 3) Google Maps Local 3-Pack SEO, 4) Social Media Marketing (Instagram & Facebook Ads), 5) Custom High-Speed Website Design, and 6) Custom Business ERP & Inventory Billing Software.",
-    },
-    {
-      question: "How can SEO help manufacturing and retail businesses in Salem?",
-      answer:
-        "SEO positions your Salem enterprise directly in front of active B2B buyers searching for industrial steel products, sago supplies, and consumer retail items. By capturing top Google search rankings, you receive consistent high-intent inquiries without having to pay for every click.",
-    },
-    {
-      question: "How quickly can my Salem business rank in Google Maps 3-Pack?",
-      answer:
-        "Most Salem businesses see dramatic ranking improvements in Google Maps within 30 to 60 days following our comprehensive local citation building, profile optimization, localized geo-tagging, and automated review acquisition strategy.",
-    },
-    {
-      question: "Do you offer in-person consultations in Salem?",
-      answer:
-        "Yes. Headquartered in the nearby Kongu corridor (Erode), our senior strategists and technical consultants regularly travel across Salem, Omalur, Attur, and Mettur for direct, in-person discovery meetings and quarterly business reviews.",
-    },
-  ];
+  const faqs = LOCATION_FAQS["salem"];
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <SEOHead
-        title="Best Digital Marketing Company in Salem | Top SEO & PPC Agency - Real Result"
-        description="Looking for the best digital marketing company in Salem? Real Result delivers #1 Google SEO rankings, Google Ads, social media & custom web software in Salem, TN."
-        canonicalPath="/locations/salem"
-        schema={[
-          {
-            "@context": "https://schema.org",
-            "@type": ["LocalBusiness", "ProfessionalService"],
-            "@id": "https://realresult.in/locations/salem#business",
-            name: "Real Result - Best Digital Marketing Company in Salem",
-            alternateName: "Real Result Marketing Salem",
-            url: "https://realresult.in/locations/salem",
-            logo: SEO_CONFIG.logo,
-            image: SEO_CONFIG.logo,
-            telephone: SEO_CONFIG.telephone,
-            email: SEO_CONFIG.email,
-            priceRange: "$$",
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "96",
-              bestRating: "5",
-              worstRating: "1",
-            },
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Salem",
-              addressRegion: "Tamil Nadu",
-              postalCode: "636001",
-              addressCountry: "IN",
-            },
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: loc.geo.latitude,
-              longitude: loc.geo.longitude,
-            },
-            openingHours: "Mo-Sa 09:00-18:30",
-            areaServed: ["Salem", "Attur", "Mettur", "Omalur", "Sankari", "Tamil Nadu"],
-            hasOfferCatalog: {
-              "@type": "OfferCatalog",
-              name: "Digital Marketing & Software Services in Salem",
-              itemListElement: [
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Search Engine Optimization (SEO) in Salem",
-                    description: "High-ranking Google SEO to outrank competitors and capture B2B buyers.",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Google Ads & PPC Lead Generation",
-                    description: "Targeted paid search campaigns for high-converting customer inquiries.",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Google Maps 3-Pack Local SEO in Salem",
-                    description: "Dominate Google Maps local pack for Salem shoppers and commercial clients.",
-                  },
-                },
-              ],
-            },
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: faqs.map((faq) => ({
-              "@type": "Question",
-              name: faq.question,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: faq.answer,
-              },
-            })),
-          },
-        ]}
-      />
 
       {/* ── 1. Hero Section ────────────────────────────────────────────────── */}
       <section className="pt-12 pb-16 sm:pt-20 sm:pb-24 bg-white border-b border-border">
@@ -183,12 +74,12 @@ export const SalemPage: React.FC = () => {
 
             <DirectAnswerBox
               question="Why choose Real Result as your digital marketing partner in Salem?"
-              summary="Real Result Marketing is Salem's premier digital marketing agency, delivering proven #1 Google search rankings, Google Maps 3-pack dominance, high-converting paid search advertising, and custom business software. We combine deep knowledge of Salem's B2B industrial corridors and retail clusters with data-backed digital campaigns that drive measurable revenue growth."
+              summary="Real Result Marketing serves Salem from its office in Paramathi Velur, Namakkal district. The team provides SEO, Google Maps (local SEO), Google Ads, websites and custom business software, combining knowledge of Salem's industrial and retail clusters with campaigns measured against real enquiries and sales."
               takeaways={[
                 "B2B search visibility for Salem industrial, steel, and agro-processing clusters",
                 "Google Maps 3-pack dominance across Salem city and commercial zones",
                 "Custom web and inventory software replacing manual spreadsheets",
-                "Dedicated on-ground consulting from our nearby Kongu headquarters",
+                "In-person meetings from our Paramathi Velur office (about 70 km)",
               ]}
             />
 
@@ -274,8 +165,8 @@ export const SalemPage: React.FC = () => {
 
                 <div className="grid grid-cols-2 gap-4 pt-2">
                   <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1">
-                    <div className="text-2xl font-bold text-gold">#1</div>
-                    <div className="text-xs text-gray-300">Google Search Rank for Commercial Terms</div>
+                    <div className="text-2xl font-bold text-gold">GEO</div>
+                    <div className="text-xs text-gray-300">Visibility in Google &amp; AI Search Answers</div>
                   </div>
                   <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1">
                     <div className="text-2xl font-bold text-gold">300%+</div>
@@ -428,8 +319,8 @@ export const SalemPage: React.FC = () => {
                     }`}
                   />
                 </button>
-                {openFaq === idx && (
-                  <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-secondary leading-relaxed border-t border-border/50 bg-white">
+                {(
+                  <div hidden={!(openFaq === idx)} className="px-6 pb-6 pt-1 text-sm sm:text-base text-secondary leading-relaxed border-t border-border/50 bg-white">
                     {faq.answer}
                   </div>
                 )}

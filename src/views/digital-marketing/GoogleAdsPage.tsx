@@ -1,11 +1,10 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
-import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { DirectAnswerBox } from "@/components/seo/DirectAnswerBox";
 import { openLeadModal } from "@/components/common/LeadModal";
@@ -21,23 +20,6 @@ import {
 export const GoogleAdsPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <SEOHead
-        title="Google Ads & PPC Management Agency in Tamil Nadu | Real Result"
-        description="Maximize return on ad spend with high-intent Google Search, Shopping, Display, and YouTube campaigns managed by certified PPC specialists in Tamil Nadu."
-        canonicalPath="/digital-marketing/google-ads"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: "Google Ads & PPC Management Services",
-          provider: {
-            "@type": "Organization",
-            name: "Real Result Marketing",
-            url: "https://realresult.in",
-          },
-          serviceType: "Pay-Per-Click Advertising",
-          areaServed: "Tamil Nadu, India",
-        }}
-      />
 
       <section className="pt-12 pb-16 sm:pt-20 sm:pb-24 bg-white border-b border-border">
         <Container size="wide">

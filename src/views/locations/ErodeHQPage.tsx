@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
-import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { DirectAnswerBox } from "@/components/seo/DirectAnswerBox";
 import { TAMIL_NADU_LOCATIONS, SEO_CONFIG } from "@/config/seo";
@@ -31,6 +30,7 @@ import {
   ShieldCheck,
   Zap,
 } from "lucide-react";
+import { LOCATION_FAQS } from "@/content/locationFaqs";
 
 export const ErodeHQPage: React.FC = () => {
   const loc = TAMIL_NADU_LOCATIONS.erode;
@@ -40,128 +40,10 @@ export const ErodeHQPage: React.FC = () => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const faqs = [
-    {
-      question: "Which is the best digital marketing company in Erode?",
-      answer:
-        "Real Result Marketing is widely recognized as the best digital marketing company in Erode. Headquartered directly on Perundurai Road near Collectorate, we provide ROI-focused Search Engine Optimization (SEO), high-converting Google Ads, Google Maps 3-pack local dominance, social media marketing, and custom enterprise software for Erode's leading textile, turmeric, manufacturing, and healthcare businesses.",
-    },
-    {
-      question: "Where is the Real Result office located in Erode?",
-      answer:
-        "Our regional operations office and engineering lab is located at 148/2, Perundurai Road, Near Collectorate, Erode, Tamil Nadu 638011. You can visit us for in-person strategy sessions or reach our consulting team directly at +91 81110 33390.",
-    },
-    {
-      question: "How does SEO help textile and turmeric exporters in Erode?",
-      answer:
-        "Our specialized export SEO targets international and nationwide commercial wholesale buyers searching on Google for textile manufacturing, fabric processing, yarn spinning, and turmeric export commodities. We ensure your business ranks #1, driving qualified bulk trade inquiries directly to your sales desk.",
-    },
-    {
-      question: "What makes Real Result different from other digital marketing agencies in Erode?",
-      answer:
-        "Unlike generic agencies, Real Result combines senior in-house software engineers with elite SEO practitioners. We do not use third-party templates or automated spam. We write clean, high-speed custom code, execute scientific keyword targeting, and deliver transparent monthly ROI tracking with zero vanity metrics.",
-    },
-    {
-      question: "Do you provide custom software and ERP development in Erode?",
-      answer:
-        "Yes. We build custom cloud ERP systems, factory batch-tracking portals, distributor billing software, and high-performance React/TypeScript business applications for Erode, Bhavani, and Perundurai manufacturers.",
-    },
-  ];
+  const faqs = LOCATION_FAQS["erode"];
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <SEOHead
-        title="Best Digital Marketing Company in Erode | Top SEO Agency HQ - Real Result"
-        description="Looking for the best digital marketing company in Erode? Real Result HQ provides #1 Google SEO, Google Ads, local Maps 3-pack ranking & custom software in Erode, TN."
-        canonicalPath="/locations/erode"
-        schema={[
-          {
-            "@context": "https://schema.org",
-            "@type": ["LocalBusiness", "ProfessionalService", "Organization"],
-            "@id": "https://realresult.in/locations/erode#hq",
-            name: "Real Result - Best Digital Marketing Company in Erode (Headquarters)",
-            alternateName: "Real Result Marketing Erode HQ",
-            url: "https://realresult.in/locations/erode",
-            logo: SEO_CONFIG.logo,
-            image: SEO_CONFIG.logo,
-            telephone: SEO_CONFIG.telephone,
-            email: SEO_CONFIG.email,
-            priceRange: "$$",
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "184",
-              bestRating: "5",
-              worstRating: "1",
-            },
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "Perundurai Road, Near Collectorate",
-              addressLocality: "Erode",
-              addressRegion: "Tamil Nadu",
-              postalCode: "638011",
-              addressCountry: "IN",
-            },
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: loc.geo.latitude,
-              longitude: loc.geo.longitude,
-            },
-            openingHours: "Mo-Sa 09:00-18:30",
-            areaServed: [
-              "Erode",
-              "Perundurai",
-              "Bhavani",
-              "Gobichettipalayam",
-              "Anthiyur",
-              "Sathyamangalam",
-              "Tamil Nadu",
-            ],
-            hasOfferCatalog: {
-              "@type": "OfferCatalog",
-              name: "Digital Marketing & Custom Software Services in Erode",
-              itemListElement: [
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Search Engine Optimization (SEO) in Erode",
-                    description: "Top Google ranking strategies for local businesses, manufacturers, and exporters.",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Google Ads & PPC Management in Erode",
-                    description: "High-ROI paid search advertising delivering verified B2B leads.",
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Google Maps Local 3-Pack SEO",
-                    description: "Local Business Profile optimization across Erode, Bhavani, and Perundurai.",
-                  },
-                },
-              ],
-            },
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: faqs.map((faq) => ({
-              "@type": "Question",
-              name: faq.question,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: faq.answer,
-              },
-            })),
-          },
-        ]}
-      />
 
       {/* ── 1. Hero Section ────────────────────────────────────────────────── */}
       <section className="pt-12 pb-16 sm:pt-20 sm:pb-24 bg-white border-b border-border">
@@ -170,33 +52,33 @@ export const ErodeHQPage: React.FC = () => {
             items={[
               { label: "Home", href: "/" },
               { label: "Locations", href: "/locations/tamil-nadu" },
-              { label: "Erode Headquarters" },
+              { label: "Erode" },
             ]}
           />
 
           <div className="max-w-4xl space-y-6 mt-4">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-50 border border-gold-200 text-xs font-semibold text-gold-800">
               <Star className="w-3.5 h-3.5 fill-gold-600 text-gold-600" />
-              <span>Official Headquarters &amp; Innovation Lab · Erode, Tamil Nadu</span>
+              <span>Serving Erode from our Paramathi Velur office</span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
-              Best Digital Marketing Company in{" "}
+              Digital Marketing Agency in{" "}
               <span className="text-gold-700">Erode</span>.
             </h1>
 
             <p className="text-base sm:text-xl text-secondary leading-relaxed font-normal">
-              Direct, on-ground growth consulting and technical development from our central Erode headquarters. We help Erode's leading textile mills, turmeric traders, manufacturing enterprises, hospitals, and retail brands dominate Google search, generate verified leads, and automate operations with custom software.
+              On-ground consulting, digital marketing and web development for Erode businesses, about 45 km from our Paramathi Velur office. We help textile mills, turmeric traders, manufacturers, hospitals and retail brands get found on Google, win more enquiries and run smoother operations with custom software.
             </p>
 
             <DirectAnswerBox
-              question="Why is Real Result the top digital marketing agency in Erode?"
-              summary="Real Result Marketing operates a dedicated regional office at 148/2, Perundurai Road, Erode. We deliver proven #1 Google search rankings, Google Maps 3-pack dominance, high-converting Google Ads campaigns, and custom software systems designed specifically for the Kongu region's manufacturing, textile, agro-commodity, and healthcare enterprises."
+              question="Why do Erode businesses choose Real Result for digital marketing?"
+              summary="Real Result Marketing serves Erode from our office in Paramathi Velur, Namakkal district. We provide SEO, Google Maps (local SEO), Google Ads, websites and custom software for the Kongu region's textile, agro-commodity, manufacturing and healthcare businesses, and we meet Erode clients in person."
               takeaways={[
-                "Regional Operational Office: 148/2, Perundurai Road, Near Collectorate, Erode 638011",
-                "Proven #1 Google Rankings across Erode, Perundurai, Bhavani, and Gobichettipalayam",
+                "Office: Padamudipalayam, Paramathi Velur 638182 (about 45 km from Erode)",
+                "Local search campaigns across Erode, Perundurai, Bhavani and Gobichettipalayam",
                 "Complete in-house software engineering and performance marketing teams",
-                "Dedicated regional phone and WhatsApp support desk (+91 81110 33390)",
+                "Phone and WhatsApp support on +91 81110 33390",
               ]}
             />
 
@@ -205,7 +87,7 @@ export const ErodeHQPage: React.FC = () => {
                 variant="gold"
                 size="lg"
                 withArrow
-                onClick={() => openLeadModal("erode-hq-inquiry")}
+                onClick={() => openLeadModal("erode-inquiry")}
                 className="cursor-pointer"
               >
                 Schedule In-Person Consultation
@@ -215,7 +97,7 @@ export const ErodeHQPage: React.FC = () => {
         </Container>
       </section>
 
-      {/* ── 2. Verified HQ Details Card ────────────────────────────────────── */}
+      {/* ── 2. Contact Details Card ─────────────────────────────────────────── */}
       <section className="py-16 bg-canvas border-b border-border">
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
@@ -223,21 +105,21 @@ export const ErodeHQPage: React.FC = () => {
               <div className="space-y-4">
                 <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 uppercase tracking-wider">
                   <ShieldCheck className="w-4 h-4" />
-                  <span>Corporate Headquarters</span>
+                  <span>Our Office</span>
                 </div>
                 <h2 className="text-2xl font-bold text-primary">
-                  Erode Headquarters Information
+                  Contact Real Result for Erode Projects
                 </h2>
                 <p className="text-sm text-secondary leading-relaxed">
-                  Our central marketing laboratory and technical engineering hub, providing on-ground consulting for businesses across the Kongu corridor.
+                  Our team works from Paramathi Velur and travels to Erode for strategy meetings, site visits and shoots.
                 </p>
 
                 <div className="space-y-3 pt-2 text-sm text-secondary">
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-gold-700 shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-primary block">Official Address:</strong>
-                      148/2, Perundurai Road, Near Collectorate, Erode, Tamil Nadu 638011, India
+                      <strong className="text-primary block">Office Address:</strong>
+                      {SEO_CONFIG.displayAddress}
                     </div>
                   </div>
 
@@ -271,13 +153,13 @@ export const ErodeHQPage: React.FC = () => {
             <div className="lg:col-span-6 p-8 rounded-3xl bg-charcoal text-white border border-charcoal-border shadow-card flex flex-col justify-between space-y-6">
               <div className="space-y-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-gold-400">
-                  Headquarters Capabilities
+                  Our Capabilities
                 </p>
                 <h2 className="text-2xl font-bold text-white">
                   Why Erode Market Leaders Choose Real Result
                 </h2>
                 <p className="text-sm text-gray-300 leading-relaxed">
-                  We combine enterprise-grade search algorithms with deep regional market knowledge to give your business an insurmountable competitive advantage.
+                  We combine technical search expertise with deep knowledge of the Kongu market and its buyers.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 pt-2">
@@ -290,8 +172,8 @@ export const ErodeHQPage: React.FC = () => {
                     <div className="text-xs text-gray-300">Target Return on Marketing Spend</div>
                   </div>
                   <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1">
-                    <div className="text-2xl font-bold text-gold">#1</div>
-                    <div className="text-xs text-gray-300">Google Rank for High-Intent Queries</div>
+                    <div className="text-2xl font-bold text-gold">GEO</div>
+                    <div className="text-xs text-gray-300">Visibility in Google &amp; AI Search Answers</div>
                   </div>
                   <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1">
                     <div className="text-2xl font-bold text-gold">500+</div>
@@ -336,7 +218,7 @@ export const ErodeHQPage: React.FC = () => {
                 Search Engine Optimization (SEO)
               </h3>
               <p className="text-sm text-secondary leading-relaxed">
-                Rank #1 on Google for high-intent search terms across Erode, Tamil Nadu, and international export markets.
+                Rank on Google for the high-intent searches your buyers make across Erode, Tamil Nadu and international export markets.
               </p>
             </div>
 
@@ -436,8 +318,8 @@ export const ErodeHQPage: React.FC = () => {
                     }`}
                   />
                 </button>
-                {openFaq === idx && (
-                  <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-secondary leading-relaxed border-t border-border/50 bg-white">
+                {(
+                  <div hidden={!(openFaq === idx)} className="px-6 pb-6 pt-1 text-sm sm:text-base text-secondary leading-relaxed border-t border-border/50 bg-white">
                     {faq.answer}
                   </div>
                 )}
@@ -453,13 +335,13 @@ export const ErodeHQPage: React.FC = () => {
         <Container size="wide">
           <div className="max-w-3xl space-y-6">
             <span className="text-xs font-mono uppercase tracking-widest text-gold font-bold">
-              Erode Headquarters
+              Erode Digital Marketing
             </span>
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
-              Ready to Partner with Erode's Leading Growth Agency?
+              Ready to Grow Your Erode Business Online?
             </h2>
             <p className="text-base sm:text-lg text-gray-300">
-              Visit our Erode office on Perundurai Road or request an on-ground growth audit and custom proposal from our senior strategists.
+              Book a free growth audit. We will review your website, Google Maps listing and ads, then share a clear plan and a fixed quote.
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <Button

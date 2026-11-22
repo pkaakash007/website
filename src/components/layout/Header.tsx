@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "@/utils/router-adapter";
 import {
   Menu,
   X,
@@ -98,7 +98,7 @@ export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
         { label: "Search Engine Optimization (SEO)", href: "/digital-marketing/seo" },
         { label: "Performance Digital Marketing", href: "/digital-marketing" },
         { label: "Social Media & Meta Ads", href: "/digital-marketing/social-media-marketing" },
-        { label: "Brand Identity & Graphic Design", href: "/services#brand-identity-logo" },
+        { label: "Brand Identity & Graphic Design", href: "/services/brand-identity-logo/" },
       ],
       footerLink: { label: "Explore All Services", href: "/services" },
     },
@@ -185,7 +185,7 @@ export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
         { label: "Schedule Strategic Partnership Briefing", isModal: true },
         { label: "Direct Founder Discussion Desk", isWhatsApp: true },
         { label: "No Code Lock-In Policy", href: "/about#values" },
-        { label: "Erode Global HQ & Regional Desks", href: "/contact" },
+        { label: "Areas We Serve", href: "/locations/tamil-nadu/" },
         { label: "Corporate GST & Registration", href: "/contact" },
       ],
     },
@@ -197,9 +197,9 @@ export const DROPDOWN_DATA: Record<string, NavDropdownData> = {
       items: [
         { label: "Direct WhatsApp Support", isWhatsApp: true },
         { label: "Phone Consultation Call", isPhone: true },
-        { label: "Namakkal & Paramathi Velur Office", href: "/contact" },
-        { label: "Erode HQ & Salem Regional Office", href: "/contact" },
-        { label: "Coimbatore Technology Center", href: "/contact" },
+        { label: "Digital Marketing in Namakkal", href: "/locations/namakkal/" },
+        { label: "Digital Marketing in Karur", href: "/locations/karur/" },
+        { label: "Our Office in Paramathi Velur", href: "/locations/paramathi-velur/" },
       ],
       footerLink: { label: "Explore All Contact Channels", href: "/contact" },
     },

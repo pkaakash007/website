@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
 import { openLeadModal } from "@/components/common/LeadModal";
@@ -273,11 +272,6 @@ export const SERVICES_CATALOG: ServiceOffering[] = [
 export const ServicesPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white font-sans text-[#0E2036] selection:bg-[#1d4ed8] selection:text-white">
-      <SEOHead
-        title="Our Services | Full-Stack Digital Marketing & Software Engineering Company"
-        description="Explore Real Result's core services: Creative Digital Strategy, Media Planning & Buying, SEO, UI/UX Design, Mobile Apps, Web Engineering, Video Production, and Cloud Security."
-        canonicalPath="/services"
-      />
 
       {/* ── 0. Top Intro Header: All your digital operations. Engineered to perfection. ── */}
       <ServicesTopIntroHeader />

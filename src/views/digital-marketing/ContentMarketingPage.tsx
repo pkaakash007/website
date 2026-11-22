@@ -1,11 +1,10 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
-import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { DirectAnswerBox } from "@/components/seo/DirectAnswerBox";
 import { openLeadModal } from "@/components/common/LeadModal";
@@ -14,23 +13,6 @@ import { FileText, Award, BookOpen, PenTool } from "lucide-react";
 export const ContentMarketingPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <SEOHead
-        title="Content Marketing & Digital PR Agency in Tamil Nadu | Real Result"
-        description="Build unbeatable topical authority and organic link equity with expert-led content marketing, case studies, whitepapers, and regional digital PR across Tamil Nadu."
-        canonicalPath="/digital-marketing/content-marketing"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: "Content Marketing & Digital PR Services",
-          provider: {
-            "@type": "Organization",
-            name: "Real Result Marketing",
-            url: "https://realresult.in",
-          },
-          serviceType: "Content Strategy & PR",
-          areaServed: "Tamil Nadu, India",
-        }}
-      />
 
       <section className="pt-12 pb-16 sm:pt-20 sm:pb-24 bg-white border-b border-border">
         <Container size="wide">

@@ -13,7 +13,7 @@ export const DirectAnswerBox: React.FC<DirectAnswerBoxProps> = ({
   question,
   summary,
   takeaways = [],
-  entityAttribution = "Real Result Enterprise Discovery Standards (Erode, Tamil Nadu)",
+  entityAttribution = "Paramathi Velur, Namakkal District, Tamil Nadu",
   className = "",
 }) => {
   return (
@@ -26,7 +26,7 @@ export const DirectAnswerBox: React.FC<DirectAnswerBoxProps> = ({
           <FileText className="w-3.5 h-3.5" />
         </div>
         <span className="text-xs font-semibold text-primary">
-          Executive Summary
+          Quick Answer
         </span>
       </div>
 
@@ -50,7 +50,7 @@ export const DirectAnswerBox: React.FC<DirectAnswerBoxProps> = ({
       )}
 
       <div className="mt-4 pt-3 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-muted">
-        <span>Entity: Real Result Marketing</span>
+        <span>Real Result Marketing</span>
         <span>{entityAttribution}</span>
       </div>
     </section>

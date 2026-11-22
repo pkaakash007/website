@@ -1,10 +1,9 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { CheckCircle2, ArrowRight, Home } from "lucide-react";
-import { SEOHead } from "@/components/seo/SEOHead";
-import { THANK_YOU_CONTENT } from "@/data/websiteContent";
+import { THANK_YOU_CONTENT } from "@/content/pageCopy";
 import { REAL_RESULT_CONFIG } from "@/config";
 
 export const ThankYouPage: React.FC = () => {
@@ -12,11 +11,6 @@ export const ThankYouPage: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F5F5F7] text-[#1D1D1F] justify-center items-center py-24 px-4 sm:px-6">
-      <SEOHead
-        title={content.seo.seo_title || "Enquiry Received | Real Result"}
-        description={content.seo.meta_description || "Your enquiry has been received by Real Result."}
-        canonicalPath="/thank-you/"
-      />
 
       <div className="max-w-xl w-full bg-white p-8 sm:p-12 rounded-3xl border border-black/[0.06] shadow-xl text-center">
         <div className="w-16 h-16 rounded-full bg-green-50 text-green-600 flex items-center justify-center mx-auto mb-6">

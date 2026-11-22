@@ -1,31 +1,18 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Fully static export served by the Cloudflare worker (see wrangler.jsonc).
+  output: "export",
+  // Every page is emitted as /path/index.html and canonical URLs end in "/".
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
-  trailingSlash: true,
-  experimental: {
-    agentUpgrade: 'security',
-  },
+  // Pin the workspace root (a stray lockfile in the user folder confuses detection).
   turbopack: {
-    resolveAlias: {
-      'react-router-dom': './src/utils/router-adapter.tsx',
-    },
+    root: import.meta.dirname,
   },
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      'react-router-dom': path.resolve(__dirname, 'src/utils/router-adapter.tsx'),
-    };
-    return config;
-  },
+  poweredByHeader: false,
+  reactStrictMode: true,
 };
 
 export default nextConfig;

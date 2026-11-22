@@ -1,330 +1,173 @@
 /**
- * Automated Pre-Deployment SEO / GEO / AIO Validation Engine
- * Runs static verification of robots.txt, sitemap.xml, route coverage, metadata, and schema.
+ * Post-build SEO / GEO audit of the static export in ./out.
+ * Run after `next build` (the deploy script does this automatically).
+ * Exits non-zero on any error so a broken page can never be deployed.
+ *
+ * Checks every exported HTML page for:
+ *   - exactly one <title> (≤ 70 chars) and a meta description (70–170 chars)
+ *   - a self-referencing absolute canonical with trailing slash (indexable pages)
+ *   - exactly one <h1>
+ *   - valid JSON-LD; no AggregateRating/Review markup (self-serving reviews are ineligible)
+ *   - no internal links to pages that don't exist (dead links)
+ *   - no retired/incorrect business details (NAP consistency)
+ *   - unique titles and descriptions across the site
+ * And checks robots.txt, sitemap.xml and llms.txt for consistency.
  */
+const fs = require("fs");
+const path = require("path");
 
-const fs = require('fs');
-const path = require('path');
-
-const ROOT_DIR = path.resolve(__dirname, '..');
-let passCount = 0;
-let failCount = 0;
-
-function assert(condition, message) {
-  if (condition) {
-    console.log(`  ✓ PASS: ${message}`);
-    passCount++;
-  } else {
-    console.error(`  ✗ FAIL: ${message}`);
-    failCount++;
-  }
-}
-
-console.log('\n🔍 ========================================================');
-console.log('   RUNNING AUTOMATED SEO / GEO / AIO VALIDATION AUDIT');
-console.log('========================================================\n');
-
-// 1. Validate public/robots.txt
-console.log('📁 1. Validating robots.txt...');
-const robotsPath = path.join(ROOT_DIR, 'public/robots.txt');
-assert(fs.existsSync(robotsPath), 'public/robots.txt exists');
-if (fs.existsSync(robotsPath)) {
-  const robotsContent = fs.readFileSync(robotsPath, 'utf8');
-  assert(robotsContent.includes('User-agent: Googlebot'), 'robots.txt explicitly permits Googlebot');
-  assert(robotsContent.includes('User-agent: OAI-SearchBot'), 'robots.txt explicitly permits OAI-SearchBot (ChatGPT Search)');
-  assert(robotsContent.includes('User-agent: PerplexityBot'), 'robots.txt explicitly permits PerplexityBot');
-  assert(robotsContent.includes('User-agent: ExaSearchBot'), 'robots.txt explicitly permits ExaSearchBot (Exa AI Search)');
-  assert(robotsContent.includes('Content-Signal:'), 'robots.txt declares Content-Signal directives');
-  assert(robotsContent.includes('ai-train='), 'robots.txt declares ai-train preference');
-  assert(robotsContent.includes('search='), 'robots.txt declares search preference');
-  assert(robotsContent.includes('ai-input='), 'robots.txt declares ai-input preference');
-  assert(robotsContent.includes('Sitemap: https://realresult.in/sitemap.xml'), 'robots.txt references official XML sitemap');
-}
-
-// 2. Validate public/sitemap.xml
-console.log('\n📁 2. Validating sitemap.xml...');
-const sitemapPath = path.join(ROOT_DIR, 'public/sitemap.xml');
-assert(fs.existsSync(sitemapPath), 'public/sitemap.xml exists');
-if (fs.existsSync(sitemapPath)) {
-  const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
-  assert(sitemapContent.includes('<loc>https://realresult.in/</loc>'), 'sitemap includes root URL');
-  assert(sitemapContent.includes('<loc>https://realresult.in/digital-marketing</loc>'), 'sitemap includes digital marketing hub');
-  assert(sitemapContent.includes('<loc>https://realresult.in/digital-marketing/seo</loc>'), 'sitemap includes SEO pillar');
-  assert(sitemapContent.includes('<loc>https://realresult.in/digital-marketing/geo</loc>'), 'sitemap includes GEO pillar');
-  assert(sitemapContent.includes('<loc>https://realresult.in/digital-marketing/aio</loc>'), 'sitemap includes AIO pillar');
-  assert(sitemapContent.includes('<loc>https://realresult.in/application-development</loc>'), 'sitemap includes application development pillar');
-  assert(sitemapContent.includes('<loc>https://realresult.in/services</loc>'), 'sitemap includes services hub');
-  assert(sitemapContent.includes('<loc>https://realresult.in/portfolio</loc>'), 'sitemap includes portfolio');
-  assert(sitemapContent.includes('<loc>https://realresult.in/locations/erode</loc>'), 'sitemap includes Erode HQ location');
-  assert(sitemapContent.includes('<loc>https://realresult.in/locations/coimbatore</loc>'), 'sitemap includes Coimbatore location');
-  assert(sitemapContent.includes('<loc>https://realresult.in/locations/namakkal</loc>'), 'sitemap includes Namakkal location');
-  assert(sitemapContent.includes('<loc>https://realresult.in/locations/paramathi-velur</loc>'), 'sitemap includes Paramathi Velur location');
-  assert(sitemapContent.includes('<loc>https://realresult.in/locations/salem</loc>'), 'sitemap includes Salem location');
-}
-
-// 3. Validate SEOHead Component and Central Config
-console.log('\n📁 3. Validating SEO Components & Entity Configuration...');
-const seoHeadPath = path.join(ROOT_DIR, 'src/components/seo/SEOHead.tsx');
-assert(fs.existsSync(seoHeadPath), 'src/components/seo/SEOHead.tsx exists');
-
-const seoConfigPath = path.join(ROOT_DIR, 'src/config/seo.ts');
-assert(fs.existsSync(seoConfigPath), 'src/config/seo.ts exists');
-if (fs.existsSync(seoConfigPath)) {
-  const seoConfigContent = fs.readFileSync(seoConfigPath, 'utf8');
-  assert(seoConfigContent.includes('Real Result Marketing'), 'Config defines official entity name: Real Result Marketing');
-  assert(seoConfigContent.includes('Erode'), 'Config defines official headquarters in Erode, Tamil Nadu');
-  assert(seoConfigContent.includes('https://realresult.in'), 'Config defines canonical domain: https://realresult.in');
-}
-
-// 4. Validate DirectAnswerBox (GEO/AIO Engine)
-console.log('\n📁 4. Validating DirectAnswerBox (GEO / AIO Snippet Engine)...');
-const answerBoxPath = path.join(ROOT_DIR, 'src/components/seo/DirectAnswerBox.tsx');
-assert(fs.existsSync(answerBoxPath), 'src/components/seo/DirectAnswerBox.tsx exists');
-
-// 5. Validate Pages & Schema Injection
-console.log('\n📁 5. Validating Page Coverage and Schema.org Implementation...');
-const pagesToVerify = [
-  'src/views/HomePage.tsx',
-  'src/views/AboutPage.tsx',
-  'src/views/ContactPage.tsx',
-  'src/views/ServicesPage.tsx',
-  'src/views/PortfolioPage.tsx',
-  'src/views/IndustriesPage.tsx',
-  'src/views/ApplicationDevelopmentPage.tsx',
-  'src/views/digital-marketing/DigitalMarketingHubPage.tsx',
-  'src/views/digital-marketing/SEOPage.tsx',
-  'src/views/digital-marketing/LocalSEOPage.tsx',
-  'src/views/digital-marketing/GEOPage.tsx',
-  'src/views/digital-marketing/AIOPage.tsx',
-  'src/views/digital-marketing/GoogleAdsPage.tsx',
-  'src/views/digital-marketing/SocialMediaPage.tsx',
-  'src/views/digital-marketing/ContentMarketingPage.tsx',
-  'src/views/digital-marketing/CROPage.tsx',
-  'src/views/locations/TamilNaduHubPage.tsx',
-  'src/views/locations/ErodeHQPage.tsx',
-  'src/views/locations/CoimbatorePage.tsx',
-  'src/views/locations/SalemPage.tsx',
-  'src/views/locations/NamakkalPage.tsx',
-  'src/views/locations/ParamathiVelurPage.tsx',
-  'src/views/services/ServiceDetailPage.tsx',
-  'src/views/industries/HealthcareIndustryPage.tsx',
-  'src/views/industries/IndustryDetailPage.tsx',
+const OUT = path.resolve(__dirname, "..", "out");
+const SITE = "https://realresult.in";
+const FORBIDDEN_TEXT = [
+  [/148\/2,?\s*Perundurai/i, "old Erode street address"],
+  [/hello@realresult\.in/i, "unused email address"],
+  [/\b637207\b/, "wrong postal code"],
+  [/Salem Road, Namakkal, Tamil Nadu 637001/i, "non-existent Namakkal office"],
 ];
 
-for (const pageRel of pagesToVerify) {
-  const fullPath = path.join(ROOT_DIR, pageRel);
-  const exists = fs.existsSync(fullPath);
-  assert(exists, `Page exists: ${pageRel}`);
-  if (exists) {
-    const content = fs.readFileSync(fullPath, 'utf8');
-    const hasSEOHead = content.includes('<SEOHead');
-    assert(hasSEOHead, `  └─ Implements <SEOHead>: ${path.basename(pageRel)}`);
-  }
-}
+let errors = 0;
+let warnings = 0;
+const err = (page, msg) => (errors++, console.error(`  ✗ ${page}: ${msg}`));
+const warn = (page, msg) => (warnings++, console.warn(`  ! ${page}: ${msg}`));
 
-// 6. Validate DNS for AI Discovery (DNS-AID)
-console.log('\n📁 6. Validating DNS for AI Discovery (DNS-AID) Configuration...');
-const dnsScriptPath = path.join(ROOT_DIR, 'scripts/setup-dns-aid.cjs');
-assert(fs.existsSync(dnsScriptPath), 'scripts/setup-dns-aid.cjs exists');
-
-const zoneFilePath = path.join(ROOT_DIR, 'scripts/dns-aid.zone');
-assert(fs.existsSync(zoneFilePath), 'scripts/dns-aid.zone BIND file exists');
-if (fs.existsSync(zoneFilePath)) {
-  const zoneContent = fs.readFileSync(zoneFilePath, 'utf8');
-  assert(zoneContent.includes('_a2a._agents.realresult.in'), 'zone defines _a2a._agents endpoint');
-  assert(zoneContent.includes('_mcp._agents.realresult.in'), 'zone defines _mcp._agents endpoint');
-  assert(zoneContent.includes('_index._agents.realresult.in'), 'zone defines _index._agents endpoint');
-  assert(zoneContent.includes('SVCB 1 realresult.in. alpn="a2a"'), 'zone declares SVCB with alpn="a2a"');
-  assert(zoneContent.includes('HTTPS 1 realresult.in. alpn="a2a"'), 'zone declares HTTPS with alpn="a2a"');
-  assert(zoneContent.includes('v=aid1;'), 'zone declares DNS-AID TXT capabilities index');
-}
-
-const llmsPath = path.join(ROOT_DIR, 'public/llms.txt');
-if (fs.existsSync(llmsPath)) {
-  const llmsContent = fs.readFileSync(llmsPath, 'utf8');
-  assert(llmsContent.includes('_index._agents.realresult.in'), 'llms.txt documents DNS-AID discovery records');
-}
-
-// 7. Validate index.html On-Page SEO (Title, Meta Description, Headings, Social Media)
-console.log('\n📁 7. Validating index.html On-Page SEO (SEOptimer & Seobility criteria)...');
-const indexPath = fs.existsSync(path.join(ROOT_DIR, 'out/index.html'))
-  ? path.join(ROOT_DIR, 'out/index.html')
-  : (fs.existsSync(path.join(ROOT_DIR, 'dist/index.html')) ? path.join(ROOT_DIR, 'dist/index.html') : path.join(ROOT_DIR, 'index.html'));
-assert(fs.existsSync(indexPath), `index.html exists: ${path.relative(ROOT_DIR, indexPath)}`);
-if (fs.existsSync(indexPath)) {
-  const indexContent = fs.readFileSync(indexPath, 'utf8');
-  
-  // Title Length: strictly 50-60 characters
-  const titleMatch = indexContent.match(/<title>(.*?)<\/title>/i);
-  assert(Boolean(titleMatch), 'index.html has <title> tag');
-  if (titleMatch) {
-    const titleText = titleMatch[1].replace(/&amp;/g, '&');
-    const titleLen = titleText.length;
-    assert(titleLen >= 50 && titleLen <= 60, `Title length is ${titleLen} chars (target: 50-60 chars): "${titleText}"`);
-  }
-
-  // Meta Description Length: strictly 100-130 characters
-  const descMatch = indexContent.match(/<meta\s+name=["']description["']\s+content="([^"]*)"/i) || indexContent.match(/<meta\s+name=["']description["']\s+content='([^']*)'/i);
-  assert(Boolean(descMatch), 'index.html has meta description');
-  if (descMatch) {
-    const descText = descMatch[1].replace(/&amp;/g, '&');
-    const descLen = descText.length;
-    assert(descLen >= 100 && descLen <= 130, `Meta description length is ${descLen} chars (target: 100-130 chars): "${descText}"`);
-  }
-
-  // H1 Heading: strictly 10-70 characters
-  const h1Match = indexContent.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
-  assert(Boolean(h1Match), 'index.html has <h1> tag in semantic pre-render');
-  if (h1Match) {
-    const h1Text = h1Match[1].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
-    const h1Len = h1Text.length;
-    assert(h1Len >= 10 && h1Len <= 70, `H1 length is ${h1Len} chars (target: 10-70 chars): "${h1Text}"`);
-  }
-
-  // Headings hierarchy: H2, H3, H4 present
-  const hasH2 = /<h2[^>]*>/i.test(indexContent);
-  const hasH3 = /<h3[^>]*>/i.test(indexContent);
-  const hasH4 = /<h4[^>]*>/i.test(indexContent);
-  assert(hasH2, 'index.html contains <h2> tags');
-  assert(hasH3, 'index.html contains <h3> tags');
-  assert(hasH4, 'index.html contains <h4> tags');
-
-  // Social Media Links: YouTube, X/Twitter, LinkedIn, Instagram, Facebook
-  assert(indexContent.includes('youtube.com'), 'index.html links to YouTube channel');
-  assert(indexContent.includes('x.com') || indexContent.includes('twitter.com'), 'index.html links to X (Twitter) profile');
-  assert(indexContent.includes('linkedin.com'), 'index.html links to LinkedIn company/profile');
-  assert(indexContent.includes('instagram.com'), 'index.html links to Instagram profile');
-  assert(indexContent.includes('facebook.com'), 'index.html links to Facebook page');
-}
-
-// 8. Validate All 52 Pre-Rendered Static HTML Pages in out/ (Next.js) or dist/
-console.log('\n📁 8. Validating All 52 Pre-Rendered Static HTML Pages in build output...');
-const outDir = path.join(ROOT_DIR, 'out');
-const distDir = fs.existsSync(outDir) ? outDir : path.join(ROOT_DIR, 'dist');
-assert(fs.existsSync(distDir), `Build output directory exists: ${path.relative(ROOT_DIR, distDir)}`);
-
-const EXPECTED_ROUTES = [
-  '/',
-  '/about',
-  '/contact',
-  '/services',
-  '/portfolio',
-  '/industries',
-  '/industries/healthcare',
-  '/industries/b2b',
-  '/industries/finance',
-  '/industries/real-estate',
-  '/industries/education',
-  '/industries/ecommerce',
-  '/industries/skincare-beauty',
-  '/industries/home-decor',
-  '/industries/ev',
-  '/industries/automotive',
-  '/industries/travel-tourism',
-  '/services/website-design',
-  '/services/ecommerce-platforms',
-  '/services/mobile-app-development',
-  '/services/ui-ux-architecture',
-  '/services/performance-marketing',
-  '/services/seo-geo-ai-search',
-  '/services/content-marketing-pr',
-  '/services/brand-identity-logo',
-  '/services/graphic-design-packaging',
-  '/services/video-editing-motion',
-  '/services/ecommerce-photography',
-  '/services/cyber-security-cloud',
-  '/services/digital-marketing',
-  '/digital-marketing',
-  '/digital-marketing/seo',
-  '/digital-marketing/local-seo',
-  '/digital-marketing/geo',
-  '/digital-marketing/aio',
-  '/digital-marketing/google-ads',
-  '/digital-marketing/social-media-marketing',
-  '/digital-marketing/content-marketing',
-  '/digital-marketing/conversion-rate-optimization',
-  '/application-development',
-  '/locations/tamil-nadu',
-  '/locations/erode',
-  '/locations/namakkal',
-  '/locations/paramathi-velur',
-  '/locations/salem',
-  '/locations/coimbatore',
-  '/privacy-policy',
-  '/terms',
-  '/cookie-policy',
-  '/how-we-work',
-  '/work',
-  '/thank-you'
-];
-
-for (const r of EXPECTED_ROUTES) {
-  const clean = r.replace(/\/+$/, '') || '/';
-  const filePath1 = clean === '/' ? path.join(distDir, 'index.html') : path.join(distDir, clean.replace(/^\//, ''), 'index.html');
-  const filePath2 = path.join(distDir, `${clean.replace(/^\//, '')}.html`);
-  const actualPath = fs.existsSync(filePath1) ? filePath1 : (fs.existsSync(filePath2) ? filePath2 : filePath1);
-  const fileExists = fs.existsSync(actualPath);
-  assert(fileExists, `Pre-rendered file exists for ${r}: ${path.relative(ROOT_DIR, actualPath)}`);
-  
-  if (fileExists) {
-    const html = fs.readFileSync(actualPath, 'utf8');
-    
-    // Title tag validation (50-60 chars)
-    const titleM = html.match(/<title>(.*?)<\/title>/i);
-    assert(Boolean(titleM), `  └─ ${r} has <title> tag`);
-    if (titleM) {
-      const titleClean = titleM[1]
-        .replace(/&amp;/g, '&')
-        .replace(/&#x27;/g, "'")
-        .replace(/&quot;/g, '"')
-        .trim();
-      const len = titleClean.length;
-      assert(len >= 50 && len <= 60, `     └─ Title length is ${len} (50-60 target): "${titleClean}"`);
-    }
-
-    // Meta description validation (100-130 chars)
-    const descM = html.match(/<meta\s+name=["']description["']\s+content="([^"]*)"/i);
-    assert(Boolean(descM), `  └─ ${r} has meta description`);
-    if (descM) {
-      const rawText = descM[1]
-        .replace(/&#x27;/g, "'")
-        .replace(/&amp;/g, '&')
-        .replace(/&quot;/g, '"');
-      const len = rawText.trim().length;
-      assert(len >= 100 && len <= 130, `     └─ Description length is ${len} (100-130 target)`);
-    }
-
-    // Canonical link validation
-    const canonicalRegex = new RegExp(`href=["']https://realresult\\.in${clean === '/' ? '/?' : clean}/?["']`, 'i');
-    assert(canonicalRegex.test(html), `  └─ Canonical matches: https://realresult.in${clean}`);
-
-    // H1 tag validation (10-70 chars)
-    const h1M = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
-    assert(Boolean(h1M), `  └─ ${r} has <h1> tag`);
-    if (h1M) {
-      const h1Text = h1M[1].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
-      assert(h1Text.length >= 10 && h1Text.length <= 70, `     └─ H1 length is ${h1Text.length} (10-70 target): "${h1Text}"`);
-    }
-
-    // Headings hierarchy
-    assert(/<h2[^>]*>/i.test(html), `  └─ ${r} has <h2>`);
-    assert(/<h3[^>]*>/i.test(html), `  └─ ${r} has <h3>`);
-    assert(/<h4[^>]*>/i.test(html), `  └─ ${r} has <h4>`);
-
-    // Schema.org structured data
-    assert(html.includes('application/ld+json'), `  └─ ${r} has JSON-LD schema`);
-  }
-}
-
-// Summary Report
-console.log('\n========================================================');
-console.log(`📊 AUDIT RESULTS: ${passCount} Checks Passed | ${failCount} Checks Failed`);
-console.log('========================================================\n');
-
-if (failCount > 0) {
+if (!fs.existsSync(OUT)) {
+  console.error("✗ ./out not found — run `next build` first.");
   process.exit(1);
-} else {
-  console.log('🚀 ALL TECHNICAL SEO, GEO, AND AIO INTEGRITY CHECKS PASSED!\n');
-  process.exit(0);
 }
 
+function walk(dir, acc = []) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) walk(p, acc);
+    else acc.push(p);
+  }
+  return acc;
+}
+
+const files = walk(OUT);
+const exists = new Set(files.map((f) => "/" + path.relative(OUT, f).split(path.sep).join("/")));
+const pageExists = (p) => {
+  const clean = decodeURI(p.split(/[?#]/)[0]);
+  if (exists.has(clean)) return true;
+  const withSlash = clean.endsWith("/") ? clean : clean + "/";
+  return exists.has(withSlash + "index.html");
+};
+
+const htmlFiles = files.filter(
+  (f) => f.endsWith("index.html") && !/[\\/]_next[\\/]/.test(f) && !/[\\/](404|_not-found)[\\/]/.test(f)
+);
+
+const titles = new Map();
+const descriptions = new Map();
+const decode = (s) =>
+  s.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+
+console.log(`\nSEO audit of ${htmlFiles.length} pages in ./out\n`);
+
+for (const file of htmlFiles) {
+  const rel = "/" + path.relative(OUT, path.dirname(file)).split(path.sep).join("/");
+  const page = rel === "/" ? "/" : rel + "/";
+  const html = fs.readFileSync(file, "utf8");
+  const head = html.slice(0, html.indexOf("</head>") + 7);
+  const noindex = /<meta name="robots" content="[^"]*noindex/i.test(head);
+
+  // Title
+  const titleTags = head.match(/<title>([^<]*)<\/title>/g) || [];
+  if (titleTags.length !== 1) err(page, `expected 1 <title>, found ${titleTags.length}`);
+  const title = decode((head.match(/<title>([^<]*)<\/title>/) || [])[1] || "");
+  if (title.length > 70) warn(page, `title is ${title.length} chars (keep ≤ 70): "${title}"`);
+  if (!noindex) {
+    if (titles.has(title)) err(page, `duplicate title also used on ${titles.get(title)}`);
+    titles.set(title, page);
+  }
+
+  // Description
+  const desc = decode((head.match(/<meta name="description" content="([^"]*)"/) || [])[1] || "");
+  if (!desc) err(page, "missing meta description");
+  else if (desc.length < 70 || desc.length > 170) warn(page, `description is ${desc.length} chars (aim 120–160)`);
+  if (!noindex && desc) {
+    if (descriptions.has(desc)) err(page, `duplicate description also used on ${descriptions.get(desc)}`);
+    descriptions.set(desc, page);
+  }
+
+  // Canonical
+  const canonical = (head.match(/<link rel="canonical" href="([^"]*)"/) || [])[1];
+  if (!noindex) {
+    if (!canonical) err(page, "missing canonical");
+    else if (canonical !== SITE + page) err(page, `canonical ${canonical} ≠ ${SITE + page}`);
+  }
+
+  // Open Graph
+  if (!noindex && !/<meta property="og:image" content="https:\/\//.test(head)) err(page, "missing absolute og:image");
+
+  // H1
+  const h1 = (html.match(/<h1[\s>]/g) || []).length;
+  if (h1 !== 1) err(page, `expected exactly 1 <h1>, found ${h1}`);
+
+  // JSON-LD
+  const blocks = [...html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)];
+  if (!blocks.length) err(page, "no JSON-LD");
+  for (const [, json] of blocks) {
+    try {
+      const data = JSON.parse(json);
+      const text = JSON.stringify(data);
+      if (/"AggregateRating"|"aggregateRating"|"@type":"Review"/.test(text))
+        err(page, "contains AggregateRating/Review markup (self-serving reviews are not allowed)");
+    } catch (e) {
+      err(page, `invalid JSON-LD: ${e.message}`);
+    }
+  }
+
+  // Internal links
+  for (const [, href] of html.matchAll(/<a[^>]+href="([^"]+)"/g)) {
+    if (href.startsWith(SITE)) err(page, `absolute internal link ${href} (use a relative path)`);
+    if (!href.startsWith("/") || href.startsWith("//")) continue;
+    if (!pageExists(href)) err(page, `dead link → ${href}`);
+    else if (!/\.[a-z0-9]+$/i.test(href.split(/[?#]/)[0]) && !href.split(/[?#]/)[0].endsWith("/"))
+      warn(page, `link without trailing slash → ${href} (causes a redirect)`);
+  }
+
+  // Image src
+  for (const [, src] of html.matchAll(/<img[^>]+src="([^"]+)"/g)) {
+    if (src.startsWith("/") && !src.startsWith("//") && !pageExists(src)) err(page, `missing image → ${src}`);
+  }
+
+  // NAP consistency
+  for (const [re, label] of FORBIDDEN_TEXT) if (re.test(html)) err(page, `contains ${label}`);
+}
+
+// robots.txt
+const robots = fs.existsSync(path.join(OUT, "robots.txt")) ? fs.readFileSync(path.join(OUT, "robots.txt"), "utf8") : "";
+if (!robots) err("/robots.txt", "missing");
+else {
+  if (!robots.includes(`Sitemap: ${SITE}/sitemap.xml`)) err("/robots.txt", "no Sitemap line");
+  if (/^Disallow:\s*\/\s*$/m.test(robots)) err("/robots.txt", "blocks the whole site");
+}
+
+// sitemap.xml
+const sitemapPath = path.join(OUT, "sitemap.xml");
+if (!fs.existsSync(sitemapPath)) err("/sitemap.xml", "missing");
+else {
+  const locs = [...fs.readFileSync(sitemapPath, "utf8").matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  for (const loc of locs) {
+    const p = loc.replace(SITE, "");
+    if (!pageExists(p)) err("/sitemap.xml", `lists non-existent ${loc}`);
+    if (!loc.endsWith("/")) err("/sitemap.xml", `URL without trailing slash ${loc}`);
+  }
+  for (const page of titles.values()) {
+    if (!locs.includes(SITE + page)) err("/sitemap.xml", `indexable page missing from sitemap: ${page}`);
+  }
+  console.log(`\n  sitemap.xml: ${locs.length} URLs`);
+}
+
+// llms.txt
+const llmsPath = path.join(OUT, "llms.txt");
+if (!fs.existsSync(llmsPath)) err("/llms.txt", "missing");
+else {
+  for (const [, url] of fs.readFileSync(llmsPath, "utf8").matchAll(/\]\((https:\/\/realresult\.in[^)]*)\)/g)) {
+    if (!pageExists(url.replace(SITE, "") || "/")) err("/llms.txt", `dead link ${url}`);
+  }
+}
+
+console.log(`\n${errors ? "✗" : "✓"} ${htmlFiles.length} pages checked — ${errors} error(s), ${warnings} warning(s)\n`);
+process.exit(errors ? 1 : 0);

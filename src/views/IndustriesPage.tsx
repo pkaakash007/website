@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
-import { SEOHead } from "@/components/seo/SEOHead";
 import { openLeadModal } from "@/components/common/LeadModal";
 import {
   ArrowRight,
@@ -170,11 +169,6 @@ export default function IndustriesPage() {
 
   return (
     <div className="flex flex-col min-h-screen font-sans bg-[#FBFBFA] text-neutral-900 selection:bg-[#0071E3]/20 selection:text-[#0071E3]">
-      <SEOHead
-        title="Industries We Transform | Real Result Growth Agency"
-        description="Category-specific digital strategy and custom software engineering across 10 sectors: Healthcare, B2B, Ecommerce, Real Estate, Skincare & Beauty, and Financial Services."
-        canonicalPath="/industries"
-      />
 
       {/* ── 1. Radiant Ambient Hero Header (Bright & High-Contrast) ── */}
       <section className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 overflow-hidden bg-white border-b border-black/[0.06]">

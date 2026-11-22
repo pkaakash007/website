@@ -1,10 +1,9 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
-import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { DirectAnswerBox } from "@/components/seo/DirectAnswerBox";
 import { openLeadModal } from "@/components/common/LeadModal";
@@ -23,25 +22,6 @@ import {
 export const SEOPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <SEOHead
-        title="SEO Agency in Tamil Nadu | Best SEO Company | Real Result Marketing"
-        description="Looking for the best SEO company in Tamil Nadu? Real Result Marketing delivers technical SEO, Core Web Vitals optimization, high-intent keyword mapping, and authoritative backlink acquisition."
-        canonicalPath="/digital-marketing/seo"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: "Search Engine Optimization (SEO) Services Tamil Nadu",
-          provider: {
-            "@type": "Organization",
-            name: "Real Result Marketing",
-            url: "https://realresult.in",
-          },
-          serviceType: "SEO Agency Services",
-          areaServed: "Tamil Nadu, India",
-          description:
-            "Enterprise and B2B search engine optimization services across Tamil Nadu focusing on technical audits, keyword architecture, on-page optimization, and high-authority link acquisition.",
-        }}
-      />
 
       <section className="pt-12 pb-16 sm:pt-20 sm:pb-24 bg-white border-b border-border">
         <Container size="wide">

@@ -1,10 +1,9 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/common/Button";
-import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { DirectAnswerBox } from "@/components/seo/DirectAnswerBox";
 import { TAMIL_NADU_LOCATIONS } from "@/config/seo";
@@ -14,32 +13,6 @@ import { MapPin, ArrowRight, Building2, ShieldCheck, CheckCircle2 } from "lucide
 export const TamilNaduHubPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <SEOHead
-        title="Best Digital Marketing Agency & Software Company in Tamil Nadu | Salem, Erode, Namakkal, Paramathi Velur, Coimbatore"
-        description="Real Result Marketing is the best digital marketing agency and custom software company serving Salem, Erode, Namakkal, Paramathi Velur, and Coimbatore. High-intent SEO, Google Maps rankings, and custom apps."
-        canonicalPath="/locations/tamil-nadu"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: "Real Result Marketing - Tamil Nadu Headquarters",
-          url: "https://realresult.in/locations/tamil-nadu",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "148/2, Perundurai Road, Near Collectorate",
-            addressLocality: "Erode",
-            addressRegion: "Tamil Nadu",
-            postalCode: "638011",
-            addressCountry: "IN",
-          },
-          geo: {
-            "@type": "GeoCoordinates",
-            latitude: 11.341,
-            longitude: 77.7172,
-          },
-          telephone: "+918111033390",
-          areaServed: Object.values(TAMIL_NADU_LOCATIONS).map((l) => l.city),
-        }}
-      />
 
       <section className="pt-12 pb-16 sm:pt-20 sm:pb-24 bg-white border-b border-border">
         <Container size="wide">
@@ -59,17 +32,17 @@ export const TamilNaduHubPage: React.FC = () => {
             </h1>
 
             <p className="text-base sm:text-xl text-secondary leading-relaxed font-normal">
-              Serving the key commercial corridors of Tamil Nadu across Salem, Erode, Namakkal, Paramathi Velur, and Coimbatore. We deliver localized search dominance, Google Maps rankings, high-ROI Google Ads, and custom enterprise software for businesses.
+              From our office in Paramathi Velur we serve businesses across Namakkal, Karur, Salem, Erode and Coimbatore with SEO, Google Maps ranking, Google Ads, websites and custom software.
             </p>
 
             <DirectAnswerBox
               question="Where does Real Result operate in Tamil Nadu?"
-              summary="Real Result Marketing operates its registered office in Paramathi Velur, Namakkal, and central operations in Erode, Tamil Nadu, with dedicated consulting and client management across Salem, Erode, Namakkal, Paramathi Velur, and Coimbatore. We combine on-ground local business familiarity with tier-1 international technical SEO and software standards."
+              summary="Real Result Marketing has one office, in Paramathi Velur (Namakkal district, Tamil Nadu 638182). From there we serve Namakkal, Karur and Paramathi Velur as our core markets, and Salem, Erode and Coimbatore as wider service areas, meeting clients in person across the Kongu region."
               takeaways={[
-                "Centralized Headquarters: Perundurai Road, Erode, Tamil Nadu",
-                "Direct support for industrial, manufacturing, textile, and SaaS sectors",
+                "Office: Padamudipalayam, Paramathi Velur, Namakkal District 638182",
+                "Core markets: Namakkal, Karur and Paramathi Velur",
                 "Strict NAP consistency across Google Maps and regional directories",
-                "Zero fake local offices: authentic partnerships across all districts",
+                "One verified Google Business Profile, no virtual offices",
               ]}
             />
 
@@ -93,10 +66,10 @@ export const TamilNaduHubPage: React.FC = () => {
         <Container size="wide">
           <div className="max-w-3xl mb-14 space-y-3">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary">
-              Explore Our District-Level Operations
+              Areas We Serve
             </h2>
             <p className="text-sm sm:text-base text-secondary">
-              Click a location to explore industry-specific strategies, local search case studies, and localized services.
+              Choose your city to see the local industries we work with, the areas we cover and answers to common questions.
             </p>
           </div>
 
@@ -112,9 +85,9 @@ export const TamilNaduHubPage: React.FC = () => {
                     <span className="text-xs font-mono font-bold text-gold-700">
                       📍 {loc.city}
                     </span>
-                    {loc.slug === "erode" && (
+                    {loc.slug === "paramathi-velur" && (
                       <span className="text-xs font-bold text-gold-700 uppercase tracking-wider">
-                        HQ
+                        Office
                       </span>
                     )}
                   </div>

@@ -1,122 +1,45 @@
-export interface WhatsAppConfig {
-  number: string;
-  defaultMessage: string;
-  contextMessages: {
-    marketing: string;
-    aiCommunication: string;
-    technology: string;
-    humanResources: string;
-    general: string;
-  };
-}
+import { SEO_CONFIG, SOCIAL_LINKS } from "./seo";
 
-export interface DivisionConfig {
-  id: string;
-  name: string;
-  eyebrow: string;
-  headline: string;
-  description: string;
-  href: string;
-  badge: string;
-  isPrimary: boolean;
-}
-
-import { SOCIAL_LINKS } from "./seo";
 export { SOCIAL_LINKS };
 
+/** UI-facing brand config. Contact details are derived from SEO_CONFIG (single source of truth). */
 export const REAL_RESULT_CONFIG = {
-  brandName: "Real Result",
-  shortName: "Real Result",
+  brandName: SEO_CONFIG.shortName,
+  shortName: SEO_CONFIG.shortName,
   tagline: "Get noticed. Get chosen. Keep growing.",
-  descriptor: "Digital marketing & growth",
-  heroHook: "Your next customer needs a reason to choose you.",
-  primaryCta: "Let’s Talk Growth",
-  callingMessagingCta: "Plan My Campaign",
-  developmentCta: "Discuss My Project",
-  subheadline: "Real Result helps businesses attract the right audience, turn interest into enquiries, and keep customers connected through digital marketing and targeted communication.",
-  positioning: "Digital marketing, customer communication, and supporting technology for your next business goal.",
-  
-  // Real Business Coordinates in Paramathi Velur, Namakkal, Tamil Nadu, India
   location: {
     headquarters: "Paramathi Velur, Namakkal, Tamil Nadu, India",
-    address: "High School Building, 12/32, Paramathi Velur, Padamudipalayam, Tamil Nadu 638182",
-    region: "Tamil Nadu",
+    address: SEO_CONFIG.displayAddress,
+    region: SEO_CONFIG.headquarters.addressRegion,
     country: "India",
-    pinCode: "638182",
+    pinCode: SEO_CONFIG.headquarters.postalCode,
   },
-
-  // Centralized WhatsApp configuration (Tamil Nadu, India format: +91)
   whatsapp: {
-    number: "918111033390",
-    displayNumber: "+91 81110 33390",
+    number: SEO_CONFIG.telephone.replace(/\D/g, ""),
+    displayNumber: SEO_CONFIG.displayPhone,
     defaultMessage: "Hello Real Result Marketing team, I would like to discuss growing my business.",
     contextMessages: {
       marketing: "Hello Real Result team, I would like to discuss digital marketing, SEO & Google Ads for our business.",
       aiCommunication: "Hello Real Result team, I would like to explore Generative Engine Optimization (GEO) & AI Search.",
       technology: "Hello Real Result team, I would like to discuss a custom web or software development project.",
-      humanResources: "Hello Real Result team, I would like to discuss executive recruitment and staffing.",
-      general: "Hello Real Result team, I would like to explore your integrated marketing and technology services.",
+      general: "Hello Real Result team, I would like to explore your marketing and technology services.",
     },
   },
-  
   contact: {
-    email: "realresult.dev@gmail.com",
-    supportEmail: "campaigns@realresult.in",
-    phone: "+91 81110 33390",
-    address: "High School Building, 12/32, Paramathi Velur, Padamudipalayam, Tamil Nadu 638182",
+    email: SEO_CONFIG.email,
+    phone: SEO_CONFIG.displayPhone,
+    address: SEO_CONFIG.displayAddress,
   },
-
   social: SOCIAL_LINKS,
-
-  divisions: [
-    {
-      id: "digital-marketing",
-      name: "Digital Marketing & SEO",
-      eyebrow: "PRIMARY GROWTH DIVISION",
-      headline: "Make your brand impossible to ignore across Google and AI Search.",
-      description: "From search intent to qualified revenue. Technical SEO, Generative Engine Optimization (GEO), Google Ads, local Google Maps domination, and conversion rate optimization.",
-      href: "/digital-marketing",
-      badge: "Digital Marketing",
-      isPrimary: true,
-    },
-    {
-      id: "software-development",
-      name: "Software & App Development",
-      eyebrow: "ENGINEERING FOUNDATION",
-      headline: "Enterprise software that powers your business scale.",
-      description: "Custom software engineering, scalable cloud architecture, SaaS platforms, high-performance web applications, and enterprise AI integrations.",
-      href: "/software-development",
-      badge: "Software Engineering",
-      isPrimary: true,
-    },
-    {
-      id: "locations",
-      name: "Tamil Nadu Hubs",
-      eyebrow: "REGIONAL DOMINANCE",
-      headline: "Serving enterprise corridors across Tamil Nadu.",
-      description: "Dedicated client advisory and engineering deployment across Salem, Erode, Namakkal, Paramathi Velur, and Coimbatore.",
-      href: "/locations/tamil-nadu",
-      badge: "Tamil Nadu Network",
-      isPrimary: false,
-    },
-    {
-      id: "human-resources",
-      name: "Human Resources",
-      eyebrow: "HUMAN CAPITAL",
-      headline: "Behind every growing business: elite talent.",
-      description: "Executive search, specialized technical recruitment, leadership advisory, and high-impact workforce operations.",
-      href: "/human-resources",
-      badge: "Talent Acquisition",
-      isPrimary: false,
-    },
-  ] as DivisionConfig[],
 };
 
-export function getWhatsAppUrl(
-  contextOrMessage: "marketing" | "aiCommunication" | "technology" | "humanResources" | "general" | string = "general"
-): string {
-  const contextMsg =
-    REAL_RESULT_CONFIG.whatsapp.contextMessages[contextOrMessage as keyof typeof REAL_RESULT_CONFIG.whatsapp.contextMessages];
-  const message = contextMsg || (contextOrMessage && contextOrMessage !== "general" ? contextOrMessage : REAL_RESULT_CONFIG.whatsapp.defaultMessage);
+type WhatsAppContext = keyof typeof REAL_RESULT_CONFIG.whatsapp.contextMessages;
+
+/** Build a wa.me link from a known context key or a custom message. */
+export function getWhatsAppUrl(contextOrMessage: WhatsAppContext | string = "general"): string {
+  const messages = REAL_RESULT_CONFIG.whatsapp.contextMessages;
+  const message =
+    messages[contextOrMessage as WhatsAppContext] ??
+    (contextOrMessage && contextOrMessage !== "general" ? contextOrMessage : REAL_RESULT_CONFIG.whatsapp.defaultMessage);
   return `https://wa.me/${REAL_RESULT_CONFIG.whatsapp.number}?text=${encodeURIComponent(message)}`;
 }

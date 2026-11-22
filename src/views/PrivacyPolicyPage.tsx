@@ -1,19 +1,13 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { ShieldCheck } from "lucide-react";
-import { SEOHead } from "@/components/seo/SEOHead";
 import { REAL_RESULT_CONFIG } from "@/config";
 
 export const PrivacyPolicyPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-[#F5F5F7] text-[#1D1D1F]">
-      <SEOHead
-        title="Privacy Policy | Real Result"
-        description="Learn how Real Result handles personal information through our website and customer enquiries."
-        canonicalPath="/privacy-policy/"
-      />
 
       <section className="pt-24 pb-16 md:pt-32 md:pb-20 bg-gradient-to-b from-[#0D0D12] via-[#12121A] to-[#181824] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

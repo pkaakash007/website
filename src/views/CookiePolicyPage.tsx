@@ -1,18 +1,12 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Cookie } from "lucide-react";
-import { SEOHead } from "@/components/seo/SEOHead";
 
 export const CookiePolicyPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-[#F5F5F7] text-[#1D1D1F]">
-      <SEOHead
-        title="Cookie Policy | Real Result"
-        description="Learn about the cookies and choices available to you on the Real Result website."
-        canonicalPath="/cookie-policy/"
-      />
 
       <section className="pt-24 pb-16 md:pt-32 md:pb-20 bg-gradient-to-b from-[#0D0D12] via-[#12121A] to-[#181824] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

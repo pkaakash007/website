@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { Container } from "@/components/layout/Container";
 import { PortfolioProject } from "@/features/portfolio/types";
@@ -16,18 +15,6 @@ export const PortfolioPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* ── SEO Metadata ── */}
-      <SEOHead
-        title="Our Portfolio | Flagship Software & Marketing Case Studies | Real Result"
-        description="Explore verified client productions by Real Result Technology & Marketing across Tamil Nadu. Featuring our Jitter-inspired Orbit: Cards and Motion Blur showcases."
-        canonicalPath="/portfolio"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "CollectionPage",
-          name: "Real Result Production Portfolio",
-          url: "https://realresult.in/portfolio",
-          description: "Verified client case studies in custom application engineering, ERP cloud architecture, mobile apps, and growth marketing.",
-        }}
-      />
 
       {/* ── Header Breadcrumbs & Hero Intro ── */}
       <section className="pt-24 pb-12 sm:pt-32 sm:pb-16 bg-gradient-to-b from-neutral-50 via-white to-neutral-50/50 border-b border-neutral-200/80">

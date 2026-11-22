@@ -1,11 +1,10 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/utils/router-adapter";
 import { Container } from "@/components/layout/Container";
 import { Badge } from "@/components/common/Badge";
 import { Button } from "@/components/common/Button";
-import { SEOHead } from "@/components/seo/SEOHead";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { DirectAnswerBox } from "@/components/seo/DirectAnswerBox";
 import { openLeadModal } from "@/components/common/LeadModal";
@@ -14,23 +13,6 @@ import { Percent, MousePointer, Activity, TrendingUp } from "lucide-react";
 export const CROPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <SEOHead
-        title="Conversion Rate Optimization (CRO) Agency in Tamil Nadu | Real Result"
-        description="Double your organic and paid lead conversion rates. We audit user friction, heatmaps, and landing page psychology to turn existing traffic into qualified sales inquiries."
-        canonicalPath="/digital-marketing/conversion-rate-optimization"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          name: "Conversion Rate Optimization (CRO) Services",
-          provider: {
-            "@type": "Organization",
-            name: "Real Result Marketing",
-            url: "https://realresult.in",
-          },
-          serviceType: "CRO and Funnel Optimization",
-          areaServed: "Tamil Nadu, India",
-        }}
-      />
 
       <section className="pt-12 pb-16 sm:pt-20 sm:pb-24 bg-white border-b border-border">
         <Container size="wide">

@@ -21,7 +21,7 @@ const contactFaqs: FAQItem[] = [
   {
     question: "Can we visit your offices in Paramathi Velur, Erode, or Salem for an in-person meeting?",
     answer:
-      "Yes. We welcome prospective clients and partners to our registered office in Paramathi Velur, Namakkal, and our regional headquarters in Erode. We also arrange in-person briefings across Salem and Coimbatore upon prior appointment.",
+      "Yes. We welcome prospective clients and partners to our office in Paramathi Velur, Namakkal district. We also arrange in-person briefings across Salem and Coimbatore upon prior appointment.",
   },
   {
     question: "What is your typical project engagement structure?",
